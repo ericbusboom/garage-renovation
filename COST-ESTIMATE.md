@@ -224,7 +224,7 @@ Between the existing stucco and the interior metal panels: a framed, insulated w
 | Electrician labor | 40 | hrs | $90–130 | $3,600 | $5,200 |
 | Electrical permit (separate) | 1 | LS | — | $400 | $800 |
 | **Subtotal electrical** | | | | **$7,880** | **$12,800** |
-| ⚠️ If main panel upgrade needed (200A) | 1 | LS | — | $3,000 | $5,000 |
+| ⚠️ If main panel upgrade needed (200A) | — | — | — | $0 | $0 | per owner — 200A service already present |
 
 ### M. SOLAR
 
