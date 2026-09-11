@@ -1,0 +1,97 @@
+{
+  "request_id": "RAFTER-GLOBAL-DATUM-003",
+  "units": "inches",
+  "status": "prototype_assumptions_applied",
+  "core_width": 249.5,
+  "core_length": 249,
+  "wall_top": 98.5,
+  "ridge_length": 18.0,
+  "rise_approximate": 60.0,
+  "ridge_south": [
+    124.75,
+    115.5,
+    158.5
+  ],
+  "ridge_north": [
+    124.75,
+    133.5,
+    158.5
+  ],
+  "first_station_from_each_corner": 16.0,
+  "nominal_station_spacing": 24.0,
+  "available_board_face_widths": [
+    5.0,
+    5.5
+  ],
+  "board_thickness": 1.5,
+  "board_orientation": "on_edge",
+  "member_face_width_assignment": "5.5 inches throughout; 5 inch stock locations unknown",
+  "hip_and_ridge_section_confirmation": "same 1.5 x 5.5 inch placeholder section",
+  "soffit_projection": 3.5,
+  "soffit_thickness": 0.75,
+  "soffit_top_approximate": 98.5,
+  "fascia_height": 3.5,
+  "fascia_thickness": 0.75,
+  "fascia_direction": "upward from soffit; outboard attachment",
+  "roof_covering_overhang_past_fascia": 1.0,
+  "roof_covering_modeled": false,
+  "eave_projection_reference_face": "outer stucco face",
+  "notes": [
+    "Owner confirmed framing thickness 1.5 inches ON EDGE. Uniform 5.5 inch depth and 0.75 inch soffit remain assumptions.",
+    "All stock is flat rectangular 1.5 x 5.5 inch ON EDGE, including ridge and hips; depth assignment assumed; no invented T&G or alternating stock.",
+    "Upper top-center edges define the roof envelope: fascia top at eaves, wall top +60 inches at ridge.",
+    "Member end trims are schematic vertical planes. Hip/jack lateral intersections may overlap; no exact joinery or bearing/notch fit is claimed.",
+    "Roof faces have differing slopes because the centered north-south ridge is 18 inches long.",
+    "No roof cladding is modeled. Hidden planar cover perimeter is a footprint reference only.",
+    "Soffit top at wall top, 0.75 inch thickness placeholder; fascia starts at soffit underside.",
+    "Soffit projects 3.5 inches from stucco outer face; fascia is 0.75 inch farther out; cover reference another 1 inch out.",
+    "Station offsets remain measured along core wall edges, even though framing extends to fascia outside edges.",
+    "Owner correction RAFTER-GLOBAL-DATUM-003 supersedes the eave-only underside limit: all jack/hip material below 98.5 inches is removed globally, including over walls. Member positions and upper roof slopes unchanged. Fascia inside-face termination retained."
+  ],
+  "ridge_peak_upper_envelope": 158.5,
+  "soffit_bottom": 97.75,
+  "fascia_top": 101.25,
+  "fascia_bottom": 97.75,
+  "eave_framing_upper_envelope": 101.25,
+  "fascia_outer_offset_from_core": 4.75,
+  "cover_reference_offset_from_core": 5.75,
+  "roof_pitch": {
+    "south_north_degrees": 25.458721078384514,
+    "east_west_degrees": 23.849499953845818
+  },
+  "central_residual_bays_inches": {
+    "south_north": 25.5,
+    "east_west": 25
+  },
+  "member_counts": {
+    "ridge": 1,
+    "hips": 4,
+    "jacks": 40,
+    "commons": 0
+  },
+  "bearing_notes": {
+    "wall_top_inches": 98.5,
+    "eave_upper_inches": 101.25,
+    "peak_upper_inches": 158.5,
+    "exact_bearing_elevation": "Global horizontal underside datum at 98.5 inches across all jack/hip material including over walls, without shifting members. Fascia inside-face termination retained. Other joinery remains schematic."
+  },
+  "tail_clearance": {
+    "horizontal_underside_trim_z_inches": 98.5,
+    "zone": "entire member footprint, including over walls; no member shift",
+    "fascia_termination": "inside faces, preserving roof upper slope reference",
+    "changed_members": 44,
+    "hips": 4,
+    "jacks": 40,
+    "measured_maximum_soffit_intersection_mm3": 0.0,
+    "measured_maximum_fascia_intersection_mm3": 0.0,
+    "minimum_soffit_clearance_mm": 0.0
+  },
+  "global_underside_datum": {
+    "height_inches": 98.5,
+    "height_mm": 2501.8999999999996,
+    "all_jacks_and_hips": true,
+    "member_shift_inches": 0,
+    "minimum_final_global_z_mm": 2501.899999999999,
+    "maximum_volume_below_datum_mm3": 0.0
+  }
+}

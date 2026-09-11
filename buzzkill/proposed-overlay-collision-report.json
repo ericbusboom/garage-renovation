@@ -1,0 +1,1455 @@
+{
+  "request_id": "PROPOSED-FULL-FRAME-001",
+  "method": "Exact common solid volumes after bbox broad phase; threshold 1e-4 mm3. Pairwise sums can double-count overlapping existing members.",
+  "categories": {
+    "existing_roof_framing": 45,
+    "existing_soffit_fascia": 8,
+    "existing_walls_and_stucco": 8,
+    "existing_lofts": 46
+  },
+  "pair_count": 21,
+  "pairs": [
+    {
+      "proposed_id": "N2",
+      "proposed_object": "ProposedColumnN2",
+      "stage": "baseline_roof_first_concept",
+      "existing_object": "SoffitNorth",
+      "category": "existing_soffit_fascia",
+      "intersection_mm3": 23044.308750001223,
+      "intersection_in3": 1.4062500000000748
+    },
+    {
+      "proposed_id": "N2",
+      "proposed_object": "ProposedColumnN2",
+      "stage": "baseline_roof_first_concept",
+      "existing_object": "FasciaNorth",
+      "category": "existing_soffit_fascia",
+      "intersection_mm3": 21508.021500001312,
+      "intersection_in3": 1.3125000000000802
+    },
+    {
+      "proposed_id": "S3",
+      "proposed_object": "ProposedColumnS3",
+      "stage": "baseline_roof_first_concept",
+      "existing_object": "SoffitSouth",
+      "category": "existing_soffit_fascia",
+      "intersection_mm3": 19971.73425000056,
+      "intersection_in3": 1.2187500000000344
+    },
+    {
+      "proposed_id": "S3",
+      "proposed_object": "ProposedColumnS3",
+      "stage": "baseline_roof_first_concept",
+      "existing_object": "CoreSouthCut2",
+      "category": "existing_walls_and_stucco",
+      "intersection_mm3": 3026485.882500059,
+      "intersection_in3": 184.6875000000036
+    },
+    {
+      "proposed_id": "S3",
+      "proposed_object": "ProposedColumnS3",
+      "stage": "baseline_roof_first_concept",
+      "existing_object": "StuccoSouthCut2",
+      "category": "existing_walls_and_stucco",
+      "intersection_mm3": 403531.451000021,
+      "intersection_in3": 24.625000000001286
+    },
+    {
+      "proposed_id": "T-E",
+      "proposed_object": "ProposedTE",
+      "stage": "roof_first_lower_chord",
+      "existing_object": "HipSEGlobalDatumOutput",
+      "category": "existing_roof_framing",
+      "intersection_mm3": 505680.80484832026,
+      "intersection_in3": 30.858536028682156
+    },
+    {
+      "proposed_id": "T-E",
+      "proposed_object": "ProposedTE",
+      "stage": "roof_first_lower_chord",
+      "existing_object": "HipNEGlobalDatumOutput",
+      "category": "existing_roof_framing",
+      "intersection_mm3": 505680.8048483179,
+      "intersection_in3": 30.85853602868201
+    },
+    {
+      "proposed_id": "T-E",
+      "proposed_object": "ProposedTE",
+      "stage": "roof_first_lower_chord",
+      "existing_object": "EastNear2GlobalDatumOutput",
+      "category": "existing_roof_framing",
+      "intersection_mm3": 370559.60263320204,
+      "intersection_in3": 22.612934362934208
+    },
+    {
+      "proposed_id": "T-E",
+      "proposed_object": "ProposedTE",
+      "stage": "roof_first_lower_chord",
+      "existing_object": "EastNear3GlobalDatumOutput",
+      "category": "existing_roof_framing",
+      "intersection_mm3": 370559.6026332006,
+      "intersection_in3": 22.61293436293412
+    },
+    {
+      "proposed_id": "T-E",
+      "proposed_object": "ProposedTE",
+      "stage": "roof_first_lower_chord",
+      "existing_object": "EastNear4GlobalDatumOutput",
+      "category": "existing_roof_framing",
+      "intersection_mm3": 370559.60263320035,
+      "intersection_in3": 22.612934362934105
+    },
+    {
+      "proposed_id": "T-E",
+      "proposed_object": "ProposedTE",
+      "stage": "roof_first_lower_chord",
+      "existing_object": "EastNear5GlobalDatumOutput",
+      "category": "existing_roof_framing",
+      "intersection_mm3": 370559.60263319965,
+      "intersection_in3": 22.612934362934062
+    },
+    {
+      "proposed_id": "T-E",
+      "proposed_object": "ProposedTE",
+      "stage": "roof_first_lower_chord",
+      "existing_object": "EastFar2GlobalDatumOutput",
+      "category": "existing_roof_framing",
+      "intersection_mm3": 370559.6026331997,
+      "intersection_in3": 22.612934362934066
+    },
+    {
+      "proposed_id": "T-E",
+      "proposed_object": "ProposedTE",
+      "stage": "roof_first_lower_chord",
+      "existing_object": "EastFar3GlobalDatumOutput",
+      "category": "existing_roof_framing",
+      "intersection_mm3": 370559.6026331997,
+      "intersection_in3": 22.612934362934066
+    },
+    {
+      "proposed_id": "T-E",
+      "proposed_object": "ProposedTE",
+      "stage": "roof_first_lower_chord",
+      "existing_object": "EastFar4GlobalDatumOutput",
+      "category": "existing_roof_framing",
+      "intersection_mm3": 370559.6026332013,
+      "intersection_in3": 22.612934362934162
+    },
+    {
+      "proposed_id": "T-E",
+      "proposed_object": "ProposedTE",
+      "stage": "roof_first_lower_chord",
+      "existing_object": "EastFar5GlobalDatumOutput",
+      "category": "existing_roof_framing",
+      "intersection_mm3": 370559.6026331998,
+      "intersection_in3": 22.61293436293407
+    },
+    {
+      "proposed_id": "B2 future floor beam",
+      "proposed_object": "ProposedB2Future",
+      "stage": "future_after_existing_roof_removal",
+      "existing_object": "WestFar3GlobalDatumOutput",
+      "category": "existing_roof_framing",
+      "intersection_mm3": 654786.5041465397,
+      "intersection_in3": 39.9575240657228
+    },
+    {
+      "proposed_id": "B2 future floor beam",
+      "proposed_object": "ProposedB2Future",
+      "stage": "future_after_existing_roof_removal",
+      "existing_object": "EastFar3GlobalDatumOutput",
+      "category": "existing_roof_framing",
+      "intersection_mm3": 585137.1186998032,
+      "intersection_in3": 35.707257791865786
+    },
+    {
+      "proposed_id": "N1 / U-W",
+      "proposed_object": "ProposedNorthPostUW",
+      "stage": "outside_north_roof_posts",
+      "existing_object": "SoffitNorth",
+      "category": "existing_soffit_fascia",
+      "intersection_mm3": 258096.25800000184,
+      "intersection_in3": 15.750000000000114
+    },
+    {
+      "proposed_id": "N1 / U-W",
+      "proposed_object": "ProposedNorthPostUW",
+      "stage": "outside_north_roof_posts",
+      "existing_object": "FasciaNorth",
+      "category": "existing_soffit_fascia",
+      "intersection_mm3": 258096.25800000108,
+      "intersection_in3": 15.750000000000068
+    },
+    {
+      "proposed_id": "T-E diagonal 13",
+      "proposed_object": "FrameTEWeb13",
+      "stage": "permanent_roof_first",
+      "existing_object": "EastFar3GlobalDatumOutput",
+      "category": "existing_roof_framing",
+      "intersection_mm3": 629.2149577917187,
+      "intersection_in3": 0.03839705256485962
+    },
+    {
+      "proposed_id": "T1 future hanger 4",
+      "proposed_object": "FutureT1Hanger4",
+      "stage": "future_after_existing_roof_removal",
+      "existing_object": "SouthFar4GlobalDatumOutput",
+      "category": "existing_roof_framing",
+      "intersection_mm3": 87344.29461266848,
+      "intersection_in3": 5.330075882578385
+    }
+  ],
+  "members": [
+    {
+      "id": "W1",
+      "stage": "baseline_roof_first_concept",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "W2",
+      "stage": "baseline_roof_first_concept",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "W3",
+      "stage": "baseline_roof_first_concept",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "W4",
+      "stage": "baseline_roof_first_concept",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "S1",
+      "stage": "baseline_roof_first_concept",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "S2",
+      "stage": "baseline_roof_first_concept",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "N2",
+      "stage": "baseline_roof_first_concept",
+      "pair_count": 2,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 44552.33025000253,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "S3",
+      "stage": "baseline_roof_first_concept",
+      "pair_count": 3,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 19971.73425000056,
+        "existing_walls_and_stucco": 3430017.33350008,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": true
+    },
+    {
+      "id": "SW0",
+      "stage": "baseline_roof_first_concept",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-SO",
+      "stage": "connected_south_beam",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-S",
+      "stage": "connected_cross_chord",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W / B-WO",
+      "stage": "roof_first_lower_chord",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-E",
+      "stage": "roof_first_lower_chord",
+      "pair_count": 10,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 3975838.4307622407,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N",
+      "stage": "north_wall_lower_chord",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T1 upper lower chord",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T1 future floor beam",
+      "stage": "future_after_existing_roof_removal",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "B2 future floor beam",
+      "stage": "future_after_existing_roof_removal",
+      "pair_count": 2,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 1239923.622846343,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "N1 / U-W",
+      "stage": "outside_north_roof_posts",
+      "pair_count": 2,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 516192.5160000029,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-S top",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T1 top",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W top",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-E top",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N top",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-S vertical 1",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-S vertical 2",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-S vertical 3",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-S vertical 4",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-S vertical 5",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-S vertical 6",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-S vertical 7",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-S diagonal 8",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-S diagonal 9",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-S diagonal 10",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-S diagonal 11",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-S diagonal 12",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-S diagonal 13",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T1 vertical 1",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T1 vertical 2",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T1 vertical 3",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T1 vertical 4",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T1 vertical 5",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T1 diagonal 6",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T1 diagonal 7",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T1 diagonal 8",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T1 diagonal 9",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W vertical 1",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W vertical 2",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W vertical 3",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W vertical 4",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W vertical 5",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W vertical 6",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W vertical 7",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W diagonal 8",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W diagonal 9",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W diagonal 10",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W balcony header",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W vertical 11",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W vertical 12",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W vertical 13",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W vertical 14",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W diagonal 15",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-W diagonal 16",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-E vertical 1",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-E vertical 2",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-E vertical 3",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-E vertical 4",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-E vertical 5",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-E vertical 6",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-E vertical 7",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-E vertical 8",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-E vertical 9",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-E diagonal 10",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-E diagonal 11",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-E diagonal 12",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-E diagonal 13",
+      "stage": "permanent_roof_first",
+      "pair_count": 1,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 629.2149577917187,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N upper east jamb",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N loading header",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N vertical 1",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N vertical 2",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N vertical 3",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N vertical 4",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N vertical 5",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N diagonal 6",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N diagonal 7",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N diagonal 8",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N diagonal 9",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N vertical 10",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N vertical 11",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N vertical 12",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N vertical 13",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N vertical 14",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N diagonal 15",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N diagonal 16",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N diagonal 17",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T-N diagonal 18",
+      "stage": "permanent_roof_first",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T1 future hanger 1",
+      "stage": "future_after_existing_roof_removal",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T1 future hanger 2",
+      "stage": "future_after_existing_roof_removal",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T1 future hanger 3",
+      "stage": "future_after_existing_roof_removal",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T1 future hanger 4",
+      "stage": "future_after_existing_roof_removal",
+      "pair_count": 1,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 87344.29461266848,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    },
+    {
+      "id": "T1 future hanger 5",
+      "stage": "future_after_existing_roof_removal",
+      "pair_count": 0,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 0.0,
+        "existing_walls_and_stucco": 0.0,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": false
+    }
+  ],
+  "future_stage_pairs": [
+    {
+      "proposed_id": "B2 future floor beam",
+      "proposed_object": "ProposedB2Future",
+      "stage": "future_after_existing_roof_removal",
+      "existing_object": "WestFar3GlobalDatumOutput",
+      "category": "existing_roof_framing",
+      "intersection_mm3": 654786.5041465397,
+      "intersection_in3": 39.9575240657228
+    },
+    {
+      "proposed_id": "B2 future floor beam",
+      "proposed_object": "ProposedB2Future",
+      "stage": "future_after_existing_roof_removal",
+      "existing_object": "EastFar3GlobalDatumOutput",
+      "category": "existing_roof_framing",
+      "intersection_mm3": 585137.1186998032,
+      "intersection_in3": 35.707257791865786
+    },
+    {
+      "proposed_id": "T1 future hanger 4",
+      "proposed_object": "FutureT1Hanger4",
+      "stage": "future_after_existing_roof_removal",
+      "existing_object": "SouthFar4GlobalDatumOutput",
+      "category": "existing_roof_framing",
+      "intersection_mm3": 87344.29461266848,
+      "intersection_in3": 5.330075882578385
+    }
+  ],
+  "column_wall_interferences": [
+    {
+      "id": "S3",
+      "stage": "baseline_roof_first_concept",
+      "pair_count": 3,
+      "pairwise_volume_totals_mm3": {
+        "existing_roof_framing": 0.0,
+        "existing_soffit_fascia": 19971.73425000056,
+        "existing_walls_and_stucco": 3430017.33350008,
+        "existing_lofts": 0.0
+      },
+      "through_wall_interference": true
+    }
+  ],
+  "feasibility_claim": false,
+  "not_tested": [
+    "Existing roof cladding absent",
+    "Strength or capacity",
+    "Connection design",
+    "Temporary stability",
+    "Foundation adequacy"
+  ]
+}

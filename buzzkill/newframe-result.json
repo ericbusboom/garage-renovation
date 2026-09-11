@@ -1,0 +1,114 @@
+{
+  "request_id": "PROPOSED-FULL-FRAME-001",
+  "status": "complete",
+  "started_utc": "2026-09-10T03:03:55.148078+00:00",
+  "backup_directory": "/proj/garage/backups/20260910T025903Z-pre-fullframe",
+  "completed_utc": "2026-09-10T03:04:08.417885+00:00",
+  "artifact_paths": [
+    "/proj/garage/Proposed-Garage.FCStd",
+    "/proj/garage/Proposed-Garage-overlay.step",
+    "/proj/garage/proposed-overlay-full.json",
+    "/proj/garage/proposed-overlay-new.json",
+    "/proj/garage/proposed-overlay-future.json",
+    "/proj/garage/proposed-overlay-optional-north.json",
+    "/proj/garage/proposed-overlay-parameters.json",
+    "/proj/garage/proposed-overlay-member-register.json",
+    "/proj/garage/proposed-overlay-collision-report.json",
+    "/proj/garage/proposed-overlay-validation.json",
+    "/proj/garage/PROPOSED-OVERLAY-README.md",
+    "/proj/garage/full-frame-generator.py",
+    "/proj/garage/full-frame-input.json",
+    "/proj/garage/proposed-overlay-generator.py",
+    "/proj/garage/preview-full-frame.py",
+    "/proj/garage/Proposed-Garage-full-frame.png",
+    "/proj/garage/Proposed-Garage-overlay.png",
+    "/proj/garage/preview-proposed-overlay.py"
+  ],
+  "artifact_sha256": {
+    "Proposed-Garage.FCStd": "a469530cb91208053086079f58f961d7133b04b811674e8e907d09657cc94c08",
+    "Proposed-Garage-overlay.step": "4e0cebd5c3815ae9ac22b68c0a154a220d1b03d914e67ef19e8875b37b5e2a5b",
+    "proposed-overlay-full.json": "d93f3250006408d9f600182c6d7a15b4a18b865e8a67a82aa82e5e68fe0e725f",
+    "proposed-overlay-new.json": "f220e874b68560d67a044989ab9b8a035432a69e876cb7952326c5b102c31812",
+    "proposed-overlay-future.json": "49b09c451eb29db5100f696fc1674f5d9a9485bda4bf65b77e3b85870aa101d8",
+    "proposed-overlay-optional-north.json": "53ebc6a9200917046f0750b2ead91e1e158401e6dc6ee2741886eb77ad024648",
+    "proposed-overlay-parameters.json": "50bee3fadab958ce881a585856b5ecb01c8362828e4883d2c060e3d3f0cfd4d0",
+    "proposed-overlay-member-register.json": "47e6671d0d33dbcdaaf6e1793f20067674d047108d8c2c83136d8884bca57b43",
+    "proposed-overlay-collision-report.json": "78415af259488039a104e01a83ba82a794877d31ec57ac84aa95e35f180ab043",
+    "proposed-overlay-validation.json": "aa46b36200447205e5b07de82f3f21799c8fc0ad36bc6c72de9b9718046e6143",
+    "PROPOSED-OVERLAY-README.md": "6b22a0eaff308a1069ad96caab0bb9624eeeca72136803a2e0c2654bdfa193be",
+    "full-frame-generator.py": "aa8101c72be66a658bf70655caf5a9785eebe051dca108d121ce5426cc5387c1",
+    "full-frame-input.json": "94a435d09510e4fcbce35883cb46823b24cf42fbb166d06305eba1b8eee43ffd",
+    "proposed-overlay-generator.py": "011768546f9e5f4bad223d4b4cdba40aa6b3a55047d0027350e4163366e32244",
+    "preview-full-frame.py": "838197e038aa76e8df1547376c23e8bd124234e5dfe960c0eb93fa6951c4acb6",
+    "Proposed-Garage-full-frame.png": "8ad160f741b890a0662a7cf65b1c16dd9f009c1e98533ae6d62d1659377e5ddf",
+    "Proposed-Garage-overlay.png": "31bd9856e5c543db4600d00c097c2a5b461b7868503fa60428836422989267ba",
+    "preview-proposed-overlay.py": "249ccbbe5a9efc05981d593a4d658f09d1ee1cc2ce81ce218431d58a6c5319d0"
+  },
+  "existing_unchanged": true,
+  "native_reopen_success": true,
+  "existing_solids": 107,
+  "proposed_solids": 100,
+  "new_solids": 82,
+  "step_solids": 207,
+  "collision_pairs": 21,
+  "opening_checks": [
+    {
+      "opening": "TN_loading",
+      "new_solid_intersections": [],
+      "clear": true
+    },
+    {
+      "opening": "TW_balcony_approximate",
+      "new_solid_intersections": [],
+      "clear": true
+    }
+  ],
+  "strength_analysis_run": false,
+  "default_future_visible": true,
+  "removed_ground_posts": [
+    "U-E",
+    "NE-W",
+    "NE-E"
+  ],
+  "unresolved": [
+    {
+      "id": "CONCEPT_ONLY",
+      "note": "Native geometric correction model. No strength analysis or stability certification was run. All sections remain placeholders."
+    },
+    {
+      "id": "RECTANGULAR_BAYS",
+      "note": "TS and T1 diagonals triangulate all panels; longitudinal members include verticals and selected diagonals with rectangular bays. Those bays are NOT represented as stable pin-jointed trusses; frame action and all connections are unresolved."
+    },
+    {
+      "id": "ROOF_SEAM",
+      "note": "Unchanged roof reference has a small height step at main/cap break y122.7624491117621. Top-chord native roof-plane patches preserve that step and overlap vertically at the seam. Fabricated transition/joint detail unresolved."
+    },
+    {
+      "id": "TOP_DEPTH",
+      "note": "Top chords use 6-inch VERTICAL depth (not normal-to-slope section depth), full width6. Exact roof faces maintained; visual sections unverified."
+    },
+    {
+      "id": "OPENINGS",
+      "note": "TN clear x56.25..152.25 z120..204. TW historic approximate opening y186..246 z120..204 retained. No new solids inside either clear volume."
+    },
+    {
+      "id": "WEST_JAMB",
+      "note": "Consolidated N1/U-W retained unchanged and used as TN west jamb; it overlaps TN across 2.5 inches in y. No second west jamb. East upper jamb begins120, two inches above chord top118 per requested opening-floor reference."
+    },
+    {
+      "id": "FUTURE_STAGE",
+      "note": "T1 future beam, B2 and five hangers visible amber but remain after-existing-roof-removal stage. Exact existing collisions reported."
+    },
+    {
+      "id": "CONNECTIONS",
+      "note": "Webs embed schematically into chord/header solids to guarantee geometric joins. No gussets, bolts, welds, joint stiffness or fabrication details designed."
+    }
+  ],
+  "preview_paths": [
+    "/proj/garage/Proposed-Garage-full-frame.png",
+    "/proj/garage/Proposed-Garage-overlay.png"
+  ],
+  "communication": "Result and progress written on shared /proj/garage for parent SSH retrieval; app return text may be unavailable.",
+  "roof_top_faces_verified": 12,
+  "maximum_roof_surface_error_mm": 2.637534635141492e-11
+}

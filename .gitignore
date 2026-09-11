@@ -1,0 +1,88 @@
+# ══════════════════════════════════════════════════════════════════════
+#  Garage renovation — git ignore rules
+#
+#  Principle: commit SOURCE (scripts, CAD, data, docs).
+#  Exclude BUILD OUTPUT (renders, meshes, logs, visualizations).
+#  Everything excluded here is regenerable from a committed script.
+# ══════════════════════════════════════════════════════════════════════
+
+# ── Rendered images (regenerate from CAD/blend sources) ────────────────
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.tiff
+*.bmp
+*.exr
+
+# ── Backup files ───────────────────────────────────────────────────────
+*.blend1
+*.blend2
+*.FCBak
+*.FCBak1
+*.bak
+backups/
+
+# ── Python cache ───────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.cache/
+.pytest_cache/
+
+# ── OS junk ────────────────────────────────────────────────────────────
+._*
+.DS_Store
+.AppleDouble
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# ── Archives ───────────────────────────────────────────────────────────
+*.zip
+*.tar.gz
+*.tgz
+
+# ── Logs (build output, regenerable) ───────────────────────────────────
+*.log
+
+# ── IDE / editor ───────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ── Python virtual environments ────────────────────────────────────────
+venv/
+.venv/
+.venv-*/
+*.venv/
+env/
+site-packages/
+
+# ── Interactive solver visualizations (regenerate from analyze_network.py) ──
+*-interactive.html
+ALL-interactive.html
+
+# ── Large solver network dumps (regenerate from study scripts) ─────────
+# The JSON study results and member schedules ARE committed; only the
+# multi-MB explicit network dumps are excluded.
+*complete.network.json
+*roof_first.network.json
+
+# ── Generated mesh dumps (derived from .FCStd via build_cad.py) ────────
+*-cad-mesh.json
+*-mesh.json
+visible-mesh*.json
+
+# ── Agent scratch / progress ───────────────────────────────────────────
+*progress.txt
+*agent-result.json
+
+# ── Nested repos ───────────────────────────────────────────────────────
+wiki-publish/.git/
+
+# ── Node ───────────────────────────────────────────────────────────────
+node_modules/

@@ -1,0 +1,101 @@
+{
+  "floor_joist_1000lb_on_one_member_plus_uniform": [
+    {
+      "member": "wood 1.5 x 7.25 in; E=1.6e6 assumed",
+      "weight_plf_at_35pcf": 2.6432291666666665,
+      "required_bending_stress_psi": 2880.5343506407717,
+      "total_deflection_in": 0.582545515866175,
+      "live_deflection_in": 0.552404457300427,
+      "live_limit_L360": 0.32013888888888886
+    },
+    {
+      "member": "wood 1.5 x 9.25 in; E=1.6e6 assumed",
+      "weight_plf_at_35pcf": 3.3723958333333335,
+      "required_bending_stress_psi": 1769.56127749371,
+      "total_deflection_in": 0.28049084134128566,
+      "live_deflection_in": 0.2659781712652778,
+      "live_limit_L360": 0.32013888888888886
+    },
+    {
+      "member": "HSS3x3x0.125",
+      "weight_plf": 4.75,
+      "elastic_stress_psi": 31808.42159780579,
+      "total_deflection_in": 0.8601137269021298,
+      "live_deflection_in": 0.8156112159228567,
+      "live_limit_L360": 0.32013888888888886
+    },
+    {
+      "member": "HSS3x3x0.188",
+      "weight_plf": 6.87,
+      "elastic_stress_psi": 23080.501037432252,
+      "total_deflection_in": 0.6223587129617036,
+      "live_deflection_in": 0.5901577090823922,
+      "live_limit_L360": 0.32013888888888886
+    },
+    {
+      "member": "HSS4x4x0.188",
+      "weight_plf": 9.42,
+      "elastic_stress_psi": 12171.068071186139,
+      "total_deflection_in": 0.24653823412009518,
+      "live_deflection_in": 0.23378228089254185,
+      "live_limit_L360": 0.32013888888888886
+    }
+  ],
+  "roof_purlin_4ft_plan_spacing_candidates": [
+    {
+      "member": "HSS5x5x0.25",
+      "plf": 15.62,
+      "delta_in": 0.8249721223155746,
+      "stress_psi": 11417.830963991502
+    },
+    {
+      "member": "HSS6x6x0.25",
+      "plf": 19.02,
+      "delta_in": 0.4727715628439318,
+      "stress_psi": 7854.685594587682
+    },
+    {
+      "member": "HSS5x5x0.375",
+      "plf": 22.37,
+      "delta_in": 0.6377072980605344,
+      "stress_psi": 8826.03658572314
+    },
+    {
+      "member": "HSS6x6x0.375",
+      "plf": 27.48,
+      "delta_in": 0.3625762960072531,
+      "stress_psi": 6006.574941229781
+    },
+    {
+      "member": "HSS8x8x0.313",
+      "plf": 31.84,
+      "delta_in": 0.17212982442766125,
+      "stress_psi": 3811.715205425613
+    },
+    {
+      "member": "HSS6x6x0.5",
+      "plf": 35.24,
+      "delta_in": 0.31171895882598466,
+      "stress_psi": 5177.126766644913
+    },
+    {
+      "member": "HSS8x8x0.375",
+      "plf": 37.69,
+      "delta_in": 0.15287848127090284,
+      "stress_psi": 3385.4053681880746
+    },
+    {
+      "member": "HSS8x8x0.5",
+      "plf": 48.85,
+      "delta_in": 0.13075058309108875,
+      "stress_psi": 2890.770654004053
+    },
+    {
+      "member": "HSS8x8x0.625",
+      "plf": 59.32,
+      "delta_in": 0.11872951290193448,
+      "stress_psi": 2629.196254431044
+    }
+  ],
+  "notes": "Simple flexure only. No bearing, local patch deck design, vibration, cold-formed design, connections, or timber grade verification."
+}

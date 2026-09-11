@@ -1,0 +1,3051 @@
+{
+  "request_id": "RENOVATED-LOFT-001",
+  "units": "inches",
+  "caption": "Geometric design reconstruction; all sizes unverified",
+  "parameters": {
+    "ColumnWidth": {
+      "value": 4,
+      "note": "VISUAL placeholder; not a selected HSS designation"
+    },
+    "TubeWall": {
+      "value": 0.25,
+      "note": "UNVERIFIED visualization assumption"
+    },
+    "ChordWidth": {
+      "value": 6,
+      "note": "UNVERIFIED solid rectangular placeholder"
+    },
+    "ChordDepth": {
+      "value": 6,
+      "note": "UNVERIFIED"
+    },
+    "BeamWidth": {
+      "value": 6,
+      "note": "Not a W designation"
+    },
+    "BeamDepth": {
+      "value": 8,
+      "note": "UNVERIFIED"
+    },
+    "WebThickness": {
+      "value": 0.25,
+      "note": "UNVERIFIED"
+    },
+    "FlangeThickness": {
+      "value": 0.375,
+      "note": "UNVERIFIED"
+    },
+    "FloorBottom": {
+      "value": 112,
+      "note": "Later raised-loft source"
+    },
+    "FloorTop": {
+      "value": "FloorBottom+BeamDepth",
+      "note": "120-inch reference, no deck modeled"
+    },
+    "T1UpperBottom": {
+      "value": 147.143248,
+      "note": "Later roof-first envelope"
+    },
+    "T1UpperTop": {
+      "value": 196.64324823492282,
+      "note": "Supersedes prior183.143248; current roof top at T1 centerline."
+    },
+    "T1Station": {
+      "value": 69.75,
+      "note": "Plan baseline retained"
+    },
+    "B2Station": {
+      "value": 185,
+      "note": "Later optimization NOT accepted"
+    },
+    "WestRow": {
+      "value": -32,
+      "note": "Supersedes x=0 TW"
+    },
+    "EastRow": {
+      "value": 224.25,
+      "note": "S2\u2013S3\u2013N2"
+    },
+    "MainRoofWest": {
+      "value": -32,
+      "note": "Extends roof reference over western columns"
+    },
+    "MainWidth": {
+      "value": 249.5,
+      "note": ""
+    },
+    "MainRoofSouthY": {
+      "value": -63,
+      "note": ""
+    },
+    "MainRoofSouthZ": {
+      "value": 120,
+      "note": "Revision003: raised to fit straight112-inch chords and TSO top120"
+    },
+    "MainRoofBreakY": {
+      "value": "MainRoofSouthY+(CapEaveZ-MainRoofSouthZ)/tan(30 deg)",
+      "note": "Recomputed from120-inch start, exact30 degrees and227.25 eave"
+    },
+    "CapEaveZ": {
+      "value": 227.25,
+      "note": ""
+    },
+    "CapRise": {
+      "value": 18,
+      "note": ""
+    },
+    "CapRidgeZ": {
+      "value": "CapEaveZ+CapRise",
+      "note": ""
+    },
+    "CapWest": {
+      "value": -40,
+      "note": "8 inches beyond west column row at -32"
+    },
+    "CapEast": {
+      "value": "MainWidth+8 in",
+      "note": "8-inch overhang"
+    },
+    "CapSouth": {
+      "value": "MainRoofBreakY-8 in",
+      "note": "8-inch projection"
+    },
+    "CapNorth": {
+      "value": 271,
+      "note": "22-inch north extension; NO further overhang"
+    },
+    "CapHalfDepth": {
+      "value": "(CapNorth-CapSouth)/2",
+      "note": "Standard equal-slope hip geometry"
+    },
+    "CapRidgeY": {
+      "value": "(CapNorth+CapSouth)/2",
+      "note": ""
+    },
+    "CapRidgeWest": {
+      "value": "CapWest+CapHalfDepth",
+      "note": ""
+    },
+    "CapRidgeEast": {
+      "value": "CapEast-CapHalfDepth",
+      "note": ""
+    },
+    "ConceptPostWidth": {
+      "value": 6,
+      "note": "UNVERIFIED solid box placeholder"
+    },
+    "FootingRefDiameter": {
+      "value": 18,
+      "note": "REFERENCE ONLY; not a designed footing"
+    },
+    "DepthReference": {
+      "value": 36,
+      "note": "HIDDEN reference; no buried steel assumption"
+    },
+    "ColW1X": {
+      "value": -32,
+      "note": "Resolved revision002; original register retained as source"
+    },
+    "ColW1Y": {
+      "value": 0,
+      "note": "S1/S2 on TSO; N1 aliases consolidated U-W"
+    },
+    "ColW1Top": {
+      "value": "MainRoofSouthZ+(ColW1Y-MainRoofSouthY)*tan(30 deg)",
+      "note": "Revision003: every column to local roof; any owner-selected level south-row exception is recorded explicitly."
+    },
+    "ColW2X": {
+      "value": -32,
+      "note": "Resolved revision002; original register retained as source"
+    },
+    "ColW2Y": {
+      "value": 69.75,
+      "note": "S1/S2 on TSO; N1 aliases consolidated U-W"
+    },
+    "ColW2Top": {
+      "value": "MainRoofSouthZ+(ColW2Y-MainRoofSouthY)*tan(30 deg)",
+      "note": "Revision003: every column to local roof; any owner-selected level south-row exception is recorded explicitly."
+    },
+    "ColW3X": {
+      "value": -32,
+      "note": "Resolved revision002; original register retained as source"
+    },
+    "ColW3Y": {
+      "value": 185,
+      "note": "S1/S2 on TSO; N1 aliases consolidated U-W"
+    },
+    "ColW3Top": {
+      "value": "CapEaveZ+CapRise*max(0; min(1; min(((ColW3X)-CapWest)/CapHalfDepth; min((CapEast-(ColW3X))/CapHalfDepth; min(((ColW3Y)-CapSouth)/CapHalfDepth; (CapNorth-(ColW3Y))/CapHalfDepth)))))",
+      "note": "Revision003: every column to local roof; any owner-selected level south-row exception is recorded explicitly."
+    },
+    "ColW4X": {
+      "value": -32,
+      "note": "Resolved revision002; original register retained as source"
+    },
+    "ColW4Y": {
+      "value": 253,
+      "note": "S1/S2 on TSO; N1 aliases consolidated U-W"
+    },
+    "ColW4Top": {
+      "value": "CapEaveZ+CapRise*max(0; min(1; min(((ColW4X)-CapWest)/CapHalfDepth; min((CapEast-(ColW4X))/CapHalfDepth; min(((ColW4Y)-CapSouth)/CapHalfDepth; (CapNorth-(ColW4Y))/CapHalfDepth)))))",
+      "note": "Revision003: every column to local roof; any owner-selected level south-row exception is recorded explicitly."
+    },
+    "ColS1X": {
+      "value": 148.5,
+      "note": "Resolved revision002; original register retained as source"
+    },
+    "ColS1Y": {
+      "value": -63,
+      "note": "S1/S2 on TSO; N1 aliases consolidated U-W"
+    },
+    "ColS1Top": {
+      "value": "MainRoofSouthZ+(ColS1Y-MainRoofSouthY)*tan(30 deg)",
+      "note": "Revision003: every column to local roof; any owner-selected level south-row exception is recorded explicitly."
+    },
+    "ColS2X": {
+      "value": 224.25,
+      "note": "Resolved revision002; original register retained as source"
+    },
+    "ColS2Y": {
+      "value": -63,
+      "note": "S1/S2 on TSO; N1 aliases consolidated U-W"
+    },
+    "ColS2Top": {
+      "value": "MainRoofSouthZ+(ColS2Y-MainRoofSouthY)*tan(30 deg)",
+      "note": "Revision003: every column to local roof; any owner-selected level south-row exception is recorded explicitly."
+    },
+    "ColN1X": {
+      "value": 53.25,
+      "note": "Resolved revision002; original register retained as source"
+    },
+    "ColN1Y": {
+      "value": 252.5,
+      "note": "S1/S2 on TSO; N1 aliases consolidated U-W"
+    },
+    "ColN1Top": {
+      "value": "CapEaveZ+CapRise*max(0; min(1; min(((ColN1X)-CapWest)/CapHalfDepth; min((CapEast-(ColN1X))/CapHalfDepth; min(((ColN1Y)-CapSouth)/CapHalfDepth; (CapNorth-(ColN1Y))/CapHalfDepth)))))",
+      "note": "Revision003: every column to local roof; any owner-selected level south-row exception is recorded explicitly."
+    },
+    "ColN2X": {
+      "value": 224.25,
+      "note": "Resolved revision002; original register retained as source"
+    },
+    "ColN2Y": {
+      "value": 253,
+      "note": "S1/S2 on TSO; N1 aliases consolidated U-W"
+    },
+    "ColN2Top": {
+      "value": "CapEaveZ+CapRise*max(0; min(1; min(((ColN2X)-CapWest)/CapHalfDepth; min((CapEast-(ColN2X))/CapHalfDepth; min(((ColN2Y)-CapSouth)/CapHalfDepth; (CapNorth-(ColN2Y))/CapHalfDepth)))))",
+      "note": "Revision003: every column to local roof; any owner-selected level south-row exception is recorded explicitly."
+    },
+    "ColS3X": {
+      "value": 224.25,
+      "note": "Resolved revision002; original register retained as source"
+    },
+    "ColS3Y": {
+      "value": 0,
+      "note": "S1/S2 on TSO; N1 aliases consolidated U-W"
+    },
+    "ColS3Top": {
+      "value": "MainRoofSouthZ+(ColS3Y-MainRoofSouthY)*tan(30 deg)",
+      "note": "Revision003: every column to local roof; any owner-selected level south-row exception is recorded explicitly."
+    },
+    "ColSW0X": {
+      "value": -32,
+      "note": "Resolved revision002; original register retained as source"
+    },
+    "ColSW0Y": {
+      "value": -63,
+      "note": "S1/S2 on TSO; N1 aliases consolidated U-W"
+    },
+    "ColSW0Top": {
+      "value": "MainRoofSouthZ+(ColSW0Y-MainRoofSouthY)*tan(30 deg)",
+      "note": "Revision003: every column to local roof; any owner-selected level south-row exception is recorded explicitly."
+    },
+    "TSOStart": {
+      "value": -32,
+      "note": ""
+    },
+    "TSOEnd": {
+      "value": 249.5,
+      "note": ""
+    },
+    "TSOStation": {
+      "value": -63,
+      "note": ""
+    },
+    "TSOBottom": {
+      "value": "FloorBottom",
+      "note": "South outer BEAM supported directly by revised S1/S2 at y-63; mnemonic retained."
+    },
+    "TSStart": {
+      "value": -32,
+      "note": ""
+    },
+    "TSEnd": {
+      "value": 224.25,
+      "note": ""
+    },
+    "TSStation": {
+      "value": 0,
+      "note": ""
+    },
+    "TSBottom": {
+      "value": "FloorBottom",
+      "note": "Revision002 underside112; spans TW to TE without east overshoot."
+    },
+    "TWStart": {
+      "value": -63,
+      "note": ""
+    },
+    "TWEnd": {
+      "value": 253,
+      "note": ""
+    },
+    "TWStation": {
+      "value": -32,
+      "note": ""
+    },
+    "TWBottom": {
+      "value": "FloorBottom",
+      "note": "Latest x=-32. STRAIGHT HORIZONTAL underside112 throughout y-63..253; no bend. B-WO shares the one chord."
+    },
+    "TEStart": {
+      "value": -63,
+      "note": ""
+    },
+    "TEEnd": {
+      "value": 253,
+      "note": ""
+    },
+    "TEStation": {
+      "value": 224.25,
+      "note": ""
+    },
+    "TEBottom": {
+      "value": "FloorBottom",
+      "note": "STRAIGHT HORIZONTAL underside112 throughout y-63..253; joins raised TSO directly. No transitions."
+    },
+    "TNStart": {
+      "value": -32,
+      "note": ""
+    },
+    "TNEnd": {
+      "value": 249.5,
+      "note": ""
+    },
+    "TNStation": {
+      "value": 249,
+      "note": ""
+    },
+    "TNBottom": {
+      "value": "FloorBottom",
+      "note": "TN retained y249; actual overlap/contact with W4 and outside north posts is checked."
+    },
+    "T1UpperStart": {
+      "value": -32,
+      "note": ""
+    },
+    "T1UpperEnd": {
+      "value": 224.25,
+      "note": ""
+    },
+    "T1UpperStation": {
+      "value": 69.75,
+      "note": ""
+    },
+    "T1FutureStart": {
+      "value": -32,
+      "note": ""
+    },
+    "T1FutureEnd": {
+      "value": 224.25,
+      "note": ""
+    },
+    "T1FutureStation": {
+      "value": 69.75,
+      "note": ""
+    },
+    "T1FutureBottom": {
+      "value": "FloorBottom",
+      "note": "Suspended W-like floor beam; cannot install until old roof removed."
+    },
+    "B2FutureStart": {
+      "value": -32,
+      "note": ""
+    },
+    "B2FutureEnd": {
+      "value": 224.25,
+      "note": ""
+    },
+    "B2FutureStation": {
+      "value": 185,
+      "note": ""
+    },
+    "B2FutureBottom": {
+      "value": "FloorBottom",
+      "note": "B2 remains y185. Extends directly to latest TW x=-32; O3 transfer superseded."
+    },
+    "UWX": {
+      "value": 50.25,
+      "note": "Revision002: upper row outside north stucco; N1/U-W consolidated"
+    },
+    "UWY": {
+      "value": 249.5,
+      "note": "249.5 upper row; optional outer row265, hidden"
+    },
+    "UWTop": {
+      "value": "CapEaveZ+CapRise*max(0; min(1; min(((UWX+ConceptPostWidth/2)-CapWest)/CapHalfDepth; min((CapEast-(UWX+ConceptPostWidth/2))/CapHalfDepth; min(((UWY+ConceptPostWidth/2)-CapSouth)/CapHalfDepth; (CapNorth-(UWY+ConceptPostWidth/2))/CapHalfDepth)))))",
+      "note": "Hip surface at post center, flat top schematic"
+    },
+    "UEX": {
+      "value": 152.25,
+      "note": "Revision002: upper row outside north stucco; N1/U-W consolidated"
+    },
+    "UEY": {
+      "value": 249.5,
+      "note": "249.5 upper row; optional outer row265, hidden"
+    },
+    "UETop": {
+      "value": "CapEaveZ+CapRise*max(0; min(1; min(((UEX+ConceptPostWidth/2)-CapWest)/CapHalfDepth; min((CapEast-(UEX+ConceptPostWidth/2))/CapHalfDepth; min(((UEY+ConceptPostWidth/2)-CapSouth)/CapHalfDepth; (CapNorth-(UEY+ConceptPostWidth/2))/CapHalfDepth)))))",
+      "note": "Hip surface at post center, flat top schematic"
+    },
+    "NEWX": {
+      "value": 50.25,
+      "note": "Revision002: upper row outside north stucco; N1/U-W consolidated"
+    },
+    "NEWY": {
+      "value": 265,
+      "note": "249.5 upper row; optional outer row265, hidden"
+    },
+    "NEWTop": {
+      "value": "CapEaveZ+CapRise*max(0; min(1; min(((NEWX+ConceptPostWidth/2)-CapWest)/CapHalfDepth; min((CapEast-(NEWX+ConceptPostWidth/2))/CapHalfDepth; min(((NEWY+ConceptPostWidth/2)-CapSouth)/CapHalfDepth; (CapNorth-(NEWY+ConceptPostWidth/2))/CapHalfDepth)))))",
+      "note": "Hip surface at post center, flat top schematic"
+    },
+    "NEEX": {
+      "value": 152.25,
+      "note": "Revision002: upper row outside north stucco; N1/U-W consolidated"
+    },
+    "NEEY": {
+      "value": 265,
+      "note": "249.5 upper row; optional outer row265, hidden"
+    },
+    "NEETop": {
+      "value": "CapEaveZ+CapRise*max(0; min(1; min(((NEEX+ConceptPostWidth/2)-CapWest)/CapHalfDepth; min((CapEast-(NEEX+ConceptPostWidth/2))/CapHalfDepth; min(((NEEY+ConceptPostWidth/2)-CapSouth)/CapHalfDepth; (CapNorth-(NEEY+ConceptPostWidth/2))/CapHalfDepth)))))",
+      "note": "Hip surface at post center, flat top schematic"
+    }
+  },
+  "section_status": "All proposed dimensions are visualization placeholders, not approved member or footing sizes.",
+  "main_roof_slope_degrees": 30,
+  "main_roof_south_height": 120,
+  "main_roof_west": -32,
+  "main_roof_break_y": 122.7624491117621,
+  "cap": {
+    "perimeter_x": [
+      -40,
+      257.5
+    ],
+    "perimeter_y": [
+      114.7624491117621,
+      271
+    ],
+    "eave_z": 227.25,
+    "ridge_z": 245.25,
+    "ridge_start": [
+      38.11877544411895,
+      192.88122455588103,
+      245.25
+    ],
+    "ridge_end": [
+      179.38122455588103,
+      192.88122455588103,
+      245.25
+    ]
+  },
+  "north_extension": {
+    "outer_edge_y": 271,
+    "extension_from_existing_north": 22,
+    "upper_jamb_boxes": [
+      [
+        50.25,
+        56.25,
+        249.5,
+        255.5
+      ],
+      [
+        152.25,
+        158.25,
+        246,
+        252
+      ]
+    ],
+    "outer_jamb_boxes": [],
+    "post_tops": "local hip formula at each center; see roof_column_checks",
+    "outer_row_default_visible": false,
+    "N1_UW_consolidated": true,
+    "east_jamb_bottom": 120
+  },
+  "south_transitions_removed": true,
+  "horizontal_chords": {
+    "y_extent": [
+      -63,
+      253
+    ],
+    "lower_edge_start_and_end": 112,
+    "upper_edge_start_and_end": 118
+  },
+  "south_column_height_mode": "follow_roof",
+  "TSO": {
+    "underside": 112,
+    "top": 120
+  },
+  "TS": {
+    "x_extent": [
+      -32,
+      224.25
+    ],
+    "y": 0,
+    "underside": 112
+  },
+  "roof_column_checks": [
+    {
+      "object": "ProposedColumnW4",
+      "center_inches": [
+        -32.0,
+        253.0
+      ],
+      "top_inches": 229.09334686739948,
+      "hip_surface_inches": 229.09334686739948
+    },
+    {
+      "object": "ProposedColumnN2",
+      "center_inches": [
+        224.25,
+        253.0
+      ],
+      "top_inches": 231.3975304516488,
+      "hip_surface_inches": 231.39753045164883
+    },
+    {
+      "object": "ProposedNorthPostUW",
+      "center_inches": [
+        53.25,
+        252.49999999999997
+      ],
+      "top_inches": 231.51273963086132,
+      "hip_surface_inches": 231.5127396308613
+    },
+    {
+      "object": "ProposedNorthPostUE",
+      "center_inches": [
+        155.25,
+        252.49999999999997
+      ],
+      "top_inches": 231.51273963086132,
+      "hip_surface_inches": 231.5127396308613
+    },
+    {
+      "object": "ProposedNorthPostNEW",
+      "center_inches": [
+        53.25,
+        268.0
+      ],
+      "top_inches": 227.9412550752748,
+      "hip_surface_inches": 227.9412550752748
+    },
+    {
+      "object": "ProposedNorthPostNEE",
+      "center_inches": [
+        155.25,
+        268.0
+      ],
+      "top_inches": 227.9412550752748,
+      "hip_surface_inches": 227.9412550752748
+    },
+    {
+      "object": "ProposedColumnW1",
+      "center_inches": [
+        -32,
+        0
+      ],
+      "top_inches": 156.37306695894642,
+      "roof_or_confirmed_level_top_inches": 156.37306695894642
+    },
+    {
+      "object": "ProposedColumnW2",
+      "center_inches": [
+        -32,
+        69.75
+      ],
+      "top_inches": 196.64324823492282,
+      "roof_or_confirmed_level_top_inches": 196.64324823492282
+    },
+    {
+      "object": "ProposedColumnW3",
+      "center_inches": [
+        -32,
+        185
+      ],
+      "top_inches": 229.09334686739948,
+      "roof_or_confirmed_level_top_inches": 229.09334686739948
+    },
+    {
+      "object": "ProposedColumnS1",
+      "center_inches": [
+        148.5,
+        -63
+      ],
+      "top_inches": 120.0,
+      "roof_or_confirmed_level_top_inches": 120.0
+    },
+    {
+      "object": "ProposedColumnS2",
+      "center_inches": [
+        224.25,
+        -63
+      ],
+      "top_inches": 120.0,
+      "roof_or_confirmed_level_top_inches": 120.0
+    },
+    {
+      "object": "ProposedColumnS3",
+      "center_inches": [
+        224.25,
+        0
+      ],
+      "top_inches": 156.37306695894642,
+      "roof_or_confirmed_level_top_inches": 156.37306695894642
+    },
+    {
+      "object": "ProposedColumnSW0",
+      "center_inches": [
+        -32,
+        -63
+      ],
+      "top_inches": 120.0,
+      "roof_or_confirmed_level_top_inches": 120.0
+    }
+  ],
+  "connection_checks": [
+    {
+      "a": "FrameTSWeb1",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb1",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb2",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb2",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb3",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb3",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb4",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb4",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb5",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb5",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb6",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb6",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb7",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb7",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb8",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb8",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb9",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb9",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb10",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb10",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb11",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb11",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb12",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb12",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb13",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb13",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web1",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web1",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web2",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web2",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web3",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web3",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web4",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web4",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web5",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web5",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web6",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web6",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web7",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web7",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web8",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web8",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web9",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web9",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb1",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb1",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb2",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb2",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb3",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb3",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb4",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb4",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb5",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb5",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb6",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb6",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb7",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb7",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb8",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb8",
+      "b": "TopChordTW",
+      "distance_mm": 2.2737367544323206e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb9",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb9",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb10",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb10",
+      "b": "TopChordTW",
+      "distance_mm": 4.547473508864641e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb11",
+      "b": "TWBalconyHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb11",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb12",
+      "b": "TWBalconyHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb12",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb13",
+      "b": "TWBalconyHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb13",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb14",
+      "b": "TWBalconyHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb14",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb15",
+      "b": "TWBalconyHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb15",
+      "b": "TopChordTW",
+      "distance_mm": 9.094947017729282e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb16",
+      "b": "TWBalconyHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb16",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb1",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb1",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb2",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb2",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb3",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb3",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb4",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb4",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb5",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb5",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb6",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb6",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb7",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb7",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb8",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb8",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb9",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb9",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb10",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb10",
+      "b": "TopChordTE",
+      "distance_mm": 2.2737367544323206e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb11",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb11",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb12",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb12",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb13",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb13",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "TNUpperEastJamb",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "TNLoadingHeader",
+      "b": "ProposedNorthPostUW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "TNLoadingHeader",
+      "b": "TNUpperEastJamb",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb1",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb1",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb2",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb2",
+      "b": "TopChordTN",
+      "distance_mm": 9.237055564881302e-14,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb3",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb3",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb4",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb4",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb5",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb5",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb6",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb6",
+      "b": "TopChordTN",
+      "distance_mm": 2.2737367544323206e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb7",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb7",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb8",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb8",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb9",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb9",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb10",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb10",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb11",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb11",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb12",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb12",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb13",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb13",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb14",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb14",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb15",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb15",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb16",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb16",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb17",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb17",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb18",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb18",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger1",
+      "b": "ProposedT1Future",
+      "distance_mm": 4.547473508864641e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger1",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger2",
+      "b": "ProposedT1Future",
+      "distance_mm": 4.547473508864641e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger2",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger3",
+      "b": "ProposedT1Future",
+      "distance_mm": 4.547473508864641e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger3",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger4",
+      "b": "ProposedT1Future",
+      "distance_mm": 4.547473508864641e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger4",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger5",
+      "b": "ProposedT1Future",
+      "distance_mm": 4.547473508864641e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger5",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "CONCEPT_ONLY",
+      "note": "Native geometric correction model. No strength analysis or stability certification was run. All sections remain placeholders."
+    },
+    {
+      "id": "RECTANGULAR_BAYS",
+      "note": "TS and T1 diagonals triangulate all panels; longitudinal members include verticals and selected diagonals with rectangular bays. Those bays are NOT represented as stable pin-jointed trusses; frame action and all connections are unresolved."
+    },
+    {
+      "id": "ROOF_SEAM",
+      "note": "Unchanged roof reference has a small height step at main/cap break y122.7624491117621. Top-chord native roof-plane patches preserve that step and overlap vertically at the seam. Fabricated transition/joint detail unresolved."
+    },
+    {
+      "id": "TOP_DEPTH",
+      "note": "Top chords use 6-inch VERTICAL depth (not normal-to-slope section depth), full width6. Exact roof faces maintained; visual sections unverified."
+    },
+    {
+      "id": "OPENINGS",
+      "note": "TN clear x56.25..152.25 z120..204. TW historic approximate opening y186..246 z120..204 retained. No new solids inside either clear volume."
+    },
+    {
+      "id": "WEST_JAMB",
+      "note": "Consolidated N1/U-W retained unchanged and used as TN west jamb; it overlaps TN across 2.5 inches in y. No second west jamb. East upper jamb begins120, two inches above chord top118 per requested opening-floor reference."
+    },
+    {
+      "id": "FUTURE_STAGE",
+      "note": "T1 future beam, B2 and five hangers visible amber but remain after-existing-roof-removal stage. Exact existing collisions reported."
+    },
+    {
+      "id": "CONNECTIONS",
+      "note": "Webs embed schematically into chord/header solids to guarantee geometric joins. No gussets, bolts, welds, joint stiffness or fabrication details designed."
+    }
+  ],
+  "source_hashes": {
+    "/proj/garage/reference-layout/north-extension-basis.json": "03dc91d1dc8432904c09edaa0a049196eb21e4e6a5bbd6154085df3d47cc30f1",
+    "/proj/garage/reference-layout/te-raised-basis.json": "d4834ace05bac7717dafc4c286c01c9627883bf455cdd26166900f0c18579f45",
+    "/proj/garage/reference-layout/t1-staged-basis.json": "c1061cac0e15cdab3588a2e88fef729fcedb811859911ae599bea99425d14b62",
+    "/proj/garage/reference-layout/original-framing-register.json": "4409fbb7d0a9bc50298da76a5a67e2bac26e0749b5c67d134cc5bf56925d90b7",
+    "reference-layout/old-truss-geometry.py": "809b075d90cf3a7dc3dd1f49e225e5494cfc9ebd54b5ace91e55619bc8e0b538"
+  },
+  "source_warning": "Older source clearance values used point-roof approximations; not adopted.",
+  "geometry_omissions": [
+    "Secondary purlins / roof joists",
+    "Roof cladding",
+    "Connections",
+    "Foundations",
+    "Crane and door solids"
+  ],
+  "line_mesh_schema": "lines is a list of polylines, each containing global [x,y,z] points in mm. Hidden references remain in FCStd but are omitted from visible meshes.",
+  "trusses": {
+    "TS": {
+      "top_surface_patches": [
+        {
+          "zone": "main",
+          "plane_z_ax_by_c": [
+            0,
+            0.5773502691896257,
+            156.37306695894642
+          ],
+          "plan_vertices_inches": [
+            [
+              -32,
+              -3
+            ],
+            [
+              224.25,
+              -3
+            ],
+            [
+              224.25,
+              3
+            ],
+            [
+              -32,
+              3
+            ]
+          ]
+        }
+      ],
+      "bottom_object": "ProposedTS",
+      "axis": "x",
+      "fixed_coordinate_inches": 0,
+      "span_inches": [
+        -32,
+        224.25
+      ],
+      "panel_stations_inches": [
+        -32.0,
+        10.708333333333336,
+        53.41666666666667,
+        96.125,
+        138.83333333333334,
+        181.54166666666666,
+        224.25
+      ]
+    },
+    "T1": {
+      "top_surface_patches": [
+        {
+          "zone": "main",
+          "plane_z_ax_by_c": [
+            0,
+            0.5773502691896257,
+            156.37306695894642
+          ],
+          "plan_vertices_inches": [
+            [
+              -32,
+              66.75
+            ],
+            [
+              224.25,
+              66.75
+            ],
+            [
+              224.25,
+              72.75
+            ],
+            [
+              -32,
+              72.75
+            ]
+          ]
+        }
+      ],
+      "bottom_object": "ProposedT1Upper",
+      "axis": "x",
+      "fixed_coordinate_inches": 69.75,
+      "span_inches": [
+        -32,
+        224.25
+      ],
+      "panel_stations_inches": [
+        -32.0,
+        32.0625,
+        96.125,
+        160.1875,
+        224.25
+      ]
+    },
+    "TW": {
+      "top_surface_patches": [
+        {
+          "zone": "main",
+          "plane_z_ax_by_c": [
+            0,
+            0.5773502691896257,
+            156.37306695894642
+          ],
+          "plan_vertices_inches": [
+            [
+              -35,
+              -63
+            ],
+            [
+              -29,
+              -63
+            ],
+            [
+              -29,
+              122.7624491117621
+            ],
+            [
+              -35,
+              122.7624491117621
+            ]
+          ]
+        },
+        {
+          "zone": "cap",
+          "plane_z_ax_by_c": [
+            0.23041835842493485,
+            0,
+            236.4667343369974
+          ],
+          "plan_vertices_inches": [
+            [
+              -35,
+              122.7624491117621
+            ],
+            [
+              -32.00000000000011,
+              122.7624491117621
+            ],
+            [
+              -29.0,
+              125.76244911176221
+            ],
+            [
+              -29,
+              253
+            ],
+            [
+              -35,
+              253
+            ]
+          ]
+        },
+        {
+          "zone": "cap",
+          "plane_z_ax_by_c": [
+            0,
+            0.23041835842493485,
+            200.80662486684264
+          ],
+          "plan_vertices_inches": [
+            [
+              -32.00000000000011,
+              122.7624491117621
+            ],
+            [
+              -29,
+              122.7624491117621
+            ],
+            [
+              -29.0,
+              125.76244911176221
+            ]
+          ]
+        }
+      ],
+      "bottom_object": "ProposedTW",
+      "axis": "y",
+      "fixed_coordinate_inches": -32,
+      "span_inches": [
+        -63,
+        253
+      ],
+      "roof_and_panel_stations_inches": [
+        -63,
+        0,
+        69.75,
+        122.7624491117621,
+        185,
+        192.88122455588103,
+        253,
+        263
+      ],
+      "web_stations_inches": [
+        -62,
+        -21,
+        0,
+        69.75,
+        122.7624491117621,
+        185,
+        247,
+        252
+      ],
+      "opening": {
+        "y": [
+          186,
+          246
+        ],
+        "z": [
+          120,
+          204
+        ],
+        "status": "approximate historic balcony opening"
+      },
+      "header_object": "TWBalconyHeader"
+    },
+    "TE": {
+      "top_surface_patches": [
+        {
+          "zone": "main",
+          "plane_z_ax_by_c": [
+            0,
+            0.5773502691896257,
+            156.37306695894642
+          ],
+          "plan_vertices_inches": [
+            [
+              221.25,
+              -63
+            ],
+            [
+              227.25,
+              -63
+            ],
+            [
+              227.25,
+              122.7624491117621
+            ],
+            [
+              221.25,
+              122.7624491117621
+            ]
+          ]
+        },
+        {
+          "zone": "cap",
+          "plane_z_ax_by_c": [
+            -0.23041835842493485,
+            0,
+            286.58272729442075
+          ],
+          "plan_vertices_inches": [
+            [
+              227.25,
+              145.01244911176227
+            ],
+            [
+              227.25,
+              240.74999999999994
+            ],
+            [
+              221.25,
+              234.74999999999997
+            ],
+            [
+              221.25,
+              151.01244911176227
+            ]
+          ]
+        },
+        {
+          "zone": "cap",
+          "plane_z_ax_by_c": [
+            0,
+            0.23041835842493485,
+            200.80662486684264
+          ],
+          "plan_vertices_inches": [
+            [
+              221.25,
+              122.7624491117621
+            ],
+            [
+              227.25,
+              122.7624491117621
+            ],
+            [
+              227.25,
+              145.01244911176227
+            ],
+            [
+              221.25,
+              151.01244911176227
+            ]
+          ]
+        },
+        {
+          "zone": "cap",
+          "plane_z_ax_by_c": [
+            0,
+            -0.23041835842493485,
+            289.69337513315736
+          ],
+          "plan_vertices_inches": [
+            [
+              227.25,
+              240.74999999999994
+            ],
+            [
+              227.25,
+              253
+            ],
+            [
+              221.25,
+              253
+            ],
+            [
+              221.25,
+              234.74999999999997
+            ]
+          ]
+        }
+      ],
+      "bottom_object": "ProposedTE",
+      "axis": "y",
+      "fixed_coordinate_inches": 224.25,
+      "span_inches": [
+        -63,
+        253
+      ],
+      "roof_and_panel_stations_inches": [
+        -63,
+        0,
+        69.75,
+        122.7624491117621,
+        148.0124491117621,
+        185,
+        192.88122455588103,
+        237.75,
+        253
+      ],
+      "web_stations_inches": [
+        -62,
+        -21,
+        0,
+        69.75,
+        122.7624491117621,
+        148.0124491117621,
+        185,
+        192.88122455588103,
+        237.75,
+        252
+      ]
+    },
+    "TN": {
+      "top_surface_patches": [
+        {
+          "zone": "cap",
+          "plane_z_ax_by_c": [
+            0.23041835842493485,
+            0,
+            236.4667343369974
+          ],
+          "plan_vertices_inches": [
+            [
+              -32,
+              246
+            ],
+            [
+              -14.999999999999972,
+              246.0
+            ],
+            [
+              -21.000000000000014,
+              252.0
+            ],
+            [
+              -32,
+              252
+            ]
+          ]
+        },
+        {
+          "zone": "cap",
+          "plane_z_ax_by_c": [
+            -0.23041835842493485,
+            0,
+            286.58272729442075
+          ],
+          "plan_vertices_inches": [
+            [
+              232.50000000000003,
+              246.0
+            ],
+            [
+              249.5,
+              246
+            ],
+            [
+              249.5,
+              252
+            ],
+            [
+              238.50000000000006,
+              252.0
+            ]
+          ]
+        },
+        {
+          "zone": "cap",
+          "plane_z_ax_by_c": [
+            0,
+            -0.23041835842493485,
+            289.69337513315736
+          ],
+          "plan_vertices_inches": [
+            [
+              -14.999999999999968,
+              246.0
+            ],
+            [
+              232.50000000000003,
+              246.0
+            ],
+            [
+              238.50000000000006,
+              252.0
+            ],
+            [
+              -21.0,
+              252.0
+            ]
+          ]
+        }
+      ],
+      "bottom_object": "ProposedTN",
+      "axis": "x",
+      "fixed_coordinate_inches": 249,
+      "span_inches": [
+        -32,
+        249.5
+      ],
+      "opening": {
+        "x": [
+          56.25,
+          152.25
+        ],
+        "z": [
+          120,
+          204
+        ]
+      },
+      "west_jamb_reused": "ProposedNorthPostUW",
+      "east_jamb": "TNUpperEastJamb",
+      "header_object": "TNLoadingHeader",
+      "header_band_nodes_inches": [
+        57.25,
+        80.25,
+        104.25,
+        128.25,
+        151.25
+      ]
+    }
+  },
+  "visible_future_members": true,
+  "removed_ground_posts": [
+    "U-E",
+    "NE-W",
+    "NE-E"
+  ],
+  "old_layout_usage": "Read only for vertical/end-diagonal pattern inspiration; not executed and old elevations not adopted.",
+  "renovated_loft": {
+    "units": "inches",
+    "deck": {
+      "x": [
+        0,
+        224.25
+      ],
+      "y": [
+        72,
+        249
+      ],
+      "z": [
+        120,
+        120.75
+      ],
+      "transparency_percent": 60,
+      "object": "RenovatedDeck",
+      "area_square_feet": 275.640625,
+      "finished_floor_elevation_inches": 120.75
+    },
+    "joists": [
+      {
+        "id": "RenovatedJoistB1J01",
+        "object": "RenovatedJoistB1J01",
+        "bay": 1,
+        "a": [
+          0.75,
+          72.75,
+          116.375
+        ],
+        "b": [
+          0.75,
+          182,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedT1Future",
+          "ProposedB2Future"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB1J02",
+        "object": "RenovatedJoistB1J02",
+        "bay": 1,
+        "a": [
+          16.75,
+          72.75,
+          116.375
+        ],
+        "b": [
+          16.75,
+          182,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedT1Future",
+          "ProposedB2Future"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB1J03",
+        "object": "RenovatedJoistB1J03",
+        "bay": 1,
+        "a": [
+          32.75,
+          72.75,
+          116.375
+        ],
+        "b": [
+          32.75,
+          182,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedT1Future",
+          "ProposedB2Future"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB1J04",
+        "object": "RenovatedJoistB1J04",
+        "bay": 1,
+        "a": [
+          48.75,
+          72.75,
+          116.375
+        ],
+        "b": [
+          48.75,
+          182,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedT1Future",
+          "ProposedB2Future"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB1J05",
+        "object": "RenovatedJoistB1J05",
+        "bay": 1,
+        "a": [
+          64.75,
+          72.75,
+          116.375
+        ],
+        "b": [
+          64.75,
+          182,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedT1Future",
+          "ProposedB2Future"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB1J06",
+        "object": "RenovatedJoistB1J06",
+        "bay": 1,
+        "a": [
+          80.75,
+          72.75,
+          116.375
+        ],
+        "b": [
+          80.75,
+          182,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedT1Future",
+          "ProposedB2Future"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB1J07",
+        "object": "RenovatedJoistB1J07",
+        "bay": 1,
+        "a": [
+          96.75,
+          72.75,
+          116.375
+        ],
+        "b": [
+          96.75,
+          182,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedT1Future",
+          "ProposedB2Future"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB1J08",
+        "object": "RenovatedJoistB1J08",
+        "bay": 1,
+        "a": [
+          112.75,
+          72.75,
+          116.375
+        ],
+        "b": [
+          112.75,
+          182,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedT1Future",
+          "ProposedB2Future"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB1J09",
+        "object": "RenovatedJoistB1J09",
+        "bay": 1,
+        "a": [
+          128.75,
+          72.75,
+          116.375
+        ],
+        "b": [
+          128.75,
+          182,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedT1Future",
+          "ProposedB2Future"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB1J10",
+        "object": "RenovatedJoistB1J10",
+        "bay": 1,
+        "a": [
+          144.75,
+          72.75,
+          116.375
+        ],
+        "b": [
+          144.75,
+          182,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedT1Future",
+          "ProposedB2Future"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB1J11",
+        "object": "RenovatedJoistB1J11",
+        "bay": 1,
+        "a": [
+          160.75,
+          72.75,
+          116.375
+        ],
+        "b": [
+          160.75,
+          182,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedT1Future",
+          "ProposedB2Future"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB1J12",
+        "object": "RenovatedJoistB1J12",
+        "bay": 1,
+        "a": [
+          176.75,
+          72.75,
+          116.375
+        ],
+        "b": [
+          176.75,
+          182,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedT1Future",
+          "ProposedB2Future"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB1J13",
+        "object": "RenovatedJoistB1J13",
+        "bay": 1,
+        "a": [
+          192.75,
+          72.75,
+          116.375
+        ],
+        "b": [
+          192.75,
+          182,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedT1Future",
+          "ProposedB2Future"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB1J14",
+        "object": "RenovatedJoistB1J14",
+        "bay": 1,
+        "a": [
+          208.75,
+          72.75,
+          116.375
+        ],
+        "b": [
+          208.75,
+          182,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedT1Future",
+          "ProposedB2Future"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB1J15",
+        "object": "RenovatedJoistB1J15",
+        "bay": 1,
+        "a": [
+          220.5,
+          72.75,
+          116.375
+        ],
+        "b": [
+          220.5,
+          182,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedT1Future",
+          "ProposedB2Future"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB2J01",
+        "object": "RenovatedJoistB2J01",
+        "bay": 2,
+        "a": [
+          0.75,
+          188,
+          116.375
+        ],
+        "b": [
+          0.75,
+          246,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedB2Future",
+          "ProposedTN"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB2J02",
+        "object": "RenovatedJoistB2J02",
+        "bay": 2,
+        "a": [
+          16.75,
+          188,
+          116.375
+        ],
+        "b": [
+          16.75,
+          246,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedB2Future",
+          "ProposedTN"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB2J03",
+        "object": "RenovatedJoistB2J03",
+        "bay": 2,
+        "a": [
+          32.75,
+          188,
+          116.375
+        ],
+        "b": [
+          32.75,
+          246,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedB2Future",
+          "ProposedTN"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB2J04",
+        "object": "RenovatedJoistB2J04",
+        "bay": 2,
+        "a": [
+          48.75,
+          188,
+          116.375
+        ],
+        "b": [
+          48.75,
+          246,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedB2Future",
+          "ProposedTN"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB2J05",
+        "object": "RenovatedJoistB2J05",
+        "bay": 2,
+        "a": [
+          64.75,
+          188,
+          116.375
+        ],
+        "b": [
+          64.75,
+          246,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedB2Future",
+          "ProposedTN"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB2J06",
+        "object": "RenovatedJoistB2J06",
+        "bay": 2,
+        "a": [
+          80.75,
+          188,
+          116.375
+        ],
+        "b": [
+          80.75,
+          246,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedB2Future",
+          "ProposedTN"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB2J07",
+        "object": "RenovatedJoistB2J07",
+        "bay": 2,
+        "a": [
+          96.75,
+          188,
+          116.375
+        ],
+        "b": [
+          96.75,
+          246,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedB2Future",
+          "ProposedTN"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB2J08",
+        "object": "RenovatedJoistB2J08",
+        "bay": 2,
+        "a": [
+          112.75,
+          188,
+          116.375
+        ],
+        "b": [
+          112.75,
+          246,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedB2Future",
+          "ProposedTN"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB2J09",
+        "object": "RenovatedJoistB2J09",
+        "bay": 2,
+        "a": [
+          128.75,
+          188,
+          116.375
+        ],
+        "b": [
+          128.75,
+          246,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedB2Future",
+          "ProposedTN"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB2J10",
+        "object": "RenovatedJoistB2J10",
+        "bay": 2,
+        "a": [
+          144.75,
+          188,
+          116.375
+        ],
+        "b": [
+          144.75,
+          246,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedB2Future",
+          "ProposedTN"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB2J11",
+        "object": "RenovatedJoistB2J11",
+        "bay": 2,
+        "a": [
+          160.75,
+          188,
+          116.375
+        ],
+        "b": [
+          160.75,
+          246,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedB2Future",
+          "ProposedTN"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB2J12",
+        "object": "RenovatedJoistB2J12",
+        "bay": 2,
+        "a": [
+          176.75,
+          188,
+          116.375
+        ],
+        "b": [
+          176.75,
+          246,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedB2Future",
+          "ProposedTN"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB2J13",
+        "object": "RenovatedJoistB2J13",
+        "bay": 2,
+        "a": [
+          192.75,
+          188,
+          116.375
+        ],
+        "b": [
+          192.75,
+          246,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedB2Future",
+          "ProposedTN"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB2J14",
+        "object": "RenovatedJoistB2J14",
+        "bay": 2,
+        "a": [
+          208.75,
+          188,
+          116.375
+        ],
+        "b": [
+          208.75,
+          246,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedB2Future",
+          "ProposedTN"
+        ]
+      },
+      {
+        "id": "RenovatedJoistB2J15",
+        "object": "RenovatedJoistB2J15",
+        "bay": 2,
+        "a": [
+          220.5,
+          188,
+          116.375
+        ],
+        "b": [
+          220.5,
+          246,
+          116.375
+        ],
+        "section_family": "wood_joist",
+        "actual_section_inches": [
+          1.5,
+          7.25
+        ],
+        "nominal_section": "2x8",
+        "top_z_inches": 120,
+        "stage": "future_after_existing_roof_removal",
+        "end_connection": "Ends flush to steel beam faces; hanger/bearing detail unresolved; no invented bearing.",
+        "support_objects": [
+          "ProposedB2Future",
+          "ProposedTN"
+        ]
+      }
+    ],
+    "joist_centers_x_inches": [
+      0.75,
+      16.75,
+      32.75,
+      48.75,
+      64.75,
+      80.75,
+      96.75,
+      112.75,
+      128.75,
+      144.75,
+      160.75,
+      176.75,
+      192.75,
+      208.75,
+      220.5
+    ],
+    "spacing_inches": 16,
+    "edge_closure_spacing_inches": 11.75,
+    "bay_y_extents_inches": [
+      [
+        72.75,
+        182
+      ],
+      [
+        188,
+        246
+      ]
+    ],
+    "open_south_depth_inches": 72,
+    "west_walkway_x_inches": [
+      -32,
+      0
+    ],
+    "west_walkway_decked": false,
+    "optional_north_loading_ledge": {
+      "x": [
+        56.25,
+        152.25
+      ],
+      "y": [
+        249,
+        271
+      ],
+      "z": [
+        120,
+        120.75
+      ],
+      "visible": false,
+      "object": "OptionalNorthLedgeDeck",
+      "supports_resolved": false
+    },
+    "notes": [
+      "Deck bottom120, thickness0.75, finished floor120.75. This is0.75 above previous120 reference; unchanged loading header bottom204 gives83.25in finished clear height.",
+      "Specified deck south edge y72 is2.25in north of T1 center y69.75, and0.75in south of joist ends/steel north face y72.75. These exact coordinates are retained; a2.25in free cantilever is not asserted.",
+      "Joist top120, bottom112.75. Bay ends72.75..182 and188..246 meet steel beam faces. Hangers, bearing, notches and fasteners unresolved; none invented.",
+      "Centers begin x0.75 at16in increments; a last closure joist at220.5 ends flush against T-E west face221.25, with11.75in last spacing. Joists run north-south.",
+      "Main deck covers x0..224.25, y72..249. First72in of existing garage remain open. West walkway region x-32..0 remains distinct and is not decked.",
+      "Deck is the requested rectangular0.75in placeholder. Exact intersections with steel webs/jambs are listed as required deck notches in renovated-loft-parameters.json; notches/edge blocking are not detailed. East closure joist ends atx221.25,3in inside deck edge224.25.",
+      "Optional deck x56.25..152.25, y249..271 is hidden. No support members or new columns added.",
+      "Only intended member axes and explicit connection offsets exported. No capacity, joist design, material strength, loads, solver or cost optimization run."
+    ],
+    "loads_or_strength_selected": false,
+    "wood_steel_intersections": [],
+    "deck_required_notches": [
+      {
+        "steel_object": "FrameTEWeb4",
+        "intersection_in3": 1.500000000000036,
+        "status": "Deck notch unresolved; rectangular deck placeholder retained."
+      },
+      {
+        "steel_object": "FrameTEWeb5",
+        "intersection_in3": 1.5000000000000004,
+        "status": "Deck notch unresolved; rectangular deck placeholder retained."
+      },
+      {
+        "steel_object": "FrameTEWeb6",
+        "intersection_in3": 1.5000000000000497,
+        "status": "Deck notch unresolved; rectangular deck placeholder retained."
+      },
+      {
+        "steel_object": "FrameTEWeb7",
+        "intersection_in3": 1.5000000000000497,
+        "status": "Deck notch unresolved; rectangular deck placeholder retained."
+      },
+      {
+        "steel_object": "FrameTEWeb8",
+        "intersection_in3": 1.5000000000000495,
+        "status": "Deck notch unresolved; rectangular deck placeholder retained."
+      },
+      {
+        "steel_object": "FrameTEWeb12",
+        "intersection_in3": 1.7983824205205672,
+        "status": "Deck notch unresolved; rectangular deck placeholder retained."
+      },
+      {
+        "steel_object": "FrameTEWeb13",
+        "intersection_in3": 1.733791376475859,
+        "status": "Deck notch unresolved; rectangular deck placeholder retained."
+      },
+      {
+        "steel_object": "TNUpperEastJamb",
+        "intersection_in3": 13.500000000000044,
+        "status": "Deck notch unresolved; rectangular deck placeholder retained."
+      },
+      {
+        "steel_object": "FrameTNWeb2",
+        "intersection_in3": 0.7500000000000007,
+        "status": "Deck notch unresolved; rectangular deck placeholder retained."
+      },
+      {
+        "steel_object": "FrameTNWeb3",
+        "intersection_in3": 1.4999999999999916,
+        "status": "Deck notch unresolved; rectangular deck placeholder retained."
+      },
+      {
+        "steel_object": "FrameTNWeb4",
+        "intersection_in3": 0.7499999999999877,
+        "status": "Deck notch unresolved; rectangular deck placeholder retained."
+      },
+      {
+        "steel_object": "FrameTNWeb7",
+        "intersection_in3": 1.626858165857574,
+        "status": "Deck notch unresolved; rectangular deck placeholder retained."
+      },
+      {
+        "steel_object": "FrameTNWeb8",
+        "intersection_in3": 1.7206704167662723,
+        "status": "Deck notch unresolved; rectangular deck placeholder retained."
+      }
+    ]
+  },
+  "existing_group_visible": false,
+  "default_mesh_scope": "Visible proposed steel + renovated joists/deck + roof/reference lines; existing excluded."
+}

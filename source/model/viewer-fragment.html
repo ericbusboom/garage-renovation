@@ -1,0 +1,94 @@
+<div id="garage-view">
+  <div class="viz-controls">
+    <label class="form-label">View <select class="form-select" id="garage-camera"><option value="orbit">Perspective</option><option value="top">Plan · south up</option><option value="north">North · garage door</option><option value="south">South · entry</option><option value="east">East</option><option value="west">West · windows</option></select></label>
+    <label class="form-check"><input class="form-check-input" type="checkbox" id="garage-roof" checked><span class="form-check-label">Roof</span></label>
+    <label class="form-check"><input class="form-check-input" type="checkbox" id="garage-proposal"><span class="form-check-label">Proposed structure</span></label>
+    <label class="form-check"><input class="form-check-input" type="checkbox" id="garage-infill" checked><span class="form-check-label">Doors / glazing</span></label>
+  </div>
+  <canvas id="garage-canvas" role="img" aria-label="Rotatable garage model with hip roof and short north–south ridge. Drag to orbit; scroll to zoom."></canvas>
+  <div class="viz-controls">
+    <label class="form-label">Roof rise (in) <input class="form-control" id="garage-rise" type="number" value="60" min="1" max="180" step="0.5"></label>
+    <label class="form-label">Ridge length (in) <input class="form-control" id="garage-ridge" type="number" value="18" min="1" max="240" step="0.5"></label>
+    <button class="btn" id="garage-left" type="button" aria-label="Rotate left">↶ Rotate</button>
+    <button class="btn" id="garage-right" type="button" aria-label="Rotate right">Rotate ↷</button>
+  </div>
+  <div class="text-small" id="garage-status" aria-live="polite">Drag to orbit · scroll to zoom · window sills 4 ft · windows 2 ft high · door heights assumed</div>
+</div>
+<style>
+#garage-view #garage-canvas {width:100%;height:450px;display:block;touch-action:none;cursor:grab}
+#garage-view .viz-controls {display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+#garage-view .form-label {display:flex;gap:8px;align-items:center}
+#garage-view input[type=number] {max-width:88px}
+@media(max-width:480px){#garage-view #garage-canvas{height:350px}}
+</style>
+<script>
+(()=>{
+const data=GARAGE_SCENE_DATA;
+const root=document.getElementById('garage-view'),can=root.querySelector('#garage-canvas'),ctx=can.getContext('2d');
+const get=id=>root.querySelector('#garage-'+id), p=data.parameters;
+let az=2.3,el=.52,zoom=1,mode='orbit',drag=null;
+const color=name=>getComputedStyle(root).getPropertyValue(name).trim();
+function palette(){return {bg:color('--background')||'#f7f7f4',fg:color('--foreground')||'#202b32',edge:color('--border')||'#7b8588',wall:color('--muted')||'#d2d6d5',roof:color('--viz-series-1')||'#647d89',infill:color('--viz-series-2')||'#b48c60',proposal:color('--viz-series-3')||'#b68b50'};}
+function shade(c,k){ctx.fillStyle=c;const normalized=ctx.fillStyle; if(/^#[\da-f]{6}$/i.test(normalized)){const a=[1,3,5].map(i=>Math.round(parseInt(normalized.slice(i,i+2),16)*k));return 'rgb('+a.join(',')+')';}return c;}
+function vertex(v,g){let [x,y,z]=v;if(g==='roof'){const t=(z-p.wall_height)/p.roof_rise;z=p.wall_height+t*Number(get('rise').value);if(t>.99)y=p.length/2+Math.sign(y-p.length/2)*Number(get('ridge').value)/2;}return [x,y,z];}
+function draw(){
+ const bounds=can.getBoundingClientRect(),w=bounds.width,h=bounds.height,dpr=1;
+ if(can.width!==Math.round(w*dpr)||can.height!==Math.round(h*dpr)){can.width=Math.round(w*dpr);can.height=Math.round(h*dpr);}
+ ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,w,h);const col=palette();
+ const proposal=get('proposal').checked,center=[proposal?p.width*.36:p.width/2,p.length/2,65];
+ const scale=Math.min(w/(proposal?620:460),h/410)*zoom;
+ const right=[Math.cos(az),-Math.sin(az),0],up=[Math.sin(az)*Math.sin(el),Math.cos(az)*Math.sin(el),Math.cos(el)],depth=[Math.sin(az)*Math.cos(el),Math.cos(az)*Math.cos(el),-Math.sin(el)];
+ const dot=(a,b)=>a.reduce((s,x,i)=>s+x*b[i],0);
+ function proj(v){const q=v.map((x,i)=>x-center[i]),d=dot(q,depth),pers=mode==='orbit'?1100/(1100+d):1;return [w/2+dot(q,right)*scale*pers,h/2-dot(q,up)*scale*pers,d];}
+ function path(vs){ctx.beginPath();vs.forEach((v,i)=>{const q=proj(v);i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1]);});ctx.closePath();}
+ // Reference grid lies at floor level, spaced every 2 feet.
+ ctx.strokeStyle=col.edge;ctx.globalAlpha=.28;ctx.lineWidth=.6;
+ for(let x=-96;x<=p.width+72;x+=24){path([[x,-48,-1],[x,p.length+48,-1]]);ctx.stroke();}
+ for(let y=-48;y<=p.length+48;y+=24){path([[-96,y,-1],[p.width+72,y,-1]]);ctx.stroke();}ctx.globalAlpha=1;
+ const tris=[];
+ for(const part of data.parts){if(part.group==='roof'&&!get('roof').checked||part.group==='proposal'&&!proposal||part.group==='infill'&&!get('infill').checked)continue;
+  const verts=part.vertices.map(v=>vertex(v,part.group));
+  for(const t of part.triangles){const v=t.map(i=>verts[i]),q=v.map(proj),a=v[1].map((x,i)=>x-v[0][i]),b=v[2].map((x,i)=>x-v[0][i]),n=[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]],len=Math.hypot(...n)||1;
+   const lum=.67+.28*Math.abs((n[0]*.3+n[1]*.4+n[2]*.85)/len);
+   tris.push({v,q,depth:q.reduce((s,v)=>s+v[2],0)/3,c:shade(part.group==='existing'?col.wall:col[part.group],lum)});
+  }
+ }
+ tris.sort((a,b)=>b.depth-a.depth);
+ // Per-pixel depth testing preserves openings and intersecting frame members.
+ const iw=can.width,ih=can.height,img=ctx.getImageData(0,0,iw,ih),zbuf=new Float32Array(iw*ih);zbuf.fill(Infinity);
+ const colors=new Map();
+ for(const t of tris){
+  if(!colors.has(t.c)){ctx.fillStyle=t.c;ctx.fillRect(0,0,1,1);colors.set(t.c,ctx.getImageData(0,0,1,1).data.slice(0,3));}
+  const rgb=colors.get(t.c),[a,b,c]=t.q,den=(b[1]-c[1])*(a[0]-c[0])+(c[0]-b[0])*(a[1]-c[1]);if(Math.abs(den)<1e-8)continue;
+  const x0=Math.max(0,Math.floor(Math.min(a[0],b[0],c[0]))),x1=Math.min(iw-1,Math.ceil(Math.max(a[0],b[0],c[0]))),y0=Math.max(0,Math.floor(Math.min(a[1],b[1],c[1]))),y1=Math.min(ih-1,Math.ceil(Math.max(a[1],b[1],c[1])));
+  for(let y=y0;y<=y1;y++)for(let x=x0;x<=x1;x++){
+   const u=((b[1]-c[1])*(x+.5-c[0])+(c[0]-b[0])*(y+.5-c[1]))/den,v=((c[1]-a[1])*(x+.5-c[0])+(a[0]-c[0])*(y+.5-c[1]))/den,tv=1-u-v;if(u<-.00001||v<-.00001||tv<-.00001)continue;
+   const d=mode==='orbit'?1/(u/(1100+a[2])+v/(1100+b[2])+tv/(1100+c[2]))-1100:u*a[2]+v*b[2]+tv*c[2],i=y*iw+x;
+   if(d<zbuf[i]){zbuf[i]=d;const j=i*4;img.data[j]=rgb[0];img.data[j+1]=rgb[1];img.data[j+2]=rgb[2];img.data[j+3]=255;}
+  }
+ }
+ ctx.putImageData(img,0,0);
+ // Roof perimeter and hip lines are true model edges, not triangulation seams.
+ if(get('roof').checked){const r=Number(get('ridge').value),z=p.wall_height+Number(get('rise').value),e=p.overhang;
+ const v=[[-e,-e,p.wall_height],[p.width+e,-e,p.wall_height],[p.width+e,p.length+e,p.wall_height],[-e,p.length+e,p.wall_height],[p.width/2,(p.length-r)/2,z],[p.width/2,(p.length+r)/2,z]];
+ ctx.strokeStyle=col.fg;ctx.globalAlpha=.5;ctx.lineWidth=.9;
+ // Visible slopes only, avoiding hidden diagonal edges through the roof.
+ const sideFaces=[[0,1,4],[1,2,5,4],[2,3,5],[3,0,4,5]];
+ for(const f of sideFaces){const q=f.map(i=>proj(v[i]));const area=q.reduce((s,a,i)=>{let b=q[(i+1)%q.length];return s+a[0]*b[1]-b[0]*a[1]},0);if(area<0){path(f.map(i=>v[i]));ctx.stroke();}}
+ ctx.globalAlpha=1;}
+ ctx.fillStyle=col.fg;ctx.font='12px system-ui';ctx.textAlign='center';
+ for(const [label,v] of [['N',[p.width/2,p.length+34,0]],['S',[p.width/2,-34,0]],['E',[p.width+34,p.length/2,0]],['W',[-34,p.length/2,0]]]){const q=proj(v);ctx.fillText(label,q[0],q[1]);}
+ ctx.textAlign='left';ctx.fillText('2 ft grid',12,h-12);
+}
+get('camera').onchange=e=>{mode=e.target.value;zoom=1;const presets={orbit:[2.3,.52],top:[Math.PI,Math.PI/2],north:[Math.PI,0],south:[0,0],east:[-Math.PI/2,0],west:[Math.PI/2,0]};[az,el]=presets[mode];draw();};
+for(const id of ['roof','proposal','infill'])get(id).onchange=draw;
+for(const id of ['rise','ridge'])get(id).oninput=()=>{if(!get(id).validity.valid||!get(id).value)return;get('status').textContent='Preview edited · saved CAD retains source dimensions';draw();};
+function rotate(d){mode='orbit';get('camera').value=mode;az+=d;if(el<.1||el>1.5)el=.52;draw();}
+get('left').onclick=()=>rotate(-.25);get('right').onclick=()=>rotate(.25);
+can.onpointerdown=e=>{drag=[e.clientX,e.clientY];can.setPointerCapture(e.pointerId);};
+can.onpointermove=e=>{if(!drag)return;mode='orbit';get('camera').value=mode;az+=(e.clientX-drag[0])*.009;el=Math.max(.02,Math.min(1.55,el+(e.clientY-drag[1])*.008));drag=[e.clientX,e.clientY];draw();};
+can.onpointerup=can.onpointercancel=()=>drag=null;
+can.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.max(.45,Math.min(3,zoom*Math.exp(-e.deltaY*.001)));draw();},{passive:false});
+new ResizeObserver(draw).observe(can);new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['class','style','data-theme']});draw();
+})();
+</script>

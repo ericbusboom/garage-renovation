@@ -1,0 +1,889 @@
+{
+  "units": "inches",
+  "datum": "Nominal core wall exterior edges at wall top; centerline schematic only",
+  "wall_layout": {
+    "South": {
+      "stations_inches": [
+        16.0,
+        40.0,
+        64.0,
+        88.0,
+        112.0,
+        137.5,
+        161.5,
+        185.5,
+        209.5,
+        233.5
+      ],
+      "central_bay_inches": 25.5,
+      "corner_bays_inches": [
+        16.0,
+        16.0
+      ]
+    },
+    "North": {
+      "stations_inches": [
+        16.0,
+        40.0,
+        64.0,
+        88.0,
+        112.0,
+        137.5,
+        161.5,
+        185.5,
+        209.5,
+        233.5
+      ],
+      "central_bay_inches": 25.5,
+      "corner_bays_inches": [
+        16.0,
+        16.0
+      ]
+    },
+    "West": {
+      "stations_inches": [
+        16.0,
+        40.0,
+        64.0,
+        88.0,
+        112.0,
+        137.0,
+        161.0,
+        185.0,
+        209.0,
+        233.0
+      ],
+      "central_bay_inches": 25.0,
+      "corner_bays_inches": [
+        16.0,
+        16.0
+      ]
+    },
+    "East": {
+      "stations_inches": [
+        16.0,
+        40.0,
+        64.0,
+        88.0,
+        112.0,
+        137.0,
+        161.0,
+        185.0,
+        209.0,
+        233.0
+      ],
+      "central_bay_inches": 25.0,
+      "corner_bays_inches": [
+        16.0,
+        16.0
+      ]
+    }
+  },
+  "members": [
+    {
+      "id": "Ridge",
+      "group": "Ridge",
+      "kind": "ridge",
+      "start": [
+        124.75,
+        115.5,
+        158.5
+      ],
+      "end": [
+        124.75,
+        133.5,
+        158.5
+      ]
+    },
+    {
+      "id": "HipSW",
+      "group": "Hip rafters",
+      "kind": "hip",
+      "start": [
+        0,
+        0,
+        98.5
+      ],
+      "end": [
+        124.75,
+        115.5,
+        158.5
+      ]
+    },
+    {
+      "id": "HipSE",
+      "group": "Hip rafters",
+      "kind": "hip",
+      "start": [
+        249.5,
+        0,
+        98.5
+      ],
+      "end": [
+        124.75,
+        115.5,
+        158.5
+      ]
+    },
+    {
+      "id": "HipNW",
+      "group": "Hip rafters",
+      "kind": "hip",
+      "start": [
+        0,
+        249,
+        98.5
+      ],
+      "end": [
+        124.75,
+        133.5,
+        158.5
+      ]
+    },
+    {
+      "id": "HipNE",
+      "group": "Hip rafters",
+      "kind": "hip",
+      "start": [
+        249.5,
+        249,
+        98.5
+      ],
+      "end": [
+        124.75,
+        133.5,
+        158.5
+      ]
+    },
+    {
+      "id": "SouthRafter01",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 16.0,
+      "wall": "South",
+      "start": [
+        16.0,
+        0,
+        98.5
+      ],
+      "end": [
+        16.0,
+        14.813627254509017,
+        106.19539078156312
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "SouthRafter02",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 40.0,
+      "wall": "South",
+      "start": [
+        40.0,
+        0,
+        98.5
+      ],
+      "end": [
+        40.0,
+        37.034068136272545,
+        117.73847695390782
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "SouthRafter03",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 64.0,
+      "wall": "South",
+      "start": [
+        64.0,
+        0,
+        98.5
+      ],
+      "end": [
+        64.0,
+        59.25450901803607,
+        129.2815631262525
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "SouthRafter04",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 88.0,
+      "wall": "South",
+      "start": [
+        88.0,
+        0,
+        98.5
+      ],
+      "end": [
+        88.0,
+        81.4749498997996,
+        140.8246492985972
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "SouthRafter05",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 112.0,
+      "wall": "South",
+      "start": [
+        112.0,
+        0,
+        98.5
+      ],
+      "end": [
+        112.0,
+        103.69539078156313,
+        152.36773547094188
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "SouthRafter06",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 137.5,
+      "wall": "South",
+      "start": [
+        137.5,
+        0,
+        98.5
+      ],
+      "end": [
+        137.5,
+        103.69539078156313,
+        152.36773547094188
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "SouthRafter07",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 161.5,
+      "wall": "South",
+      "start": [
+        161.5,
+        0,
+        98.5
+      ],
+      "end": [
+        161.5,
+        81.4749498997996,
+        140.8246492985972
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "SouthRafter08",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 185.5,
+      "wall": "South",
+      "start": [
+        185.5,
+        0,
+        98.5
+      ],
+      "end": [
+        185.5,
+        59.25450901803607,
+        129.2815631262525
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "SouthRafter09",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 209.5,
+      "wall": "South",
+      "start": [
+        209.5,
+        0,
+        98.5
+      ],
+      "end": [
+        209.5,
+        37.034068136272545,
+        117.73847695390782
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "SouthRafter10",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 233.5,
+      "wall": "South",
+      "start": [
+        233.5,
+        0,
+        98.5
+      ],
+      "end": [
+        233.5,
+        14.813627254509017,
+        106.19539078156312
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "NorthRafter01",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 16.0,
+      "wall": "North",
+      "start": [
+        16.0,
+        249,
+        98.5
+      ],
+      "end": [
+        16.0,
+        234.18637274549098,
+        106.19539078156312
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "NorthRafter02",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 40.0,
+      "wall": "North",
+      "start": [
+        40.0,
+        249,
+        98.5
+      ],
+      "end": [
+        40.0,
+        211.96593186372746,
+        117.73847695390782
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "NorthRafter03",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 64.0,
+      "wall": "North",
+      "start": [
+        64.0,
+        249,
+        98.5
+      ],
+      "end": [
+        64.0,
+        189.74549098196394,
+        129.2815631262525
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "NorthRafter04",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 88.0,
+      "wall": "North",
+      "start": [
+        88.0,
+        249,
+        98.5
+      ],
+      "end": [
+        88.0,
+        167.52505010020042,
+        140.8246492985972
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "NorthRafter05",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 112.0,
+      "wall": "North",
+      "start": [
+        112.0,
+        249,
+        98.5
+      ],
+      "end": [
+        112.0,
+        145.30460921843687,
+        152.36773547094188
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "NorthRafter06",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 137.5,
+      "wall": "North",
+      "start": [
+        137.5,
+        249,
+        98.5
+      ],
+      "end": [
+        137.5,
+        145.30460921843687,
+        152.36773547094188
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "NorthRafter07",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 161.5,
+      "wall": "North",
+      "start": [
+        161.5,
+        249,
+        98.5
+      ],
+      "end": [
+        161.5,
+        167.52505010020042,
+        140.8246492985972
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "NorthRafter08",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 185.5,
+      "wall": "North",
+      "start": [
+        185.5,
+        249,
+        98.5
+      ],
+      "end": [
+        185.5,
+        189.74549098196394,
+        129.2815631262525
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "NorthRafter09",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 209.5,
+      "wall": "North",
+      "start": [
+        209.5,
+        249,
+        98.5
+      ],
+      "end": [
+        209.5,
+        211.96593186372746,
+        117.73847695390782
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "NorthRafter10",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 233.5,
+      "wall": "North",
+      "start": [
+        233.5,
+        249,
+        98.5
+      ],
+      "end": [
+        233.5,
+        234.18637274549098,
+        106.19539078156312
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "WestRafter01",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 16.0,
+      "wall": "West",
+      "start": [
+        0,
+        16.0,
+        98.5
+      ],
+      "end": [
+        17.28138528138528,
+        16.0,
+        106.81168831168831
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "WestRafter02",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 40.0,
+      "wall": "West",
+      "start": [
+        0,
+        40.0,
+        98.5
+      ],
+      "end": [
+        43.2034632034632,
+        40.0,
+        119.27922077922078
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "WestRafter03",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 64.0,
+      "wall": "West",
+      "start": [
+        0,
+        64.0,
+        98.5
+      ],
+      "end": [
+        69.12554112554112,
+        64.0,
+        131.74675324675326
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "WestRafter04",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 88.0,
+      "wall": "West",
+      "start": [
+        0,
+        88.0,
+        98.5
+      ],
+      "end": [
+        95.04761904761904,
+        88.0,
+        144.21428571428572
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "WestRafter05",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 112.0,
+      "wall": "West",
+      "start": [
+        0,
+        112.0,
+        98.5
+      ],
+      "end": [
+        120.96969696969697,
+        112.0,
+        156.6818181818182
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "WestRafter06",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 137.0,
+      "wall": "West",
+      "start": [
+        0,
+        137.0,
+        98.5
+      ],
+      "end": [
+        120.96969696969697,
+        137.0,
+        156.6818181818182
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "WestRafter07",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 161.0,
+      "wall": "West",
+      "start": [
+        0,
+        161.0,
+        98.5
+      ],
+      "end": [
+        95.04761904761904,
+        161.0,
+        144.21428571428572
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "WestRafter08",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 185.0,
+      "wall": "West",
+      "start": [
+        0,
+        185.0,
+        98.5
+      ],
+      "end": [
+        69.12554112554112,
+        185.0,
+        131.74675324675326
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "WestRafter09",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 209.0,
+      "wall": "West",
+      "start": [
+        0,
+        209.0,
+        98.5
+      ],
+      "end": [
+        43.2034632034632,
+        209.0,
+        119.27922077922078
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "WestRafter10",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 233.0,
+      "wall": "West",
+      "start": [
+        0,
+        233.0,
+        98.5
+      ],
+      "end": [
+        17.28138528138528,
+        233.0,
+        106.81168831168831
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "EastRafter01",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 16.0,
+      "wall": "East",
+      "start": [
+        249.5,
+        16.0,
+        98.5
+      ],
+      "end": [
+        232.21861471861473,
+        16.0,
+        106.81168831168831
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "EastRafter02",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 40.0,
+      "wall": "East",
+      "start": [
+        249.5,
+        40.0,
+        98.5
+      ],
+      "end": [
+        206.2965367965368,
+        40.0,
+        119.27922077922078
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "EastRafter03",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 64.0,
+      "wall": "East",
+      "start": [
+        249.5,
+        64.0,
+        98.5
+      ],
+      "end": [
+        180.37445887445887,
+        64.0,
+        131.74675324675326
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "EastRafter04",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 88.0,
+      "wall": "East",
+      "start": [
+        249.5,
+        88.0,
+        98.5
+      ],
+      "end": [
+        154.45238095238096,
+        88.0,
+        144.21428571428572
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "EastRafter05",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 112.0,
+      "wall": "East",
+      "start": [
+        249.5,
+        112.0,
+        98.5
+      ],
+      "end": [
+        128.53030303030303,
+        112.0,
+        156.6818181818182
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "EastRafter06",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 137.0,
+      "wall": "East",
+      "start": [
+        249.5,
+        137.0,
+        98.5
+      ],
+      "end": [
+        128.53030303030303,
+        137.0,
+        156.6818181818182
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "EastRafter07",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 161.0,
+      "wall": "East",
+      "start": [
+        249.5,
+        161.0,
+        98.5
+      ],
+      "end": [
+        154.45238095238096,
+        161.0,
+        144.21428571428572
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "EastRafter08",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 185.0,
+      "wall": "East",
+      "start": [
+        249.5,
+        185.0,
+        98.5
+      ],
+      "end": [
+        180.37445887445887,
+        185.0,
+        131.74675324675326
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "EastRafter09",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 209.0,
+      "wall": "East",
+      "start": [
+        249.5,
+        209.0,
+        98.5
+      ],
+      "end": [
+        206.2965367965368,
+        209.0,
+        119.27922077922078
+      ],
+      "terminates_on": "hip"
+    },
+    {
+      "id": "EastRafter10",
+      "group": "Common and jack rafters",
+      "kind": "jack",
+      "station_inches": 233.0,
+      "wall": "East",
+      "start": [
+        249.5,
+        233.0,
+        98.5
+      ],
+      "end": [
+        232.21861471861473,
+        233.0,
+        106.81168831168831
+      ],
+      "terminates_on": "hip"
+    }
+  ],
+  "counts": {
+    "ridge": 1,
+    "hip": 4,
+    "common": 0,
+    "jack": 40
+  },
+  "findings": [
+    "The exact symmetric 16 + 24 inch station pattern gives a 25.5 inch central bay on north/south walls and 25 inch central bay on east/west walls.",
+    "With the 18 inch ridge centered between y=115.5 and 133.5, east/west stations y=112 and 137 bracket the ridge. Therefore the unmodified station pattern yields 40 jack rafters and no common rafters. A central common pair would require an explicitly added or shifted station. No such member is invented here."
+  ]
+}

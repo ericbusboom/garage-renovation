@@ -1,0 +1,2683 @@
+{
+  "request_id": "PROPOSED-FULL-FRAME-001",
+  "freecad_version": [
+    "1",
+    "1",
+    "3",
+    "20260725 (Git shallow)",
+    "Unknown",
+    "2026/07/25 04:52:02",
+    "grafted,grafted",
+    "145529fe741292ff0b3977a01195bf0247425794"
+  ],
+  "existing_sha256_before": "05e84f1aa2d5c757955609a1e3733961c8f0560dea893afaebc41d04a6261a5d",
+  "existing_sha256_after": "05e84f1aa2d5c757955609a1e3733961c8f0560dea893afaebc41d04a6261a5d",
+  "authoritative_existing_unchanged": true,
+  "native_existing_copy_preserved": true,
+  "retained_proposed_solids_preserved": true,
+  "roof_reference_preserved": true,
+  "roof_top_face_checks": [
+    {
+      "object": "TopTSPatch1",
+      "top_face_center_mm": [
+        2441.574999999999,
+        -1.488253964510022e-13,
+        3971.8759007572394
+      ],
+      "roof_error_mm": 4.547473508864641e-13
+    },
+    {
+      "object": "TopT1Patch1",
+      "top_face_center_mm": [
+        2441.5749999999975,
+        1771.65,
+        4994.738505167039
+      ],
+      "roof_error_mm": 0.0
+    },
+    {
+      "object": "TopChordTW",
+      "top_face_center_mm": [
+        -812.8,
+        758.9831037193779,
+        4410.075000000002
+      ],
+      "roof_error_mm": 2.7284841053187847e-12
+    },
+    {
+      "object": "TopChordTW",
+      "top_face_center_mm": [
+        -813.0942367798131,
+        4781.616154725685,
+        5818.903212876127
+      ],
+      "roof_error_mm": 2.637534635141492e-11
+    },
+    {
+      "object": "TopChordTW",
+      "top_face_center_mm": [
+        -762.0000000000008,
+        3143.5662074387583,
+        5824.823636735938
+      ],
+      "roof_error_mm": 1.8189894035458565e-12
+    },
+    {
+      "object": "TopChordTE",
+      "top_face_center_mm": [
+        5690.953278688525,
+        6230.026639344262,
+        5922.699217200878
+      ],
+      "roof_error_mm": 0.0
+    },
+    {
+      "object": "TopChordTE",
+      "top_face_center_mm": [
+        5695.95,
+        758.9831037193795,
+        4410.075
+      ],
+      "roof_error_mm": 9.094947017729282e-13
+    },
+    {
+      "object": "TopChordTE",
+      "top_face_center_mm": [
+        5692.932178217821,
+        3440.3501183298486,
+        5893.208098290396
+      ],
+      "roof_error_mm": 9.094947017729282e-13
+    },
+    {
+      "object": "TopChordTE",
+      "top_face_center_mm": [
+        5697.64828570639,
+        4899.18310371938,
+        5966.358508403175
+      ],
+      "roof_error_mm": 9.094947017729282e-13
+    },
+    {
+      "object": "TopChordTN",
+      "top_face_center_mm": [
+        6156.778571428571,
+        6319.157142857142,
+        5860.566461663901
+      ],
+      "roof_error_mm": 9.094947017729282e-13
+    },
+    {
+      "object": "TopChordTN",
+      "top_face_center_mm": [
+        -632.2785714285709,
+        6319.1571428571415,
+        5860.566461663899
+      ],
+      "roof_error_mm": 9.094947017729282e-13
+    },
+    {
+      "object": "TopChordTN",
+      "top_face_center_mm": [
+        2762.250000000001,
+        6325.201183431952,
+        5900.769254988349
+      ],
+      "roof_error_mm": 2.7284841053187847e-12
+    }
+  ],
+  "base_model_sha256": "b7a5ce6691ff040ebc42745987c3e9dd4776cab7fb195f7ab44ead8ea337809d",
+  "backup_directory": "/proj/garage/backups/20260910T025903Z-pre-fullframe",
+  "existing_solid_count": 107,
+  "new_solid_count": 82,
+  "proposed_solid_count": 100,
+  "default_proposed_solid_count": 100,
+  "step_solid_count": 207,
+  "native_reopen_success": true,
+  "visible_future_members": true,
+  "removed_ground_posts": [
+    "ProposedNorthPostUE",
+    "ProposedNorthPostNEW",
+    "ProposedNorthPostNEE"
+  ],
+  "proposed_objects": [
+    {
+      "name": "ProposedColumnW1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 9609357.960497033,
+      "bounds_mm": [
+        -863.5999999999999,
+        -50.8,
+        0.0,
+        -761.9999999999999,
+        50.8,
+        3971.875900757239
+      ],
+      "native_type": "Part::Cut",
+      "visible": true
+    },
+    {
+      "name": "ProposedColumnW2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 12084020.602475855,
+      "bounds_mm": [
+        -863.5999999999999,
+        1720.85,
+        0.0,
+        -761.9999999999999,
+        1822.4499999999998,
+        4994.738505167039
+      ],
+      "native_type": "Part::Cut",
+      "visible": true
+    },
+    {
+      "name": "ProposedColumnW3",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 14078127.514088672,
+      "bounds_mm": [
+        -863.5999999999999,
+        4648.2,
+        0.0,
+        -761.9999999999999,
+        4749.8,
+        5818.9710104319465
+      ],
+      "native_type": "Part::Cut",
+      "visible": true
+    },
+    {
+      "name": "ProposedColumnW4",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 14078127.514088675,
+      "bounds_mm": [
+        -863.5999999999999,
+        6375.4,
+        0.0,
+        -761.9999999999999,
+        6477.0,
+        5818.9710104319465
+      ],
+      "native_type": "Part::Cut",
+      "visible": true
+    },
+    {
+      "name": "ProposedColumnS1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7374178.799999957,
+      "bounds_mm": [
+        3721.0999999999995,
+        -1650.9999999999998,
+        0.0,
+        3822.6999999999994,
+        -1549.3999999999999,
+        3048.0
+      ],
+      "native_type": "Part::Cut",
+      "visible": true
+    },
+    {
+      "name": "ProposedColumnS2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7374178.800000088,
+      "bounds_mm": [
+        5645.15,
+        -1650.9999999999998,
+        0.0,
+        5746.75,
+        -1549.3999999999999,
+        3048.0
+      ],
+      "native_type": "Part::Cut",
+      "visible": true
+    },
+    {
+      "name": "ProposedColumnN2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 14219723.02857453,
+      "bounds_mm": [
+        5645.15,
+        6375.4,
+        0.0,
+        5746.75,
+        6477.0,
+        5877.497273471879
+      ],
+      "native_type": "Part::Cut",
+      "visible": true
+    },
+    {
+      "name": "ProposedColumnS3",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 9609357.960497163,
+      "bounds_mm": [
+        5645.15,
+        -50.8,
+        0.0,
+        5746.75,
+        50.8,
+        3971.875900757239
+      ],
+      "native_type": "Part::Cut",
+      "visible": true
+    },
+    {
+      "name": "ProposedColumnSW0",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7374178.79999999,
+      "bounds_mm": [
+        -863.5999999999999,
+        -1650.9999999999998,
+        0.0,
+        -761.9999999999999,
+        -1549.3999999999999,
+        3048.0
+      ],
+      "native_type": "Part::Cut",
+      "visible": true
+    },
+    {
+      "name": "ProposedTSO",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 29119300.63225001,
+      "bounds_mm": [
+        -812.8,
+        -1676.3999999999999,
+        2844.7999999999997,
+        6337.299999999999,
+        -1524.0,
+        3047.9999999999995
+      ],
+      "native_type": "Part::MultiFuse",
+      "visible": true
+    },
+    {
+      "name": "ProposedTS",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 151170665.39999998,
+      "bounds_mm": [
+        -812.8,
+        -76.19999999999999,
+        2844.7999999999997,
+        5695.95,
+        76.19999999999999,
+        2997.2
+      ],
+      "native_type": "Part::Box",
+      "visible": true
+    },
+    {
+      "name": "ProposedTW",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 186419240.06399998,
+      "bounds_mm": [
+        -889.0,
+        -1600.1999999999998,
+        2844.7999999999997,
+        -736.6,
+        6426.2,
+        2997.2
+      ],
+      "native_type": "Part::Box",
+      "visible": true
+    },
+    {
+      "name": "ProposedTE",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 186419240.06399983,
+      "bounds_mm": [
+        5619.75,
+        -1600.1999999999998,
+        2844.7999999999997,
+        5772.15,
+        6426.2,
+        2997.2
+      ],
+      "native_type": "Part::Box",
+      "visible": true
+    },
+    {
+      "name": "ProposedTN",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 166066506.57599986,
+      "bounds_mm": [
+        -812.8,
+        6248.4,
+        2844.7999999999997,
+        6337.299999999999,
+        6400.799999999999,
+        2997.2
+      ],
+      "native_type": "Part::Box",
+      "visible": true
+    },
+    {
+      "name": "ProposedT1Upper",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 151170665.4,
+      "bounds_mm": [
+        -812.8,
+        1695.4499999999998,
+        3737.4384991999996,
+        5695.95,
+        1847.85,
+        3889.8384991999997
+      ],
+      "native_type": "Part::Box",
+      "visible": true
+    },
+    {
+      "name": "ProposedT1Future",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 26507356.259374987,
+      "bounds_mm": [
+        -812.8,
+        1695.4499999999998,
+        2844.7999999999997,
+        5695.95,
+        1847.85,
+        3047.9999999999995
+      ],
+      "native_type": "Part::MultiFuse",
+      "visible": true
+    },
+    {
+      "name": "ProposedB2Future",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 26507356.25937552,
+      "bounds_mm": [
+        -812.8,
+        4622.8,
+        2844.7999999999997,
+        5695.95,
+        4775.2,
+        3047.9999999999995
+      ],
+      "native_type": "Part::MultiFuse",
+      "visible": true
+    },
+    {
+      "name": "ProposedNorthPostUW",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 136577306.92126524,
+      "bounds_mm": [
+        1276.35,
+        6337.299999999999,
+        0.0,
+        1428.75,
+        6489.699999999999,
+        5880.423586623877
+      ],
+      "native_type": "Part::Box",
+      "visible": true
+    },
+    {
+      "name": "TopTSPatch1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 151170665.39999998,
+      "bounds_mm": [
+        -812.8000000000011,
+        -76.20000000000002,
+        3775.4818102449894,
+        5695.95,
+        76.20000000000002,
+        4015.8699912694883
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "TopT1Patch1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 151170665.39999992,
+      "bounds_mm": [
+        -812.800000000002,
+        1695.4499999999998,
+        4798.344414654791,
+        5695.949999999999,
+        1847.85,
+        5038.732595679288
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "TopChordTW",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 186419240.06399965,
+      "bounds_mm": [
+        -889.0,
+        -1600.1999999999998,
+        2895.6,
+        -736.5999999999879,
+        6426.200000000001,
+        5836.5288893439265
+      ],
+      "native_type": "Part::MultiFuse",
+      "visible": true
+    },
+    {
+      "name": "TopChordTE",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 186419240.06399855,
+      "bounds_mm": [
+        5619.75,
+        -1600.1999999999998,
+        2895.6,
+        5772.15,
+        6426.2,
+        5984.307703519759
+      ],
+      "native_type": "Part::MultiFuse",
+      "visible": true
+    },
+    {
+      "name": "TopChordTN",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 166066506.57599896,
+      "bounds_mm": [
+        -812.8,
+        6248.4,
+        5666.571010431947,
+        6337.299999999999,
+        6400.799999999999,
+        5918.465657599834
+      ],
+      "native_type": "Part::MultiFuse",
+      "visible": true
+    },
+    {
+      "name": "FrameTSWeb1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2220320.4645301593,
+      "bounds_mm": [
+        -812.8,
+        -25.4,
+        2984.5,
+        -762.0,
+        25.40000000000019,
+        3844.875900757239
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTSWeb2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2220320.4645301597,
+      "bounds_mm": [
+        246.59166666666673,
+        -25.4,
+        2984.5,
+        297.3916666666667,
+        25.40000000000019,
+        3844.875900757239
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTSWeb3",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2220320.464530159,
+      "bounds_mm": [
+        1331.3833333333334,
+        -25.4,
+        2984.5,
+        1382.1833333333334,
+        25.40000000000019,
+        3844.875900757239
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTSWeb4",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2220320.4645301686,
+      "bounds_mm": [
+        2416.1749999999997,
+        -25.4,
+        2984.5,
+        2466.975,
+        25.40000000000019,
+        3844.875900757239
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTSWeb5",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2220320.4645301686,
+      "bounds_mm": [
+        3500.9666666666667,
+        -25.4,
+        2984.5,
+        3551.766666666667,
+        25.40000000000019,
+        3844.875900757239
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTSWeb6",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2220320.464530129,
+      "bounds_mm": [
+        4585.758333333333,
+        -25.4,
+        2984.5,
+        4636.5583333333325,
+        25.40000000000019,
+        3844.875900757239
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTSWeb7",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2220320.4645301686,
+      "bounds_mm": [
+        5645.15,
+        -25.4,
+        2984.5,
+        5695.95,
+        25.40000000000019,
+        3844.875900757239
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTSWeb8",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3714959.9645979526,
+      "bounds_mm": [
+        -804.5975757662791,
+        -25.40000000000032,
+        2902.3076649997092,
+        289.18924243294555,
+        25.400000000000002,
+        3914.3682357575303
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTSWeb9",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3763459.8419945724,
+      "bounds_mm": [
+        255.01571683800944,
+        -25.400000000000322,
+        2902.1061616547895,
+        1373.759283161991,
+        25.4,
+        3914.5697391024487
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTSWeb10",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3763459.8419945557,
+      "bounds_mm": [
+        1339.807383504676,
+        -25.4,
+        2902.1061616547904,
+        2458.5509498286574,
+        25.400000000000325,
+        3914.5697391024487
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTSWeb11",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3763459.8419945394,
+      "bounds_mm": [
+        2424.5990501713427,
+        -25.4,
+        2902.1061616547904,
+        3543.3426164953244,
+        25.4,
+        3914.5697391024487
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTSWeb12",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3763459.841994578,
+      "bounds_mm": [
+        3509.390716838009,
+        -25.4,
+        2902.1061616547904,
+        4628.134283161991,
+        25.4,
+        3914.569739102449
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTSWeb13",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3714959.9645979423,
+      "bounds_mm": [
+        4593.960757567054,
+        -25.4,
+        2902.307664999709,
+        5687.747575766279,
+        25.4,
+        3914.36823575753
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameT1Web1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2556381.999398777,
+      "bounds_mm": [
+        -812.8,
+        1746.25,
+        3877.1384992,
+        -762.0,
+        1797.0500000000002,
+        4867.738505167039
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameT1Web2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2556381.999398777,
+      "bounds_mm": [
+        788.9875,
+        1746.25,
+        3877.1384992,
+        839.7874999999999,
+        1797.0500000000002,
+        4867.738505167039
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameT1Web3",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2556381.999398788,
+      "bounds_mm": [
+        2416.1749999999997,
+        1746.25,
+        3877.1384992,
+        2466.975,
+        1797.0500000000002,
+        4867.738505167039
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameT1Web4",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2556381.999398788,
+      "bounds_mm": [
+        4043.3624999999997,
+        1746.25,
+        3877.1384992,
+        4094.1625,
+        1797.0500000000002,
+        4867.738505167039
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameT1Web5",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2556381.999398788,
+      "bounds_mm": [
+        5645.15,
+        1746.25,
+        3877.1384992,
+        5695.95,
+        1797.0500000000002,
+        4867.738505167039
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameT1Web6",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 5021667.646770403,
+      "bounds_mm": [
+        -801.8223539947151,
+        1746.25,
+        3792.730230375175,
+        828.8098539947143,
+        1797.0500000000004,
+        4939.446773991865
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameT1Web7",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 5075760.820523711,
+      "bounds_mm": [
+        800.1188472784839,
+        1746.25,
+        3792.6250380497554,
+        2455.843652721516,
+        1797.05,
+        4939.551966317283
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameT1Web8",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 5075760.820523702,
+      "bounds_mm": [
+        2427.306347278484,
+        1746.2499999999995,
+        3792.6250380497563,
+        4083.0311527215163,
+        1797.05,
+        4939.551966317283
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameT1Web9",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 5021667.646770472,
+      "bounds_mm": [
+        4054.3401460052846,
+        1746.25,
+        3792.730230375175,
+        5684.9723539947145,
+        1797.05,
+        4939.446773991865
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTWWeb1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1387745.7931069299,
+      "bounds_mm": [
+        -838.1999999999999,
+        -558.8,
+        2984.5,
+        -787.4,
+        -508.0,
+        3522.2525703340766
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTWWeb2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2182476.161283651,
+      "bounds_mm": [
+        -838.1999999999999,
+        -25.4,
+        2984.5,
+        -787.4,
+        25.4,
+        3830.2112039198228
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTWWeb3",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 4822116.312727752,
+      "bounds_mm": [
+        -838.1999999999999,
+        1746.25,
+        2984.5,
+        -787.4,
+        1797.05,
+        4853.073808329623
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTWWeb4",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 6828335.51275345,
+      "bounds_mm": [
+        -838.1999999999999,
+        3092.766207438757,
+        2984.5,
+        -787.4,
+        3143.566207438757,
+        5630.4853031625835
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTWWeb5",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 6987007.988361122,
+      "bounds_mm": [
+        -838.1999999999999,
+        4673.599999999999,
+        2984.5,
+        -787.4,
+        4724.4,
+        5691.9710104319465
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTWWeb6",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 6987007.988361122,
+      "bounds_mm": [
+        -838.1999999999999,
+        6248.4,
+        2984.5,
+        -787.4,
+        6299.2,
+        5691.9710104319465
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTWWeb7",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 6987007.98836112,
+      "bounds_mm": [
+        -838.1999999999999,
+        6375.4,
+        2984.5,
+        -787.4,
+        6426.2,
+        5691.9710104319465
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTWWeb8",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3136054.117563674,
+      "bounds_mm": [
+        -838.1999999999999,
+        -1563.3353953949393,
+        2899.7640692413374,
+        -787.4,
+        -519.46460460506,
+        3608.953197930156
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTWWeb9",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 6890310.6374371825,
+      "bounds_mm": [
+        -838.2000000000004,
+        -19.00279569329382,
+        2904.1461056180196,
+        -787.4,
+        1790.652795693294,
+        4935.39239954902
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTWWeb10",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 6180354.317985631,
+      "bounds_mm": [
+        -838.1999999999999,
+        1750.4642946876836,
+        2906.9883658904578,
+        -787.4,
+        3113.951912751075,
+        4932.550139276582
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "TWBalconyHeader",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 35396058.23999996,
+      "bounds_mm": [
+        -889.0,
+        4724.4,
+        5181.599999999999,
+        -736.6,
+        6248.4,
+        5333.999999999999
+      ],
+      "native_type": "Part::Box",
+      "visible": true
+    },
+    {
+      "name": "FrameTWWeb11",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 956568.4363611036,
+      "bounds_mm": [
+        -838.1999999999999,
+        4724.4,
+        5321.299999999999,
+        -787.4,
+        4775.2,
+        5691.9710104319465
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTWWeb12",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 956568.4363611033,
+      "bounds_mm": [
+        -838.1999999999999,
+        4873.783103719378,
+        5321.299999999999,
+        -787.4,
+        4924.583103719378,
+        5691.9710104319465
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTWWeb13",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 956568.4363610864,
+      "bounds_mm": [
+        -838.1999999999999,
+        5461.0,
+        5321.299999999999,
+        -787.4,
+        5511.799999999999,
+        5691.9710104319465
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTWWeb14",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 956568.4363611033,
+      "bounds_mm": [
+        -838.1999999999999,
+        6197.599999999999,
+        5321.299999999999,
+        -787.4,
+        6248.4,
+        5691.9710104319465
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTWWeb15",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2275908.598581651,
+      "bounds_mm": [
+        -838.1999999999999,
+        4735.832389892906,
+        5236.585244100009,
+        -787.4,
+        5500.367610107094,
+        5763.985766331937
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTWWeb16",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2275908.5985816475,
+      "bounds_mm": [
+        -838.1999999999999,
+        5472.432389892905,
+        5236.585244100009,
+        -787.4,
+        6236.9676101070945,
+        5763.985766331937
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTEWeb1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1387745.793106932,
+      "bounds_mm": [
+        5670.549999999999,
+        -558.8,
+        2984.5,
+        5721.349999999999,
+        -508.0,
+        3522.2525703340766
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTEWeb2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2182476.161283654,
+      "bounds_mm": [
+        5670.549999999999,
+        -25.4,
+        2984.5,
+        5721.349999999999,
+        25.4,
+        3830.2112039198228
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTEWeb3",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 4822116.31272776,
+      "bounds_mm": [
+        5670.549999999999,
+        1746.25,
+        2984.5,
+        5721.349999999999,
+        1797.05,
+        4853.073808329623
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTEWeb4",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 6828335.5127534615,
+      "bounds_mm": [
+        5670.549999999999,
+        3092.766207438757,
+        2984.5,
+        5721.349999999999,
+        3143.566207438757,
+        5630.4853031625835
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTEWeb5",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7353268.385830648,
+      "bounds_mm": [
+        5670.549999999999,
+        3734.116207438757,
+        2984.5,
+        5721.349999999999,
+        3784.916207438757,
+        5833.8971983037845
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTEWeb6",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7368371.907375853,
+      "bounds_mm": [
+        5670.549999999999,
+        4673.599999999999,
+        2984.5,
+        5721.349999999999,
+        4724.4,
+        5839.7498246077785
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTEWeb7",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7368371.907375853,
+      "bounds_mm": [
+        5670.549999999999,
+        4873.783103719378,
+        2984.5,
+        5721.349999999999,
+        4924.583103719378,
+        5839.7498246077785
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTEWeb8",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7353268.385830715,
+      "bounds_mm": [
+        5670.549999999999,
+        6013.45,
+        2984.5,
+        5721.349999999999,
+        6064.25,
+        5833.897198303785
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTEWeb9",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7138043.203812507,
+      "bounds_mm": [
+        5670.549999999999,
+        6375.4,
+        2984.5,
+        5721.349999999999,
+        6426.2,
+        5750.49727347188
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTEWeb10",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 3136054.1175636784,
+      "bounds_mm": [
+        5670.549999999999,
+        -1563.3353953949393,
+        2899.7640692413374,
+        5721.349999999999,
+        -519.46460460506,
+        3608.953197930156
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTEWeb11",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 6890310.637437199,
+      "bounds_mm": [
+        5670.549999999998,
+        -19.00279569329382,
+        2904.1461056180196,
+        5721.349999999999,
+        1790.652795693294,
+        4935.39239954902
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTEWeb12",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 6180354.317985644,
+      "bounds_mm": [
+        5670.549999999999,
+        1750.4642946876836,
+        2906.9883658904578,
+        5721.349999999999,
+        3113.951912751075,
+        4932.550139276582
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTEWeb13",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 8626441.311320905,
+      "bounds_mm": [
+        5670.549999999999,
+        4677.0250377773555,
+        2908.261827630567,
+        5721.349999999999,
+        6397.374962222644,
+        5825.7406984493
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "TNUpperEastJamb",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 62903484.76821844,
+      "bounds_mm": [
+        3867.1499999999996,
+        6248.4,
+        3048.0,
+        4019.5499999999997,
+        6400.799999999999,
+        5756.349899775874
+      ],
+      "native_type": "Part::Box",
+      "visible": true
+    },
+    {
+      "name": "TNLoadingHeader",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 56633693.18399989,
+      "bounds_mm": [
+        1428.75,
+        6248.4,
+        5181.599999999999,
+        3867.1499999999996,
+        6400.799999999999,
+        5333.999999999999
+      ],
+      "native_type": "Part::Box",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 6987007.988361101,
+      "bounds_mm": [
+        -812.8,
+        6299.2,
+        2984.5,
+        -762.0,
+        6350.000000000001,
+        5691.9710104319465
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7198457.28999303,
+      "bounds_mm": [
+        -25.4,
+        6299.2,
+        2984.5,
+        25.4,
+        6350.000000000001,
+        5773.907778687853
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb3",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7198457.289993057,
+      "bounds_mm": [
+        4546.599999999999,
+        6299.2,
+        2984.5,
+        4597.4,
+        6350.000000000001,
+        5773.907778687853
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb4",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7198457.289993055,
+      "bounds_mm": [
+        5670.549999999999,
+        6299.2,
+        2984.5,
+        5721.349999999999,
+        6350.000000000001,
+        5773.907778687853
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb5",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 6987007.9883610075,
+      "bounds_mm": [
+        6286.5,
+        6299.2,
+        2984.5,
+        6337.299999999999,
+        6350.000000000001,
+        5691.971010431947
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb6",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7764046.45476694,
+      "bounds_mm": [
+        -811.9146628031529,
+        6299.199999999999,
+        2914.3523457033525,
+        24.514662803152987,
+        6350.0,
+        5831.3554329845
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb7",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 8127159.162462158,
+      "bounds_mm": [
+        1.9806258962250922,
+        6299.2,
+        2911.166744354618,
+        1268.0193741037751,
+        6350.0,
+        5834.541034333236
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb8",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 8595809.171739826,
+      "bounds_mm": [
+        4041.857467863249,
+        6299.199999999998,
+        2908.5553919076174,
+        5718.092532136751,
+        6350.0,
+        5837.152386780235
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb9",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 7660160.823124581,
+      "bounds_mm": [
+        5671.1028740425345,
+        6299.199999999999,
+        2915.729294956665,
+        6336.747125957466,
+        6350.0,
+        5829.978483731188
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb10",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1168017.737993024,
+      "bounds_mm": [
+        1428.75,
+        6299.2,
+        5321.299999999999,
+        1479.55,
+        6350.0,
+        5773.907778687853
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb11",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1168017.7379930292,
+      "bounds_mm": [
+        2012.9499999999998,
+        6299.2,
+        5321.299999999999,
+        2063.75,
+        6350.0,
+        5773.907778687853
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb12",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1168017.7379930294,
+      "bounds_mm": [
+        2622.5499999999997,
+        6299.2,
+        5321.299999999999,
+        2673.35,
+        6350.0,
+        5773.907778687853
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb13",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1168017.7379930292,
+      "bounds_mm": [
+        3232.1499999999996,
+        6299.2,
+        5321.299999999999,
+        3282.95,
+        6350.0,
+        5773.907778687853
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb14",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1168017.737993019,
+      "bounds_mm": [
+        3816.35,
+        6299.2,
+        5321.299999999999,
+        3867.1499999999996,
+        6350.0,
+        5773.907778687853
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb15",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2100764.7090388937,
+      "bounds_mm": [
+        1436.4612907190717,
+        6299.2,
+        5239.5717372200525,
+        2056.0387092809283,
+        6350.0,
+        5842.9360414678
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb16",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2148290.328233456,
+      "bounds_mm": [
+        2021.0526097369348,
+        6299.2,
+        5239.199992201958,
+        2665.2473902630654,
+        6350.0,
+        5843.307786485895
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb17",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2148290.3282334646,
+      "bounds_mm": [
+        2630.6526097369347,
+        6299.2,
+        5239.199992201958,
+        3274.847390263066,
+        6350.0,
+        5843.307786485895
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FrameTNWeb18",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 2100764.70903889,
+      "bounds_mm": [
+        3239.861290719072,
+        6299.2,
+        5239.5717372200525,
+        3859.4387092809284,
+        6350.0,
+        5842.9360414678
+      ],
+      "native_type": "Part::Extrusion",
+      "visible": true
+    },
+    {
+      "name": "FutureT1Hanger1",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1779192.568575486,
+      "bounds_mm": [
+        -838.1999999999999,
+        1746.25,
+        3048.0,
+        -787.4,
+        1797.05,
+        3737.4384991999996
+      ],
+      "native_type": "Part::Box",
+      "visible": true
+    },
+    {
+      "name": "FutureT1Hanger2",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1779192.5685754858,
+      "bounds_mm": [
+        788.9875,
+        1746.25,
+        3048.0,
+        839.7874999999999,
+        1797.05,
+        3737.4384991999996
+      ],
+      "native_type": "Part::Box",
+      "visible": true
+    },
+    {
+      "name": "FutureT1Hanger3",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1779192.5685754886,
+      "bounds_mm": [
+        2416.1749999999997,
+        1746.25,
+        3048.0,
+        2466.975,
+        1797.05,
+        3737.4384991999996
+      ],
+      "native_type": "Part::Box",
+      "visible": true
+    },
+    {
+      "name": "FutureT1Hanger4",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1779192.5685754886,
+      "bounds_mm": [
+        4043.3624999999997,
+        1746.25,
+        3048.0,
+        4094.1625,
+        1797.05,
+        3737.4384991999996
+      ],
+      "native_type": "Part::Box",
+      "visible": true
+    },
+    {
+      "name": "FutureT1Hanger5",
+      "valid": true,
+      "solids": 1,
+      "volume_mm3": 1779192.5685754886,
+      "bounds_mm": [
+        5670.549999999999,
+        1746.25,
+        3048.0,
+        5721.349999999999,
+        1797.05,
+        3737.4384991999996
+      ],
+      "native_type": "Part::Box",
+      "visible": true
+    }
+  ],
+  "connection_checks": [
+    {
+      "a": "FrameTSWeb1",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb1",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb2",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb2",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb3",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb3",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb4",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb4",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb5",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb5",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb6",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb6",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb7",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb7",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb8",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb8",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb9",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb9",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb10",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb10",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb11",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb11",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb12",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb12",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb13",
+      "b": "ProposedTS",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTSWeb13",
+      "b": "TopTSPatch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web1",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web1",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web2",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web2",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web3",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web3",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web4",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web4",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web5",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web5",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web6",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web6",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web7",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web7",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web8",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web8",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web9",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameT1Web9",
+      "b": "TopT1Patch1",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb1",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb1",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb2",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb2",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb3",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb3",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb4",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb4",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb5",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb5",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb6",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb6",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb7",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb7",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb8",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb8",
+      "b": "TopChordTW",
+      "distance_mm": 2.2737367544323206e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb9",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb9",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb10",
+      "b": "ProposedTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb10",
+      "b": "TopChordTW",
+      "distance_mm": 4.547473508864641e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb11",
+      "b": "TWBalconyHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb11",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb12",
+      "b": "TWBalconyHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb12",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb13",
+      "b": "TWBalconyHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb13",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb14",
+      "b": "TWBalconyHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb14",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb15",
+      "b": "TWBalconyHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb15",
+      "b": "TopChordTW",
+      "distance_mm": 9.094947017729282e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb16",
+      "b": "TWBalconyHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTWWeb16",
+      "b": "TopChordTW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb1",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb1",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb2",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb2",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb3",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb3",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb4",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb4",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb5",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb5",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb6",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb6",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb7",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb7",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb8",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb8",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb9",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb9",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb10",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb10",
+      "b": "TopChordTE",
+      "distance_mm": 2.2737367544323206e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb11",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb11",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb12",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb12",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb13",
+      "b": "ProposedTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTEWeb13",
+      "b": "TopChordTE",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "TNUpperEastJamb",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "TNLoadingHeader",
+      "b": "ProposedNorthPostUW",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "TNLoadingHeader",
+      "b": "TNUpperEastJamb",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb1",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb1",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb2",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb2",
+      "b": "TopChordTN",
+      "distance_mm": 9.237055564881302e-14,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb3",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb3",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb4",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb4",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb5",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb5",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb6",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb6",
+      "b": "TopChordTN",
+      "distance_mm": 2.2737367544323206e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb7",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb7",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb8",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb8",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb9",
+      "b": "ProposedTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb9",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb10",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb10",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb11",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb11",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb12",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb12",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb13",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb13",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb14",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb14",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb15",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb15",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb16",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb16",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb17",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb17",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb18",
+      "b": "TNLoadingHeader",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FrameTNWeb18",
+      "b": "TopChordTN",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger1",
+      "b": "ProposedT1Future",
+      "distance_mm": 4.547473508864641e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger1",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger2",
+      "b": "ProposedT1Future",
+      "distance_mm": 4.547473508864641e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger2",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger3",
+      "b": "ProposedT1Future",
+      "distance_mm": 4.547473508864641e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger3",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger4",
+      "b": "ProposedT1Future",
+      "distance_mm": 4.547473508864641e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger4",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger5",
+      "b": "ProposedT1Future",
+      "distance_mm": 4.547473508864641e-13,
+      "touches_or_overlaps": true
+    },
+    {
+      "a": "FutureT1Hanger5",
+      "b": "ProposedT1Upper",
+      "distance_mm": 0.0,
+      "touches_or_overlaps": true
+    }
+  ],
+  "all_new_members_connected_to_retained_frame": true,
+  "opening_checks": [
+    {
+      "opening": "TN_loading",
+      "new_solid_intersections": [],
+      "clear": true
+    },
+    {
+      "opening": "TW_balcony_approximate",
+      "new_solid_intersections": [],
+      "clear": true
+    }
+  ],
+  "no_new_ground_post": true,
+  "omitted_shallow_webs": [
+    {
+      "truss": "TW",
+      "station_inches": -62,
+      "reason": "Top and bottom chords overlap at shallow south end; no zero-length web."
+    },
+    {
+      "truss": "TE",
+      "station_inches": -62,
+      "reason": "Top and bottom chords overlap at shallow south end; no zero-length web."
+    }
+  ],
+  "collision_pair_count": 21,
+  "strength_analysis_run": false,
+  "all_sizes_unverified": true,
+  "capacity_or_feasibility_claim": false
+}

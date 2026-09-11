@@ -1,0 +1,1022 @@
+[
+  {
+    "case": "sources_baseline",
+    "removed_columns": [],
+    "web_bending_releases": false,
+    "bases": "fixed_assumed",
+    "offset_link_stiffness_factor": 1000,
+    "analysis": "linear",
+    "section_scale": 1,
+    "eligible_for_construction": false,
+    "nodes": 693,
+    "elements": 679,
+    "offset_links": 111,
+    "steel_weight_lb": 10135.251626754429,
+    "load_ledger_lb": {
+      "Dfloor": 3307.6875,
+      "L40": 11025.625000000007,
+      "L30": 8269.21875,
+      "L75patch": 14140.938313802084,
+      "L125": 34455.07812500003,
+      "P200": 200.0,
+      "HB0.25": 1350.0,
+      "HB0.5": 1350.0,
+      "HB0.75": 1350.0,
+      "HT0.25": 1350.0,
+      "HT0.5": 1350.0,
+      "HT0.75": 1350.0,
+      "Droof": 6057.76264358902,
+      "R20": 13387.889001973936,
+      "U20": -13387.889001973936,
+      "Dwall": 2325.4883087366447,
+      "Dsteel": 10135.251626754429
+    },
+    "sections": {
+      "column": {
+        "name": "HSS4x4x0.25",
+        "A": 3.37,
+        "Iy": 7.8,
+        "Iz": 7.8,
+        "J": 12.8,
+        "w": 12.21,
+        "d": 4,
+        "S": 3.9
+      },
+      "chord": {
+        "name": "HSS6x6x0.25",
+        "A": 5.24,
+        "Iy": 28.6,
+        "Iz": 28.6,
+        "J": 46.1,
+        "w": 19.02,
+        "d": 6,
+        "S": 9.53
+      },
+      "header": {
+        "name": "HSS6x6x0.25",
+        "A": 5.24,
+        "Iy": 28.6,
+        "Iz": 28.6,
+        "J": 46.1,
+        "w": 19.02,
+        "d": 6,
+        "S": 9.53
+      },
+      "web": {
+        "name": "HSS2x2x0.125",
+        "A": 0.84,
+        "Iy": 0.486,
+        "Iz": 0.486,
+        "J": 0.796,
+        "w": 3.05,
+        "d": 2,
+        "S": 0.486
+      },
+      "hanger": {
+        "name": "HSS2x2x0.125",
+        "A": 0.84,
+        "Iy": 0.486,
+        "Iz": 0.486,
+        "J": 0.796,
+        "w": 3.05,
+        "d": 2,
+        "S": 0.486
+      },
+      "Wbeam": {
+        "name": "W8X31",
+        "A": 9.13,
+        "Iy": 37.1,
+        "Iz": 110,
+        "J": 0.536,
+        "w": 31,
+        "d": 8,
+        "S": 27.5
+      }
+    },
+    "unconnected_node_count": 0,
+    "status": "solved_conditional",
+    "results": {
+      "Dsteel": {
+        "floor_min_DY_in": -0.06623959757176681,
+        "floor_worst_node_xyz_in": [
+          158.84375,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.06623959757176681,
+        "vertical_equilibrium_relative_error": 3.928873262730211e-09,
+        "global_force_relative_error": 8.993154210181097e-08,
+        "global_moment_relative_error": 1.2067665023409642e-07,
+        "reactions_lb": {
+          "W1": 860.9227956613083,
+          "W2": 1520.7430047215232,
+          "W3": 1171.941354041808,
+          "W4": 496.4164613679934,
+          "S1": 538.9387870637803,
+          "S2": -1313.720597307966,
+          "N2": 1507.4872786036544,
+          "S3": 4037.240568922263,
+          "SW0": 366.7788726627267,
+          "N1 / U-W": 948.5030611972201
+        },
+        "max_elastic_stress_over_Fy": 0.07439472940962238,
+        "stress_member": "T-E diagonal 11"
+      },
+      "Dfloor": {
+        "floor_min_DY_in": -0.10944433554378419,
+        "floor_worst_node_xyz_in": [
+          112.125,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.10944433554378419,
+        "vertical_equilibrium_relative_error": 8.196303216900311e-09,
+        "global_force_relative_error": 1.5323626502219196e-07,
+        "global_moment_relative_error": 1.5728303628590612e-07,
+        "reactions_lb": {
+          "W1": 8.937339717358206,
+          "W2": 503.0972590088573,
+          "W3": 848.5191686718306,
+          "W4": -140.40295895654623,
+          "S1": -22.719249722313144,
+          "S2": -1173.3937260733242,
+          "N2": 748.0841241822127,
+          "S3": 2146.6316725271327,
+          "SW0": -43.93948436166388,
+          "N1 / U-W": 432.8733278956459
+        },
+        "max_elastic_stress_over_Fy": 0.046787380827235395,
+        "stress_member": "T-E diagonal 11"
+      },
+      "Droof": {
+        "floor_min_DY_in": -0.05674203434787271,
+        "floor_worst_node_xyz_in": [
+          224.25,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.05674203434787271,
+        "vertical_equilibrium_relative_error": 4.857488047826541e-09,
+        "global_force_relative_error": 1.138040306336137e-07,
+        "global_moment_relative_error": 1.7750854946210805e-07,
+        "reactions_lb": {
+          "W1": 628.3458218811586,
+          "W2": 944.7617431434754,
+          "W3": 905.8772112780084,
+          "W4": 24.246446049661497,
+          "S1": -24.184193634907132,
+          "S2": -1301.6680910241357,
+          "N2": 799.640223969592,
+          "S3": 3820.9890250926483,
+          "SW0": 194.15082087340207,
+          "N1 / U-W": 65.60360653460569
+        },
+        "max_elastic_stress_over_Fy": 0.0651507980023879,
+        "stress_member": "T-E diagonal 11"
+      },
+      "Dwall": {
+        "floor_min_DY_in": -0.019018140578240646,
+        "floor_worst_node_xyz_in": [
+          224.25,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.019018140578240646,
+        "vertical_equilibrium_relative_error": 5.449911093703832e-09,
+        "global_force_relative_error": 1.0659609415849029e-07,
+        "global_moment_relative_error": 1.5075193065546582e-07,
+        "reactions_lb": {
+          "W1": 143.36455496435264,
+          "W2": 334.27194066637713,
+          "W3": 305.44981273581385,
+          "W4": 152.3613138197194,
+          "S1": -5.8408057912791085,
+          "S2": -509.9506245692039,
+          "N2": 497.9474644088812,
+          "S3": 1054.5933182044403,
+          "SW0": -42.297023848907116,
+          "N1 / U-W": 395.5883454727459
+        },
+        "max_elastic_stress_over_Fy": 0.019123451271154585,
+        "stress_member": "T-E diagonal 11"
+      },
+      "L40": {
+        "floor_min_DY_in": -0.36481444839869615,
+        "floor_worst_node_xyz_in": [
+          112.125,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.36481444839869615,
+        "vertical_equilibrium_relative_error": 8.225552530764015e-09,
+        "global_force_relative_error": 1.5636707458187886e-07,
+        "global_moment_relative_error": 1.7778716746587146e-07,
+        "reactions_lb": {
+          "W1": 29.791128454468247,
+          "W2": 1676.9908802270347,
+          "W3": 2828.3972190596564,
+          "W4": -468.0097517805955,
+          "S1": -75.73083638922027,
+          "S2": -3911.3125008131406,
+          "N2": 2493.613760983083,
+          "S3": 7155.438929534797,
+          "SW0": -146.46493948674407,
+          "N1 / U-W": 1442.9110195188123
+        },
+        "max_elastic_stress_over_Fy": 0.1559579328690533,
+        "stress_member": "T-E diagonal 11"
+      },
+      "R20": {
+        "floor_min_DY_in": -0.13842872389484212,
+        "floor_worst_node_xyz_in": [
+          224.25,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.13842872389484212,
+        "vertical_equilibrium_relative_error": 4.8728214410731555e-09,
+        "global_force_relative_error": 1.53998439778175e-07,
+        "global_moment_relative_error": 2.3459288904085834e-07,
+        "reactions_lb": {
+          "W1": 1128.5027010500146,
+          "W2": 1780.590989318201,
+          "W3": 2551.9640068006383,
+          "W4": 146.27801841027124,
+          "S1": -60.125267587039744,
+          "S2": -3229.817932765855,
+          "N2": 2233.9245008527446,
+          "S3": 8324.732284716061,
+          "SW0": 335.8229517011046,
+          "N1 / U-W": 176.01668424100384
+        },
+        "max_elastic_stress_over_Fy": 0.1483739825737021,
+        "stress_member": "T-E diagonal 11"
+      }
+    },
+    "elapsed_seconds": 2.2829771041870117
+  },
+  {
+    "case": "sources_without_S3",
+    "removed_columns": [
+      "S3"
+    ],
+    "web_bending_releases": false,
+    "bases": "fixed_assumed",
+    "offset_link_stiffness_factor": 1000,
+    "analysis": "linear",
+    "section_scale": 1,
+    "eligible_for_construction": false,
+    "nodes": 686,
+    "elements": 671,
+    "offset_links": 111,
+    "steel_weight_lb": 9976.142031123702,
+    "load_ledger_lb": {
+      "Dfloor": 3307.6875,
+      "L40": 11025.625000000007,
+      "L30": 8269.21875,
+      "L75patch": 14140.938313802084,
+      "L125": 34455.07812500003,
+      "P200": 200.0,
+      "HB0.25": 1350.0,
+      "HB0.5": 1350.0,
+      "HB0.75": 1350.0,
+      "HT0.25": 1350.0,
+      "HT0.5": 1350.0,
+      "HT0.75": 1350.0,
+      "Droof": 6057.76264358902,
+      "R20": 13387.889001973936,
+      "U20": -13387.889001973936,
+      "Dwall": 2325.4883087366447,
+      "Dsteel": 9976.142031123702
+    },
+    "sections": {
+      "column": {
+        "name": "HSS4x4x0.25",
+        "A": 3.37,
+        "Iy": 7.8,
+        "Iz": 7.8,
+        "J": 12.8,
+        "w": 12.21,
+        "d": 4,
+        "S": 3.9
+      },
+      "chord": {
+        "name": "HSS6x6x0.25",
+        "A": 5.24,
+        "Iy": 28.6,
+        "Iz": 28.6,
+        "J": 46.1,
+        "w": 19.02,
+        "d": 6,
+        "S": 9.53
+      },
+      "header": {
+        "name": "HSS6x6x0.25",
+        "A": 5.24,
+        "Iy": 28.6,
+        "Iz": 28.6,
+        "J": 46.1,
+        "w": 19.02,
+        "d": 6,
+        "S": 9.53
+      },
+      "web": {
+        "name": "HSS2x2x0.125",
+        "A": 0.84,
+        "Iy": 0.486,
+        "Iz": 0.486,
+        "J": 0.796,
+        "w": 3.05,
+        "d": 2,
+        "S": 0.486
+      },
+      "hanger": {
+        "name": "HSS2x2x0.125",
+        "A": 0.84,
+        "Iy": 0.486,
+        "Iz": 0.486,
+        "J": 0.796,
+        "w": 3.05,
+        "d": 2,
+        "S": 0.486
+      },
+      "Wbeam": {
+        "name": "W8X31",
+        "A": 9.13,
+        "Iy": 37.1,
+        "Iz": 110,
+        "J": 0.536,
+        "w": 31,
+        "d": 8,
+        "S": 27.5
+      }
+    },
+    "unconnected_node_count": 0,
+    "status": "solved_conditional",
+    "results": {
+      "Dsteel": {
+        "floor_min_DY_in": -0.25723747430691346,
+        "floor_worst_node_xyz_in": [
+          224.25,
+          69.75,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.25723747430691346,
+        "vertical_equilibrium_relative_error": 2.115627866422555e-08,
+        "global_force_relative_error": 7.710892992535772e-07,
+        "global_moment_relative_error": 1.0066721322668683e-06,
+        "reactions_lb": {
+          "W1": 857.2191702537225,
+          "W2": 1751.0690948265283,
+          "W3": 1423.0598296579562,
+          "W4": 148.18224015421885,
+          "S1": 533.3846272449705,
+          "S2": 1788.8723944457738,
+          "N2": 2227.178897223705,
+          "SW0": 172.48043213879566,
+          "N1 / U-W": 1074.6951341199895
+        },
+        "max_elastic_stress_over_Fy": 0.1466868965478641,
+        "stress_member": "T-E"
+      },
+      "Dfloor": {
+        "floor_min_DY_in": -0.1662978784251743,
+        "floor_worst_node_xyz_in": [
+          140.15625,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.1662978784251743,
+        "vertical_equilibrium_relative_error": 3.703419957442824e-08,
+        "global_force_relative_error": 1.14248773755871e-06,
+        "global_moment_relative_error": 1.3191245616172075e-06,
+        "reactions_lb": {
+          "W1": 7.380824978914892,
+          "W2": 630.584229109373,
+          "W3": 989.8099109899524,
+          "W4": -337.2665666654719,
+          "S1": -26.144506637767947,
+          "S2": 542.3502300828516,
+          "N2": 1147.9565019931426,
+          "SW0": -151.00188756949225,
+          "N1 / U-W": 504.0186412209388
+        },
+        "max_elastic_stress_over_Fy": 0.08154715982205303,
+        "stress_member": "N2"
+      },
+      "Droof": {
+        "floor_min_DY_in": -0.2516825213328796,
+        "floor_worst_node_xyz_in": [
+          224.25,
+          69.75,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.2516825213328796,
+        "vertical_equilibrium_relative_error": 3.266983232852245e-08,
+        "global_force_relative_error": 1.203587563743567e-06,
+        "global_moment_relative_error": 1.5507087731229835e-06,
+        "reactions_lb": {
+          "W1": 624.3479590600624,
+          "W2": 1171.043489554627,
+          "W3": 1152.174402201304,
+          "W4": -316.31949904505433,
+          "S1": -32.989990725497876,
+          "S2": 1758.9580581069984,
+          "N2": 1508.0389597154938,
+          "SW0": 3.542010011430993,
+          "N1 / U-W": 188.96705680356644
+        },
+        "max_elastic_stress_over_Fy": 0.14665396552350632,
+        "stress_member": "T-E"
+      },
+      "Dwall": {
+        "floor_min_DY_in": -0.07093211593730338,
+        "floor_worst_node_xyz_in": [
+          224.25,
+          69.75,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.07093211593730338,
+        "vertical_equilibrium_relative_error": 2.5543587479657868e-08,
+        "global_force_relative_error": 8.784133742370552e-07,
+        "global_moment_relative_error": 1.045399873132739e-06,
+        "reactions_lb": {
+          "W1": 142.24520628519267,
+          "W2": 397.02068109942735,
+          "W3": 374.3822355982504,
+          "W4": 56.61495737811882,
+          "S1": -7.232085433479233,
+          "S2": 333.1734258003869,
+          "N2": 694.0291733482314,
+          "SW0": -94.9525363442431,
+          "N1 / U-W": 430.2071916034456
+        },
+        "max_elastic_stress_over_Fy": 0.038979476033783614,
+        "stress_member": "T-E"
+      },
+      "L40": {
+        "floor_min_DY_in": -0.5543262453004553,
+        "floor_worst_node_xyz_in": [
+          140.15625,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.5543262453004553,
+        "vertical_equilibrium_relative_error": 3.70395186688582e-08,
+        "global_force_relative_error": 1.2019062037500763e-06,
+        "global_moment_relative_error": 1.3739998267527638e-06,
+        "reactions_lb": {
+          "W1": 24.60277990842628,
+          "W2": 2101.947511058238,
+          "W3": 3299.366126689227,
+          "W4": -1124.2214882469386,
+          "S1": -87.14842383159535,
+          "S2": 1807.8341021153306,
+          "N2": 3826.5217475459203,
+          "SW0": -503.33981991140803,
+          "N1 / U-W": 1680.062056288961
+        },
+        "max_elastic_stress_over_Fy": 0.2718239438713806,
+        "stress_member": "N2"
+      },
+      "R20": {
+        "floor_min_DY_in": -0.5536668506509763,
+        "floor_worst_node_xyz_in": [
+          224.25,
+          69.75,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.5536668506509763,
+        "vertical_equilibrium_relative_error": 3.232961710913351e-08,
+        "global_force_relative_error": 1.2070729140025911e-06,
+        "global_moment_relative_error": 1.5046074563336032e-06,
+        "reactions_lb": {
+          "W1": 1119.7681222052254,
+          "W2": 2273.918295402975,
+          "W3": 3090.593215517309,
+          "W4": -599.2213896612666,
+          "S1": -78.58297434234156,
+          "S2": 3436.1469529299575,
+          "N2": 3778.5507878487188,
+          "SW0": -79.1545989507776,
+          "N1 / U-W": 445.87015819881043
+        },
+        "max_elastic_stress_over_Fy": 0.31249476167879303,
+        "stress_member": "T-E"
+      }
+    },
+    "elapsed_seconds": 2.0948688983917236
+  },
+  {
+    "case": "sources_base_pinned",
+    "removed_columns": [],
+    "web_bending_releases": false,
+    "bases": "pinned",
+    "offset_link_stiffness_factor": 1000,
+    "analysis": "linear",
+    "section_scale": 1,
+    "eligible_for_construction": false,
+    "nodes": 693,
+    "elements": 679,
+    "offset_links": 111,
+    "steel_weight_lb": 10135.251626754429,
+    "load_ledger_lb": {
+      "Dfloor": 3307.6875,
+      "L40": 11025.625000000007,
+      "L30": 8269.21875,
+      "L75patch": 14140.938313802084,
+      "L125": 34455.07812500003,
+      "P200": 200.0,
+      "HB0.25": 1350.0,
+      "HB0.5": 1350.0,
+      "HB0.75": 1350.0,
+      "HT0.25": 1350.0,
+      "HT0.5": 1350.0,
+      "HT0.75": 1350.0,
+      "Droof": 6057.76264358902,
+      "R20": 13387.889001973936,
+      "U20": -13387.889001973936,
+      "Dwall": 2325.4883087366447,
+      "Dsteel": 10135.251626754429
+    },
+    "sections": {
+      "column": {
+        "name": "HSS4x4x0.25",
+        "A": 3.37,
+        "Iy": 7.8,
+        "Iz": 7.8,
+        "J": 12.8,
+        "w": 12.21,
+        "d": 4,
+        "S": 3.9
+      },
+      "chord": {
+        "name": "HSS6x6x0.25",
+        "A": 5.24,
+        "Iy": 28.6,
+        "Iz": 28.6,
+        "J": 46.1,
+        "w": 19.02,
+        "d": 6,
+        "S": 9.53
+      },
+      "header": {
+        "name": "HSS6x6x0.25",
+        "A": 5.24,
+        "Iy": 28.6,
+        "Iz": 28.6,
+        "J": 46.1,
+        "w": 19.02,
+        "d": 6,
+        "S": 9.53
+      },
+      "web": {
+        "name": "HSS2x2x0.125",
+        "A": 0.84,
+        "Iy": 0.486,
+        "Iz": 0.486,
+        "J": 0.796,
+        "w": 3.05,
+        "d": 2,
+        "S": 0.486
+      },
+      "hanger": {
+        "name": "HSS2x2x0.125",
+        "A": 0.84,
+        "Iy": 0.486,
+        "Iz": 0.486,
+        "J": 0.796,
+        "w": 3.05,
+        "d": 2,
+        "S": 0.486
+      },
+      "Wbeam": {
+        "name": "W8X31",
+        "A": 9.13,
+        "Iy": 37.1,
+        "Iz": 110,
+        "J": 0.536,
+        "w": 31,
+        "d": 8,
+        "S": 27.5
+      }
+    },
+    "unconnected_node_count": 0,
+    "status": "solved_conditional",
+    "results": {
+      "Dsteel": {
+        "floor_min_DY_in": -0.06782480889313622,
+        "floor_worst_node_xyz_in": [
+          158.84375,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.06782480889313622,
+        "vertical_equilibrium_relative_error": 5.4320216855186836e-09,
+        "global_force_relative_error": 1.0673203157851142e-07,
+        "global_moment_relative_error": 7.992579060901946e-08,
+        "reactions_lb": {
+          "W1": 859.3686845521943,
+          "W2": 1518.257266669206,
+          "W3": 1181.777779364043,
+          "W4": 472.56631773691635,
+          "S1": 542.661356532993,
+          "S2": -1354.0503368543602,
+          "N2": 1497.1286352873933,
+          "S3": 4089.637140219953,
+          "SW0": 370.5205865892787,
+          "N1 / U-W": 957.3841416019062
+        },
+        "max_elastic_stress_over_Fy": 0.07541129779761283,
+        "stress_member": "T-E diagonal 11"
+      },
+      "Dfloor": {
+        "floor_min_DY_in": -0.11155739031088609,
+        "floor_worst_node_xyz_in": [
+          112.125,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.11155739031088609,
+        "vertical_equilibrium_relative_error": 1.1844858235985749e-08,
+        "global_force_relative_error": 2.2499439080878813e-07,
+        "global_moment_relative_error": 1.4722617746007506e-07,
+        "reactions_lb": {
+          "W1": 7.973077610252921,
+          "W2": 500.82309333964866,
+          "W3": 852.5519550886686,
+          "W4": -163.39272634967824,
+          "S1": -22.083857646975645,
+          "S2": -1206.223045930718,
+          "N2": 740.503205975795,
+          "S3": 2193.7325532710997,
+          "SW0": -40.813326806522305,
+          "N1 / U-W": 444.6165322693396
+        },
+        "max_elastic_stress_over_Fy": 0.04775820750000121,
+        "stress_member": "T-E diagonal 11"
+      },
+      "Droof": {
+        "floor_min_DY_in": -0.058041080690025317,
+        "floor_worst_node_xyz_in": [
+          224.25,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.058041080690025317,
+        "vertical_equilibrium_relative_error": 6.877791994433833e-09,
+        "global_force_relative_error": 1.480135635010791e-07,
+        "global_moment_relative_error": 1.0572328219976947e-07,
+        "reactions_lb": {
+          "W1": 627.3860217002516,
+          "W2": 943.3308539085147,
+          "W3": 915.3632134737052,
+          "W4": 4.9723968016548,
+          "S1": -22.838658516686785,
+          "S2": -1335.4884464499517,
+          "N2": 789.6430227193848,
+          "S3": 3865.3633313099335,
+          "SW0": 198.17013855231315,
+          "N1 / U-W": 71.86072842586951
+        },
+        "max_elastic_stress_over_Fy": 0.06598298504510447,
+        "stress_member": "T-E diagonal 11"
+      },
+      "Dwall": {
+        "floor_min_DY_in": -0.01952419059220968,
+        "floor_worst_node_xyz_in": [
+          224.25,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.01952419059220968,
+        "vertical_equilibrium_relative_error": 7.777618340010003e-09,
+        "global_force_relative_error": 1.7582130984515887e-07,
+        "global_moment_relative_error": 1.1501944618829665e-07,
+        "reactions_lb": {
+          "W1": 142.5724233169528,
+          "W2": 333.82063742512895,
+          "W3": 310.7474817713967,
+          "W4": 142.63560371190158,
+          "S1": -5.253800600249055,
+          "S2": -521.4196257491856,
+          "N2": 494.0332269716097,
+          "S3": 1070.3404525404944,
+          "SW0": -40.52594192208445,
+          "N1 / U-W": 398.53783318391913
+        },
+        "max_elastic_stress_over_Fy": 0.01945607680874872,
+        "stress_member": "T-E diagonal 11"
+      },
+      "L40": {
+        "floor_min_DY_in": -0.37185798783953233,
+        "floor_worst_node_xyz_in": [
+          112.125,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.37185798783953233,
+        "vertical_equilibrium_relative_error": 1.1855738255608206e-08,
+        "global_force_relative_error": 2.3318473681898872e-07,
+        "global_moment_relative_error": 2.074629474575989e-07,
+        "reactions_lb": {
+          "W1": 26.577262787503827,
+          "W2": 1669.410325435758,
+          "W3": 2841.8396339717265,
+          "W4": -544.6431048997532,
+          "S1": -73.6125000910404,
+          "S2": -4020.743617843178,
+          "N2": 2468.343968016802,
+          "S3": 7312.441564600291,
+          "SW0": -136.04449682132105,
+          "N1 / U-W": 1482.0558341262954
+        },
+        "max_elastic_stress_over_Fy": 0.1591940492560471,
+        "stress_member": "T-E diagonal 11"
+      },
+      "R20": {
+        "floor_min_DY_in": -0.141630725738642,
+        "floor_worst_node_xyz_in": [
+          224.25,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.141630725738642,
+        "vertical_equilibrium_relative_error": 7.02787518372971e-09,
+        "global_force_relative_error": 1.56134524814678e-07,
+        "global_moment_relative_error": 1.0574728167940942e-07,
+        "reactions_lb": {
+          "W1": 1125.7086001945172,
+          "W2": 1776.912788581431,
+          "W3": 2576.197610705913,
+          "W4": 98.16459500579548,
+          "S1": -56.78093699846201,
+          "S2": -3311.0434230237606,
+          "N2": 2208.896353041943,
+          "S3": 8431.969315629332,
+          "SW0": 346.33842432372796,
+          "N1 / U-W": 191.5255804250848
+        },
+        "max_elastic_stress_over_Fy": 0.15042815046412134,
+        "stress_member": "T-E diagonal 11"
+      }
+    },
+    "elapsed_seconds": 2.1496152877807617
+  },
+  {
+    "case": "sources_web_pinned",
+    "removed_columns": [],
+    "web_bending_releases": true,
+    "bases": "fixed_assumed",
+    "offset_link_stiffness_factor": 1000,
+    "analysis": "linear",
+    "section_scale": 1,
+    "eligible_for_construction": false,
+    "nodes": 693,
+    "elements": 679,
+    "offset_links": 111,
+    "steel_weight_lb": 10135.251626754429,
+    "load_ledger_lb": {
+      "Dfloor": 3307.6875,
+      "L40": 11025.625000000007,
+      "L30": 8269.21875,
+      "L75patch": 14140.938313802084,
+      "L125": 34455.07812500003,
+      "P200": 200.0,
+      "HB0.25": 1350.0,
+      "HB0.5": 1350.0,
+      "HB0.75": 1350.0,
+      "HT0.25": 1350.0,
+      "HT0.5": 1350.0,
+      "HT0.75": 1350.0,
+      "Droof": 6057.76264358902,
+      "R20": 13387.889001973936,
+      "U20": -13387.889001973936,
+      "Dwall": 2325.4883087366447,
+      "Dsteel": 10135.251626754429
+    },
+    "sections": {
+      "column": {
+        "name": "HSS4x4x0.25",
+        "A": 3.37,
+        "Iy": 7.8,
+        "Iz": 7.8,
+        "J": 12.8,
+        "w": 12.21,
+        "d": 4,
+        "S": 3.9
+      },
+      "chord": {
+        "name": "HSS6x6x0.25",
+        "A": 5.24,
+        "Iy": 28.6,
+        "Iz": 28.6,
+        "J": 46.1,
+        "w": 19.02,
+        "d": 6,
+        "S": 9.53
+      },
+      "header": {
+        "name": "HSS6x6x0.25",
+        "A": 5.24,
+        "Iy": 28.6,
+        "Iz": 28.6,
+        "J": 46.1,
+        "w": 19.02,
+        "d": 6,
+        "S": 9.53
+      },
+      "web": {
+        "name": "HSS2x2x0.125",
+        "A": 0.84,
+        "Iy": 0.486,
+        "Iz": 0.486,
+        "J": 0.796,
+        "w": 3.05,
+        "d": 2,
+        "S": 0.486
+      },
+      "hanger": {
+        "name": "HSS2x2x0.125",
+        "A": 0.84,
+        "Iy": 0.486,
+        "Iz": 0.486,
+        "J": 0.796,
+        "w": 3.05,
+        "d": 2,
+        "S": 0.486
+      },
+      "Wbeam": {
+        "name": "W8X31",
+        "A": 9.13,
+        "Iy": 37.1,
+        "Iz": 110,
+        "J": 0.536,
+        "w": 31,
+        "d": 8,
+        "S": 27.5
+      }
+    },
+    "unconnected_node_count": 0,
+    "status": "solved_conditional",
+    "results": {
+      "Dsteel": {
+        "floor_min_DY_in": -0.0671858475088328,
+        "floor_worst_node_xyz_in": [
+          158.84375,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.0671858475088328,
+        "vertical_equilibrium_relative_error": 1.0584116197359381e-09,
+        "global_force_relative_error": 1.6521627669088184e-08,
+        "global_moment_relative_error": 1.4837554449357993e-08,
+        "reactions_lb": {
+          "W1": 857.3227332343778,
+          "W2": 1520.8704409542574,
+          "W3": 1169.8367580814866,
+          "W4": 499.0847693609774,
+          "S1": 539.1627105409293,
+          "S2": -1320.3245383573085,
+          "N2": 1503.6157030251418,
+          "S3": 4046.7964212183683,
+          "SW0": 368.5834275367383,
+          "N1 / U-W": 950.303211886728
+        },
+        "max_elastic_stress_over_Fy": 0.07172048984793986,
+        "stress_member": "T-E diagonal 11"
+      },
+      "Dfloor": {
+        "floor_min_DY_in": -0.11103249004723277,
+        "floor_worst_node_xyz_in": [
+          112.125,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.11103249004723277,
+        "vertical_equilibrium_relative_error": 6.847131042742559e-09,
+        "global_force_relative_error": 7.832391384638626e-08,
+        "global_moment_relative_error": 4.6028386943868623e-08,
+        "reactions_lb": {
+          "W1": 6.0295764327581685,
+          "W2": 505.4567450709086,
+          "W3": 851.7152454593905,
+          "W4": -147.4538622596759,
+          "S1": -23.109678081535133,
+          "S2": -1172.6401915535182,
+          "N2": 747.6810708740089,
+          "S3": 2144.57151003223,
+          "SW0": -42.72233252924832,
+          "N1 / U-W": 438.15943920285116
+        },
+        "max_elastic_stress_over_Fy": 0.04257883273462317,
+        "stress_member": "T-E diagonal 11"
+      },
+      "Droof": {
+        "floor_min_DY_in": -0.05805878151824286,
+        "floor_worst_node_xyz_in": [
+          224.25,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.05805878151824286,
+        "vertical_equilibrium_relative_error": 3.494704571553197e-09,
+        "global_force_relative_error": 4.960043656232362e-08,
+        "global_moment_relative_error": 2.9613016117443845e-08,
+        "reactions_lb": {
+          "W1": 626.4407890976116,
+          "W2": 943.7260776725419,
+          "W3": 899.8375031881724,
+          "W4": 32.46374886879299,
+          "S1": -25.649766000269555,
+          "S2": -1313.5381752189544,
+          "N2": 795.4579647622036,
+          "S3": 3838.757844675446,
+          "SW0": 196.62832870825912,
+          "N1 / U-W": 63.63834900530753
+        },
+        "max_elastic_stress_over_Fy": 0.06008996470972872,
+        "stress_member": "T-E diagonal 11"
+      },
+      "Dwall": {
+        "floor_min_DY_in": -0.019517664228967772,
+        "floor_worst_node_xyz_in": [
+          224.25,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.019517664228967772,
+        "vertical_equilibrium_relative_error": 2.022649143907136e-09,
+        "global_force_relative_error": 2.219627258604884e-08,
+        "global_moment_relative_error": 3.923361126145921e-08,
+        "reactions_lb": {
+          "W1": 142.6664379480267,
+          "W2": 333.86272090286855,
+          "W3": 304.1754359962384,
+          "W4": 153.4523552370025,
+          "S1": -6.046026392946505,
+          "S2": -513.550347868855,
+          "N2": 496.5121471559812,
+          "S3": 1059.5284219593339,
+          "SW0": -41.447123587299245,
+          "N1 / U-W": 396.33429208994124
+        },
+        "max_elastic_stress_over_Fy": 0.017715556545788665,
+        "stress_member": "T-E diagonal 11"
+      },
+      "L40": {
+        "floor_min_DY_in": -0.3701083030111729,
+        "floor_worst_node_xyz_in": [
+          112.125,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.3701083030111729,
+        "vertical_equilibrium_relative_error": 6.840553191009997e-09,
+        "global_force_relative_error": 5.917481571538675e-08,
+        "global_moment_relative_error": 3.121483821831063e-08,
+        "reactions_lb": {
+          "W1": 20.098529649779255,
+          "W2": 1684.8558245820323,
+          "W3": 2839.050805828508,
+          "W4": -491.5130276691658,
+          "S1": -77.03232886703432,
+          "S2": -3908.8004873597188,
+          "N2": 2492.2702829789428,
+          "S3": 7148.571733331263,
+          "SW0": -142.40783327164473,
+          "N1 / U-W": 1460.5315762184198
+        },
+        "max_elastic_stress_over_Fy": 0.14192944155430787,
+        "stress_member": "T-E diagonal 11"
+      },
+      "R20": {
+        "floor_min_DY_in": -0.14186209209182418,
+        "floor_worst_node_xyz_in": [
+          224.25,
+          185.0,
+          116.0
+        ],
+        "max_floor_abs_DY_in": 0.14186209209182418,
+        "vertical_equilibrium_relative_error": 2.860971503076217e-09,
+        "global_force_relative_error": 4.05182206692869e-08,
+        "global_moment_relative_error": 2.4391458591078116e-08,
+        "reactions_lb": {
+          "W1": 1123.8425545611165,
+          "W2": 1777.8336219216433,
+          "W3": 2538.4897300122893,
+          "W4": 165.060543112738,
+          "S1": -63.40157418827565,
+          "S2": -3257.6998564352607,
+          "N2": 2224.317879025841,
+          "S3": 8366.089149177616,
+          "SW0": 341.858746767796,
+          "N1 / U-W": 171.49824632080117
+        },
+        "max_elastic_stress_over_Fy": 0.137134186113391,
+        "stress_member": "T-E diagonal 11"
+      }
+    },
+    "elapsed_seconds": 2.1987221240997314
+  }
+]

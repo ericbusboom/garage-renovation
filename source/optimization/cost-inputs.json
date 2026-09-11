@@ -1,0 +1,42 @@
+{
+  "currency": "USD",
+  "rates_not_quotes": {
+    "steel_delivered_per_lb": null,
+    "shop_per_hour": null,
+    "field_per_hour": null,
+    "foundation_per_column": null,
+    "crane_per_hour": null
+  },
+  "quantities": [
+    {
+      "case": "baseline",
+      "primary_steel_lb": 10135.251626754429,
+      "steel_saved_lb": 0.0,
+      "columns_removed": 0,
+      "foundation_savings_unverified": true
+    },
+    {
+      "case": "remove_W2",
+      "primary_steel_lb": 9935.167121675397,
+      "steel_saved_lb": 200.08450507903217,
+      "columns_removed": 1,
+      "foundation_savings_unverified": true
+    },
+    {
+      "case": "remove_W3",
+      "primary_steel_lb": 9902.14914631685,
+      "steel_saved_lb": 233.1024804375793,
+      "columns_removed": 1,
+      "foundation_savings_unverified": true
+    },
+    {
+      "case": "remove_W2_W3",
+      "primary_steel_lb": 9702.06464123782,
+      "steel_saved_lb": 433.18698551660964,
+      "columns_removed": 2,
+      "foundation_savings_unverified": true
+    }
+  ],
+  "total_formula": "steel_lb * steel_delivered_per_lb + shop_hours * shop_per_hour + field_hours * field_per_hour + foundation_cost + lifting_transport_cost",
+  "decision": "No cost winner until connection labor and revised foundation quantities are estimated. Compare shop-weld/site-bolt versus site-weld with the same load requirements."
+}

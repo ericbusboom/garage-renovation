@@ -1,0 +1,53 @@
+{
+  "units": "inches",
+  "origin": "garage west wall x=0; common south support face y=0; east +x, north +y",
+  "workbench": {
+    "x": -27,
+    "y": 0,
+    "width_EW": 27,
+    "length_NS": 75,
+    "top_height": null
+  },
+  "electrical_pillar": {
+    "x_assumed": -174.25,
+    "y": 0,
+    "width_EW": 10,
+    "length_NS": 48
+  },
+  "beam": {
+    "length": 137.25,
+    "height": 18,
+    "depth_NS": 2.5,
+    "bottom_height": null,
+    "end_interpretation": "PROVISIONAL clear between support inner faces",
+    "tube_outer": [
+      2.5,
+      2.5
+    ],
+    "tube_wall": null
+  },
+  "main_angle": {
+    "legs": [
+      2.5,
+      2.5
+    ],
+    "thickness": 0.25
+  },
+  "roof": {
+    "north_overhang": 10,
+    "south_overhang": 10,
+    "west_overhang": 10,
+    "east_edge": "assumed meets garage wall",
+    "framing_stated_size": 0.75,
+    "framing_other_dimension": null,
+    "pitch": null,
+    "material": "corrugated plastic"
+  },
+  "derived_provisional": {
+    "overall_EW": 174.25,
+    "roof_EW": 184.25,
+    "roof_NS": 95,
+    "pillar_north_offset_from_garage": 27
+  },
+  "vertical_drawing": "Schematic placeholders only; not calibrated dimensions"
+}

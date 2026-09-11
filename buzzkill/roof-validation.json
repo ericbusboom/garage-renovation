@@ -1,0 +1,3763 @@
+{
+  "request_id": "RAFTER-GLOBAL-DATUM-003",
+  "freecad_version": [
+    "1",
+    "1",
+    "3",
+    "20260725 (Git shallow)",
+    "Unknown",
+    "2026/07/25 04:52:02",
+    "grafted,grafted",
+    "145529fe741292ff0b3977a01195bf0247425794"
+  ],
+  "native_reopen_success": true,
+  "gui_visibility": true,
+  "camera": "#Inventor V2.1 ascii\n\n\nOrthographicCamera {\n  viewportMapping ADJUST_CAMERA\n  position 13560.955 -7230.0049 12405.255\n  orientation 0.74290603 0.30772176 0.59447283  1.217116\n  nearDistance 100\n  farDistance 36000\n  aspectRatio 1\n  focalDistance 18000\n  height 12500\n\n}\n",
+  "walls_unchanged_geometrically": true,
+  "proposed_file_hash_unchanged": true,
+  "original_sha256": {
+    "Existing-Garage.FCStd": "8cb9a6f41a85c5e31684e21bcc44928dd3f545c41010202dd273d945e25cb666",
+    "Proposed-Garage.FCStd": "0976a720479a03f0264216c2b94c6774f9cd45d6012072ba9c11fc3987bac275"
+  },
+  "backup_directory": "/proj/garage/backups/20260909T213848372442Z",
+  "roof_objects": [
+    {
+      "name": "SoffitSouth",
+      "label": "South soffit \u2014 thickness placeholder",
+      "volume_mm3": 11076631.072500033,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBox"
+    },
+    {
+      "name": "SoffitNorth",
+      "label": "North soffit \u2014 thickness placeholder",
+      "volume_mm3": 11076631.072500017,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBox"
+    },
+    {
+      "name": "SoffitWest",
+      "label": "West soffit \u2014 thickness placeholder",
+      "volume_mm3": 10754010.750000032,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBox"
+    },
+    {
+      "name": "SoffitEast",
+      "label": "East soffit \u2014 thickness placeholder",
+      "volume_mm3": 10754010.750000017,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBox"
+    },
+    {
+      "name": "FasciaSouth",
+      "label": "South fascia",
+      "volume_mm3": 11141155.137000002,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBox"
+    },
+    {
+      "name": "FasciaNorth",
+      "label": "North fascia",
+      "volume_mm3": 11141155.137000037,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBox"
+    },
+    {
+      "name": "FasciaWest",
+      "label": "West fascia",
+      "volume_mm3": 11055123.050999999,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBox"
+    },
+    {
+      "name": "FasciaEast",
+      "label": "East fascia",
+      "volume_mm3": 11055123.051000034,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBox"
+    },
+    {
+      "name": "RidgeBoardOutput",
+      "label": "18-inch N\u2013S ridge \u2014 schematic end trims",
+      "volume_mm3": 2433479.003999996,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "HipSWGlobalDatumOutput",
+      "label": "Hip SW \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 24659481.95396944,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "HipSEGlobalDatumOutput",
+      "label": "Hip SE \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 24659481.953969438,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "HipNWGlobalDatumOutput",
+      "label": "Hip NW \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 24659481.953969415,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "HipNEGlobalDatumOutput",
+      "label": "Hip NE \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 24659481.953969404,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "SouthNear1GlobalDatumOutput",
+      "label": "South jack at 16 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 2542803.592251007,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "SouthNear2GlobalDatumOutput",
+      "label": "South jack at 40 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 5879712.15378001,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "SouthNear3GlobalDatumOutput",
+      "label": "South jack at 64 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 9216620.715309,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "SouthNear4GlobalDatumOutput",
+      "label": "South jack at 88 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 12553529.276837982,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "SouthNear5GlobalDatumOutput",
+      "label": "South jack at 112 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 15890437.838366982,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "SouthFar1GlobalDatumOutput",
+      "label": "South jack at 233.5 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 2542803.5922510102,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "SouthFar2GlobalDatumOutput",
+      "label": "South jack at 209.5 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 5879712.153780001,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "SouthFar3GlobalDatumOutput",
+      "label": "South jack at 185.5 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 9216620.715308968,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "SouthFar4GlobalDatumOutput",
+      "label": "South jack at 161.5 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 12553529.27683797,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "SouthFar5GlobalDatumOutput",
+      "label": "South jack at 137.5 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 15890437.83836698,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "NorthNear1GlobalDatumOutput",
+      "label": "North jack at 16 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 2542803.592251012,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "NorthNear2GlobalDatumOutput",
+      "label": "North jack at 40 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 5879712.1537800105,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "NorthNear3GlobalDatumOutput",
+      "label": "North jack at 64 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 9216620.715308994,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "NorthNear4GlobalDatumOutput",
+      "label": "North jack at 88 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 12553529.276837984,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "NorthNear5GlobalDatumOutput",
+      "label": "North jack at 112 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 15890437.83836698,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "NorthFar1GlobalDatumOutput",
+      "label": "North jack at 233.5 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 2542803.5922510126,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "NorthFar2GlobalDatumOutput",
+      "label": "North jack at 209.5 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 5879712.153779996,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "NorthFar3GlobalDatumOutput",
+      "label": "North jack at 185.5 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 9216620.715308968,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "NorthFar4GlobalDatumOutput",
+      "label": "North jack at 161.5 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 12553529.276837973,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "NorthFar5GlobalDatumOutput",
+      "label": "North jack at 137.5 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 15890437.838366978,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "WestNear1GlobalDatumOutput",
+      "label": "West jack at 16 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 2953257.540195656,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "WestNear2GlobalDatumOutput",
+      "label": "West jack at 40 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 6773709.570228139,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "WestNear3GlobalDatumOutput",
+      "label": "West jack at 64 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 10594161.600260606,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "WestNear4GlobalDatumOutput",
+      "label": "West jack at 88 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 14414613.630293101,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "WestNear5GlobalDatumOutput",
+      "label": "West jack at 112 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 18235065.660325587,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "WestFar1GlobalDatumOutput",
+      "label": "West jack at 233 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 2953257.540195667,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "WestFar2GlobalDatumOutput",
+      "label": "West jack at 209 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 6773709.57022816,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "WestFar3GlobalDatumOutput",
+      "label": "West jack at 185 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 10594161.600260656,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "WestFar4GlobalDatumOutput",
+      "label": "West jack at 161 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 14414613.630293159,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "WestFar5GlobalDatumOutput",
+      "label": "West jack at 137 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 18235065.660325587,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "EastNear1GlobalDatumOutput",
+      "label": "East jack at 16 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 2953257.5401956583,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "EastNear2GlobalDatumOutput",
+      "label": "East jack at 40 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 6773709.570228141,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "EastNear3GlobalDatumOutput",
+      "label": "East jack at 64 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 10594161.60026062,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "EastNear4GlobalDatumOutput",
+      "label": "East jack at 88 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 14414613.630293116,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "EastNear5GlobalDatumOutput",
+      "label": "East jack at 112 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 18235065.660325598,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "EastFar1GlobalDatumOutput",
+      "label": "East jack at 233 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 2953257.5401956737,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "EastFar2GlobalDatumOutput",
+      "label": "East jack at 209 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 6773709.570228142,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "EastFar3GlobalDatumOutput",
+      "label": "East jack at 185 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 10594161.600260602,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "EastFar4GlobalDatumOutput",
+      "label": "East jack at 161 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 14414613.630293097,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    },
+    {
+      "name": "EastFar5GlobalDatumOutput",
+      "label": "East jack at 137 in \u2014 schematic end trims \u2014 soffit/fascia clearance \u2014 global 98.5 in underside datum",
+      "volume_mm3": 18235065.660325605,
+      "valid": true,
+      "solids": 1,
+      "visible": true,
+      "view_provider": "PartGui::ViewProviderBoolean"
+    }
+  ],
+  "member_layout": [
+    {
+      "name": "RidgeBoard",
+      "kind": "ridge",
+      "station_inches": null,
+      "output": "RidgeBoardOutput",
+      "start_mm": [
+        3168.6499999999996,
+        2933.7,
+        4025.8999999999996
+      ],
+      "end_mm": [
+        3168.6499999999996,
+        3390.8999999999996,
+        4025.8999999999996
+      ],
+      "pitch_degrees": 0.0,
+      "run_mm": 457.1999999999998
+    },
+    {
+      "name": "HipSW",
+      "kind": "hip",
+      "station_inches": null,
+      "output": "HipSWGlobalDatumOutput",
+      "start_mm": [
+        -120.64999999999999,
+        -120.64999999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        3168.6499999999996,
+        2933.7,
+        4025.8999999999996
+      ],
+      "pitch_degrees": 17.95009297983865,
+      "run_mm": 4488.71344735883,
+      "pre_tail_output": "HipSWOutput",
+      "pre_global_output": "HipSWFasciaWestTrimmed"
+    },
+    {
+      "name": "HipSE",
+      "kind": "hip",
+      "station_inches": null,
+      "output": "HipSEGlobalDatumOutput",
+      "start_mm": [
+        6457.949999999999,
+        -120.64999999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        3168.6499999999996,
+        2933.7,
+        4025.8999999999996
+      ],
+      "pitch_degrees": 17.95009297983865,
+      "run_mm": 4488.71344735883,
+      "pre_tail_output": "HipSEOutput",
+      "pre_global_output": "HipSEFasciaEastTrimmed"
+    },
+    {
+      "name": "HipNW",
+      "kind": "hip",
+      "station_inches": null,
+      "output": "HipNWGlobalDatumOutput",
+      "start_mm": [
+        -120.64999999999999,
+        6445.249999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        3168.6499999999996,
+        3390.8999999999996,
+        4025.8999999999996
+      ],
+      "pitch_degrees": 17.95009297983865,
+      "run_mm": 4488.71344735883,
+      "pre_tail_output": "HipNWOutput",
+      "pre_global_output": "HipNWFasciaWestTrimmed"
+    },
+    {
+      "name": "HipNE",
+      "kind": "hip",
+      "station_inches": null,
+      "output": "HipNEGlobalDatumOutput",
+      "start_mm": [
+        6457.949999999999,
+        6445.249999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        3168.6499999999996,
+        3390.8999999999996,
+        4025.8999999999996
+      ],
+      "pitch_degrees": 17.95009297983865,
+      "run_mm": 4488.71344735883,
+      "pre_tail_output": "HipNEOutput",
+      "pre_global_output": "HipNEFasciaEastTrimmed"
+    },
+    {
+      "name": "SouthNear1",
+      "kind": "jack",
+      "station_inches": 16,
+      "output": "SouthNear1GlobalDatumOutput",
+      "start_mm": [
+        406.4,
+        -120.64999999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        406.4,
+        368.7535714285715,
+        2804.7508687258683
+      ],
+      "pitch_degrees": 25.45872107838451,
+      "run_mm": 489.40357142857147,
+      "pre_tail_output": "SouthNear1Output",
+      "pre_global_output": "SouthNear1FasciaSouthTrimmed"
+    },
+    {
+      "name": "SouthNear2",
+      "kind": "jack",
+      "station_inches": 40,
+      "output": "SouthNear2GlobalDatumOutput",
+      "start_mm": [
+        1015.9999999999999,
+        -120.64999999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        1015.9999999999999,
+        934.8107142857142,
+        3074.245849420849
+      ],
+      "pitch_degrees": 25.458721078384517,
+      "run_mm": 1055.4607142857142,
+      "pre_tail_output": "SouthNear2Output",
+      "pre_global_output": "SouthNear2FasciaSouthTrimmed"
+    },
+    {
+      "name": "SouthNear3",
+      "kind": "jack",
+      "station_inches": 64,
+      "output": "SouthNear3GlobalDatumOutput",
+      "start_mm": [
+        1625.6,
+        -120.64999999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        1625.6,
+        1500.8678571428572,
+        3343.74083011583
+      ],
+      "pitch_degrees": 25.458721078384514,
+      "run_mm": 1621.5178571428573,
+      "pre_tail_output": "SouthNear3Output",
+      "pre_global_output": "SouthNear3FasciaSouthTrimmed"
+    },
+    {
+      "name": "SouthNear4",
+      "kind": "jack",
+      "station_inches": 88,
+      "output": "SouthNear4GlobalDatumOutput",
+      "start_mm": [
+        2235.2,
+        -120.64999999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        2235.2,
+        2066.9249999999997,
+        3613.23581081081
+      ],
+      "pitch_degrees": 25.45872107838451,
+      "run_mm": 2187.575,
+      "pre_tail_output": "SouthNear4Output",
+      "pre_global_output": "SouthNear4FasciaSouthTrimmed"
+    },
+    {
+      "name": "SouthNear5",
+      "kind": "jack",
+      "station_inches": 112,
+      "output": "SouthNear5GlobalDatumOutput",
+      "start_mm": [
+        2844.7999999999997,
+        -120.64999999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        2844.7999999999997,
+        2632.9821428571427,
+        3882.730791505791
+      ],
+      "pitch_degrees": 25.45872107838451,
+      "run_mm": 2753.6321428571428,
+      "pre_tail_output": "SouthNear5Output",
+      "pre_global_output": "SouthNear5FasciaSouthTrimmed"
+    },
+    {
+      "name": "SouthFar1",
+      "kind": "jack",
+      "station_inches": 233.5,
+      "output": "SouthFar1GlobalDatumOutput",
+      "start_mm": [
+        5930.9,
+        -120.64999999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        5930.9,
+        368.7535714285715,
+        2804.7508687258683
+      ],
+      "pitch_degrees": 25.45872107838451,
+      "run_mm": 489.40357142857147,
+      "pre_tail_output": "SouthFar1Output",
+      "pre_global_output": "SouthFar1FasciaSouthTrimmed"
+    },
+    {
+      "name": "SouthFar2",
+      "kind": "jack",
+      "station_inches": 209.5,
+      "output": "SouthFar2GlobalDatumOutput",
+      "start_mm": [
+        5321.299999999999,
+        -120.64999999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        5321.299999999999,
+        934.8107142857142,
+        3074.245849420849
+      ],
+      "pitch_degrees": 25.458721078384517,
+      "run_mm": 1055.4607142857142,
+      "pre_tail_output": "SouthFar2Output",
+      "pre_global_output": "SouthFar2FasciaSouthTrimmed"
+    },
+    {
+      "name": "SouthFar3",
+      "kind": "jack",
+      "station_inches": 185.5,
+      "output": "SouthFar3GlobalDatumOutput",
+      "start_mm": [
+        4711.699999999999,
+        -120.64999999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        4711.699999999999,
+        1500.8678571428572,
+        3343.74083011583
+      ],
+      "pitch_degrees": 25.458721078384514,
+      "run_mm": 1621.5178571428573,
+      "pre_tail_output": "SouthFar3Output",
+      "pre_global_output": "SouthFar3FasciaSouthTrimmed"
+    },
+    {
+      "name": "SouthFar4",
+      "kind": "jack",
+      "station_inches": 161.5,
+      "output": "SouthFar4GlobalDatumOutput",
+      "start_mm": [
+        4102.099999999999,
+        -120.64999999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        4102.099999999999,
+        2066.9249999999997,
+        3613.23581081081
+      ],
+      "pitch_degrees": 25.45872107838451,
+      "run_mm": 2187.575,
+      "pre_tail_output": "SouthFar4Output",
+      "pre_global_output": "SouthFar4FasciaSouthTrimmed"
+    },
+    {
+      "name": "SouthFar5",
+      "kind": "jack",
+      "station_inches": 137.5,
+      "output": "SouthFar5GlobalDatumOutput",
+      "start_mm": [
+        3492.4999999999995,
+        -120.64999999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        3492.4999999999995,
+        2632.9821428571427,
+        3882.730791505791
+      ],
+      "pitch_degrees": 25.45872107838451,
+      "run_mm": 2753.6321428571428,
+      "pre_tail_output": "SouthFar5Output",
+      "pre_global_output": "SouthFar5FasciaSouthTrimmed"
+    },
+    {
+      "name": "NorthNear1",
+      "kind": "jack",
+      "station_inches": 16,
+      "output": "NorthNear1GlobalDatumOutput",
+      "start_mm": [
+        406.4,
+        6445.249999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        406.4,
+        5955.846428571427,
+        2804.7508687258683
+      ],
+      "pitch_degrees": 25.45872107838449,
+      "run_mm": 489.4035714285719,
+      "pre_tail_output": "NorthNear1Output",
+      "pre_global_output": "NorthNear1FasciaNorthTrimmed"
+    },
+    {
+      "name": "NorthNear2",
+      "kind": "jack",
+      "station_inches": 40,
+      "output": "NorthNear2GlobalDatumOutput",
+      "start_mm": [
+        1015.9999999999999,
+        6445.249999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        1015.9999999999999,
+        5389.789285714285,
+        3074.245849420849
+      ],
+      "pitch_degrees": 25.45872107838452,
+      "run_mm": 1055.460714285714,
+      "pre_tail_output": "NorthNear2Output",
+      "pre_global_output": "NorthNear2FasciaNorthTrimmed"
+    },
+    {
+      "name": "NorthNear3",
+      "kind": "jack",
+      "station_inches": 64,
+      "output": "NorthNear3GlobalDatumOutput",
+      "start_mm": [
+        1625.6,
+        6445.249999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        1625.6,
+        4823.732142857141,
+        3343.74083011583
+      ],
+      "pitch_degrees": 25.458721078384507,
+      "run_mm": 1621.5178571428578,
+      "pre_tail_output": "NorthNear3Output",
+      "pre_global_output": "NorthNear3FasciaNorthTrimmed"
+    },
+    {
+      "name": "NorthNear4",
+      "kind": "jack",
+      "station_inches": 88,
+      "output": "NorthNear4GlobalDatumOutput",
+      "start_mm": [
+        2235.2,
+        6445.249999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        2235.2,
+        4257.674999999999,
+        3613.23581081081
+      ],
+      "pitch_degrees": 25.45872107838451,
+      "run_mm": 2187.575,
+      "pre_tail_output": "NorthNear4Output",
+      "pre_global_output": "NorthNear4FasciaNorthTrimmed"
+    },
+    {
+      "name": "NorthNear5",
+      "kind": "jack",
+      "station_inches": 112,
+      "output": "NorthNear5GlobalDatumOutput",
+      "start_mm": [
+        2844.7999999999997,
+        6445.249999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        2844.7999999999997,
+        3691.6178571428563,
+        3882.730791505791
+      ],
+      "pitch_degrees": 25.45872107838451,
+      "run_mm": 2753.6321428571428,
+      "pre_tail_output": "NorthNear5Output",
+      "pre_global_output": "NorthNear5FasciaNorthTrimmed"
+    },
+    {
+      "name": "NorthFar1",
+      "kind": "jack",
+      "station_inches": 233.5,
+      "output": "NorthFar1GlobalDatumOutput",
+      "start_mm": [
+        5930.9,
+        6445.249999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        5930.9,
+        5955.846428571427,
+        2804.7508687258683
+      ],
+      "pitch_degrees": 25.45872107838449,
+      "run_mm": 489.4035714285719,
+      "pre_tail_output": "NorthFar1Output",
+      "pre_global_output": "NorthFar1FasciaNorthTrimmed"
+    },
+    {
+      "name": "NorthFar2",
+      "kind": "jack",
+      "station_inches": 209.5,
+      "output": "NorthFar2GlobalDatumOutput",
+      "start_mm": [
+        5321.299999999999,
+        6445.249999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        5321.299999999999,
+        5389.789285714285,
+        3074.245849420849
+      ],
+      "pitch_degrees": 25.45872107838452,
+      "run_mm": 1055.460714285714,
+      "pre_tail_output": "NorthFar2Output",
+      "pre_global_output": "NorthFar2FasciaNorthTrimmed"
+    },
+    {
+      "name": "NorthFar3",
+      "kind": "jack",
+      "station_inches": 185.5,
+      "output": "NorthFar3GlobalDatumOutput",
+      "start_mm": [
+        4711.699999999999,
+        6445.249999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        4711.699999999999,
+        4823.732142857141,
+        3343.74083011583
+      ],
+      "pitch_degrees": 25.458721078384507,
+      "run_mm": 1621.5178571428578,
+      "pre_tail_output": "NorthFar3Output",
+      "pre_global_output": "NorthFar3FasciaNorthTrimmed"
+    },
+    {
+      "name": "NorthFar4",
+      "kind": "jack",
+      "station_inches": 161.5,
+      "output": "NorthFar4GlobalDatumOutput",
+      "start_mm": [
+        4102.099999999999,
+        6445.249999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        4102.099999999999,
+        4257.674999999999,
+        3613.23581081081
+      ],
+      "pitch_degrees": 25.45872107838451,
+      "run_mm": 2187.575,
+      "pre_tail_output": "NorthFar4Output",
+      "pre_global_output": "NorthFar4FasciaNorthTrimmed"
+    },
+    {
+      "name": "NorthFar5",
+      "kind": "jack",
+      "station_inches": 137.5,
+      "output": "NorthFar5GlobalDatumOutput",
+      "start_mm": [
+        3492.4999999999995,
+        6445.249999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        3492.4999999999995,
+        3691.6178571428563,
+        3882.730791505791
+      ],
+      "pitch_degrees": 25.45872107838451,
+      "run_mm": 2753.6321428571428,
+      "pre_tail_output": "NorthFar5Output",
+      "pre_global_output": "NorthFar5FasciaNorthTrimmed"
+    },
+    {
+      "name": "WestNear1",
+      "kind": "jack",
+      "station_inches": 16,
+      "output": "WestNear1GlobalDatumOutput",
+      "start_mm": [
+        -120.64999999999999,
+        406.4,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        446.9423076923076,
+        406.4,
+        2822.674012474012
+      ],
+      "pitch_degrees": 23.84949995384584,
+      "run_mm": 567.5923076923076,
+      "pre_tail_output": "WestNear1Output",
+      "pre_global_output": "WestNear1FasciaWestTrimmed"
+    },
+    {
+      "name": "WestNear2",
+      "kind": "jack",
+      "station_inches": 40,
+      "output": "WestNear2GlobalDatumOutput",
+      "start_mm": [
+        -120.64999999999999,
+        1015.9999999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        1103.434615384615,
+        1015.9999999999999,
+        3112.899376299376
+      ],
+      "pitch_degrees": 23.849499953845825,
+      "run_mm": 1224.084615384615,
+      "pre_tail_output": "WestNear2Output",
+      "pre_global_output": "WestNear2FasciaWestTrimmed"
+    },
+    {
+      "name": "WestNear3",
+      "kind": "jack",
+      "station_inches": 64,
+      "output": "WestNear3GlobalDatumOutput",
+      "start_mm": [
+        -120.64999999999999,
+        1625.6,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        1759.9269230769228,
+        1625.6,
+        3403.1247401247397
+      ],
+      "pitch_degrees": 23.849499953845818,
+      "run_mm": 1880.5769230769229,
+      "pre_tail_output": "WestNear3Output",
+      "pre_global_output": "WestNear3FasciaWestTrimmed"
+    },
+    {
+      "name": "WestNear4",
+      "kind": "jack",
+      "station_inches": 88,
+      "output": "WestNear4GlobalDatumOutput",
+      "start_mm": [
+        -120.64999999999999,
+        2235.2,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        2416.4192307692306,
+        2235.2,
+        3693.3501039501034
+      ],
+      "pitch_degrees": 23.849499953845818,
+      "run_mm": 2537.0692307692307,
+      "pre_tail_output": "WestNear4Output",
+      "pre_global_output": "WestNear4FasciaWestTrimmed"
+    },
+    {
+      "name": "WestNear5",
+      "kind": "jack",
+      "station_inches": 112,
+      "output": "WestNear5GlobalDatumOutput",
+      "start_mm": [
+        -120.64999999999999,
+        2844.7999999999997,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        3072.911538461538,
+        2844.7999999999997,
+        3983.5754677754676
+      ],
+      "pitch_degrees": 23.849499953845825,
+      "run_mm": 3193.561538461538,
+      "pre_tail_output": "WestNear5Output",
+      "pre_global_output": "WestNear5FasciaWestTrimmed"
+    },
+    {
+      "name": "WestFar1",
+      "kind": "jack",
+      "station_inches": 233,
+      "output": "WestFar1GlobalDatumOutput",
+      "start_mm": [
+        -120.64999999999999,
+        5918.2,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        446.9423076923076,
+        5918.2,
+        2822.674012474012
+      ],
+      "pitch_degrees": 23.84949995384584,
+      "run_mm": 567.5923076923076,
+      "pre_tail_output": "WestFar1Output",
+      "pre_global_output": "WestFar1FasciaWestTrimmed"
+    },
+    {
+      "name": "WestFar2",
+      "kind": "jack",
+      "station_inches": 209,
+      "output": "WestFar2GlobalDatumOutput",
+      "start_mm": [
+        -120.64999999999999,
+        5308.599999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        1103.434615384615,
+        5308.599999999999,
+        3112.899376299376
+      ],
+      "pitch_degrees": 23.849499953845825,
+      "run_mm": 1224.084615384615,
+      "pre_tail_output": "WestFar2Output",
+      "pre_global_output": "WestFar2FasciaWestTrimmed"
+    },
+    {
+      "name": "WestFar3",
+      "kind": "jack",
+      "station_inches": 185,
+      "output": "WestFar3GlobalDatumOutput",
+      "start_mm": [
+        -120.64999999999999,
+        4699.0,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        1759.9269230769228,
+        4699.0,
+        3403.1247401247397
+      ],
+      "pitch_degrees": 23.849499953845818,
+      "run_mm": 1880.5769230769229,
+      "pre_tail_output": "WestFar3Output",
+      "pre_global_output": "WestFar3FasciaWestTrimmed"
+    },
+    {
+      "name": "WestFar4",
+      "kind": "jack",
+      "station_inches": 161,
+      "output": "WestFar4GlobalDatumOutput",
+      "start_mm": [
+        -120.64999999999999,
+        4089.3999999999996,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        2416.4192307692306,
+        4089.3999999999996,
+        3693.3501039501034
+      ],
+      "pitch_degrees": 23.849499953845818,
+      "run_mm": 2537.0692307692307,
+      "pre_tail_output": "WestFar4Output",
+      "pre_global_output": "WestFar4FasciaWestTrimmed"
+    },
+    {
+      "name": "WestFar5",
+      "kind": "jack",
+      "station_inches": 137,
+      "output": "WestFar5GlobalDatumOutput",
+      "start_mm": [
+        -120.64999999999999,
+        3479.7999999999997,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        3072.911538461538,
+        3479.7999999999997,
+        3983.5754677754676
+      ],
+      "pitch_degrees": 23.849499953845825,
+      "run_mm": 3193.561538461538,
+      "pre_tail_output": "WestFar5Output",
+      "pre_global_output": "WestFar5FasciaWestTrimmed"
+    },
+    {
+      "name": "EastNear1",
+      "kind": "jack",
+      "station_inches": 16,
+      "output": "EastNear1GlobalDatumOutput",
+      "start_mm": [
+        6457.949999999999,
+        406.4,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        5890.357692307692,
+        406.4,
+        2822.674012474012
+      ],
+      "pitch_degrees": 23.84949995384585,
+      "run_mm": 567.5923076923073,
+      "pre_tail_output": "EastNear1Output",
+      "pre_global_output": "EastNear1FasciaEastTrimmed"
+    },
+    {
+      "name": "EastNear2",
+      "kind": "jack",
+      "station_inches": 40,
+      "output": "EastNear2GlobalDatumOutput",
+      "start_mm": [
+        6457.949999999999,
+        1015.9999999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        5233.865384615384,
+        1015.9999999999999,
+        3112.899376299376
+      ],
+      "pitch_degrees": 23.849499953845825,
+      "run_mm": 1224.084615384615,
+      "pre_tail_output": "EastNear2Output",
+      "pre_global_output": "EastNear2FasciaEastTrimmed"
+    },
+    {
+      "name": "EastNear3",
+      "kind": "jack",
+      "station_inches": 64,
+      "output": "EastNear3GlobalDatumOutput",
+      "start_mm": [
+        6457.949999999999,
+        1625.6,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        4577.373076923076,
+        1625.6,
+        3403.1247401247397
+      ],
+      "pitch_degrees": 23.849499953845818,
+      "run_mm": 1880.5769230769229,
+      "pre_tail_output": "EastNear3Output",
+      "pre_global_output": "EastNear3FasciaEastTrimmed"
+    },
+    {
+      "name": "EastNear4",
+      "kind": "jack",
+      "station_inches": 88,
+      "output": "EastNear4GlobalDatumOutput",
+      "start_mm": [
+        6457.949999999999,
+        2235.2,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        3920.8807692307682,
+        2235.2,
+        3693.3501039501034
+      ],
+      "pitch_degrees": 23.849499953845818,
+      "run_mm": 2537.0692307692307,
+      "pre_tail_output": "EastNear4Output",
+      "pre_global_output": "EastNear4FasciaEastTrimmed"
+    },
+    {
+      "name": "EastNear5",
+      "kind": "jack",
+      "station_inches": 112,
+      "output": "EastNear5GlobalDatumOutput",
+      "start_mm": [
+        6457.949999999999,
+        2844.7999999999997,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        3264.388461538461,
+        2844.7999999999997,
+        3983.5754677754676
+      ],
+      "pitch_degrees": 23.849499953845825,
+      "run_mm": 3193.561538461538,
+      "pre_tail_output": "EastNear5Output",
+      "pre_global_output": "EastNear5FasciaEastTrimmed"
+    },
+    {
+      "name": "EastFar1",
+      "kind": "jack",
+      "station_inches": 233,
+      "output": "EastFar1GlobalDatumOutput",
+      "start_mm": [
+        6457.949999999999,
+        5918.2,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        5890.357692307692,
+        5918.2,
+        2822.674012474012
+      ],
+      "pitch_degrees": 23.84949995384585,
+      "run_mm": 567.5923076923073,
+      "pre_tail_output": "EastFar1Output",
+      "pre_global_output": "EastFar1FasciaEastTrimmed"
+    },
+    {
+      "name": "EastFar2",
+      "kind": "jack",
+      "station_inches": 209,
+      "output": "EastFar2GlobalDatumOutput",
+      "start_mm": [
+        6457.949999999999,
+        5308.599999999999,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        5233.865384615384,
+        5308.599999999999,
+        3112.899376299376
+      ],
+      "pitch_degrees": 23.849499953845825,
+      "run_mm": 1224.084615384615,
+      "pre_tail_output": "EastFar2Output",
+      "pre_global_output": "EastFar2FasciaEastTrimmed"
+    },
+    {
+      "name": "EastFar3",
+      "kind": "jack",
+      "station_inches": 185,
+      "output": "EastFar3GlobalDatumOutput",
+      "start_mm": [
+        6457.949999999999,
+        4699.0,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        4577.373076923076,
+        4699.0,
+        3403.1247401247397
+      ],
+      "pitch_degrees": 23.849499953845818,
+      "run_mm": 1880.5769230769229,
+      "pre_tail_output": "EastFar3Output",
+      "pre_global_output": "EastFar3FasciaEastTrimmed"
+    },
+    {
+      "name": "EastFar4",
+      "kind": "jack",
+      "station_inches": 161,
+      "output": "EastFar4GlobalDatumOutput",
+      "start_mm": [
+        6457.949999999999,
+        4089.3999999999996,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        3920.8807692307682,
+        4089.3999999999996,
+        3693.3501039501034
+      ],
+      "pitch_degrees": 23.849499953845818,
+      "run_mm": 2537.0692307692307,
+      "pre_tail_output": "EastFar4Output",
+      "pre_global_output": "EastFar4FasciaEastTrimmed"
+    },
+    {
+      "name": "EastFar5",
+      "kind": "jack",
+      "station_inches": 137,
+      "output": "EastFar5GlobalDatumOutput",
+      "start_mm": [
+        6457.949999999999,
+        3479.7999999999997,
+        2571.7499999999995
+      ],
+      "end_mm": [
+        3264.388461538461,
+        3479.7999999999997,
+        3983.5754677754676
+      ],
+      "pitch_degrees": 23.849499953845825,
+      "run_mm": 3193.561538461538,
+      "pre_tail_output": "EastFar5Output",
+      "pre_global_output": "EastFar5FasciaEastTrimmed"
+    }
+  ],
+  "parameter_edit_checks": {
+    "board_thickness_1_625_in_changed_volume": true,
+    "rise_61_in_updated_pitch_and_peak": true,
+    "restored_before_save": true,
+    "tail_cut_1_625_in_thickness_clearance_checked_and_restored": true,
+    "global_datum_1_625_in_thickness_checked_and_restored": true
+  },
+  "step_valid": true,
+  "step_solid_count": 61,
+  "mesh_object_count": 61,
+  "pitch": {
+    "south_north_degrees": 25.458721078384514,
+    "east_west_degrees": 23.849499953845818
+  },
+  "limitations": [
+    "Offscreen OpenGL cannot render a verified screenshot; visible mesh exported.",
+    "Horizontal underside trims in eave zone and fascia inside-face trims applied. Other joint overlaps and bearing/notches remain schematic.",
+    "Framing thickness 1.5 inches and on-edge orientation confirmed; 5.5 inch depth assignment and soffit thickness remain assumptions.",
+    "Rafter station count is fixed at five from each end; major spacing/footprint changes need regeneration.",
+    "Cover footprint is static native wire, hidden; regenerate if footprint changes."
+  ],
+  "stored_framing_width_check": {
+    "stock_count": 45,
+    "width_mm": 38.1,
+    "confirmed_inches": 1.5
+  },
+  "tail_clearance": {
+    "global_datum_mm": 2501.8999999999996,
+    "minimum_global_z_mm": 2501.899999999999,
+    "maximum_below_datum_volume_mm3": 0.0,
+    "global_z_tolerance_mm": 1e-06,
+    "changed_member_count": 44,
+    "hips": 4,
+    "jacks": 40,
+    "maximum_soffit_intersection_mm3": 0.0,
+    "maximum_fascia_intersection_mm3": 0.0,
+    "minimum_soffit_clearance_mm": 0.0,
+    "soffit_top_trim_inches": 98.5,
+    "members": [
+      {
+        "name": "HipSW",
+        "kind": "hip",
+        "output": "HipSWGlobalDatumOutput",
+        "global_z_min_mm": 2501.899999999999,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 452198.1955152601,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "HipSE",
+        "kind": "hip",
+        "output": "HipSEGlobalDatumOutput",
+        "global_z_min_mm": 2501.899999999999,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 452198.195515275,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "HipNW",
+        "kind": "hip",
+        "output": "HipNWGlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 452198.1955153458,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "HipNE",
+        "kind": "hip",
+        "output": "HipNEGlobalDatumOutput",
+        "global_z_min_mm": 2501.899999999999,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 452198.1955153495,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "SouthNear1",
+        "kind": "jack",
+        "output": "SouthNear1GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420173245,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 5.859285502108464e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthNear2",
+        "kind": "jack",
+        "output": "SouthNear2GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.8642017273,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthNear3",
+        "kind": "jack",
+        "output": "SouthNear3GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172453,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthNear4",
+        "kind": "jack",
+        "output": "SouthNear4GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.8642017208,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthNear5",
+        "kind": "jack",
+        "output": "SouthNear5GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420170777,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthFar1",
+        "kind": "jack",
+        "output": "SouthFar1GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172825,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthFar2",
+        "kind": "jack",
+        "output": "SouthFar2GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172267,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthFar3",
+        "kind": "jack",
+        "output": "SouthFar3GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172453,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthFar4",
+        "kind": "jack",
+        "output": "SouthFar4GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420171894,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthFar5",
+        "kind": "jack",
+        "output": "SouthFar5GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.8642017096,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "NorthNear1",
+        "kind": "jack",
+        "output": "NorthNear1GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172825,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthNear2",
+        "kind": "jack",
+        "output": "NorthNear2GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.8642017264,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthNear3",
+        "kind": "jack",
+        "output": "NorthNear3GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.864201732,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthNear4",
+        "kind": "jack",
+        "output": "NorthNear4GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420171894,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthNear5",
+        "kind": "jack",
+        "output": "NorthNear5GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.8642017152,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthFar1",
+        "kind": "jack",
+        "output": "NorthFar1GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172965,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthFar2",
+        "kind": "jack",
+        "output": "NorthFar2GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172825,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthFar3",
+        "kind": "jack",
+        "output": "NorthFar3GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172825,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthFar4",
+        "kind": "jack",
+        "output": "NorthFar4GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172267,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthFar5",
+        "kind": "jack",
+        "output": "NorthFar5GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.8642017171,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "WestNear1",
+        "kind": "jack",
+        "output": "WestNear1GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.35023722146,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestNear2",
+        "kind": "jack",
+        "output": "WestNear2GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.35023721866,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestNear3",
+        "kind": "jack",
+        "output": "WestNear3GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372261,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestNear4",
+        "kind": "jack",
+        "output": "WestNear4GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.35023721494,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestNear5",
+        "kind": "jack",
+        "output": "WestNear5GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372056,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestFar1",
+        "kind": "jack",
+        "output": "WestFar1GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372219,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestFar2",
+        "kind": "jack",
+        "output": "WestFar2GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.35023721773,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestFar3",
+        "kind": "jack",
+        "output": "WestFar3GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372168,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestFar4",
+        "kind": "jack",
+        "output": "WestFar4GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.35023721494,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestFar5",
+        "kind": "jack",
+        "output": "WestFar5GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372056,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "EastNear1",
+        "kind": "jack",
+        "output": "EastNear1GlobalDatumOutput",
+        "global_z_min_mm": 2501.899999999999,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372191,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastNear2",
+        "kind": "jack",
+        "output": "EastNear2GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372131,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastNear3",
+        "kind": "jack",
+        "output": "EastNear3GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.35023722425,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastNear4",
+        "kind": "jack",
+        "output": "EastNear4GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372168,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastNear5",
+        "kind": "jack",
+        "output": "EastNear5GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372205,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastFar1",
+        "kind": "jack",
+        "output": "EastFar1GlobalDatumOutput",
+        "global_z_min_mm": 2501.899999999999,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372145,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastFar2",
+        "kind": "jack",
+        "output": "EastFar2GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.35023720935,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastFar3",
+        "kind": "jack",
+        "output": "EastFar3GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372168,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastFar4",
+        "kind": "jack",
+        "output": "EastFar4GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.35023721866,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastFar5",
+        "kind": "jack",
+        "output": "EastFar5GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372131,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      }
+    ]
+  },
+  "tail_correction_backup_directory": "/proj/garage/backups/20260909T222413228616Z-global-datum",
+  "soffit_fascia_ridge_unchanged": true,
+  "member_axes_and_positions_unchanged": true,
+  "all_member_upper_envelopes_unchanged": true,
+  "global_datum": {
+    "global_datum_mm": 2501.8999999999996,
+    "minimum_global_z_mm": 2501.899999999999,
+    "maximum_below_datum_volume_mm3": 0.0,
+    "global_z_tolerance_mm": 1e-06,
+    "changed_member_count": 44,
+    "hips": 4,
+    "jacks": 40,
+    "maximum_soffit_intersection_mm3": 0.0,
+    "maximum_fascia_intersection_mm3": 0.0,
+    "minimum_soffit_clearance_mm": 0.0,
+    "soffit_top_trim_inches": 98.5,
+    "members": [
+      {
+        "name": "HipSW",
+        "kind": "hip",
+        "output": "HipSWGlobalDatumOutput",
+        "global_z_min_mm": 2501.899999999999,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 452198.1955152601,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "HipSE",
+        "kind": "hip",
+        "output": "HipSEGlobalDatumOutput",
+        "global_z_min_mm": 2501.899999999999,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 452198.195515275,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "HipNW",
+        "kind": "hip",
+        "output": "HipNWGlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 452198.1955153458,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "HipNE",
+        "kind": "hip",
+        "output": "HipNEGlobalDatumOutput",
+        "global_z_min_mm": 2501.899999999999,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 452198.1955153495,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "SouthNear1",
+        "kind": "jack",
+        "output": "SouthNear1GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420173245,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 5.859285502108464e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthNear2",
+        "kind": "jack",
+        "output": "SouthNear2GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.8642017273,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthNear3",
+        "kind": "jack",
+        "output": "SouthNear3GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172453,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthNear4",
+        "kind": "jack",
+        "output": "SouthNear4GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.8642017208,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthNear5",
+        "kind": "jack",
+        "output": "SouthNear5GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420170777,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthFar1",
+        "kind": "jack",
+        "output": "SouthFar1GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172825,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthFar2",
+        "kind": "jack",
+        "output": "SouthFar2GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172267,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthFar3",
+        "kind": "jack",
+        "output": "SouthFar3GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172453,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthFar4",
+        "kind": "jack",
+        "output": "SouthFar4GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420171894,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "SouthFar5",
+        "kind": "jack",
+        "output": "SouthFar5GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.8642017096,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "NorthNear1",
+        "kind": "jack",
+        "output": "NorthNear1GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172825,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthNear2",
+        "kind": "jack",
+        "output": "NorthNear2GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.8642017264,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthNear3",
+        "kind": "jack",
+        "output": "NorthNear3GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.864201732,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthNear4",
+        "kind": "jack",
+        "output": "NorthNear4GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420171894,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthNear5",
+        "kind": "jack",
+        "output": "NorthNear5GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.8642017152,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthFar1",
+        "kind": "jack",
+        "output": "NorthFar1GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172965,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthFar2",
+        "kind": "jack",
+        "output": "NorthFar2GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172825,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthFar3",
+        "kind": "jack",
+        "output": "NorthFar3GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172825,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthFar4",
+        "kind": "jack",
+        "output": "NorthFar4GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.86420172267,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "NorthFar5",
+        "kind": "jack",
+        "output": "NorthFar5GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 334361.8642017171,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "WestNear1",
+        "kind": "jack",
+        "output": "WestNear1GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.35023722146,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestNear2",
+        "kind": "jack",
+        "output": "WestNear2GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.35023721866,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestNear3",
+        "kind": "jack",
+        "output": "WestNear3GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372261,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestNear4",
+        "kind": "jack",
+        "output": "WestNear4GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.35023721494,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestNear5",
+        "kind": "jack",
+        "output": "WestNear5GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372056,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestFar1",
+        "kind": "jack",
+        "output": "WestFar1GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372219,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestFar2",
+        "kind": "jack",
+        "output": "WestFar2GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.35023721773,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestFar3",
+        "kind": "jack",
+        "output": "WestFar3GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372168,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestFar4",
+        "kind": "jack",
+        "output": "WestFar4GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.35023721494,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "WestFar5",
+        "kind": "jack",
+        "output": "WestFar5GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372056,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 1.4210854715202004e-14,
+        "visible": true
+      },
+      {
+        "name": "EastNear1",
+        "kind": "jack",
+        "output": "EastNear1GlobalDatumOutput",
+        "global_z_min_mm": 2501.899999999999,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372191,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastNear2",
+        "kind": "jack",
+        "output": "EastNear2GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372131,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastNear3",
+        "kind": "jack",
+        "output": "EastNear3GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.35023722425,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastNear4",
+        "kind": "jack",
+        "output": "EastNear4GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372168,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastNear5",
+        "kind": "jack",
+        "output": "EastNear5GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372205,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastFar1",
+        "kind": "jack",
+        "output": "EastFar1GlobalDatumOutput",
+        "global_z_min_mm": 2501.899999999999,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372145,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastFar2",
+        "kind": "jack",
+        "output": "EastFar2GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.35023720935,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastFar3",
+        "kind": "jack",
+        "output": "EastFar3GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372168,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastFar4",
+        "kind": "jack",
+        "output": "EastFar4GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.35023721866,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      },
+      {
+        "name": "EastFar5",
+        "kind": "jack",
+        "output": "EastFar5GlobalDatumOutput",
+        "global_z_min_mm": 2501.8999999999996,
+        "below_datum_volume_mm3": 0.0,
+        "valid": true,
+        "solids": 1,
+        "removed_volume_mm3": 343592.3502372131,
+        "soffit_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "fascia_common_volumes_mm3": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "minimum_soffit_clearance_mm": 0.0,
+        "visible": true
+      }
+    ],
+    "incremental_removed_material": [
+      {
+        "name": "HipSW",
+        "removed_volume_mm3": 19785.802982456982
+      },
+      {
+        "name": "HipSE",
+        "removed_volume_mm3": 19785.802982460707
+      },
+      {
+        "name": "HipNW",
+        "removed_volume_mm3": 19785.80298244208
+      },
+      {
+        "name": "HipNE",
+        "removed_volume_mm3": 19785.80298244953
+      },
+      {
+        "name": "SouthNear1",
+        "removed_volume_mm3": 30115.112190987915
+      },
+      {
+        "name": "SouthNear2",
+        "removed_volume_mm3": 30115.112190986052
+      },
+      {
+        "name": "SouthNear3",
+        "removed_volume_mm3": 30115.112190982327
+      },
+      {
+        "name": "SouthNear4",
+        "removed_volume_mm3": 30115.112190986052
+      },
+      {
+        "name": "SouthNear5",
+        "removed_volume_mm3": 30115.11219098419
+      },
+      {
+        "name": "SouthFar1",
+        "removed_volume_mm3": 30115.112190988846
+      },
+      {
+        "name": "SouthFar2",
+        "removed_volume_mm3": 30115.112190989777
+      },
+      {
+        "name": "SouthFar3",
+        "removed_volume_mm3": 30115.112190987915
+      },
+      {
+        "name": "SouthFar4",
+        "removed_volume_mm3": 30115.112190987915
+      },
+      {
+        "name": "SouthFar5",
+        "removed_volume_mm3": 30115.112190987915
+      },
+      {
+        "name": "NorthNear1",
+        "removed_volume_mm3": 30115.112190986052
+      },
+      {
+        "name": "NorthNear2",
+        "removed_volume_mm3": 30115.11219098512
+      },
+      {
+        "name": "NorthNear3",
+        "removed_volume_mm3": 30115.112190989777
+      },
+      {
+        "name": "NorthNear4",
+        "removed_volume_mm3": 30115.1121909786
+      },
+      {
+        "name": "NorthNear5",
+        "removed_volume_mm3": 30115.112190989777
+      },
+      {
+        "name": "NorthFar1",
+        "removed_volume_mm3": 30115.112190986052
+      },
+      {
+        "name": "NorthFar2",
+        "removed_volume_mm3": 30115.11219098512
+      },
+      {
+        "name": "NorthFar3",
+        "removed_volume_mm3": 30115.112190989777
+      },
+      {
+        "name": "NorthFar4",
+        "removed_volume_mm3": 30115.1121909786
+      },
+      {
+        "name": "NorthFar5",
+        "removed_volume_mm3": 30115.11219099164
+      },
+      {
+        "name": "WestNear1",
+        "removed_volume_mm3": 37640.22727179853
+      },
+      {
+        "name": "WestNear2",
+        "removed_volume_mm3": 37640.227271797135
+      },
+      {
+        "name": "WestNear3",
+        "removed_volume_mm3": 37640.22727179527
+      },
+      {
+        "name": "WestNear4",
+        "removed_volume_mm3": 37640.22727179527
+      },
+      {
+        "name": "WestNear5",
+        "removed_volume_mm3": 37640.22727179527
+      },
+      {
+        "name": "WestFar1",
+        "removed_volume_mm3": 37640.227271799
+      },
+      {
+        "name": "WestFar2",
+        "removed_volume_mm3": 37640.227271797135
+      },
+      {
+        "name": "WestFar3",
+        "removed_volume_mm3": 37640.22727179527
+      },
+      {
+        "name": "WestFar4",
+        "removed_volume_mm3": 37640.22727179527
+      },
+      {
+        "name": "WestFar5",
+        "removed_volume_mm3": 37640.22727179527
+      },
+      {
+        "name": "EastNear1",
+        "removed_volume_mm3": 37640.227271799
+      },
+      {
+        "name": "EastNear2",
+        "removed_volume_mm3": 37640.227271799
+      },
+      {
+        "name": "EastNear3",
+        "removed_volume_mm3": 37640.227271799
+      },
+      {
+        "name": "EastNear4",
+        "removed_volume_mm3": 37640.227271797135
+      },
+      {
+        "name": "EastNear5",
+        "removed_volume_mm3": 37640.22727180272
+      },
+      {
+        "name": "EastFar1",
+        "removed_volume_mm3": 37640.22727180086
+      },
+      {
+        "name": "EastFar2",
+        "removed_volume_mm3": 37640.227271799
+      },
+      {
+        "name": "EastFar3",
+        "removed_volume_mm3": 37640.227271799
+      },
+      {
+        "name": "EastFar4",
+        "removed_volume_mm3": 37640.22727179341
+      },
+      {
+        "name": "EastFar5",
+        "removed_volume_mm3": 37640.227271799
+      }
+    ],
+    "actual_changed_member_count": 44,
+    "total_incremental_removed_volume_mm3": 1434250.0011854903
+  },
+  "generator_reproduction_check": {
+    "passed": true,
+    "matching_roof_objects": 53,
+    "matching_volumes": true,
+    "minimum_global_z_mm": 2501.899999999999,
+    "maximum_below_datum_volume_mm3": 0.0,
+    "soffit_intersection_mm3": 0.0,
+    "fascia_intersection_mm3": 0.0
+  }
+}

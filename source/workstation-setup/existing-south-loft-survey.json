@@ -1,0 +1,39 @@
+{
+  "status": "Survey recorded; placement awaiting owner clarification",
+  "units": "inches",
+  "model_target": "/proj/garage/Existing-Garage.FCStd",
+  "photos": ["/private/tmp/IMG_4244.HEIC", "/private/tmp/IMG_4245.HEIC", "/private/tmp/IMG_4246.HEIC"],
+  "location": "Against existing south wall",
+  "depth_approx": 48,
+  "owner_rafter_description": "First short rafter about 18 inches from corner, next about 24 inches farther; loft reaches second rafter from south. Preserve approximate 48-inch depth pending measurement datum.",
+  "edge_joist": {
+    "direction": "east-west along free/north edge of loft",
+    "plies": 3,
+    "nominal_stock": "2x6",
+    "description": "Two outer boards flank rafter alignment, third board sandwiched between; owner reports bolted assembly",
+    "adhesive": "unconfirmed",
+    "fastener_schedule": "unconfirmed",
+    "actual_stock_dimensions": "unmeasured"
+  },
+  "deck": {
+    "photo_observation": "Plywood underside visible with timber joists",
+    "thickness": null,
+    "owner_description": "Five rafters plus flat boards between them; open until third rafter in",
+    "east_west_extent": "unconfirmed"
+  },
+  "roof_connections": {
+    "owner_description": "A 2x6 from rafter to edge joist at first rafter on either end, attached with metal stitch plates",
+    "count_reported": 2,
+    "exact_position_and_joint_details": "unconfirmed"
+  },
+  "open_questions": [
+    "Which end, east or west, has the open section to the third rafter, and does decking continue to the opposite wall?",
+    "Is edge-joist bottom at wall-top elevation 98.5 inches, or below it?"
+  ],
+  "model_constraints": [
+    "Do not change existing roof framing stations from this approximate description alone",
+    "Preserve global rafter lower clip at 98.5 inches",
+    "Do not assign connection or loft load capacity from photographs",
+    "Do not modify Proposed-Garage.FCStd"
+  ]
+}

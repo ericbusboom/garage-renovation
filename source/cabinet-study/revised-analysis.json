@@ -1,0 +1,58 @@
+{
+  "beam_depth_target_overall_in": 10,
+  "east_rail_x": 224.25,
+  "crossbeam_span_in": 256.25,
+  "cabinet_post_centers": [
+    56.0,
+    105.0,
+    154.0,
+    203.0
+  ],
+  "new_north_jamb_centers_x": [
+    53.25,
+    224.25
+  ],
+  "cabinet_tube_reported": "2x1 11 gauge",
+  "normalized_continuous_beam_reactions": {
+    "all_frames_engaged": {
+      "-21.25": -38.15117464839644,
+      "56.0": 780.5328853056008,
+      "105.0": 245.01155012510364,
+      "154.0": 348.1268524084429,
+      "203.0": 744.4342687033593,
+      "253.0": -79.95438189411085
+    },
+    "P2_P3_and_end_supports_capacity_sensitivity": {
+      "-21.25": 165.12937355200688,
+      "105.0": 932.2861346737574,
+      "154.0": 686.7163774913903,
+      "253.0": 215.86811428285273
+    }
+  },
+  "illustrative_crossbeam_demands": [
+    {
+      "illustrative_area_psf": 50,
+      "tributary_width_ft": 8.59375,
+      "line_load_plf": 429.6875,
+      "end_reaction_lb": 4587.809244791667,
+      "moment_kip_ft": 24.49221081203885,
+      "I_required_in4_for_L360": 97.38820894011134
+    },
+    {
+      "illustrative_area_psf": 75,
+      "tributary_width_ft": 8.59375,
+      "line_load_plf": 644.53125,
+      "end_reaction_lb": 6881.7138671875,
+      "moment_kip_ft": 36.73831621805827,
+      "I_required_in4_for_L360": 146.08231341016705
+    },
+    {
+      "illustrative_area_psf": 100,
+      "tributary_width_ft": 8.59375,
+      "line_load_plf": 859.375,
+      "end_reaction_lb": 9175.618489583334,
+      "moment_kip_ft": 48.9844216240777,
+      "I_required_in4_for_L360": 194.77641788022268
+    }
+  ]
+}
