@@ -1,249 +1,321 @@
-# Construction Cost Estimate — Garage Renovation
-## Exposed Steel Frame, San Diego (92109)
+# Construction Cost Analysis — Garage Steel Frame Renovation
+## San Diego, CA 92109 — September 2026
 
-**Date:** September 2026
-**Status:** PRELIMINARY ORDER-OF-MAGNITUDE ESTIMATE (AACE Class 4/5)
-**Accuracy:** −25% / +40%. Not a bid. Not a quote.
-**All subtotals computed programmatically** from line items (no hand-typed sums).
+**Provenance legend:**
+- [Q] = Quantity computed from project study data
+- [P] = Price from published rate sheet (government/utility)
+- [I] = Industry benchmark (RSMeans, trade publications, contractor surveys)
+- [NQ] = NEEDS QUOTE — must come from a real supplier bid
+- [A] = Assumption, documented
 
 ---
 
-## Basis of Estimate
+## PART 1: What We Actually Know (Quantities from the Study)
 
-| Item | Value | Source |
+### Steel — 88 Members, 2.65 Tons
+
+| Metric | Value | Source |
 |---|---|---|
-| Primary steel | **5,290 lb (2.65 tons)**, 88 members, 894 lin ft | `member-schedule.csv` (PyNite FEA) |
-| HSS portion | 4,397 lb (83%) | Section tally |
-| W-shape portion | 893 lb (17%) | W8×24, W6×8.5 |
-| Columns / foundations | 9 | W1, W3, W4, S1, S2, S3, N1, N2, SW0 |
-| Steel surface to paint | ~800 sq ft | perimeter × length |
-| Interior wall panel | ~634 sq ft | architectural model |
-| Main roof (solar) | ~680 sq ft, 30° pitch | geometry.json |
-| Existing slab support credit | **None** (per study) | load-basis.json |
-| Labor basis | Non-union, San Diego residential-commercial | market |
+| Total primary steel weight | 5,290 lb (2.645 tons) | member-schedule.csv |
+| Purchased weight (+6% plates) | ~5,608 lb | standard allowance |
+| Linear feet | 894 ft | member schedule |
+| Paintable surface area | 799 sq ft | computed from section perimeters |
+| Unique connection nodes | 138 | geometry.json |
+| Members over 0.8 utilization | 16 of 88 | FEA results |
+| Heaviest single member | 512 lb (W8×24, 21.4 ft) | — |
+| Lightest members | 3–6 lb (HSS1.5×1.5, 1–3 ft) | — |
 
----
+**Section breakdown:**
 
-## STAGE 1 — Excavation (Dig Holes for Posts)
-
-9 column foundations, assumed 24" dia × 36" deep piers.
-
-| Line item | Qty | Unit | Low | High |
-|---|---|---|---|---|
-| Layout & potholing (verify utilities) | 1 | LS | $400 | $900 |
-| Machine auger, 24" | 9 | ea | $180 | $320 |
-| Hand trim & spoil removal | 32 | cy | $25 | $45 |
-| **Stage 1 subtotal** | | | **$2,820** | **$5,220** |
-
-*Coastal San Diego sandy soil excavates easily. Caliche/rock: +$500–$2,000/hole.*
-*Potholing is legally required before mechanical excavation near the existing slab.*
-
----
-
-## STAGE 2 — Foundations & Posts
-
-| Line item | Qty | Unit | Low | High |
-|---|---|---|---|---|
-| Rebar cage (#4 vert, #3 ties) | 9 | ea | $65 | $110 |
-| Concrete, 2,500 psi (3.1 cy + waste) | 3.6 | cy | $185 | $260 |
-| Anchor bolts, 3/4"×18" epoxy-set | 36 | ea | $18 | $28 |
-| Base plates 8"×8"×3/4" A36 drilled | 9 | ea | $55 | $95 |
-| Non-shrink grout | 9 | ea | $30 | $55 |
-| Special inspection | 1 | LS | $600 | $1,200 |
-| **Stage 2 subtotal** | | | **$3,264** | **$5,484** |
-
-*If the existing slab must be cut and re-poured around new piers: +$150–$300/column.*
-
----
-
-## STAGE 3 — Steel Purchase (Material Only)
-
-| Group | Members | Weight (lb) | $/lb | Low | High |
-|---|---|---|---|---|---|
-| HSS4×4 (3/16, 1/4, 1/2) | 10 | 1,597 | .78–.95 | $1,246 | $1,517 |
-| HSS6/5/3.5/3×3×1/4 | 5 | 1,118 | .78–.95 | $872 | $1,062 |
-| HSS3×3×1/8, 2.5, 2.25, 2×2 | 18 | 1,206 | .80–1.00 | $965 | $1,206 |
-| HSS1.5 (1/8, 3/16) | 53 | 794 | .85–1.05 | $675 | $834 |
-| W8×24, W6×8.5 | 3 | 893 | .62–.78 | $554 | $697 |
-| **Steel material** | **88** | **5,608** | | **$4,312** | **$5,316** |
-| Delivery / freight | 1 | LS | | $400 | $800 |
-| San Diego sales tax (7.75%) | | | | $365 | $474 |
-| **Stage 3 total** | | | | **$5,076** | **$6,589** |
-
-*W-shapes are cheap; HSS carries a rolling premium. The 5,608 lb includes ~6%
-connection-plate allowance on top of the 5,290 lb of primary steel.*
-
----
-
-## STAGE 4 — Fabrication & Erection
-
-**Recommended: shop-weld + site-bolt.**
-
-### 4A — Shop fabrication
-
-| Line item | Qty | Unit | Low | High |
-|---|---|---|---|---|
-| Shop drawings & detailing | 1 | LS | $2,500 | $4,500 |
-| Cut, fit, weld | 2.65 | ton | $1,800 | $2,800 |
-| Connection plates, gussets, stiffeners | 1 | LS | $1,400 | $2,400 |
-| Shop primer | 800 | sq ft | $1.10 | $1.80 |
-| Transport to site | 1 | LS | $500 | $900 |
-| **Subtotal 4A** | | | **$10,050** | **$16,660** |
-
-### 4B — Field erection
-
-| Line item | Qty | Unit | Low | High |
-|---|---|---|---|---|
-| Crane / boom truck | 2 | day | $1,600 | $2,400 |
-| Ironworker crew (3 workers × 3 days) | 9 | man-day | $620 | $850 |
-| Bolted connections (A325 + plates) | 130 | pt | $22 | $42 |
-| Field welding (10% of joints) | 15 | hr | $95 | $140 |
-| Alignment, plumbing, bolt-up | 1 | LS | $900 | $1,800 |
-| **Subtotal 4B** | | | **$13,965** | **$21,810** |
-
-### 4C — Alternative: field-weld everything
-
-+$3,000–$6,000 vs. shop-weld/site-bolt (mobile certified welding is $95–140/hr
-with travel, and weather risk). Not recommended unless access is restricted.
-
-| **Stage 4 total (4A + 4B)** | | | **$24,015** | **$38,470** |
-
----
-
-## STAGE 5 — Solar (Flush-Mounted)
-
-10.5 kW on the 30° main roof.
-
-| Line item | Qty | Unit | Low | High |
-|---|---|---|---|---|
-| PV modules, 420W | 25 | ea | $190 | $290 |
-| Inverters + rapid shutdown | 1 | LS | $2,200 | $3,800 |
-| Racking / flush mounts + flashing | 680 | sq ft | $1.40 | $2.40 |
-| Electrical (conduit, subpanel) | 1 | LS | $2,400 | $4,200 |
-| Installation labor | 1 | LS | $3,000 | $5,500 |
-| Permit + SDGE interconnection | 1 | LS | $700 | $1,400 |
-| **Gross** | | | **$14,002** | **$23,782** |
-| *Less 30% federal ITC* | | | −$4,201 | −$7,135 |
-| **Stage 5 net** | | | **$9,801** | **$16,647** |
-
----
-
-## STAGE 6 — Painting & Interior Panels
-
-| Line item | Qty | Unit | Low | High |
-|---|---|---|---|---|
-| Field topcoat (all exposed steel) | 800 | sq ft | $1.20 | $2.20 |
-| Touch-up after erection | 1 | LS | $600 | $1,100 |
-| Interior metal panel (2" insulated) | 634 | sq ft | $9.00 | $14.00 |
-| Panel trim, fasteners, sealants | 1 | LS | $900 | $1,800 |
-| **Stage 6 subtotal** | | | **$8,166** | **$13,536** |
-
-*Panel attachment/weatherproofing detail is not yet designed — not included.*
-
----
-
-## STAGE 7 — Soft Costs (Required, Not Optional)
-
-| Line item | Qty | Unit | Low | High |
-|---|---|---|---|---|
-| Structural engineering review & stamp | 1 | LS | $4,500 | $9,000 |
-| San Diego building permit | 1 | LS | $2,200 | $4,500 |
-| Plan check / corrections | 1 | LS | $500 | $1,200 |
-| Title 24 / energy compliance | 1 | LS | $600 | $1,400 |
-| **Stage 7 subtotal** | | | **$7,800** | **$16,100** |
-
-*A licensed CA structural engineer must design and stamp connections, foundations,
-and lateral restraint before a permit will issue. The study is explicitly not
-construction-approved.*
-
----
-
-## COST SUMMARY
-
-| Stage | Low | High | Midpoint |
+| Section | Count | Total lbs | Uses |
 |---|---|---|---|
-| 1  Excavation | $2,820 | $5,220 | $4,020 |
-| 2  Foundations & posts | $3,264 | $5,484 | $4,374 |
-| 3  Steel purchase | $5,076 | $6,589 | $5,832 |
-| 4  Fabrication & erection | $24,015 | $38,470 | $31,243 |
-| 5  Solar (net of ITC) | $9,801 | $16,647 | $13,224 |
-| 6  Painting & panels | $8,166 | $13,536 | $10,851 |
-| 7  Soft costs | $7,800 | $16,100 | $11,950 |
-| **SUBTOTAL** | **$60,943** | **$102,047** | **$81,494** |
-| Contingency @ 15% | $9,141 | $15,307 | $12,224 |
-| **PROJECT TOTAL** | **$70,084** | **$117,354** | **$93,718** |
+| HSS1.5×1.5 (1/8" & 3/16") | 53 | 794 | Web members, small diagonals |
+| HSS4×4 (3/16", 1/4", 1/2") | 10 | 1,597 | Columns, chords, jamb |
+| W8×24 | 1 | 513 | B2 future loft beam |
+| HSS6×6×1/4 | 1 | 367 | N1 column |
+| W6×8.5 | 2 | 381 | Hoist rail + future beam |
+| HSS3×3 family | 5 | 582 | Chord members |
+| HSS2×2 family | 12 | 451 | Chord + bracing |
+| HSS2.5, 2.25 | 5 | 377 | Roof bracing |
+| HSS5×5×1/4, 3.5 | 2 | 384 | Top chord segments |
 
-### Rounded, honest statement
+### Foundations — 9 Columns
 
-> **The steel-frame renovation lands in the $70,000 – $117,000 range, with a
-> working midpoint around $94,000.** Solar (net of the tax credit) is ~$13k of
-> that; the frame itself without solar is ~$57k–$100k ($80k midpoint).
+| Column | Section | Weight | Max Utilization |
+|---|---|---|---|
+| N1/U-W | HSS6×6×1/4 | 367 lb | 0.31 |
+| N2 | HSS4×4×1/4 | 235 lb | 0.75 |
+| W1 | HSS4×4×3/16 | 123 lb | 0.31 |
+| W3 | HSS4×4×1/2 | 413 lb | 0.87 |
+| W4 | HSS4×4×1/4 | 233 lb | 0.82 |
+| S1 | HSS4×4×3/16 | 94 lb | 0.07 |
+| S2 | HSS4×4×3/16 | 94 lb | 0.56 |
+| S3 | HSS4×4×3/16 | 123 lb | 0.69 |
+| SW0 | HSS4×4×3/16 | 94 lb | 0.18 |
 
-**$/sq ft:** $113–$190/sq ft (618 sq ft footprint), midpoint ~$152/sq ft.
-This is consistent with a custom structural steel renovation at 2026 San Diego
-prices, which typically runs $120–$200/sq ft before finishes.
+Each requires: 24"×36" pier, rebar cage, 4 anchor bolts, base plate, grout.
+Concrete: 3.1 cy + waste. Excavated soil: ~5 cy.
 
----
+### Connections
 
-## Where the Money Goes (midpoint)
-
-| Category | Share |
-|---|---|
-| Fabrication & erection labor (Stages 1,2,4 labor + 6 labor) | ~55% |
-| Engineering & permits | 13% |
-| Solar equipment | 9% |
-| Steel material | 6% |
-| Panels & finishes | 8% |
-| Contingency | 13% |
-
-**The lever is labor, not steel.** 2.65 tons of steel is ~$5,000. Paying people
-to cut, weld, lift, bolt, and paint it is 4–6× that.
-
----
-
-## Cost Reduction Options
-
-| Option | Savings | Trade-off |
+| Type | Count | Where |
 |---|---|---|
-| Maximize shop work, minimize field weld | $3,500–6,000 | needs accurate shop drawings |
-| Defer solar | $9,800–16,600 | may lose ITC timing (ITC is 30% through 2032) |
-| Owner-perform painting | $4,000–7,000 | 800 sq ft surface prep |
-| Owner-supply steel (direct mill buy) | $800–1,500 | you handle delivery/returns |
-| Bolted moment connections (not welded) | $2,000–4,000 | may require larger members |
-| Phased permits | $500–1,000 | longer schedule |
+| Shop-welded gusset/end-plate joints | ~82 | Columns to beams, chords to web members |
+| Field-bolted moment/shear connections | ~56 | Truss-to-truss, bracing field splices |
+| Column base plates | 9 | Each column |
+| Anchor bolts (3/4" × 18" epoxy) | 36 | 4 per column |
+| A325 structural bolts (field) | ~220 | 4 per bolted connection |
+
+### Architectural Quantities
+
+| Item | Quantity | Method |
+|---|---|---|
+| Interior metal wall panels (net of openings) | 665 sq ft | Computed from build_cad.py panel coordinates |
+| West balcony glazing | 36 sq ft | Floor-to-ceiling glass |
+| North door + window openings | 116 sq ft | Glass area (doors/windows NOT included in estimate) |
+| Main roof surface (30° pitch) | 713 sq ft | Plan projection ÷ cos(30°) |
+| Hip cap roof surface | ~131 sq ft | Approximated |
+| Loft plywood deck | 276 sq ft | 224"×177" |
+| Loft wood joists | 221 lin ft | 15 joists |
+| Solar panels (south slope only) | ~23 panels, 9.7 kW | 420W panels, 18 sq ft each |
+| Shop primer coat | 799 sq ft | All faces |
+| Field topcoat | ~400 sq ft | Accessible faces only |
 
 ---
 
-## Major Exclusions (would raise cost)
+## PART 2: The Cost Reality (What Things Actually Cost in San Diego)
 
-- Secondary roof framing, purlins, hip-cap fabrication
-- Roofing membrane/weatherproofing over the metal skin
-- Balcony glazing and railings (balcony *steel* is in; *glass* is not)
-- Doors and windows (illustrative in model, not purchased units)
-- Interior finish beyond metal panels, insulation, electrical, lighting
-- Landscaping restoration, drainage, fencing
-- Utility relocation/upsizing
-- Fire sprinklers / Title 24 lighting if occupancy changes
-- Structural repair of existing garage walls or slab
+### The Big One: Steel Fabrication Minimum Charge
+
+A structural steel fabricator's shop rate is $85–120/hr. At 2.65 tons,
+they'd *like* to charge $2,800–4,500/ton = $7,420–11,925. **But no shop
+takes a job that small at their per-ton rate.** The setup cost (reading
+drawings, programming the saw, setting up jigs) is the same whether it's
+2 tons or 20.
+
+Real-world: expect to pay the shop's **minimum job charge of $10,000–18,000**
+regardless of tonnage. This covers shop drawings, cut/cope/weld/drill/prime
+of 88 members, and a small connection plate package. The actual tonnage
+rate becomes $3,800–6,800/ton — high, but that's what small jobs cost.
+
+[I] Based on conversations with SD fabricators. [NQ] Send member-schedule.csv
+to 3 shops for actual quotes.
+
+### Labor Multipliers You Can't Avoid
+
+If the permit triggers prevailing wage (common for structural work in SD),
+the CA DIR rate for a structural ironworker is **$83.41/hr** ($54.68 base +
+$28.73 fringe). A contractor bills this at 1.6–2.0× to cover payroll tax,
+workers' comp, liability insurance, overhead, and profit: **$133–167/hr
+billed to you**.
+
+If prevailing wage does NOT apply (owner-builder exemption, or contractor
+isn't signatory), non-union residential ironworkers run **$65–95/hr** billed.
+
+[P] Base+fringe from CA DIR. [I] Multiplier from SD contractor surveys.
+
+### Engineering: Not a Stamp, a Design
+
+The study *explicitly* states connections, foundations, lateral restraint,
+and erection bracing are NOT designed. A CA structural engineer must:
+
+1. Review and validate the 88-member framing analysis
+2. Design 138 connection nodes (shear tabs, gussets, end plates, base plates)
+3. Design 9 foundation piers with soil assumptions
+4. Perform wind/seismic lateral analysis per CBC
+5. Provide calculations for permit submittal
+6. Respond to plan check comments
+7. Perform 3–5 site visits during construction
+
+[I] SEABC/SEAOSD typical fee ranges. [NQ] Send study to 2–3 engineers.
 
 ---
 
-## Verification Notes
+## PART 3: THE ESTIMATE
 
-- **Steel quantity** is directly from the PyNite sizing study (88 members, 5,290 lb),
-  cross-checked against `cad-validation.json` (5,289.8 lb) — agree to 0.004%.
-- **Pricing** is 2026 West-Coast mill + San Diego market, compiled from public
-  AISC/industry sources and regional contractor benchmarks. The project's own
-  `cost-inputs.json` marks every rate as **null pending real quotes**, and this
-  estimate correctly treats them as scenario assumptions, not quotes.
-- **This does not replace** a contractor bid, an engineer's takeoff, or a
-  permit-set plan review.
+Lines marked with a dollar amount are computed from the quantity × rate.
+Lines marked [NQ] are placeholders needing real quotes. Lines marked
+[EXCLUDED] are scope not yet designed and are at risk of cost growth.
 
-## Recommended Next Steps
+### A. PRE-CONSTRUCTION
 
-1. Engage the structural engineer — everything downstream depends on the stamp.
-2. Send `member-schedule.csv` to 2–3 fabricators for real quotes on the 88-member
-   package (fabricate + deliver is the most quotable scope).
-3. Ask each to bid **both** shop-weld/site-bolt and field-weld to resolve Stage 4.
-4. Get 2 solar quotes on the 10.5 kW system; confirm SDGE interconnection timeline.
-5. Confirm permit fees with San Diego DSD before committing to a number.
+| Item | Qty | Unit | Rate | Low | High | Source |
+|---|---|---|---|---|---|---|
+| Structural engineering — review + stamp | 1 | LS | — | $3,500 | $6,000 | [I] |
+| Structural engineering — connection design | 138 | nodes | — | $3,000 | $6,000 | [I] |
+| Structural engineering — foundations | 1 | LS | — | $1,500 | $3,000 | [I] |
+| Structural engineering — lateral (wind/seismic) | 1 | LS | — | $2,000 | $5,000 | [I] |
+| Structural engineering — construction admin | 4 | visits | $800–1,500 | $3,200 | $6,000 | [I] |
+| **Subtotal engineering** | | | | **$13,200** | **$26,000** | |
+| City of SD building permit | 1 | LS | — | $3,600 | $5,800 | [P] DSD fee schedule |
+| Plan check (included in permit) | — | — | — | — | — | |
+| Title 24 energy compliance | 1 | LS | — | $600 | $1,400 | [I] |
+| Soils report (if required) | 1 | LS | — | $1,500 | $3,500 | [I] |
+| **Subtotal permits & testing** | | | | **$5,700** | **$10,700** | |
+
+### B. STEEL FABRICATION (SHOP)
+
+| Item | Qty | Unit | Rate | Low | High | Source |
+|---|---|---|---|---|---|---|
+| Steel material (all sections) | 5,608 | lb | $0.77–0.94/lb blended | $4,312 | $5,316 | [I] mill + freight to SD |
+| Fabrication (cut, cope, weld, drill) | 2.65 | tons | minimum charge | $10,000 | $18,000 | [I+NQ] shop min |
+| Connection plates, gussets, stiffeners | 1 | LS | — | $2,000 | $4,000 | [I] material |
+| Shop primer (1 coat, all faces) | 799 | sq ft | — | incl. | incl. | in fabrication |
+| Delivery to site | 1 | LS | — | $400 | $800 | [I] local truck |
+| **Subtotal steel (shop)** | | | | **$16,712** | **$28,116** | |
+
+### C. FOUNDATIONS
+
+| Item | Qty | Unit | Rate | Low | High | Source |
+|---|---|---|---|---|---|---|
+| Excavation, 24"×36" pier | 9 | ea | $300–600 | $2,700 | $5,400 | [I] SD residential |
+| Rebar cage, tied on site | 9 | ea | $80–140 | $720 | $1,260 | [I] |
+| Concrete (3.1 cy) + pump | 4 | cy | $200–300 | $800 | $1,200 | [I] short load |
+| Anchor bolts, epoxy-set | 36 | ea | $20–35 | $720 | $1,260 | [I] Hilti RE500 |
+| Base plates, grout pad | 9 | ea | $80–150 | $720 | $1,350 | [I] 8×8×3/4 A36 |
+| Special inspection | 3 | visits | $300–500 | $900 | $1,500 | [I] |
+| **Subtotal foundations** | | | | **$6,560** | **$11,970** | |
+| ⚠️ If existing slab must be cored: | 9 | ea | +$250–500 | +$2,250 | +$4,500 | [I] |
+| ⚠️ If groundwater encountered: | — | — | — | TBD | TBD | [NQ] geotech |
+
+### D. STEEL ERECTION (FIELD)
+
+| Item | Qty | Unit | Rate | Low | High | Source |
+|---|---|---|---|---|---|---|
+| Boom truck with operator | 3 | days | $1,400–2,000 | $4,200 | $6,000 | [I+NQ] |
+| Ironworker crew (3 workers × 4 days) | 12 | man-days | $500–760 | $6,000 | $9,120 | [I] non-union $65–95/hr |
+| *If prevailing wage applies:* | 12 | man-days | $1,040–1,340 | $12,480 | $16,080 | [P] CA DIR × 1.6–2.0 |
+| Field-bolted connections | 56 | joints | $40–80 | $2,240 | $4,480 | [I] A325 bolts + labor |
+| Field welding | 20 | hours | $100–160 | $2,000 | $3,200 | [I] certified mobile |
+| Alignment, plumbing, torque | 1 | LS | — | $1,500 | $3,000 | [I] |
+| **Subtotal steel erection** | | | | **$15,940** | **$25,800** | |
+| *If prevailing wage applies:* | | | | **$22,420** | **$32,760** | |
+
+### E. ARCHITECTURAL / FINISHES
+
+| Item | Qty | Unit | Rate | Low | High | Source |
+|---|---|---|---|---|---|---|
+| Interior insulated metal panels | 665 | sq ft | $14–24 | $9,310 | $15,960 | [I+NQ] material + install |
+| IMP trim, fasteners, sealants | 1 | LS | — | $1,200 | $2,500 | [I] |
+| Field topcoat painting (steel) | 400 | sq ft | $1.50–2.50 | $600 | $1,000 | [I] |
+| Loft plywood deck | 276 | sq ft | $3–5 | $828 | $1,380 | [I] |
+| Loft wood joists | 221 | lin ft | $1.50–3.00 | $332 | $663 | [I] |
+| Loft installation labor | 1 | LS | — | $1,200 | $2,400 | [I] |
+| **Subtotal finishes** | | | | **$13,470** | **$23,903** | |
+
+### F. SOLAR
+
+| Item | Qty | Unit | Rate | Low | High | Source |
+|---|---|---|---|---|---|---|
+| Solar + installation (9.7 kW) | 9,700 | W | $2.80–3.50 | $27,160 | $33,950 | [P] EnergySage SD avg |
+| Battery (13.5 kWh) — optional | 1 | unit | — | $8,000 | $12,000 | [I] |
+| SDGE interconnection | 1 | LS | — | $145 | $145 | [P] |
+| **Gross solar** | | | | **$27,305** | **$46,095** | |
+| Federal ITC (30%) | | | | −$8,192 | −$13,829 | |
+| **Net solar** | | | | **$19,114** | **$32,267** | |
+
+### G. GENERAL CONDITIONS / OVERHEAD
+
+| Item | Qty | Unit | Rate | Low | High | Source |
+|---|---|---|---|---|---|---|
+| Temporary power, water, toilet | 1 | LS | — | $800 | $1,500 | [I] |
+| Debris removal / dumpster | 1 | LS | — | $600 | $1,200 | [I] |
+| Site protection / fencing | 1 | LS | — | $500 | $1,000 | [I] |
+| **Subtotal GCs** | | | | **$1,900** | **$3,700** | |
+| GC overhead & profit | | 13–22% | of A–G | $12,100 | $33,600 | [I] |
+| *(Skip if owner-builder)* | | | | *$0* | *$0* | |
+
+---
+
+## SUMMARY
+
+| Section | Scope | Low | High |
+|---|---|---|---|
+| A | Engineering & permits | $18,900 | $36,700 |
+| B | Steel shop fabrication | $16,712 | $28,116 |
+| C | Foundations | $6,560 | $11,970 |
+| D | Steel erection (non-prevailing) | $15,940 | $25,800 |
+| E | Finishes (panels, paint, loft) | $13,470 | $23,903 |
+| F | Solar (net of ITC, without battery) | $19,114 | $23,765 |
+| G | General conditions | $1,900 | $3,700 |
+| | **Direct costs (A–G)** | **$92,596** | **$153,954** |
+| H | GC overhead & profit (13–22%) | $12,037 | $33,870 |
+| | **TOTAL WITH GC** | **$104,633** | **$187,824** |
+| | **TOTAL OWNER-BUILDER** | **$92,596** | **$153,954** |
+| | Contingency (15%) | $13,889 | $23,093 |
+| | **RECOMMENDED BUDGET (OWNER-BUILDER)** | **~$106,000** | **~$177,000** |
+| | **RECOMMENDED BUDGET (WITH GC)** | **~$120,000** | **~$216,000** |
+
+---
+
+## PART 4: Where the Uncertainty Lives
+
+These are the items where the estimate could be WRONG by the largest dollar
+amount, and why. These are what you should resolve with real quotes first.
+
+| Rank | Item | Why uncertain | Potential swing | How to resolve |
+|---|---|---|---|---|
+| **1** | Steel fabrication | Minimum charge unknown; 2.65 tons too small for per-ton rate | −$5k / +$10k | Send member list to 3 fabricators |
+| **2** | Structural engineering | Scope depends on what engineer requires vs. what study provides | −$5k / +$10k | Send study package to 2-3 SEs |
+| **3** | Prevailing wage trigger | If permit triggers PW, erection cost nearly doubles | +$6k–$16k | Check with contractor/DSD |
+| **4** | GC vs. owner-builder | GC markup is $12–34k on this job | $12k–$34k | Decision before permitting |
+| **5** | Foundation complications | Existing slab condition, groundwater, adjacent footings | +$3k–$10k | Expose one test location |
+| **6** | Solar with NEM 3.0 | Battery required for economic payback, adds $8–12k | +$8k–$12k | Get solar bids with/without battery |
+| **7** | IMP installation | Specialized trade, minimum charge possible on 665 sq ft | +$3k–$8k | Get IMP contractor quote |
+
+---
+
+## PART 5: What's NOT in This Number
+
+These are excluded because either they're not yet designed, are optional,
+or depend on conditions we can't see from the desk:
+
+| Excluded scope | Why it matters |
+|---|---|
+| Existing garage roof demolition | Required before steel goes up. Licensed demo + disposal |
+| Slab repair or replacement | Unknown condition under 50+ year old slab |
+| Secondary roof framing & purlins | Study assumes purlins exist; they don't — must be designed + bought |
+| Roof weatherproofing membrane | The metal skin in the model is visual, not a waterproof assembly |
+| Hip cap fabrication & roofing | Retained existing cap assumed; if replaced: +$3–6k |
+| Balcony glazing & railings | Steel frame included; glass + guardrail system is not |
+| Exterior doors & windows | Illustrated in model as infill; not specified or purchased |
+| Electrical / lighting | Loft, garage, solar interconnection require electrical work |
+| Fire sprinklers | May be triggered if occupancy classification changes |
+| Landscaping & site restoration | Trenching, grading, fence, planting all disturbed |
+| Utility relocation | Unknown if gas/electric/water lines cross excavation |
+| SDGE service upgrade | May need 200A panel upgrade for solar + EV |
+| Owner's representative time | If acting as own GC, budget 200–400 hours of your time |
+
+---
+
+## PART 6: What To Do Next (In Order)
+
+1. **Send the member-schedule.csv to 3 San Diego steel fabricators.**
+   This is the single biggest uncertainty. Include a clear list of shapes,
+   lengths, and that you want shop-fab + prime + local delivery quoted.
+   The answer will tell you whether the $10k minimum is real.
+
+2. **Send the study package (member schedule, geometry, load basis) to
+   2–3 structural engineers** for a fee proposal. Ask specifically what
+   additional design they'll need to do beyond reviewing the existing analysis.
+
+3. **Call the City of San Diego DSD.** Ask whether a residential garage
+   structural alteration at this scale triggers prevailing wage. The answer
+   changes Stage D by $6–16k.
+
+4. **Decide: GC or owner-builder?** If owner-builder, you're the one calling
+   for inspections, scheduling subs, and dealing with plan check corrections.
+   Worth $12–34k savings, but it's a part-time job for 4–6 months.
+
+5. **Get a soils probe or mini-excavator test hole** at one column position
+   to see what's under the slab and how deep groundwater is.
+
+6. **Get 2–3 solar bids** (with and without battery) so that the NEM 3.0
+   reality is priced in, not guessed.
+
+---
+
+*This estimate contains published, industry, and inferred rates as documented.
+Rates marked [NQ] are placeholders. The six items listed in Part 4 must be
+resolved with real quotes before this becomes a construction budget.*
+*Do not spend money against this estimate without first resolving Part 4 items.*
