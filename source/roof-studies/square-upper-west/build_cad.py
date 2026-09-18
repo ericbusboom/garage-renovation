@@ -30,12 +30,34 @@ wall.Shape=Part.makeBox(2*scale*U,60*U,(206-120.75)*U,A.Vector(xwall*U,186*U,120
 d.getObject('InteriorMetalPanels').addObject(wall);wall.ViewObject.ShapeColor=(.68,.72,.73)
 # Owner correction: one flush new north face, 12 inches beyond existing Y249.
 NORTH_FACE=261.0
+# Owner revision 2026-09-17: the north frame is outboard of the north wall.
+# T-N occupies Y257..Y261, so the cladding stops at the frame's inner face Y257
+# instead of running out flush with NORTH_FACE. Panels are 2 inches thick and
+# originate at Y247..Y249, so the shift is 8 inches, not 12.
+NORTH_WALL_FACE=257.0
+NORTH_PANEL_SHIFT=NORTH_WALL_FACE-249.0
+# The west bay of T-N is a door opening: open from the floor to the header
+# underside, full bay width up to the west face of the T-N center vertical.
+# Cladding above the header is retained; the truss zone there stays infilled.
+DOOR_EAST_X=86.75      # west face of T-N center vertical (X86.75..90.75)
+DOOR_HEAD_Z=206.25     # underside of 'T-N western-half opening header'
+door_void=Part.makeBox(
+ (DOOR_EAST_X+1000)*U, 2000*U, (DOOR_HEAD_Z+100)*U,
+ A.Vector(-1000*U, -1000*U, -100*U))
 for o in list(d.Objects):
  if 'Shape' not in o.PropertiesList or o.Shape.isNull():continue
  if any(g.Name=='ExistingGarage' for g in o.InList):continue
  label=o.Label;shape=o.Shape.copy()
- if label.startswith('N inside metal panel') or label.startswith('North '):
-  shape.translate(A.Vector(0,12*U,0))
+ # Owner revision 2026-09-17: every north window and its trim is removed.
+ if label.startswith('North '):
+  d.removeObject(o.Name);continue
+ if label.startswith('N inside metal panel'):
+  shape.translate(A.Vector(0,NORTH_PANEL_SHIFT*U,0))
+  cut=shape.cut(door_void)
+  # A panel entirely inside the opening disappears; drop the empty object.
+  if cut.isNull() or not cut.Solids:
+   d.removeObject(o.Name);continue
+  shape=cut
  elif shape.BoundBox.YMax/U>185:
   # Refit the rear context only. End faces of side cladding reach the wall;
   # rear steel centerlines remain just inside it.
@@ -286,5 +308,5 @@ for o in d.Objects:
  objects.append(dict(name=o.Label,group=next((g.Name for g in o.InList if g.TypeId=='App::DocumentObjectGroup'),'Context'),material=mat,vertices=[[v.x/U,v.y/U,v.z/U] for v in vs],triangles=ts))
 Part.export(export,str(P/'garage-square-upper-west.step'))
 (P/'cad-mesh.json').write_text(json.dumps({'objects':objects,'units':'inches'}))
-(P/'validation.json').write_text(json.dumps({'crossbeam_contact_checks':connection_checks,'matched_truss_member_count':len(pairs),'east_truss_matches_west':True,'west_markup':markup_record,'extension_walls':['W3-W4','W3-WB3'],'extension_wall_height_in':98.5,'extension_source_north_y':w4['y'],'extension_current_north_face_y':NORTH_FACE,'balcony_removed':True,'former_balcony_opening':'matching west wall infill','north_face_y_in':NORTH_FACE,'existing_north_face_y_in':249,'north_offset_in':12,'valid_shapes':len(objects),'vertical_clerestory_panes':6,'clerestory_height_in':glazing_head-sill,'fascia_height_in':4,'soffit_depths_in':{'front':4,'rear':4,'west':8,'east':8},'cap_north_edge_y_in':north+4,'cap_forward_extension_in':br-front,'pv_panels':18,'east_rafters':12,'rafter_spacing_in':23,'rafter_endpoint_checks':'12 lower endpoints on E-OB axis; 12 upper endpoints on mirrored west/east top-chord profile','upper_east_x':east,'east_beam_x':outer,'status':'rough massing; not structural analysis'},indent=2))
+(P/'validation.json').write_text(json.dumps({'crossbeam_contact_checks':connection_checks,'matched_truss_member_count':len(pairs),'east_truss_matches_west':True,'west_markup':markup_record,'extension_walls':['W3-W4','W3-WB3'],'extension_wall_height_in':98.5,'extension_source_north_y':w4['y'],'extension_current_north_face_y':NORTH_FACE,'balcony_removed':True,'former_balcony_opening':'matching west wall infill','north_face_y_in':NORTH_FACE,'existing_north_face_y_in':249,'north_offset_in':12,'north_wall_face_y_in':NORTH_WALL_FACE,'north_panel_offset_in':NORTH_PANEL_SHIFT,'north_cladding_behind_frame':'T-N occupies Y257..Y261; cladding stops at Y257','north_windows':'all north glazing and trim removed 2026-09-17','north_west_bay':{'open_to_x':DOOR_EAST_X,'header_underside_z':DOOR_HEAD_Z,'infill_above_header':True,'door_leaf':False},'valid_shapes':len(objects),'vertical_clerestory_panes':6,'clerestory_height_in':glazing_head-sill,'fascia_height_in':4,'soffit_depths_in':{'front':4,'rear':4,'west':8,'east':8},'cap_north_edge_y_in':north+4,'cap_forward_extension_in':br-front,'pv_panels':18,'east_rafters':12,'rafter_spacing_in':23,'rafter_endpoint_checks':'12 lower endpoints on E-OB axis; 12 upper endpoints on mirrored west/east top-chord profile','upper_east_x':east,'east_beam_x':outer,'status':'rough massing; not structural analysis'},indent=2))
 print('CAD COMPLETE',len(objects),flush=True)
