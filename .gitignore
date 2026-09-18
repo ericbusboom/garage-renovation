@@ -66,6 +66,20 @@ site-packages/
 *-interactive.html
 ALL-interactive.html
 
+# ── Plotly 3D viewers (regenerate from build_study.py / coordinated_study.py) ──
+*-3d.html
+parametric-*.html
+
+# ── Generated mesh exports (regenerate from build_scene.py) ───────────
+*.glb
+
+# ── Vendored third-party viewer library ───────────────────────────────
+model-viewer.min.js
+
+# ── Bulk utility rate exports (re-downloadable from CPUC MIDAS) ───────
+*MIDAS.csv
+*MIDAS.xml
+
 # ── Large solver network dumps (regenerate from study scripts) ─────────
 # The JSON study results and member schedules ARE committed; only the
 # multi-MB explicit network dumps are excluded.

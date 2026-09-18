@@ -1,0 +1,167 @@
+{
+  "passed": [
+    "Reloaded COMPAS objects and validated all solid meshes",
+    "JSON save/reload preserves element vertices and face topology",
+    "JSON save/reload preserves plan column positions",
+    "Imported truss/beam vertices match original meters converted to inches",
+    "Parametric ColumnElement columns match source bounds",
+    "Programmatic WB3 move updates point and footprint together"
+  ],
+  "expected_failures": {
+    "missing label target": "Dangling annotation: MISSING",
+    "negative section": "Nonpositive section: W1",
+    "misplaced north support": "North door bay no longer matches source center spacing/alignment",
+    "zero-length member": "Zero-length member: B-WO"
+  },
+  "source_differences": [
+    {
+      "id": "W1",
+      "old": [
+        -32,
+        -21.25
+      ],
+      "current": [
+        -34.0,
+        -66.0
+      ],
+      "delta": [
+        -2.0,
+        -44.75
+      ]
+    },
+    {
+      "id": "W2",
+      "old": [
+        -32,
+        69.75
+      ],
+      "current": [
+        -34.0,
+        69.75
+      ],
+      "delta": [
+        -2.0,
+        0.0
+      ]
+    },
+    {
+      "id": "W3",
+      "old": [
+        -32,
+        185
+      ],
+      "current": [
+        -34.0,
+        185.0
+      ],
+      "delta": [
+        -2.0,
+        0.0
+      ]
+    },
+    {
+      "id": "W4",
+      "old": [
+        -32,
+        253
+      ],
+      "current": [
+        -34.0,
+        269.0
+      ],
+      "delta": [
+        -2.0,
+        16.0
+      ]
+    },
+    {
+      "id": "S1",
+      "old": [
+        148.5,
+        -21.25
+      ],
+      "current": [
+        148.5,
+        -66.0
+      ],
+      "delta": [
+        0.0,
+        -44.75
+      ]
+    },
+    {
+      "id": "S2",
+      "old": [
+        224.25,
+        -21.25
+      ],
+      "current": [
+        211.5,
+        -66.0
+      ],
+      "delta": [
+        -12.75,
+        -44.75
+      ]
+    },
+    {
+      "id": "N1",
+      "old": [
+        53.25,
+        253
+      ],
+      "current": [
+        19.5,
+        269.0
+      ],
+      "delta": [
+        -33.75,
+        16.0
+      ]
+    },
+    {
+      "id": "N2",
+      "old": [
+        224.25,
+        253
+      ],
+      "current": [
+        211.5,
+        269.0
+      ],
+      "delta": [
+        -12.75,
+        16.0
+      ]
+    },
+    {
+      "id": "S3",
+      "old": [
+        224.25,
+        0
+      ],
+      "current": [
+        211.5,
+        -2.0
+      ],
+      "delta": [
+        -12.75,
+        -2.0
+      ]
+    }
+  ],
+  "notes": [
+    "The current floor plan and historical trusses are separate revisions.",
+    "Current plan column Z=0 is a drawing plane; top/base elevations remain null.",
+    "Historical 4-inch column sections are visualization placeholders.",
+    "South beam center Y=-64 differs from current column centers Y=-66 by 2 inches.",
+    "Validation checks geometry/data and selected source constraints; no load analysis performed.",
+    "Mesh validity does not establish self-intersection freedom or structural adequacy."
+  ],
+  "counts": {
+    "model_elements": 137,
+    "plan_columns": 13,
+    "reference_members": 11,
+    "parametric_columns": 9
+  }
+}

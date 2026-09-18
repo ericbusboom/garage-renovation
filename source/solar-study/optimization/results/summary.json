@@ -1,0 +1,397 @@
+{
+  "base_kwh_day": 27.428571428571427,
+  "base_continuous_kw": 1.1428571428571428,
+  "balance_temperature_F": 63.56642857142795,
+  "cooling_slope_kwh_per_day_per_F": 1.530674278236566,
+  "fit_rmse_kwh": 55.61932787295952,
+  "annual_normal_kwh": 11096.247681454277,
+  "annual_recent_kwh": 11334.798165469854,
+  "normal_august_kwh": 1181.5910506536304,
+  "august_2026_temperature": 74.89032258064516,
+  "august_normal_temperature": 70.54849462365591,
+  "bill_fit_fixed": 15.153368223671036,
+  "bill_fit_marginal": 0.3765077943522432,
+  "annual_bill_calibrated": 4359.664158814595,
+  "annual_bill_EVTOU5": 4303.25546016267,
+  "export_rate_name": "NBT00",
+  "best_south_tilt": 13,
+  "target_kw": 7.796764342797739,
+  "target_annual_kwh": 12058.553700214412,
+  "target_july_kwh": 1151.893964004938,
+  "best_candidate": {
+    "tilt": 30,
+    "solar_kw": 6.0,
+    "battery_kwh": 13.5,
+    "annual_solar_kwh": 9688.920000000002,
+    "august_kwh": 898.8000000000002,
+    "annual_import_kwh": 2992.072136601188,
+    "annual_export_kwh": 1191.1591091374341,
+    "annual_bill": 838.633436810996,
+    "first_year_saving": 3464.6220233516738,
+    "roof_fits_22pct_90pct": true,
+    "upfront": 39610.0,
+    "annual_equipment": 3247.2914245593506,
+    "annual_net_saving": 57.81784681746922,
+    "npv": 814.8815279734802
+  },
+  "seven_kw_one_battery": {
+    "tilt": 30,
+    "solar_kw": 7.0,
+    "battery_kwh": 13.5,
+    "annual_solar_kwh": 11303.74,
+    "august_kwh": 1048.6000000000001,
+    "annual_import_kwh": 2629.9387810692324,
+    "annual_export_kwh": 2417.5792143287686,
+    "annual_bill": 660.3399003147574,
+    "first_year_saving": 3642.9155598479124,
+    "roof_fits_22pct_90pct": true,
+    "upfront": 42170.0,
+    "annual_equipment": 3441.729715245379,
+    "annual_net_saving": 33.46437823570341,
+    "npv": 471.6450917911634
+  },
+  "azimuth": [
+    {
+      "compass_azimuth": 120,
+      "tilt": 15,
+      "august_kwh_per_kw": 146.61,
+      "annual_kwh_per_kw": 1450.5900000000001
+    },
+    {
+      "compass_azimuth": 150,
+      "tilt": 15,
+      "august_kwh_per_kw": 150.73,
+      "annual_kwh_per_kw": 1522.03
+    },
+    {
+      "compass_azimuth": 180,
+      "tilt": 15,
+      "august_kwh_per_kw": 153.88,
+      "annual_kwh_per_kw": 1560.0000000000002
+    },
+    {
+      "compass_azimuth": 210,
+      "tilt": 15,
+      "august_kwh_per_kw": 156.35,
+      "annual_kwh_per_kw": 1556.9999999999995
+    },
+    {
+      "compass_azimuth": 240,
+      "tilt": 15,
+      "august_kwh_per_kw": 156.44,
+      "annual_kwh_per_kw": 1511.8000000000002
+    }
+  ],
+  "sensitivities": [
+    {
+      "scenario": "Custom roof, central",
+      "tilt": 30,
+      "solar_kw": 6.0,
+      "battery_kwh": 13.5,
+      "upfront": 39610.0,
+      "annual_equipment": 3247.2914245593506,
+      "annual_net_saving": 57.81784681746922,
+      "npv": 814.8815279734802
+    },
+    {
+      "scenario": "Conventional installation",
+      "tilt": 30,
+      "solar_kw": 6.0,
+      "battery_kwh": 13.5,
+      "upfront": 32110.0,
+      "annual_equipment": 2715.147994815128,
+      "annual_net_saving": 589.9612765616916,
+      "npv": 8314.88152797348
+    },
+    {
+      "scenario": "Custom premium $15,000",
+      "tilt": 30,
+      "solar_kw": 6.0,
+      "battery_kwh": 13.5,
+      "upfront": 47110.0,
+      "annual_equipment": 3779.434854303573,
+      "annual_net_saving": -474.3255829267532,
+      "npv": -6685.11847202652
+    },
+    {
+      "scenario": "Installed cost -20%",
+      "tilt": 30,
+      "solar_kw": 6.5,
+      "battery_kwh": 13.5,
+      "upfront": 32712.0,
+      "annual_equipment": 2675.608455921891,
+      "annual_net_saving": 722.2189289877838,
+      "npv": 10178.913549702027
+    },
+    {
+      "scenario": "Installed cost +20%",
+      "tilt": 30,
+      "solar_kw": 3.5,
+      "battery_kwh": 0.0,
+      "upfront": 22752.0,
+      "annual_equipment": 1749.9807367420706,
+      "annual_net_saving": -377.03954431664874,
+      "npv": -5313.97443680562
+    },
+    {
+      "scenario": "Discount rate 3%",
+      "tilt": 30,
+      "solar_kw": 6.5,
+      "battery_kwh": 13.5,
+      "upfront": 40890.0,
+      "annual_equipment": 2820.3067190171696,
+      "annual_net_saving": 561.427743461687,
+      "npv": 9776.224214879292
+    },
+    {
+      "scenario": "Discount rate 8%",
+      "tilt": 30,
+      "solar_kw": 3.0,
+      "battery_kwh": 0.0,
+      "upfront": 17680.0,
+      "annual_equipment": 1753.7037296937285,
+      "annual_net_saving": -491.2905421010123,
+      "npv": -5244.416580498656
+    },
+    {
+      "scenario": "Conditional SDCP rebate",
+      "tilt": 30,
+      "solar_kw": 6.0,
+      "battery_kwh": 13.5,
+      "upfront": 34885.0,
+      "annual_equipment": 2912.0410638204903,
+      "annual_net_saving": 393.0682075563295,
+      "npv": 5539.88152797348
+    },
+    {
+      "scenario": "Battery replacement full price",
+      "tilt": 30,
+      "solar_kw": 4.0,
+      "battery_kwh": 0.0,
+      "upfront": 20240.0,
+      "annual_equipment": 1555.5364259614062,
+      "annual_net_saving": -84.39278084215789,
+      "npv": -1189.4271749637383
+    },
+    {
+      "scenario": "Recent 2016-25 climate",
+      "tilt": 30,
+      "solar_kw": 6.0,
+      "battery_kwh": 13.5,
+      "upfront": 39610.0,
+      "annual_equipment": 3247.2914245593506,
+      "annual_net_saving": 98.28997815236198,
+      "npv": 1385.2935034771392
+    },
+    {
+      "scenario": "Cooling +50%",
+      "tilt": 30,
+      "solar_kw": 7.0,
+      "battery_kwh": 13.5,
+      "upfront": 42170.0,
+      "annual_equipment": 3441.729715245379,
+      "annual_net_saving": 134.67285902885214,
+      "npv": 1898.0718097034105
+    },
+    {
+      "scenario": "Base computers -20%",
+      "tilt": 30,
+      "solar_kw": 4.0,
+      "battery_kwh": 0,
+      "upfront": 20240.0,
+      "annual_equipment": 1555.5364259614062,
+      "annual_net_saving": -223.91209630708795,
+      "npv": -3155.8046730189717
+    },
+    {
+      "scenario": "Base computers +20%",
+      "tilt": 30,
+      "solar_kw": 7.0,
+      "battery_kwh": 13.5,
+      "upfront": 42170.0,
+      "annual_equipment": 3441.729715245379,
+      "annual_net_saving": 338.7604806394015,
+      "npv": 4774.471435298407
+    },
+    {
+      "scenario": "PV weather -10%",
+      "tilt": 30,
+      "solar_kw": 7.0,
+      "battery_kwh": 13.5,
+      "upfront": 42170.0,
+      "annual_equipment": 3441.729715245379,
+      "annual_net_saving": -78.90835208830458,
+      "npv": -1112.1299401305014
+    },
+    {
+      "scenario": "PV weather +10%",
+      "tilt": 30,
+      "solar_kw": 6.0,
+      "battery_kwh": 13.5,
+      "upfront": 39610.0,
+      "annual_equipment": 3247.2914245593506,
+      "annual_net_saving": 166.98054390996458,
+      "npv": 2353.414529475044
+    },
+    {
+      "scenario": "Battery usable capacity -20%",
+      "tilt": 30,
+      "solar_kw": 6.0,
+      "battery_kwh": 13.5,
+      "upfront": 39610.0,
+      "annual_equipment": 3247.2914245593506,
+      "annual_net_saving": -64.35606374876625,
+      "npv": -907.0307949639507
+    },
+    {
+      "scenario": "Import rates -20%",
+      "tilt": 30,
+      "solar_kw": 4.0,
+      "battery_kwh": 0,
+      "upfront": 20240.0,
+      "annual_equipment": 1555.5364259614062,
+      "annual_net_saving": -364.43000690002805,
+      "npv": -5136.256315452301
+    },
+    {
+      "scenario": "Import rates +20%",
+      "tilt": 30,
+      "solar_kw": 6.0,
+      "battery_kwh": 13.5,
+      "upfront": 39610.0,
+      "annual_equipment": 3247.2914245593506,
+      "annual_net_saving": 709.835326788339,
+      "npv": 10004.37974677511
+    },
+    {
+      "scenario": "Export credits halved",
+      "tilt": 30,
+      "solar_kw": 6.0,
+      "battery_kwh": 13.5,
+      "upfront": 39610.0,
+      "annual_equipment": 3247.2914245593506,
+      "annual_net_saving": 35.306911056232366,
+      "npv": 497.6136472248138
+    },
+    {
+      "scenario": "AC delayed four hours",
+      "tilt": 30,
+      "solar_kw": 6.0,
+      "battery_kwh": 13.5,
+      "upfront": 39610.0,
+      "annual_equipment": 3247.2914245593506,
+      "annual_net_saving": 76.53203833828684,
+      "npv": 1078.638305866228
+    }
+  ],
+  "sun": [
+    {
+      "month": "Jan",
+      "sunrise": "06:51 PST",
+      "sunset": "17:04 PST",
+      "daylight_hours": 10.222726179166667,
+      "sunrise_azimuth": 114.70270193870783,
+      "sunset_azimuth": 245.27283888568485,
+      "noon_elevation": 36.21459444010338
+    },
+    {
+      "month": "Feb",
+      "sunrise": "06:31 PST",
+      "sunset": "17:33 PST",
+      "daylight_hours": 11.029754498333334,
+      "sunrise_azimuth": 104.41664461782437,
+      "sunset_azimuth": 255.65463492678543,
+      "noon_elevation": 44.753874313566335
+    },
+    {
+      "month": "Mar",
+      "sunrise": "06:58 PDT",
+      "sunset": "18:56 PDT",
+      "daylight_hours": 11.954979812777777,
+      "sunrise_azimuth": 91.83088046735662,
+      "sunset_azimuth": 268.3032751120237,
+      "noon_elevation": 55.318300561714814
+    },
+    {
+      "month": "Apr",
+      "sunrise": "06:19 PDT",
+      "sunset": "19:18 PDT",
+      "daylight_hours": 12.989914148333332,
+      "sunrise_azimuth": 77.65795654911528,
+      "sunset_azimuth": 282.47505093994187,
+      "noon_elevation": 67.19336904055538
+    },
+    {
+      "month": "May",
+      "sunrise": "05:49 PDT",
+      "sunset": "19:40 PDT",
+      "daylight_hours": 13.842579551111111,
+      "sunrise_azimuth": 66.69317787783257,
+      "sunset_azimuth": 293.3735043018893,
+      "noon_elevation": 76.2159634428393
+    },
+    {
+      "month": "Jun",
+      "sunrise": "05:40 PDT",
+      "sunset": "19:58 PDT",
+      "daylight_hours": 14.298675576944445,
+      "sunrise_azimuth": 61.28856531950305,
+      "sunset_azimuth": 298.6925997299909,
+      "noon_elevation": 80.53529275811414
+    },
+    {
+      "month": "Jul",
+      "sunrise": "05:51 PDT",
+      "sunset": "19:58 PDT",
+      "daylight_hours": 14.107266232222221,
+      "sunrise_azimuth": 63.58995848593918,
+      "sunset_azimuth": 296.34737306914974,
+      "noon_elevation": 78.62232275197368
+    },
+    {
+      "month": "Aug",
+      "sunrise": "06:12 PDT",
+      "sunset": "19:34 PDT",
+      "daylight_hours": 13.372935077222222,
+      "sunrise_azimuth": 72.78824325341088,
+      "sunset_azimuth": 287.14676109073923,
+      "noon_elevation": 71.05263979072933
+    },
+    {
+      "month": "Sep",
+      "sunrise": "06:32 PDT",
+      "sunset": "18:56 PDT",
+      "daylight_hours": 12.3913224,
+      "sunrise_azimuth": 86.03139730553977,
+      "sunset_azimuth": 273.91532797121886,
+      "noon_elevation": 59.99184751316295
+    },
+    {
+      "month": "Oct",
+      "sunrise": "06:53 PDT",
+      "sunset": "18:16 PDT",
+      "daylight_hours": 11.394086397777778,
+      "sunrise_azimuth": 99.76888383206398,
+      "sunset_azimuth": 260.18306960051814,
+      "noon_elevation": 48.47070283505674
+    },
+    {
+      "month": "Nov",
+      "sunrise": "06:19 PST",
+      "sunset": "16:48 PST",
+      "daylight_hours": 10.479740795833333,
+      "sunrise_azimuth": 111.69874600693072,
+      "sunset_azimuth": 248.24341544229642,
+      "noon_elevation": 38.5842123588165
+    },
+    {
+      "month": "Dec",
+      "sunrise": "06:44 PST",
+      "sunset": "16:44 PST",
+      "daylight_hours": 9.999357518333333,
+      "sunrise_azimuth": 117.44855679295694,
+      "sunset_azimuth": 242.4832862749005,
+      "noon_elevation": 33.92828615253122
+    }
+  ]
+}

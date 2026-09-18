@@ -18,6 +18,12 @@ EXCLUDES=(
   --exclude='*.gif'
   --exclude='*.bmp'
   --exclude='*.exr'
+  --exclude='*.glb'
+  --exclude='*-3d.html'
+  --exclude='parametric-*.html'
+  --exclude='model-viewer.min.js'
+  --exclude='*MIDAS.csv'
+  --exclude='*MIDAS.xml'
   --exclude='*.blend1'
   --exclude='*.blend2'
   --exclude='*.FCBak'
@@ -42,18 +48,28 @@ EXCLUDES=(
 
 # ── GALA: copy core project directories ──────────────────────────────────
 GALA_DIRS=(
-  optimization
   backyard-blender
+  backyard-current
   backyard-proposal
-  existing-site
-  model
   cabinet-study
   combined-study
+  compas-study
   construction-sequence-study
+  east-wall-study
+  existing-site
+  floor-plan-setbacks
   loading-door-study
+  model
+  model-renders
+  optimization
   outbuilding-study
+  report
   roof-first-feasibility
+  roof-options
   roof-studies
+  site-renderings
+  solar-study
+  stair-study
   structural-analysis-v2
   structural-analysis-v3
   structural-analysis-v4
@@ -87,6 +103,15 @@ if [ -d "$GALA/blender-render" ]; then
     --exclude='*.gltf' \
     "$GALA/blender-render/" "$REPO/source/blender-render/"
 fi
+
+# ── GALA: top-level source files ────────────────────────────
+echo "--- Syncing top-level files from gala ---"
+shopt -s nullglob
+for f in "$GALA"/*.py "$GALA"/*.md "$GALA"/*.FCStd "$GALA"/*.svg; do
+  echo "  $(basename "$f")"
+  cp -p "$f" "$REPO/"
+done
+shopt -u nullglob
 
 # ── BUZZKILL: copy top-level source files ────────────────────────────────
 echo "--- Syncing top-level files from buzzkill ---"
