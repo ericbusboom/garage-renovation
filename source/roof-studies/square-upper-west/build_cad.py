@@ -24,6 +24,14 @@ for o in list(d.Objects):
  if any(g.Name=='DoorsWindows' for g in o.InList) and o.Label.startswith('West ') and o.Shape.BoundBox.YMin/U>=180:
   d.removeObject(o.Name)
 # Fill the old west balcony door opening with the same inboard metal wall thickness.
+# Owner revision 2026-09-17: the west glazing is removed, but its opening is cut
+# into W inside metal panels 10 and 11 (Y145..Y173, Z153..Z177). Fill it with the
+# same inboard cladding thickness so the west wall reads unbroken.
+win=d.addObject('PartDesign::Feature','FormerWestWindowInfill');win.Label='West wall infill — glazing removed'
+wscale=(211.5+34)/(249.5+32);xwin=-34+3.5*wscale
+win.Shape=Part.makeBox(2*wscale*U,(173-145)*U,(177-153)*U,A.Vector(xwin*U,145*U,153*U))
+assert win.Shape.isValid() and win.Shape.Volume>0
+d.getObject('InteriorMetalPanels').addObject(win);win.ViewObject.ShapeColor=(.68,.72,.73)
 wall=d.addObject('PartDesign::Feature','FormerBalconyWallInfill');wall.Label='West wall infill — balcony removed'
 scale=(211.5+34)/(249.5+32);xwall=-34+3.5*scale
 wall.Shape=Part.makeBox(2*scale*U,60*U,(206-120.75)*U,A.Vector(xwall*U,186*U,120.75*U))
@@ -41,6 +49,11 @@ NORTH_PANEL_SHIFT=NORTH_WALL_FACE-249.0
 # Cladding above the header is retained; the truss zone there stays infilled.
 DOOR_EAST_X=86.75      # west face of T-N center vertical (X86.75..90.75)
 DOOR_HEAD_Z=206.25     # underside of 'T-N western-half opening header'
+# Owner revision 2026-09-17: the east interior wall was left at an obsolete
+# station 23 inches inboard, attached to no member. Its outer face goes to the
+# inner face of the east column line (N2/S2/S3 at X209.50..213.50), so the wall
+# sits just inside T-E and in the plane of N2.
+EAST_WALL_FACE=209.5
 door_void=Part.makeBox(
  (DOOR_EAST_X+1000)*U, 2000*U, (DOOR_HEAD_Z+100)*U,
  A.Vector(-1000*U, -1000*U, -100*U))
@@ -48,11 +61,17 @@ for o in list(d.Objects):
  if 'Shape' not in o.PropertiesList or o.Shape.isNull():continue
  if any(g.Name=='ExistingGarage' for g in o.InList):continue
  label=o.Label;shape=o.Shape.copy()
- # Owner revision 2026-09-17: every north window and its trim is removed.
- if label.startswith('North '):
+ # Owner revision 2026-09-17: every north window and its trim is removed,
+ # and the remaining west glazing goes with them.
+ if label.startswith(('North ','West glazing','West opening')):
   d.removeObject(o.Name);continue
  if label.startswith('N inside metal panel'):
   shape.translate(A.Vector(0,NORTH_PANEL_SHIFT*U,0))
+  # The old north window and loading-door voids are baked into these panels.
+  # Rebuild each as its solid bounding box so the only remaining opening is the
+  # west bay cut below; the north wall is otherwise unbroken.
+  bb=shape.BoundBox
+  shape=Part.makeBox(bb.XLength,bb.YLength,bb.ZLength,A.Vector(bb.XMin,bb.YMin,bb.ZMin))
   cut=shape.cut(door_void)
   # A panel entirely inside the opening disappears; drop the empty object.
   if cut.isNull() or not cut.Solids:
@@ -71,6 +90,8 @@ for o in list(d.Objects):
    t=A.Matrix();t.A22=scale;t.A24=185*(1-scale)*U
    upper=upper.transformGeometry(t)
    shape=Part.makeCompound([q for q in [lower,upper] if not q.isNull()])
+ if label.startswith('E inside metal panel'):
+  shape.translate(A.Vector((EAST_WALL_FACE-shape.BoundBox.XMax/U)*U,0,0))
  shape=shape.common(Part.makeBox(2000*U,1261*U,1000*U,A.Vector(-1000*U,-1000*U,-100*U)))
  if not shape.isNull():o.Shape=shape
 colors={'rafter':(.70,.36,.12),'steel':(.19,.23,.25),'roof':(.25,.30,.32),'pv':(.09,.18,.25),'glass':(.30,.69,.80),'trim':(.88,.90,.88)}
@@ -98,8 +119,19 @@ assert w3['x']==w4['x'] and w3['y']==wb3['y']
 # Match the existing upper inboard cladding face; 2-inch envelope is illustrative.
 wall_x=-34+3.5*((211.5+34)/(249.5+32));wall_t=2*((211.5+34)/(249.5+32))
 wall_group=d.addObject('App::DocumentObjectGroup','GroundFloorExtensionWalls')
+# Owner revision 2026-09-17: enclose the north ground floor along the documented
+# route W4 -> N1 -> N2 -> existing north wall. N1 to N2 stays open as the garage
+# door bay (floor-plan-basis.json north_door_bay), so no wall is built there.
+N1_X=40.34769094138544   # N1 centerline, frame-spec 'N1 / U-W.base'
+N1_HALF=3.0              # N1 is a 6 x 6 lower support
+EXISTING_NORTH_FACE=249.0
+north_ground_t=2.0       # match the north cladding band Y255..Y257 above it
 wall_specs=[('Extension wall W3 to W4',wall_x,w3['y'],0,wall_t,NORTH_FACE-w3['y'],98.5),
-            ('Extension wall W3 to WB3',wall_x,w3['y']+2,0,wb3['x']-wall_x,2,98.5)]
+            ('Extension wall W3 to WB3',wall_x,w3['y']+2,0,wb3['x']-wall_x,2,98.5),
+            ('North ground wall W4 to N1',wall_x,NORTH_WALL_FACE-north_ground_t,0,
+             (N1_X-N1_HALF)-wall_x,north_ground_t,98.5),
+            ('North ground wall N2 to existing',EAST_WALL_FACE-wall_t,EXISTING_NORTH_FACE,0,
+             wall_t,NORTH_WALL_FACE-EXISTING_NORTH_FACE,98.5)]
 for name,x,y,h,dx,dy,dz in wall_specs:
  ob=d.addObject('PartDesign::Feature','ExtensionWall');ob.Label=name
  ob.Shape=Part.makeBox(dx*U,dy*U,dz*U,V((x,y,h)))
@@ -308,5 +340,5 @@ for o in d.Objects:
  objects.append(dict(name=o.Label,group=next((g.Name for g in o.InList if g.TypeId=='App::DocumentObjectGroup'),'Context'),material=mat,vertices=[[v.x/U,v.y/U,v.z/U] for v in vs],triangles=ts))
 Part.export(export,str(P/'garage-square-upper-west.step'))
 (P/'cad-mesh.json').write_text(json.dumps({'objects':objects,'units':'inches'}))
-(P/'validation.json').write_text(json.dumps({'crossbeam_contact_checks':connection_checks,'matched_truss_member_count':len(pairs),'east_truss_matches_west':True,'west_markup':markup_record,'extension_walls':['W3-W4','W3-WB3'],'extension_wall_height_in':98.5,'extension_source_north_y':w4['y'],'extension_current_north_face_y':NORTH_FACE,'balcony_removed':True,'former_balcony_opening':'matching west wall infill','north_face_y_in':NORTH_FACE,'existing_north_face_y_in':249,'north_offset_in':12,'north_wall_face_y_in':NORTH_WALL_FACE,'north_panel_offset_in':NORTH_PANEL_SHIFT,'north_cladding_behind_frame':'T-N occupies Y257..Y261; cladding stops at Y257','north_windows':'all north glazing and trim removed 2026-09-17','north_west_bay':{'open_to_x':DOOR_EAST_X,'header_underside_z':DOOR_HEAD_Z,'infill_above_header':True,'door_leaf':False},'valid_shapes':len(objects),'vertical_clerestory_panes':6,'clerestory_height_in':glazing_head-sill,'fascia_height_in':4,'soffit_depths_in':{'front':4,'rear':4,'west':8,'east':8},'cap_north_edge_y_in':north+4,'cap_forward_extension_in':br-front,'pv_panels':18,'east_rafters':12,'rafter_spacing_in':23,'rafter_endpoint_checks':'12 lower endpoints on E-OB axis; 12 upper endpoints on mirrored west/east top-chord profile','upper_east_x':east,'east_beam_x':outer,'status':'rough massing; not structural analysis'},indent=2))
+(P/'validation.json').write_text(json.dumps({'crossbeam_contact_checks':connection_checks,'matched_truss_member_count':len(pairs),'east_truss_matches_west':True,'west_markup':markup_record,'extension_walls':['W3-W4','W3-WB3'],'extension_wall_height_in':98.5,'extension_source_north_y':w4['y'],'extension_current_north_face_y':NORTH_FACE,'balcony_removed':True,'former_balcony_opening':'matching west wall infill','north_face_y_in':NORTH_FACE,'existing_north_face_y_in':249,'north_offset_in':12,'north_wall_face_y_in':NORTH_WALL_FACE,'north_panel_offset_in':NORTH_PANEL_SHIFT,'north_cladding_behind_frame':'T-N occupies Y257..Y261; cladding stops at Y257','north_windows':'all north glazing and trim removed 2026-09-17','north_west_bay':{'open_to_x':DOOR_EAST_X,'header_underside_z':DOOR_HEAD_Z,'infill_above_header':True,'door_leaf':False},'north_panels_solidified':'legacy window and loading-door voids removed; only the west bay is open','east_wall_face_x_in':EAST_WALL_FACE,'east_wall_alignment':'outer face at inner face of east column line N2/S2/S3; previously stranded 23 in inboard','west_glazing':'removed; opening filled with matching inboard cladding','north_ground_floor':{'route':'W4 -> N1 -> N2 -> existing north wall','wall_w4_to_n1':'Y255..Y257, Z0..Z98.5','garage_door_bay':'N1 to N2 left open','return_n2_to_existing':'X207.76..X209.50, Y249..Y257','basis':'floor-plan-basis.json possible_ground_floor_extension'},'valid_shapes':len(objects),'vertical_clerestory_panes':6,'clerestory_height_in':glazing_head-sill,'fascia_height_in':4,'soffit_depths_in':{'front':4,'rear':4,'west':8,'east':8},'cap_north_edge_y_in':north+4,'cap_forward_extension_in':br-front,'pv_panels':18,'east_rafters':12,'rafter_spacing_in':23,'rafter_endpoint_checks':'12 lower endpoints on E-OB axis; 12 upper endpoints on mirrored west/east top-chord profile','upper_east_x':east,'east_beam_x':outer,'status':'rough massing; not structural analysis'},indent=2))
 print('CAD COMPLETE',len(objects),flush=True)

@@ -126,7 +126,18 @@
     "infill_above_header": true,
     "door_leaf": false
   },
-  "valid_shapes": 365,
+  "north_panels_solidified": "legacy window and loading-door voids removed; only the west bay is open",
+  "east_wall_face_x_in": 209.5,
+  "east_wall_alignment": "outer face at inner face of east column line N2/S2/S3; previously stranded 23 in inboard",
+  "west_glazing": "removed; opening filled with matching inboard cladding",
+  "north_ground_floor": {
+    "route": "W4 -> N1 -> N2 -> existing north wall",
+    "wall_w4_to_n1": "Y255..Y257, Z0..Z98.5",
+    "garage_door_bay": "N1 to N2 left open",
+    "return_n2_to_existing": "X207.76..X209.50, Y249..Y257",
+    "basis": "floor-plan-basis.json possible_ground_floor_extension"
+  },
+  "valid_shapes": 362,
   "vertical_clerestory_panes": 6,
   "clerestory_height_in": 22.956837567297384,
   "fascia_height_in": 4,
