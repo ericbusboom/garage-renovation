@@ -13,6 +13,7 @@ This map points to useful material in the workspace. It does **not** declare the
 | Construction sequence | `../construction-sequence-study/`, `../roof-first-feasibility/` | roof-clearance and staged T1 studies | Feasibility studies only; temporary works require engineered design. |
 | Solar/energy | `../solar-study/optimization/results/` | optimization PDF, charts, CSVs, summary JSON | Update tariff, costs, final roof geometry, shading, equipment, and consumption data before issue. |
 | Site-context renders | `../backyard-blender/`, `../backyard-proposal/`, `../blender-render/`, `../site-renderings/` | Blender packages and renderings | Illustrative; several generations of building design exist. |
+| Wall panel and glazing research | (desk research, no working directory) | `../report/07-building-envelope/wall-panel-options/` | Published manufacturer and trade sources accessed 2026-09-17. Prices are market ranges, not quotations. No samples, mockups or quotes obtained. |
 | Published wiki | `../wiki-publish/` | HTML content and copied deliverables | Publication mirror/archive; not the design source of truth. |
 
 ## Candidate files for first coordinated package

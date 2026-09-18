@@ -114,8 +114,14 @@ def compile_spec(spec):
   n=todo.pop()
   if n not in seen:seen.add(n);todo.extend(graph.neighbors(n))
  if seen!=set(graph.nodes()):raise ValueError('Frame nodes without path to a support: '+str(set(graph.nodes())-seen))
+ # Every member of the preceding CAD study is either regenerated or explicitly
+ # retired. Members with no CAD ancestor are declared in added_members with a
+ # reason, so the inventory audit stays exact rather than absorbing new work.
+ added=set(spec.get('added_members',{}))
  covered={m['source_name'] for m in members.values()}|set(spec['retired_members'])
- if covered!=set(spec['source_inventory']):raise ValueError('Source inventory coverage mismatch')
+ if covered-added!=set(spec['source_inventory']):raise ValueError('Source inventory coverage mismatch')
+ undeclared=added-{m['source_name'] for m in members.values()}
+ if undeclared:raise ValueError('added_members not present as members: '+str(sorted(undeclared)))
  return dict(nodes=resolved,aliases=aliases,graph=graph,model=model,elements=elements,rows=rows,interactions=len(linked))
 
 def geometry(c,spec):

@@ -243,3 +243,19 @@ Wood joist 14-1,start,B2 future floor beam @ 0.907637655417,connected,B2 future 
 Wood joist 14-1,end,T-N @ 0.907637655417,connected,T-N,0.0,Wood joist 14-1
 T-N diagonal 9,start,north.center.bottom,connected,T-N; T-N upper east jamb,0.0,T-N diagonal 9 | HSS1-1/2X1-1/2X1/8
 T-N diagonal 9,end,E.W4 @ 0.96043956044,connected,E.W4; T-N top / segment 1,0.0,T-N diagonal 9 | HSS1-1/2X1-1/2X1/8
+T-N garage door header,start,north.garage.header.west,connected,N1 / U-W; T-N garage diagonal 1,0.0,T-N garage door header | HSS1-1/2X1-1/2X1/8
+T-N garage door header,end,north.garage.header.east,connected,N2; T-N garage diagonal 4,0.0,T-N garage door header | HSS1-1/2X1-1/2X1/8
+T-N garage vertical 1,start,north.garage.web.1.bottom,connected,T-N garage door header,0.0,T-N garage vertical 1 | HSS1-1/2X1-1/2X1/8
+T-N garage vertical 1,end,north.garage.web.1.top,connected,T-N; T-N garage diagonal 1; T-N garage diagonal 2,0.0,T-N garage vertical 1 | HSS1-1/2X1-1/2X1/8
+T-N garage vertical 2,start,north.garage.web.2.bottom,connected,T-N garage diagonal 2; T-N garage diagonal 3; T-N garage door header,0.0,T-N garage vertical 2 | HSS1-1/2X1-1/2X1/8
+T-N garage vertical 2,end,north.garage.web.2.top,connected,T-N,0.0,T-N garage vertical 2 | HSS1-1/2X1-1/2X1/8
+T-N garage vertical 3,start,north.garage.web.3.bottom,connected,T-N garage door header,0.0,T-N garage vertical 3 | HSS1-1/2X1-1/2X1/8
+T-N garage vertical 3,end,north.garage.web.3.top,connected,T-N; T-N garage diagonal 3; T-N garage diagonal 4,0.0,T-N garage vertical 3 | HSS1-1/2X1-1/2X1/8
+T-N garage diagonal 1,start,north.garage.header.west,connected,N1 / U-W; T-N garage door header,0.0,T-N garage diagonal 1 | HSS1-1/2X1-1/2X1/8
+T-N garage diagonal 1,end,north.garage.web.1.top,connected,T-N; T-N garage diagonal 2; T-N garage vertical 1,0.0,T-N garage diagonal 1 | HSS1-1/2X1-1/2X1/8
+T-N garage diagonal 2,start,north.garage.web.1.top,connected,T-N; T-N garage diagonal 1; T-N garage vertical 1,0.0,T-N garage diagonal 2 | HSS1-1/2X1-1/2X1/8
+T-N garage diagonal 2,end,north.garage.web.2.bottom,connected,T-N garage diagonal 3; T-N garage door header; T-N garage vertical 2,0.0,T-N garage diagonal 2 | HSS1-1/2X1-1/2X1/8
+T-N garage diagonal 3,start,north.garage.web.2.bottom,connected,T-N garage diagonal 2; T-N garage door header; T-N garage vertical 2,0.0,T-N garage diagonal 3 | HSS1-1/2X1-1/2X1/8
+T-N garage diagonal 3,end,north.garage.web.3.top,connected,T-N; T-N garage diagonal 4; T-N garage vertical 3,0.0,T-N garage diagonal 3 | HSS1-1/2X1-1/2X1/8
+T-N garage diagonal 4,start,north.garage.web.3.top,connected,T-N; T-N garage diagonal 3; T-N garage vertical 3,0.0,T-N garage diagonal 4 | HSS1-1/2X1-1/2X1/8
+T-N garage diagonal 4,end,north.garage.header.east,connected,N2; T-N garage door header,0.0,T-N garage diagonal 4 | HSS1-1/2X1-1/2X1/8

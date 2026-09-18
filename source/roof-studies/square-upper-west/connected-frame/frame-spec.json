@@ -1,2774 +1,2927 @@
 {
-  "schema": "garage.connected-frame/1",
-  "units": "inches",
-  "parameters": {
-    "west_x": -34.0,
-    "east_x": 211.5,
-    "south_y": -63.0,
-    "north_y": 259.0,
-    "clerestory_y": 76.07183683382158,
-    "bottom_z": 115.0,
-    "square_top_z": 228.75,
-    "solar_start_z": 117.0,
-    "solar_slope": 0.5773502691896256,
-    "outer_east_x": 247.5,
-    "eob_z": 100.0,
-    "south_entry_east_x": 143.5,
-    "s1_x": 145.5
+ "schema": "garage.connected-frame/1",
+ "units": "inches",
+ "parameters": {
+  "west_x": -34.0,
+  "east_x": 211.5,
+  "south_y": -63.0,
+  "north_y": 259.0,
+  "clerestory_y": 76.07183683382158,
+  "bottom_z": 115.0,
+  "square_top_z": 228.75,
+  "solar_start_z": 117.0,
+  "solar_slope": 0.5773502691896256,
+  "outer_east_x": 247.5,
+  "eob_z": 100.0,
+  "south_entry_east_x": 143.5,
+  "s1_x": 145.5
+ },
+ "nodes": {
+  "W.south.bottom": {
+   "on_member": "W.SW0",
+   "station": {
+    "axis": 2,
+    "value": "bottom_z"
+   }
   },
-  "nodes": {
-    "W.south.bottom": {
-      "on_member": "W.SW0",
-      "station": {
-        "axis": 2,
-        "value": "bottom_z"
-      }
-    },
-    "W.north.bottom": {
-      "on_member": "W.W4",
-      "station": {
-        "axis": 2,
-        "value": "bottom_z"
-      }
-    },
-    "W.south.slope": {
-      "xyz": [
-        "west_x",
-        "south_y",
-        "solar_start_z"
-      ]
-    },
-    "W.front.slope": {
-      "on_member": "W.clerestory",
-      "station": {
-        "axis": 2,
-        "value": {
-          "solar_at_y": "clerestory_y"
-        }
-      }
-    },
-    "W.front.top": {
-      "xyz": [
-        "west_x",
-        "clerestory_y",
-        "square_top_z"
-      ]
-    },
-    "W.north.top": {
-      "xyz": [
-        "west_x",
-        "north_y",
-        "square_top_z"
-      ]
-    },
-    "W.bottom @ 0.431900114391": {
-      "on_member": "W.bottom",
-      "station": {
-        "axis": 1,
-        "value": "clerestory_y"
-      }
-    },
-    "W.slope @ 0.453003292646": {
-      "on_member": "W.slope",
-      "station": {
-        "axis": 1,
-        "value": 0.0
-      }
-    },
-    "W.top @ 0.595469616492": {
-      "on_member": "W.top",
-      "station": {
-        "axis": 1,
-        "value": 185.0
-      }
-    },
-    "W.W1.base": {
-      "xyz": [
-        "west_x",
-        0,
-        0
-      ],
-      "support": "ground datum; footing/reaction design unresolved"
-    },
-    "W.W3.base": {
-      "xyz": [
-        "west_x",
-        185,
-        0
-      ],
-      "support": "ground datum; footing/reaction design unresolved"
-    },
-    "W.W4.base": {
-      "xyz": [
-        "west_x",
-        259,
-        0
-      ],
-      "support": "ground datum; footing/reaction design unresolved"
-    },
-    "W.SW0.base": {
-      "xyz": [
-        "west_x",
-        -63,
-        0
-      ],
-      "support": "ground datum; footing/reaction design unresolved"
-    },
-    "W.bottom @ 0.770186335404": {
-      "on_member": "W.bottom",
-      "station": {
-        "axis": 1,
-        "value": 185.0
-      }
-    },
-    "E.south.bottom": {
-      "xyz": [
-        "east_x",
-        "south_y",
-        "bottom_z"
-      ]
-    },
-    "E.north.bottom": {
-      "xyz": [
-        "east_x",
-        "north_y",
-        "bottom_z"
-      ]
-    },
-    "E.south.slope": {
-      "xyz": [
-        "east_x",
-        "south_y",
-        "solar_start_z"
-      ]
-    },
-    "E.front.slope": {
-      "on_member": "E.clerestory",
-      "station": {
-        "axis": 2,
-        "value": {
-          "solar_at_y": "clerestory_y"
-        }
-      }
-    },
-    "E.front.top": {
-      "xyz": [
-        "east_x",
-        "clerestory_y",
-        "square_top_z"
-      ]
-    },
-    "E.north.top": {
-      "xyz": [
-        "east_x",
-        "north_y",
-        "square_top_z"
-      ]
-    },
-    "E.bottom @ 0.431900114391": {
-      "on_member": "E.bottom",
-      "station": {
-        "axis": 1,
-        "value": "clerestory_y"
-      }
-    },
-    "E.slope @ 0.453003292646": {
-      "on_member": "E.slope",
-      "station": {
-        "axis": 1,
-        "value": 0.0
-      }
-    },
-    "E.top @ 0.595469616492": {
-      "on_member": "E.top",
-      "station": {
-        "axis": 1,
-        "value": 185.0
-      }
-    },
-    "E.bottom @ 0.195652173913": {
-      "on_member": "E.bottom",
-      "station": {
-        "axis": 1,
-        "value": 0.0
-      }
-    },
-    "E.bottom @ 0.770186335404": {
-      "on_member": "E.bottom",
-      "station": {
-        "axis": 1,
-        "value": 185.0
-      }
-    },
-    "W.bottom @ 0.195652173913": {
-      "on_member": "W.bottom",
-      "station": {
-        "axis": 1,
-        "value": 0.0
-      }
-    },
-    "W.clerestory @ 0.308951630769": {
-      "on_member": "W.clerestory",
-      "station": {
-        "axis": 2,
-        "value": 150.143248
-      }
-    },
-    "E.clerestory @ 0.308951630769": {
-      "on_member": "E.clerestory",
-      "station": {
-        "axis": 2,
-        "value": 150.143248
-      }
-    },
-    "W.clerestory @ 0.691369215252": {
-      "on_member": "W.clerestory",
-      "station": {
-        "axis": 2,
-        "value": 193.64324823492282
-      }
-    },
-    "E.clerestory @ 0.691369215252": {
-      "on_member": "E.clerestory",
-      "station": {
-        "axis": 2,
-        "value": 193.64324823492282
-      }
-    },
-    "W.clerestory @ 0.00879120879121": {
-      "on_member": "W.clerestory",
-      "station": {
-        "axis": 2,
-        "value": 116.0
-      }
-    },
-    "E.clerestory @ 0.00879120879121": {
-      "on_member": "E.clerestory",
-      "station": {
-        "axis": 2,
-        "value": 116.0
-      }
-    },
-    "W.W3 @ 0.507103825137": {
-      "on_member": "W.W3",
-      "station": {
-        "axis": 2,
-        "value": 116.0
-      }
-    },
-    "E.W3 @ 0.00879120879121": {
-      "on_member": "E.W3",
-      "station": {
-        "axis": 2,
-        "value": 116.0
-      }
-    },
-    "W.SW0 @ 0.991452991453": {
-      "on_member": "W.SW0",
-      "station": {
-        "axis": 2,
-        "value": 116.0
-      }
-    },
-    "E.SW0 @ 0.5": {
-      "on_member": "E.SW0",
-      "station": {
-        "axis": 2,
-        "value": 116.0
-      }
-    },
-    "W.W4 @ 0.980327868852": {
-      "on_member": "W.W4",
-      "station": {
-        "axis": 2,
-        "value": 224.25
-      }
-    },
-    "E.W4 @ 0.96043956044": {
-      "on_member": "E.W4",
-      "station": {
-        "axis": 2,
-        "value": 224.25
-      }
-    },
-    "S1.base": {
-      "xyz": [
-        "s1_x",
-        -63,
-        0
-      ],
-      "support": "ground datum; footing/reaction design unresolved"
-    },
-    "S1.head": {
-      "on_member": "T-SO",
-      "station": {
-        "axis": 0,
-        "value": "s1_x"
-      }
-    },
-    "S2.base": {
-      "xyz": [
-        "east_x",
-        "south_y",
-        0
-      ],
-      "support": "ground datum; footing/reaction design unresolved"
-    },
-    "S3.base": {
-      "xyz": [
-        "east_x",
-        0,
-        0
-      ],
-      "support": "ground datum; footing/reaction design unresolved"
-    },
-    "N2.base": {
-      "xyz": [
-        "east_x",
-        "north_y",
-        0
-      ],
-      "support": "ground datum; footing/reaction design unresolved"
-    },
-    "N1 / U-W.base": {
-      "xyz": [
-        40.34769094138544,
-        259,
-        0
-      ],
-      "support": "ground datum; footing/reaction design unresolved"
-    },
-    "T-S @ 0.166666666667": {
-      "on_member": "T-S",
-      "fraction": 0.16666666666666669
-    },
-    "T-S top / segment 1 @ 0.166666666667": {
-      "on_member": "T-S top / segment 1",
-      "fraction": 0.16666666666666669
-    },
-    "T-S @ 0.333333333333": {
-      "on_member": "T-S",
-      "fraction": 0.33333333333333337
-    },
-    "T-S top / segment 1 @ 0.333333333333": {
-      "on_member": "T-S top / segment 1",
-      "fraction": 0.33333333333333337
-    },
-    "T-S @ 0.5": {
-      "on_member": "T-S",
-      "fraction": 0.5
-    },
-    "T-S top / segment 1 @ 0.5": {
-      "on_member": "T-S top / segment 1",
-      "fraction": 0.5
-    },
-    "T-S @ 0.666666666667": {
-      "on_member": "T-S",
-      "fraction": 0.6666666666666667
-    },
-    "T-S top / segment 1 @ 0.666666666667": {
-      "on_member": "T-S top / segment 1",
-      "fraction": 0.6666666666666667
-    },
-    "T-S @ 0.833333333333": {
-      "on_member": "T-S",
-      "fraction": 0.8333333333333333
-    },
-    "T-S top / segment 1 @ 0.833333333333": {
-      "on_member": "T-S top / segment 1",
-      "fraction": 0.8333333333333333
-    },
-    "T1 upper lower chord @ 0.25": {
-      "on_member": "T1 upper lower chord",
-      "fraction": 0.25
-    },
-    "T1 top / segment 1 @ 0.25": {
-      "on_member": "T1 top / segment 1",
-      "fraction": 0.25
-    },
-    "T1 upper lower chord @ 0.5": {
-      "on_member": "T1 upper lower chord",
-      "fraction": 0.5
-    },
-    "T1 top / segment 1 @ 0.5": {
-      "on_member": "T1 top / segment 1",
-      "fraction": 0.5
-    },
-    "T1 upper lower chord @ 0.75": {
-      "on_member": "T1 upper lower chord",
-      "fraction": 0.75
-    },
-    "T1 top / segment 1 @ 0.75": {
-      "on_member": "T1 top / segment 1",
-      "fraction": 0.75
-    },
-    "T1 future floor beam @ 0.25": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.25
-    },
-    "T1 future floor beam @ 0.5": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.5
-    },
-    "T1 future floor beam @ 0.75": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.75
-    },
-    "W.W3 @ 0.0262295081967": {
-      "on_member": "W.W3",
-      "station": {
-        "axis": 2,
-        "value": 6.0
-      }
-    },
-    "W.W4 @ 0.502732240437": {
-      "on_member": "W.W4",
-      "station": {
-        "axis": 2,
-        "value": "bottom_z"
-      }
-    },
-    "W.W4 @ 0.0262295081967": {
-      "on_member": "W.W4",
-      "station": {
-        "axis": 2,
-        "value": 6.0
-      }
-    },
-    "W.W3 @ 0.502732240437": {
-      "on_member": "W.W3",
-      "station": {
-        "axis": 2,
-        "value": "bottom_z"
-      }
-    },
-    "S1 @ 0.051724137931": {
-      "on_member": "S1",
-      "station": {
-        "axis": 2,
-        "value": 6.0
-      }
-    },
-    "S2 @ 0.991379310345": {
-      "on_member": "S2",
-      "station": {
-        "axis": 2,
-        "value": "bottom_z"
-      }
-    },
-    "S2 @ 0.051724137931": {
-      "on_member": "S2",
-      "station": {
-        "axis": 2,
-        "value": 6.0
-      }
-    },
-    "S1 @ 0.991379310345": {
-      "on_member": "S1",
-      "station": {
-        "axis": 2,
-        "value": "bottom_z"
-      }
-    },
-    "N1 / U-W @ 0.512820512821": {
-      "on_member": "N1 / U-W",
-      "station": {
-        "axis": 2,
-        "value": "bottom_z"
-      }
-    },
-    "N1 / U-W @ 0.0267558528428": {
-      "on_member": "N1 / U-W",
-      "station": {
-        "axis": 2,
-        "value": 6.0
-      }
-    },
-    "W.top @ 0.404137678347": {
-      "on_member": "W.top",
-      "station": {
-        "axis": 1,
-        "value": 150.0
-      }
-    },
-    "E.top @ 0.892918427895": {
-      "on_member": "E.top",
-      "station": {
-        "axis": 1,
-        "value": 239.41176470588235
-      }
-    },
-    "E.top @ 0.404137678347": {
-      "on_member": "E.top",
-      "station": {
-        "axis": 1,
-        "value": 150.0
-      }
-    },
-    "W.top @ 0.892918427895": {
-      "on_member": "W.top",
-      "station": {
-        "axis": 1,
-        "value": 239.41176470588235
-      }
-    },
-    "EOB.south": {
-      "xyz": [
-        "outer_east_x",
-        -4,
-        "eob_z"
-      ],
-      "free_end": "2-inch beam overhang beyond E-S center"
-    },
-    "EOB.north": {
-      "xyz": [
-        "outer_east_x",
-        253,
-        "eob_z"
-      ],
-      "free_end": "2-inch beam overhang beyond E-N center"
-    },
-    "E-OB @ 0.00778210116732": {
-      "on_member": "E-OB",
-      "station": {
-        "axis": 1,
-        "value": -2.0
-      }
-    },
-    "E-S.base": {
-      "xyz": [
-        247.5,
-        -2,
-        0
-      ],
-      "support": "ground datum; footing/reaction design unresolved"
-    },
-    "E-OB @ 0.992217898833": {
-      "on_member": "E-OB",
-      "station": {
-        "axis": 1,
-        "value": 251.0
-      }
-    },
-    "E-N.base": {
-      "xyz": [
-        247.5,
-        251,
-        0
-      ],
-      "support": "ground datum; footing/reaction design unresolved"
-    },
-    "E-OB @ 0.735408560311": {
-      "on_member": "E-OB",
-      "station": {
-        "axis": 1,
-        "value": 185.0
-      }
-    },
-    "E-M.bearing": {
-      "offset_from": "E-OB @ 0.735408560311",
-      "offset": [
-        -1,
-        0,
-        0
-      ],
-      "connection": "one-inch eccentric bearing inside 4-inch post / 3-inch beam envelopes"
-    },
-    "E-M option B.base": {
-      "xyz": [
-        246.5,
-        185,
-        0
-      ],
-      "support": "ground datum; footing/reaction design unresolved"
-    },
-    "E.slope @ 0.438622235736": {
-      "on_member": "E.slope",
-      "station": {
-        "axis": 1,
-        "value": -2.0
-      }
-    },
-    "E-OB @ 0.0972762645914": {
-      "on_member": "E-OB",
-      "station": {
-        "axis": 1,
-        "value": 21.0
-      }
-    },
-    "E.slope @ 0.604004390194": {
-      "on_member": "E.slope",
-      "station": {
-        "axis": 1,
-        "value": 21.0
-      }
-    },
-    "E-OB @ 0.186770428016": {
-      "on_member": "E-OB",
-      "station": {
-        "axis": 1,
-        "value": 44.0
-      }
-    },
-    "E.slope @ 0.769386544652": {
-      "on_member": "E.slope",
-      "station": {
-        "axis": 1,
-        "value": 44.0
-      }
-    },
-    "E-OB @ 0.27626459144": {
-      "on_member": "E-OB",
-      "station": {
-        "axis": 1,
-        "value": 67.0
-      }
-    },
-    "E.slope @ 0.93476869911": {
-      "on_member": "E.slope",
-      "station": {
-        "axis": 1,
-        "value": 67.0
-      }
-    },
-    "E-OB @ 0.365758754864": {
-      "on_member": "E-OB",
-      "station": {
-        "axis": 1,
-        "value": 90.0
-      }
-    },
-    "E.top @ 0.0761400700969": {
-      "on_member": "E.top",
-      "station": {
-        "axis": 1,
-        "value": 90.0
-      }
-    },
-    "E-OB @ 0.455252918288": {
-      "on_member": "E-OB",
-      "station": {
-        "axis": 1,
-        "value": 113.0
-      }
-    },
-    "E.top @ 0.201872486593": {
-      "on_member": "E.top",
-      "station": {
-        "axis": 1,
-        "value": 113.0
-      }
-    },
-    "E-OB @ 0.544747081712": {
-      "on_member": "E-OB",
-      "station": {
-        "axis": 1,
-        "value": 136.0
-      }
-    },
-    "E.top @ 0.327604903088": {
-      "on_member": "E.top",
-      "station": {
-        "axis": 1,
-        "value": 136.0
-      }
-    },
-    "E-OB @ 0.634241245136": {
-      "on_member": "E-OB",
-      "station": {
-        "axis": 1,
-        "value": 159.0
-      }
-    },
-    "E.top @ 0.453337319584": {
-      "on_member": "E.top",
-      "station": {
-        "axis": 1,
-        "value": 159.0
-      }
-    },
-    "E-OB @ 0.72373540856": {
-      "on_member": "E-OB",
-      "station": {
-        "axis": 1,
-        "value": 182.0
-      }
-    },
-    "E.top @ 0.57906973608": {
-      "on_member": "E.top",
-      "station": {
-        "axis": 1,
-        "value": 182.0
-      }
-    },
-    "E-OB @ 0.813229571984": {
-      "on_member": "E-OB",
-      "station": {
-        "axis": 1,
-        "value": 205.0
-      }
-    },
-    "E.top @ 0.704802152575": {
-      "on_member": "E.top",
-      "station": {
-        "axis": 1,
-        "value": 205.0
-      }
-    },
-    "E-OB @ 0.902723735409": {
-      "on_member": "E-OB",
-      "station": {
-        "axis": 1,
-        "value": 228.0
-      }
-    },
-    "E.top @ 0.830534569071": {
-      "on_member": "E.top",
-      "station": {
-        "axis": 1,
-        "value": 228.0
-      }
-    },
-    "E.top @ 0.956266985567": {
-      "on_member": "E.top",
-      "station": {
-        "axis": 1,
-        "value": 251.0
-      }
-    },
-    "T1 future floor beam @ 0.116341030195": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.11634103019538189
-    },
-    "B2 future floor beam @ 0.116341030195": {
-      "on_member": "B2 future floor beam",
-      "fraction": 0.11634103019538189
-    },
-    "T-N @ 0.116341030195": {
-      "on_member": "T-N",
-      "fraction": 0.11634103019538189
-    },
-    "T1 future floor beam @ 0.173179396092": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.17317939609236235
-    },
-    "B2 future floor beam @ 0.173179396092": {
-      "on_member": "B2 future floor beam",
-      "fraction": 0.17317939609236235
-    },
-    "T-N @ 0.173179396092": {
-      "on_member": "T-N",
-      "fraction": 0.17317939609236235
-    },
-    "T1 future floor beam @ 0.230017761989": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.23001776198934282
-    },
-    "B2 future floor beam @ 0.230017761989": {
-      "on_member": "B2 future floor beam",
-      "fraction": 0.23001776198934282
-    },
-    "T-N @ 0.230017761989": {
-      "on_member": "T-N",
-      "fraction": 0.23001776198934282
-    },
-    "T1 future floor beam @ 0.286856127886": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.2868561278863232
-    },
-    "B2 future floor beam @ 0.286856127886": {
-      "on_member": "B2 future floor beam",
-      "fraction": 0.2868561278863232
-    },
-    "T-N @ 0.286856127886": {
-      "on_member": "T-N",
-      "fraction": 0.2868561278863232
-    },
-    "T1 future floor beam @ 0.343694493783": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.34369449378330375
-    },
-    "B2 future floor beam @ 0.343694493783": {
-      "on_member": "B2 future floor beam",
-      "fraction": 0.34369449378330375
-    },
-    "T-N @ 0.343694493783": {
-      "on_member": "T-N",
-      "fraction": 0.34369449378330375
-    },
-    "T1 future floor beam @ 0.40053285968": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.4005328596802842
-    },
-    "B2 future floor beam @ 0.40053285968": {
-      "on_member": "B2 future floor beam",
-      "fraction": 0.4005328596802842
-    },
-    "T-N @ 0.40053285968": {
-      "on_member": "T-N",
-      "fraction": 0.4005328596802842
-    },
-    "T1 future floor beam @ 0.457371225577": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.45737122557726456
-    },
-    "B2 future floor beam @ 0.457371225577": {
-      "on_member": "B2 future floor beam",
-      "fraction": 0.45737122557726456
-    },
-    "T-N @ 0.457371225577": {
-      "on_member": "T-N",
-      "fraction": 0.45737122557726456
-    },
-    "T1 future floor beam @ 0.514209591474": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.514209591474245
-    },
-    "B2 future floor beam @ 0.514209591474": {
-      "on_member": "B2 future floor beam",
-      "fraction": 0.514209591474245
-    },
-    "T-N @ 0.514209591474": {
-      "on_member": "T-N",
-      "fraction": 0.514209591474245
-    },
-    "T1 future floor beam @ 0.571047957371": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.5710479573712256
-    },
-    "B2 future floor beam @ 0.571047957371": {
-      "on_member": "B2 future floor beam",
-      "fraction": 0.5710479573712256
-    },
-    "T-N @ 0.571047957371": {
-      "on_member": "T-N",
-      "fraction": 0.5710479573712256
-    },
-    "T1 future floor beam @ 0.627886323268": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.6278863232682061
-    },
-    "B2 future floor beam @ 0.627886323268": {
-      "on_member": "B2 future floor beam",
-      "fraction": 0.6278863232682061
-    },
-    "T-N @ 0.627886323268": {
-      "on_member": "T-N",
-      "fraction": 0.6278863232682061
-    },
-    "T1 future floor beam @ 0.684724689165": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.6847246891651866
-    },
-    "B2 future floor beam @ 0.684724689165": {
-      "on_member": "B2 future floor beam",
-      "fraction": 0.6847246891651866
-    },
-    "T-N @ 0.684724689165": {
-      "on_member": "T-N",
-      "fraction": 0.6847246891651866
-    },
-    "T1 future floor beam @ 0.741563055062": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.741563055062167
-    },
-    "B2 future floor beam @ 0.741563055062": {
-      "on_member": "B2 future floor beam",
-      "fraction": 0.741563055062167
-    },
-    "T-N @ 0.741563055062": {
-      "on_member": "T-N",
-      "fraction": 0.741563055062167
-    },
-    "T1 future floor beam @ 0.798401420959": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.7984014209591475
-    },
-    "B2 future floor beam @ 0.798401420959": {
-      "on_member": "B2 future floor beam",
-      "fraction": 0.7984014209591475
-    },
-    "T-N @ 0.798401420959": {
-      "on_member": "T-N",
-      "fraction": 0.7984014209591475
-    },
-    "T1 future floor beam @ 0.855239786856": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.8552397868561278
-    },
-    "B2 future floor beam @ 0.855239786856": {
-      "on_member": "B2 future floor beam",
-      "fraction": 0.8552397868561278
-    },
-    "T-N @ 0.855239786856": {
-      "on_member": "T-N",
-      "fraction": 0.8552397868561278
-    },
-    "T1 future floor beam @ 0.907637655417": {
-      "on_member": "T1 future floor beam",
-      "fraction": 0.9076376554174067
-    },
-    "B2 future floor beam @ 0.907637655417": {
-      "on_member": "B2 future floor beam",
-      "fraction": 0.9076376554174067
-    },
-    "T-N @ 0.907637655417": {
-      "on_member": "T-N",
-      "fraction": 0.9076376554174067
-    },
-    "S2.east-truss-bearing": {
-      "on_member": "E.bottom",
-      "station": {
-        "axis": 1,
-        "value": "south_y"
-      }
-    },
-    "S3.east-truss-bearing": {
-      "on_member": "E.bottom",
-      "station": {
-        "axis": 1,
-        "value": 0
-      }
-    },
-    "N2.east-truss-bearing": {
-      "on_member": "E.bottom",
-      "station": {
-        "axis": 1,
-        "value": "north_y"
-      }
-    },
-    "north.center.bottom": {
-      "on_member": "T-N",
-      "fraction": 0.5
-    },
-    "north.center.top": {
-      "on_member": "T-N top / segment 1",
-      "fraction": 0.5
-    },
-    "N1.lower-chord-bearing": {
-      "on_member": "T-N",
-      "fraction": 0.302841918294849
-    },
-    "north.door.header.west": {
-      "on_member": "W.W4",
-      "station": {
-        "axis": 2,
-        "value": 207.0
-      }
-    },
-    "north.door.header.center": {
-      "on_member": "T-N upper east jamb",
-      "station": {
-        "axis": 2,
-        "value": 207.0
-      }
-    },
-    "north.door.web.11.top": {
-      "on_member": "T-N top / segment 1",
-      "fraction": 0.125
-    },
-    "north.door.web.11.bottom": {
-      "on_member": "T-N loading header",
-      "fraction": 0.25
-    },
-    "north.door.web.12.top": {
-      "on_member": "T-N top / segment 1",
-      "fraction": 0.25
-    },
-    "north.door.web.12.bottom": {
-      "on_member": "T-N loading header",
-      "fraction": 0.5
-    },
-    "north.door.web.13.top": {
-      "on_member": "T-N top / segment 1",
-      "fraction": 0.375
-    },
-    "north.door.web.13.bottom": {
-      "on_member": "T-N loading header",
-      "fraction": 0.75
+  "W.north.bottom": {
+   "on_member": "W.W4",
+   "station": {
+    "axis": 2,
+    "value": "bottom_z"
+   }
+  },
+  "W.south.slope": {
+   "xyz": [
+    "west_x",
+    "south_y",
+    "solar_start_z"
+   ]
+  },
+  "W.front.slope": {
+   "on_member": "W.clerestory",
+   "station": {
+    "axis": 2,
+    "value": {
+     "solar_at_y": "clerestory_y"
     }
+   }
   },
-  "members": {
-    "W.bottom": {
-      "nodes": [
-        "W.south.bottom",
-        "W.north.bottom"
-      ],
-      "width": 3.5,
-      "depth": 3.5,
-      "group": "WestMarkupFraming",
-      "material": "steel",
-      "source_name": "T-W / B-WO | HSS3-1/2X3-1/2X3/16",
-      "section_reference": "HSS3-1/2X3-1/2X3/16",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "W.slope": {
-      "nodes": [
-        "W.south.slope",
-        "W.front.slope"
-      ],
-      "width": 2.5,
-      "depth": 2.5,
-      "group": "WestMarkupFraming",
-      "material": "steel",
-      "source_name": "West solar slope chord",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "W.top": {
-      "nodes": [
-        "W.front.top",
-        "W.north.top"
-      ],
-      "width": 5,
-      "depth": 5,
-      "group": "WestMarkupFraming",
-      "material": "steel",
-      "source_name": "West square upper chord",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "W.clerestory": {
-      "nodes": [
-        "W.bottom @ 0.431900114391",
-        "W.front.top"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "WestMarkupFraming",
-      "material": "steel",
-      "source_name": "West clerestory-aligned vertical",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "W.W1": {
-      "nodes": [
-        "W.W1.base",
-        "W.slope @ 0.453003292646"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "Columns",
-      "material": "steel",
-      "source_name": "W1 | HSS4X4X3/16",
-      "section_reference": "HSS4X4X3/16",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "W.W3": {
-      "nodes": [
-        "W.W3.base",
-        "W.top @ 0.595469616492"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "Columns",
-      "material": "steel",
-      "source_name": "W3 | HSS4X4X1/2",
-      "section_reference": "HSS4X4X1/2",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "W.W4": {
-      "nodes": [
-        "W.W4.base",
-        "W.north.top"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "Columns",
-      "material": "steel",
-      "source_name": "W4 | HSS4X4X1/4",
-      "section_reference": "HSS4X4X1/4",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "W.SW0": {
-      "nodes": [
-        "W.SW0.base",
-        "W.south.slope"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "Columns",
-      "material": "steel",
-      "source_name": "SW0 | HSS4X4X3/16",
-      "section_reference": "HSS4X4X3/16",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "W.rear.brace": {
-      "nodes": [
-        "W.bottom @ 0.770186335404",
-        "W.north.top"
-      ],
-      "width": 2.25,
-      "depth": 2.25,
-      "group": "WestMarkupFraming",
-      "material": "steel",
-      "source_name": "West rear diagonal rising north",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "W.square.brace": {
-      "nodes": [
-        "W.bottom @ 0.770186335404",
-        "W.front.top"
-      ],
-      "width": 2.25,
-      "depth": 2.25,
-      "group": "WestMarkupFraming",
-      "material": "steel",
-      "source_name": "West square bay diagonal",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "E.bottom": {
-      "nodes": [
-        "E.south.bottom",
-        "E.north.bottom"
-      ],
-      "width": 3.5,
-      "depth": 3.5,
-      "group": "MatchedEastTruss",
-      "material": "steel",
-      "source_name": "T-E matching T-W / B-WO | HSS3-1/2X3-1/2X3/16",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "E.slope": {
-      "nodes": [
-        "E.south.slope",
-        "E.front.slope"
-      ],
-      "width": 2.5,
-      "depth": 2.5,
-      "group": "MatchedEastTruss",
-      "material": "steel",
-      "source_name": "T-E matching West solar slope chord",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "E.top": {
-      "nodes": [
-        "E.front.top",
-        "E.north.top"
-      ],
-      "width": 5,
-      "depth": 5,
-      "group": "MatchedEastTruss",
-      "material": "steel",
-      "source_name": "T-E matching West square upper chord",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "E.clerestory": {
-      "nodes": [
-        "E.bottom @ 0.431900114391",
-        "E.front.top"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "MatchedEastTruss",
-      "material": "steel",
-      "source_name": "T-E matching West clerestory-aligned vertical",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "E.W1": {
-      "nodes": [
-        "E.bottom @ 0.195652173913",
-        "E.slope @ 0.453003292646"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "MatchedEastTruss",
-      "material": "steel",
-      "source_name": "T-E matching W1 | HSS4X4X3/16",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "E.W3": {
-      "nodes": [
-        "E.bottom @ 0.770186335404",
-        "E.top @ 0.595469616492"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "MatchedEastTruss",
-      "material": "steel",
-      "source_name": "T-E matching W3 | HSS4X4X1/2",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "E.W4": {
-      "nodes": [
-        "E.north.bottom",
-        "E.north.top"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "MatchedEastTruss",
-      "material": "steel",
-      "source_name": "T-E matching W4 | HSS4X4X1/4",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "E.SW0": {
-      "nodes": [
-        "E.south.bottom",
-        "E.south.slope"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "MatchedEastTruss",
-      "material": "steel",
-      "source_name": "T-E matching SW0 | HSS4X4X3/16",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "E.rear.brace": {
-      "nodes": [
-        "E.bottom @ 0.770186335404",
-        "E.north.top"
-      ],
-      "width": 2.25,
-      "depth": 2.25,
-      "group": "MatchedEastTruss",
-      "material": "steel",
-      "source_name": "T-E matching West rear diagonal rising north",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "E.square.brace": {
-      "nodes": [
-        "E.bottom @ 0.770186335404",
-        "E.front.top"
-      ],
-      "width": 2.25,
-      "depth": 2.25,
-      "group": "MatchedEastTruss",
-      "material": "steel",
-      "source_name": "T-E matching West square bay diagonal",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-S": {
-      "nodes": [
-        "W.bottom @ 0.195652173913",
-        "E.bottom @ 0.195652173913"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TS",
-      "material": "steel",
-      "source_name": "T-S | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-S top / segment 1": {
-      "nodes": [
-        "W.slope @ 0.453003292646",
-        "E.slope @ 0.453003292646"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TS",
-      "material": "steel",
-      "source_name": "T-S top / segment 1 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T1 upper lower chord": {
-      "nodes": [
-        "W.clerestory @ 0.308951630769",
-        "E.clerestory @ 0.308951630769"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_T1",
-      "material": "steel",
-      "source_name": "T1 upper lower chord | HSS1-1/2X1-1/2X3/16",
-      "section_reference": "HSS1-1/2X1-1/2X3/16",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T1 top / segment 1": {
-      "nodes": [
-        "W.clerestory @ 0.691369215252",
-        "E.clerestory @ 0.691369215252"
-      ],
-      "width": 2.0,
-      "depth": 2.0,
-      "group": "Truss_T1",
-      "material": "steel",
-      "source_name": "T1 top / segment 1 | HSS2X2X1/8",
-      "section_reference": "HSS2X2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T1 future floor beam": {
-      "nodes": [
-        "W.clerestory @ 0.00879120879121",
-        "E.clerestory @ 0.00879120879121"
-      ],
-      "width": 3.94,
-      "depth": 5.83,
-      "group": "LoftSteel",
-      "material": "steel",
-      "source_name": "T1 future floor beam | W6X8.5",
-      "section_reference": "W6X8.5",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "B2 future floor beam": {
-      "nodes": [
-        "W.W3 @ 0.507103825137",
-        "E.W3 @ 0.00879120879121"
-      ],
-      "width": 6.5,
-      "depth": 7.93,
-      "group": "LoftSteel",
-      "material": "steel",
-      "source_name": "B2 future floor beam | W8X24",
-      "section_reference": "W8X24",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-SO": {
-      "nodes": [
-        "W.SW0 @ 0.991452991453",
-        "E.SW0 @ 0.5"
-      ],
-      "width": 3.94,
-      "depth": 5.83,
-      "group": "Truss_Other",
-      "material": "steel",
-      "source_name": "T-SO | W6X8.5",
-      "section_reference": "W6X8.5",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-N": {
-      "nodes": [
-        "W.north.bottom",
-        "E.north.bottom"
-      ],
-      "width": 3.0,
-      "depth": 3.0,
-      "group": "Truss_TN",
-      "material": "steel",
-      "source_name": "T-N | HSS3X3X1/8",
-      "section_reference": "HSS3X3X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-N top / segment 1": {
-      "nodes": [
-        "W.W4 @ 0.980327868852",
-        "E.W4 @ 0.96043956044"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "Truss_TN",
-      "material": "steel",
-      "source_name": "T-N top / segment 1 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "4 \u00d7 4 in \u2014 owner-requested top chord",
-      "section_status": "4 \u00d7 4-inch display envelope; wall thickness and structural sizing unresolved",
-      "display_name": "T-N top chord | 4 x 4 in"
-    },
-    "S1": {
-      "nodes": [
-        "S1.base",
-        "S1.head"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "Columns",
-      "material": "steel",
-      "source_name": "S1 | HSS4X4X3/16",
-      "section_reference": "HSS4X4X3/16",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "S2": {
-      "nodes": [
-        "S2.base",
-        "S2.east-truss-bearing"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "Columns",
-      "material": "steel",
-      "source_name": "S2 | HSS4X4X3/16",
-      "section_reference": "HSS4X4X3/16",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "S3": {
-      "nodes": [
-        "S3.base",
-        "S3.east-truss-bearing"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "Columns",
-      "material": "steel",
-      "source_name": "S3 | HSS4X4X3/16",
-      "section_reference": "HSS4X4X3/16",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "N2": {
-      "nodes": [
-        "N2.base",
-        "N2.east-truss-bearing"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "Columns",
-      "material": "steel",
-      "source_name": "N2 | HSS4X4X1/4",
-      "section_reference": "HSS4X4X1/4",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "N1 / U-W": {
-      "nodes": [
-        "N1 / U-W.base",
-        "N1.lower-chord-bearing"
-      ],
-      "width": 6,
-      "depth": 6,
-      "group": "Columns",
-      "material": "steel",
-      "source_name": "N1 / U-W | HSS6X6X1/4",
-      "section_reference": "HSS6X6X1/4",
-      "section_status": "display envelope; section and connection design unverified",
-      "display_name": "N1 | 6 x 6 in lower support"
-    },
-    "T-S vertical 2": {
-      "nodes": [
-        "T-S @ 0.166666666667",
-        "T-S top / segment 1 @ 0.166666666667"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TS",
-      "material": "steel",
-      "source_name": "T-S vertical 2 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-S vertical 3": {
-      "nodes": [
-        "T-S @ 0.333333333333",
-        "T-S top / segment 1 @ 0.333333333333"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TS",
-      "material": "steel",
-      "source_name": "T-S vertical 3 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-S vertical 4": {
-      "nodes": [
-        "T-S @ 0.5",
-        "T-S top / segment 1 @ 0.5"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TS",
-      "material": "steel",
-      "source_name": "T-S vertical 4 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-S vertical 5": {
-      "nodes": [
-        "T-S @ 0.666666666667",
-        "T-S top / segment 1 @ 0.666666666667"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TS",
-      "material": "steel",
-      "source_name": "T-S vertical 5 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-S vertical 6": {
-      "nodes": [
-        "T-S @ 0.833333333333",
-        "T-S top / segment 1 @ 0.833333333333"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TS",
-      "material": "steel",
-      "source_name": "T-S vertical 6 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-S diagonal 8": {
-      "nodes": [
-        "W.bottom @ 0.195652173913",
-        "T-S top / segment 1 @ 0.166666666667"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TS",
-      "material": "steel",
-      "source_name": "T-S diagonal 8 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-S diagonal 9": {
-      "nodes": [
-        "T-S top / segment 1 @ 0.166666666667",
-        "T-S @ 0.333333333333"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TS",
-      "material": "steel",
-      "source_name": "T-S diagonal 9 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-S diagonal 10": {
-      "nodes": [
-        "T-S @ 0.333333333333",
-        "T-S top / segment 1 @ 0.5"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TS",
-      "material": "steel",
-      "source_name": "T-S diagonal 10 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-S diagonal 11": {
-      "nodes": [
-        "T-S top / segment 1 @ 0.5",
-        "T-S @ 0.666666666667"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TS",
-      "material": "steel",
-      "source_name": "T-S diagonal 11 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-S diagonal 12": {
-      "nodes": [
-        "T-S @ 0.666666666667",
-        "T-S top / segment 1 @ 0.833333333333"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TS",
-      "material": "steel",
-      "source_name": "T-S diagonal 12 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-S diagonal 13": {
-      "nodes": [
-        "T-S top / segment 1 @ 0.833333333333",
-        "E.bottom @ 0.195652173913"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TS",
-      "material": "steel",
-      "source_name": "T-S diagonal 13 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T1 vertical 2": {
-      "nodes": [
-        "T1 upper lower chord @ 0.25",
-        "T1 top / segment 1 @ 0.25"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_T1",
-      "material": "steel",
-      "source_name": "T1 vertical 2 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T1 vertical 3": {
-      "nodes": [
-        "T1 upper lower chord @ 0.5",
-        "T1 top / segment 1 @ 0.5"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_T1",
-      "material": "steel",
-      "source_name": "T1 vertical 3 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T1 vertical 4": {
-      "nodes": [
-        "T1 upper lower chord @ 0.75",
-        "T1 top / segment 1 @ 0.75"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_T1",
-      "material": "steel",
-      "source_name": "T1 vertical 4 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T1 diagonal 6": {
-      "nodes": [
-        "W.clerestory @ 0.308951630769",
-        "T1 top / segment 1 @ 0.25"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_T1",
-      "material": "steel",
-      "source_name": "T1 diagonal 6 | HSS1-1/2X1-1/2X3/16",
-      "section_reference": "HSS1-1/2X1-1/2X3/16",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T1 diagonal 7": {
-      "nodes": [
-        "T1 top / segment 1 @ 0.25",
-        "T1 upper lower chord @ 0.5"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_T1",
-      "material": "steel",
-      "source_name": "T1 diagonal 7 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T1 diagonal 8": {
-      "nodes": [
-        "T1 upper lower chord @ 0.5",
-        "T1 top / segment 1 @ 0.75"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_T1",
-      "material": "steel",
-      "source_name": "T1 diagonal 8 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T1 diagonal 9": {
-      "nodes": [
-        "T1 top / segment 1 @ 0.75",
-        "E.clerestory @ 0.308951630769"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_T1",
-      "material": "steel",
-      "source_name": "T1 diagonal 9 | HSS1-1/2X1-1/2X3/16",
-      "section_reference": "HSS1-1/2X1-1/2X3/16",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T1 future hanger 2": {
-      "nodes": [
-        "T1 future floor beam @ 0.25",
-        "T1 upper lower chord @ 0.25"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "LoftSteel",
-      "material": "steel",
-      "source_name": "T1 future hanger 2 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T1 future hanger 3": {
-      "nodes": [
-        "T1 future floor beam @ 0.5",
-        "T1 upper lower chord @ 0.5"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "LoftSteel",
-      "material": "steel",
-      "source_name": "T1 future hanger 3 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T1 future hanger 4": {
-      "nodes": [
-        "T1 future floor beam @ 0.75",
-        "T1 upper lower chord @ 0.75"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "LoftSteel",
-      "material": "steel",
-      "source_name": "T1 future hanger 4 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-N upper east jamb": {
-      "nodes": [
-        "north.center.bottom",
-        "north.center.top"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "Truss_TN",
-      "material": "steel",
-      "source_name": "T-N upper east jamb | HSS4X4X3/16",
-      "section_reference": "HSS4X4X3/16",
-      "section_status": "display envelope; section and connection design unverified",
-      "display_name": "T-N center vertical | 4 x 4 in"
-    },
-    "T-N loading header": {
-      "nodes": [
-        "north.door.header.west",
-        "north.door.header.center"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TN",
-      "material": "steel",
-      "source_name": "T-N loading header | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified",
-      "display_name": "T-N western-half opening header"
-    },
-    "T-N diagonal 8": {
-      "nodes": [
-        "north.center.top",
-        "E.north.bottom"
-      ],
-      "width": 2.0,
-      "depth": 2.0,
-      "group": "Truss_TN",
-      "material": "steel",
-      "source_name": "T-N diagonal 8 | HSS2X2X1/8",
-      "section_reference": "HSS2X2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-N vertical 11": {
-      "nodes": [
-        "north.door.web.11.bottom",
-        "north.door.web.11.top"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TN",
-      "material": "steel",
-      "source_name": "T-N vertical 11 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-N vertical 12": {
-      "nodes": [
-        "north.door.web.12.bottom",
-        "north.door.web.12.top"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TN",
-      "material": "steel",
-      "source_name": "T-N vertical 12 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-N vertical 13": {
-      "nodes": [
-        "north.door.web.13.bottom",
-        "north.door.web.13.top"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TN",
-      "material": "steel",
-      "source_name": "T-N vertical 13 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-N diagonal 15": {
-      "nodes": [
-        "north.door.header.west",
-        "north.door.web.11.top"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TN",
-      "material": "steel",
-      "source_name": "T-N diagonal 15 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-N diagonal 16": {
-      "nodes": [
-        "north.door.web.11.top",
-        "north.door.web.12.bottom"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TN",
-      "material": "steel",
-      "source_name": "T-N diagonal 16 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-N diagonal 17": {
-      "nodes": [
-        "north.door.web.12.bottom",
-        "north.door.web.13.top"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TN",
-      "material": "steel",
-      "source_name": "T-N diagonal 17 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-N diagonal 18": {
-      "nodes": [
-        "north.door.web.13.top",
-        "north.door.header.center"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Truss_TN",
-      "material": "steel",
-      "source_name": "T-N diagonal 18 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "BR-W-1": {
-      "nodes": [
-        "W.W3 @ 0.0262295081967",
-        "W.W4 @ 0.502732240437"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Bracing",
-      "material": "steel",
-      "source_name": "BR-W-1 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "BR-W-2": {
-      "nodes": [
-        "W.W4 @ 0.0262295081967",
-        "W.W3 @ 0.502732240437"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Bracing",
-      "material": "steel",
-      "source_name": "BR-W-2 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "BR-S-1": {
-      "nodes": [
-        "S1 @ 0.051724137931",
-        "S2 @ 0.991379310345"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Bracing",
-      "material": "steel",
-      "source_name": "BR-S-1 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "BR-S-2": {
-      "nodes": [
-        "S2 @ 0.051724137931",
-        "S1 @ 0.991379310345"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Bracing",
-      "material": "steel",
-      "source_name": "BR-S-2 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "BR-N-ground-1": {
-      "nodes": [
-        "W.W4 @ 0.0262295081967",
-        "N1 / U-W @ 0.512820512821"
-      ],
-      "width": 2.0,
-      "depth": 2.0,
-      "group": "Bracing",
-      "material": "steel",
-      "source_name": "BR-N-ground-1 | HSS2X2X1/8",
-      "section_reference": "HSS2X2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "BR-N-ground-2": {
-      "nodes": [
-        "N1 / U-W @ 0.0267558528428",
-        "W.W4 @ 0.502732240437"
-      ],
-      "width": 2.25,
-      "depth": 2.25,
-      "group": "Bracing",
-      "material": "steel",
-      "source_name": "BR-N-ground-2 | HSS2-1/4X2-1/4X1/8",
-      "section_reference": "HSS2-1/4X2-1/4X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "BR-R-main-1": {
-      "nodes": [
-        "W.slope @ 0.453003292646",
-        "E.front.slope"
-      ],
-      "width": 2.25,
-      "depth": 2.25,
-      "group": "Bracing",
-      "material": "steel",
-      "source_name": "BR-R-main-1 | HSS2-1/4X2-1/4X1/8",
-      "section_reference": "HSS2-1/4X2-1/4X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "BR-R-main-2": {
-      "nodes": [
-        "E.slope @ 0.453003292646",
-        "W.front.slope"
-      ],
-      "width": 2.0,
-      "depth": 2.0,
-      "group": "Bracing",
-      "material": "steel",
-      "source_name": "BR-R-main-2 | HSS2X2X1/8",
-      "section_reference": "HSS2X2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "BR-R-cap-1": {
-      "nodes": [
-        "W.top @ 0.404137678347",
-        "E.top @ 0.892918427895"
-      ],
-      "width": 3.0,
-      "depth": 3.0,
-      "group": "Bracing",
-      "material": "steel",
-      "source_name": "BR-R-cap-1 | HSS3X3X3/16",
-      "section_reference": "HSS3X3X3/16",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "BR-R-cap-2": {
-      "nodes": [
-        "E.top @ 0.404137678347",
-        "W.top @ 0.892918427895"
-      ],
-      "width": 1.5,
-      "depth": 1.5,
-      "group": "Bracing",
-      "material": "steel",
-      "source_name": "BR-R-cap-2 | HSS1-1/2X1-1/2X1/8",
-      "section_reference": "HSS1-1/2X1-1/2X1/8",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "E-OB": {
-      "nodes": [
-        "EOB.south",
-        "EOB.north"
-      ],
-      "width": 3,
-      "depth": 3,
-      "group": "EastSupportFrame",
-      "material": "steel",
-      "source_name": "E-OB",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "E-S": {
-      "nodes": [
-        "E-S.base",
-        "E-OB @ 0.00778210116732"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "EastSupportFrame",
-      "material": "steel",
-      "source_name": "E-S",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "E-N": {
-      "nodes": [
-        "E-N.base",
-        "E-OB @ 0.992217898833"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "EastSupportFrame",
-      "material": "steel",
-      "source_name": "E-N",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "E-M option B": {
-      "nodes": [
-        "E-M option B.base",
-        "E-M.bearing"
-      ],
-      "width": 4,
-      "depth": 4,
-      "group": "EastSupportFrame",
-      "material": "steel",
-      "source_name": "E-M option B",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "East rafter 01": {
-      "nodes": [
-        "E-OB @ 0.00778210116732",
-        "E.slope @ 0.438622235736"
-      ],
-      "width": 3,
-      "depth": 3,
-      "group": "EastRoofRafters",
-      "material": "rafter",
-      "source_name": "East rafter 01",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "East rafter 02": {
-      "nodes": [
-        "E-OB @ 0.0972762645914",
-        "E.slope @ 0.604004390194"
-      ],
-      "width": 3,
-      "depth": 3,
-      "group": "EastRoofRafters",
-      "material": "rafter",
-      "source_name": "East rafter 02",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "East rafter 03": {
-      "nodes": [
-        "E-OB @ 0.186770428016",
-        "E.slope @ 0.769386544652"
-      ],
-      "width": 3,
-      "depth": 3,
-      "group": "EastRoofRafters",
-      "material": "rafter",
-      "source_name": "East rafter 03",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "East rafter 04": {
-      "nodes": [
-        "E-OB @ 0.27626459144",
-        "E.slope @ 0.93476869911"
-      ],
-      "width": 3,
-      "depth": 3,
-      "group": "EastRoofRafters",
-      "material": "rafter",
-      "source_name": "East rafter 04",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "East rafter 05": {
-      "nodes": [
-        "E-OB @ 0.365758754864",
-        "E.top @ 0.0761400700969"
-      ],
-      "width": 3,
-      "depth": 3,
-      "group": "EastRoofRafters",
-      "material": "rafter",
-      "source_name": "East rafter 05",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "East rafter 06": {
-      "nodes": [
-        "E-OB @ 0.455252918288",
-        "E.top @ 0.201872486593"
-      ],
-      "width": 3,
-      "depth": 3,
-      "group": "EastRoofRafters",
-      "material": "rafter",
-      "source_name": "East rafter 06",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "East rafter 07": {
-      "nodes": [
-        "E-OB @ 0.544747081712",
-        "E.top @ 0.327604903088"
-      ],
-      "width": 3,
-      "depth": 3,
-      "group": "EastRoofRafters",
-      "material": "rafter",
-      "source_name": "East rafter 07",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "East rafter 08": {
-      "nodes": [
-        "E-OB @ 0.634241245136",
-        "E.top @ 0.453337319584"
-      ],
-      "width": 3,
-      "depth": 3,
-      "group": "EastRoofRafters",
-      "material": "rafter",
-      "source_name": "East rafter 08",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "East rafter 09": {
-      "nodes": [
-        "E-OB @ 0.72373540856",
-        "E.top @ 0.57906973608"
-      ],
-      "width": 3,
-      "depth": 3,
-      "group": "EastRoofRafters",
-      "material": "rafter",
-      "source_name": "East rafter 09",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "East rafter 10": {
-      "nodes": [
-        "E-OB @ 0.813229571984",
-        "E.top @ 0.704802152575"
-      ],
-      "width": 3,
-      "depth": 3,
-      "group": "EastRoofRafters",
-      "material": "rafter",
-      "source_name": "East rafter 10",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "East rafter 11": {
-      "nodes": [
-        "E-OB @ 0.902723735409",
-        "E.top @ 0.830534569071"
-      ],
-      "width": 3,
-      "depth": 3,
-      "group": "EastRoofRafters",
-      "material": "rafter",
-      "source_name": "East rafter 11",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "East rafter 12": {
-      "nodes": [
-        "E-OB @ 0.992217898833",
-        "E.top @ 0.956266985567"
-      ],
-      "width": 3,
-      "depth": 3,
-      "group": "EastRoofRafters",
-      "material": "rafter",
-      "source_name": "East rafter 12",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 0-0": {
-      "nodes": [
-        "T1 future floor beam @ 0.116341030195",
-        "B2 future floor beam @ 0.116341030195"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 0-0",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 0-1": {
-      "nodes": [
-        "B2 future floor beam @ 0.116341030195",
-        "T-N @ 0.116341030195"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 0-1",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 1-0": {
-      "nodes": [
-        "T1 future floor beam @ 0.173179396092",
-        "B2 future floor beam @ 0.173179396092"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 1-0",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 1-1": {
-      "nodes": [
-        "B2 future floor beam @ 0.173179396092",
-        "T-N @ 0.173179396092"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 1-1",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 2-0": {
-      "nodes": [
-        "T1 future floor beam @ 0.230017761989",
-        "B2 future floor beam @ 0.230017761989"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 2-0",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 2-1": {
-      "nodes": [
-        "B2 future floor beam @ 0.230017761989",
-        "T-N @ 0.230017761989"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 2-1",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 3-0": {
-      "nodes": [
-        "T1 future floor beam @ 0.286856127886",
-        "B2 future floor beam @ 0.286856127886"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 3-0",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 3-1": {
-      "nodes": [
-        "B2 future floor beam @ 0.286856127886",
-        "T-N @ 0.286856127886"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 3-1",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 4-0": {
-      "nodes": [
-        "T1 future floor beam @ 0.343694493783",
-        "B2 future floor beam @ 0.343694493783"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 4-0",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 4-1": {
-      "nodes": [
-        "B2 future floor beam @ 0.343694493783",
-        "T-N @ 0.343694493783"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 4-1",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 5-0": {
-      "nodes": [
-        "T1 future floor beam @ 0.40053285968",
-        "B2 future floor beam @ 0.40053285968"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 5-0",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 5-1": {
-      "nodes": [
-        "B2 future floor beam @ 0.40053285968",
-        "T-N @ 0.40053285968"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 5-1",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 6-0": {
-      "nodes": [
-        "T1 future floor beam @ 0.457371225577",
-        "B2 future floor beam @ 0.457371225577"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 6-0",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 6-1": {
-      "nodes": [
-        "B2 future floor beam @ 0.457371225577",
-        "T-N @ 0.457371225577"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 6-1",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 7-0": {
-      "nodes": [
-        "T1 future floor beam @ 0.514209591474",
-        "B2 future floor beam @ 0.514209591474"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 7-0",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 7-1": {
-      "nodes": [
-        "B2 future floor beam @ 0.514209591474",
-        "T-N @ 0.514209591474"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 7-1",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 8-0": {
-      "nodes": [
-        "T1 future floor beam @ 0.571047957371",
-        "B2 future floor beam @ 0.571047957371"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 8-0",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 8-1": {
-      "nodes": [
-        "B2 future floor beam @ 0.571047957371",
-        "T-N @ 0.571047957371"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 8-1",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 9-0": {
-      "nodes": [
-        "T1 future floor beam @ 0.627886323268",
-        "B2 future floor beam @ 0.627886323268"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 9-0",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 9-1": {
-      "nodes": [
-        "B2 future floor beam @ 0.627886323268",
-        "T-N @ 0.627886323268"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 9-1",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 10-0": {
-      "nodes": [
-        "T1 future floor beam @ 0.684724689165",
-        "B2 future floor beam @ 0.684724689165"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 10-0",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 10-1": {
-      "nodes": [
-        "B2 future floor beam @ 0.684724689165",
-        "T-N @ 0.684724689165"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 10-1",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 11-0": {
-      "nodes": [
-        "T1 future floor beam @ 0.741563055062",
-        "B2 future floor beam @ 0.741563055062"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 11-0",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 11-1": {
-      "nodes": [
-        "B2 future floor beam @ 0.741563055062",
-        "T-N @ 0.741563055062"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 11-1",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 12-0": {
-      "nodes": [
-        "T1 future floor beam @ 0.798401420959",
-        "B2 future floor beam @ 0.798401420959"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 12-0",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 12-1": {
-      "nodes": [
-        "B2 future floor beam @ 0.798401420959",
-        "T-N @ 0.798401420959"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 12-1",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 13-0": {
-      "nodes": [
-        "T1 future floor beam @ 0.855239786856",
-        "B2 future floor beam @ 0.855239786856"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 13-0",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 13-1": {
-      "nodes": [
-        "B2 future floor beam @ 0.855239786856",
-        "T-N @ 0.855239786856"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 13-1",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 14-0": {
-      "nodes": [
-        "T1 future floor beam @ 0.907637655417",
-        "B2 future floor beam @ 0.907637655417"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 14-0",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "Wood joist 14-1": {
-      "nodes": [
-        "B2 future floor beam @ 0.907637655417",
-        "T-N @ 0.907637655417"
-      ],
-      "width": 1.5,
-      "depth": 7.25,
-      "group": "LoftJoists",
-      "material": "wood",
-      "source_name": "Wood joist 14-1",
-      "section_reference": "concept envelope",
-      "section_status": "display envelope; section and connection design unverified"
-    },
-    "T-N diagonal 9": {
-      "nodes": [
-        "north.center.bottom",
-        "E.W4 @ 0.96043956044"
-      ],
-      "width": 2,
-      "depth": 2,
-      "group": "Truss_TN",
-      "material": "steel",
-      "source_name": "T-N diagonal 9 | HSS1-1/2X1-1/2X1/8",
-      "display_name": "T-N diagonal 9 | 2 x 2 in concept brace",
-      "section_reference": "2 x 2 in concept envelope matching diagonal 8",
-      "section_status": "display envelope; section and connection design unverified"
+  "W.front.top": {
+   "xyz": [
+    "west_x",
+    "clerestory_y",
+    "square_top_z"
+   ]
+  },
+  "W.north.top": {
+   "xyz": [
+    "west_x",
+    "north_y",
+    "square_top_z"
+   ]
+  },
+  "W.bottom @ 0.431900114391": {
+   "on_member": "W.bottom",
+   "station": {
+    "axis": 1,
+    "value": "clerestory_y"
+   }
+  },
+  "W.slope @ 0.453003292646": {
+   "on_member": "W.slope",
+   "station": {
+    "axis": 1,
+    "value": 0.0
+   }
+  },
+  "W.top @ 0.595469616492": {
+   "on_member": "W.top",
+   "station": {
+    "axis": 1,
+    "value": 185.0
+   }
+  },
+  "W.W1.base": {
+   "xyz": [
+    "west_x",
+    0,
+    0
+   ],
+   "support": "ground datum; footing/reaction design unresolved"
+  },
+  "W.W3.base": {
+   "xyz": [
+    "west_x",
+    185,
+    0
+   ],
+   "support": "ground datum; footing/reaction design unresolved"
+  },
+  "W.W4.base": {
+   "xyz": [
+    "west_x",
+    259,
+    0
+   ],
+   "support": "ground datum; footing/reaction design unresolved"
+  },
+  "W.SW0.base": {
+   "xyz": [
+    "west_x",
+    -63,
+    0
+   ],
+   "support": "ground datum; footing/reaction design unresolved"
+  },
+  "W.bottom @ 0.770186335404": {
+   "on_member": "W.bottom",
+   "station": {
+    "axis": 1,
+    "value": 185.0
+   }
+  },
+  "E.south.bottom": {
+   "xyz": [
+    "east_x",
+    "south_y",
+    "bottom_z"
+   ]
+  },
+  "E.north.bottom": {
+   "xyz": [
+    "east_x",
+    "north_y",
+    "bottom_z"
+   ]
+  },
+  "E.south.slope": {
+   "xyz": [
+    "east_x",
+    "south_y",
+    "solar_start_z"
+   ]
+  },
+  "E.front.slope": {
+   "on_member": "E.clerestory",
+   "station": {
+    "axis": 2,
+    "value": {
+     "solar_at_y": "clerestory_y"
     }
+   }
   },
-  "retired_members": {
-    "BR-E-upper-1 | HSS2X2X1/8": "Superseded historical east-wall brace; current east web explicitly mirrors owner-revised west web.",
-    "T-N vertical 5 | HSS1-1/2X1-1/2X1/8": "Coincident with the mirrored east rear post; one physical post retained.",
-    "BR-E-ground-1 | HSS2-1/2X2-1/2X1/8": "Owner requested removal of both ground-level cross-braces between S2 and S3.",
-    "BR-E-ground-2 | HSS2-1/4X2-1/4X1/8": "Owner requested removal of both ground-level cross-braces between S2 and S3.",
-    "BR-N-upper-1 | HSS2-1/2X2-1/2X1/8": "Owner-requested full western-half upper doorway; brace through that opening removed."
+  "E.front.top": {
+   "xyz": [
+    "east_x",
+    "clerestory_y",
+    "square_top_z"
+   ]
   },
-  "source_inventory": [
-    "W1 | HSS4X4X3/16",
-    "W3 | HSS4X4X1/2",
-    "W4 | HSS4X4X1/4",
-    "S1 | HSS4X4X3/16",
-    "S2 | HSS4X4X3/16",
-    "N2 | HSS4X4X1/4",
-    "S3 | HSS4X4X3/16",
-    "SW0 | HSS4X4X3/16",
-    "T-SO | W6X8.5",
-    "T-S | HSS1-1/2X1-1/2X1/8",
-    "T-W / B-WO | HSS3-1/2X3-1/2X3/16",
-    "T-N | HSS3X3X1/8",
-    "T1 upper lower chord | HSS1-1/2X1-1/2X3/16",
-    "T1 future floor beam | W6X8.5",
-    "B2 future floor beam | W8X24",
-    "N1 / U-W | HSS6X6X1/4",
-    "T-S vertical 2 | HSS1-1/2X1-1/2X1/8",
-    "T-S vertical 3 | HSS1-1/2X1-1/2X1/8",
-    "T-S vertical 4 | HSS1-1/2X1-1/2X1/8",
-    "T-S vertical 5 | HSS1-1/2X1-1/2X1/8",
-    "T-S vertical 6 | HSS1-1/2X1-1/2X1/8",
-    "T-S diagonal 8 | HSS1-1/2X1-1/2X1/8",
-    "T-S diagonal 9 | HSS1-1/2X1-1/2X1/8",
-    "T-S diagonal 10 | HSS1-1/2X1-1/2X1/8",
-    "T-S diagonal 11 | HSS1-1/2X1-1/2X1/8",
-    "T-S diagonal 12 | HSS1-1/2X1-1/2X1/8",
-    "T-S diagonal 13 | HSS1-1/2X1-1/2X1/8",
-    "T1 vertical 2 | HSS1-1/2X1-1/2X1/8",
-    "T1 vertical 3 | HSS1-1/2X1-1/2X1/8",
-    "T1 vertical 4 | HSS1-1/2X1-1/2X1/8",
-    "T1 diagonal 6 | HSS1-1/2X1-1/2X3/16",
-    "T1 diagonal 7 | HSS1-1/2X1-1/2X1/8",
-    "T1 diagonal 8 | HSS1-1/2X1-1/2X1/8",
-    "T1 diagonal 9 | HSS1-1/2X1-1/2X3/16",
-    "T-N upper east jamb | HSS4X4X3/16",
-    "T-N loading header | HSS1-1/2X1-1/2X1/8",
-    "T-N vertical 5 | HSS1-1/2X1-1/2X1/8",
-    "T-N diagonal 8 | HSS2X2X1/8",
-    "T-N diagonal 9 | HSS1-1/2X1-1/2X1/8",
-    "T-N vertical 11 | HSS1-1/2X1-1/2X1/8",
-    "T-N vertical 12 | HSS1-1/2X1-1/2X1/8",
-    "T-N vertical 13 | HSS1-1/2X1-1/2X1/8",
-    "T-N diagonal 15 | HSS1-1/2X1-1/2X1/8",
-    "T-N diagonal 16 | HSS1-1/2X1-1/2X1/8",
-    "T-N diagonal 17 | HSS1-1/2X1-1/2X1/8",
-    "T-N diagonal 18 | HSS1-1/2X1-1/2X1/8",
-    "T1 future hanger 2 | HSS1-1/2X1-1/2X1/8",
-    "T1 future hanger 3 | HSS1-1/2X1-1/2X1/8",
-    "T1 future hanger 4 | HSS1-1/2X1-1/2X1/8",
-    "T-S top / segment 1 | HSS1-1/2X1-1/2X1/8",
-    "T1 top / segment 1 | HSS2X2X1/8",
-    "T-N top / segment 1 | HSS1-1/2X1-1/2X1/8",
-    "BR-W-1 | HSS1-1/2X1-1/2X1/8",
-    "BR-W-2 | HSS1-1/2X1-1/2X1/8",
-    "BR-S-1 | HSS1-1/2X1-1/2X1/8",
-    "BR-S-2 | HSS1-1/2X1-1/2X1/8",
-    "BR-R-main-1 | HSS2-1/4X2-1/4X1/8",
-    "BR-R-main-2 | HSS2X2X1/8",
-    "BR-R-cap-1 | HSS3X3X3/16",
-    "BR-R-cap-2 | HSS1-1/2X1-1/2X1/8",
-    "BR-E-upper-1 | HSS2X2X1/8",
-    "BR-N-upper-1 | HSS2-1/2X2-1/2X1/8",
-    "BR-N-ground-1 | HSS2X2X1/8",
-    "BR-N-ground-2 | HSS2-1/4X2-1/4X1/8",
-    "BR-E-ground-1 | HSS2-1/2X2-1/2X1/8",
-    "BR-E-ground-2 | HSS2-1/4X2-1/4X1/8",
-    "Wood joist 0-0",
-    "Wood joist 0-1",
-    "Wood joist 1-0",
-    "Wood joist 1-1",
-    "Wood joist 2-0",
-    "Wood joist 2-1",
-    "Wood joist 3-0",
-    "Wood joist 3-1",
-    "Wood joist 4-0",
-    "Wood joist 4-1",
-    "Wood joist 5-0",
-    "Wood joist 5-1",
-    "Wood joist 6-0",
-    "Wood joist 6-1",
-    "Wood joist 7-0",
-    "Wood joist 7-1",
-    "Wood joist 8-0",
-    "Wood joist 8-1",
-    "Wood joist 9-0",
-    "Wood joist 9-1",
-    "Wood joist 10-0",
-    "Wood joist 10-1",
-    "Wood joist 11-0",
-    "Wood joist 11-1",
-    "Wood joist 12-0",
-    "Wood joist 12-1",
-    "Wood joist 13-0",
-    "Wood joist 13-1",
-    "Wood joist 14-0",
-    "Wood joist 14-1",
-    "West square upper chord",
-    "West solar slope chord",
-    "West rear diagonal rising north",
-    "West square bay diagonal",
-    "West clerestory-aligned vertical",
-    "T-E matching W1 | HSS4X4X3/16",
-    "T-E matching W3 | HSS4X4X1/2",
-    "T-E matching W4 | HSS4X4X1/4",
-    "T-E matching SW0 | HSS4X4X3/16",
-    "T-E matching T-W / B-WO | HSS3-1/2X3-1/2X3/16",
-    "T-E matching West square upper chord",
-    "T-E matching West solar slope chord",
-    "T-E matching West rear diagonal rising north",
-    "T-E matching West square bay diagonal",
-    "T-E matching West clerestory-aligned vertical",
-    "E-OB",
-    "E-S",
-    "E-N",
-    "E-M option B",
-    "East rafter 01",
-    "East rafter 02",
-    "East rafter 03",
-    "East rafter 04",
-    "East rafter 05",
-    "East rafter 06",
-    "East rafter 07",
-    "East rafter 08",
-    "East rafter 09",
-    "East rafter 10",
-    "East rafter 11",
-    "East rafter 12"
-  ],
-  "intent": "Explicit geometric connectivity; not an analysis or fabrication model.",
-  "joint_policy": "Endpoints refer to node IDs. Attachment nodes are dependent points on named members. Crossings connect only when declared; ground supports and two E-OB end overhangs are explicit exceptions.",
-  "migration_notes": [
-    "Removed obsolete east upper brace already replaced by mirrored web.",
-    "Roof braces terminate on current slope/cap chords.",
-    "Short transverse web and hanger ends extend to chord axes.",
-    "Timber joists follow their supporting crossbeams; original unsupported tail positions are retired.",
-    "Owner correction: S2, S3 and N2 directly below east truss on east_x; top nodes reference E.bottom. S1 and N1 stay at their other support stations.",
-    "Owner revision: remove both S2-S3 ground cross-braces; retain the support columns.",
-    "Owner revision: north upper chord T-N top / segment 1 has a 4 \u00d7 4-inch envelope. Joint axis retained.",
-    "North elevation revision: T-N diagonal 8 joins upper east jamb corner to E.north.bottom at N2; T-N diagonal 9 removed.",
-    "North upper frame divided equally by a 4-inch midpoint vertical; N1 stops at lower chord. Existing header and above-header webs span the whole western half at retained Z207; western opening diagonal removed.",
-    "Owner revision: full X-bracing in the eastern north upper bay. Diagonal 9 reinstated from center-bottom to north-east upper corner, matching diagonal 8 envelope. Crossing is not a declared joint."
-  ],
-  "support_alignments": [
-    {
-      "member": "S2",
-      "supports": "E.bottom",
-      "vertical": true,
-      "base_z": 0
-    },
-    {
-      "member": "S3",
-      "supports": "E.bottom",
-      "vertical": true,
-      "base_z": 0
-    },
-    {
-      "member": "N2",
-      "supports": "E.bottom",
-      "vertical": true,
-      "base_z": 0
-    }
-  ],
-  "north_opening": {
-    "center_member": "T-N upper east jamb",
-    "center_fraction": 0.5,
-    "header": "T-N loading header",
-    "header_axis_z": 207.0,
-    "side": "west",
-    "N1_top": "lower chord",
-    "header_section": "existing 1.5-inch envelope retained; sizing unresolved"
+  "E.north.top": {
+   "xyz": [
+    "east_x",
+    "north_y",
+    "square_top_z"
+   ]
   },
-  "south_entry_alignment": {
-    "member": "S1",
-    "door_east_x_parameter": "south_entry_east_x",
-    "aligned_face": "west",
-    "source_object": "South entry door",
-    "door_x_extent_in": [
-      111.5,
-      143.5
-    ],
-    "note": "West face of 4-inch S1 aligns with east edge of existing south entry; attached BR-S braces follow the post."
+  "E.bottom @ 0.431900114391": {
+   "on_member": "E.bottom",
+   "station": {
+    "axis": 1,
+    "value": "clerestory_y"
+   }
+  },
+  "E.slope @ 0.453003292646": {
+   "on_member": "E.slope",
+   "station": {
+    "axis": 1,
+    "value": 0.0
+   }
+  },
+  "E.top @ 0.595469616492": {
+   "on_member": "E.top",
+   "station": {
+    "axis": 1,
+    "value": 185.0
+   }
+  },
+  "E.bottom @ 0.195652173913": {
+   "on_member": "E.bottom",
+   "station": {
+    "axis": 1,
+    "value": 0.0
+   }
+  },
+  "E.bottom @ 0.770186335404": {
+   "on_member": "E.bottom",
+   "station": {
+    "axis": 1,
+    "value": 185.0
+   }
+  },
+  "W.bottom @ 0.195652173913": {
+   "on_member": "W.bottom",
+   "station": {
+    "axis": 1,
+    "value": 0.0
+   }
+  },
+  "W.clerestory @ 0.308951630769": {
+   "on_member": "W.clerestory",
+   "station": {
+    "axis": 2,
+    "value": 150.143248
+   }
+  },
+  "E.clerestory @ 0.308951630769": {
+   "on_member": "E.clerestory",
+   "station": {
+    "axis": 2,
+    "value": 150.143248
+   }
+  },
+  "W.clerestory @ 0.691369215252": {
+   "on_member": "W.clerestory",
+   "station": {
+    "axis": 2,
+    "value": 193.64324823492282
+   }
+  },
+  "E.clerestory @ 0.691369215252": {
+   "on_member": "E.clerestory",
+   "station": {
+    "axis": 2,
+    "value": 193.64324823492282
+   }
+  },
+  "W.clerestory @ 0.00879120879121": {
+   "on_member": "W.clerestory",
+   "station": {
+    "axis": 2,
+    "value": 116.0
+   }
+  },
+  "E.clerestory @ 0.00879120879121": {
+   "on_member": "E.clerestory",
+   "station": {
+    "axis": 2,
+    "value": 116.0
+   }
+  },
+  "W.W3 @ 0.507103825137": {
+   "on_member": "W.W3",
+   "station": {
+    "axis": 2,
+    "value": 116.0
+   }
+  },
+  "E.W3 @ 0.00879120879121": {
+   "on_member": "E.W3",
+   "station": {
+    "axis": 2,
+    "value": 116.0
+   }
+  },
+  "W.SW0 @ 0.991452991453": {
+   "on_member": "W.SW0",
+   "station": {
+    "axis": 2,
+    "value": 116.0
+   }
+  },
+  "E.SW0 @ 0.5": {
+   "on_member": "E.SW0",
+   "station": {
+    "axis": 2,
+    "value": 116.0
+   }
+  },
+  "W.W4 @ 0.980327868852": {
+   "on_member": "W.W4",
+   "station": {
+    "axis": 2,
+    "value": 224.25
+   }
+  },
+  "E.W4 @ 0.96043956044": {
+   "on_member": "E.W4",
+   "station": {
+    "axis": 2,
+    "value": 224.25
+   }
+  },
+  "S1.base": {
+   "xyz": [
+    "s1_x",
+    -63,
+    0
+   ],
+   "support": "ground datum; footing/reaction design unresolved"
+  },
+  "S1.head": {
+   "on_member": "T-SO",
+   "station": {
+    "axis": 0,
+    "value": "s1_x"
+   }
+  },
+  "S2.base": {
+   "xyz": [
+    "east_x",
+    "south_y",
+    0
+   ],
+   "support": "ground datum; footing/reaction design unresolved"
+  },
+  "S3.base": {
+   "xyz": [
+    "east_x",
+    0,
+    0
+   ],
+   "support": "ground datum; footing/reaction design unresolved"
+  },
+  "N2.base": {
+   "xyz": [
+    "east_x",
+    "north_y",
+    0
+   ],
+   "support": "ground datum; footing/reaction design unresolved"
+  },
+  "N1 / U-W.base": {
+   "xyz": [
+    40.34769094138544,
+    259,
+    0
+   ],
+   "support": "ground datum; footing/reaction design unresolved"
+  },
+  "T-S @ 0.166666666667": {
+   "on_member": "T-S",
+   "fraction": 0.16666666666666669
+  },
+  "T-S top / segment 1 @ 0.166666666667": {
+   "on_member": "T-S top / segment 1",
+   "fraction": 0.16666666666666669
+  },
+  "T-S @ 0.333333333333": {
+   "on_member": "T-S",
+   "fraction": 0.33333333333333337
+  },
+  "T-S top / segment 1 @ 0.333333333333": {
+   "on_member": "T-S top / segment 1",
+   "fraction": 0.33333333333333337
+  },
+  "T-S @ 0.5": {
+   "on_member": "T-S",
+   "fraction": 0.5
+  },
+  "T-S top / segment 1 @ 0.5": {
+   "on_member": "T-S top / segment 1",
+   "fraction": 0.5
+  },
+  "T-S @ 0.666666666667": {
+   "on_member": "T-S",
+   "fraction": 0.6666666666666667
+  },
+  "T-S top / segment 1 @ 0.666666666667": {
+   "on_member": "T-S top / segment 1",
+   "fraction": 0.6666666666666667
+  },
+  "T-S @ 0.833333333333": {
+   "on_member": "T-S",
+   "fraction": 0.8333333333333333
+  },
+  "T-S top / segment 1 @ 0.833333333333": {
+   "on_member": "T-S top / segment 1",
+   "fraction": 0.8333333333333333
+  },
+  "T1 upper lower chord @ 0.25": {
+   "on_member": "T1 upper lower chord",
+   "fraction": 0.25
+  },
+  "T1 top / segment 1 @ 0.25": {
+   "on_member": "T1 top / segment 1",
+   "fraction": 0.25
+  },
+  "T1 upper lower chord @ 0.5": {
+   "on_member": "T1 upper lower chord",
+   "fraction": 0.5
+  },
+  "T1 top / segment 1 @ 0.5": {
+   "on_member": "T1 top / segment 1",
+   "fraction": 0.5
+  },
+  "T1 upper lower chord @ 0.75": {
+   "on_member": "T1 upper lower chord",
+   "fraction": 0.75
+  },
+  "T1 top / segment 1 @ 0.75": {
+   "on_member": "T1 top / segment 1",
+   "fraction": 0.75
+  },
+  "T1 future floor beam @ 0.25": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.25
+  },
+  "T1 future floor beam @ 0.5": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.5
+  },
+  "T1 future floor beam @ 0.75": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.75
+  },
+  "W.W3 @ 0.0262295081967": {
+   "on_member": "W.W3",
+   "station": {
+    "axis": 2,
+    "value": 6.0
+   }
+  },
+  "W.W4 @ 0.502732240437": {
+   "on_member": "W.W4",
+   "station": {
+    "axis": 2,
+    "value": "bottom_z"
+   }
+  },
+  "W.W4 @ 0.0262295081967": {
+   "on_member": "W.W4",
+   "station": {
+    "axis": 2,
+    "value": 6.0
+   }
+  },
+  "W.W3 @ 0.502732240437": {
+   "on_member": "W.W3",
+   "station": {
+    "axis": 2,
+    "value": "bottom_z"
+   }
+  },
+  "S1 @ 0.051724137931": {
+   "on_member": "S1",
+   "station": {
+    "axis": 2,
+    "value": 6.0
+   }
+  },
+  "S2 @ 0.991379310345": {
+   "on_member": "S2",
+   "station": {
+    "axis": 2,
+    "value": "bottom_z"
+   }
+  },
+  "S2 @ 0.051724137931": {
+   "on_member": "S2",
+   "station": {
+    "axis": 2,
+    "value": 6.0
+   }
+  },
+  "S1 @ 0.991379310345": {
+   "on_member": "S1",
+   "station": {
+    "axis": 2,
+    "value": "bottom_z"
+   }
+  },
+  "N1 / U-W @ 0.512820512821": {
+   "on_member": "N1 / U-W",
+   "station": {
+    "axis": 2,
+    "value": "bottom_z"
+   }
+  },
+  "N1 / U-W @ 0.0267558528428": {
+   "on_member": "N1 / U-W",
+   "station": {
+    "axis": 2,
+    "value": 6.0
+   }
+  },
+  "W.top @ 0.404137678347": {
+   "on_member": "W.top",
+   "station": {
+    "axis": 1,
+    "value": 150.0
+   }
+  },
+  "E.top @ 0.892918427895": {
+   "on_member": "E.top",
+   "station": {
+    "axis": 1,
+    "value": 239.41176470588235
+   }
+  },
+  "E.top @ 0.404137678347": {
+   "on_member": "E.top",
+   "station": {
+    "axis": 1,
+    "value": 150.0
+   }
+  },
+  "W.top @ 0.892918427895": {
+   "on_member": "W.top",
+   "station": {
+    "axis": 1,
+    "value": 239.41176470588235
+   }
+  },
+  "EOB.south": {
+   "xyz": [
+    "outer_east_x",
+    -4,
+    "eob_z"
+   ],
+   "free_end": "2-inch beam overhang beyond E-S center"
+  },
+  "EOB.north": {
+   "xyz": [
+    "outer_east_x",
+    253,
+    "eob_z"
+   ],
+   "free_end": "2-inch beam overhang beyond E-N center"
+  },
+  "E-OB @ 0.00778210116732": {
+   "on_member": "E-OB",
+   "station": {
+    "axis": 1,
+    "value": -2.0
+   }
+  },
+  "E-S.base": {
+   "xyz": [
+    247.5,
+    -2,
+    0
+   ],
+   "support": "ground datum; footing/reaction design unresolved"
+  },
+  "E-OB @ 0.992217898833": {
+   "on_member": "E-OB",
+   "station": {
+    "axis": 1,
+    "value": 251.0
+   }
+  },
+  "E-N.base": {
+   "xyz": [
+    247.5,
+    251,
+    0
+   ],
+   "support": "ground datum; footing/reaction design unresolved"
+  },
+  "E-OB @ 0.735408560311": {
+   "on_member": "E-OB",
+   "station": {
+    "axis": 1,
+    "value": 185.0
+   }
+  },
+  "E-M.bearing": {
+   "offset_from": "E-OB @ 0.735408560311",
+   "offset": [
+    -1,
+    0,
+    0
+   ],
+   "connection": "one-inch eccentric bearing inside 4-inch post / 3-inch beam envelopes"
+  },
+  "E-M option B.base": {
+   "xyz": [
+    246.5,
+    185,
+    0
+   ],
+   "support": "ground datum; footing/reaction design unresolved"
+  },
+  "E.slope @ 0.438622235736": {
+   "on_member": "E.slope",
+   "station": {
+    "axis": 1,
+    "value": -2.0
+   }
+  },
+  "E-OB @ 0.0972762645914": {
+   "on_member": "E-OB",
+   "station": {
+    "axis": 1,
+    "value": 21.0
+   }
+  },
+  "E.slope @ 0.604004390194": {
+   "on_member": "E.slope",
+   "station": {
+    "axis": 1,
+    "value": 21.0
+   }
+  },
+  "E-OB @ 0.186770428016": {
+   "on_member": "E-OB",
+   "station": {
+    "axis": 1,
+    "value": 44.0
+   }
+  },
+  "E.slope @ 0.769386544652": {
+   "on_member": "E.slope",
+   "station": {
+    "axis": 1,
+    "value": 44.0
+   }
+  },
+  "E-OB @ 0.27626459144": {
+   "on_member": "E-OB",
+   "station": {
+    "axis": 1,
+    "value": 67.0
+   }
+  },
+  "E.slope @ 0.93476869911": {
+   "on_member": "E.slope",
+   "station": {
+    "axis": 1,
+    "value": 67.0
+   }
+  },
+  "E-OB @ 0.365758754864": {
+   "on_member": "E-OB",
+   "station": {
+    "axis": 1,
+    "value": 90.0
+   }
+  },
+  "E.top @ 0.0761400700969": {
+   "on_member": "E.top",
+   "station": {
+    "axis": 1,
+    "value": 90.0
+   }
+  },
+  "E-OB @ 0.455252918288": {
+   "on_member": "E-OB",
+   "station": {
+    "axis": 1,
+    "value": 113.0
+   }
+  },
+  "E.top @ 0.201872486593": {
+   "on_member": "E.top",
+   "station": {
+    "axis": 1,
+    "value": 113.0
+   }
+  },
+  "E-OB @ 0.544747081712": {
+   "on_member": "E-OB",
+   "station": {
+    "axis": 1,
+    "value": 136.0
+   }
+  },
+  "E.top @ 0.327604903088": {
+   "on_member": "E.top",
+   "station": {
+    "axis": 1,
+    "value": 136.0
+   }
+  },
+  "E-OB @ 0.634241245136": {
+   "on_member": "E-OB",
+   "station": {
+    "axis": 1,
+    "value": 159.0
+   }
+  },
+  "E.top @ 0.453337319584": {
+   "on_member": "E.top",
+   "station": {
+    "axis": 1,
+    "value": 159.0
+   }
+  },
+  "E-OB @ 0.72373540856": {
+   "on_member": "E-OB",
+   "station": {
+    "axis": 1,
+    "value": 182.0
+   }
+  },
+  "E.top @ 0.57906973608": {
+   "on_member": "E.top",
+   "station": {
+    "axis": 1,
+    "value": 182.0
+   }
+  },
+  "E-OB @ 0.813229571984": {
+   "on_member": "E-OB",
+   "station": {
+    "axis": 1,
+    "value": 205.0
+   }
+  },
+  "E.top @ 0.704802152575": {
+   "on_member": "E.top",
+   "station": {
+    "axis": 1,
+    "value": 205.0
+   }
+  },
+  "E-OB @ 0.902723735409": {
+   "on_member": "E-OB",
+   "station": {
+    "axis": 1,
+    "value": 228.0
+   }
+  },
+  "E.top @ 0.830534569071": {
+   "on_member": "E.top",
+   "station": {
+    "axis": 1,
+    "value": 228.0
+   }
+  },
+  "E.top @ 0.956266985567": {
+   "on_member": "E.top",
+   "station": {
+    "axis": 1,
+    "value": 251.0
+   }
+  },
+  "T1 future floor beam @ 0.116341030195": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.11634103019538189
+  },
+  "B2 future floor beam @ 0.116341030195": {
+   "on_member": "B2 future floor beam",
+   "fraction": 0.11634103019538189
+  },
+  "T-N @ 0.116341030195": {
+   "on_member": "T-N",
+   "fraction": 0.11634103019538189
+  },
+  "T1 future floor beam @ 0.173179396092": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.17317939609236235
+  },
+  "B2 future floor beam @ 0.173179396092": {
+   "on_member": "B2 future floor beam",
+   "fraction": 0.17317939609236235
+  },
+  "T-N @ 0.173179396092": {
+   "on_member": "T-N",
+   "fraction": 0.17317939609236235
+  },
+  "T1 future floor beam @ 0.230017761989": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.23001776198934282
+  },
+  "B2 future floor beam @ 0.230017761989": {
+   "on_member": "B2 future floor beam",
+   "fraction": 0.23001776198934282
+  },
+  "T-N @ 0.230017761989": {
+   "on_member": "T-N",
+   "fraction": 0.23001776198934282
+  },
+  "T1 future floor beam @ 0.286856127886": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.2868561278863232
+  },
+  "B2 future floor beam @ 0.286856127886": {
+   "on_member": "B2 future floor beam",
+   "fraction": 0.2868561278863232
+  },
+  "T-N @ 0.286856127886": {
+   "on_member": "T-N",
+   "fraction": 0.2868561278863232
+  },
+  "T1 future floor beam @ 0.343694493783": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.34369449378330375
+  },
+  "B2 future floor beam @ 0.343694493783": {
+   "on_member": "B2 future floor beam",
+   "fraction": 0.34369449378330375
+  },
+  "T-N @ 0.343694493783": {
+   "on_member": "T-N",
+   "fraction": 0.34369449378330375
+  },
+  "T1 future floor beam @ 0.40053285968": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.4005328596802842
+  },
+  "B2 future floor beam @ 0.40053285968": {
+   "on_member": "B2 future floor beam",
+   "fraction": 0.4005328596802842
+  },
+  "T-N @ 0.40053285968": {
+   "on_member": "T-N",
+   "fraction": 0.4005328596802842
+  },
+  "T1 future floor beam @ 0.457371225577": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.45737122557726456
+  },
+  "B2 future floor beam @ 0.457371225577": {
+   "on_member": "B2 future floor beam",
+   "fraction": 0.45737122557726456
+  },
+  "T-N @ 0.457371225577": {
+   "on_member": "T-N",
+   "fraction": 0.45737122557726456
+  },
+  "T1 future floor beam @ 0.514209591474": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.514209591474245
+  },
+  "B2 future floor beam @ 0.514209591474": {
+   "on_member": "B2 future floor beam",
+   "fraction": 0.514209591474245
+  },
+  "T-N @ 0.514209591474": {
+   "on_member": "T-N",
+   "fraction": 0.514209591474245
+  },
+  "T1 future floor beam @ 0.571047957371": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.5710479573712256
+  },
+  "B2 future floor beam @ 0.571047957371": {
+   "on_member": "B2 future floor beam",
+   "fraction": 0.5710479573712256
+  },
+  "T-N @ 0.571047957371": {
+   "on_member": "T-N",
+   "fraction": 0.5710479573712256
+  },
+  "T1 future floor beam @ 0.627886323268": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.6278863232682061
+  },
+  "B2 future floor beam @ 0.627886323268": {
+   "on_member": "B2 future floor beam",
+   "fraction": 0.6278863232682061
+  },
+  "T-N @ 0.627886323268": {
+   "on_member": "T-N",
+   "fraction": 0.6278863232682061
+  },
+  "T1 future floor beam @ 0.684724689165": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.6847246891651866
+  },
+  "B2 future floor beam @ 0.684724689165": {
+   "on_member": "B2 future floor beam",
+   "fraction": 0.6847246891651866
+  },
+  "T-N @ 0.684724689165": {
+   "on_member": "T-N",
+   "fraction": 0.6847246891651866
+  },
+  "T1 future floor beam @ 0.741563055062": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.741563055062167
+  },
+  "B2 future floor beam @ 0.741563055062": {
+   "on_member": "B2 future floor beam",
+   "fraction": 0.741563055062167
+  },
+  "T-N @ 0.741563055062": {
+   "on_member": "T-N",
+   "fraction": 0.741563055062167
+  },
+  "T1 future floor beam @ 0.798401420959": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.7984014209591475
+  },
+  "B2 future floor beam @ 0.798401420959": {
+   "on_member": "B2 future floor beam",
+   "fraction": 0.7984014209591475
+  },
+  "T-N @ 0.798401420959": {
+   "on_member": "T-N",
+   "fraction": 0.7984014209591475
+  },
+  "T1 future floor beam @ 0.855239786856": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.8552397868561278
+  },
+  "B2 future floor beam @ 0.855239786856": {
+   "on_member": "B2 future floor beam",
+   "fraction": 0.8552397868561278
+  },
+  "T-N @ 0.855239786856": {
+   "on_member": "T-N",
+   "fraction": 0.8552397868561278
+  },
+  "T1 future floor beam @ 0.907637655417": {
+   "on_member": "T1 future floor beam",
+   "fraction": 0.9076376554174067
+  },
+  "B2 future floor beam @ 0.907637655417": {
+   "on_member": "B2 future floor beam",
+   "fraction": 0.9076376554174067
+  },
+  "T-N @ 0.907637655417": {
+   "on_member": "T-N",
+   "fraction": 0.9076376554174067
+  },
+  "S2.east-truss-bearing": {
+   "on_member": "E.bottom",
+   "station": {
+    "axis": 1,
+    "value": "south_y"
+   }
+  },
+  "S3.east-truss-bearing": {
+   "on_member": "E.bottom",
+   "station": {
+    "axis": 1,
+    "value": 0
+   }
+  },
+  "N2.east-truss-bearing": {
+   "on_member": "E.bottom",
+   "station": {
+    "axis": 1,
+    "value": "north_y"
+   }
+  },
+  "north.center.bottom": {
+   "on_member": "T-N",
+   "fraction": 0.5
+  },
+  "north.center.top": {
+   "on_member": "T-N top / segment 1",
+   "fraction": 0.5
+  },
+  "N1.lower-chord-bearing": {
+   "on_member": "T-N",
+   "fraction": 0.302841918294849
+  },
+  "north.door.header.west": {
+   "on_member": "W.W4",
+   "station": {
+    "axis": 2,
+    "value": 207.0
+   }
+  },
+  "north.door.header.center": {
+   "on_member": "T-N upper east jamb",
+   "station": {
+    "axis": 2,
+    "value": 207.0
+   }
+  },
+  "north.door.web.11.top": {
+   "on_member": "T-N top / segment 1",
+   "fraction": 0.125
+  },
+  "north.door.web.11.bottom": {
+   "on_member": "T-N loading header",
+   "fraction": 0.25
+  },
+  "north.door.web.12.top": {
+   "on_member": "T-N top / segment 1",
+   "fraction": 0.25
+  },
+  "north.door.web.12.bottom": {
+   "on_member": "T-N loading header",
+   "fraction": 0.5
+  },
+  "north.door.web.13.top": {
+   "on_member": "T-N top / segment 1",
+   "fraction": 0.375
+  },
+  "north.door.web.13.bottom": {
+   "on_member": "T-N loading header",
+   "fraction": 0.75
+  },
+  "north.garage.header.west": {
+   "on_member": "N1 / U-W",
+   "station": {
+    "axis": 2,
+    "value": 84.75
+   }
+  },
+  "north.garage.header.east": {
+   "on_member": "N2",
+   "station": {
+    "axis": 2,
+    "value": 84.75
+   }
+  },
+  "north.garage.web.1.bottom": {
+   "on_member": "T-N garage door header",
+   "fraction": 0.25
+  },
+  "north.garage.web.1.top": {
+   "on_member": "T-N",
+   "fraction": 0.4771314387211368
+  },
+  "north.garage.web.2.bottom": {
+   "on_member": "T-N garage door header",
+   "fraction": 0.5
+  },
+  "north.garage.web.2.top": {
+   "on_member": "T-N",
+   "fraction": 0.6514209591474245
+  },
+  "north.garage.web.3.bottom": {
+   "on_member": "T-N garage door header",
+   "fraction": 0.75
+  },
+  "north.garage.web.3.top": {
+   "on_member": "T-N",
+   "fraction": 0.8257104795737124
   }
+ },
+ "members": {
+  "W.bottom": {
+   "nodes": [
+    "W.south.bottom",
+    "W.north.bottom"
+   ],
+   "width": 3.5,
+   "depth": 3.5,
+   "group": "WestMarkupFraming",
+   "material": "steel",
+   "source_name": "T-W / B-WO | HSS3-1/2X3-1/2X3/16",
+   "section_reference": "HSS3-1/2X3-1/2X3/16",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "W.slope": {
+   "nodes": [
+    "W.south.slope",
+    "W.front.slope"
+   ],
+   "width": 2.5,
+   "depth": 2.5,
+   "group": "WestMarkupFraming",
+   "material": "steel",
+   "source_name": "West solar slope chord",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "W.top": {
+   "nodes": [
+    "W.front.top",
+    "W.north.top"
+   ],
+   "width": 5,
+   "depth": 5,
+   "group": "WestMarkupFraming",
+   "material": "steel",
+   "source_name": "West square upper chord",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "W.clerestory": {
+   "nodes": [
+    "W.bottom @ 0.431900114391",
+    "W.front.top"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "WestMarkupFraming",
+   "material": "steel",
+   "source_name": "West clerestory-aligned vertical",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "W.W1": {
+   "nodes": [
+    "W.W1.base",
+    "W.slope @ 0.453003292646"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "Columns",
+   "material": "steel",
+   "source_name": "W1 | HSS4X4X3/16",
+   "section_reference": "HSS4X4X3/16",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "W.W3": {
+   "nodes": [
+    "W.W3.base",
+    "W.top @ 0.595469616492"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "Columns",
+   "material": "steel",
+   "source_name": "W3 | HSS4X4X1/2",
+   "section_reference": "HSS4X4X1/2",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "W.W4": {
+   "nodes": [
+    "W.W4.base",
+    "W.north.top"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "Columns",
+   "material": "steel",
+   "source_name": "W4 | HSS4X4X1/4",
+   "section_reference": "HSS4X4X1/4",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "W.SW0": {
+   "nodes": [
+    "W.SW0.base",
+    "W.south.slope"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "Columns",
+   "material": "steel",
+   "source_name": "SW0 | HSS4X4X3/16",
+   "section_reference": "HSS4X4X3/16",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "W.rear.brace": {
+   "nodes": [
+    "W.bottom @ 0.770186335404",
+    "W.north.top"
+   ],
+   "width": 2.25,
+   "depth": 2.25,
+   "group": "WestMarkupFraming",
+   "material": "steel",
+   "source_name": "West rear diagonal rising north",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "W.square.brace": {
+   "nodes": [
+    "W.bottom @ 0.770186335404",
+    "W.front.top"
+   ],
+   "width": 2.25,
+   "depth": 2.25,
+   "group": "WestMarkupFraming",
+   "material": "steel",
+   "source_name": "West square bay diagonal",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "E.bottom": {
+   "nodes": [
+    "E.south.bottom",
+    "E.north.bottom"
+   ],
+   "width": 3.5,
+   "depth": 3.5,
+   "group": "MatchedEastTruss",
+   "material": "steel",
+   "source_name": "T-E matching T-W / B-WO | HSS3-1/2X3-1/2X3/16",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "E.slope": {
+   "nodes": [
+    "E.south.slope",
+    "E.front.slope"
+   ],
+   "width": 2.5,
+   "depth": 2.5,
+   "group": "MatchedEastTruss",
+   "material": "steel",
+   "source_name": "T-E matching West solar slope chord",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "E.top": {
+   "nodes": [
+    "E.front.top",
+    "E.north.top"
+   ],
+   "width": 5,
+   "depth": 5,
+   "group": "MatchedEastTruss",
+   "material": "steel",
+   "source_name": "T-E matching West square upper chord",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "E.clerestory": {
+   "nodes": [
+    "E.bottom @ 0.431900114391",
+    "E.front.top"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "MatchedEastTruss",
+   "material": "steel",
+   "source_name": "T-E matching West clerestory-aligned vertical",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "E.W1": {
+   "nodes": [
+    "E.bottom @ 0.195652173913",
+    "E.slope @ 0.453003292646"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "MatchedEastTruss",
+   "material": "steel",
+   "source_name": "T-E matching W1 | HSS4X4X3/16",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "E.W3": {
+   "nodes": [
+    "E.bottom @ 0.770186335404",
+    "E.top @ 0.595469616492"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "MatchedEastTruss",
+   "material": "steel",
+   "source_name": "T-E matching W3 | HSS4X4X1/2",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "E.W4": {
+   "nodes": [
+    "E.north.bottom",
+    "E.north.top"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "MatchedEastTruss",
+   "material": "steel",
+   "source_name": "T-E matching W4 | HSS4X4X1/4",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "E.SW0": {
+   "nodes": [
+    "E.south.bottom",
+    "E.south.slope"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "MatchedEastTruss",
+   "material": "steel",
+   "source_name": "T-E matching SW0 | HSS4X4X3/16",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "E.rear.brace": {
+   "nodes": [
+    "E.bottom @ 0.770186335404",
+    "E.north.top"
+   ],
+   "width": 2.25,
+   "depth": 2.25,
+   "group": "MatchedEastTruss",
+   "material": "steel",
+   "source_name": "T-E matching West rear diagonal rising north",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "E.square.brace": {
+   "nodes": [
+    "E.bottom @ 0.770186335404",
+    "E.front.top"
+   ],
+   "width": 2.25,
+   "depth": 2.25,
+   "group": "MatchedEastTruss",
+   "material": "steel",
+   "source_name": "T-E matching West square bay diagonal",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-S": {
+   "nodes": [
+    "W.bottom @ 0.195652173913",
+    "E.bottom @ 0.195652173913"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TS",
+   "material": "steel",
+   "source_name": "T-S | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-S top / segment 1": {
+   "nodes": [
+    "W.slope @ 0.453003292646",
+    "E.slope @ 0.453003292646"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TS",
+   "material": "steel",
+   "source_name": "T-S top / segment 1 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T1 upper lower chord": {
+   "nodes": [
+    "W.clerestory @ 0.308951630769",
+    "E.clerestory @ 0.308951630769"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_T1",
+   "material": "steel",
+   "source_name": "T1 upper lower chord | HSS1-1/2X1-1/2X3/16",
+   "section_reference": "HSS1-1/2X1-1/2X3/16",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T1 top / segment 1": {
+   "nodes": [
+    "W.clerestory @ 0.691369215252",
+    "E.clerestory @ 0.691369215252"
+   ],
+   "width": 2.0,
+   "depth": 2.0,
+   "group": "Truss_T1",
+   "material": "steel",
+   "source_name": "T1 top / segment 1 | HSS2X2X1/8",
+   "section_reference": "HSS2X2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T1 future floor beam": {
+   "nodes": [
+    "W.clerestory @ 0.00879120879121",
+    "E.clerestory @ 0.00879120879121"
+   ],
+   "width": 3.94,
+   "depth": 5.83,
+   "group": "LoftSteel",
+   "material": "steel",
+   "source_name": "T1 future floor beam | W6X8.5",
+   "section_reference": "W6X8.5",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "B2 future floor beam": {
+   "nodes": [
+    "W.W3 @ 0.507103825137",
+    "E.W3 @ 0.00879120879121"
+   ],
+   "width": 6.5,
+   "depth": 7.93,
+   "group": "LoftSteel",
+   "material": "steel",
+   "source_name": "B2 future floor beam | W8X24",
+   "section_reference": "W8X24",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-SO": {
+   "nodes": [
+    "W.SW0 @ 0.991452991453",
+    "E.SW0 @ 0.5"
+   ],
+   "width": 3.94,
+   "depth": 5.83,
+   "group": "Truss_Other",
+   "material": "steel",
+   "source_name": "T-SO | W6X8.5",
+   "section_reference": "W6X8.5",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N": {
+   "nodes": [
+    "W.north.bottom",
+    "E.north.bottom"
+   ],
+   "width": 3.0,
+   "depth": 3.0,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N | HSS3X3X1/8",
+   "section_reference": "HSS3X3X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N top / segment 1": {
+   "nodes": [
+    "W.W4 @ 0.980327868852",
+    "E.W4 @ 0.96043956044"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N top / segment 1 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "4 \u00d7 4 in \u2014 owner-requested top chord",
+   "section_status": "4 \u00d7 4-inch display envelope; wall thickness and structural sizing unresolved",
+   "display_name": "T-N top chord | 4 x 4 in"
+  },
+  "S1": {
+   "nodes": [
+    "S1.base",
+    "S1.head"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "Columns",
+   "material": "steel",
+   "source_name": "S1 | HSS4X4X3/16",
+   "section_reference": "HSS4X4X3/16",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "S2": {
+   "nodes": [
+    "S2.base",
+    "S2.east-truss-bearing"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "Columns",
+   "material": "steel",
+   "source_name": "S2 | HSS4X4X3/16",
+   "section_reference": "HSS4X4X3/16",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "S3": {
+   "nodes": [
+    "S3.base",
+    "S3.east-truss-bearing"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "Columns",
+   "material": "steel",
+   "source_name": "S3 | HSS4X4X3/16",
+   "section_reference": "HSS4X4X3/16",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "N2": {
+   "nodes": [
+    "N2.base",
+    "N2.east-truss-bearing"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "Columns",
+   "material": "steel",
+   "source_name": "N2 | HSS4X4X1/4",
+   "section_reference": "HSS4X4X1/4",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "N1 / U-W": {
+   "nodes": [
+    "N1 / U-W.base",
+    "N1.lower-chord-bearing"
+   ],
+   "width": 6,
+   "depth": 6,
+   "group": "Columns",
+   "material": "steel",
+   "source_name": "N1 / U-W | HSS6X6X1/4",
+   "section_reference": "HSS6X6X1/4",
+   "section_status": "display envelope; section and connection design unverified",
+   "display_name": "N1 | 6 x 6 in lower support"
+  },
+  "T-S vertical 2": {
+   "nodes": [
+    "T-S @ 0.166666666667",
+    "T-S top / segment 1 @ 0.166666666667"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TS",
+   "material": "steel",
+   "source_name": "T-S vertical 2 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-S vertical 3": {
+   "nodes": [
+    "T-S @ 0.333333333333",
+    "T-S top / segment 1 @ 0.333333333333"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TS",
+   "material": "steel",
+   "source_name": "T-S vertical 3 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-S vertical 4": {
+   "nodes": [
+    "T-S @ 0.5",
+    "T-S top / segment 1 @ 0.5"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TS",
+   "material": "steel",
+   "source_name": "T-S vertical 4 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-S vertical 5": {
+   "nodes": [
+    "T-S @ 0.666666666667",
+    "T-S top / segment 1 @ 0.666666666667"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TS",
+   "material": "steel",
+   "source_name": "T-S vertical 5 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-S vertical 6": {
+   "nodes": [
+    "T-S @ 0.833333333333",
+    "T-S top / segment 1 @ 0.833333333333"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TS",
+   "material": "steel",
+   "source_name": "T-S vertical 6 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-S diagonal 8": {
+   "nodes": [
+    "W.bottom @ 0.195652173913",
+    "T-S top / segment 1 @ 0.166666666667"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TS",
+   "material": "steel",
+   "source_name": "T-S diagonal 8 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-S diagonal 9": {
+   "nodes": [
+    "T-S top / segment 1 @ 0.166666666667",
+    "T-S @ 0.333333333333"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TS",
+   "material": "steel",
+   "source_name": "T-S diagonal 9 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-S diagonal 10": {
+   "nodes": [
+    "T-S @ 0.333333333333",
+    "T-S top / segment 1 @ 0.5"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TS",
+   "material": "steel",
+   "source_name": "T-S diagonal 10 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-S diagonal 11": {
+   "nodes": [
+    "T-S top / segment 1 @ 0.5",
+    "T-S @ 0.666666666667"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TS",
+   "material": "steel",
+   "source_name": "T-S diagonal 11 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-S diagonal 12": {
+   "nodes": [
+    "T-S @ 0.666666666667",
+    "T-S top / segment 1 @ 0.833333333333"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TS",
+   "material": "steel",
+   "source_name": "T-S diagonal 12 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-S diagonal 13": {
+   "nodes": [
+    "T-S top / segment 1 @ 0.833333333333",
+    "E.bottom @ 0.195652173913"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TS",
+   "material": "steel",
+   "source_name": "T-S diagonal 13 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T1 vertical 2": {
+   "nodes": [
+    "T1 upper lower chord @ 0.25",
+    "T1 top / segment 1 @ 0.25"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_T1",
+   "material": "steel",
+   "source_name": "T1 vertical 2 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T1 vertical 3": {
+   "nodes": [
+    "T1 upper lower chord @ 0.5",
+    "T1 top / segment 1 @ 0.5"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_T1",
+   "material": "steel",
+   "source_name": "T1 vertical 3 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T1 vertical 4": {
+   "nodes": [
+    "T1 upper lower chord @ 0.75",
+    "T1 top / segment 1 @ 0.75"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_T1",
+   "material": "steel",
+   "source_name": "T1 vertical 4 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T1 diagonal 6": {
+   "nodes": [
+    "W.clerestory @ 0.308951630769",
+    "T1 top / segment 1 @ 0.25"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_T1",
+   "material": "steel",
+   "source_name": "T1 diagonal 6 | HSS1-1/2X1-1/2X3/16",
+   "section_reference": "HSS1-1/2X1-1/2X3/16",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T1 diagonal 7": {
+   "nodes": [
+    "T1 top / segment 1 @ 0.25",
+    "T1 upper lower chord @ 0.5"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_T1",
+   "material": "steel",
+   "source_name": "T1 diagonal 7 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T1 diagonal 8": {
+   "nodes": [
+    "T1 upper lower chord @ 0.5",
+    "T1 top / segment 1 @ 0.75"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_T1",
+   "material": "steel",
+   "source_name": "T1 diagonal 8 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T1 diagonal 9": {
+   "nodes": [
+    "T1 top / segment 1 @ 0.75",
+    "E.clerestory @ 0.308951630769"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_T1",
+   "material": "steel",
+   "source_name": "T1 diagonal 9 | HSS1-1/2X1-1/2X3/16",
+   "section_reference": "HSS1-1/2X1-1/2X3/16",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T1 future hanger 2": {
+   "nodes": [
+    "T1 future floor beam @ 0.25",
+    "T1 upper lower chord @ 0.25"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "LoftSteel",
+   "material": "steel",
+   "source_name": "T1 future hanger 2 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T1 future hanger 3": {
+   "nodes": [
+    "T1 future floor beam @ 0.5",
+    "T1 upper lower chord @ 0.5"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "LoftSteel",
+   "material": "steel",
+   "source_name": "T1 future hanger 3 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T1 future hanger 4": {
+   "nodes": [
+    "T1 future floor beam @ 0.75",
+    "T1 upper lower chord @ 0.75"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "LoftSteel",
+   "material": "steel",
+   "source_name": "T1 future hanger 4 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N upper east jamb": {
+   "nodes": [
+    "north.center.bottom",
+    "north.center.top"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N upper east jamb | HSS4X4X3/16",
+   "section_reference": "HSS4X4X3/16",
+   "section_status": "display envelope; section and connection design unverified",
+   "display_name": "T-N center vertical | 4 x 4 in"
+  },
+  "T-N loading header": {
+   "nodes": [
+    "north.door.header.west",
+    "north.door.header.center"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N loading header | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified",
+   "display_name": "T-N western-half opening header"
+  },
+  "T-N diagonal 8": {
+   "nodes": [
+    "north.center.top",
+    "E.north.bottom"
+   ],
+   "width": 2.0,
+   "depth": 2.0,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N diagonal 8 | HSS2X2X1/8",
+   "section_reference": "HSS2X2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N vertical 11": {
+   "nodes": [
+    "north.door.web.11.bottom",
+    "north.door.web.11.top"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N vertical 11 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N vertical 12": {
+   "nodes": [
+    "north.door.web.12.bottom",
+    "north.door.web.12.top"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N vertical 12 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N vertical 13": {
+   "nodes": [
+    "north.door.web.13.bottom",
+    "north.door.web.13.top"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N vertical 13 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N diagonal 15": {
+   "nodes": [
+    "north.door.header.west",
+    "north.door.web.11.top"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N diagonal 15 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N diagonal 16": {
+   "nodes": [
+    "north.door.web.11.top",
+    "north.door.web.12.bottom"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N diagonal 16 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N diagonal 17": {
+   "nodes": [
+    "north.door.web.12.bottom",
+    "north.door.web.13.top"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N diagonal 17 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N diagonal 18": {
+   "nodes": [
+    "north.door.web.13.top",
+    "north.door.header.center"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N diagonal 18 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "BR-W-1": {
+   "nodes": [
+    "W.W3 @ 0.0262295081967",
+    "W.W4 @ 0.502732240437"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Bracing",
+   "material": "steel",
+   "source_name": "BR-W-1 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "BR-W-2": {
+   "nodes": [
+    "W.W4 @ 0.0262295081967",
+    "W.W3 @ 0.502732240437"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Bracing",
+   "material": "steel",
+   "source_name": "BR-W-2 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "BR-S-1": {
+   "nodes": [
+    "S1 @ 0.051724137931",
+    "S2 @ 0.991379310345"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Bracing",
+   "material": "steel",
+   "source_name": "BR-S-1 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "BR-S-2": {
+   "nodes": [
+    "S2 @ 0.051724137931",
+    "S1 @ 0.991379310345"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Bracing",
+   "material": "steel",
+   "source_name": "BR-S-2 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "BR-N-ground-1": {
+   "nodes": [
+    "W.W4 @ 0.0262295081967",
+    "N1 / U-W @ 0.512820512821"
+   ],
+   "width": 2.0,
+   "depth": 2.0,
+   "group": "Bracing",
+   "material": "steel",
+   "source_name": "BR-N-ground-1 | HSS2X2X1/8",
+   "section_reference": "HSS2X2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "BR-N-ground-2": {
+   "nodes": [
+    "N1 / U-W @ 0.0267558528428",
+    "W.W4 @ 0.502732240437"
+   ],
+   "width": 2.25,
+   "depth": 2.25,
+   "group": "Bracing",
+   "material": "steel",
+   "source_name": "BR-N-ground-2 | HSS2-1/4X2-1/4X1/8",
+   "section_reference": "HSS2-1/4X2-1/4X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "BR-R-main-1": {
+   "nodes": [
+    "W.slope @ 0.453003292646",
+    "E.front.slope"
+   ],
+   "width": 2.25,
+   "depth": 2.25,
+   "group": "Bracing",
+   "material": "steel",
+   "source_name": "BR-R-main-1 | HSS2-1/4X2-1/4X1/8",
+   "section_reference": "HSS2-1/4X2-1/4X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "BR-R-main-2": {
+   "nodes": [
+    "E.slope @ 0.453003292646",
+    "W.front.slope"
+   ],
+   "width": 2.0,
+   "depth": 2.0,
+   "group": "Bracing",
+   "material": "steel",
+   "source_name": "BR-R-main-2 | HSS2X2X1/8",
+   "section_reference": "HSS2X2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "BR-R-cap-1": {
+   "nodes": [
+    "W.top @ 0.404137678347",
+    "E.top @ 0.892918427895"
+   ],
+   "width": 3.0,
+   "depth": 3.0,
+   "group": "Bracing",
+   "material": "steel",
+   "source_name": "BR-R-cap-1 | HSS3X3X3/16",
+   "section_reference": "HSS3X3X3/16",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "BR-R-cap-2": {
+   "nodes": [
+    "E.top @ 0.404137678347",
+    "W.top @ 0.892918427895"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Bracing",
+   "material": "steel",
+   "source_name": "BR-R-cap-2 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "E-OB": {
+   "nodes": [
+    "EOB.south",
+    "EOB.north"
+   ],
+   "width": 3,
+   "depth": 3,
+   "group": "EastSupportFrame",
+   "material": "steel",
+   "source_name": "E-OB",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "E-S": {
+   "nodes": [
+    "E-S.base",
+    "E-OB @ 0.00778210116732"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "EastSupportFrame",
+   "material": "steel",
+   "source_name": "E-S",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "E-N": {
+   "nodes": [
+    "E-N.base",
+    "E-OB @ 0.992217898833"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "EastSupportFrame",
+   "material": "steel",
+   "source_name": "E-N",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "E-M option B": {
+   "nodes": [
+    "E-M option B.base",
+    "E-M.bearing"
+   ],
+   "width": 4,
+   "depth": 4,
+   "group": "EastSupportFrame",
+   "material": "steel",
+   "source_name": "E-M option B",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "East rafter 01": {
+   "nodes": [
+    "E-OB @ 0.00778210116732",
+    "E.slope @ 0.438622235736"
+   ],
+   "width": 3,
+   "depth": 3,
+   "group": "EastRoofRafters",
+   "material": "rafter",
+   "source_name": "East rafter 01",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "East rafter 02": {
+   "nodes": [
+    "E-OB @ 0.0972762645914",
+    "E.slope @ 0.604004390194"
+   ],
+   "width": 3,
+   "depth": 3,
+   "group": "EastRoofRafters",
+   "material": "rafter",
+   "source_name": "East rafter 02",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "East rafter 03": {
+   "nodes": [
+    "E-OB @ 0.186770428016",
+    "E.slope @ 0.769386544652"
+   ],
+   "width": 3,
+   "depth": 3,
+   "group": "EastRoofRafters",
+   "material": "rafter",
+   "source_name": "East rafter 03",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "East rafter 04": {
+   "nodes": [
+    "E-OB @ 0.27626459144",
+    "E.slope @ 0.93476869911"
+   ],
+   "width": 3,
+   "depth": 3,
+   "group": "EastRoofRafters",
+   "material": "rafter",
+   "source_name": "East rafter 04",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "East rafter 05": {
+   "nodes": [
+    "E-OB @ 0.365758754864",
+    "E.top @ 0.0761400700969"
+   ],
+   "width": 3,
+   "depth": 3,
+   "group": "EastRoofRafters",
+   "material": "rafter",
+   "source_name": "East rafter 05",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "East rafter 06": {
+   "nodes": [
+    "E-OB @ 0.455252918288",
+    "E.top @ 0.201872486593"
+   ],
+   "width": 3,
+   "depth": 3,
+   "group": "EastRoofRafters",
+   "material": "rafter",
+   "source_name": "East rafter 06",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "East rafter 07": {
+   "nodes": [
+    "E-OB @ 0.544747081712",
+    "E.top @ 0.327604903088"
+   ],
+   "width": 3,
+   "depth": 3,
+   "group": "EastRoofRafters",
+   "material": "rafter",
+   "source_name": "East rafter 07",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "East rafter 08": {
+   "nodes": [
+    "E-OB @ 0.634241245136",
+    "E.top @ 0.453337319584"
+   ],
+   "width": 3,
+   "depth": 3,
+   "group": "EastRoofRafters",
+   "material": "rafter",
+   "source_name": "East rafter 08",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "East rafter 09": {
+   "nodes": [
+    "E-OB @ 0.72373540856",
+    "E.top @ 0.57906973608"
+   ],
+   "width": 3,
+   "depth": 3,
+   "group": "EastRoofRafters",
+   "material": "rafter",
+   "source_name": "East rafter 09",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "East rafter 10": {
+   "nodes": [
+    "E-OB @ 0.813229571984",
+    "E.top @ 0.704802152575"
+   ],
+   "width": 3,
+   "depth": 3,
+   "group": "EastRoofRafters",
+   "material": "rafter",
+   "source_name": "East rafter 10",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "East rafter 11": {
+   "nodes": [
+    "E-OB @ 0.902723735409",
+    "E.top @ 0.830534569071"
+   ],
+   "width": 3,
+   "depth": 3,
+   "group": "EastRoofRafters",
+   "material": "rafter",
+   "source_name": "East rafter 11",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "East rafter 12": {
+   "nodes": [
+    "E-OB @ 0.992217898833",
+    "E.top @ 0.956266985567"
+   ],
+   "width": 3,
+   "depth": 3,
+   "group": "EastRoofRafters",
+   "material": "rafter",
+   "source_name": "East rafter 12",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 0-0": {
+   "nodes": [
+    "T1 future floor beam @ 0.116341030195",
+    "B2 future floor beam @ 0.116341030195"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 0-0",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 0-1": {
+   "nodes": [
+    "B2 future floor beam @ 0.116341030195",
+    "T-N @ 0.116341030195"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 0-1",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 1-0": {
+   "nodes": [
+    "T1 future floor beam @ 0.173179396092",
+    "B2 future floor beam @ 0.173179396092"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 1-0",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 1-1": {
+   "nodes": [
+    "B2 future floor beam @ 0.173179396092",
+    "T-N @ 0.173179396092"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 1-1",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 2-0": {
+   "nodes": [
+    "T1 future floor beam @ 0.230017761989",
+    "B2 future floor beam @ 0.230017761989"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 2-0",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 2-1": {
+   "nodes": [
+    "B2 future floor beam @ 0.230017761989",
+    "T-N @ 0.230017761989"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 2-1",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 3-0": {
+   "nodes": [
+    "T1 future floor beam @ 0.286856127886",
+    "B2 future floor beam @ 0.286856127886"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 3-0",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 3-1": {
+   "nodes": [
+    "B2 future floor beam @ 0.286856127886",
+    "T-N @ 0.286856127886"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 3-1",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 4-0": {
+   "nodes": [
+    "T1 future floor beam @ 0.343694493783",
+    "B2 future floor beam @ 0.343694493783"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 4-0",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 4-1": {
+   "nodes": [
+    "B2 future floor beam @ 0.343694493783",
+    "T-N @ 0.343694493783"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 4-1",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 5-0": {
+   "nodes": [
+    "T1 future floor beam @ 0.40053285968",
+    "B2 future floor beam @ 0.40053285968"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 5-0",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 5-1": {
+   "nodes": [
+    "B2 future floor beam @ 0.40053285968",
+    "T-N @ 0.40053285968"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 5-1",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 6-0": {
+   "nodes": [
+    "T1 future floor beam @ 0.457371225577",
+    "B2 future floor beam @ 0.457371225577"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 6-0",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 6-1": {
+   "nodes": [
+    "B2 future floor beam @ 0.457371225577",
+    "T-N @ 0.457371225577"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 6-1",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 7-0": {
+   "nodes": [
+    "T1 future floor beam @ 0.514209591474",
+    "B2 future floor beam @ 0.514209591474"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 7-0",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 7-1": {
+   "nodes": [
+    "B2 future floor beam @ 0.514209591474",
+    "T-N @ 0.514209591474"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 7-1",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 8-0": {
+   "nodes": [
+    "T1 future floor beam @ 0.571047957371",
+    "B2 future floor beam @ 0.571047957371"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 8-0",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 8-1": {
+   "nodes": [
+    "B2 future floor beam @ 0.571047957371",
+    "T-N @ 0.571047957371"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 8-1",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 9-0": {
+   "nodes": [
+    "T1 future floor beam @ 0.627886323268",
+    "B2 future floor beam @ 0.627886323268"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 9-0",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 9-1": {
+   "nodes": [
+    "B2 future floor beam @ 0.627886323268",
+    "T-N @ 0.627886323268"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 9-1",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 10-0": {
+   "nodes": [
+    "T1 future floor beam @ 0.684724689165",
+    "B2 future floor beam @ 0.684724689165"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 10-0",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 10-1": {
+   "nodes": [
+    "B2 future floor beam @ 0.684724689165",
+    "T-N @ 0.684724689165"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 10-1",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 11-0": {
+   "nodes": [
+    "T1 future floor beam @ 0.741563055062",
+    "B2 future floor beam @ 0.741563055062"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 11-0",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 11-1": {
+   "nodes": [
+    "B2 future floor beam @ 0.741563055062",
+    "T-N @ 0.741563055062"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 11-1",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 12-0": {
+   "nodes": [
+    "T1 future floor beam @ 0.798401420959",
+    "B2 future floor beam @ 0.798401420959"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 12-0",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 12-1": {
+   "nodes": [
+    "B2 future floor beam @ 0.798401420959",
+    "T-N @ 0.798401420959"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 12-1",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 13-0": {
+   "nodes": [
+    "T1 future floor beam @ 0.855239786856",
+    "B2 future floor beam @ 0.855239786856"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 13-0",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 13-1": {
+   "nodes": [
+    "B2 future floor beam @ 0.855239786856",
+    "T-N @ 0.855239786856"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 13-1",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 14-0": {
+   "nodes": [
+    "T1 future floor beam @ 0.907637655417",
+    "B2 future floor beam @ 0.907637655417"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 14-0",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "Wood joist 14-1": {
+   "nodes": [
+    "B2 future floor beam @ 0.907637655417",
+    "T-N @ 0.907637655417"
+   ],
+   "width": 1.5,
+   "depth": 7.25,
+   "group": "LoftJoists",
+   "material": "wood",
+   "source_name": "Wood joist 14-1",
+   "section_reference": "concept envelope",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N diagonal 9": {
+   "nodes": [
+    "north.center.bottom",
+    "E.W4 @ 0.96043956044"
+   ],
+   "width": 2,
+   "depth": 2,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N diagonal 9 | HSS1-1/2X1-1/2X1/8",
+   "display_name": "T-N diagonal 9 | 2 x 2 in concept brace",
+   "section_reference": "2 x 2 in concept envelope matching diagonal 8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N garage door header": {
+   "nodes": [
+    "north.garage.header.west",
+    "north.garage.header.east"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N garage door header | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified",
+   "display_name": "T-N garage door header"
+  },
+  "T-N garage vertical 1": {
+   "nodes": [
+    "north.garage.web.1.bottom",
+    "north.garage.web.1.top"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N garage vertical 1 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N garage vertical 2": {
+   "nodes": [
+    "north.garage.web.2.bottom",
+    "north.garage.web.2.top"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N garage vertical 2 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N garage vertical 3": {
+   "nodes": [
+    "north.garage.web.3.bottom",
+    "north.garage.web.3.top"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N garage vertical 3 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N garage diagonal 1": {
+   "nodes": [
+    "north.garage.header.west",
+    "north.garage.web.1.top"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N garage diagonal 1 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N garage diagonal 2": {
+   "nodes": [
+    "north.garage.web.1.top",
+    "north.garage.web.2.bottom"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N garage diagonal 2 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N garage diagonal 3": {
+   "nodes": [
+    "north.garage.web.2.bottom",
+    "north.garage.web.3.top"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N garage diagonal 3 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  },
+  "T-N garage diagonal 4": {
+   "nodes": [
+    "north.garage.web.3.top",
+    "north.garage.header.east"
+   ],
+   "width": 1.5,
+   "depth": 1.5,
+   "group": "Truss_TN",
+   "material": "steel",
+   "source_name": "T-N garage diagonal 4 | HSS1-1/2X1-1/2X1/8",
+   "section_reference": "HSS1-1/2X1-1/2X1/8",
+   "section_status": "display envelope; section and connection design unverified"
+  }
+ },
+ "retired_members": {
+  "BR-E-upper-1 | HSS2X2X1/8": "Superseded historical east-wall brace; current east web explicitly mirrors owner-revised west web.",
+  "T-N vertical 5 | HSS1-1/2X1-1/2X1/8": "Coincident with the mirrored east rear post; one physical post retained.",
+  "BR-E-ground-1 | HSS2-1/2X2-1/2X1/8": "Owner requested removal of both ground-level cross-braces between S2 and S3.",
+  "BR-E-ground-2 | HSS2-1/4X2-1/4X1/8": "Owner requested removal of both ground-level cross-braces between S2 and S3.",
+  "BR-N-upper-1 | HSS2-1/2X2-1/2X1/8": "Owner-requested full western-half upper doorway; brace through that opening removed."
+ },
+ "source_inventory": [
+  "W1 | HSS4X4X3/16",
+  "W3 | HSS4X4X1/2",
+  "W4 | HSS4X4X1/4",
+  "S1 | HSS4X4X3/16",
+  "S2 | HSS4X4X3/16",
+  "N2 | HSS4X4X1/4",
+  "S3 | HSS4X4X3/16",
+  "SW0 | HSS4X4X3/16",
+  "T-SO | W6X8.5",
+  "T-S | HSS1-1/2X1-1/2X1/8",
+  "T-W / B-WO | HSS3-1/2X3-1/2X3/16",
+  "T-N | HSS3X3X1/8",
+  "T1 upper lower chord | HSS1-1/2X1-1/2X3/16",
+  "T1 future floor beam | W6X8.5",
+  "B2 future floor beam | W8X24",
+  "N1 / U-W | HSS6X6X1/4",
+  "T-S vertical 2 | HSS1-1/2X1-1/2X1/8",
+  "T-S vertical 3 | HSS1-1/2X1-1/2X1/8",
+  "T-S vertical 4 | HSS1-1/2X1-1/2X1/8",
+  "T-S vertical 5 | HSS1-1/2X1-1/2X1/8",
+  "T-S vertical 6 | HSS1-1/2X1-1/2X1/8",
+  "T-S diagonal 8 | HSS1-1/2X1-1/2X1/8",
+  "T-S diagonal 9 | HSS1-1/2X1-1/2X1/8",
+  "T-S diagonal 10 | HSS1-1/2X1-1/2X1/8",
+  "T-S diagonal 11 | HSS1-1/2X1-1/2X1/8",
+  "T-S diagonal 12 | HSS1-1/2X1-1/2X1/8",
+  "T-S diagonal 13 | HSS1-1/2X1-1/2X1/8",
+  "T1 vertical 2 | HSS1-1/2X1-1/2X1/8",
+  "T1 vertical 3 | HSS1-1/2X1-1/2X1/8",
+  "T1 vertical 4 | HSS1-1/2X1-1/2X1/8",
+  "T1 diagonal 6 | HSS1-1/2X1-1/2X3/16",
+  "T1 diagonal 7 | HSS1-1/2X1-1/2X1/8",
+  "T1 diagonal 8 | HSS1-1/2X1-1/2X1/8",
+  "T1 diagonal 9 | HSS1-1/2X1-1/2X3/16",
+  "T-N upper east jamb | HSS4X4X3/16",
+  "T-N loading header | HSS1-1/2X1-1/2X1/8",
+  "T-N vertical 5 | HSS1-1/2X1-1/2X1/8",
+  "T-N diagonal 8 | HSS2X2X1/8",
+  "T-N diagonal 9 | HSS1-1/2X1-1/2X1/8",
+  "T-N vertical 11 | HSS1-1/2X1-1/2X1/8",
+  "T-N vertical 12 | HSS1-1/2X1-1/2X1/8",
+  "T-N vertical 13 | HSS1-1/2X1-1/2X1/8",
+  "T-N diagonal 15 | HSS1-1/2X1-1/2X1/8",
+  "T-N diagonal 16 | HSS1-1/2X1-1/2X1/8",
+  "T-N diagonal 17 | HSS1-1/2X1-1/2X1/8",
+  "T-N diagonal 18 | HSS1-1/2X1-1/2X1/8",
+  "T1 future hanger 2 | HSS1-1/2X1-1/2X1/8",
+  "T1 future hanger 3 | HSS1-1/2X1-1/2X1/8",
+  "T1 future hanger 4 | HSS1-1/2X1-1/2X1/8",
+  "T-S top / segment 1 | HSS1-1/2X1-1/2X1/8",
+  "T1 top / segment 1 | HSS2X2X1/8",
+  "T-N top / segment 1 | HSS1-1/2X1-1/2X1/8",
+  "BR-W-1 | HSS1-1/2X1-1/2X1/8",
+  "BR-W-2 | HSS1-1/2X1-1/2X1/8",
+  "BR-S-1 | HSS1-1/2X1-1/2X1/8",
+  "BR-S-2 | HSS1-1/2X1-1/2X1/8",
+  "BR-R-main-1 | HSS2-1/4X2-1/4X1/8",
+  "BR-R-main-2 | HSS2X2X1/8",
+  "BR-R-cap-1 | HSS3X3X3/16",
+  "BR-R-cap-2 | HSS1-1/2X1-1/2X1/8",
+  "BR-E-upper-1 | HSS2X2X1/8",
+  "BR-N-upper-1 | HSS2-1/2X2-1/2X1/8",
+  "BR-N-ground-1 | HSS2X2X1/8",
+  "BR-N-ground-2 | HSS2-1/4X2-1/4X1/8",
+  "BR-E-ground-1 | HSS2-1/2X2-1/2X1/8",
+  "BR-E-ground-2 | HSS2-1/4X2-1/4X1/8",
+  "Wood joist 0-0",
+  "Wood joist 0-1",
+  "Wood joist 1-0",
+  "Wood joist 1-1",
+  "Wood joist 2-0",
+  "Wood joist 2-1",
+  "Wood joist 3-0",
+  "Wood joist 3-1",
+  "Wood joist 4-0",
+  "Wood joist 4-1",
+  "Wood joist 5-0",
+  "Wood joist 5-1",
+  "Wood joist 6-0",
+  "Wood joist 6-1",
+  "Wood joist 7-0",
+  "Wood joist 7-1",
+  "Wood joist 8-0",
+  "Wood joist 8-1",
+  "Wood joist 9-0",
+  "Wood joist 9-1",
+  "Wood joist 10-0",
+  "Wood joist 10-1",
+  "Wood joist 11-0",
+  "Wood joist 11-1",
+  "Wood joist 12-0",
+  "Wood joist 12-1",
+  "Wood joist 13-0",
+  "Wood joist 13-1",
+  "Wood joist 14-0",
+  "Wood joist 14-1",
+  "West square upper chord",
+  "West solar slope chord",
+  "West rear diagonal rising north",
+  "West square bay diagonal",
+  "West clerestory-aligned vertical",
+  "T-E matching W1 | HSS4X4X3/16",
+  "T-E matching W3 | HSS4X4X1/2",
+  "T-E matching W4 | HSS4X4X1/4",
+  "T-E matching SW0 | HSS4X4X3/16",
+  "T-E matching T-W / B-WO | HSS3-1/2X3-1/2X3/16",
+  "T-E matching West square upper chord",
+  "T-E matching West solar slope chord",
+  "T-E matching West rear diagonal rising north",
+  "T-E matching West square bay diagonal",
+  "T-E matching West clerestory-aligned vertical",
+  "E-OB",
+  "E-S",
+  "E-N",
+  "E-M option B",
+  "East rafter 01",
+  "East rafter 02",
+  "East rafter 03",
+  "East rafter 04",
+  "East rafter 05",
+  "East rafter 06",
+  "East rafter 07",
+  "East rafter 08",
+  "East rafter 09",
+  "East rafter 10",
+  "East rafter 11",
+  "East rafter 12"
+ ],
+ "intent": "Explicit geometric connectivity; not an analysis or fabrication model.",
+ "joint_policy": "Endpoints refer to node IDs. Attachment nodes are dependent points on named members. Crossings connect only when declared; ground supports and two E-OB end overhangs are explicit exceptions.",
+ "migration_notes": [
+  "Removed obsolete east upper brace already replaced by mirrored web.",
+  "Roof braces terminate on current slope/cap chords.",
+  "Short transverse web and hanger ends extend to chord axes.",
+  "Timber joists follow their supporting crossbeams; original unsupported tail positions are retired.",
+  "Owner correction: S2, S3 and N2 directly below east truss on east_x; top nodes reference E.bottom. S1 and N1 stay at their other support stations.",
+  "Owner revision: remove both S2-S3 ground cross-braces; retain the support columns.",
+  "Owner revision: north upper chord T-N top / segment 1 has a 4 \u00d7 4-inch envelope. Joint axis retained.",
+  "North elevation revision: T-N diagonal 8 joins upper east jamb corner to E.north.bottom at N2; T-N diagonal 9 removed.",
+  "North upper frame divided equally by a 4-inch midpoint vertical; N1 stops at lower chord. Existing header and above-header webs span the whole western half at retained Z207; western opening diagonal removed.",
+  "Owner revision: full X-bracing in the eastern north upper bay. Diagonal 9 reinstated from center-bottom to north-east upper corner, matching diagonal 8 envelope. Crossing is not a declared joint."
+ ],
+ "support_alignments": [
+  {
+   "member": "S2",
+   "supports": "E.bottom",
+   "vertical": true,
+   "base_z": 0
+  },
+  {
+   "member": "S3",
+   "supports": "E.bottom",
+   "vertical": true,
+   "base_z": 0
+  },
+  {
+   "member": "N2",
+   "supports": "E.bottom",
+   "vertical": true,
+   "base_z": 0
+  }
+ ],
+ "north_opening": {
+  "center_member": "T-N upper east jamb",
+  "center_fraction": 0.5,
+  "header": "T-N loading header",
+  "header_axis_z": 207.0,
+  "side": "west",
+  "N1_top": "lower chord",
+  "header_section": "existing 1.5-inch envelope retained; sizing unresolved"
+ },
+ "south_entry_alignment": {
+  "member": "S1",
+  "door_east_x_parameter": "south_entry_east_x",
+  "aligned_face": "west",
+  "source_object": "South entry door",
+  "door_x_extent_in": [
+   111.5,
+   143.5
+  ],
+  "note": "West face of 4-inch S1 aligns with east edge of existing south entry; attached BR-S braces follow the post."
+ },
+ "added_members": {
+  "T-N garage door header | HSS1-1/2X1-1/2X1/8": "Added 2026-09-17: garage door bay is a 7 ft clear opening, so a header and web now span N1 to N2 below the T-N bottom chord. No preceding CAD source.",
+  "T-N garage vertical 1 | HSS1-1/2X1-1/2X1/8": "Added 2026-09-17: garage door bay is a 7 ft clear opening, so a header and web now span N1 to N2 below the T-N bottom chord. No preceding CAD source.",
+  "T-N garage vertical 2 | HSS1-1/2X1-1/2X1/8": "Added 2026-09-17: garage door bay is a 7 ft clear opening, so a header and web now span N1 to N2 below the T-N bottom chord. No preceding CAD source.",
+  "T-N garage vertical 3 | HSS1-1/2X1-1/2X1/8": "Added 2026-09-17: garage door bay is a 7 ft clear opening, so a header and web now span N1 to N2 below the T-N bottom chord. No preceding CAD source.",
+  "T-N garage diagonal 1 | HSS1-1/2X1-1/2X1/8": "Added 2026-09-17: garage door bay is a 7 ft clear opening, so a header and web now span N1 to N2 below the T-N bottom chord. No preceding CAD source.",
+  "T-N garage diagonal 2 | HSS1-1/2X1-1/2X1/8": "Added 2026-09-17: garage door bay is a 7 ft clear opening, so a header and web now span N1 to N2 below the T-N bottom chord. No preceding CAD source.",
+  "T-N garage diagonal 3 | HSS1-1/2X1-1/2X1/8": "Added 2026-09-17: garage door bay is a 7 ft clear opening, so a header and web now span N1 to N2 below the T-N bottom chord. No preceding CAD source.",
+  "T-N garage diagonal 4 | HSS1-1/2X1-1/2X1/8": "Added 2026-09-17: garage door bay is a 7 ft clear opening, so a header and web now span N1 to N2 below the T-N bottom chord. No preceding CAD source."
+ }
 }

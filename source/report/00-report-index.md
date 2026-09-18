@@ -4,7 +4,7 @@
 **Site:** 1370 Wilbur Avenue, San Diego, CA 92109  
 **Document status:** Draft report framework  
 **Purpose:** Design development, professional coordination, permitting, bidding, construction, and closeout  
-**Last updated:** 2026-09-15
+**Last updated:** 2026-09-17
 
 ## How the document set works
 
@@ -27,7 +27,7 @@ The Markdown index is the navigable table of contents. PDFs and images provide f
 | [04 Geotechnical and foundations](04-geotechnical-and-foundations/) | Geologic hazards, soil/fill conditions, investigation need, bearing/lateral criteria, excavations, new piers/footings, existing slab limitations | Geotechnical report or waiver basis, foundation criteria, footing/pier schedule | Planned |
 | [05 Architectural design](05-architectural-design/) | Selected massing, floor plans, roof plan, elevations, sections, doors/windows, balcony/loading opening, access, finishes | Design narrative, dimensioned drawing set, door/window/finish schedules, renderings | ARCH-006 rev 4: floor-plan and east-wall study; draft |
 | [06 Structural engineering](06-structural-engineering/) | Design criteria and loads, load paths, global analysis, truss/beam/column design, trolley/hoist effects, connections, foundations, temporary stability | Structural basis, calculations, framing plans, member and connection schedules | STR-006 rev 0 geometry study saved; engineering calculations planned |
-| [07 Building envelope](07-building-envelope/) | Integrated solar roof, low hip cap, metal wall panels, waterproofing, flashing, drainage, insulation, condensation, ventilation, fire exposure | Envelope sections/details, product requirements, drainage plan | Planned |
+| [07 Building envelope](07-building-envelope/) | Integrated solar roof, low hip cap, metal wall panels, waterproofing, flashing, drainage, insulation, condensation, ventilation, fire exposure | Envelope sections/details, product requirements, drainage plan | ENV-003 rev 0: wall panel options research; draft |
 | [08 Solar, electrical, and energy](08-solar-electrical-and-energy/) | Solar resource, array geometry, PV/ESS sizing, production, tariff/economics, one-line, equipment and interconnection | Energy report, array layout, electrical one-line, equipment schedule, utility/permit documents | SOL-001 rev 1: consolidated solar/battery report and 30°/35°/40° analysis; draft |
 | [09 MEP and life safety](09-mep-and-life-safety/) | Electrical distribution, lighting/receptacles, ventilation, any mechanical/plumbing, alarms, egress, guards, fire separation, exterior access | MEP/life-safety plans, schedules, code analysis | Planned |
 | [10 Construction planning](10-construction-planning/) | Existing-roof retention sequence, demolition, temporary bracing/shoring, access, crane/hoist operations, neighbor/site protection, inspections | Phasing drawings, temporary works criteria, logistics plan, inspection/test plan | Preliminary feasibility studies exist |
@@ -88,3 +88,10 @@ Current City guidance indicates that structural work supporting PV and construct
 ## Chapter 6 frame geometry study
 
 [STR-006 — Coordinated frame geometry study](06-structural-engineering/frame-geometry-study/README.md), revision 0, 2026-09-15, status `draft`. [3D viewer](06-structural-engineering/frame-geometry-study/model-3d.html) · [Drawing and truss study PDF](06-structural-engineering/frame-geometry-study/frame-geometry-study.pdf). Includes the far-west truss correction, all 13 columns, east transverse links and E-OB; model data and schedules are saved for subsequent engineering. Section sizes, loads, foundations and joint design remain unresolved.
+
+
+## Chapter 7 wall panel research
+
+[ENV-003 — Infill wall panel options](07-building-envelope/wall-panel-options/wall-panel-options.md), revision 0, 2026-09-17, status `draft`. Owner-directed survey of metal, translucent, glazed and non-metal infill materials, with installed-cost ranges, the continuous-face versus bay-infill attachment decision, and whether the panels should be recruited for lateral stiffness. [Study notes and findings](07-building-envelope/wall-panel-options/README.md).
+
+Four findings bear on decisions already recorded. Insulated metal panels cannot act as shear walls, so retaining the current 2-inch IMP basis closes the rigidity question in favour of the frame. No bay clear width is a whole multiple of any standard panel width, so tongue-and-groove products suit continuous inside-face installation rather than bay-by-bay infill. Published Galvalume warranties exclude sites within 1,500 feet of salt water, which may disqualify the default substrate at this address and makes painted aluminum the warrantable choice. The 5/8-inch Type X drywall in the working estimate may also be serving as the Chapter 26 thermal barrier and should not be deleted as redundant insulation. Raises ENV-OI-01 through ENV-OI-08. No product is selected and no price is a quotation.
