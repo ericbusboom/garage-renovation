@@ -21,6 +21,7 @@ from geometry_types import MemberElement, MeshElement
 from build_study import ROOT, HERE, box_mesh, build, plt, Patch, ConvexHull, go, INK, BLUE, TEAL, ORANGE
 from parametric_truss import fingerprint
 from matplotlib.backends.backend_pdf import PdfPages
+import frame_models
 
 OUT=HERE/'output'/'coordinated'
 NAMES=('T-S','T1','T-W','T-E','T-N')
@@ -480,7 +481,8 @@ def main():
                  'model-renders/garage-model.json','structural-study/latest-framing-corrections.md']:
         report['source_hashes'][path]=hashlib.sha256((ROOT/path).read_bytes()).hexdigest()
     bundle={'plan':plan,'trusses':draft,'baselines':baseline,'sources':report['source_hashes']}
-    json_dump(bundle,OUT/'coordinated.compas.json',pretty=True);loaded=json_load(OUT/'coordinated.compas.json')
+    dest=frame_models.allocate('coordinated')
+    json_dump(bundle,dest,pretty=True);loaded=json_load(dest)
     plan=loaded['plan'];draft=loaded['trusses'];baseline=loaded['baselines'];validate_plan(plan)
     for n in NAMES:
         report['trusses'][n]={'baseline':validate_truss(baseline[n]),'draft':validate_truss(draft[n])}

@@ -2,6 +2,7 @@
 import csv, hashlib, json, shutil
 from pathlib import Path
 import coordinated_study as study
+import frame_models
 from compas.data import json_load
 from matplotlib.backends.backend_pdf import PdfPages
 
@@ -10,12 +11,14 @@ DEST=ROOT/'report/06-structural-engineering/frame-geometry-study'
 DEST.mkdir(parents=True,exist_ok=True)
 OUT=study.OUT
 stamp='STR-006 | Revision 0 | 2026-09-15 | draft | Inches | Not to scale'
-bundle=json_load(OUT/'coordinated.compas.json')
+MODEL=frame_models.latest('coordinated')
+bundle=json_load(MODEL)
 plan=bundle['plan'];draft=bundle['trusses'];baseline=bundle['baselines']
 study.validate_plan(plan)
 for d in draft.values():study.validate_truss(d)
 report=json.loads((OUT/'validation.json').read_text())
-for name in ['coordinated.compas.json','beam-and-truss-positions.csv','support-positions.csv','support-offsets.csv','truss-members.csv','validation.json','coordination-report.md']:
+shutil.copy2(MODEL,DEST/MODEL.name)
+for name in ['beam-and-truss-positions.csv','support-positions.csv','support-offsets.csv','truss-members.csv','validation.json','coordination-report.md']:
     shutil.copy2(OUT/name,DEST/name)
 notes=DEST/'coordination-report.md'
 notes.write_text(notes.read_text().replace('# Coordinated COMPAS floor plan and trusses','# STR-006 — Coordinated COMPAS floor plan and trusses\n\n'+stamp))
@@ -71,7 +74,7 @@ with (DEST/'source-inventory.csv').open('w') as f:
 
 ## Data for the next stage
 
-- [Native COMPAS model](coordinated.compas.json) — current registry, parametric solids, truss recipes and geometric attachment graphs; historical baselines remain separately identified.
+- [Native COMPAS model]('''+MODEL.name+''') — current registry, parametric solids, truss recipes and geometric attachment graphs; historical baselines remain separately identified.
 - [Neutral OBJ geometry](frame-geometry.obj) — named proposed solids and reference lines, in inches. Mesh exchange only, not an analysis or BIM model; import units explicitly.
 - [Beam and truss positions](beam-and-truss-positions.csv), [support positions](support-positions.csv), [truss member endpoints](truss-members.csv), [support offsets](support-offsets.csv).
 - [Geometry validation](validation.json) and [source checksums](source-inventory.csv).

@@ -11,6 +11,7 @@ from compas.datastructures import Graph
 from compas.geometry import Point,Line,closest_point_on_segment,distance_point_point
 from compas_model.models import Model
 from geometry_types import MemberElement
+import frame_models
 ROOT=Path(__file__).resolve().parents[1];P=ROOT/'roof-studies/square-upper-west';OUT=P/'connected-frame'
 
 def compile_spec(spec):
@@ -151,7 +152,8 @@ def tests(spec,base):
 def main():
  spec=json.loads((OUT/'frame-spec.json').read_text());c=compile_spec(spec);test_results=tests(spec,c)
  data={'specification':spec,'joint_graph':c['graph'],'model':c['model']}
- json_dump(data,OUT/'frame.compas.json');rt=json_load(OUT/'frame.compas.json');verify=compile_spec(rt['specification'])
+ dest=frame_models.allocate('square-upper-west')
+ json_dump(data,dest);rt=json_load(dest);verify=compile_spec(rt['specification'])
  assert rt['joint_graph'].number_of_nodes()==c['graph'].number_of_nodes()
  saved={el.name:el for el in rt['model'].elements()}
  for mid,el in verify['elements'].items():

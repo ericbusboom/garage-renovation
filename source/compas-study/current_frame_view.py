@@ -5,6 +5,7 @@ import numpy as np
 from compas.datastructures import Mesh
 from compas.data import json_dump,json_load
 import plotly.graph_objects as go
+import frame_models
 ROOT=Path(__file__).resolve().parents[1];P=ROOT/'roof-studies/square-upper-west';OUT=P/'compas';OUT.mkdir(exist_ok=True)
 src=P/'connected-frame/scene-mesh.json';raw=json.loads(src.read_text());objects=[]
 for e in raw['objects']:
@@ -27,7 +28,7 @@ for o in list(objects):
   assert mesh.is_valid()
   objects.append({'name':upper_names[o['name']]+' · upper truss portion','group':'WestTrussUpperPosts','material':o['material'],'mesh':mesh})
 bundle={'units':'inches','source_sha256':hashlib.sha256(src.read_bytes()).hexdigest(),'objects':objects,'matching_trusses':json.loads((P/'matching-trusses.json').read_text())}
-connected=json_load(P/'connected-frame/frame.compas.json')
+connected=json_load(frame_models.latest('square-upper-west'))
 bundle.update(joint_graph=connected['joint_graph'],frame_model=connected['model'],specification=connected['specification'])
 json_dump(bundle,OUT/'current-frame.compas.json');bundle=json_load(OUT/'current-frame.compas.json')
 # Check every displayed pair after COMPAS serialization, independent of vertex order.

@@ -8,8 +8,10 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.collections import PolyCollection
 from compas.data import json_load
+import frame_models
 ROOT=Path(__file__).resolve().parents[1];P=ROOT/'roof-studies/square-upper-west/connected-frame';OUT=P/'elevations';OUT.mkdir(exist_ok=True)
-data=json_load(P/'frame.compas.json');spec=data['specification'];elements={e.name:e for e in data['model'].elements()}
+SRC=frame_models.latest('square-upper-west')
+data=json_load(SRC);spec=data['specification'];elements={e.name:e for e in data['model'].elements()}
 fig,ax=plt.subplots(figsize=(14,10));fig.patch.set_facecolor('#fbfbf8');ax.set_facecolor('#fbfbf8')
 registry={};north=[];background=[]
 for mid,e in elements.items():
@@ -43,5 +45,5 @@ plt.close(fig)
 svg=(OUT/'north-framing-elevation.svg').read_text();svg=svg[svg.index('<svg'):]
 html='''<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>North framing elevation</title><style>body{margin:0;background:#fbfbf8;color:#264c5d;font:15px system-ui}header{padding:12px 22px;border-bottom:1px solid #ccd6d9}button{padding:7px 12px;margin-left:16px;cursor:pointer}main{max-width:1350px;margin:auto}svg{width:100%;height:auto}#selected{padding:10px 22px;background:#e9eff0;position:sticky;top:0;z-index:2}g[data-member]{cursor:pointer}g[data-member]:hover path{stroke:#d06c31;stroke-width:.8}footer{padding:12px 22px}a{color:#225d78}</style></head><body><header><strong>North framing elevation</strong><button id="context">Hide framing beyond</button></header><div id="selected">Click a member to identify it. Labels 1–4 and support names are available for discussion.</div><main>'''+svg+'''</main><footer><a href="north-framing-elevation.png">PNG for markup</a> · <a href="north-framing-elevation.pdf">PDF</a> · <a href="north-framing-elevation.svg">SVG</a></footer><script>const members='''+json.dumps(registry)+''';for(const [id,m] of Object.entries(members)){const el=document.getElementById(id);if(el){el.dataset.member=id;el.onclick=()=>document.getElementById('selected').textContent=m.member+' — '+m.name+' · '+m.layer+' framing';}}let show=true;document.getElementById('context').onclick=()=>{show=!show;document.querySelectorAll('[id^="background-"]').forEach(e=>e.style.display=show?'':'none');document.getElementById('context').textContent=show?'Hide framing beyond':'Show framing beyond';};</script></body></html>'''
 (OUT/'north-framing-elevation.html').write_text(html)
-(OUT/'north-framing-validation.json').write_text(json.dumps({'source_sha256':hashlib.sha256((P/'frame.compas.json').read_bytes()).hexdigest(),'view':'north looking south; east left, west right','frame_members':len(elements),'foreground_members':len(north),'background_members':len(background),'enclosure_objects':0},indent=2))
+(OUT/'north-framing-validation.json').write_text(json.dumps({'source_sha256':hashlib.sha256(SRC.read_bytes()).hexdigest(),'view':'north looking south; east left, west right','frame_members':len(elements),'foreground_members':len(north),'background_members':len(background),'enclosure_objects':0},indent=2))
 print(OUT/'north-framing-elevation.png')

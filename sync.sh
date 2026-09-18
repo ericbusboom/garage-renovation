@@ -58,6 +58,7 @@ GALA_DIRS=(
   east-wall-study
   existing-site
   floor-plan-setbacks
+  frame-models
   loading-door-study
   model
   model-renders
