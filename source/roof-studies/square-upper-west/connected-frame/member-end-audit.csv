@@ -1,0 +1,245 @@
+member,end,joint,status,connected_to,gap_in,source_member
+W.bottom,start,W.south.bottom,connected,W.SW0,0.0,T-W / B-WO | HSS3-1/2X3-1/2X3/16
+W.bottom,end,W.north.bottom,connected,BR-N-ground-2; BR-W-1; T-N; W.W4,0.0,T-W / B-WO | HSS3-1/2X3-1/2X3/16
+W.slope,start,W.south.slope,connected,W.SW0,0.0,West solar slope chord
+W.slope,end,W.front.slope,connected,BR-R-main-2; W.clerestory,0.0,West solar slope chord
+W.top,start,W.front.top,connected,W.clerestory; W.square.brace,0.0,West square upper chord
+W.top,end,W.north.top,connected,W.W4; W.rear.brace,0.0,West square upper chord
+W.clerestory,start,W.bottom @ 0.431900114391,connected,W.bottom,0.0,West clerestory-aligned vertical
+W.clerestory,end,W.front.top,connected,W.square.brace; W.top,0.0,West clerestory-aligned vertical
+W.W1,start,W.W1.base,ground support,,0.0,W1 | HSS4X4X3/16
+W.W1,end,W.slope @ 0.453003292646,connected,BR-R-main-1; T-S top / segment 1; W.slope,0.0,W1 | HSS4X4X3/16
+W.W3,start,W.W3.base,ground support,,0.0,W3 | HSS4X4X1/2
+W.W3,end,W.top @ 0.595469616492,connected,W.top,0.0,W3 | HSS4X4X1/2
+W.W4,start,W.W4.base,ground support,,0.0,W4 | HSS4X4X1/4
+W.W4,end,W.north.top,connected,W.rear.brace; W.top,0.0,W4 | HSS4X4X1/4
+W.SW0,start,W.SW0.base,ground support,,0.0,SW0 | HSS4X4X3/16
+W.SW0,end,W.south.slope,connected,W.slope,0.0,SW0 | HSS4X4X3/16
+W.rear.brace,start,W.bottom @ 0.770186335404,connected,BR-W-2; W.W3; W.bottom; W.square.brace,0.0,West rear diagonal rising north
+W.rear.brace,end,W.north.top,connected,W.W4; W.top,0.0,West rear diagonal rising north
+W.square.brace,start,W.bottom @ 0.770186335404,connected,BR-W-2; W.W3; W.bottom; W.rear.brace,0.0,West square bay diagonal
+W.square.brace,end,W.front.top,connected,W.clerestory; W.top,0.0,West square bay diagonal
+E.bottom,start,E.south.bottom,connected,BR-S-1; E.SW0; S2,0.0,T-E matching T-W / B-WO | HSS3-1/2X3-1/2X3/16
+E.bottom,end,E.north.bottom,connected,E.W4; N2; T-N; T-N diagonal 8,0.0,T-E matching T-W / B-WO | HSS3-1/2X3-1/2X3/16
+E.slope,start,E.south.slope,connected,E.SW0,0.0,T-E matching West solar slope chord
+E.slope,end,E.front.slope,connected,BR-R-main-1; E.clerestory,0.0,T-E matching West solar slope chord
+E.top,start,E.front.top,connected,E.clerestory; E.square.brace,0.0,T-E matching West square upper chord
+E.top,end,E.north.top,connected,E.W4; E.rear.brace,0.0,T-E matching West square upper chord
+E.clerestory,start,E.bottom @ 0.431900114391,connected,E.bottom,0.0,T-E matching West clerestory-aligned vertical
+E.clerestory,end,E.front.top,connected,E.square.brace; E.top,0.0,T-E matching West clerestory-aligned vertical
+E.W1,start,E.bottom @ 0.195652173913,connected,E.bottom; S3; T-S; T-S diagonal 13,0.0,T-E matching W1 | HSS4X4X3/16
+E.W1,end,E.slope @ 0.453003292646,connected,BR-R-main-2; E.slope; T-S top / segment 1,0.0,T-E matching W1 | HSS4X4X3/16
+E.W3,start,E.bottom @ 0.770186335404,connected,E.bottom; E.rear.brace; E.square.brace,0.0,T-E matching W3 | HSS4X4X1/2
+E.W3,end,E.top @ 0.595469616492,connected,E.top,0.0,T-E matching W3 | HSS4X4X1/2
+E.W4,start,E.north.bottom,connected,E.bottom; N2; T-N; T-N diagonal 8,0.0,T-E matching W4 | HSS4X4X1/4
+E.W4,end,E.north.top,connected,E.rear.brace; E.top,0.0,T-E matching W4 | HSS4X4X1/4
+E.SW0,start,E.south.bottom,connected,BR-S-1; E.bottom; S2,0.0,T-E matching SW0 | HSS4X4X3/16
+E.SW0,end,E.south.slope,connected,E.slope,0.0,T-E matching SW0 | HSS4X4X3/16
+E.rear.brace,start,E.bottom @ 0.770186335404,connected,E.W3; E.bottom; E.square.brace,0.0,T-E matching West rear diagonal rising north
+E.rear.brace,end,E.north.top,connected,E.W4; E.top,0.0,T-E matching West rear diagonal rising north
+E.square.brace,start,E.bottom @ 0.770186335404,connected,E.W3; E.bottom; E.rear.brace,0.0,T-E matching West square bay diagonal
+E.square.brace,end,E.front.top,connected,E.clerestory; E.top,0.0,T-E matching West square bay diagonal
+T-S,start,W.bottom @ 0.195652173913,connected,T-S diagonal 8; W.bottom,0.0,T-S | HSS1-1/2X1-1/2X1/8
+T-S,end,E.bottom @ 0.195652173913,connected,E.W1; E.bottom; S3; T-S diagonal 13,0.0,T-S | HSS1-1/2X1-1/2X1/8
+T-S top / segment 1,start,W.slope @ 0.453003292646,connected,BR-R-main-1; W.W1; W.slope,0.0,T-S top / segment 1 | HSS1-1/2X1-1/2X1/8
+T-S top / segment 1,end,E.slope @ 0.453003292646,connected,BR-R-main-2; E.W1; E.slope,0.0,T-S top / segment 1 | HSS1-1/2X1-1/2X1/8
+T1 upper lower chord,start,W.clerestory @ 0.308951630769,connected,T1 diagonal 6; W.clerestory,0.0,T1 upper lower chord | HSS1-1/2X1-1/2X3/16
+T1 upper lower chord,end,E.clerestory @ 0.308951630769,connected,E.clerestory; T1 diagonal 9,0.0,T1 upper lower chord | HSS1-1/2X1-1/2X3/16
+T1 top / segment 1,start,W.clerestory @ 0.691369215252,connected,W.clerestory,0.0,T1 top / segment 1 | HSS2X2X1/8
+T1 top / segment 1,end,E.clerestory @ 0.691369215252,connected,E.clerestory,0.0,T1 top / segment 1 | HSS2X2X1/8
+T1 future floor beam,start,W.clerestory @ 0.00879120879121,connected,W.clerestory,0.0,T1 future floor beam | W6X8.5
+T1 future floor beam,end,E.clerestory @ 0.00879120879121,connected,E.clerestory,0.0,T1 future floor beam | W6X8.5
+B2 future floor beam,start,W.W3 @ 0.507103825137,connected,W.W3,0.0,B2 future floor beam | W8X24
+B2 future floor beam,end,E.W3 @ 0.00879120879121,connected,E.W3,0.0,B2 future floor beam | W8X24
+T-SO,start,W.SW0 @ 0.991452991453,connected,W.SW0,0.0,T-SO | W6X8.5
+T-SO,end,E.SW0 @ 0.5,connected,E.SW0,0.0,T-SO | W6X8.5
+T-N,start,W.north.bottom,connected,BR-N-ground-2; BR-W-1; W.W4; W.bottom,0.0,T-N | HSS3X3X1/8
+T-N,end,E.north.bottom,connected,E.W4; E.bottom; N2; T-N diagonal 8,0.0,T-N | HSS3X3X1/8
+T-N top / segment 1,start,W.W4 @ 0.980327868852,connected,W.W4,0.0,T-N top / segment 1 | HSS1-1/2X1-1/2X1/8
+T-N top / segment 1,end,E.W4 @ 0.96043956044,connected,E.W4; T-N diagonal 9,0.0,T-N top / segment 1 | HSS1-1/2X1-1/2X1/8
+S1,start,S1.base,ground support,,0.0,S1 | HSS4X4X3/16
+S1,end,S1.head,connected,T-SO,0.0,S1 | HSS4X4X3/16
+S2,start,S2.base,ground support,,0.0,S2 | HSS4X4X3/16
+S2,end,S2.east-truss-bearing,connected,BR-S-1; E.SW0; E.bottom,0.0,S2 | HSS4X4X3/16
+S3,start,S3.base,ground support,,0.0,S3 | HSS4X4X3/16
+S3,end,S3.east-truss-bearing,connected,E.W1; E.bottom; T-S; T-S diagonal 13,0.0,S3 | HSS4X4X3/16
+N2,start,N2.base,ground support,,0.0,N2 | HSS4X4X1/4
+N2,end,N2.east-truss-bearing,connected,E.W4; E.bottom; T-N; T-N diagonal 8,0.0,N2 | HSS4X4X1/4
+N1 / U-W,start,N1 / U-W.base,ground support,,0.0,N1 / U-W | HSS6X6X1/4
+N1 / U-W,end,N1.lower-chord-bearing,connected,BR-N-ground-1; T-N,0.0,N1 / U-W | HSS6X6X1/4
+T-S vertical 2,start,T-S @ 0.166666666667,connected,T-S,0.0,T-S vertical 2 | HSS1-1/2X1-1/2X1/8
+T-S vertical 2,end,T-S top / segment 1 @ 0.166666666667,connected,T-S diagonal 8; T-S diagonal 9; T-S top / segment 1,0.0,T-S vertical 2 | HSS1-1/2X1-1/2X1/8
+T-S vertical 3,start,T-S @ 0.333333333333,connected,T-S; T-S diagonal 10; T-S diagonal 9,0.0,T-S vertical 3 | HSS1-1/2X1-1/2X1/8
+T-S vertical 3,end,T-S top / segment 1 @ 0.333333333333,connected,T-S top / segment 1,0.0,T-S vertical 3 | HSS1-1/2X1-1/2X1/8
+T-S vertical 4,start,T-S @ 0.5,connected,T-S,0.0,T-S vertical 4 | HSS1-1/2X1-1/2X1/8
+T-S vertical 4,end,T-S top / segment 1 @ 0.5,connected,T-S diagonal 10; T-S diagonal 11; T-S top / segment 1,0.0,T-S vertical 4 | HSS1-1/2X1-1/2X1/8
+T-S vertical 5,start,T-S @ 0.666666666667,connected,T-S; T-S diagonal 11; T-S diagonal 12,0.0,T-S vertical 5 | HSS1-1/2X1-1/2X1/8
+T-S vertical 5,end,T-S top / segment 1 @ 0.666666666667,connected,T-S top / segment 1,0.0,T-S vertical 5 | HSS1-1/2X1-1/2X1/8
+T-S vertical 6,start,T-S @ 0.833333333333,connected,T-S,0.0,T-S vertical 6 | HSS1-1/2X1-1/2X1/8
+T-S vertical 6,end,T-S top / segment 1 @ 0.833333333333,connected,T-S diagonal 12; T-S diagonal 13; T-S top / segment 1,0.0,T-S vertical 6 | HSS1-1/2X1-1/2X1/8
+T-S diagonal 8,start,W.bottom @ 0.195652173913,connected,T-S; W.bottom,0.0,T-S diagonal 8 | HSS1-1/2X1-1/2X1/8
+T-S diagonal 8,end,T-S top / segment 1 @ 0.166666666667,connected,T-S diagonal 9; T-S top / segment 1; T-S vertical 2,0.0,T-S diagonal 8 | HSS1-1/2X1-1/2X1/8
+T-S diagonal 9,start,T-S top / segment 1 @ 0.166666666667,connected,T-S diagonal 8; T-S top / segment 1; T-S vertical 2,0.0,T-S diagonal 9 | HSS1-1/2X1-1/2X1/8
+T-S diagonal 9,end,T-S @ 0.333333333333,connected,T-S; T-S diagonal 10; T-S vertical 3,0.0,T-S diagonal 9 | HSS1-1/2X1-1/2X1/8
+T-S diagonal 10,start,T-S @ 0.333333333333,connected,T-S; T-S diagonal 9; T-S vertical 3,0.0,T-S diagonal 10 | HSS1-1/2X1-1/2X1/8
+T-S diagonal 10,end,T-S top / segment 1 @ 0.5,connected,T-S diagonal 11; T-S top / segment 1; T-S vertical 4,0.0,T-S diagonal 10 | HSS1-1/2X1-1/2X1/8
+T-S diagonal 11,start,T-S top / segment 1 @ 0.5,connected,T-S diagonal 10; T-S top / segment 1; T-S vertical 4,0.0,T-S diagonal 11 | HSS1-1/2X1-1/2X1/8
+T-S diagonal 11,end,T-S @ 0.666666666667,connected,T-S; T-S diagonal 12; T-S vertical 5,0.0,T-S diagonal 11 | HSS1-1/2X1-1/2X1/8
+T-S diagonal 12,start,T-S @ 0.666666666667,connected,T-S; T-S diagonal 11; T-S vertical 5,0.0,T-S diagonal 12 | HSS1-1/2X1-1/2X1/8
+T-S diagonal 12,end,T-S top / segment 1 @ 0.833333333333,connected,T-S diagonal 13; T-S top / segment 1; T-S vertical 6,0.0,T-S diagonal 12 | HSS1-1/2X1-1/2X1/8
+T-S diagonal 13,start,T-S top / segment 1 @ 0.833333333333,connected,T-S diagonal 12; T-S top / segment 1; T-S vertical 6,0.0,T-S diagonal 13 | HSS1-1/2X1-1/2X1/8
+T-S diagonal 13,end,E.bottom @ 0.195652173913,connected,E.W1; E.bottom; S3; T-S,0.0,T-S diagonal 13 | HSS1-1/2X1-1/2X1/8
+T1 vertical 2,start,T1 upper lower chord @ 0.25,connected,T1 future hanger 2; T1 upper lower chord,0.0,T1 vertical 2 | HSS1-1/2X1-1/2X1/8
+T1 vertical 2,end,T1 top / segment 1 @ 0.25,connected,T1 diagonal 6; T1 diagonal 7; T1 top / segment 1,0.0,T1 vertical 2 | HSS1-1/2X1-1/2X1/8
+T1 vertical 3,start,T1 upper lower chord @ 0.5,connected,T1 diagonal 7; T1 diagonal 8; T1 future hanger 3; T1 upper lower chord,0.0,T1 vertical 3 | HSS1-1/2X1-1/2X1/8
+T1 vertical 3,end,T1 top / segment 1 @ 0.5,connected,T1 top / segment 1,0.0,T1 vertical 3 | HSS1-1/2X1-1/2X1/8
+T1 vertical 4,start,T1 upper lower chord @ 0.75,connected,T1 future hanger 4; T1 upper lower chord,0.0,T1 vertical 4 | HSS1-1/2X1-1/2X1/8
+T1 vertical 4,end,T1 top / segment 1 @ 0.75,connected,T1 diagonal 8; T1 diagonal 9; T1 top / segment 1,0.0,T1 vertical 4 | HSS1-1/2X1-1/2X1/8
+T1 diagonal 6,start,W.clerestory @ 0.308951630769,connected,T1 upper lower chord; W.clerestory,0.0,T1 diagonal 6 | HSS1-1/2X1-1/2X3/16
+T1 diagonal 6,end,T1 top / segment 1 @ 0.25,connected,T1 diagonal 7; T1 top / segment 1; T1 vertical 2,0.0,T1 diagonal 6 | HSS1-1/2X1-1/2X3/16
+T1 diagonal 7,start,T1 top / segment 1 @ 0.25,connected,T1 diagonal 6; T1 top / segment 1; T1 vertical 2,0.0,T1 diagonal 7 | HSS1-1/2X1-1/2X1/8
+T1 diagonal 7,end,T1 upper lower chord @ 0.5,connected,T1 diagonal 8; T1 future hanger 3; T1 upper lower chord; T1 vertical 3,0.0,T1 diagonal 7 | HSS1-1/2X1-1/2X1/8
+T1 diagonal 8,start,T1 upper lower chord @ 0.5,connected,T1 diagonal 7; T1 future hanger 3; T1 upper lower chord; T1 vertical 3,0.0,T1 diagonal 8 | HSS1-1/2X1-1/2X1/8
+T1 diagonal 8,end,T1 top / segment 1 @ 0.75,connected,T1 diagonal 9; T1 top / segment 1; T1 vertical 4,0.0,T1 diagonal 8 | HSS1-1/2X1-1/2X1/8
+T1 diagonal 9,start,T1 top / segment 1 @ 0.75,connected,T1 diagonal 8; T1 top / segment 1; T1 vertical 4,0.0,T1 diagonal 9 | HSS1-1/2X1-1/2X3/16
+T1 diagonal 9,end,E.clerestory @ 0.308951630769,connected,E.clerestory; T1 upper lower chord,0.0,T1 diagonal 9 | HSS1-1/2X1-1/2X3/16
+T1 future hanger 2,start,T1 future floor beam @ 0.25,connected,T1 future floor beam,0.0,T1 future hanger 2 | HSS1-1/2X1-1/2X1/8
+T1 future hanger 2,end,T1 upper lower chord @ 0.25,connected,T1 upper lower chord; T1 vertical 2,0.0,T1 future hanger 2 | HSS1-1/2X1-1/2X1/8
+T1 future hanger 3,start,T1 future floor beam @ 0.5,connected,T1 future floor beam,0.0,T1 future hanger 3 | HSS1-1/2X1-1/2X1/8
+T1 future hanger 3,end,T1 upper lower chord @ 0.5,connected,T1 diagonal 7; T1 diagonal 8; T1 upper lower chord; T1 vertical 3,0.0,T1 future hanger 3 | HSS1-1/2X1-1/2X1/8
+T1 future hanger 4,start,T1 future floor beam @ 0.75,connected,T1 future floor beam,0.0,T1 future hanger 4 | HSS1-1/2X1-1/2X1/8
+T1 future hanger 4,end,T1 upper lower chord @ 0.75,connected,T1 upper lower chord; T1 vertical 4,0.0,T1 future hanger 4 | HSS1-1/2X1-1/2X1/8
+T-N upper east jamb,start,north.center.bottom,connected,T-N; T-N diagonal 9,0.0,T-N upper east jamb | HSS4X4X3/16
+T-N upper east jamb,end,north.center.top,connected,T-N diagonal 8; T-N top / segment 1,0.0,T-N upper east jamb | HSS4X4X3/16
+T-N loading header,start,north.door.header.west,connected,T-N diagonal 15; W.W4,0.0,T-N loading header | HSS1-1/2X1-1/2X1/8
+T-N loading header,end,north.door.header.center,connected,T-N diagonal 18; T-N upper east jamb,0.0,T-N loading header | HSS1-1/2X1-1/2X1/8
+T-N diagonal 8,start,north.center.top,connected,T-N top / segment 1; T-N upper east jamb,0.0,T-N diagonal 8 | HSS2X2X1/8
+T-N diagonal 8,end,E.north.bottom,connected,E.W4; E.bottom; N2; T-N,0.0,T-N diagonal 8 | HSS2X2X1/8
+T-N vertical 11,start,north.door.web.11.bottom,connected,T-N loading header,0.0,T-N vertical 11 | HSS1-1/2X1-1/2X1/8
+T-N vertical 11,end,north.door.web.11.top,connected,T-N diagonal 15; T-N diagonal 16; T-N top / segment 1,0.0,T-N vertical 11 | HSS1-1/2X1-1/2X1/8
+T-N vertical 12,start,north.door.web.12.bottom,connected,T-N diagonal 16; T-N diagonal 17; T-N loading header,0.0,T-N vertical 12 | HSS1-1/2X1-1/2X1/8
+T-N vertical 12,end,north.door.web.12.top,connected,T-N top / segment 1,0.0,T-N vertical 12 | HSS1-1/2X1-1/2X1/8
+T-N vertical 13,start,north.door.web.13.bottom,connected,T-N loading header,0.0,T-N vertical 13 | HSS1-1/2X1-1/2X1/8
+T-N vertical 13,end,north.door.web.13.top,connected,T-N diagonal 17; T-N diagonal 18; T-N top / segment 1,0.0,T-N vertical 13 | HSS1-1/2X1-1/2X1/8
+T-N diagonal 15,start,north.door.header.west,connected,T-N loading header; W.W4,0.0,T-N diagonal 15 | HSS1-1/2X1-1/2X1/8
+T-N diagonal 15,end,north.door.web.11.top,connected,T-N diagonal 16; T-N top / segment 1; T-N vertical 11,0.0,T-N diagonal 15 | HSS1-1/2X1-1/2X1/8
+T-N diagonal 16,start,north.door.web.11.top,connected,T-N diagonal 15; T-N top / segment 1; T-N vertical 11,0.0,T-N diagonal 16 | HSS1-1/2X1-1/2X1/8
+T-N diagonal 16,end,north.door.web.12.bottom,connected,T-N diagonal 17; T-N loading header; T-N vertical 12,0.0,T-N diagonal 16 | HSS1-1/2X1-1/2X1/8
+T-N diagonal 17,start,north.door.web.12.bottom,connected,T-N diagonal 16; T-N loading header; T-N vertical 12,0.0,T-N diagonal 17 | HSS1-1/2X1-1/2X1/8
+T-N diagonal 17,end,north.door.web.13.top,connected,T-N diagonal 18; T-N top / segment 1; T-N vertical 13,0.0,T-N diagonal 17 | HSS1-1/2X1-1/2X1/8
+T-N diagonal 18,start,north.door.web.13.top,connected,T-N diagonal 17; T-N top / segment 1; T-N vertical 13,0.0,T-N diagonal 18 | HSS1-1/2X1-1/2X1/8
+T-N diagonal 18,end,north.door.header.center,connected,T-N loading header; T-N upper east jamb,0.0,T-N diagonal 18 | HSS1-1/2X1-1/2X1/8
+BR-W-1,start,W.W3 @ 0.0262295081967,connected,W.W3,0.0,BR-W-1 | HSS1-1/2X1-1/2X1/8
+BR-W-1,end,W.W4 @ 0.502732240437,connected,BR-N-ground-2; T-N; W.W4; W.bottom,0.0,BR-W-1 | HSS1-1/2X1-1/2X1/8
+BR-W-2,start,W.W4 @ 0.0262295081967,connected,BR-N-ground-1; W.W4,0.0,BR-W-2 | HSS1-1/2X1-1/2X1/8
+BR-W-2,end,W.W3 @ 0.502732240437,connected,W.W3; W.bottom; W.rear.brace; W.square.brace,0.0,BR-W-2 | HSS1-1/2X1-1/2X1/8
+BR-S-1,start,S1 @ 0.051724137931,connected,S1,0.0,BR-S-1 | HSS1-1/2X1-1/2X1/8
+BR-S-1,end,S2 @ 0.991379310345,connected,E.SW0; E.bottom; S2,0.0,BR-S-1 | HSS1-1/2X1-1/2X1/8
+BR-S-2,start,S2 @ 0.051724137931,connected,S2,0.0,BR-S-2 | HSS1-1/2X1-1/2X1/8
+BR-S-2,end,S1 @ 0.991379310345,connected,S1,0.0,BR-S-2 | HSS1-1/2X1-1/2X1/8
+BR-N-ground-1,start,W.W4 @ 0.0262295081967,connected,BR-W-2; W.W4,0.0,BR-N-ground-1 | HSS2X2X1/8
+BR-N-ground-1,end,N1 / U-W @ 0.512820512821,connected,N1 / U-W; T-N,0.0,BR-N-ground-1 | HSS2X2X1/8
+BR-N-ground-2,start,N1 / U-W @ 0.0267558528428,connected,N1 / U-W,0.0,BR-N-ground-2 | HSS2-1/4X2-1/4X1/8
+BR-N-ground-2,end,W.W4 @ 0.502732240437,connected,BR-W-1; T-N; W.W4; W.bottom,0.0,BR-N-ground-2 | HSS2-1/4X2-1/4X1/8
+BR-R-main-1,start,W.slope @ 0.453003292646,connected,T-S top / segment 1; W.W1; W.slope,0.0,BR-R-main-1 | HSS2-1/4X2-1/4X1/8
+BR-R-main-1,end,E.front.slope,connected,E.clerestory; E.slope,0.0,BR-R-main-1 | HSS2-1/4X2-1/4X1/8
+BR-R-main-2,start,E.slope @ 0.453003292646,connected,E.W1; E.slope; T-S top / segment 1,0.0,BR-R-main-2 | HSS2X2X1/8
+BR-R-main-2,end,W.front.slope,connected,W.clerestory; W.slope,0.0,BR-R-main-2 | HSS2X2X1/8
+BR-R-cap-1,start,W.top @ 0.404137678347,connected,W.top,0.0,BR-R-cap-1 | HSS3X3X3/16
+BR-R-cap-1,end,E.top @ 0.892918427895,connected,E.top,0.0,BR-R-cap-1 | HSS3X3X3/16
+BR-R-cap-2,start,E.top @ 0.404137678347,connected,E.top,0.0,BR-R-cap-2 | HSS1-1/2X1-1/2X1/8
+BR-R-cap-2,end,W.top @ 0.892918427895,connected,W.top,0.0,BR-R-cap-2 | HSS1-1/2X1-1/2X1/8
+E-OB,start,EOB.south,declared overhang,,0.0,E-OB
+E-OB,end,EOB.north,declared overhang,,0.0,E-OB
+E-S,start,E-S.base,ground support,,0.0,E-S
+E-S,end,E-OB @ 0.00778210116732,connected,E-OB; East rafter 01,0.0,E-S
+E-N,start,E-N.base,ground support,,0.0,E-N
+E-N,end,E-OB @ 0.992217898833,connected,E-OB; East rafter 12,0.0,E-N
+E-M option B,start,E-M option B.base,ground support,,0.0,E-M option B
+E-M option B,end,E-M.bearing,connected,E-OB,0.0,E-M option B
+East rafter 01,start,E-OB @ 0.00778210116732,connected,E-OB; E-S,0.0,East rafter 01
+East rafter 01,end,E.slope @ 0.438622235736,connected,E.slope,0.0,East rafter 01
+East rafter 02,start,E-OB @ 0.0972762645914,connected,E-OB,0.0,East rafter 02
+East rafter 02,end,E.slope @ 0.604004390194,connected,E.slope,0.0,East rafter 02
+East rafter 03,start,E-OB @ 0.186770428016,connected,E-OB,0.0,East rafter 03
+East rafter 03,end,E.slope @ 0.769386544652,connected,E.slope,0.0,East rafter 03
+East rafter 04,start,E-OB @ 0.27626459144,connected,E-OB,0.0,East rafter 04
+East rafter 04,end,E.slope @ 0.93476869911,connected,E.slope,0.0,East rafter 04
+East rafter 05,start,E-OB @ 0.365758754864,connected,E-OB,0.0,East rafter 05
+East rafter 05,end,E.top @ 0.0761400700969,connected,E.top,0.0,East rafter 05
+East rafter 06,start,E-OB @ 0.455252918288,connected,E-OB,0.0,East rafter 06
+East rafter 06,end,E.top @ 0.201872486593,connected,E.top,0.0,East rafter 06
+East rafter 07,start,E-OB @ 0.544747081712,connected,E-OB,0.0,East rafter 07
+East rafter 07,end,E.top @ 0.327604903088,connected,E.top,0.0,East rafter 07
+East rafter 08,start,E-OB @ 0.634241245136,connected,E-OB,0.0,East rafter 08
+East rafter 08,end,E.top @ 0.453337319584,connected,E.top,0.0,East rafter 08
+East rafter 09,start,E-OB @ 0.72373540856,connected,E-OB,0.0,East rafter 09
+East rafter 09,end,E.top @ 0.57906973608,connected,E.top,0.0,East rafter 09
+East rafter 10,start,E-OB @ 0.813229571984,connected,E-OB,0.0,East rafter 10
+East rafter 10,end,E.top @ 0.704802152575,connected,E.top,0.0,East rafter 10
+East rafter 11,start,E-OB @ 0.902723735409,connected,E-OB,0.0,East rafter 11
+East rafter 11,end,E.top @ 0.830534569071,connected,E.top,0.0,East rafter 11
+East rafter 12,start,E-OB @ 0.992217898833,connected,E-N; E-OB,0.0,East rafter 12
+East rafter 12,end,E.top @ 0.956266985567,connected,E.top,0.0,East rafter 12
+Wood joist 0-0,start,T1 future floor beam @ 0.116341030195,connected,T1 future floor beam,0.0,Wood joist 0-0
+Wood joist 0-0,end,B2 future floor beam @ 0.116341030195,connected,B2 future floor beam; Wood joist 0-1,0.0,Wood joist 0-0
+Wood joist 0-1,start,B2 future floor beam @ 0.116341030195,connected,B2 future floor beam; Wood joist 0-0,0.0,Wood joist 0-1
+Wood joist 0-1,end,T-N @ 0.116341030195,connected,T-N,0.0,Wood joist 0-1
+Wood joist 1-0,start,T1 future floor beam @ 0.173179396092,connected,T1 future floor beam,0.0,Wood joist 1-0
+Wood joist 1-0,end,B2 future floor beam @ 0.173179396092,connected,B2 future floor beam; Wood joist 1-1,0.0,Wood joist 1-0
+Wood joist 1-1,start,B2 future floor beam @ 0.173179396092,connected,B2 future floor beam; Wood joist 1-0,0.0,Wood joist 1-1
+Wood joist 1-1,end,T-N @ 0.173179396092,connected,T-N,0.0,Wood joist 1-1
+Wood joist 2-0,start,T1 future floor beam @ 0.230017761989,connected,T1 future floor beam,0.0,Wood joist 2-0
+Wood joist 2-0,end,B2 future floor beam @ 0.230017761989,connected,B2 future floor beam; Wood joist 2-1,0.0,Wood joist 2-0
+Wood joist 2-1,start,B2 future floor beam @ 0.230017761989,connected,B2 future floor beam; Wood joist 2-0,0.0,Wood joist 2-1
+Wood joist 2-1,end,T-N @ 0.230017761989,connected,T-N,0.0,Wood joist 2-1
+Wood joist 3-0,start,T1 future floor beam @ 0.286856127886,connected,T1 future floor beam,0.0,Wood joist 3-0
+Wood joist 3-0,end,B2 future floor beam @ 0.286856127886,connected,B2 future floor beam; Wood joist 3-1,0.0,Wood joist 3-0
+Wood joist 3-1,start,B2 future floor beam @ 0.286856127886,connected,B2 future floor beam; Wood joist 3-0,0.0,Wood joist 3-1
+Wood joist 3-1,end,T-N @ 0.286856127886,connected,T-N,0.0,Wood joist 3-1
+Wood joist 4-0,start,T1 future floor beam @ 0.343694493783,connected,T1 future floor beam,0.0,Wood joist 4-0
+Wood joist 4-0,end,B2 future floor beam @ 0.343694493783,connected,B2 future floor beam; Wood joist 4-1,0.0,Wood joist 4-0
+Wood joist 4-1,start,B2 future floor beam @ 0.343694493783,connected,B2 future floor beam; Wood joist 4-0,0.0,Wood joist 4-1
+Wood joist 4-1,end,T-N @ 0.343694493783,connected,T-N,0.0,Wood joist 4-1
+Wood joist 5-0,start,T1 future floor beam @ 0.40053285968,connected,T1 future floor beam,0.0,Wood joist 5-0
+Wood joist 5-0,end,B2 future floor beam @ 0.40053285968,connected,B2 future floor beam; Wood joist 5-1,0.0,Wood joist 5-0
+Wood joist 5-1,start,B2 future floor beam @ 0.40053285968,connected,B2 future floor beam; Wood joist 5-0,0.0,Wood joist 5-1
+Wood joist 5-1,end,T-N @ 0.40053285968,connected,T-N,0.0,Wood joist 5-1
+Wood joist 6-0,start,T1 future floor beam @ 0.457371225577,connected,T1 future floor beam,0.0,Wood joist 6-0
+Wood joist 6-0,end,B2 future floor beam @ 0.457371225577,connected,B2 future floor beam; Wood joist 6-1,0.0,Wood joist 6-0
+Wood joist 6-1,start,B2 future floor beam @ 0.457371225577,connected,B2 future floor beam; Wood joist 6-0,0.0,Wood joist 6-1
+Wood joist 6-1,end,T-N @ 0.457371225577,connected,T-N,0.0,Wood joist 6-1
+Wood joist 7-0,start,T1 future floor beam @ 0.514209591474,connected,T1 future floor beam,0.0,Wood joist 7-0
+Wood joist 7-0,end,B2 future floor beam @ 0.514209591474,connected,B2 future floor beam; Wood joist 7-1,0.0,Wood joist 7-0
+Wood joist 7-1,start,B2 future floor beam @ 0.514209591474,connected,B2 future floor beam; Wood joist 7-0,0.0,Wood joist 7-1
+Wood joist 7-1,end,T-N @ 0.514209591474,connected,T-N,0.0,Wood joist 7-1
+Wood joist 8-0,start,T1 future floor beam @ 0.571047957371,connected,T1 future floor beam,0.0,Wood joist 8-0
+Wood joist 8-0,end,B2 future floor beam @ 0.571047957371,connected,B2 future floor beam; Wood joist 8-1,0.0,Wood joist 8-0
+Wood joist 8-1,start,B2 future floor beam @ 0.571047957371,connected,B2 future floor beam; Wood joist 8-0,0.0,Wood joist 8-1
+Wood joist 8-1,end,T-N @ 0.571047957371,connected,T-N,0.0,Wood joist 8-1
+Wood joist 9-0,start,T1 future floor beam @ 0.627886323268,connected,T1 future floor beam,0.0,Wood joist 9-0
+Wood joist 9-0,end,B2 future floor beam @ 0.627886323268,connected,B2 future floor beam; Wood joist 9-1,0.0,Wood joist 9-0
+Wood joist 9-1,start,B2 future floor beam @ 0.627886323268,connected,B2 future floor beam; Wood joist 9-0,0.0,Wood joist 9-1
+Wood joist 9-1,end,T-N @ 0.627886323268,connected,T-N,0.0,Wood joist 9-1
+Wood joist 10-0,start,T1 future floor beam @ 0.684724689165,connected,T1 future floor beam,0.0,Wood joist 10-0
+Wood joist 10-0,end,B2 future floor beam @ 0.684724689165,connected,B2 future floor beam; Wood joist 10-1,0.0,Wood joist 10-0
+Wood joist 10-1,start,B2 future floor beam @ 0.684724689165,connected,B2 future floor beam; Wood joist 10-0,0.0,Wood joist 10-1
+Wood joist 10-1,end,T-N @ 0.684724689165,connected,T-N,0.0,Wood joist 10-1
+Wood joist 11-0,start,T1 future floor beam @ 0.741563055062,connected,T1 future floor beam,0.0,Wood joist 11-0
+Wood joist 11-0,end,B2 future floor beam @ 0.741563055062,connected,B2 future floor beam; Wood joist 11-1,0.0,Wood joist 11-0
+Wood joist 11-1,start,B2 future floor beam @ 0.741563055062,connected,B2 future floor beam; Wood joist 11-0,0.0,Wood joist 11-1
+Wood joist 11-1,end,T-N @ 0.741563055062,connected,T-N,0.0,Wood joist 11-1
+Wood joist 12-0,start,T1 future floor beam @ 0.798401420959,connected,T1 future floor beam,0.0,Wood joist 12-0
+Wood joist 12-0,end,B2 future floor beam @ 0.798401420959,connected,B2 future floor beam; Wood joist 12-1,0.0,Wood joist 12-0
+Wood joist 12-1,start,B2 future floor beam @ 0.798401420959,connected,B2 future floor beam; Wood joist 12-0,0.0,Wood joist 12-1
+Wood joist 12-1,end,T-N @ 0.798401420959,connected,T-N,0.0,Wood joist 12-1
+Wood joist 13-0,start,T1 future floor beam @ 0.855239786856,connected,T1 future floor beam,0.0,Wood joist 13-0
+Wood joist 13-0,end,B2 future floor beam @ 0.855239786856,connected,B2 future floor beam; Wood joist 13-1,0.0,Wood joist 13-0
+Wood joist 13-1,start,B2 future floor beam @ 0.855239786856,connected,B2 future floor beam; Wood joist 13-0,0.0,Wood joist 13-1
+Wood joist 13-1,end,T-N @ 0.855239786856,connected,T-N,0.0,Wood joist 13-1
+Wood joist 14-0,start,T1 future floor beam @ 0.907637655417,connected,T1 future floor beam,0.0,Wood joist 14-0
+Wood joist 14-0,end,B2 future floor beam @ 0.907637655417,connected,B2 future floor beam; Wood joist 14-1,0.0,Wood joist 14-0
+Wood joist 14-1,start,B2 future floor beam @ 0.907637655417,connected,B2 future floor beam; Wood joist 14-0,0.0,Wood joist 14-1
+Wood joist 14-1,end,T-N @ 0.907637655417,connected,T-N,0.0,Wood joist 14-1
+T-N diagonal 9,start,north.center.bottom,connected,T-N; T-N upper east jamb,0.0,T-N diagonal 9 | HSS1-1/2X1-1/2X1/8
+T-N diagonal 9,end,E.W4 @ 0.96043956044,connected,E.W4; T-N top / segment 1,0.0,T-N diagonal 9 | HSS1-1/2X1-1/2X1/8

@@ -1,0 +1,138 @@
+{
+  "crossbeam_contact_checks": [
+    {
+      "member": "T-SO | W6X8.5",
+      "gap_inches": {
+        "west": 0.0,
+        "east": 0.0
+      }
+    },
+    {
+      "member": "T-S | HSS1-1/2X1-1/2X1/8",
+      "gap_inches": {
+        "west": 0.0,
+        "east": 0.0
+      }
+    },
+    {
+      "member": "T-N | HSS3X3X1/8",
+      "gap_inches": {
+        "west": 0.0,
+        "east": 0.0
+      }
+    },
+    {
+      "member": "T1 upper lower chord | HSS1-1/2X1-1/2X3/16",
+      "gap_inches": {
+        "west": 0.0,
+        "east": 3.580687802255623e-14
+      }
+    },
+    {
+      "member": "T1 future floor beam | W6X8.5",
+      "gap_inches": {
+        "west": 0.0,
+        "east": 0.0
+      }
+    },
+    {
+      "member": "B2 future floor beam | W8X24",
+      "gap_inches": {
+        "west": 0.0,
+        "east": 0.0
+      }
+    },
+    {
+      "member": "T-S top / segment 1 | HSS1-1/2X1-1/2X1/8",
+      "gap_inches": {
+        "west": 0.0,
+        "east": 1.3987061727561027e-16
+      }
+    },
+    {
+      "member": "T1 top / segment 1 | HSS2X2X1/8",
+      "gap_inches": {
+        "west": 0.0,
+        "east": 3.580687802255623e-14
+      }
+    },
+    {
+      "member": "T-N top / segment 1 | HSS1-1/2X1-1/2X1/8",
+      "gap_inches": {
+        "west": 0.0,
+        "east": 0.0
+      }
+    }
+  ],
+  "matched_truss_member_count": 10,
+  "east_truss_matches_west": true,
+  "west_markup": {
+    "removed_members": [
+      "T-W vertical 1",
+      "West revised diagonal south",
+      "T-W balcony header",
+      "T-W vertical 13",
+      "T-W diagonal 15",
+      "T-W diagonal 16",
+      "T-W top / segment 1",
+      "T-W top / segment 2",
+      "T-W vertical 6",
+      "T-W vertical 3",
+      "T-W vertical 4",
+      "T-W diagonal 9",
+      "T-W diagonal 10"
+    ],
+    "added_upper_bay_x": false,
+    "brace_choice": "retain rear north-rising diagonal; move south-rising diagonal into new square bay",
+    "clerestory_post_section_in": [
+      4,
+      4
+    ],
+    "clerestory_vertical_y": 76.07183683382158,
+    "clerestory_vertical_top_z": 226.25,
+    "square_upper_chord_top_z": 231.25,
+    "trimmed_posts": [
+      "W1 | HSS4X4X3/16",
+      "W3 | HSS4X4X1/2",
+      "W4 | HSS4X4X1/4",
+      "S1 | HSS4X4X3/16",
+      "S2 | HSS4X4X3/16",
+      "N2 | HSS4X4X1/4",
+      "S3 | HSS4X4X3/16",
+      "SW0 | HSS4X4X3/16",
+      "N1 / U-W | HSS6X6X1/4"
+    ],
+    "note": "Sketch-directed geometry; sizes provisional; X crossing and joints not detailed. Flush solar-plane chord revision remains separate."
+  },
+  "extension_walls": [
+    "W3-W4",
+    "W3-WB3"
+  ],
+  "extension_wall_height_in": 98.5,
+  "extension_source_north_y": 269,
+  "extension_current_north_face_y": 261.0,
+  "balcony_removed": true,
+  "former_balcony_opening": "matching west wall infill",
+  "north_face_y_in": 261.0,
+  "existing_north_face_y_in": 249,
+  "north_offset_in": 12,
+  "valid_shapes": 383,
+  "vertical_clerestory_panes": 6,
+  "clerestory_height_in": 22.956837567297384,
+  "fascia_height_in": 4,
+  "soffit_depths_in": {
+    "front": 4,
+    "rear": 4,
+    "west": 8,
+    "east": 8
+  },
+  "cap_north_edge_y_in": 265.0,
+  "cap_forward_extension_in": 46.69061227794052,
+  "pv_panels": 18,
+  "east_rafters": 12,
+  "rafter_spacing_in": 23,
+  "rafter_endpoint_checks": "12 lower endpoints on E-OB axis; 12 upper endpoints on mirrored west/east top-chord profile",
+  "upper_east_x": 211.5,
+  "east_beam_x": 247.5,
+  "status": "rough massing; not structural analysis"
+}
