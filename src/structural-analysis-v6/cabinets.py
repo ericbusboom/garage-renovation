@@ -239,6 +239,9 @@ SHED_ITEMS = [
     dict(n='RACK', kind='rack', wall='east', along=27.0,
          width=22.0, depth=14.0, h=24.0, z=48.0,
          what='wall-mounted 19 in. rack · conceptual 12U · 14 in. deep'),
+    dict(n='WH', kind='water_heater', wall='floor', east=5.0, north=27.0,
+         width=20.0, depth=20.0, h=29.0, z=0.0, shape='cylinder',
+         what='15 gal electric water heater · 20 in. diameter × 29 in. high'),
 ]
 
 KINDS = {
@@ -251,6 +254,7 @@ KINDS = {
     'electrical': dict(face='#b9c4cc', label='Electrical panel'),
     'sprinkler': dict(face='#b84a45', label='Sprinkler cabinet'),
     'rack': dict(face='#3f4852', label='Network rack'),
+    'water_heater': dict(face='#e7e9eb', label='Water heater'),
 }
 EDGE = '#141618'               # near-black edges so the boxes read as boxes
 FLOOR = '#d8c69f'              # plywood
@@ -683,6 +687,12 @@ def shed_item_rows(frame: framemod.Frame) -> list[dict]:
             y1 = by1
             y0 = y1 - item['depth']
             faces = 'south'
+        elif item['wall'] == 'floor':
+            x0 = bx0 + item['east']
+            x1 = x0 + item['width']
+            y0 = by0 + item['north']
+            y1 = y0 + item['depth']
+            faces = 'freestanding'
         else:
             raise ValueError(f'unknown shed wall {item["wall"]!r}')
         row = dict(item, x0=x0, x1=x1, y0=y0, y1=y1,
@@ -727,13 +737,19 @@ def shed_traces(frame: framemod.Frame) -> list:
     rows = shed_item_rows(frame)
     for r in rows:
         kind = KINDS[r['kind']]
-        v, f = _box(r['x0'], r['x1'], r['y0'], r['y1'], r['z0'], r['top'])
-        size = f'{r["width"]:g} wide × {r["depth"]:g} deep × {r["h"]:g} high'
+        shape = _cylinder if r.get('shape') == 'cylinder' else _box
+        v, f = shape(r['x0'], r['x1'], r['y0'], r['y1'], r['z0'], r['top'])
+        size = (f'{r["width"]:g} diameter × {r["h"]:g} high'
+                if r.get('shape') == 'cylinder' else
+                f'{r["width"]:g} wide × {r["depth"]:g} deep × {r["h"]:g} high')
+        location = ('on the concrete pad' if r['wall'] == 'floor' else
+                    f'on {r["wall"]} shed wall · faces {r["faces"]}')
         hover = (f'<b>{kind["label"]} {r["n"]}</b><br>{r["what"]}<br>{size} in.'
-                 f'<br>on {r["wall"]} shed wall · faces {r["faces"]}'
+                 f'<br>{location}'
                  f'<br>bottom z = {r["z0"]:g} · top z = {r["top"]:g}')
         out.append(_mesh(v, f, kind['face'], f'shed {r["n"]}', hover))
-        ex, ey, ez = _box_edges(r['x0'], r['x1'], r['y0'], r['y1'], r['z0'], r['top'])
+        edge_shape = _cylinder_edges if r.get('shape') == 'cylinder' else _box_edges
+        ex, ey, ez = edge_shape(r['x0'], r['x1'], r['y0'], r['y1'], r['z0'], r['top'])
         out.append(go.Scatter3d(x=ex, y=ey, z=ez, mode='lines',
                                 line=dict(color=EDGE, width=4), hoverinfo='skip',
                                 showlegend=False, visible=False,
@@ -764,7 +780,8 @@ def shed_html(frame: framemod.Frame) -> str:
   {SHED_WALL_T:g}-inch infill walls. The Powerwall faces north from the south
   wall. The 100 A panel and shallow sprinkler cabinet face south from the
   existing building wall at the north side. The shallow rack faces west from
-  the east wall.</p>
+  the east wall. The 15-gallon electric water heater stands on the concrete pad
+  in the west-center floor area.</p>
   <table style="border-collapse:collapse;font-size:13px">
     <tr style="text-align:left"><th>#</th><th>item</th><th>wall</th>
       <th>width × depth × height</th><th>z</th><th>basis</th></tr>
@@ -772,7 +789,7 @@ def shed_html(frame: framemod.Frame) -> str:
   </table>
   <p><small>The panel, sprinkler cabinet and rack envelopes are layout assumptions. Final equipment,
   working clearances, ventilation, weather rating, conduit routes, mounting and
-  electrical design remain to be selected.</small></p>
+  electrical/plumbing design remain to be selected.</small></p>
 </div>
 """
 
