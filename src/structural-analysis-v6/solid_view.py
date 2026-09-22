@@ -187,7 +187,7 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
 <div id="viewbar">{items}
   {stage_hint}
   <span class="hint">Cabinet layout puts in the deck, the correctly aligned east
-  wall, the gray concrete shed pad and everything stored on the loft; tick
+  wall, the concrete shed walls and equipment, and everything stored on the loft; tick
   <b>Hide existing roof</b> with it to see down into the loft.</span>
 </div>
 <style>
@@ -472,7 +472,8 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
     extra = report_html if report_html is not None else viewer._legend_html(summary)
     if cabinet_rows:
         import cabinets as CB
-        extra += (CB.legend_html(cabinet_rows) + CB.walkway_html(walk_rows)
+        extra += (CB.legend_html(cabinet_rows) + CB.shed_html(frame)
+                  + CB.walkway_html(walk_rows)
                   + CB.loads_html(frame, cabinet_rows))
     if plan_png and Path(plan_png).exists():
         b64 = base64.b64encode(Path(plan_png).read_bytes()).decode()

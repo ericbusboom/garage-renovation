@@ -49,7 +49,7 @@ S3_SOUTH = NORTH_FACE - 90.0
 
 NORTH_POST = 'N-M2'
 NORTH_POST_X = 16.75
-POWERWALL_MOUNT_Z = 12.0       # bottom of the unit above the deck
+SHED_WALL_T = 5.0              # conceptual infill wall thickness
 
 #: The east wall is now stacked three deep, so there are three set-out lines
 #: rather than one. Everything on the shelf hangs off them.
@@ -77,10 +77,8 @@ STORAGE_DENSITY = 12.13
 #: rails. S3 holds the column they vacated and D1 stands south of it. Cabinets 3
 #: and 4 have been deleted and their numbers retired.
 #:
-#: Cabinet 5 is back on the shelf, in the bay cabinet 3 left, clearing the slope
-#: by 1.07 in. It spent one revision on the west wall between W3 and W4; the
-#: west run of the walkway now occupies that strip, and the only other stretch
-#: of west-facing wall belongs to the Powerwall.
+#: Cabinet 5 remains on the west wall in the W3-W4 bay. The Powerwall has moved
+#: off that wall to the new shed equipment area.
 #:
 #: The machines are turned, two 24 in. bodies filling the 48 in. cabinet 5
 #: originally occupied. Turned, they are 48 in. deep instead of 24, so they run
@@ -108,16 +106,8 @@ ITEMS = [
          x=EAST_SHELF_X - 1 * 48.0, y=CLERESTORY_Y),
     dict(n='2', kind='cabinet', w=48.0, d=24.0, h=72.0,
          x=EAST_SHELF_X - 2 * 48.0, y=CLERESTORY_Y),
-    # 5 on the west wall, butted to the Powerwall's north end. Both now sit
-    # wholly in the W3-W4 bay: 24 for the battery plus 48 for the cabinet is 72,
-    # and the bay is 81 clear to the inside face of the north wall, so there are
-    # 9 in. left over at the north end.
-    #
-    # Those 9 in. are the whole margin for any side clearance Tesla's
-    # installation manual requires next to the battery -- the datasheet gives
-    # dimensions and mounting options but no clearances, so none is assumed
-    # here. Spending them means putting the cabinet against the north wall at
-    # y = 218 and leaving the gap between the two instead.
+    # 5 remains at its previous west-wall location in the W3-W4 bay. The 24 in.
+    # strip south of it is now open because the Powerwall moved to the shed.
     dict(n='5', kind='cabinet', w=24.0, d=48.0, h=64.0,
          x=WEST_FACE, y=W3_Y + 24.0),
     # B1 measured properly: 50 long, 26 wide, 46 high. Stood on its narrow face
@@ -230,22 +220,22 @@ ITEMS = [
     dict(n='CNCg', kind='machine', w=60.0, d=13.0, h=53.25,
          x=STAIR_EAST, y=CLERESTORY_Y - 13.0, weight=100.0,
          what='Shapeoko gantry, parked at the north end'),
-    # Tesla Powerwall 3 on the west wall, its south edge on the W3 post line
-    # rather than centred on it. Centred, it reached 12 in. south of W3 and took
-    # a bite out of the W2-W3 bay; the owner wants that bay -- the one beside
-    # the stairwell, between the head of the stair and W3 -- left whole for a
-    # window or something on the wall. South edge on the post keeps the battery
-    # entirely in the W3-W4 bay.
-    #
-    # Turned to the wall: 24 in. of its width runs north-south along the wall
-    # and the 7.6 in. depth projects east into the room. 1105 x 609 x 193 mm and
-    # 291 lb installed, per the Tesla datasheet; it is the only item here that
-    # does not stand on the floor.
-    dict(n='PW', kind='battery', mount='wall', z=POWERWALL_MOUNT_Z,
-         w=7.6, d=24.0, h=43.5,
-         x=WEST_FACE, y=W3_Y,
-         what='Tesla Powerwall 3, 291 lb, wall mounted',
-         weight=291.2),
+]
+
+#: Equipment on the two new shed walls. ``along`` is measured from the west
+#: end of the south wall or the south end of the east wall. The rack envelope
+#: is intentionally an assumption: 12U gives 21 in. of rail height, represented
+#: here by a 24 in. tall cabinet, and the owner selected the shallow 14 in. depth.
+SHED_ITEMS = [
+    dict(n='PW', kind='battery', wall='south', along=4.0,
+         width=24.0, depth=7.6, h=43.5, z=12.0,
+         what='Tesla Powerwall 3 · 291 lb · moved from the loft wall'),
+    dict(n='EP', kind='electrical', wall='south', along=34.0,
+         width=16.0, depth=5.0, h=30.0, z=48.0,
+         what='100 A electrical panel · conceptual 16 × 5 × 30 in. envelope'),
+    dict(n='RACK', kind='rack', wall='east', along=27.0,
+         width=22.0, depth=14.0, h=24.0, z=48.0,
+         what='wall-mounted 19 in. rack · conceptual 12U · 14 in. deep'),
 ]
 
 KINDS = {
@@ -255,6 +245,8 @@ KINDS = {
     'shelving': dict(face='#9ca3aa', label='Shelving'),    # bare steel
     'compressor': dict(face='#5b6a78', label='Compressor'),   # painted steel
     'battery': dict(face='#eceff1', label='Battery'),         # Powerwall white
+    'electrical': dict(face='#b9c4cc', label='Electrical panel'),
+    'rack': dict(face='#3f4852', label='Network rack'),
 }
 EDGE = '#141618'               # near-black edges so the boxes read as boxes
 FLOOR = '#d8c69f'              # plywood
@@ -651,8 +643,8 @@ def east_wall_traces(frame: framemod.Frame) -> list:
     return out
 
 
-def shed_traces(frame: framemod.Frame) -> list:
-    """Concrete pad south of the existing wall, bounded by S1 and E-S2."""
+def _shed_bounds(frame: framemod.Frame) -> tuple[float, float, float, float]:
+    """Interior plan bounds: west, east, south, existing-building wall."""
     s1 = _ends(frame, 'S1')
     es2 = _ends(frame, 'E-S2')
     x0 = next(p[0] for p in s1 if abs(p[2]) < 1e-6)
@@ -661,14 +653,116 @@ def shed_traces(frame: framemod.Frame) -> list:
     if abs(next(p[1] for p in es2 if abs(p[2]) < 1e-6) - y0) > 1e-6:
         raise ValueError('S1 and E-S2 do not share the shed outer line')
     y1 = 0.0                       # exterior face of the existing south wall
+    return min(x0, x1), max(x0, x1), y0, y1
+
+
+def shed_item_rows(frame: framemod.Frame) -> list[dict]:
+    """Resolve wall-relative shed equipment into model coordinates."""
+    bx0, bx1, by0, by1 = _shed_bounds(frame)
+    rows = []
+    for item in SHED_ITEMS:
+        if item['wall'] == 'south':
+            x0 = bx0 + item['along']
+            x1 = x0 + item['width']
+            y0 = by0 + SHED_WALL_T
+            y1 = y0 + item['depth']
+            faces = 'north'
+        elif item['wall'] == 'east':
+            x1 = bx1 - SHED_WALL_T
+            x0 = x1 - item['depth']
+            y0 = by0 + item['along']
+            y1 = y0 + item['width']
+            faces = 'west'
+        else:
+            raise ValueError(f'unknown shed wall {item["wall"]!r}')
+        row = dict(item, x0=x0, x1=x1, y0=y0, y1=y1,
+                   z0=item['z'], top=item['z'] + item['h'], faces=faces)
+        if x0 < bx0 - 0.01 or x1 > bx1 + 0.01 or y0 < by0 - 0.01 or y1 > by1 + 0.01:
+            raise ValueError(f'shed item {item["n"]} falls outside the shed walls')
+        rows.append(row)
+    for i, a in enumerate(rows):
+        for b in rows[i + 1:]:
+            dx = min(a['x1'], b['x1']) - max(a['x0'], b['x0'])
+            dy = min(a['y1'], b['y1']) - max(a['y0'], b['y0'])
+            dz = min(a['top'], b['top']) - max(a['z0'], b['z0'])
+            if dx > 0.01 and dy > 0.01 and dz > 0.01:
+                raise ValueError(f'shed items {a["n"]} and {b["n"]} overlap')
+    return rows
+
+
+def shed_traces(frame: framemod.Frame) -> list:
+    """Concrete pad, south/east infill walls, and wall-mounted equipment."""
+    x0, x1, y0, y1 = _shed_bounds(frame)
     z0, z1 = -4.0, 0.0            # conceptual four-inch slab at ground datum
     v, f = _box(min(x0, x1), max(x0, x1), y0, y1, z0, z1)
     area = abs((x1 - x0) * (y1 - y0)) / 144.0
-    return [_mesh(v, f, CONCRETE, 'shed concrete pad',
-                  f'<b>Shed area — concrete</b><br>S1 to E-S2 · existing south '
-                  f'wall to outer line<br>{abs(x1-x0):g} × {abs(y1-y0):g} in. · '
-                  f'{area:.1f} sq ft<br>4 in. conceptual slab; equipment layout '
-                  f'and slab design pending', opacity=0.96)]
+    out = [_mesh(v, f, CONCRETE, 'shed concrete pad',
+                 f'<b>Shed area — concrete</b><br>S1 to E-S2 · existing south '
+                 f'wall to outer line<br>{abs(x1-x0):g} × {abs(y1-y0):g} in. · '
+                 f'{area:.1f} sq ft<br>4 in. conceptual slab', opacity=0.96)]
+
+    south_top = _ends(frame, 'B-SO')[0][2] - frame.section_of['B-SO'].d / 2.0
+    east_top = _ends(frame, 'BE')[0][2] - frame.section_of['BE'].d / 2.0
+    wall_specs = [
+        ('south', (x0, x1, y0, y0 + SHED_WALL_T, 0.0, south_top)),
+        ('east', (x1 - SHED_WALL_T, x1, y0, y1, 0.0, east_top)),
+    ]
+    for name, bounds in wall_specs:
+        v, f = _box(*bounds)
+        out.append(_mesh(v, f, WALL, f'shed {name} wall',
+                         f'<b>Shed {name} infill wall</b><br>{SHED_WALL_T:g} in. '
+                         f'conceptual thickness · to underside of steel',
+                         opacity=0.72))
+
+    rows = shed_item_rows(frame)
+    for r in rows:
+        kind = KINDS[r['kind']]
+        v, f = _box(r['x0'], r['x1'], r['y0'], r['y1'], r['z0'], r['top'])
+        size = f'{r["width"]:g} wide × {r["depth"]:g} deep × {r["h"]:g} high'
+        hover = (f'<b>{kind["label"]} {r["n"]}</b><br>{r["what"]}<br>{size} in.'
+                 f'<br>on {r["wall"]} shed wall · faces {r["faces"]}'
+                 f'<br>bottom z = {r["z0"]:g} · top z = {r["top"]:g}')
+        out.append(_mesh(v, f, kind['face'], f'shed {r["n"]}', hover))
+        ex, ey, ez = _box_edges(r['x0'], r['x1'], r['y0'], r['y1'], r['z0'], r['top'])
+        out.append(go.Scatter3d(x=ex, y=ey, z=ez, mode='lines',
+                                line=dict(color=EDGE, width=4), hoverinfo='skip',
+                                showlegend=False, visible=False,
+                                name=f'shed {r["n"]} edges'))
+    out.append(go.Scatter3d(
+        x=[(r['x0'] + r['x1']) / 2 for r in rows],
+        y=[(r['y0'] + r['y1']) / 2 for r in rows],
+        z=[r['top'] + 5.0 for r in rows], mode='text',
+        text=[r['n'] for r in rows], textposition='middle center',
+        textfont=dict(size=20, color=EDGE, family='Helvetica, Arial'),
+        hoverinfo='skip', showlegend=False, visible=False,
+        name='shed equipment labels'))
+    return out
+
+
+def shed_html(frame: framemod.Frame) -> str:
+    """Short schedule for the wall-mounted shed equipment."""
+    rows = shed_item_rows(frame)
+    body = ''.join(
+        f'<tr><td><b>{r["n"]}</b></td><td>{KINDS[r["kind"]]["label"]}</td>'
+        f'<td>{r["wall"]}</td><td>{r["width"]:g} × {r["depth"]:g} × '
+        f'{r["h"]:g} in.</td><td>{r["z0"]:g} → {r["top"]:g}</td>'
+        f'<td>{r["what"]}</td></tr>' for r in rows)
+    return f"""
+<div class="notes">
+  <h2>Concrete shed equipment</h2>
+  <p>The shed is enclosed on its south and east sides with conceptual
+  {SHED_WALL_T:g}-inch infill walls. The Powerwall and 100 A panel face north
+  from the south wall. The shallow rack faces west from the east wall.</p>
+  <table style="border-collapse:collapse;font-size:13px">
+    <tr style="text-align:left"><th>#</th><th>item</th><th>wall</th>
+      <th>width × depth × height</th><th>z</th><th>basis</th></tr>
+    {body}
+  </table>
+  <p><small>The panel and rack envelopes are layout assumptions. Final equipment,
+  working clearances, ventilation, weather rating, conduit routes, mounting and
+  electrical design remain to be selected.</small></p>
+</div>
+"""
 
 
 def item_traces(frame: framemod.Frame) -> tuple[list, list[dict]]:
@@ -744,9 +838,7 @@ def loads_html(frame: framemod.Frame, rows: list[dict]) -> str:
     """What the stored kit weighs, and what it does to the deck."""
     area = deck_area_sf(frame)
     on_floor = [r for r in rows if r['mount'] == 'floor']
-    on_wall = [r for r in rows if r['mount'] != 'floor']
     w_floor = sum(r['weight'] for r in on_floor)
-    w_wall = sum(r['weight'] for r in on_wall)
     design = 100.0
     worst = max(on_floor, key=lambda r: r['psf'])
     body = ''.join(
@@ -761,7 +853,7 @@ def loads_html(frame: framemod.Frame, rows: list[dict]) -> str:
     return f"""
 <div class="notes">
   <h2>Stored load</h2>
-  <p>Machines and the battery are at their stated weights. Everything else —
+  <p>Machines are at their stated weights. Everything else —
   cabinets, shelving, the crate — is stored goods at
   <b>{STORAGE_DENSITY:g}&nbsp;lb per cubic foot</b> of its envelope.</p>
   <table style="border-collapse:collapse;font-size:13px">
@@ -773,9 +865,6 @@ def loads_html(frame: framemod.Frame, rows: list[dict]) -> str:
       <td style="text-align:right">{w_floor:,.0f} lb</td><td></td>
       <td style="text-align:right">{area:.0f}</td>
       <td style="text-align:right">{w_floor / area:.1f}</td></tr>
-    <tr><td colspan="3">hung on the wall</td>
-      <td style="text-align:right">{w_wall:,.0f} lb</td>
-      <td colspan="3">into BW at the W3 line, not onto the deck</td></tr>
   </table>
   <p><b>{w_floor:,.0f} lb over {area:.0f} sq ft of deck — an average of
   {w_floor / area:.1f} psf, {100 * w_floor / (design * area):.0f}% of the
