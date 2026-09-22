@@ -62,7 +62,8 @@ def clashes(frame: framemod.Frame, member: str) -> bool:
 
 
 def before_demo(frame: framemod.Frame, omit: set[str] = frozenset(),
-                defer: set[str] = frozenset()) -> dict:
+                defer: set[str] = frozenset(),
+                include: set[str] = frozenset()) -> dict:
     """Split the frame into what goes up first and what waits for the demolition.
 
     Clearing the roof is necessary but not sufficient. A member also has to have
@@ -76,6 +77,14 @@ def before_demo(frame: framemod.Frame, omit: set[str] = frozenset(),
     build, wait, penetrating = [], [], []
     for member in sorted(frame.members):
         if member in omit:
+            continue
+        if member in include:
+            # An explicit erection decision can override the conservative clash
+            # screen.  It still goes through the support-chain pruning below,
+            # so an asserted member cannot remain floating by itself.
+            build.append(member)
+            if interference(frame, member) > 0:
+                penetrating.append(member)
             continue
         if member in defer:
             # Held back by owner direction rather than by geometry.

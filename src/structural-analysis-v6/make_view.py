@@ -247,7 +247,11 @@ def main() -> None:
     import phasing
     import plan as plan_mod
     import solid_view
-    stage = phasing.before_demo(built, defer=set() if os.environ.get('NO_DEFER') == '1' else set(OR.DEFER_BEFORE_DEMO))
+    stage = phasing.before_demo(
+        built,
+        defer=set() if os.environ.get('NO_DEFER') == '1' else set(OR.DEFER_BEFORE_DEMO),
+        include=set(OR.BUILD_BEFORE_DEMO),
+    )
     summary.setdefault('phasing', {}).update(
         before_demo=stage['build'], waits=stage['wait'],
         eave_penetrations=stage['penetrating'])

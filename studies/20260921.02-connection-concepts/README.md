@@ -56,4 +56,8 @@ The present force results support treating `BW` as an active lateral member: it 
 
 There are 29 amber members. Until a released-joint rerun passes, the reported H/414 drift belongs to the current partly implicit rigid-joint model; it is not proof that the two red frames alone provide that stiffness.
 
+## Pre-demolition correction
+
+`B-S` and `E.top` clear the existing roof and remain in the early erection stage. `E.top` is shown with its real support chain: the continuous `E.clerestory` and `E.W3` east wall-line posts. Those posts require local work at the existing east eave, but they do not require removal of the roof field. The phase filter continues to prune an asserted member if its supporting members are absent, so `E.top` cannot appear as a floating beam.
+
 The preferred fabrication direction is therefore **a small number of shop-welded lateral modules with many field-bolted simple attachments**, rather than welding the whole building together in the field or treating every joint as free to rotate.

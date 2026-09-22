@@ -42,8 +42,7 @@ RAISED_BEAM = 'B-SO'
 
 #: Held out of the pre-demolition stage by owner direction, not by geometry.
 #:
-#: ``B-S`` and ``BEW`` foul the existing eave by 1.6 and 1.0 in. and would
-#: otherwise qualify as a trim. The owner has ruled them out of the early stage.
+#: ``BEW`` fouls the existing eave by about an inch and is held for demolition.
 #:
 #: The four east posts follow them, and that is arithmetic rather than a second
 #: decision: ``BEW`` is the only thing tying their tops north-to-south. The
@@ -51,12 +50,25 @@ RAISED_BEAM = 'B-SO'
 #: way, so with ``BEW`` deferred each one is a pinned-base cantilever with a free
 #: top and the stage is a mechanism. A post cannot be stood and left untied.
 DEFER_BEFORE_DEMO = {
-    'B-S': 'owner direction',
     'BEW': 'owner direction',
     'E-S': 'tied only by BEW; follows it',
     'E-N': 'tied only by BEW; follows it',
     'E-M/B': 'tied only by BEW; follows it',
     'E-M1/B': 'tied only by BEW; follows it',
+}
+
+#: Members the owner has confirmed can be erected before roof demolition.
+#:
+#: ``B-S`` and ``E.top`` themselves clear the existing roof.  The continuous
+#: east posts are included with ``E.top`` because they are its actual supports;
+#: they run at the east wall/eave and require local openings there, rather than
+#: removal of the roof field.  Keeping only E.top would make the phase drawing
+#: look possible while leaving the beam unsupported.
+BUILD_BEFORE_DEMO = {
+    'B-S': 'clears the existing roof; owner confirmed early installation',
+    'E.clerestory': 'continuous east wall-line post supporting E.top',
+    'E.W3': 'continuous east wall-line post supporting E.top',
+    'E.top': 'clears the existing roof; supported by the early east posts',
 }
 
 

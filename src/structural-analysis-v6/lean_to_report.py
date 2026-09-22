@@ -9,7 +9,8 @@ import cost
 import frame as F
 import moment_frames as MF
 f,s,g=L.build()
-stage=phasing.before_demo(f,defer=set(OR.DEFER_BEFORE_DEMO))
+stage=phasing.before_demo(f,defer=set(OR.DEFER_BEFORE_DEMO),
+                          include=set(OR.BUILD_BEFORE_DEMO))
 d=json.loads((L.OUT/'lean-to-rafters.json').read_text())
 r=L.T.A.Result(**{k:d[k] for k in {x.name for x in fields(L.T.A.Result)} if k in d and k!='members'})
 r.members={m:L.T.A.MemberOutcome(**v) for m,v in d['members'].items()}
@@ -35,7 +36,7 @@ report=f'''<style>body{{font-family:system-ui;margin:16px;color:#222}}#frameplot
 <p><b>No actual fastener schedule exists.</b> The cost model counts {quantities.steel_joints} fitted steel ends and carries a budgeting allowance for about {round(quantities.steel_joints/2)} field-bolted connection locations, plus shop fitting/welding and end plates on {quantities.beams} W-shape pieces. Those are cost placeholders, not bolt counts, screw counts, weld sizes or approved joint details. The {len(f.links)} short analytical links transfer loads across bearing offsets; they do not prove that the physical connection is welded or moment-resisting.</p>
 <p><b>Moment-frame designation:</b> the new “What are the moment frames?” view marks two intentional ground-to-floor longitudinal frames in red: the west <b>BW</b> line (BW with SW0/W1/W2/W3/W4) and the east <b>BE</b> line (BE with E-S2/E-S3/E-N2). Green members are diagonal bracing; blue members are deliberately simple/pinned. The <b>{moment_audit['counts']['unassigned']} amber members</b> are the important warning: the solver currently transfers moment through them, but they have not been assigned to a deliberate moment frame. The upper roof and clerestory are still largely in this category and must be released or formally added to the lateral system before connection detailing.</p>
 <table><tr><th style="color:#c83e4d">Red</th><td>designated moment-frame member</td><th style="color:#6b8e23">Green</th><td>braced-frame member</td></tr><tr><th style="color:#377eb8">Blue</th><td>simple or pin-ended</td><th style="color:#d89028">Amber</th><td>rigid in solver; lateral role unresolved</td></tr></table>
-<p><b>Pre-demo:</b> the restored control shows {len(stage['build'])} members that clear the existing roof and have a supported first-stage load path. It hides {len(stage['wait'])} members that wait for roof demolition. Five early members need only limited eave penetrations or trimming; temporary erection stability still needs its own bracing plan.</p>
+<p><b>Pre-demo:</b> the restored control shows {len(stage['build'])} members that clear the existing roof or can be erected with localized eave work and have a supported first-stage load path. It hides {len(stage['wait'])} members that wait for roof demolition. {len(stage['penetrating'])} early members need limited eave penetrations or trimming; temporary erection stability still needs its own bracing plan.</p>
 <p>Proposed fit and preliminary screening, not a construction design. Connection plates, bolts, welds, local HSS/flange strength, uplift attachment and foundations remain unsized. The inherited steep-canopy wind approximation needs project-specific verification; cladding edge overhangs and attachment are also not checked. The rafter top is about 50 in. above the loft beam axis at the high end and 7 in. at the low end, so this covers the side strip rather than usable standing-height loft space. Simple connections must accommodate the modeled rotation: <a href="https://www.aisc.org/aisc/solutions-center/engineering-faqs/5-connections/">AISC connection guidance</a>.</p></section>'''
 SV.EX.THICK['south']=5
 original=SV._member_mesh
