@@ -27,6 +27,7 @@ import frame as framemod
 import sections as S
 import viewer
 import visualize
+import moment_frames as MF
 
 # --------------------------------------------------------------------------
 # geometry
@@ -107,7 +108,11 @@ def _member_mesh(a, b, sec: S.Section):
 #: other two -- what to do with a member, and what happens without it -- speak
 #: to the cost-reduction study rather than to the room, and the owner uses this
 #: page to lay the room out.
-SOLID_MODES = ('utilisation', 'governing')
+SOLID_MODES = ('utilisation', 'governing', 'connection')
+CONNECTION_MODE = ('connection', 'What are the moment frames?',
+                   'Red: designated moment-frame beams and columns. Green: '
+                   'braced-frame members. Blue: simple/pinned framing. Amber: '
+                   'the solver transfers moment, but no lateral role is assigned.')
 
 #: The plot div's id, so the checkboxes below it can find the graph.
 PLOT_ID = 'frameplot'
@@ -165,17 +170,22 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
         boxes.append(('roof', 'Hide existing roof', True))
         boxes.append(('frame', 'Hide new frame', False))
     if stage:
-        boxes.append(('stage', 'Before demo only', False))
+        boxes.append(('stage', 'Pre-demo frame', False))
     if extra_range:
         boxes.append(('extra', 'Cabinet layout', False))
     if not boxes:
         return ''
     items = ''.join(
         f'<label class="cbx"><input type="checkbox" id="cb_{key}"'
-        f'{" checked" if on else ""} onchange="applyVis()"> {label}</label>'
+        f'{" checked" if on else ""} onchange="'
+        f'{"toggleStage()" if key == "stage" else "applyVis()"}"> {label}</label>'
         for key, label, on in boxes)
+    stage_hint = (f'<span class="phasehint"><b>Pre-demo frame</b> shows the '
+                  f'members that can be erected before the existing roof is removed.</span>'
+                  if stage else '')
     return f"""
 <div id="viewbar">{items}
+  {stage_hint}
   <span class="hint">Cabinet layout puts in the deck, the correctly aligned east
   wall, the gray concrete shed pad and everything stored on the loft; tick
   <b>Hide existing roof</b> with it to see down into the loft.</span>
@@ -190,13 +200,27 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
   #viewbar input {{ width: 15px; height: 15px; cursor: pointer; margin: 0; }}
   #viewbar .hint {{ color: #5c6672; font-size: 12px; flex: 1 1 260px;
                     min-width: 220px; }}
+  #viewbar .phasehint {{ color: #5c6672; font-size: 12px; flex: 1 1 260px;
+                         min-width: 220px; }}
   @media (prefers-color-scheme: dark) {{
     #viewbar {{ color: #e8eaec; }}
-    #viewbar .hint {{ color: #9aa3ab; }}
+    #viewbar .hint, #viewbar .phasehint {{ color: #9aa3ab; }}
   }}
 </style>
 <script>
   var VIS = {json.dumps(groups)};
+  function toggleStage() {{
+    var stage = document.getElementById('cb_stage');
+    if (stage && stage.checked) {{
+      // The roof is the reference that explains the phase. Put it back when
+      // this view is selected, and remove room-layout overlays from the way.
+      var roof = document.getElementById('cb_roof');
+      var extra = document.getElementById('cb_extra');
+      if (roof) roof.checked = false;
+      if (extra) extra.checked = false;
+    }}
+    applyVis();
+  }}
   function applyVis() {{
     var gd = document.getElementById('{PLOT_ID}');
     if (!gd || !gd.data || typeof Plotly === 'undefined') return;
@@ -245,7 +269,7 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
 
     before_demo = before_demo or set()
     stage_visible: list = []
-    traces, colors = [], {k: [] for k, _, _ in viewer.MODES}
+    traces, colors = [], {k: [] for k, _, _ in viewer.MODES + [CONNECTION_MODE]}
     for member in sorted(frame.members):
         segs = framemod._ordered(frame, [(i, j) for m, i, j in frame.segments
                                          if m == member])
@@ -264,6 +288,8 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
         colors['governing'].append(
             viewer.GOVERN_COLOR.get(viewer._governing_family(m.combo), '#c4cad1')
             if m else '#c4cad1')
+        connection_class = MF.classify(frame, member)
+        colors['connection'].append(MF.COLORS[connection_class])
 
         verts, faces = _member_mesh(a, b, sec)
         verts = [[round(c, 2) for c in v] for v in verts]
@@ -280,6 +306,7 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
             f'unbraced {m.Lb:.0f} in · KL/r {m.slenderness:.0f}' if m else None,
             f'removal: <b>{v.verdict}</b> — {v.detail}' if v else None,
             '<b>REMOVED in the recommended package</b>' if member in removed else None,
+            f'connection role: <b>{connection_class}</b>',
         ]))
         stage_visible.append(True if not before_demo or member in before_demo
                              else False)
@@ -406,7 +433,8 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
                                      for c, t in zip(colors[key], traces)]
                            + [own_color(t) for t in traces[len(colors[key]):]]}],
                     args2=None)
-               for key, title, _ in viewer.MODES if key in SOLID_MODES]
+               for key, title, _ in viewer.MODES + [CONNECTION_MODE]
+               if key in SOLID_MODES]
 
     fig = go.Figure(traces)
     fig.update_layout(

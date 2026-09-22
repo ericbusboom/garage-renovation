@@ -3,12 +3,23 @@ import json,math
 from dataclasses import fields
 import lean_to_rafters as L
 import solid_view as SV
+import phasing
+import owner_revisions as OR
+import cost
+import frame as F
+import moment_frames as MF
 f,s,g=L.build()
+stage=phasing.before_demo(f,defer=set(OR.DEFER_BEFORE_DEMO))
 d=json.loads((L.OUT/'lean-to-rafters.json').read_text())
 r=L.T.A.Result(**{k:d[k] for k in {x.name for x in fields(L.T.A.Result)} if k in d and k!='members'})
 r.members={m:L.T.A.MemberOutcome(**v) for m,v in d['members'].items()}
 dr=min(v['ratio'] for v in d['drift'].values() if v['ratio'])
 worst=max((r.members[m] for m in g['rafters']),key=lambda m:m.dcr)
+pin_groups={group:[m for m in f.members if f.group(m)==group]
+            for group in sorted(F.PIN_ENDED_GROUPS)}
+pin_members=sum(len(v) for v in pin_groups.values())
+quantities=cost.measure(f)
+moment_audit=MF.audit(f)
 rows=''.join(f'<tr><td>{m}</td><td>{r.members[m].section}</td><td>{r.members[m].dcr:.3f}</td><td>{r.members[m].combo}</td></tr>' for m in ['BE.upper','BE','E.clerestory','E.W3',worst.member])
 report=f'''<style>body{{font-family:system-ui;margin:16px;color:#222}}#frameplot{{height:76vh!important;min-height:480px}}.notes{{max-width:1080px;line-height:1.55;margin:24px auto}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left}}table{{border-collapse:collapse;width:100%}}</style>
 <section class="notes"><h2>Lean-to rafters — steel-supported fit</h2>
@@ -19,6 +30,12 @@ report=f'''<style>body{{font-family:system-ui;margin:16px;color:#222}}#frameplot
 <p>Maximum checked ratio <b>{d['max_dcr']:.3f}</b>; worst top-roof drift <b>H/{dr:.0f}</b>; {len(d['deflection_violations'])} span-deflection violations. Worst new rafter ratio <b>{worst.dcr:.3f}</b>. Analysis uses corrected end releases and second-order effects. Rafter ends release bending; cut-face offsets transfer forces to the supporting beam axes. Existing beam buckling lengths are retained.</p>
 <table><tr><th>Member</th><th>Section</th><th>Checked ratio</th><th>Governing combination</th></tr>{rows}</table>
 <p>Continuous HSS5×5×¼ east posts, BE.upper W6×8.5, E.top HSS4×4×¼ and BE W14×22 remain. Lower W1/W2/S3 remain removed; no added roof-bay braces. Corrected solar rafters, steel door posts, existing information controls and cabinets remain.</p>
+<h2>Connection assumptions in this model</h2>
+<p><b>{pin_members} members are pin-ended:</b> {len(pin_groups['Bracing'])} braces, {len(pin_groups['Joists'])} wood joists and {len(pin_groups['Rafters'])} rafters. That creates {2*pin_members} released member ends. There are also <b>{len(f.pinned_ends)} explicitly declared pin locations</b>—the two steel door-post heads and four simple-support locations along BE.upper—and <b>{len(f.supports)} pinned bases</b>. The remaining modeled joints transfer moment unless an end release says otherwise.</p>
+<p><b>No actual fastener schedule exists.</b> The cost model counts {quantities.steel_joints} fitted steel ends and carries a budgeting allowance for about {round(quantities.steel_joints/2)} field-bolted connection locations, plus shop fitting/welding and end plates on {quantities.beams} W-shape pieces. Those are cost placeholders, not bolt counts, screw counts, weld sizes or approved joint details. The {len(f.links)} short analytical links transfer loads across bearing offsets; they do not prove that the physical connection is welded or moment-resisting.</p>
+<p><b>Moment-frame designation:</b> the new “What are the moment frames?” view marks two intentional ground-to-floor longitudinal frames in red: the west <b>BW</b> line (BW with SW0/W1/W2/W3/W4) and the east <b>BE</b> line (BE with E-S2/E-S3/E-N2). Green members are diagonal bracing; blue members are deliberately simple/pinned. The <b>{moment_audit['counts']['unassigned']} amber members</b> are the important warning: the solver currently transfers moment through them, but they have not been assigned to a deliberate moment frame. The upper roof and clerestory are still largely in this category and must be released or formally added to the lateral system before connection detailing.</p>
+<table><tr><th style="color:#c83e4d">Red</th><td>designated moment-frame member</td><th style="color:#6b8e23">Green</th><td>braced-frame member</td></tr><tr><th style="color:#377eb8">Blue</th><td>simple or pin-ended</td><th style="color:#d89028">Amber</th><td>rigid in solver; lateral role unresolved</td></tr></table>
+<p><b>Pre-demo:</b> the restored control shows {len(stage['build'])} members that clear the existing roof and have a supported first-stage load path. It hides {len(stage['wait'])} members that wait for roof demolition. Five early members need only limited eave penetrations or trimming; temporary erection stability still needs its own bracing plan.</p>
 <p>Proposed fit and preliminary screening, not a construction design. Connection plates, bolts, welds, local HSS/flange strength, uplift attachment and foundations remain unsized. The inherited steep-canopy wind approximation needs project-specific verification; cladding edge overhangs and attachment are also not checked. The rafter top is about 50 in. above the loft beam axis at the high end and 7 in. at the low end, so this covers the side strip rather than usable standing-height loft space. Simple connections must accommodate the modeled rotation: <a href="https://www.aisc.org/aisc/solutions-center/engineering-faqs/5-connections/">AISC connection guidance</a>.</p></section>'''
 SV.EX.THICK['south']=5
 original=SV._member_mesh
@@ -38,7 +55,8 @@ def mesh(a,b,sec):
 SV._member_mesh=mesh
 p=L.OUT/'lean-to-rafters-3d-solid.html'
 summary=dict(removal={},frame_model='Lean-to steel rafters + continuous east posts · CURRENT PRELIMINARY ANALYSIS',live_case='L100',exposure='C',basis=dict(loft_live={'L100':100},wind={'V':96}))
-SV.write(f,r,{},dict(sections={}),[],summary,p,cabinets=True,report_html=report,proposed_seats=g['seats'])
+SV.write(f,r,{},dict(sections={}),[],summary,p,cabinets=True,report_html=report,
+         proposed_seats=g['seats'],before_demo=set(stage['build']))
 h=p.read_text().replace('Garage frame &mdash; members at true section size','Lean-to steel rafters + continuous east posts')
 h=h.replace('How hard it is working','How hard is it working?').replace('What governs it"','What governs it?"')
 h=h.replace('</body>',"<script>Plotly.relayout('frameplot',{'scene.camera.eye':{x:1.8,y:-1.5,z:1.0}}).then(()=>Plotly.Plots.resize('frameplot'));</script></body>")
