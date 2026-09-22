@@ -222,17 +222,20 @@ ITEMS = [
          what='Shapeoko gantry, parked at the north end'),
 ]
 
-#: Equipment on the two new shed walls. ``along`` is measured from the west
-#: end of the south wall or the south end of the east wall. The rack envelope
+#: Equipment on the shed walls. ``along`` is measured from the west end of a
+#: north/south wall or the south end of the east wall. The rack envelope
 #: is intentionally an assumption: 12U gives 21 in. of rail height, represented
 #: here by a 24 in. tall cabinet, and the owner selected the shallow 14 in. depth.
 SHED_ITEMS = [
     dict(n='PW', kind='battery', wall='south', along=4.0,
          width=24.0, depth=7.6, h=43.5, z=12.0,
          what='Tesla Powerwall 3 · 291 lb · moved from the loft wall'),
-    dict(n='EP', kind='electrical', wall='south', along=34.0,
+    dict(n='EP', kind='electrical', wall='north', along=18.5,
          width=16.0, depth=5.0, h=30.0, z=48.0,
          what='100 A electrical panel · conceptual 16 × 5 × 30 in. envelope'),
+    dict(n='SPK', kind='sprinkler', wall='north', along=40.5,
+         width=18.0, depth=12.0, h=24.0, z=48.0,
+         what='sprinkler equipment cabinet · conceptual 18 × 12 × 24 in. envelope'),
     dict(n='RACK', kind='rack', wall='east', along=27.0,
          width=22.0, depth=14.0, h=24.0, z=48.0,
          what='wall-mounted 19 in. rack · conceptual 12U · 14 in. deep'),
@@ -246,6 +249,7 @@ KINDS = {
     'compressor': dict(face='#5b6a78', label='Compressor'),   # painted steel
     'battery': dict(face='#eceff1', label='Battery'),         # Powerwall white
     'electrical': dict(face='#b9c4cc', label='Electrical panel'),
+    'sprinkler': dict(face='#b84a45', label='Sprinkler cabinet'),
     'rack': dict(face='#3f4852', label='Network rack'),
 }
 EDGE = '#141618'               # near-black edges so the boxes read as boxes
@@ -673,6 +677,12 @@ def shed_item_rows(frame: framemod.Frame) -> list[dict]:
             y0 = by0 + item['along']
             y1 = y0 + item['width']
             faces = 'west'
+        elif item['wall'] == 'north':
+            x0 = bx0 + item['along']
+            x1 = x0 + item['width']
+            y1 = by1
+            y0 = y1 - item['depth']
+            faces = 'south'
         else:
             raise ValueError(f'unknown shed wall {item["wall"]!r}')
         row = dict(item, x0=x0, x1=x1, y0=y0, y1=y1,
@@ -751,14 +761,16 @@ def shed_html(frame: framemod.Frame) -> str:
 <div class="notes">
   <h2>Concrete shed equipment</h2>
   <p>The shed is enclosed on its south and east sides with conceptual
-  {SHED_WALL_T:g}-inch infill walls. The Powerwall and 100 A panel face north
-  from the south wall. The shallow rack faces west from the east wall.</p>
+  {SHED_WALL_T:g}-inch infill walls. The Powerwall faces north from the south
+  wall. The 100 A panel and shallow sprinkler cabinet face south from the
+  existing building wall at the north side. The shallow rack faces west from
+  the east wall.</p>
   <table style="border-collapse:collapse;font-size:13px">
     <tr style="text-align:left"><th>#</th><th>item</th><th>wall</th>
       <th>width × depth × height</th><th>z</th><th>basis</th></tr>
     {body}
   </table>
-  <p><small>The panel and rack envelopes are layout assumptions. Final equipment,
+  <p><small>The panel, sprinkler cabinet and rack envelopes are layout assumptions. Final equipment,
   working clearances, ventilation, weather rating, conduit routes, mounting and
   electrical design remain to be selected.</small></p>
 </div>
