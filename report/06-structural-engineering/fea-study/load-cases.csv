@@ -1,0 +1,16 @@
+load_case,Fx_east_lb,Fz_up_lb,Fy_north_lb,detail
+D,0.0,-23572.6,0.0,self_weight_lb=7011.7; solar_roof_ft2=274.4; upper_roof_ft2=311.9; loft_floor_ft2=311.9; west_wall_ft2=442.4; east_wall_ft2=218.7; east_outer_wall_ft2=223.6; south_wall_ft2=199.5; north_wall_ft2=390.0; clerestory_ft2=53.6; east_canopy_ft2=222.5
+EX+,4566.1,0.0,0.0,base_shear_lb=4566.1; seismic_weight_lb=22259.7; Cs=0.2051
+EX-,-4566.1,0.0,0.0,base_shear_lb=4566.1; seismic_weight_lb=22259.7; Cs=0.2051
+EZ+,0.0,0.0,-4566.1,base_shear_lb=4566.1; seismic_weight_lb=22259.7; Cs=0.2051
+EZ-,0.0,0.0,4566.1,base_shear_lb=4566.1; seismic_weight_lb=22259.7; Cs=0.2051
+L75,0.0,-23390.0,0.0,
+Lr,0.0,-12370.8,0.0,
+WX+.ni,9422.9,10679.4,-691.4,
+WX+.pi,10780.4,16676.5,-693.3,
+WX-.ni,-11615.8,7890.7,-375.1,
+WX-.pi,-10258.3,13887.8,-377.0,
+WY+.ni,1564.8,6551.7,4505.8,
+WY+.pi,2922.3,12548.9,4503.9,
+WY-.ni,1564.8,8938.1,-6865.0,
+WY-.pi,2922.3,14935.2,-6866.9,

@@ -1,0 +1,1222 @@
+{
+  "background-0": {
+    "member": "W.SW0",
+    "name": "SW0 | HSS4X4X3/16",
+    "group": "Columns",
+    "layer": "background",
+    "joints": [
+      "W.SW0.base",
+      "W.south.slope"
+    ]
+  },
+  "background-1": {
+    "member": "E.SW0",
+    "name": "T-E matching SW0 | HSS4X4X3/16",
+    "group": "MatchedEastTruss",
+    "layer": "background",
+    "joints": [
+      "E.south.bottom",
+      "E.south.slope"
+    ]
+  },
+  "background-2": {
+    "member": "T-SO",
+    "name": "T-SO | W6X8.5",
+    "group": "Truss_Other",
+    "layer": "background",
+    "joints": [
+      "W.SW0 @ 0.991452991453",
+      "E.SW0 @ 0.5"
+    ]
+  },
+  "background-3": {
+    "member": "S1",
+    "name": "S1 | HSS4X4X3/16",
+    "group": "Columns",
+    "layer": "background",
+    "joints": [
+      "S1.base",
+      "S1.head"
+    ]
+  },
+  "background-4": {
+    "member": "S2",
+    "name": "S2 | HSS4X4X3/16",
+    "group": "Columns",
+    "layer": "background",
+    "joints": [
+      "S2.base",
+      "S2.east-truss-bearing"
+    ]
+  },
+  "background-5": {
+    "member": "BR-S-1",
+    "name": "BR-S-1 | HSS1-1/2X1-1/2X1/8",
+    "group": "Bracing",
+    "layer": "background",
+    "joints": [
+      "S1 @ 0.051724137931",
+      "S2 @ 0.991379310345"
+    ]
+  },
+  "background-6": {
+    "member": "BR-S-2",
+    "name": "BR-S-2 | HSS1-1/2X1-1/2X1/8",
+    "group": "Bracing",
+    "layer": "background",
+    "joints": [
+      "S2 @ 0.051724137931",
+      "S1 @ 0.991379310345"
+    ]
+  },
+  "background-7": {
+    "member": "E-S",
+    "name": "E-S",
+    "group": "EastSupportFrame",
+    "layer": "background",
+    "joints": [
+      "E-S.base",
+      "E-OB @ 0.00778210116732"
+    ]
+  },
+  "background-8": {
+    "member": "East rafter 01",
+    "name": "East rafter 01",
+    "group": "EastRoofRafters",
+    "layer": "background",
+    "joints": [
+      "E-OB @ 0.00778210116732",
+      "E.slope @ 0.438622235736"
+    ]
+  },
+  "background-9": {
+    "member": "W.W1",
+    "name": "W1 | HSS4X4X3/16",
+    "group": "Columns",
+    "layer": "background",
+    "joints": [
+      "W.W1.base",
+      "W.slope @ 0.453003292646"
+    ]
+  },
+  "background-10": {
+    "member": "E.W1",
+    "name": "T-E matching W1 | HSS4X4X3/16",
+    "group": "MatchedEastTruss",
+    "layer": "background",
+    "joints": [
+      "E.bottom @ 0.195652173913",
+      "E.slope @ 0.453003292646"
+    ]
+  },
+  "background-11": {
+    "member": "T-S",
+    "name": "T-S | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TS",
+    "layer": "background",
+    "joints": [
+      "W.bottom @ 0.195652173913",
+      "E.bottom @ 0.195652173913"
+    ]
+  },
+  "background-12": {
+    "member": "T-S top / segment 1",
+    "name": "T-S top / segment 1 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TS",
+    "layer": "background",
+    "joints": [
+      "W.slope @ 0.453003292646",
+      "E.slope @ 0.453003292646"
+    ]
+  },
+  "background-13": {
+    "member": "S3",
+    "name": "S3 | HSS4X4X3/16",
+    "group": "Columns",
+    "layer": "background",
+    "joints": [
+      "S3.base",
+      "S3.east-truss-bearing"
+    ]
+  },
+  "background-14": {
+    "member": "T-S vertical 2",
+    "name": "T-S vertical 2 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TS",
+    "layer": "background",
+    "joints": [
+      "T-S @ 0.166666666667",
+      "T-S top / segment 1 @ 0.166666666667"
+    ]
+  },
+  "background-15": {
+    "member": "T-S vertical 3",
+    "name": "T-S vertical 3 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TS",
+    "layer": "background",
+    "joints": [
+      "T-S @ 0.333333333333",
+      "T-S top / segment 1 @ 0.333333333333"
+    ]
+  },
+  "background-16": {
+    "member": "T-S vertical 4",
+    "name": "T-S vertical 4 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TS",
+    "layer": "background",
+    "joints": [
+      "T-S @ 0.5",
+      "T-S top / segment 1 @ 0.5"
+    ]
+  },
+  "background-17": {
+    "member": "T-S vertical 5",
+    "name": "T-S vertical 5 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TS",
+    "layer": "background",
+    "joints": [
+      "T-S @ 0.666666666667",
+      "T-S top / segment 1 @ 0.666666666667"
+    ]
+  },
+  "background-18": {
+    "member": "T-S vertical 6",
+    "name": "T-S vertical 6 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TS",
+    "layer": "background",
+    "joints": [
+      "T-S @ 0.833333333333",
+      "T-S top / segment 1 @ 0.833333333333"
+    ]
+  },
+  "background-19": {
+    "member": "T-S diagonal 8",
+    "name": "T-S diagonal 8 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TS",
+    "layer": "background",
+    "joints": [
+      "W.bottom @ 0.195652173913",
+      "T-S top / segment 1 @ 0.166666666667"
+    ]
+  },
+  "background-20": {
+    "member": "T-S diagonal 9",
+    "name": "T-S diagonal 9 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TS",
+    "layer": "background",
+    "joints": [
+      "T-S top / segment 1 @ 0.166666666667",
+      "T-S @ 0.333333333333"
+    ]
+  },
+  "background-21": {
+    "member": "T-S diagonal 10",
+    "name": "T-S diagonal 10 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TS",
+    "layer": "background",
+    "joints": [
+      "T-S @ 0.333333333333",
+      "T-S top / segment 1 @ 0.5"
+    ]
+  },
+  "background-22": {
+    "member": "T-S diagonal 11",
+    "name": "T-S diagonal 11 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TS",
+    "layer": "background",
+    "joints": [
+      "T-S top / segment 1 @ 0.5",
+      "T-S @ 0.666666666667"
+    ]
+  },
+  "background-23": {
+    "member": "T-S diagonal 12",
+    "name": "T-S diagonal 12 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TS",
+    "layer": "background",
+    "joints": [
+      "T-S @ 0.666666666667",
+      "T-S top / segment 1 @ 0.833333333333"
+    ]
+  },
+  "background-24": {
+    "member": "T-S diagonal 13",
+    "name": "T-S diagonal 13 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TS",
+    "layer": "background",
+    "joints": [
+      "T-S top / segment 1 @ 0.833333333333",
+      "E.bottom @ 0.195652173913"
+    ]
+  },
+  "background-25": {
+    "member": "W.slope",
+    "name": "West solar slope chord",
+    "group": "WestMarkupFraming",
+    "layer": "background",
+    "joints": [
+      "W.south.slope",
+      "W.front.slope"
+    ]
+  },
+  "background-26": {
+    "member": "E.slope",
+    "name": "T-E matching West solar slope chord",
+    "group": "MatchedEastTruss",
+    "layer": "background",
+    "joints": [
+      "E.south.slope",
+      "E.front.slope"
+    ]
+  },
+  "background-27": {
+    "member": "East rafter 02",
+    "name": "East rafter 02",
+    "group": "EastRoofRafters",
+    "layer": "background",
+    "joints": [
+      "E-OB @ 0.0972762645914",
+      "E.slope @ 0.604004390194"
+    ]
+  },
+  "background-28": {
+    "member": "BR-R-main-1",
+    "name": "BR-R-main-1 | HSS2-1/4X2-1/4X1/8",
+    "group": "Bracing",
+    "layer": "background",
+    "joints": [
+      "W.slope @ 0.453003292646",
+      "E.front.slope"
+    ]
+  },
+  "background-29": {
+    "member": "BR-R-main-2",
+    "name": "BR-R-main-2 | HSS2X2X1/8",
+    "group": "Bracing",
+    "layer": "background",
+    "joints": [
+      "E.slope @ 0.453003292646",
+      "W.front.slope"
+    ]
+  },
+  "background-30": {
+    "member": "East rafter 03",
+    "name": "East rafter 03",
+    "group": "EastRoofRafters",
+    "layer": "background",
+    "joints": [
+      "E-OB @ 0.186770428016",
+      "E.slope @ 0.769386544652"
+    ]
+  },
+  "background-31": {
+    "member": "East rafter 04",
+    "name": "East rafter 04",
+    "group": "EastRoofRafters",
+    "layer": "background",
+    "joints": [
+      "E-OB @ 0.27626459144",
+      "E.slope @ 0.93476869911"
+    ]
+  },
+  "background-32": {
+    "member": "W.clerestory",
+    "name": "West clerestory-aligned vertical",
+    "group": "WestMarkupFraming",
+    "layer": "background",
+    "joints": [
+      "W.bottom @ 0.431900114391",
+      "W.front.top"
+    ]
+  },
+  "background-33": {
+    "member": "E.clerestory",
+    "name": "T-E matching West clerestory-aligned vertical",
+    "group": "MatchedEastTruss",
+    "layer": "background",
+    "joints": [
+      "E.bottom @ 0.431900114391",
+      "E.front.top"
+    ]
+  },
+  "background-34": {
+    "member": "T1 upper lower chord",
+    "name": "T1 upper lower chord | HSS1-1/2X1-1/2X3/16",
+    "group": "Truss_T1",
+    "layer": "background",
+    "joints": [
+      "W.clerestory @ 0.308951630769",
+      "E.clerestory @ 0.308951630769"
+    ]
+  },
+  "background-35": {
+    "member": "T1 top / segment 1",
+    "name": "T1 top / segment 1 | HSS2X2X1/8",
+    "group": "Truss_T1",
+    "layer": "background",
+    "joints": [
+      "W.clerestory @ 0.691369215252",
+      "E.clerestory @ 0.691369215252"
+    ]
+  },
+  "background-36": {
+    "member": "T1 future floor beam",
+    "name": "T1 future floor beam | W6X8.5",
+    "group": "LoftSteel",
+    "layer": "background",
+    "joints": [
+      "W.clerestory @ 0.00879120879121",
+      "E.clerestory @ 0.00879120879121"
+    ]
+  },
+  "background-37": {
+    "member": "T1 vertical 2",
+    "name": "T1 vertical 2 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_T1",
+    "layer": "background",
+    "joints": [
+      "T1 upper lower chord @ 0.25",
+      "T1 top / segment 1 @ 0.25"
+    ]
+  },
+  "background-38": {
+    "member": "T1 vertical 3",
+    "name": "T1 vertical 3 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_T1",
+    "layer": "background",
+    "joints": [
+      "T1 upper lower chord @ 0.5",
+      "T1 top / segment 1 @ 0.5"
+    ]
+  },
+  "background-39": {
+    "member": "T1 vertical 4",
+    "name": "T1 vertical 4 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_T1",
+    "layer": "background",
+    "joints": [
+      "T1 upper lower chord @ 0.75",
+      "T1 top / segment 1 @ 0.75"
+    ]
+  },
+  "background-40": {
+    "member": "T1 diagonal 6",
+    "name": "T1 diagonal 6 | HSS1-1/2X1-1/2X3/16",
+    "group": "Truss_T1",
+    "layer": "background",
+    "joints": [
+      "W.clerestory @ 0.308951630769",
+      "T1 top / segment 1 @ 0.25"
+    ]
+  },
+  "background-41": {
+    "member": "T1 diagonal 7",
+    "name": "T1 diagonal 7 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_T1",
+    "layer": "background",
+    "joints": [
+      "T1 top / segment 1 @ 0.25",
+      "T1 upper lower chord @ 0.5"
+    ]
+  },
+  "background-42": {
+    "member": "T1 diagonal 8",
+    "name": "T1 diagonal 8 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_T1",
+    "layer": "background",
+    "joints": [
+      "T1 upper lower chord @ 0.5",
+      "T1 top / segment 1 @ 0.75"
+    ]
+  },
+  "background-43": {
+    "member": "T1 diagonal 9",
+    "name": "T1 diagonal 9 | HSS1-1/2X1-1/2X3/16",
+    "group": "Truss_T1",
+    "layer": "background",
+    "joints": [
+      "T1 top / segment 1 @ 0.75",
+      "E.clerestory @ 0.308951630769"
+    ]
+  },
+  "background-44": {
+    "member": "T1 future hanger 2",
+    "name": "T1 future hanger 2 | HSS1-1/2X1-1/2X1/8",
+    "group": "LoftSteel",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.25",
+      "T1 upper lower chord @ 0.25"
+    ]
+  },
+  "background-45": {
+    "member": "T1 future hanger 3",
+    "name": "T1 future hanger 3 | HSS1-1/2X1-1/2X1/8",
+    "group": "LoftSteel",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.5",
+      "T1 upper lower chord @ 0.5"
+    ]
+  },
+  "background-46": {
+    "member": "T1 future hanger 4",
+    "name": "T1 future hanger 4 | HSS1-1/2X1-1/2X1/8",
+    "group": "LoftSteel",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.75",
+      "T1 upper lower chord @ 0.75"
+    ]
+  },
+  "background-47": {
+    "member": "East rafter 05",
+    "name": "East rafter 05",
+    "group": "EastRoofRafters",
+    "layer": "background",
+    "joints": [
+      "E-OB @ 0.365758754864",
+      "E.top @ 0.0761400700969"
+    ]
+  },
+  "background-48": {
+    "member": "W.bottom",
+    "name": "T-W / B-WO | HSS3-1/2X3-1/2X3/16",
+    "group": "WestMarkupFraming",
+    "layer": "background",
+    "joints": [
+      "W.south.bottom",
+      "W.north.bottom"
+    ]
+  },
+  "background-49": {
+    "member": "E.bottom",
+    "name": "T-E matching T-W / B-WO | HSS3-1/2X3-1/2X3/16",
+    "group": "MatchedEastTruss",
+    "layer": "background",
+    "joints": [
+      "E.south.bottom",
+      "E.north.bottom"
+    ]
+  },
+  "background-50": {
+    "member": "East rafter 06",
+    "name": "East rafter 06",
+    "group": "EastRoofRafters",
+    "layer": "background",
+    "joints": [
+      "E-OB @ 0.455252918288",
+      "E.top @ 0.201872486593"
+    ]
+  },
+  "background-51": {
+    "member": "E-OB",
+    "name": "E-OB",
+    "group": "EastSupportFrame",
+    "layer": "background",
+    "joints": [
+      "EOB.south",
+      "EOB.north"
+    ]
+  },
+  "background-52": {
+    "member": "W.square.brace",
+    "name": "West square bay diagonal",
+    "group": "WestMarkupFraming",
+    "layer": "background",
+    "joints": [
+      "W.bottom @ 0.770186335404",
+      "W.front.top"
+    ]
+  },
+  "background-53": {
+    "member": "E.square.brace",
+    "name": "T-E matching West square bay diagonal",
+    "group": "MatchedEastTruss",
+    "layer": "background",
+    "joints": [
+      "E.bottom @ 0.770186335404",
+      "E.front.top"
+    ]
+  },
+  "background-54": {
+    "member": "Wood joist 0-0",
+    "name": "Wood joist 0-0",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.116341030195",
+      "B2 future floor beam @ 0.116341030195"
+    ]
+  },
+  "background-55": {
+    "member": "Wood joist 1-0",
+    "name": "Wood joist 1-0",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.173179396092",
+      "B2 future floor beam @ 0.173179396092"
+    ]
+  },
+  "background-56": {
+    "member": "Wood joist 2-0",
+    "name": "Wood joist 2-0",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.230017761989",
+      "B2 future floor beam @ 0.230017761989"
+    ]
+  },
+  "background-57": {
+    "member": "Wood joist 3-0",
+    "name": "Wood joist 3-0",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.286856127886",
+      "B2 future floor beam @ 0.286856127886"
+    ]
+  },
+  "background-58": {
+    "member": "Wood joist 4-0",
+    "name": "Wood joist 4-0",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.343694493783",
+      "B2 future floor beam @ 0.343694493783"
+    ]
+  },
+  "background-59": {
+    "member": "Wood joist 5-0",
+    "name": "Wood joist 5-0",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.40053285968",
+      "B2 future floor beam @ 0.40053285968"
+    ]
+  },
+  "background-60": {
+    "member": "Wood joist 6-0",
+    "name": "Wood joist 6-0",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.457371225577",
+      "B2 future floor beam @ 0.457371225577"
+    ]
+  },
+  "background-61": {
+    "member": "Wood joist 7-0",
+    "name": "Wood joist 7-0",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.514209591474",
+      "B2 future floor beam @ 0.514209591474"
+    ]
+  },
+  "background-62": {
+    "member": "Wood joist 8-0",
+    "name": "Wood joist 8-0",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.571047957371",
+      "B2 future floor beam @ 0.571047957371"
+    ]
+  },
+  "background-63": {
+    "member": "Wood joist 9-0",
+    "name": "Wood joist 9-0",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.627886323268",
+      "B2 future floor beam @ 0.627886323268"
+    ]
+  },
+  "background-64": {
+    "member": "Wood joist 10-0",
+    "name": "Wood joist 10-0",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.684724689165",
+      "B2 future floor beam @ 0.684724689165"
+    ]
+  },
+  "background-65": {
+    "member": "Wood joist 11-0",
+    "name": "Wood joist 11-0",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.741563055062",
+      "B2 future floor beam @ 0.741563055062"
+    ]
+  },
+  "background-66": {
+    "member": "Wood joist 12-0",
+    "name": "Wood joist 12-0",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.798401420959",
+      "B2 future floor beam @ 0.798401420959"
+    ]
+  },
+  "background-67": {
+    "member": "Wood joist 13-0",
+    "name": "Wood joist 13-0",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.855239786856",
+      "B2 future floor beam @ 0.855239786856"
+    ]
+  },
+  "background-68": {
+    "member": "Wood joist 14-0",
+    "name": "Wood joist 14-0",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "T1 future floor beam @ 0.907637655417",
+      "B2 future floor beam @ 0.907637655417"
+    ]
+  },
+  "background-69": {
+    "member": "East rafter 07",
+    "name": "East rafter 07",
+    "group": "EastRoofRafters",
+    "layer": "background",
+    "joints": [
+      "E-OB @ 0.544747081712",
+      "E.top @ 0.327604903088"
+    ]
+  },
+  "background-70": {
+    "member": "East rafter 08",
+    "name": "East rafter 08",
+    "group": "EastRoofRafters",
+    "layer": "background",
+    "joints": [
+      "E-OB @ 0.634241245136",
+      "E.top @ 0.453337319584"
+    ]
+  },
+  "background-71": {
+    "member": "W.top",
+    "name": "West square upper chord",
+    "group": "WestMarkupFraming",
+    "layer": "background",
+    "joints": [
+      "W.front.top",
+      "W.north.top"
+    ]
+  },
+  "background-72": {
+    "member": "E.top",
+    "name": "T-E matching West square upper chord",
+    "group": "MatchedEastTruss",
+    "layer": "background",
+    "joints": [
+      "E.front.top",
+      "E.north.top"
+    ]
+  },
+  "background-73": {
+    "member": "East rafter 09",
+    "name": "East rafter 09",
+    "group": "EastRoofRafters",
+    "layer": "background",
+    "joints": [
+      "E-OB @ 0.72373540856",
+      "E.top @ 0.57906973608"
+    ]
+  },
+  "background-74": {
+    "member": "W.W3",
+    "name": "W3 | HSS4X4X1/2",
+    "group": "Columns",
+    "layer": "background",
+    "joints": [
+      "W.W3.base",
+      "W.top @ 0.595469616492"
+    ]
+  },
+  "background-75": {
+    "member": "E.W3",
+    "name": "T-E matching W3 | HSS4X4X1/2",
+    "group": "MatchedEastTruss",
+    "layer": "background",
+    "joints": [
+      "E.bottom @ 0.770186335404",
+      "E.top @ 0.595469616492"
+    ]
+  },
+  "background-76": {
+    "member": "B2 future floor beam",
+    "name": "B2 future floor beam | W8X24",
+    "group": "LoftSteel",
+    "layer": "background",
+    "joints": [
+      "W.W3 @ 0.507103825137",
+      "E.W3 @ 0.00879120879121"
+    ]
+  },
+  "background-77": {
+    "member": "E-M option B",
+    "name": "E-M option B",
+    "group": "EastSupportFrame",
+    "layer": "background",
+    "joints": [
+      "E-M option B.base",
+      "E-M.bearing"
+    ]
+  },
+  "background-78": {
+    "member": "BR-R-cap-1",
+    "name": "BR-R-cap-1 | HSS3X3X3/16",
+    "group": "Bracing",
+    "layer": "background",
+    "joints": [
+      "W.top @ 0.404137678347",
+      "E.top @ 0.892918427895"
+    ]
+  },
+  "background-79": {
+    "member": "BR-R-cap-2",
+    "name": "BR-R-cap-2 | HSS1-1/2X1-1/2X1/8",
+    "group": "Bracing",
+    "layer": "background",
+    "joints": [
+      "E.top @ 0.404137678347",
+      "W.top @ 0.892918427895"
+    ]
+  },
+  "background-80": {
+    "member": "East rafter 10",
+    "name": "East rafter 10",
+    "group": "EastRoofRafters",
+    "layer": "background",
+    "joints": [
+      "E-OB @ 0.813229571984",
+      "E.top @ 0.704802152575"
+    ]
+  },
+  "background-81": {
+    "member": "W.rear.brace",
+    "name": "West rear diagonal rising north",
+    "group": "WestMarkupFraming",
+    "layer": "background",
+    "joints": [
+      "W.bottom @ 0.770186335404",
+      "W.north.top"
+    ]
+  },
+  "background-82": {
+    "member": "E.rear.brace",
+    "name": "T-E matching West rear diagonal rising north",
+    "group": "MatchedEastTruss",
+    "layer": "background",
+    "joints": [
+      "E.bottom @ 0.770186335404",
+      "E.north.top"
+    ]
+  },
+  "background-83": {
+    "member": "BR-W-1",
+    "name": "BR-W-1 | HSS1-1/2X1-1/2X1/8",
+    "group": "Bracing",
+    "layer": "background",
+    "joints": [
+      "W.W3 @ 0.0262295081967",
+      "W.W4 @ 0.502732240437"
+    ]
+  },
+  "background-84": {
+    "member": "BR-W-2",
+    "name": "BR-W-2 | HSS1-1/2X1-1/2X1/8",
+    "group": "Bracing",
+    "layer": "background",
+    "joints": [
+      "W.W4 @ 0.0262295081967",
+      "W.W3 @ 0.502732240437"
+    ]
+  },
+  "background-85": {
+    "member": "Wood joist 0-1",
+    "name": "Wood joist 0-1",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "B2 future floor beam @ 0.116341030195",
+      "T-N @ 0.116341030195"
+    ]
+  },
+  "background-86": {
+    "member": "Wood joist 1-1",
+    "name": "Wood joist 1-1",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "B2 future floor beam @ 0.173179396092",
+      "T-N @ 0.173179396092"
+    ]
+  },
+  "background-87": {
+    "member": "Wood joist 2-1",
+    "name": "Wood joist 2-1",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "B2 future floor beam @ 0.230017761989",
+      "T-N @ 0.230017761989"
+    ]
+  },
+  "background-88": {
+    "member": "Wood joist 3-1",
+    "name": "Wood joist 3-1",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "B2 future floor beam @ 0.286856127886",
+      "T-N @ 0.286856127886"
+    ]
+  },
+  "background-89": {
+    "member": "Wood joist 4-1",
+    "name": "Wood joist 4-1",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "B2 future floor beam @ 0.343694493783",
+      "T-N @ 0.343694493783"
+    ]
+  },
+  "background-90": {
+    "member": "Wood joist 5-1",
+    "name": "Wood joist 5-1",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "B2 future floor beam @ 0.40053285968",
+      "T-N @ 0.40053285968"
+    ]
+  },
+  "background-91": {
+    "member": "Wood joist 6-1",
+    "name": "Wood joist 6-1",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "B2 future floor beam @ 0.457371225577",
+      "T-N @ 0.457371225577"
+    ]
+  },
+  "background-92": {
+    "member": "Wood joist 7-1",
+    "name": "Wood joist 7-1",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "B2 future floor beam @ 0.514209591474",
+      "T-N @ 0.514209591474"
+    ]
+  },
+  "background-93": {
+    "member": "Wood joist 8-1",
+    "name": "Wood joist 8-1",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "B2 future floor beam @ 0.571047957371",
+      "T-N @ 0.571047957371"
+    ]
+  },
+  "background-94": {
+    "member": "Wood joist 9-1",
+    "name": "Wood joist 9-1",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "B2 future floor beam @ 0.627886323268",
+      "T-N @ 0.627886323268"
+    ]
+  },
+  "background-95": {
+    "member": "Wood joist 10-1",
+    "name": "Wood joist 10-1",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "B2 future floor beam @ 0.684724689165",
+      "T-N @ 0.684724689165"
+    ]
+  },
+  "background-96": {
+    "member": "Wood joist 11-1",
+    "name": "Wood joist 11-1",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "B2 future floor beam @ 0.741563055062",
+      "T-N @ 0.741563055062"
+    ]
+  },
+  "background-97": {
+    "member": "Wood joist 12-1",
+    "name": "Wood joist 12-1",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "B2 future floor beam @ 0.798401420959",
+      "T-N @ 0.798401420959"
+    ]
+  },
+  "background-98": {
+    "member": "Wood joist 13-1",
+    "name": "Wood joist 13-1",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "B2 future floor beam @ 0.855239786856",
+      "T-N @ 0.855239786856"
+    ]
+  },
+  "background-99": {
+    "member": "Wood joist 14-1",
+    "name": "Wood joist 14-1",
+    "group": "LoftJoists",
+    "layer": "background",
+    "joints": [
+      "B2 future floor beam @ 0.907637655417",
+      "T-N @ 0.907637655417"
+    ]
+  },
+  "background-100": {
+    "member": "East rafter 11",
+    "name": "East rafter 11",
+    "group": "EastRoofRafters",
+    "layer": "background",
+    "joints": [
+      "E-OB @ 0.902723735409",
+      "E.top @ 0.830534569071"
+    ]
+  },
+  "background-101": {
+    "member": "E-N",
+    "name": "E-N",
+    "group": "EastSupportFrame",
+    "layer": "background",
+    "joints": [
+      "E-N.base",
+      "E-OB @ 0.992217898833"
+    ]
+  },
+  "background-102": {
+    "member": "East rafter 12",
+    "name": "East rafter 12",
+    "group": "EastRoofRafters",
+    "layer": "background",
+    "joints": [
+      "E-OB @ 0.992217898833",
+      "E.top @ 0.956266985567"
+    ]
+  },
+  "north-0": {
+    "member": "W.W4",
+    "name": "W4 | HSS4X4X1/4",
+    "group": "Columns",
+    "layer": "north",
+    "joints": [
+      "W.W4.base",
+      "W.north.top"
+    ]
+  },
+  "north-1": {
+    "member": "E.W4",
+    "name": "T-E matching W4 | HSS4X4X1/4",
+    "group": "MatchedEastTruss",
+    "layer": "north",
+    "joints": [
+      "E.north.bottom",
+      "E.north.top"
+    ]
+  },
+  "north-2": {
+    "member": "T-N",
+    "name": "T-N | HSS3X3X1/8",
+    "group": "Truss_TN",
+    "layer": "north",
+    "joints": [
+      "W.north.bottom",
+      "E.north.bottom"
+    ]
+  },
+  "north-3": {
+    "member": "T-N top / segment 1",
+    "name": "T-N top chord | 4 x 4 in",
+    "group": "Truss_TN",
+    "layer": "north",
+    "joints": [
+      "W.W4 @ 0.980327868852",
+      "E.W4 @ 0.96043956044"
+    ]
+  },
+  "north-4": {
+    "member": "N2",
+    "name": "N2 | HSS4X4X1/4",
+    "group": "Columns",
+    "layer": "north",
+    "joints": [
+      "N2.base",
+      "N2.east-truss-bearing"
+    ]
+  },
+  "north-5": {
+    "member": "N1 / U-W",
+    "name": "N1 | 6 x 6 in lower support",
+    "group": "Columns",
+    "layer": "north",
+    "joints": [
+      "N1 / U-W.base",
+      "N1.lower-chord-bearing"
+    ]
+  },
+  "north-6": {
+    "member": "T-N upper east jamb",
+    "name": "T-N center vertical | 4 x 4 in",
+    "group": "Truss_TN",
+    "layer": "north",
+    "joints": [
+      "north.center.bottom",
+      "north.center.top"
+    ]
+  },
+  "north-7": {
+    "member": "T-N loading header",
+    "name": "T-N western-half opening header",
+    "group": "Truss_TN",
+    "layer": "north",
+    "joints": [
+      "north.door.header.west",
+      "north.door.header.center"
+    ]
+  },
+  "north-8": {
+    "member": "T-N diagonal 8",
+    "name": "T-N diagonal 8 | HSS2X2X1/8",
+    "group": "Truss_TN",
+    "layer": "north",
+    "joints": [
+      "north.center.top",
+      "E.north.bottom"
+    ]
+  },
+  "north-9": {
+    "member": "T-N vertical 11",
+    "name": "T-N vertical 11 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TN",
+    "layer": "north",
+    "joints": [
+      "north.door.web.11.bottom",
+      "north.door.web.11.top"
+    ]
+  },
+  "north-10": {
+    "member": "T-N vertical 12",
+    "name": "T-N vertical 12 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TN",
+    "layer": "north",
+    "joints": [
+      "north.door.web.12.bottom",
+      "north.door.web.12.top"
+    ]
+  },
+  "north-11": {
+    "member": "T-N vertical 13",
+    "name": "T-N vertical 13 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TN",
+    "layer": "north",
+    "joints": [
+      "north.door.web.13.bottom",
+      "north.door.web.13.top"
+    ]
+  },
+  "north-12": {
+    "member": "T-N diagonal 15",
+    "name": "T-N diagonal 15 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TN",
+    "layer": "north",
+    "joints": [
+      "north.door.header.west",
+      "north.door.web.11.top"
+    ]
+  },
+  "north-13": {
+    "member": "T-N diagonal 16",
+    "name": "T-N diagonal 16 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TN",
+    "layer": "north",
+    "joints": [
+      "north.door.web.11.top",
+      "north.door.web.12.bottom"
+    ]
+  },
+  "north-14": {
+    "member": "T-N diagonal 17",
+    "name": "T-N diagonal 17 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TN",
+    "layer": "north",
+    "joints": [
+      "north.door.web.12.bottom",
+      "north.door.web.13.top"
+    ]
+  },
+  "north-15": {
+    "member": "T-N diagonal 18",
+    "name": "T-N diagonal 18 | HSS1-1/2X1-1/2X1/8",
+    "group": "Truss_TN",
+    "layer": "north",
+    "joints": [
+      "north.door.web.13.top",
+      "north.door.header.center"
+    ]
+  },
+  "north-16": {
+    "member": "BR-N-ground-1",
+    "name": "BR-N-ground-1 | HSS2X2X1/8",
+    "group": "Bracing",
+    "layer": "north",
+    "joints": [
+      "W.W4 @ 0.0262295081967",
+      "N1 / U-W @ 0.512820512821"
+    ]
+  },
+  "north-17": {
+    "member": "BR-N-ground-2",
+    "name": "BR-N-ground-2 | HSS2-1/4X2-1/4X1/8",
+    "group": "Bracing",
+    "layer": "north",
+    "joints": [
+      "N1 / U-W @ 0.0267558528428",
+      "W.W4 @ 0.502732240437"
+    ]
+  },
+  "north-18": {
+    "member": "T-N diagonal 9",
+    "name": "T-N diagonal 9 | 2 x 2 in concept brace",
+    "group": "Truss_TN",
+    "layer": "north",
+    "joints": [
+      "north.center.bottom",
+      "E.W4 @ 0.96043956044"
+    ]
+  }
+}

@@ -1,0 +1,5415 @@
+{
+  "status": "Geometry option; lean-to support decision pending; not analyzed",
+  "mirrored_members": {
+    "W1": "S3",
+    "W2": "E.W2",
+    "W3": "E.W3",
+    "W4": "N2",
+    "BW": "BE.mirror",
+    "W.slope": "E.slope",
+    "W.top": "E.top",
+    "W.rear.brace": "E.rear.brace",
+    "BR-W-2": "BR-E-2"
+  },
+  "new_ground_post": [
+    211.5,
+    185,
+    0
+  ],
+  "primary_east_x": 211.5,
+  "outer_east_x": 247.5,
+  "unresolved_loads": [
+    [
+      "BE.upper",
+      "D",
+      0.5745292742852921,
+      "east lean-to dead reaction"
+    ],
+    [
+      "BE.upper",
+      "Lr",
+      2.5,
+      "east lean-to roof live reaction"
+    ]
+  ],
+  "nodes": {
+    "@-34,-63": {
+      "x": -34.0,
+      "y": -63.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-SO",
+        "BW",
+        "SW0"
+      ]
+    },
+    "@211.5,-63": {
+      "x": 211.5,
+      "y": -63.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-SO",
+        "BE.mirror"
+      ]
+    },
+    "@-34,3": {
+      "x": -34.0,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "BW",
+        "W1"
+      ]
+    },
+    "@-34,71": {
+      "x": -34.0,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BW",
+        "W2"
+      ]
+    },
+    "@3.75,128": {
+      "x": 3.75,
+      "y": 128.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1A",
+        "BWI"
+      ]
+    },
+    "@-34,185": {
+      "x": -34.0,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "BR-W-2",
+        "BW",
+        "W.rear.brace",
+        "W3"
+      ]
+    },
+    "@-34,268": {
+      "x": -34.0,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "BR-N-2",
+        "BW",
+        "W4"
+      ]
+    },
+    "@211.5,268": {
+      "x": 211.5,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "BE.mirror",
+        "N2"
+      ]
+    },
+    "@3.75,185": {
+      "x": 3.75,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "BWI"
+      ]
+    },
+    "@3.75,268": {
+      "x": 3.75,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "BWI"
+      ]
+    },
+    "@3.75,71": {
+      "x": 3.75,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "BWI"
+      ]
+    },
+    "@3.75,3": {
+      "x": 3.75,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "BWI"
+      ]
+    },
+    "SW0.base": {
+      "x": -34.0,
+      "y": -63.0,
+      "z": 0.0,
+      "support": true,
+      "free_end": false,
+      "members": [
+        "SW0"
+      ]
+    },
+    "SW0.top": {
+      "x": -34.0,
+      "y": -63.0,
+      "z": 119.69973556343794,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "SW0",
+        "W.slope"
+      ]
+    },
+    "W1.top": {
+      "x": -34.0,
+      "y": 2.5,
+      "z": 163.11617832995324,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "W.slope",
+        "W1"
+      ]
+    },
+    "W2.top": {
+      "x": -34.0,
+      "y": 71.0,
+      "z": 236.75,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "W.top",
+        "W2"
+      ]
+    },
+    "W3.base": {
+      "x": -34.0,
+      "y": 185.0,
+      "z": 0.0,
+      "support": true,
+      "free_end": false,
+      "members": [
+        "W3"
+      ]
+    },
+    "W3.top": {
+      "x": -34.0,
+      "y": 185.0,
+      "z": 236.75,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "W.top",
+        "W3"
+      ]
+    },
+    "W4.base": {
+      "x": -34.0,
+      "y": 268.0,
+      "z": 0.0,
+      "support": true,
+      "free_end": false,
+      "members": [
+        "BR-N-1",
+        "BR-W-2",
+        "W4"
+      ]
+    },
+    "W4.top": {
+      "x": -34.0,
+      "y": 268.0,
+      "z": 236.75,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "W.rear.brace",
+        "W.top",
+        "W4"
+      ]
+    },
+    "S1.base": {
+      "x": 169.5,
+      "y": -63.0,
+      "z": 0.0,
+      "support": true,
+      "free_end": false,
+      "members": [
+        "BR-S-1",
+        "S1"
+      ]
+    },
+    "S1.top": {
+      "x": 169.5,
+      "y": -63.0,
+      "z": 120.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-2",
+        "S1"
+      ]
+    },
+    "S2.top": {
+      "x": 211.5,
+      "y": -63.0,
+      "z": 119.69973556343794,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "E.slope"
+      ]
+    },
+    "S3.top": {
+      "x": 211.5,
+      "y": 2.5,
+      "z": 163.11617832995324,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "E.slope",
+        "S3"
+      ]
+    },
+    "N1.base": {
+      "x": 40.35,
+      "y": 268.0,
+      "z": 0.0,
+      "support": true,
+      "free_end": false,
+      "members": [
+        "BR-N-2",
+        "N1"
+      ]
+    },
+    "N1.top": {
+      "x": 40.35,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "BR-N-1",
+        "N1"
+      ]
+    },
+    "N2.base": {
+      "x": 211.5,
+      "y": 268.0,
+      "z": 0.0,
+      "support": true,
+      "free_end": false,
+      "members": [
+        "BR-E-2",
+        "N2"
+      ]
+    },
+    "N2.top": {
+      "x": 211.5,
+      "y": 268.0,
+      "z": 236.75,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "E.rear.brace",
+        "E.top",
+        "N2"
+      ]
+    },
+    "@211.5,71": {
+      "x": 211.5,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "BE.mirror",
+        "E.W2"
+      ]
+    },
+    "@211.5,71,228.75": {
+      "x": 211.5,
+      "y": 71.0,
+      "z": 236.75,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "E.W2",
+        "E.top"
+      ]
+    },
+    "@211.5,185": {
+      "x": 211.5,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "BE.mirror",
+        "BR-E-2",
+        "E.W3",
+        "E.rear.brace"
+      ]
+    },
+    "@211.5,185,228.75": {
+      "x": 211.5,
+      "y": 185.0,
+      "z": 236.75,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "E.W3",
+        "E.top"
+      ]
+    },
+    "@88.75,268": {
+      "x": 88.75,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "BR-NU-1",
+        "N-M",
+        "loft bay 3 joist 8"
+      ]
+    },
+    "@88.75,268,225.25": {
+      "x": 88.75,
+      "y": 268.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "N-M",
+        "R-W4",
+        "RF @ 88.75"
+      ]
+    },
+    "@-34,3,147.355": {
+      "x": -34.0,
+      "y": 2.5,
+      "z": 155.0664427665153,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W1",
+        "W1"
+      ]
+    },
+    "@211.5,3,147.355": {
+      "x": 211.5,
+      "y": 2.5,
+      "z": 155.0664427665153,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W1",
+        "S3"
+      ]
+    },
+    "@-34,185,225.25": {
+      "x": -34.0,
+      "y": 185.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W3",
+        "W3"
+      ]
+    },
+    "@211.5,185,225.25": {
+      "x": 211.5,
+      "y": 185.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "E.W3",
+        "R-W3"
+      ]
+    },
+    "@-34,268,225.25": {
+      "x": -34.0,
+      "y": 268.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W4",
+        "W4"
+      ]
+    },
+    "@211.5,268,225.25": {
+      "x": 211.5,
+      "y": 268.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-NU-1",
+        "N2",
+        "R-W4"
+      ]
+    },
+    "@145.5,-63": {
+      "x": 169.5,
+      "y": -63.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-SO",
+        "S1"
+      ]
+    },
+    "@6.91667,-63,117": {
+      "x": 6.916666666666664,
+      "y": -63.0,
+      "z": 119.69973556343794,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 6.9167"
+      ]
+    },
+    "@6.91667,71,194.365": {
+      "x": 6.916666666666664,
+      "y": 71.0,
+      "z": 208.5211604598204,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "CT.bottom",
+        "CT.mullion.1",
+        "RS @ 6.9167"
+      ]
+    },
+    "@6.91667,71,225.25": {
+      "x": 6.916666666666664,
+      "y": 71.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "CT.diag.W",
+        "CT.mullion.1",
+        "CT.top",
+        "RF @ 6.9167"
+      ]
+    },
+    "@6.91667,268,225.25": {
+      "x": 6.916666666666664,
+      "y": 268.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W4",
+        "RF @ 6.9167"
+      ]
+    },
+    "@47.8333,-63,117": {
+      "x": 47.83333333333333,
+      "y": -63.0,
+      "z": 119.69973556343794,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 47.833"
+      ]
+    },
+    "@47.8333,71,194.365": {
+      "x": 47.83333333333333,
+      "y": 71.0,
+      "z": 208.5211604598204,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "CT.bottom",
+        "CT.mullion.2",
+        "RS @ 47.833"
+      ]
+    },
+    "@47.8333,71,225.25": {
+      "x": 47.83333333333333,
+      "y": 71.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "CT.mullion.2",
+        "CT.top",
+        "RF @ 47.833"
+      ]
+    },
+    "@47.8333,268,225.25": {
+      "x": 47.83333333333333,
+      "y": 268.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W4",
+        "RF @ 47.833"
+      ]
+    },
+    "@88.75,-63,117": {
+      "x": 88.75,
+      "y": -63.0,
+      "z": 119.69973556343794,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 88.75"
+      ]
+    },
+    "@88.75,71,194.365": {
+      "x": 88.75,
+      "y": 71.0,
+      "z": 208.5211604598204,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "CT.bottom",
+        "CT.mullion.3",
+        "RS @ 88.75"
+      ]
+    },
+    "@88.75,71,225.25": {
+      "x": 88.75,
+      "y": 71.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "CT.mullion.3",
+        "CT.top",
+        "RF @ 88.75"
+      ]
+    },
+    "@129.667,-63,117": {
+      "x": 129.66666666666666,
+      "y": -63.0,
+      "z": 119.69973556343794,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 129.67"
+      ]
+    },
+    "@129.667,71,194.365": {
+      "x": 129.66666666666666,
+      "y": 71.0,
+      "z": 208.5211604598204,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "CT.bottom",
+        "CT.mullion.4",
+        "RS @ 129.67"
+      ]
+    },
+    "@129.667,71,225.25": {
+      "x": 129.66666666666666,
+      "y": 71.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "CT.mullion.4",
+        "CT.top",
+        "RF @ 129.67"
+      ]
+    },
+    "@129.667,268,225.25": {
+      "x": 129.66666666666666,
+      "y": 268.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W4",
+        "RF @ 129.67"
+      ]
+    },
+    "@170.583,-63,117": {
+      "x": 170.58333333333334,
+      "y": -63.0,
+      "z": 119.69973556343794,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 170.58"
+      ]
+    },
+    "@170.583,71,194.365": {
+      "x": 170.58333333333334,
+      "y": 71.0,
+      "z": 208.5211604598204,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "CT.bottom",
+        "CT.mullion.5",
+        "RS @ 170.58"
+      ]
+    },
+    "@170.583,71,225.25": {
+      "x": 170.58333333333334,
+      "y": 71.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "CT.diag.E",
+        "CT.mullion.5",
+        "CT.top",
+        "RF @ 170.58"
+      ]
+    },
+    "@170.583,268,225.25": {
+      "x": 170.58333333333334,
+      "y": 268.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W4",
+        "RF @ 170.58"
+      ]
+    },
+    "@-34,71,225.25": {
+      "x": -34.0,
+      "y": 71.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "CT.top",
+        "W2"
+      ]
+    },
+    "@211.5,71,225.25": {
+      "x": 211.5,
+      "y": 71.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "CT.top",
+        "E.W2"
+      ]
+    },
+    "@-34,71,194.365": {
+      "x": -34.0,
+      "y": 71.0,
+      "z": 208.5211604598204,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "CT.bottom",
+        "CT.diag.W",
+        "W.slope",
+        "W2"
+      ]
+    },
+    "@211.5,71,194.365": {
+      "x": 211.5,
+      "y": 71.0,
+      "z": 208.5211604598204,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "CT.bottom",
+        "CT.diag.E",
+        "E.W2",
+        "E.slope"
+      ]
+    },
+    "@19.7308,71": {
+      "x": 19.73076923076923,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "loft bay 1 joist 1"
+      ]
+    },
+    "@19.7308,128": {
+      "x": 19.73076923076923,
+      "y": 128.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 1",
+        "loft bay 2 joist 1"
+      ]
+    },
+    "@35.7115,71": {
+      "x": 35.71153846153846,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "loft bay 1 joist 2"
+      ]
+    },
+    "@35.7115,128": {
+      "x": 35.71153846153846,
+      "y": 128.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 2",
+        "loft bay 2 joist 2"
+      ]
+    },
+    "@51.6923,71": {
+      "x": 51.69230769230769,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "loft bay 1 joist 3"
+      ]
+    },
+    "@51.6923,128": {
+      "x": 51.69230769230769,
+      "y": 128.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 3",
+        "loft bay 2 joist 3"
+      ]
+    },
+    "@67.6731,71": {
+      "x": 67.67307692307692,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "loft bay 1 joist 4"
+      ]
+    },
+    "@67.6731,128": {
+      "x": 67.67307692307692,
+      "y": 128.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 4",
+        "loft bay 2 joist 4"
+      ]
+    },
+    "@83.6538,71": {
+      "x": 83.65384615384616,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "loft bay 1 joist 5"
+      ]
+    },
+    "@83.6538,128": {
+      "x": 83.65384615384616,
+      "y": 128.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 5",
+        "loft bay 2 joist 5"
+      ]
+    },
+    "@99.6346,71": {
+      "x": 99.63461538461539,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "loft bay 1 joist 6"
+      ]
+    },
+    "@99.6346,128": {
+      "x": 99.63461538461539,
+      "y": 128.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 6",
+        "loft bay 2 joist 6"
+      ]
+    },
+    "@115.615,71": {
+      "x": 115.61538461538461,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "loft bay 1 joist 7"
+      ]
+    },
+    "@115.615,128": {
+      "x": 115.61538461538461,
+      "y": 128.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 7",
+        "loft bay 2 joist 7"
+      ]
+    },
+    "@131.596,71": {
+      "x": 131.59615384615384,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "loft bay 1 joist 8"
+      ]
+    },
+    "@131.596,128": {
+      "x": 131.59615384615384,
+      "y": 128.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 8",
+        "loft bay 2 joist 8"
+      ]
+    },
+    "@147.577,71": {
+      "x": 147.57692307692307,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "loft bay 1 joist 9"
+      ]
+    },
+    "@147.577,128": {
+      "x": 147.57692307692307,
+      "y": 128.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 9",
+        "loft bay 2 joist 9"
+      ]
+    },
+    "@163.558,71": {
+      "x": 163.55769230769232,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "loft bay 1 joist 10"
+      ]
+    },
+    "@163.558,128": {
+      "x": 163.55769230769232,
+      "y": 128.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 10",
+        "loft bay 2 joist 10"
+      ]
+    },
+    "@179.538,71": {
+      "x": 179.53846153846155,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "loft bay 1 joist 11"
+      ]
+    },
+    "@179.538,128": {
+      "x": 179.53846153846155,
+      "y": 128.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 11",
+        "loft bay 2 joist 11"
+      ]
+    },
+    "@195.519,71": {
+      "x": 195.51923076923077,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "loft bay 1 joist 12"
+      ]
+    },
+    "@195.519,128": {
+      "x": 195.51923076923077,
+      "y": 128.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 12",
+        "loft bay 2 joist 12"
+      ]
+    },
+    "@19.7308,185": {
+      "x": 19.73076923076923,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 2 joist 1"
+      ]
+    },
+    "@35.7115,185": {
+      "x": 35.71153846153846,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 2 joist 2"
+      ]
+    },
+    "@51.6923,185": {
+      "x": 51.69230769230769,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 2 joist 3"
+      ]
+    },
+    "@67.6731,185": {
+      "x": 67.67307692307692,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 2 joist 4"
+      ]
+    },
+    "@83.6538,185": {
+      "x": 83.65384615384616,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 2 joist 5"
+      ]
+    },
+    "@99.6346,185": {
+      "x": 99.63461538461539,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 2 joist 6"
+      ]
+    },
+    "@115.615,185": {
+      "x": 115.61538461538461,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 2 joist 7"
+      ]
+    },
+    "@131.596,185": {
+      "x": 131.59615384615384,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 2 joist 8"
+      ]
+    },
+    "@147.577,185": {
+      "x": 147.57692307692307,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 2 joist 9"
+      ]
+    },
+    "@163.558,185": {
+      "x": 163.55769230769232,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 2 joist 10"
+      ]
+    },
+    "@179.538,185": {
+      "x": 179.53846153846155,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 2 joist 11"
+      ]
+    },
+    "@195.519,185": {
+      "x": 195.51923076923077,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 2 joist 12"
+      ]
+    },
+    "@-18.6562,185": {
+      "x": -18.65625,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 3 joist 1",
+        "west strip infill joist 1"
+      ]
+    },
+    "@-18.6562,268": {
+      "x": -18.65625,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "loft bay 3 joist 1"
+      ]
+    },
+    "@-3.3125,185": {
+      "x": -3.3125,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 3 joist 2",
+        "west strip infill joist 2"
+      ]
+    },
+    "@-3.3125,268": {
+      "x": -3.3125,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "loft bay 3 joist 2"
+      ]
+    },
+    "@12.0312,185": {
+      "x": 12.03125,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 3 joist 3"
+      ]
+    },
+    "@12.0312,268": {
+      "x": 12.03125,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "loft bay 3 joist 3"
+      ]
+    },
+    "@27.375,185": {
+      "x": 27.375,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 3 joist 4"
+      ]
+    },
+    "@27.375,268": {
+      "x": 27.375,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "loft bay 3 joist 4"
+      ]
+    },
+    "@42.7188,185": {
+      "x": 42.71875,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 3 joist 5"
+      ]
+    },
+    "@42.7188,268": {
+      "x": 42.71875,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "loft bay 3 joist 5"
+      ]
+    },
+    "@58.0625,185": {
+      "x": 58.0625,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 3 joist 6"
+      ]
+    },
+    "@58.0625,268": {
+      "x": 58.0625,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "loft bay 3 joist 6"
+      ]
+    },
+    "@73.4062,185": {
+      "x": 73.40625,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 3 joist 7"
+      ]
+    },
+    "@73.4062,268": {
+      "x": 73.40625,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "loft bay 3 joist 7"
+      ]
+    },
+    "@88.75,185": {
+      "x": 88.75,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 3 joist 8"
+      ]
+    },
+    "@104.094,185": {
+      "x": 104.09375,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 3 joist 9"
+      ]
+    },
+    "@104.094,268": {
+      "x": 104.09375,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "loft bay 3 joist 9"
+      ]
+    },
+    "@119.438,185": {
+      "x": 119.4375,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 3 joist 10"
+      ]
+    },
+    "@119.438,268": {
+      "x": 119.4375,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "loft bay 3 joist 10"
+      ]
+    },
+    "@134.781,185": {
+      "x": 134.78125,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 3 joist 11"
+      ]
+    },
+    "@134.781,268": {
+      "x": 134.78125,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "loft bay 3 joist 11"
+      ]
+    },
+    "@150.125,185": {
+      "x": 150.125,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 3 joist 12"
+      ]
+    },
+    "@150.125,268": {
+      "x": 150.125,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "loft bay 3 joist 12"
+      ]
+    },
+    "@165.469,185": {
+      "x": 165.46875,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 3 joist 13"
+      ]
+    },
+    "@165.469,268": {
+      "x": 165.46875,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "loft bay 3 joist 13"
+      ]
+    },
+    "@180.812,185": {
+      "x": 180.8125,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 3 joist 14"
+      ]
+    },
+    "@180.812,268": {
+      "x": 180.8125,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "loft bay 3 joist 14"
+      ]
+    },
+    "@196.156,185": {
+      "x": 196.15625,
+      "y": 185.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-2",
+        "loft bay 3 joist 15"
+      ]
+    },
+    "@196.156,268": {
+      "x": 196.15625,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "loft bay 3 joist 15"
+      ]
+    },
+    "@-18.6562,3": {
+      "x": -18.65625,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S"
+      ]
+    },
+    "@-3.3125,3": {
+      "x": -3.3125,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S"
+      ]
+    },
+    "@12.0312,3": {
+      "x": 12.03125,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "shelf SH joist 3"
+      ]
+    },
+    "@12.0312,71": {
+      "x": 12.03125,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "shelf SH joist 3"
+      ]
+    },
+    "@27.375,3": {
+      "x": 27.375,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "shelf SH joist 4"
+      ]
+    },
+    "@27.375,71": {
+      "x": 27.375,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "shelf SH joist 4"
+      ]
+    },
+    "@42.7188,3": {
+      "x": 42.71875,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "shelf SH joist 5"
+      ]
+    },
+    "@42.7188,71": {
+      "x": 42.71875,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "shelf SH joist 5"
+      ]
+    },
+    "@58.0625,3": {
+      "x": 58.0625,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "shelf SH joist 6"
+      ]
+    },
+    "@58.0625,71": {
+      "x": 58.0625,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "shelf SH joist 6"
+      ]
+    },
+    "@73.4062,3": {
+      "x": 73.40625,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "shelf SH joist 7"
+      ]
+    },
+    "@73.4062,71": {
+      "x": 73.40625,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "shelf SH joist 7"
+      ]
+    },
+    "@88.75,3": {
+      "x": 88.75,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "shelf SH joist 8"
+      ]
+    },
+    "@88.75,71": {
+      "x": 88.75,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "shelf SH joist 8"
+      ]
+    },
+    "@104.094,3": {
+      "x": 104.09375,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "shelf SH joist 9"
+      ]
+    },
+    "@104.094,71": {
+      "x": 104.09375,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "shelf SH joist 9"
+      ]
+    },
+    "@119.438,3": {
+      "x": 119.4375,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "shelf SH joist 10"
+      ]
+    },
+    "@119.438,71": {
+      "x": 119.4375,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "shelf SH joist 10"
+      ]
+    },
+    "@134.781,3": {
+      "x": 134.78125,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "shelf SH joist 11"
+      ]
+    },
+    "@134.781,71": {
+      "x": 134.78125,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "shelf SH joist 11"
+      ]
+    },
+    "@150.125,3": {
+      "x": 150.125,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "shelf SH joist 12"
+      ]
+    },
+    "@150.125,71": {
+      "x": 150.125,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "shelf SH joist 12"
+      ]
+    },
+    "@165.469,3": {
+      "x": 165.46875,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "shelf SH joist 13"
+      ]
+    },
+    "@165.469,71": {
+      "x": 165.46875,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "shelf SH joist 13"
+      ]
+    },
+    "@180.812,3": {
+      "x": 180.8125,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "shelf SH joist 14"
+      ]
+    },
+    "@180.812,71": {
+      "x": 180.8125,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "shelf SH joist 14"
+      ]
+    },
+    "@196.156,3": {
+      "x": 196.15625,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "shelf SH joist 15"
+      ]
+    },
+    "@196.156,71": {
+      "x": 196.15625,
+      "y": 71.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1",
+        "shelf SH joist 15"
+      ]
+    },
+    "@211.5,3": {
+      "x": 211.5,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "BE.mirror",
+        "S3"
+      ]
+    },
+    "@211.5,128": {
+      "x": 211.5,
+      "y": 128.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1A",
+        "BE.mirror"
+      ]
+    },
+    "@6.91667,185,225.25": {
+      "x": 6.916666666666664,
+      "y": 185.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W3",
+        "RF @ 6.9167"
+      ]
+    },
+    "@47.8333,185,225.25": {
+      "x": 47.83333333333333,
+      "y": 185.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W3",
+        "RF @ 47.833"
+      ]
+    },
+    "@88.75,185,225.25": {
+      "x": 88.75,
+      "y": 185.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W3",
+        "RF @ 88.75"
+      ]
+    },
+    "@129.667,185,225.25": {
+      "x": 129.66666666666666,
+      "y": 185.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W3",
+        "RF @ 129.67"
+      ]
+    },
+    "@170.583,185,225.25": {
+      "x": 170.58333333333334,
+      "y": 185.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W3",
+        "RF @ 170.58"
+      ]
+    },
+    "B-SO.seat@6.917": {
+      "x": 6.916666666666664,
+      "y": -63.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-SO"
+      ]
+    },
+    "B-SO.seat@47.83": {
+      "x": 47.83333333333333,
+      "y": -63.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-SO"
+      ]
+    },
+    "B-SO.seat@88.75": {
+      "x": 88.75,
+      "y": -63.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-SO"
+      ]
+    },
+    "B-SO.seat@129.7": {
+      "x": 129.66666666666666,
+      "y": -63.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-SO"
+      ]
+    },
+    "B-SO.seat@170.6": {
+      "x": 170.58333333333334,
+      "y": -63.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-SO"
+      ]
+    },
+    "BW@128": {
+      "x": -34.0,
+      "y": 128.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1A",
+        "BW"
+      ]
+    },
+    "@-18.6562,128": {
+      "x": -18.6562,
+      "y": 128.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1A",
+        "west strip infill joist 1"
+      ]
+    },
+    "@-3.3125,128": {
+      "x": -3.3125,
+      "y": 128.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-1A",
+        "west strip infill joist 2"
+      ]
+    },
+    "@16.75,268": {
+      "x": 16.75,
+      "y": 268.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-N",
+        "N-M2"
+      ]
+    },
+    "@16.75,268,225.25": {
+      "x": 16.75,
+      "y": 268.0,
+      "z": 233.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "N-M2",
+        "R-W4"
+      ]
+    },
+    "EF@-63": {
+      "x": 247.5,
+      "y": -63.0,
+      "z": 112.5,
+      "members": [
+        "B-SO",
+        "BE",
+        "BR-S-1",
+        "E-S2"
+      ]
+    },
+    "EF@-6": {
+      "x": 247.5,
+      "y": 2.5,
+      "z": 112.5,
+      "members": [
+        "B-S",
+        "BE",
+        "E-S3"
+      ]
+    },
+    "EF@71": {
+      "x": 247.5,
+      "y": 71.0,
+      "z": 112.5,
+      "members": [
+        "B-1",
+        "BE"
+      ]
+    },
+    "EF@128": {
+      "x": 247.5,
+      "y": 128.0,
+      "z": 112.5,
+      "members": [
+        "B-1A",
+        "BE"
+      ]
+    },
+    "EF@185": {
+      "x": 247.5,
+      "y": 185.0,
+      "z": 112.5,
+      "members": [
+        "B-2",
+        "BE"
+      ]
+    },
+    "EF@268": {
+      "x": 247.5,
+      "y": 268.0,
+      "z": 112.5,
+      "members": [
+        "B-N",
+        "BE",
+        "E-N2"
+      ]
+    },
+    "EF@-63.base": {
+      "x": 247.5,
+      "y": -63.0,
+      "z": 0.0,
+      "support": true,
+      "members": [
+        "BR-S-2",
+        "E-S2"
+      ]
+    },
+    "EF@-6.base": {
+      "x": 247.5,
+      "y": 2.5,
+      "z": 0.0,
+      "support": true,
+      "members": [
+        "E-S3"
+      ]
+    },
+    "EF@268.base": {
+      "x": 247.5,
+      "y": 268.0,
+      "z": 0.0,
+      "support": true,
+      "members": [
+        "E-N2"
+      ]
+    },
+    "DOOR-W.top": {
+      "x": 110.5,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "DOOR-W"
+      ]
+    },
+    "DOOR-W.base": {
+      "x": 110.5,
+      "y": 2.5,
+      "z": 0,
+      "support": true,
+      "members": [
+        "DOOR-W"
+      ]
+    },
+    "DOOR-E.top": {
+      "x": 144.5,
+      "y": 2.5,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-S",
+        "DOOR-E"
+      ]
+    },
+    "DOOR-E.base": {
+      "x": 144.5,
+      "y": 2.5,
+      "z": 0,
+      "support": true,
+      "members": [
+        "DOOR-E"
+      ]
+    },
+    "MESH.192": {
+      "x": -27.804166666666667,
+      "y": 268.0,
+      "z": 9.375,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-N-1"
+      ]
+    },
+    "MESH.193": {
+      "x": -21.608333333333334,
+      "y": 268.0,
+      "z": 18.75,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-N-1"
+      ]
+    },
+    "MESH.194": {
+      "x": -15.412500000000001,
+      "y": 268.0,
+      "z": 28.125,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-N-1"
+      ]
+    },
+    "MESH.195": {
+      "x": -9.216666666666669,
+      "y": 268.0,
+      "z": 37.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-N-1"
+      ]
+    },
+    "MESH.196": {
+      "x": -3.020833333333332,
+      "y": 268.0,
+      "z": 46.875,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-N-1"
+      ]
+    },
+    "MESH.197": {
+      "x": 3.174999999999997,
+      "y": 268.0,
+      "z": 56.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-N-1"
+      ]
+    },
+    "MESH.198": {
+      "x": 9.37083333333333,
+      "y": 268.0,
+      "z": 65.625,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-N-1"
+      ]
+    },
+    "MESH.199": {
+      "x": 15.566666666666663,
+      "y": 268.0,
+      "z": 75.0,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-N-1"
+      ]
+    },
+    "MESH.200": {
+      "x": 21.762499999999996,
+      "y": 268.0,
+      "z": 84.375,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-N-1"
+      ]
+    },
+    "MESH.201": {
+      "x": 27.958333333333336,
+      "y": 268.0,
+      "z": 93.75,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-N-1"
+      ]
+    },
+    "MESH.202": {
+      "x": 34.154166666666654,
+      "y": 268.0,
+      "z": 103.125,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-N-1"
+      ]
+    },
+    "MESH.203": {
+      "x": 170.58333333333334,
+      "y": -52.69230769230769,
+      "z": 126.53215286315967,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 170.58"
+      ]
+    },
+    "MESH.204": {
+      "x": 170.58333333333334,
+      "y": -42.38461538461539,
+      "z": 133.3645701628814,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 170.58"
+      ]
+    },
+    "MESH.205": {
+      "x": 170.58333333333334,
+      "y": -32.07692307692308,
+      "z": 140.19698746260312,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 170.58"
+      ]
+    },
+    "MESH.206": {
+      "x": 170.58333333333334,
+      "y": -21.769230769230766,
+      "z": 147.02940476232484,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 170.58"
+      ]
+    },
+    "MESH.207": {
+      "x": 170.58333333333334,
+      "y": -11.46153846153846,
+      "z": 153.86182206204657,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 170.58"
+      ]
+    },
+    "MESH.208": {
+      "x": 170.58333333333334,
+      "y": -1.1538461538461533,
+      "z": 160.6942393617683,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 170.58"
+      ]
+    },
+    "MESH.209": {
+      "x": 170.58333333333334,
+      "y": 9.15384615384616,
+      "z": 167.52665666149002,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 170.58"
+      ]
+    },
+    "MESH.210": {
+      "x": 170.58333333333334,
+      "y": 19.461538461538467,
+      "z": 174.35907396121175,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 170.58"
+      ]
+    },
+    "MESH.211": {
+      "x": 170.58333333333334,
+      "y": 29.769230769230774,
+      "z": 181.19149126093347,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 170.58"
+      ]
+    },
+    "MESH.212": {
+      "x": 170.58333333333334,
+      "y": 40.07692307692308,
+      "z": 188.02390856065523,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 170.58"
+      ]
+    },
+    "MESH.213": {
+      "x": 170.58333333333334,
+      "y": 50.38461538461539,
+      "z": 194.85632586037696,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 170.58"
+      ]
+    },
+    "MESH.214": {
+      "x": 170.58333333333334,
+      "y": 60.69230769230769,
+      "z": 201.68874316009868,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 170.58"
+      ]
+    },
+    "RS @ 129.67.RW1": {
+      "x": 129.66666666666666,
+      "y": 2.5,
+      "z": 163.11617832995324,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 129.67"
+      ]
+    },
+    "RW1.seat@129.667": {
+      "x": 129.66666666666666,
+      "y": 2.5,
+      "z": 155.0664427665153,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W1"
+      ]
+    },
+    "RS @ 170.58.RW1": {
+      "x": 170.58333333333334,
+      "y": 2.5,
+      "z": 163.11617832995324,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 170.58"
+      ]
+    },
+    "RW1.seat@170.583": {
+      "x": 170.58333333333334,
+      "y": 2.5,
+      "z": 155.0664427665153,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W1"
+      ]
+    },
+    "RS @ 47.833.RW1": {
+      "x": 47.83333333333333,
+      "y": 2.5,
+      "z": 163.11617832995324,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 47.833"
+      ]
+    },
+    "RW1.seat@47.8333": {
+      "x": 47.83333333333333,
+      "y": 2.5,
+      "z": 155.0664427665153,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W1"
+      ]
+    },
+    "RS @ 6.9167.RW1": {
+      "x": 6.916666666666664,
+      "y": 2.5,
+      "z": 163.11617832995324,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 6.9167"
+      ]
+    },
+    "RW1.seat@6.91667": {
+      "x": 6.916666666666664,
+      "y": 2.5,
+      "z": 155.0664427665153,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W1"
+      ]
+    },
+    "RS @ 88.75.RW1": {
+      "x": 88.75,
+      "y": 2.5,
+      "z": 163.11617832995324,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "RS @ 88.75"
+      ]
+    },
+    "RW1.seat@88.75": {
+      "x": 88.75,
+      "y": 2.5,
+      "z": 155.0664427665153,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "R-W1"
+      ]
+    },
+    "BAYM.325": {
+      "x": -34.0,
+      "y": 261.0833333333333,
+      "z": 9.375,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-W-2"
+      ]
+    },
+    "BAYM.326": {
+      "x": -34.0,
+      "y": 254.16666666666666,
+      "z": 18.75,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-W-2"
+      ]
+    },
+    "BAYM.327": {
+      "x": -34.0,
+      "y": 247.25,
+      "z": 28.125,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-W-2"
+      ]
+    },
+    "BAYM.328": {
+      "x": -34.0,
+      "y": 240.33333333333334,
+      "z": 37.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-W-2"
+      ]
+    },
+    "BAYM.329": {
+      "x": -34.0,
+      "y": 233.41666666666666,
+      "z": 46.875,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-W-2"
+      ]
+    },
+    "BAYM.330": {
+      "x": -34.0,
+      "y": 226.5,
+      "z": 56.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-W-2"
+      ]
+    },
+    "BAYM.331": {
+      "x": -34.0,
+      "y": 219.58333333333334,
+      "z": 65.625,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-W-2"
+      ]
+    },
+    "BAYM.332": {
+      "x": -34.0,
+      "y": 212.66666666666666,
+      "z": 75.0,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-W-2"
+      ]
+    },
+    "BAYM.333": {
+      "x": -34.0,
+      "y": 205.75,
+      "z": 84.375,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-W-2"
+      ]
+    },
+    "BAYM.334": {
+      "x": -34.0,
+      "y": 198.83333333333331,
+      "z": 93.75,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-W-2"
+      ]
+    },
+    "BAYM.335": {
+      "x": -34.0,
+      "y": 191.91666666666669,
+      "z": 103.125,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-W-2"
+      ]
+    },
+    "BAYM.336": {
+      "x": 96.93333333333334,
+      "y": 268.0,
+      "z": 120.55,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-NU-1"
+      ]
+    },
+    "BAYM.337": {
+      "x": 105.11666666666667,
+      "y": 268.0,
+      "z": 128.6,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-NU-1"
+      ]
+    },
+    "BAYM.338": {
+      "x": 113.3,
+      "y": 268.0,
+      "z": 136.65,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-NU-1"
+      ]
+    },
+    "BAYM.339": {
+      "x": 121.48333333333333,
+      "y": 268.0,
+      "z": 144.7,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-NU-1"
+      ]
+    },
+    "BAYM.340": {
+      "x": 129.66666666666666,
+      "y": 268.0,
+      "z": 152.75,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-NU-1"
+      ]
+    },
+    "BAYM.341": {
+      "x": 137.85,
+      "y": 268.0,
+      "z": 160.8,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-NU-1"
+      ]
+    },
+    "BAYM.342": {
+      "x": 146.03333333333333,
+      "y": 268.0,
+      "z": 168.85,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-NU-1"
+      ]
+    },
+    "BAYM.343": {
+      "x": 154.21666666666667,
+      "y": 268.0,
+      "z": 176.9,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-NU-1"
+      ]
+    },
+    "BAYM.344": {
+      "x": 162.4,
+      "y": 268.0,
+      "z": 184.95,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-NU-1"
+      ]
+    },
+    "BAYM.345": {
+      "x": 170.58333333333331,
+      "y": 268.0,
+      "z": 193.0,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-NU-1"
+      ]
+    },
+    "BAYM.346": {
+      "x": 178.76666666666665,
+      "y": 268.0,
+      "z": 201.05,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-NU-1"
+      ]
+    },
+    "BAYM.347": {
+      "x": 186.95,
+      "y": 268.0,
+      "z": 209.1,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-NU-1"
+      ]
+    },
+    "BAYM.348": {
+      "x": 195.13333333333333,
+      "y": 268.0,
+      "z": 217.15,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-NU-1"
+      ]
+    },
+    "BAYM.349": {
+      "x": 203.31666666666666,
+      "y": 268.0,
+      "z": 225.2,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-NU-1"
+      ]
+    },
+    "BAYM.350": {
+      "x": -34.0,
+      "y": 191.3846153846154,
+      "z": 122.0576923076923,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "W.rear.brace"
+      ]
+    },
+    "BAYM.351": {
+      "x": -34.0,
+      "y": 197.76923076923077,
+      "z": 131.6153846153846,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "W.rear.brace"
+      ]
+    },
+    "BAYM.352": {
+      "x": -34.0,
+      "y": 204.15384615384616,
+      "z": 141.17307692307693,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "W.rear.brace"
+      ]
+    },
+    "BAYM.353": {
+      "x": -34.0,
+      "y": 210.53846153846155,
+      "z": 150.73076923076923,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "W.rear.brace"
+      ]
+    },
+    "BAYM.354": {
+      "x": -34.0,
+      "y": 216.92307692307693,
+      "z": 160.28846153846155,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "W.rear.brace"
+      ]
+    },
+    "BAYM.355": {
+      "x": -34.0,
+      "y": 223.30769230769232,
+      "z": 169.84615384615384,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "W.rear.brace"
+      ]
+    },
+    "BAYM.356": {
+      "x": -34.0,
+      "y": 229.69230769230768,
+      "z": 179.40384615384616,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "W.rear.brace"
+      ]
+    },
+    "BAYM.357": {
+      "x": -34.0,
+      "y": 236.0769230769231,
+      "z": 188.96153846153845,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "W.rear.brace"
+      ]
+    },
+    "BAYM.358": {
+      "x": -34.0,
+      "y": 242.46153846153845,
+      "z": 198.51923076923077,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "W.rear.brace"
+      ]
+    },
+    "BAYM.359": {
+      "x": -34.0,
+      "y": 248.84615384615384,
+      "z": 208.0769230769231,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "W.rear.brace"
+      ]
+    },
+    "BAYM.360": {
+      "x": -34.0,
+      "y": 255.23076923076923,
+      "z": 217.6346153846154,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "W.rear.brace"
+      ]
+    },
+    "BAYM.361": {
+      "x": -34.0,
+      "y": 261.61538461538464,
+      "z": 227.19230769230768,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "W.rear.brace"
+      ]
+    },
+    "TRIM.362": {
+      "x": 176.0,
+      "y": -63.0,
+      "z": 9.375,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-1"
+      ]
+    },
+    "TRIM.363": {
+      "x": 182.5,
+      "y": -63.0,
+      "z": 18.75,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-1"
+      ]
+    },
+    "TRIM.364": {
+      "x": 189.0,
+      "y": -63.0,
+      "z": 28.125,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-1"
+      ]
+    },
+    "TRIM.365": {
+      "x": 195.5,
+      "y": -63.0,
+      "z": 37.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-1"
+      ]
+    },
+    "TRIM.366": {
+      "x": 202.0,
+      "y": -63.0,
+      "z": 46.875,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-1"
+      ]
+    },
+    "TRIM.367": {
+      "x": 208.5,
+      "y": -63.0,
+      "z": 56.25,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-1"
+      ]
+    },
+    "TRIM.368": {
+      "x": 215.0,
+      "y": -63.0,
+      "z": 65.625,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-1"
+      ]
+    },
+    "TRIM.369": {
+      "x": 221.5,
+      "y": -63.0,
+      "z": 75.0,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-1"
+      ]
+    },
+    "TRIM.370": {
+      "x": 228.0,
+      "y": -63.0,
+      "z": 84.375,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-1"
+      ]
+    },
+    "TRIM.371": {
+      "x": 234.5,
+      "y": -63.0,
+      "z": 93.75,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-1"
+      ]
+    },
+    "TRIM.372": {
+      "x": 241.0,
+      "y": -63.0,
+      "z": 103.125,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-1"
+      ]
+    },
+    "TRIM.373": {
+      "x": 241.0,
+      "y": -63.0,
+      "z": 10.020833333333334,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-2"
+      ]
+    },
+    "TRIM.374": {
+      "x": 234.5,
+      "y": -63.0,
+      "z": 20.041666666666668,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-2"
+      ]
+    },
+    "TRIM.375": {
+      "x": 228.0,
+      "y": -63.0,
+      "z": 30.0625,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-2"
+      ]
+    },
+    "TRIM.376": {
+      "x": 221.5,
+      "y": -63.0,
+      "z": 40.083333333333336,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-2"
+      ]
+    },
+    "TRIM.377": {
+      "x": 215.0,
+      "y": -63.0,
+      "z": 50.104166666666664,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-2"
+      ]
+    },
+    "TRIM.378": {
+      "x": 208.5,
+      "y": -63.0,
+      "z": 60.125,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-2"
+      ]
+    },
+    "TRIM.379": {
+      "x": 202.0,
+      "y": -63.0,
+      "z": 70.14583333333333,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-2"
+      ]
+    },
+    "TRIM.380": {
+      "x": 195.5,
+      "y": -63.0,
+      "z": 80.16666666666667,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-2"
+      ]
+    },
+    "TRIM.381": {
+      "x": 189.0,
+      "y": -63.0,
+      "z": 90.1875,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-2"
+      ]
+    },
+    "TRIM.382": {
+      "x": 182.5,
+      "y": -63.0,
+      "z": 100.20833333333333,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-2"
+      ]
+    },
+    "TRIM.383": {
+      "x": 176.0,
+      "y": -63.0,
+      "z": 110.22916666666667,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-2"
+      ]
+    },
+    "MIRROR.W3.base": {
+      "x": 211.5,
+      "y": 185.0,
+      "z": 0.0,
+      "support": true,
+      "members": [
+        "E.W3"
+      ]
+    },
+    "MIRROR.BAYM.350": {
+      "x": 211.5,
+      "y": 191.3846153846154,
+      "z": 122.0576923076923,
+      "support": false,
+      "members": [
+        "E.rear.brace"
+      ]
+    },
+    "MIRROR.BAYM.351": {
+      "x": 211.5,
+      "y": 197.76923076923077,
+      "z": 131.6153846153846,
+      "support": false,
+      "members": [
+        "E.rear.brace"
+      ]
+    },
+    "MIRROR.BAYM.352": {
+      "x": 211.5,
+      "y": 204.15384615384616,
+      "z": 141.17307692307693,
+      "support": false,
+      "members": [
+        "E.rear.brace"
+      ]
+    },
+    "MIRROR.BAYM.353": {
+      "x": 211.5,
+      "y": 210.53846153846155,
+      "z": 150.73076923076923,
+      "support": false,
+      "members": [
+        "E.rear.brace"
+      ]
+    },
+    "MIRROR.BAYM.354": {
+      "x": 211.5,
+      "y": 216.92307692307693,
+      "z": 160.28846153846155,
+      "support": false,
+      "members": [
+        "E.rear.brace"
+      ]
+    },
+    "MIRROR.BAYM.355": {
+      "x": 211.5,
+      "y": 223.30769230769232,
+      "z": 169.84615384615384,
+      "support": false,
+      "members": [
+        "E.rear.brace"
+      ]
+    },
+    "MIRROR.BAYM.356": {
+      "x": 211.5,
+      "y": 229.69230769230768,
+      "z": 179.40384615384616,
+      "support": false,
+      "members": [
+        "E.rear.brace"
+      ]
+    },
+    "MIRROR.BAYM.357": {
+      "x": 211.5,
+      "y": 236.0769230769231,
+      "z": 188.96153846153845,
+      "support": false,
+      "members": [
+        "E.rear.brace"
+      ]
+    },
+    "MIRROR.BAYM.358": {
+      "x": 211.5,
+      "y": 242.46153846153845,
+      "z": 198.51923076923077,
+      "support": false,
+      "members": [
+        "E.rear.brace"
+      ]
+    },
+    "MIRROR.BAYM.359": {
+      "x": 211.5,
+      "y": 248.84615384615384,
+      "z": 208.0769230769231,
+      "support": false,
+      "members": [
+        "E.rear.brace"
+      ]
+    },
+    "MIRROR.BAYM.360": {
+      "x": 211.5,
+      "y": 255.23076923076923,
+      "z": 217.6346153846154,
+      "support": false,
+      "members": [
+        "E.rear.brace"
+      ]
+    },
+    "MIRROR.BAYM.361": {
+      "x": 211.5,
+      "y": 261.61538461538464,
+      "z": 227.19230769230768,
+      "support": false,
+      "members": [
+        "E.rear.brace"
+      ]
+    },
+    "MIRROR.BAYM.325": {
+      "x": 211.5,
+      "y": 261.0833333333333,
+      "z": 9.375,
+      "support": false,
+      "members": [
+        "BR-E-2"
+      ]
+    },
+    "MIRROR.BAYM.326": {
+      "x": 211.5,
+      "y": 254.16666666666666,
+      "z": 18.75,
+      "support": false,
+      "members": [
+        "BR-E-2"
+      ]
+    },
+    "MIRROR.BAYM.327": {
+      "x": 211.5,
+      "y": 247.25,
+      "z": 28.125,
+      "support": false,
+      "members": [
+        "BR-E-2"
+      ]
+    },
+    "MIRROR.BAYM.328": {
+      "x": 211.5,
+      "y": 240.33333333333334,
+      "z": 37.5,
+      "support": false,
+      "members": [
+        "BR-E-2"
+      ]
+    },
+    "MIRROR.BAYM.329": {
+      "x": 211.5,
+      "y": 233.41666666666666,
+      "z": 46.875,
+      "support": false,
+      "members": [
+        "BR-E-2"
+      ]
+    },
+    "MIRROR.BAYM.330": {
+      "x": 211.5,
+      "y": 226.5,
+      "z": 56.25,
+      "support": false,
+      "members": [
+        "BR-E-2"
+      ]
+    },
+    "MIRROR.BAYM.331": {
+      "x": 211.5,
+      "y": 219.58333333333334,
+      "z": 65.625,
+      "support": false,
+      "members": [
+        "BR-E-2"
+      ]
+    },
+    "MIRROR.BAYM.332": {
+      "x": 211.5,
+      "y": 212.66666666666666,
+      "z": 75.0,
+      "support": false,
+      "members": [
+        "BR-E-2"
+      ]
+    },
+    "MIRROR.BAYM.333": {
+      "x": 211.5,
+      "y": 205.75,
+      "z": 84.375,
+      "support": false,
+      "members": [
+        "BR-E-2"
+      ]
+    },
+    "MIRROR.BAYM.334": {
+      "x": 211.5,
+      "y": 198.83333333333331,
+      "z": 93.75,
+      "support": false,
+      "members": [
+        "BR-E-2"
+      ]
+    },
+    "MIRROR.BAYM.335": {
+      "x": 211.5,
+      "y": 191.91666666666669,
+      "z": 103.125,
+      "support": false,
+      "members": [
+        "BR-E-2"
+      ]
+    }
+  },
+  "segments": [
+    [
+      "B-SO",
+      "@-34,-63",
+      "B-SO.seat@6.917"
+    ],
+    [
+      "BW",
+      "@-34,-63",
+      "@-34,3"
+    ],
+    [
+      "SW0",
+      "@-34,-63",
+      "SW0.top"
+    ],
+    [
+      "B-S",
+      "@-34,3",
+      "@-18.6562,3"
+    ],
+    [
+      "BW",
+      "@-34,3",
+      "@-34,71"
+    ],
+    [
+      "W1",
+      "@-34,3",
+      "@-34,3,147.355"
+    ],
+    [
+      "BW",
+      "@-34,71",
+      "BW@128"
+    ],
+    [
+      "W2",
+      "@-34,71",
+      "@-34,71,194.365"
+    ],
+    [
+      "B-1A",
+      "@3.75,128",
+      "@19.7308,128"
+    ],
+    [
+      "BWI",
+      "@3.75,128",
+      "@3.75,185"
+    ],
+    [
+      "B-2",
+      "@-34,185",
+      "@-18.6562,185"
+    ],
+    [
+      "BW",
+      "@-34,185",
+      "@-34,268"
+    ],
+    [
+      "W3",
+      "@-34,185",
+      "@-34,185,225.25"
+    ],
+    [
+      "W.rear.brace",
+      "@-34,185",
+      "BAYM.350"
+    ],
+    [
+      "W.rear.brace",
+      "BAYM.350",
+      "BAYM.351"
+    ],
+    [
+      "W.rear.brace",
+      "BAYM.351",
+      "BAYM.352"
+    ],
+    [
+      "W.rear.brace",
+      "BAYM.352",
+      "BAYM.353"
+    ],
+    [
+      "W.rear.brace",
+      "BAYM.353",
+      "BAYM.354"
+    ],
+    [
+      "W.rear.brace",
+      "BAYM.354",
+      "BAYM.355"
+    ],
+    [
+      "W.rear.brace",
+      "BAYM.355",
+      "BAYM.356"
+    ],
+    [
+      "W.rear.brace",
+      "BAYM.356",
+      "BAYM.357"
+    ],
+    [
+      "W.rear.brace",
+      "BAYM.357",
+      "BAYM.358"
+    ],
+    [
+      "W.rear.brace",
+      "BAYM.358",
+      "BAYM.359"
+    ],
+    [
+      "W.rear.brace",
+      "BAYM.359",
+      "BAYM.360"
+    ],
+    [
+      "W.rear.brace",
+      "BAYM.360",
+      "BAYM.361"
+    ],
+    [
+      "W.rear.brace",
+      "BAYM.361",
+      "W4.top"
+    ],
+    [
+      "B-N",
+      "@-34,268",
+      "@-18.6562,268"
+    ],
+    [
+      "W4",
+      "@-34,268",
+      "@-34,268,225.25"
+    ],
+    [
+      "B-2",
+      "@3.75,185",
+      "@12.0312,185"
+    ],
+    [
+      "BWI",
+      "@3.75,185",
+      "@3.75,268"
+    ],
+    [
+      "B-N",
+      "@3.75,268",
+      "@12.0312,268"
+    ],
+    [
+      "B-1",
+      "@3.75,71",
+      "@12.0312,71"
+    ],
+    [
+      "BWI",
+      "@3.75,71",
+      "@3.75,128"
+    ],
+    [
+      "B-S",
+      "@3.75,3",
+      "@12.0312,3"
+    ],
+    [
+      "BWI",
+      "@3.75,3",
+      "@3.75,71"
+    ],
+    [
+      "SW0",
+      "SW0.base",
+      "@-34,-63"
+    ],
+    [
+      "W.slope",
+      "SW0.top",
+      "W1.top"
+    ],
+    [
+      "W.slope",
+      "W1.top",
+      "@-34,71,194.365"
+    ],
+    [
+      "W.top",
+      "W2.top",
+      "W3.top"
+    ],
+    [
+      "W3",
+      "W3.base",
+      "@-34,185"
+    ],
+    [
+      "W.top",
+      "W3.top",
+      "W4.top"
+    ],
+    [
+      "W4",
+      "W4.base",
+      "@-34,268"
+    ],
+    [
+      "BR-W-2",
+      "BAYM.325",
+      "W4.base"
+    ],
+    [
+      "BR-W-2",
+      "BAYM.326",
+      "BAYM.325"
+    ],
+    [
+      "BR-W-2",
+      "BAYM.327",
+      "BAYM.326"
+    ],
+    [
+      "BR-W-2",
+      "BAYM.328",
+      "BAYM.327"
+    ],
+    [
+      "BR-W-2",
+      "BAYM.329",
+      "BAYM.328"
+    ],
+    [
+      "BR-W-2",
+      "BAYM.330",
+      "BAYM.329"
+    ],
+    [
+      "BR-W-2",
+      "BAYM.331",
+      "BAYM.330"
+    ],
+    [
+      "BR-W-2",
+      "BAYM.332",
+      "BAYM.331"
+    ],
+    [
+      "BR-W-2",
+      "BAYM.333",
+      "BAYM.332"
+    ],
+    [
+      "BR-W-2",
+      "BAYM.334",
+      "BAYM.333"
+    ],
+    [
+      "BR-W-2",
+      "BAYM.335",
+      "BAYM.334"
+    ],
+    [
+      "BR-W-2",
+      "@-34,185",
+      "BAYM.335"
+    ],
+    [
+      "BR-N-1",
+      "W4.base",
+      "MESH.192"
+    ],
+    [
+      "BR-N-1",
+      "MESH.192",
+      "MESH.193"
+    ],
+    [
+      "BR-N-1",
+      "MESH.193",
+      "MESH.194"
+    ],
+    [
+      "BR-N-1",
+      "MESH.194",
+      "MESH.195"
+    ],
+    [
+      "BR-N-1",
+      "MESH.195",
+      "MESH.196"
+    ],
+    [
+      "BR-N-1",
+      "MESH.196",
+      "MESH.197"
+    ],
+    [
+      "BR-N-1",
+      "MESH.197",
+      "MESH.198"
+    ],
+    [
+      "BR-N-1",
+      "MESH.198",
+      "MESH.199"
+    ],
+    [
+      "BR-N-1",
+      "MESH.199",
+      "MESH.200"
+    ],
+    [
+      "BR-N-1",
+      "MESH.200",
+      "MESH.201"
+    ],
+    [
+      "BR-N-1",
+      "MESH.201",
+      "MESH.202"
+    ],
+    [
+      "BR-N-1",
+      "MESH.202",
+      "N1.top"
+    ],
+    [
+      "S1",
+      "S1.base",
+      "@145.5,-63"
+    ],
+    [
+      "N1",
+      "N1.base",
+      "N1.top"
+    ],
+    [
+      "BR-N-2",
+      "N1.base",
+      "@-34,268"
+    ],
+    [
+      "B-N",
+      "N1.top",
+      "@42.7188,268"
+    ],
+    [
+      "B-N",
+      "@88.75,268",
+      "@104.094,268"
+    ],
+    [
+      "N-M",
+      "@88.75,268",
+      "@88.75,268,225.25"
+    ],
+    [
+      "BR-NU-1",
+      "@88.75,268",
+      "BAYM.336"
+    ],
+    [
+      "BR-NU-1",
+      "BAYM.336",
+      "BAYM.337"
+    ],
+    [
+      "BR-NU-1",
+      "BAYM.337",
+      "BAYM.338"
+    ],
+    [
+      "BR-NU-1",
+      "BAYM.338",
+      "BAYM.339"
+    ],
+    [
+      "BR-NU-1",
+      "BAYM.339",
+      "BAYM.340"
+    ],
+    [
+      "BR-NU-1",
+      "BAYM.340",
+      "BAYM.341"
+    ],
+    [
+      "BR-NU-1",
+      "BAYM.341",
+      "BAYM.342"
+    ],
+    [
+      "BR-NU-1",
+      "BAYM.342",
+      "BAYM.343"
+    ],
+    [
+      "BR-NU-1",
+      "BAYM.343",
+      "BAYM.344"
+    ],
+    [
+      "BR-NU-1",
+      "BAYM.344",
+      "BAYM.345"
+    ],
+    [
+      "BR-NU-1",
+      "BAYM.345",
+      "BAYM.346"
+    ],
+    [
+      "BR-NU-1",
+      "BAYM.346",
+      "BAYM.347"
+    ],
+    [
+      "BR-NU-1",
+      "BAYM.347",
+      "BAYM.348"
+    ],
+    [
+      "BR-NU-1",
+      "BAYM.348",
+      "BAYM.349"
+    ],
+    [
+      "BR-NU-1",
+      "BAYM.349",
+      "@211.5,268,225.25"
+    ],
+    [
+      "R-W4",
+      "@88.75,268,225.25",
+      "@129.667,268,225.25"
+    ],
+    [
+      "W1",
+      "@-34,3,147.355",
+      "W1.top"
+    ],
+    [
+      "R-W1",
+      "@-34,3,147.355",
+      "RW1.seat@6.91667"
+    ],
+    [
+      "R-W1",
+      "RW1.seat@6.91667",
+      "RW1.seat@47.8333"
+    ],
+    [
+      "R-W1",
+      "RW1.seat@47.8333",
+      "RW1.seat@88.75"
+    ],
+    [
+      "R-W1",
+      "RW1.seat@88.75",
+      "RW1.seat@129.667"
+    ],
+    [
+      "R-W1",
+      "RW1.seat@129.667",
+      "RW1.seat@170.583"
+    ],
+    [
+      "R-W1",
+      "RW1.seat@170.583",
+      "@211.5,3,147.355"
+    ],
+    [
+      "W3",
+      "@-34,185,225.25",
+      "W3.top"
+    ],
+    [
+      "R-W3",
+      "@-34,185,225.25",
+      "@6.91667,185,225.25"
+    ],
+    [
+      "W4",
+      "@-34,268,225.25",
+      "W4.top"
+    ],
+    [
+      "R-W4",
+      "@-34,268,225.25",
+      "@6.91667,268,225.25"
+    ],
+    [
+      "B-SO",
+      "@145.5,-63",
+      "B-SO.seat@170.6"
+    ],
+    [
+      "S1",
+      "@145.5,-63",
+      "S1.top"
+    ],
+    [
+      "RS @ 6.9167",
+      "@6.91667,-63,117",
+      "RS @ 6.9167.RW1"
+    ],
+    [
+      "RS @ 6.9167",
+      "RS @ 6.9167.RW1",
+      "@6.91667,71,194.365"
+    ],
+    [
+      "CT.bottom",
+      "@6.91667,71,194.365",
+      "@47.8333,71,194.365"
+    ],
+    [
+      "CT.mullion.1",
+      "@6.91667,71,194.365",
+      "@6.91667,71,225.25"
+    ],
+    [
+      "RF @ 6.9167",
+      "@6.91667,71,225.25",
+      "@6.91667,185,225.25"
+    ],
+    [
+      "CT.top",
+      "@6.91667,71,225.25",
+      "@47.8333,71,225.25"
+    ],
+    [
+      "R-W4",
+      "@6.91667,268,225.25",
+      "@16.75,268,225.25"
+    ],
+    [
+      "RS @ 47.833",
+      "@47.8333,-63,117",
+      "RS @ 47.833.RW1"
+    ],
+    [
+      "RS @ 47.833",
+      "RS @ 47.833.RW1",
+      "@47.8333,71,194.365"
+    ],
+    [
+      "CT.bottom",
+      "@47.8333,71,194.365",
+      "@88.75,71,194.365"
+    ],
+    [
+      "CT.mullion.2",
+      "@47.8333,71,194.365",
+      "@47.8333,71,225.25"
+    ],
+    [
+      "RF @ 47.833",
+      "@47.8333,71,225.25",
+      "@47.8333,185,225.25"
+    ],
+    [
+      "CT.top",
+      "@47.8333,71,225.25",
+      "@88.75,71,225.25"
+    ],
+    [
+      "R-W4",
+      "@47.8333,268,225.25",
+      "@88.75,268,225.25"
+    ],
+    [
+      "RS @ 88.75",
+      "@88.75,-63,117",
+      "RS @ 88.75.RW1"
+    ],
+    [
+      "RS @ 88.75",
+      "RS @ 88.75.RW1",
+      "@88.75,71,194.365"
+    ],
+    [
+      "CT.bottom",
+      "@88.75,71,194.365",
+      "@129.667,71,194.365"
+    ],
+    [
+      "CT.mullion.3",
+      "@88.75,71,194.365",
+      "@88.75,71,225.25"
+    ],
+    [
+      "RF @ 88.75",
+      "@88.75,71,225.25",
+      "@88.75,185,225.25"
+    ],
+    [
+      "CT.top",
+      "@88.75,71,225.25",
+      "@129.667,71,225.25"
+    ],
+    [
+      "RS @ 129.67",
+      "@129.667,-63,117",
+      "RS @ 129.67.RW1"
+    ],
+    [
+      "RS @ 129.67",
+      "RS @ 129.67.RW1",
+      "@129.667,71,194.365"
+    ],
+    [
+      "CT.bottom",
+      "@129.667,71,194.365",
+      "@170.583,71,194.365"
+    ],
+    [
+      "CT.mullion.4",
+      "@129.667,71,194.365",
+      "@129.667,71,225.25"
+    ],
+    [
+      "RF @ 129.67",
+      "@129.667,71,225.25",
+      "@129.667,185,225.25"
+    ],
+    [
+      "CT.top",
+      "@129.667,71,225.25",
+      "@170.583,71,225.25"
+    ],
+    [
+      "R-W4",
+      "@129.667,268,225.25",
+      "@170.583,268,225.25"
+    ],
+    [
+      "RS @ 170.58",
+      "@170.583,-63,117",
+      "MESH.203"
+    ],
+    [
+      "RS @ 170.58",
+      "MESH.203",
+      "MESH.204"
+    ],
+    [
+      "RS @ 170.58",
+      "MESH.204",
+      "MESH.205"
+    ],
+    [
+      "RS @ 170.58",
+      "MESH.205",
+      "MESH.206"
+    ],
+    [
+      "RS @ 170.58",
+      "MESH.206",
+      "MESH.207"
+    ],
+    [
+      "RS @ 170.58",
+      "MESH.207",
+      "MESH.208"
+    ],
+    [
+      "RS @ 170.58",
+      "MESH.208",
+      "RS @ 170.58.RW1"
+    ],
+    [
+      "RS @ 170.58",
+      "RS @ 170.58.RW1",
+      "MESH.209"
+    ],
+    [
+      "RS @ 170.58",
+      "MESH.209",
+      "MESH.210"
+    ],
+    [
+      "RS @ 170.58",
+      "MESH.210",
+      "MESH.211"
+    ],
+    [
+      "RS @ 170.58",
+      "MESH.211",
+      "MESH.212"
+    ],
+    [
+      "RS @ 170.58",
+      "MESH.212",
+      "MESH.213"
+    ],
+    [
+      "RS @ 170.58",
+      "MESH.213",
+      "MESH.214"
+    ],
+    [
+      "RS @ 170.58",
+      "MESH.214",
+      "@170.583,71,194.365"
+    ],
+    [
+      "CT.bottom",
+      "@170.583,71,194.365",
+      "@211.5,71,194.365"
+    ],
+    [
+      "CT.mullion.5",
+      "@170.583,71,194.365",
+      "@170.583,71,225.25"
+    ],
+    [
+      "RF @ 170.58",
+      "@170.583,71,225.25",
+      "@170.583,185,225.25"
+    ],
+    [
+      "CT.top",
+      "@170.583,71,225.25",
+      "@211.5,71,225.25"
+    ],
+    [
+      "R-W4",
+      "@170.583,268,225.25",
+      "@211.5,268,225.25"
+    ],
+    [
+      "W2",
+      "@-34,71,225.25",
+      "W2.top"
+    ],
+    [
+      "CT.top",
+      "@-34,71,225.25",
+      "@6.91667,71,225.25"
+    ],
+    [
+      "W2",
+      "@-34,71,194.365",
+      "@-34,71,225.25"
+    ],
+    [
+      "CT.bottom",
+      "@-34,71,194.365",
+      "@6.91667,71,194.365"
+    ],
+    [
+      "CT.diag.W",
+      "@-34,71,194.365",
+      "@6.91667,71,225.25"
+    ],
+    [
+      "CT.diag.E",
+      "@211.5,71,194.365",
+      "@170.583,71,225.25"
+    ],
+    [
+      "B-1",
+      "@19.7308,71",
+      "@27.375,71"
+    ],
+    [
+      "loft bay 1 joist 1",
+      "@19.7308,71",
+      "@19.7308,128"
+    ],
+    [
+      "B-1A",
+      "@19.7308,128",
+      "@35.7115,128"
+    ],
+    [
+      "loft bay 2 joist 1",
+      "@19.7308,128",
+      "@19.7308,185"
+    ],
+    [
+      "B-1",
+      "@35.7115,71",
+      "@42.7188,71"
+    ],
+    [
+      "loft bay 1 joist 2",
+      "@35.7115,71",
+      "@35.7115,128"
+    ],
+    [
+      "B-1A",
+      "@35.7115,128",
+      "@51.6923,128"
+    ],
+    [
+      "loft bay 2 joist 2",
+      "@35.7115,128",
+      "@35.7115,185"
+    ],
+    [
+      "B-1",
+      "@51.6923,71",
+      "@58.0625,71"
+    ],
+    [
+      "loft bay 1 joist 3",
+      "@51.6923,71",
+      "@51.6923,128"
+    ],
+    [
+      "B-1A",
+      "@51.6923,128",
+      "@67.6731,128"
+    ],
+    [
+      "loft bay 2 joist 3",
+      "@51.6923,128",
+      "@51.6923,185"
+    ],
+    [
+      "B-1",
+      "@67.6731,71",
+      "@73.4062,71"
+    ],
+    [
+      "loft bay 1 joist 4",
+      "@67.6731,71",
+      "@67.6731,128"
+    ],
+    [
+      "B-1A",
+      "@67.6731,128",
+      "@83.6538,128"
+    ],
+    [
+      "loft bay 2 joist 4",
+      "@67.6731,128",
+      "@67.6731,185"
+    ],
+    [
+      "B-1",
+      "@83.6538,71",
+      "@88.75,71"
+    ],
+    [
+      "loft bay 1 joist 5",
+      "@83.6538,71",
+      "@83.6538,128"
+    ],
+    [
+      "B-1A",
+      "@83.6538,128",
+      "@99.6346,128"
+    ],
+    [
+      "loft bay 2 joist 5",
+      "@83.6538,128",
+      "@83.6538,185"
+    ],
+    [
+      "B-1",
+      "@99.6346,71",
+      "@104.094,71"
+    ],
+    [
+      "loft bay 1 joist 6",
+      "@99.6346,71",
+      "@99.6346,128"
+    ],
+    [
+      "B-1A",
+      "@99.6346,128",
+      "@115.615,128"
+    ],
+    [
+      "loft bay 2 joist 6",
+      "@99.6346,128",
+      "@99.6346,185"
+    ],
+    [
+      "B-1",
+      "@115.615,71",
+      "@119.438,71"
+    ],
+    [
+      "loft bay 1 joist 7",
+      "@115.615,71",
+      "@115.615,128"
+    ],
+    [
+      "B-1A",
+      "@115.615,128",
+      "@131.596,128"
+    ],
+    [
+      "loft bay 2 joist 7",
+      "@115.615,128",
+      "@115.615,185"
+    ],
+    [
+      "B-1",
+      "@131.596,71",
+      "@134.781,71"
+    ],
+    [
+      "loft bay 1 joist 8",
+      "@131.596,71",
+      "@131.596,128"
+    ],
+    [
+      "B-1A",
+      "@131.596,128",
+      "@147.577,128"
+    ],
+    [
+      "loft bay 2 joist 8",
+      "@131.596,128",
+      "@131.596,185"
+    ],
+    [
+      "B-1",
+      "@147.577,71",
+      "@150.125,71"
+    ],
+    [
+      "loft bay 1 joist 9",
+      "@147.577,71",
+      "@147.577,128"
+    ],
+    [
+      "B-1A",
+      "@147.577,128",
+      "@163.558,128"
+    ],
+    [
+      "loft bay 2 joist 9",
+      "@147.577,128",
+      "@147.577,185"
+    ],
+    [
+      "B-1",
+      "@163.558,71",
+      "@165.469,71"
+    ],
+    [
+      "loft bay 1 joist 10",
+      "@163.558,71",
+      "@163.558,128"
+    ],
+    [
+      "B-1A",
+      "@163.558,128",
+      "@179.538,128"
+    ],
+    [
+      "loft bay 2 joist 10",
+      "@163.558,128",
+      "@163.558,185"
+    ],
+    [
+      "B-1",
+      "@179.538,71",
+      "@180.812,71"
+    ],
+    [
+      "loft bay 1 joist 11",
+      "@179.538,71",
+      "@179.538,128"
+    ],
+    [
+      "B-1A",
+      "@179.538,128",
+      "@195.519,128"
+    ],
+    [
+      "loft bay 2 joist 11",
+      "@179.538,128",
+      "@179.538,185"
+    ],
+    [
+      "B-1",
+      "@195.519,71",
+      "@196.156,71"
+    ],
+    [
+      "loft bay 1 joist 12",
+      "@195.519,71",
+      "@195.519,128"
+    ],
+    [
+      "B-1A",
+      "@195.519,128",
+      "@211.5,128"
+    ],
+    [
+      "loft bay 2 joist 12",
+      "@195.519,128",
+      "@195.519,185"
+    ],
+    [
+      "B-2",
+      "@19.7308,185",
+      "@27.375,185"
+    ],
+    [
+      "B-2",
+      "@35.7115,185",
+      "@42.7188,185"
+    ],
+    [
+      "B-2",
+      "@51.6923,185",
+      "@58.0625,185"
+    ],
+    [
+      "B-2",
+      "@67.6731,185",
+      "@73.4062,185"
+    ],
+    [
+      "B-2",
+      "@83.6538,185",
+      "@88.75,185"
+    ],
+    [
+      "B-2",
+      "@99.6346,185",
+      "@104.094,185"
+    ],
+    [
+      "B-2",
+      "@115.615,185",
+      "@119.438,185"
+    ],
+    [
+      "B-2",
+      "@131.596,185",
+      "@134.781,185"
+    ],
+    [
+      "B-2",
+      "@147.577,185",
+      "@150.125,185"
+    ],
+    [
+      "B-2",
+      "@163.558,185",
+      "@165.469,185"
+    ],
+    [
+      "B-2",
+      "@179.538,185",
+      "@180.812,185"
+    ],
+    [
+      "B-2",
+      "@195.519,185",
+      "@196.156,185"
+    ],
+    [
+      "B-2",
+      "@-18.6562,185",
+      "@-3.3125,185"
+    ],
+    [
+      "loft bay 3 joist 1",
+      "@-18.6562,185",
+      "@-18.6562,268"
+    ],
+    [
+      "B-N",
+      "@-18.6562,268",
+      "@-3.3125,268"
+    ],
+    [
+      "B-2",
+      "@-3.3125,185",
+      "@3.75,185"
+    ],
+    [
+      "loft bay 3 joist 2",
+      "@-3.3125,185",
+      "@-3.3125,268"
+    ],
+    [
+      "B-N",
+      "@-3.3125,268",
+      "@3.75,268"
+    ],
+    [
+      "B-2",
+      "@12.0312,185",
+      "@19.7308,185"
+    ],
+    [
+      "loft bay 3 joist 3",
+      "@12.0312,185",
+      "@12.0312,268"
+    ],
+    [
+      "B-N",
+      "@12.0312,268",
+      "@16.75,268"
+    ],
+    [
+      "B-2",
+      "@27.375,185",
+      "@35.7115,185"
+    ],
+    [
+      "loft bay 3 joist 4",
+      "@27.375,185",
+      "@27.375,268"
+    ],
+    [
+      "B-N",
+      "@27.375,268",
+      "N1.top"
+    ],
+    [
+      "B-2",
+      "@42.7188,185",
+      "@51.6923,185"
+    ],
+    [
+      "loft bay 3 joist 5",
+      "@42.7188,185",
+      "@42.7188,268"
+    ],
+    [
+      "B-N",
+      "@42.7188,268",
+      "@58.0625,268"
+    ],
+    [
+      "B-2",
+      "@58.0625,185",
+      "@67.6731,185"
+    ],
+    [
+      "loft bay 3 joist 6",
+      "@58.0625,185",
+      "@58.0625,268"
+    ],
+    [
+      "B-N",
+      "@58.0625,268",
+      "@73.4062,268"
+    ],
+    [
+      "B-2",
+      "@73.4062,185",
+      "@83.6538,185"
+    ],
+    [
+      "loft bay 3 joist 7",
+      "@73.4062,185",
+      "@73.4062,268"
+    ],
+    [
+      "B-N",
+      "@73.4062,268",
+      "@88.75,268"
+    ],
+    [
+      "B-2",
+      "@88.75,185",
+      "@99.6346,185"
+    ],
+    [
+      "loft bay 3 joist 8",
+      "@88.75,185",
+      "@88.75,268"
+    ],
+    [
+      "B-2",
+      "@104.094,185",
+      "@115.615,185"
+    ],
+    [
+      "loft bay 3 joist 9",
+      "@104.094,185",
+      "@104.094,268"
+    ],
+    [
+      "B-N",
+      "@104.094,268",
+      "@119.438,268"
+    ],
+    [
+      "B-2",
+      "@119.438,185",
+      "@131.596,185"
+    ],
+    [
+      "loft bay 3 joist 10",
+      "@119.438,185",
+      "@119.438,268"
+    ],
+    [
+      "B-N",
+      "@119.438,268",
+      "@134.781,268"
+    ],
+    [
+      "B-2",
+      "@134.781,185",
+      "@147.577,185"
+    ],
+    [
+      "loft bay 3 joist 11",
+      "@134.781,185",
+      "@134.781,268"
+    ],
+    [
+      "B-N",
+      "@134.781,268",
+      "@150.125,268"
+    ],
+    [
+      "B-2",
+      "@150.125,185",
+      "@163.558,185"
+    ],
+    [
+      "loft bay 3 joist 12",
+      "@150.125,185",
+      "@150.125,268"
+    ],
+    [
+      "B-N",
+      "@150.125,268",
+      "@165.469,268"
+    ],
+    [
+      "B-2",
+      "@165.469,185",
+      "@179.538,185"
+    ],
+    [
+      "loft bay 3 joist 13",
+      "@165.469,185",
+      "@165.469,268"
+    ],
+    [
+      "B-N",
+      "@165.469,268",
+      "@180.812,268"
+    ],
+    [
+      "B-2",
+      "@180.812,185",
+      "@195.519,185"
+    ],
+    [
+      "loft bay 3 joist 14",
+      "@180.812,185",
+      "@180.812,268"
+    ],
+    [
+      "B-N",
+      "@180.812,268",
+      "@196.156,268"
+    ],
+    [
+      "B-2",
+      "@196.156,185",
+      "@211.5,185"
+    ],
+    [
+      "loft bay 3 joist 15",
+      "@196.156,185",
+      "@196.156,268"
+    ],
+    [
+      "B-N",
+      "@196.156,268",
+      "@211.5,268"
+    ],
+    [
+      "B-S",
+      "@-18.6562,3",
+      "@-3.3125,3"
+    ],
+    [
+      "B-S",
+      "@-3.3125,3",
+      "@3.75,3"
+    ],
+    [
+      "B-S",
+      "@12.0312,3",
+      "@27.375,3"
+    ],
+    [
+      "shelf SH joist 3",
+      "@12.0312,3",
+      "@12.0312,71"
+    ],
+    [
+      "B-1",
+      "@12.0312,71",
+      "@19.7308,71"
+    ],
+    [
+      "B-S",
+      "@27.375,3",
+      "@42.7188,3"
+    ],
+    [
+      "shelf SH joist 4",
+      "@27.375,3",
+      "@27.375,71"
+    ],
+    [
+      "B-1",
+      "@27.375,71",
+      "@35.7115,71"
+    ],
+    [
+      "B-S",
+      "@42.7188,3",
+      "@58.0625,3"
+    ],
+    [
+      "shelf SH joist 5",
+      "@42.7188,3",
+      "@42.7188,71"
+    ],
+    [
+      "B-1",
+      "@42.7188,71",
+      "@51.6923,71"
+    ],
+    [
+      "B-S",
+      "@58.0625,3",
+      "@73.4062,3"
+    ],
+    [
+      "shelf SH joist 6",
+      "@58.0625,3",
+      "@58.0625,71"
+    ],
+    [
+      "B-1",
+      "@58.0625,71",
+      "@67.6731,71"
+    ],
+    [
+      "B-S",
+      "@73.4062,3",
+      "@88.75,3"
+    ],
+    [
+      "shelf SH joist 7",
+      "@73.4062,3",
+      "@73.4062,71"
+    ],
+    [
+      "B-1",
+      "@73.4062,71",
+      "@83.6538,71"
+    ],
+    [
+      "B-S",
+      "@88.75,3",
+      "@104.094,3"
+    ],
+    [
+      "shelf SH joist 8",
+      "@88.75,3",
+      "@88.75,71"
+    ],
+    [
+      "B-1",
+      "@88.75,71",
+      "@99.6346,71"
+    ],
+    [
+      "B-S",
+      "@104.094,3",
+      "DOOR-W.top"
+    ],
+    [
+      "B-S",
+      "DOOR-W.top",
+      "@119.438,3"
+    ],
+    [
+      "shelf SH joist 9",
+      "@104.094,3",
+      "@104.094,71"
+    ],
+    [
+      "B-1",
+      "@104.094,71",
+      "@115.615,71"
+    ],
+    [
+      "B-S",
+      "@119.438,3",
+      "@134.781,3"
+    ],
+    [
+      "shelf SH joist 10",
+      "@119.438,3",
+      "@119.438,71"
+    ],
+    [
+      "B-1",
+      "@119.438,71",
+      "@131.596,71"
+    ],
+    [
+      "B-S",
+      "@134.781,3",
+      "DOOR-E.top"
+    ],
+    [
+      "B-S",
+      "DOOR-E.top",
+      "@150.125,3"
+    ],
+    [
+      "shelf SH joist 11",
+      "@134.781,3",
+      "@134.781,71"
+    ],
+    [
+      "B-1",
+      "@134.781,71",
+      "@147.577,71"
+    ],
+    [
+      "B-S",
+      "@150.125,3",
+      "@165.469,3"
+    ],
+    [
+      "shelf SH joist 12",
+      "@150.125,3",
+      "@150.125,71"
+    ],
+    [
+      "B-1",
+      "@150.125,71",
+      "@163.558,71"
+    ],
+    [
+      "B-S",
+      "@165.469,3",
+      "@180.812,3"
+    ],
+    [
+      "shelf SH joist 13",
+      "@165.469,3",
+      "@165.469,71"
+    ],
+    [
+      "B-1",
+      "@165.469,71",
+      "@179.538,71"
+    ],
+    [
+      "B-S",
+      "@180.812,3",
+      "@196.156,3"
+    ],
+    [
+      "shelf SH joist 14",
+      "@180.812,3",
+      "@180.812,71"
+    ],
+    [
+      "B-1",
+      "@180.812,71",
+      "@195.519,71"
+    ],
+    [
+      "B-S",
+      "@196.156,3",
+      "@211.5,3"
+    ],
+    [
+      "shelf SH joist 15",
+      "@196.156,3",
+      "@196.156,71"
+    ],
+    [
+      "B-1",
+      "@196.156,71",
+      "@211.5,71"
+    ],
+    [
+      "R-W3",
+      "@6.91667,185,225.25",
+      "@47.8333,185,225.25"
+    ],
+    [
+      "RF @ 6.9167",
+      "@6.91667,185,225.25",
+      "@6.91667,268,225.25"
+    ],
+    [
+      "R-W3",
+      "@47.8333,185,225.25",
+      "@88.75,185,225.25"
+    ],
+    [
+      "RF @ 47.833",
+      "@47.8333,185,225.25",
+      "@47.8333,268,225.25"
+    ],
+    [
+      "R-W3",
+      "@88.75,185,225.25",
+      "@129.667,185,225.25"
+    ],
+    [
+      "RF @ 88.75",
+      "@88.75,185,225.25",
+      "@88.75,268,225.25"
+    ],
+    [
+      "R-W3",
+      "@129.667,185,225.25",
+      "@170.583,185,225.25"
+    ],
+    [
+      "RF @ 129.67",
+      "@129.667,185,225.25",
+      "@129.667,268,225.25"
+    ],
+    [
+      "R-W3",
+      "@170.583,185,225.25",
+      "@211.5,185,225.25"
+    ],
+    [
+      "RF @ 170.58",
+      "@170.583,185,225.25",
+      "@170.583,268,225.25"
+    ],
+    [
+      "B-SO",
+      "B-SO.seat@6.917",
+      "B-SO.seat@47.83"
+    ],
+    [
+      "B-SO",
+      "B-SO.seat@47.83",
+      "B-SO.seat@88.75"
+    ],
+    [
+      "B-SO",
+      "B-SO.seat@88.75",
+      "B-SO.seat@129.7"
+    ],
+    [
+      "B-SO",
+      "B-SO.seat@129.7",
+      "@145.5,-63"
+    ],
+    [
+      "B-SO",
+      "B-SO.seat@170.6",
+      "@211.5,-63"
+    ],
+    [
+      "BW",
+      "BW@128",
+      "@-34,185"
+    ],
+    [
+      "B-1A",
+      "BW@128",
+      "@-18.6562,128"
+    ],
+    [
+      "B-1A",
+      "@-18.6562,128",
+      "@-3.3125,128"
+    ],
+    [
+      "west strip infill joist 1",
+      "@-18.6562,128",
+      "@-18.6562,185"
+    ],
+    [
+      "B-1A",
+      "@-3.3125,128",
+      "@3.75,128"
+    ],
+    [
+      "west strip infill joist 2",
+      "@-3.3125,128",
+      "@-3.3125,185"
+    ],
+    [
+      "B-N",
+      "@16.75,268",
+      "@27.375,268"
+    ],
+    [
+      "N-M2",
+      "@16.75,268",
+      "@16.75,268,225.25"
+    ],
+    [
+      "R-W4",
+      "@16.75,268,225.25",
+      "@47.8333,268,225.25"
+    ],
+    [
+      "B-SO",
+      "@211.5,-63",
+      "EF@-63"
+    ],
+    [
+      "B-S",
+      "@211.5,3",
+      "EF@-6"
+    ],
+    [
+      "B-1",
+      "@211.5,71",
+      "EF@71"
+    ],
+    [
+      "B-1A",
+      "@211.5,128",
+      "EF@128"
+    ],
+    [
+      "B-2",
+      "@211.5,185",
+      "EF@185"
+    ],
+    [
+      "B-N",
+      "@211.5,268",
+      "EF@268"
+    ],
+    [
+      "BE",
+      "EF@-63",
+      "EF@-6"
+    ],
+    [
+      "BE",
+      "EF@-6",
+      "EF@71"
+    ],
+    [
+      "BE",
+      "EF@71",
+      "EF@128"
+    ],
+    [
+      "BE",
+      "EF@128",
+      "EF@185"
+    ],
+    [
+      "BE",
+      "EF@185",
+      "EF@268"
+    ],
+    [
+      "E-S2",
+      "EF@-63.base",
+      "EF@-63"
+    ],
+    [
+      "E-S3",
+      "EF@-6.base",
+      "EF@-6"
+    ],
+    [
+      "E-N2",
+      "EF@268.base",
+      "EF@268"
+    ],
+    [
+      "BR-S-1",
+      "S1.base",
+      "TRIM.362"
+    ],
+    [
+      "BR-S-1",
+      "TRIM.362",
+      "TRIM.363"
+    ],
+    [
+      "BR-S-1",
+      "TRIM.363",
+      "TRIM.364"
+    ],
+    [
+      "BR-S-1",
+      "TRIM.364",
+      "TRIM.365"
+    ],
+    [
+      "BR-S-1",
+      "TRIM.365",
+      "TRIM.366"
+    ],
+    [
+      "BR-S-1",
+      "TRIM.366",
+      "TRIM.367"
+    ],
+    [
+      "BR-S-1",
+      "TRIM.367",
+      "TRIM.368"
+    ],
+    [
+      "BR-S-1",
+      "TRIM.368",
+      "TRIM.369"
+    ],
+    [
+      "BR-S-1",
+      "TRIM.369",
+      "TRIM.370"
+    ],
+    [
+      "BR-S-1",
+      "TRIM.370",
+      "TRIM.371"
+    ],
+    [
+      "BR-S-1",
+      "TRIM.371",
+      "TRIM.372"
+    ],
+    [
+      "BR-S-1",
+      "TRIM.372",
+      "EF@-63"
+    ],
+    [
+      "BR-S-2",
+      "TRIM.373",
+      "EF@-63.base"
+    ],
+    [
+      "BR-S-2",
+      "TRIM.374",
+      "TRIM.373"
+    ],
+    [
+      "BR-S-2",
+      "TRIM.375",
+      "TRIM.374"
+    ],
+    [
+      "BR-S-2",
+      "TRIM.376",
+      "TRIM.375"
+    ],
+    [
+      "BR-S-2",
+      "TRIM.377",
+      "TRIM.376"
+    ],
+    [
+      "BR-S-2",
+      "TRIM.378",
+      "TRIM.377"
+    ],
+    [
+      "BR-S-2",
+      "TRIM.379",
+      "TRIM.378"
+    ],
+    [
+      "BR-S-2",
+      "TRIM.380",
+      "TRIM.379"
+    ],
+    [
+      "BR-S-2",
+      "TRIM.381",
+      "TRIM.380"
+    ],
+    [
+      "BR-S-2",
+      "TRIM.382",
+      "TRIM.381"
+    ],
+    [
+      "BR-S-2",
+      "TRIM.383",
+      "TRIM.382"
+    ],
+    [
+      "BR-S-2",
+      "S1.top",
+      "TRIM.383"
+    ],
+    [
+      "DOOR-W",
+      "DOOR-W.base",
+      "DOOR-W.top"
+    ],
+    [
+      "DOOR-E",
+      "DOOR-E.base",
+      "DOOR-E.top"
+    ],
+    [
+      "S3",
+      "@211.5,3",
+      "@211.5,3,147.355"
+    ],
+    [
+      "S3",
+      "@211.5,3,147.355",
+      "S3.top"
+    ],
+    [
+      "E.W2",
+      "@211.5,71",
+      "@211.5,71,194.365"
+    ],
+    [
+      "E.W2",
+      "@211.5,71,225.25",
+      "@211.5,71,228.75"
+    ],
+    [
+      "E.W2",
+      "@211.5,71,194.365",
+      "@211.5,71,225.25"
+    ],
+    [
+      "E.W3",
+      "@211.5,185",
+      "@211.5,185,225.25"
+    ],
+    [
+      "E.W3",
+      "MIRROR.W3.base",
+      "@211.5,185"
+    ],
+    [
+      "E.W3",
+      "@211.5,185,225.25",
+      "@211.5,185,228.75"
+    ],
+    [
+      "N2",
+      "@211.5,268",
+      "@211.5,268,225.25"
+    ],
+    [
+      "N2",
+      "N2.base",
+      "@211.5,268"
+    ],
+    [
+      "N2",
+      "@211.5,268,225.25",
+      "N2.top"
+    ],
+    [
+      "BE.mirror",
+      "@211.5,-63",
+      "@211.5,3"
+    ],
+    [
+      "BE.mirror",
+      "@211.5,3",
+      "@211.5,71"
+    ],
+    [
+      "BE.mirror",
+      "@211.5,71",
+      "@211.5,128"
+    ],
+    [
+      "BE.mirror",
+      "@211.5,185",
+      "@211.5,268"
+    ],
+    [
+      "BE.mirror",
+      "@211.5,128",
+      "@211.5,185"
+    ],
+    [
+      "E.slope",
+      "S2.top",
+      "S3.top"
+    ],
+    [
+      "E.slope",
+      "S3.top",
+      "@211.5,71,194.365"
+    ],
+    [
+      "E.top",
+      "@211.5,71,228.75",
+      "@211.5,185,228.75"
+    ],
+    [
+      "E.top",
+      "@211.5,185,228.75",
+      "N2.top"
+    ],
+    [
+      "E.rear.brace",
+      "@211.5,185",
+      "MIRROR.BAYM.350"
+    ],
+    [
+      "E.rear.brace",
+      "MIRROR.BAYM.350",
+      "MIRROR.BAYM.351"
+    ],
+    [
+      "E.rear.brace",
+      "MIRROR.BAYM.351",
+      "MIRROR.BAYM.352"
+    ],
+    [
+      "E.rear.brace",
+      "MIRROR.BAYM.352",
+      "MIRROR.BAYM.353"
+    ],
+    [
+      "E.rear.brace",
+      "MIRROR.BAYM.353",
+      "MIRROR.BAYM.354"
+    ],
+    [
+      "E.rear.brace",
+      "MIRROR.BAYM.354",
+      "MIRROR.BAYM.355"
+    ],
+    [
+      "E.rear.brace",
+      "MIRROR.BAYM.355",
+      "MIRROR.BAYM.356"
+    ],
+    [
+      "E.rear.brace",
+      "MIRROR.BAYM.356",
+      "MIRROR.BAYM.357"
+    ],
+    [
+      "E.rear.brace",
+      "MIRROR.BAYM.357",
+      "MIRROR.BAYM.358"
+    ],
+    [
+      "E.rear.brace",
+      "MIRROR.BAYM.358",
+      "MIRROR.BAYM.359"
+    ],
+    [
+      "E.rear.brace",
+      "MIRROR.BAYM.359",
+      "MIRROR.BAYM.360"
+    ],
+    [
+      "E.rear.brace",
+      "MIRROR.BAYM.360",
+      "MIRROR.BAYM.361"
+    ],
+    [
+      "E.rear.brace",
+      "MIRROR.BAYM.361",
+      "N2.top"
+    ],
+    [
+      "BR-E-2",
+      "MIRROR.BAYM.325",
+      "N2.base"
+    ],
+    [
+      "BR-E-2",
+      "MIRROR.BAYM.326",
+      "MIRROR.BAYM.325"
+    ],
+    [
+      "BR-E-2",
+      "MIRROR.BAYM.327",
+      "MIRROR.BAYM.326"
+    ],
+    [
+      "BR-E-2",
+      "MIRROR.BAYM.328",
+      "MIRROR.BAYM.327"
+    ],
+    [
+      "BR-E-2",
+      "MIRROR.BAYM.329",
+      "MIRROR.BAYM.328"
+    ],
+    [
+      "BR-E-2",
+      "MIRROR.BAYM.330",
+      "MIRROR.BAYM.329"
+    ],
+    [
+      "BR-E-2",
+      "MIRROR.BAYM.331",
+      "MIRROR.BAYM.330"
+    ],
+    [
+      "BR-E-2",
+      "MIRROR.BAYM.332",
+      "MIRROR.BAYM.331"
+    ],
+    [
+      "BR-E-2",
+      "MIRROR.BAYM.333",
+      "MIRROR.BAYM.332"
+    ],
+    [
+      "BR-E-2",
+      "MIRROR.BAYM.334",
+      "MIRROR.BAYM.333"
+    ],
+    [
+      "BR-E-2",
+      "MIRROR.BAYM.335",
+      "MIRROR.BAYM.334"
+    ],
+    [
+      "BR-E-2",
+      "@211.5,185",
+      "MIRROR.BAYM.335"
+    ]
+  ],
+  "sections": {
+    "B-SO": "W12X16",
+    "B-S": "W12X16",
+    "B-1": "W12X16",
+    "B-1A": "W12X16",
+    "B-2": "W12X16",
+    "B-N": "W12X16",
+    "BW": "W12X16",
+    "SW0": "HSS5X5X1/4",
+    "W1": "HSS5X5X1/4",
+    "W2": "HSS5X5X1/4",
+    "W3": "HSS5X5X1/4",
+    "W4": "HSS5X5X1/4",
+    "S1": "HSS5X5X1/4",
+    "N1": "HSS5X5X1/4",
+    "N-M": "HSS3X3X1/8",
+    "R-W1": "W14X22",
+    "R-W3": "W12X16",
+    "R-W4": "W12X16",
+    "BR-W-2": "HSS3X3X3/16",
+    "BR-N-1": "HSS2-1/2X2-1/2X1/8",
+    "BR-N-2": "HSS2-1/2X2-1/2X1/8",
+    "BR-NU-1": "HSS2-1/2X2-1/2X1/8",
+    "RS @ 6.9167": "HSS2X2X1/8",
+    "RF @ 6.9167": "HSS2X2X1/8",
+    "RS @ 47.833": "HSS2X2X1/8",
+    "RF @ 47.833": "HSS2X2X1/8",
+    "RS @ 88.75": "HSS2X2X1/8",
+    "RF @ 88.75": "HSS2X2X1/8",
+    "RS @ 129.67": "HSS2X2X1/8",
+    "RF @ 129.67": "HSS2X2X1/8",
+    "RS @ 170.58": "HSS2X2X1/8",
+    "RF @ 170.58": "HSS2X2X1/8",
+    "CT.top": "HSS2-1/2X2-1/2X1/8",
+    "CT.bottom": "HSS2-1/2X2-1/2X1/8",
+    "CT.mullion.1": "HSS2-1/2X2-1/2X1/8",
+    "CT.mullion.2": "HSS2-1/2X2-1/2X1/8",
+    "CT.mullion.3": "HSS2-1/2X2-1/2X1/8",
+    "CT.mullion.4": "HSS2-1/2X2-1/2X1/8",
+    "CT.mullion.5": "HSS2-1/2X2-1/2X1/8",
+    "CT.diag.W": "HSS2-1/2X2-1/2X1/8",
+    "CT.diag.E": "HSS2-1/2X2-1/2X1/8",
+    "W.slope": "HSS3X3X1/8",
+    "W.top": "HSS3X3X1/8",
+    "W.rear.brace": "HSS3X3X1/8",
+    "loft bay 1 joist 1": "1.5x7.25 DF-L No.2",
+    "loft bay 1 joist 2": "1.5x7.25 DF-L No.2",
+    "loft bay 1 joist 3": "1.5x7.25 DF-L No.2",
+    "loft bay 1 joist 4": "1.5x7.25 DF-L No.2",
+    "loft bay 1 joist 5": "1.5x7.25 DF-L No.2",
+    "loft bay 1 joist 6": "1.5x7.25 DF-L No.2",
+    "loft bay 1 joist 7": "1.5x7.25 DF-L No.2",
+    "loft bay 1 joist 8": "1.5x7.25 DF-L No.2",
+    "loft bay 1 joist 9": "1.5x7.25 DF-L No.2",
+    "loft bay 1 joist 10": "1.5x7.25 DF-L No.2",
+    "loft bay 1 joist 11": "1.5x7.25 DF-L No.2",
+    "loft bay 1 joist 12": "1.5x7.25 DF-L No.2",
+    "loft bay 2 joist 1": "1.5x7.25 DF-L No.2",
+    "loft bay 2 joist 2": "1.5x7.25 DF-L No.2",
+    "loft bay 2 joist 3": "1.5x7.25 DF-L No.2",
+    "loft bay 2 joist 4": "1.5x7.25 DF-L No.2",
+    "loft bay 2 joist 5": "1.5x7.25 DF-L No.2",
+    "loft bay 2 joist 6": "1.5x7.25 DF-L No.2",
+    "loft bay 2 joist 7": "1.5x7.25 DF-L No.2",
+    "loft bay 2 joist 8": "1.5x7.25 DF-L No.2",
+    "loft bay 2 joist 9": "1.5x7.25 DF-L No.2",
+    "loft bay 2 joist 10": "1.5x7.25 DF-L No.2",
+    "loft bay 2 joist 11": "1.5x7.25 DF-L No.2",
+    "loft bay 2 joist 12": "1.5x7.25 DF-L No.2",
+    "loft bay 3 joist 1": "1.5x7.25 DF-L No.2",
+    "loft bay 3 joist 2": "1.5x7.25 DF-L No.2",
+    "loft bay 3 joist 3": "1.5x7.25 DF-L No.2",
+    "loft bay 3 joist 4": "1.5x7.25 DF-L No.2",
+    "loft bay 3 joist 5": "1.5x7.25 DF-L No.2",
+    "loft bay 3 joist 6": "1.5x7.25 DF-L No.2",
+    "loft bay 3 joist 7": "1.5x7.25 DF-L No.2",
+    "loft bay 3 joist 8": "1.5x7.25 DF-L No.2",
+    "loft bay 3 joist 9": "1.5x7.25 DF-L No.2",
+    "loft bay 3 joist 10": "1.5x7.25 DF-L No.2",
+    "loft bay 3 joist 11": "1.5x7.25 DF-L No.2",
+    "loft bay 3 joist 12": "1.5x7.25 DF-L No.2",
+    "loft bay 3 joist 13": "1.5x7.25 DF-L No.2",
+    "loft bay 3 joist 14": "1.5x7.25 DF-L No.2",
+    "loft bay 3 joist 15": "1.5x7.25 DF-L No.2",
+    "shelf SH joist 3": "1.5x7.25 DF-L No.2",
+    "shelf SH joist 4": "1.5x7.25 DF-L No.2",
+    "shelf SH joist 5": "1.5x7.25 DF-L No.2",
+    "shelf SH joist 6": "1.5x7.25 DF-L No.2",
+    "shelf SH joist 7": "1.5x7.25 DF-L No.2",
+    "shelf SH joist 8": "1.5x7.25 DF-L No.2",
+    "shelf SH joist 9": "1.5x7.25 DF-L No.2",
+    "shelf SH joist 10": "1.5x7.25 DF-L No.2",
+    "shelf SH joist 11": "1.5x7.25 DF-L No.2",
+    "shelf SH joist 12": "1.5x7.25 DF-L No.2",
+    "shelf SH joist 13": "1.5x7.25 DF-L No.2",
+    "shelf SH joist 14": "1.5x7.25 DF-L No.2",
+    "shelf SH joist 15": "double 2x8 DF-L No.2",
+    "west strip infill joist 1": "1.5x7.25 DF-L No.2",
+    "west strip infill joist 2": "1.5x7.25 DF-L No.2",
+    "N-M2": "HSS3X3X1/8",
+    "BE": "W12X16",
+    "E-S2": "HSS5X5X1/4",
+    "E-S3": "HSS5X5X1/4",
+    "E-N2": "HSS5X5X1/4",
+    "BWI": "W12X16",
+    "BR-S-1": "HSS2-1/2X2-1/2X1/8",
+    "BR-S-2": "HSS2-1/2X2-1/2X1/8",
+    "DOOR-W": "HSS6X2X1/4",
+    "DOOR-E": "HSS6X2X1/4",
+    "S3": "HSS5X5X1/4",
+    "E.W2": "HSS5X5X1/4",
+    "E.W3": "HSS5X5X1/4",
+    "N2": "HSS5X5X1/4",
+    "BE.mirror": "W12X16",
+    "E.slope": "HSS3X3X1/8",
+    "E.top": "HSS3X3X1/8",
+    "E.rear.brace": "HSS3X3X1/8",
+    "BR-E-2": "HSS3X3X3/16"
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "baseline_shape_checks": {
+    "T-S": "16 source member/plate shapes matched",
+    "T1": "16 source member/plate shapes matched",
+    "T-W": "24 source member/plate shapes matched",
+    "T-E": "23 source member/plate shapes matched",
+    "T-N": "26 source member/plate shapes matched"
+  },
+  "trusses": {
+    "T-S": {
+      "baseline": {
+        "elements": 16,
+        "members": 11,
+        "joints": 14,
+        "segments": 21,
+        "unshared_endpoints": []
+      },
+      "draft": {
+        "elements": 16,
+        "members": 11,
+        "joints": 14,
+        "segments": 21,
+        "unshared_endpoints": []
+      }
+    },
+    "T1": {
+      "baseline": {
+        "elements": 16,
+        "members": 11,
+        "joints": 14,
+        "segments": 21,
+        "unshared_endpoints": []
+      },
+      "draft": {
+        "elements": 16,
+        "members": 11,
+        "joints": 14,
+        "segments": 21,
+        "unshared_endpoints": []
+      }
+    },
+    "T-W": {
+      "baseline": {
+        "elements": 24,
+        "members": 24,
+        "joints": 30,
+        "segments": 43,
+        "unshared_endpoints": []
+      },
+      "draft": {
+        "elements": 24,
+        "members": 24,
+        "joints": 20,
+        "segments": 33,
+        "unshared_endpoints": []
+      }
+    },
+    "T-E": {
+      "baseline": {
+        "elements": 23,
+        "members": 23,
+        "joints": 30,
+        "segments": 43,
+        "unshared_endpoints": []
+      },
+      "draft": {
+        "elements": 23,
+        "members": 23,
+        "joints": 16,
+        "segments": 29,
+        "unshared_endpoints": []
+      }
+    },
+    "T-N": {
+      "baseline": {
+        "elements": 26,
+        "members": 26,
+        "joints": 30,
+        "segments": 51,
+        "unshared_endpoints": []
+      },
+      "draft": {
+        "elements": 25,
+        "members": 25,
+        "joints": 28,
+        "segments": 48,
+        "unshared_endpoints": []
+      }
+    }
+  },
+  "source_hashes": {
+    "floor-plan-setbacks/floor-plan-study-basis.json": "556ee79e7a0d62669751782ccd0cd5cc2c04fa9d2f01bf0bacdea443ed3674bb",
+    "structural-study/framing-member-register.json": "4409fbb7d0a9bc50298da76a5a67e2bac26e0749b5c67d134cc5bf56925d90b7",
+    "model-renders/garage-model.json": "46693129becb437dc221a164fa66efe3892d9ab729cfe9603582491297810c89",
+    "structural-study/latest-framing-corrections.md": "495ddbb975340fe9a95c46226bae15344d8c8f5e8423a583fe7d236a55bbe048"
+  },
+  "edit_test": "W2 moved +6 inches in a disposable draft; T1/O2 station, T1 roof height, and both longitudinal truss stations regenerated successfully",
+  "expected_failures": {
+    "member detached from recipe": "Assembly differs from its parametric recipe: T-E",
+    "missing attachment edge": "Attachment graph missing or stale edges",
+    "east supports disagree": "East support axes disagree",
+    "north bay changed": "North door bay/alignment changed",
+    "west truss reverted to existing wall": "West truss must be on far-west support row",
+    "missing column solids": "Missing column geometry",
+    "detached east connection": "East connection endpoint stale: C-EN"
+  },
+  "east_connections": {
+    "C-EM": {
+      "from_support": "E-M",
+      "connection_to": "T-E",
+      "length_in": 35.0,
+      "elevation_in": 98.5
+    },
+    "C-EN": {
+      "from_support": "E-N",
+      "connection_to": "T-E",
+      "length_in": 36.0,
+      "elevation_in": 98.5
+    },
+    "C-ES": {
+      "from_support": "E-S",
+      "connection_to": "S3",
+      "length_in": 36.0,
+      "elevation_in": 98.5
+    }
+  },
+  "east_connection_edit_test": "E-M moved in X and Y; connection regenerated to T-E at the new station and passed attachment checks.",
+  "column_geometry": {
+    "count": 13,
+    "bounds_and_roundtrip": "passed",
+    "west_truss_x": -34.0
+  },
+  "support_offsets": [
+    {
+      "member": "B-WO",
+      "support": "W1",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "B-WO",
+      "support": "W2",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "B-WO",
+      "support": "W3",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "B-WO",
+      "support": "W4",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "B2",
+      "support": "W3",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "B2",
+      "support": "WB3",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "C-EM",
+      "support": "E-M",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "C-EN",
+      "support": "E-N",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "C-ES",
+      "support": "E-S",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "C-ES",
+      "support": "S3",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "E-OB",
+      "support": "E-S",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "E-OB",
+      "support": "E-N",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "E-OB",
+      "support": "E-M",
+      "plan_offset_in": 1.0,
+      "location": "on segment",
+      "status": "offset / connection unresolved"
+    },
+    {
+      "member": "T-E",
+      "support": "S2",
+      "plan_offset_in": 2.0,
+      "location": "beyond endpoint",
+      "status": "offset / connection unresolved"
+    },
+    {
+      "member": "T-E",
+      "support": "S3",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "T-E",
+      "support": "N2",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "T-N",
+      "support": "W4",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "T-N",
+      "support": "N1",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "T-N",
+      "support": "N2",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "T-S",
+      "support": "S3",
+      "plan_offset_in": 2.0,
+      "location": "on segment",
+      "status": "offset / connection unresolved"
+    },
+    {
+      "member": "T-SO",
+      "support": "W1",
+      "plan_offset_in": 2.0,
+      "location": "on segment",
+      "status": "offset / connection unresolved"
+    },
+    {
+      "member": "T-SO",
+      "support": "S1",
+      "plan_offset_in": 2.0,
+      "location": "on segment",
+      "status": "offset / connection unresolved"
+    },
+    {
+      "member": "T-SO",
+      "support": "S2",
+      "plan_offset_in": 2.0,
+      "location": "on segment",
+      "status": "offset / connection unresolved"
+    },
+    {
+      "member": "T-W",
+      "support": "W1",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "T-W",
+      "support": "W2",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "T-W",
+      "support": "W3",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "T-W",
+      "support": "W4",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    },
+    {
+      "member": "T1",
+      "support": "W2",
+      "plan_offset_in": 0.0,
+      "location": "on segment",
+      "status": "plan coincidence only"
+    }
+  ],
+  "coordination_items": [
+    "Draft roof retains 30 degrees and old heights, but starts at current T-SO Y=-64. Current roof design is not finalized.",
+    "User correction: T-W is on the far-west column row X=-34. Cross-members now extend to that row; O2/O3 are subsegments of T1/B2, not separate beams.",
+    "Longitudinal web tips are moved to chord axes in the draft; source-baseline geometry remains separate.",
+    "All 13 columns are modeled from floor datum Z=0 to frame bottom Z=98.5 using source plan-symbol sections. East-wall heights are provisional; footing and connection details remain unresolved.",
+    "E-OB sits at Z98.5 with a provisional 3-inch display envelope matching truss chords; section sizing is unresolved. OB1 elevation remains unknown.",
+    "T-W source uprights at Y185 and Y186 are only 1 inch apart with 3-inch envelopes: overlap retained for review.",
+    "T-N loft-door jamb axes X81.5/113.5 give 29 inches between 3-inch faces; source 32 inches is axis spacing.",
+    "T-W source door header gives 81.5 inches from loft floor to underside; source opening height needs coordination.",
+    "Ground-floor N1/N2 bay is 192 inches center spacing / 188 inches between 4-inch symbols, separate from the T-N loft door.",
+    "T-S at Y0 is 2 inches north of S3 at Y=-2; south beam Y=-64 is 2 inches north of the south columns.",
+    "E-S connects to S3; E-M/E-N connect to T-E at Z98.5 as unsized references. E-M retains option B and its 1-inch offset from E-OB.",
+    "Truss 3-inch section envelopes have not been reconciled with the plan outside-face limit at X213.5.",
+    "Mesh validity and geometric connections do not establish structural stability, capacity, connection design or collision-free fabrication."
+  ],
+  "status": "Geometry checks passed; coordination items remain open"
+}

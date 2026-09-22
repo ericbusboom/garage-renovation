@@ -1,0 +1,91 @@
+# Structural analysis v6 — frame FEA and member optimisation
+
+Working directory for [STR-007](../../report/06-structural-engineering/fea-study/README.md).
+The reviewed package is published into the report; everything here is the source
+that produced it.
+
+```
+archive/.venv/bin/python src/structural-analysis-v6/run_all.py  # analyse, ~25 min
+archive/.venv/bin/python src/structural-analysis-v6/publish.py  # publish STR-007
+```
+
+`run_all.py --quick` skips the removal study (the slow part) and takes about four
+minutes. `--live L125` runs the code storage live load as the primary case;
+`--exposure D` runs the coastal wind exposure.
+
+## What it does
+
+Reads the newest model from `data/frame-models/`, builds a PyNite finite element
+model from it, applies the ASCE 7-16 design loads, solves 27 strength
+combinations plus serviceability, checks every member to AISC 360-16 and NDS,
+and then works out where material can come out.
+
+The analysis runs in five stages, and the distinction between them is the whole
+point — each one answers a different question:
+
+| Stage | Frame | Question |
+|---|---|---|
+| 0 | exactly as drawn | does the model as it stands carry its loads? |
+| 1 | + assumed upper-roof framing | with a roof load path, does it? |
+| 2 | + X-brace crossings joined | how much of the problem is unbraced length? |
+| 3 | + members stepped up until it passes | what does an adequate frame cost? |
+| 4 | + members stepped down where they verify | what can be lighter? |
+| 5 | members deleted one at a time | what can go entirely? |
+
+Stages 4 and 5 run against stage 3, not against the frame as drawn. Asking what
+can be deleted from a structure that is already over capacity answers nothing.
+
+## Modules
+
+| File | Responsibility |
+|---|---|
+| `sections.py` | HSS properties computed from AISC geometry; W shapes transcribed |
+| `loads.py` | the design load basis — every value with its source |
+| `frame.py` | COMPAS model → `Frame` → PyNite, including axis mapping |
+| `surfaces.py` | load surfaces and tributary distribution by clipped Voronoi |
+| `loadcases.py` | applies dead, live, hoist, wind and seismic to the model |
+| `codecheck.py` | AISC 360-16 LRFD and NDS ASD member checks |
+| `analysis.py` | one run: build, load, solve, check, verify |
+| `completion.py` | the assumed secondary framing, and the X-brace crossings |
+| `studies.py` | strengthen, lighten, removal, cumulative removal |
+| `visualize.py` | the printed figures |
+| `viewer.py` | the interactive 3-D model |
+| `narrative.py` | report prose, generated from the result set |
+| `run_all.py` / `publish.py` | orchestration and controlled publication |
+
+## Things worth knowing before changing it
+
+**The joint graph is the mesh.** The COMPAS edges are beam elements and its nodes
+are FE nodes. Nothing is re-meshed, which is why every result maps back to a
+named member. Re-meshing would break that.
+
+**Nothing is written back to `data/frame-models/`.** The assumed roof framing and the
+crossing joints exist only inside a run. Promoting any of them is a design
+decision for the engineer of record.
+
+**Bracing takes no area load.** An in-plane brace is not what a deck bears on.
+Letting it pick up tributary area was the single largest error in an early pass.
+
+**Sizing must be iterated, not solved once.** Stiffening a brace makes it attract
+more load. Sizing every member to its own demands in one shot diverges; stages 3
+and 4 move one rung at a time and re-analyse.
+
+**Deck spacing is enforced in the removal study.** There are no plates in the
+model, so deleting every second joist looks free to the solver. Without the
+spacing rule in `studies.REPETITIVE_SETS` an earlier pass proposed a floor with a
+56-inch gap in it.
+
+## Verification
+
+`run_all.py` prints these on every run and they are reproduced in the report:
+vertical equilibrium closes to zero relative error on all gravity combinations;
+tributary areas close to 1.0000 on every surface; computed section properties and
+member capacities reconcile with the AISC Manual tables.
+
+## Limits
+
+No connection, base plate, anchor or foundation is designed or checked. The
+seismic case is a screening check against default site values, not a seismic
+design. Section 9 of the published report lists every excluded behaviour. This is
+preliminary engineering and requires review and sealing by the responsible
+California-licensed structural engineer.

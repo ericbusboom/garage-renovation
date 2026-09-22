@@ -1,0 +1,2774 @@
+{
+  "generated": "2026-09-18 10:26",
+  "frame_model": "frame-20260917.05-square-upper-west.compas.json",
+  "frame_version": "20260917.05",
+  "live_case": "L75",
+  "exposure": "C",
+  "software": "PyNite 3.2.0 (linear elastic 3-D frame), COMPAS 2.15.1 geometry",
+  "basis": {
+    "code": "2022 CBC / ASCE 7-16",
+    "site": "1370 Wilbur Avenue, San Diego, CA 92109",
+    "risk_category": "II",
+    "dead": {
+      "solar_roof": 8.0,
+      "upper_roof": 10.0,
+      "east_roof": 5.0,
+      "loft_floor": 8.0,
+      "wall": 5.0
+    },
+    "roof_live": 20.0,
+    "loft_live": {
+      "L40": 40.0,
+      "L75": 75.0,
+      "L125": 125.0
+    },
+    "hoist": {
+      "capacity": 1000.0,
+      "impact": 0.25,
+      "lateral": 0.1,
+      "factored": 1250.0
+    },
+    "wind": {
+      "V": 96.0,
+      "exposure": "C",
+      "Kd": 0.85,
+      "Kzt": 1.0,
+      "Ke": 1.0,
+      "G": 0.85,
+      "GCpi": 0.18,
+      "enclosure": "enclosed"
+    },
+    "seismic": {
+      "base_shear_lb": 4835.4,
+      "seismic_weight_lb": 23572.6,
+      "SDS": 0.6667,
+      "SD1": 0.4095,
+      "Ta": 0.1825,
+      "Cs": 0.2051,
+      "Cs_max": 0.6905,
+      "Cs_min": 0.0293,
+      "k": 1.0
+    }
+  },
+  "counts": {
+    "members": 135,
+    "elements": 301,
+    "supports": 12,
+    "added": [
+      "A.clerestory.head",
+      "A.purlin.1",
+      "A.purlin.2",
+      "A.purlin.3",
+      "A.purlin.4"
+    ],
+    "concept_envelope": 61,
+    "links": [
+      {
+        "between": [
+          "E-M.bearing",
+          "E-OB @ 0.735408560311"
+        ],
+        "kind": "declared eccentric bearing"
+      }
+    ]
+  },
+  "loft_sensitivity": {
+    "L75": {
+      "psf": 75.0,
+      "frame_max_dcr": 4.458,
+      "loft_max_dcr": 1.011,
+      "member": "Wood joist 3-1",
+      "section": "1.5x7.25 DF-L No.2",
+      "mode": "bending",
+      "basis": "Owner decision DEC-008 -- equipment loft; above the residential minimum, below a storage-warehouse occupancy"
+    },
+    "L40": {
+      "psf": 40.0,
+      "frame_max_dcr": 4.458,
+      "loft_max_dcr": 0.635,
+      "member": "Wood joist 3-1",
+      "section": "1.5x7.25 DF-L No.2",
+      "mode": "bending",
+      "basis": "ASCE 7-16 Table 4.3-1, dwelling \"all other areas\" -- an ordinary residential floor; the value previously assumed in ASM-006"
+    },
+    "L125": {
+      "psf": 125.0,
+      "frame_max_dcr": 4.458,
+      "loft_max_dcr": 1.549,
+      "member": "Wood joist 3-1",
+      "section": "1.5x7.25 DF-L No.2",
+      "mode": "bending",
+      "basis": "ASCE 7-16 Table 4.3-1, \"Storage warehouses, light\" -- a commercial warehouse occupancy, retained as an upper bound"
+    }
+  },
+  "scenarios": {
+    "as_drawn": {
+      "stable": true,
+      "max_dcr": 4.922,
+      "deflection_violations": [],
+      "worst_deflections": [
+        {
+          "member": "BR-R-cap-2",
+          "group": "Bracing",
+          "rule": "roof",
+          "span_in": 261.3,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8086,
+          "ratio": 323.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "B2 future floor beam",
+          "group": "LoftSteel",
+          "rule": "floor",
+          "span_in": 245.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.5838,
+          "ratio": 421.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 7-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2558,
+          "ratio": 426.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 6-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.25,
+          "ratio": 436.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 8-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.244,
+          "ratio": 446.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 5-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2396,
+          "ratio": 455.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 4-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2388,
+          "ratio": 456.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 9-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2342,
+          "ratio": 465.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 3-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2315,
+          "ratio": 471.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 10-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2217,
+          "ratio": 491.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 11-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2035,
+          "ratio": 535.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 2-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.1898,
+          "ratio": 574.0,
+          "limit": 240.0,
+          "passes": "True"
+        }
+      ],
+      "over_capacity": [
+        {
+          "member": "BR-R-cap-2",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 4.922,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WY-.pi]"
+        },
+        {
+          "member": "BR-W-2",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 1.878,
+          "mode": "compression",
+          "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]"
+        },
+        {
+          "member": "T-SO",
+          "section": "W6X8.5",
+          "dcr": 1.505,
+          "mode": "H1-1b combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WX+.pi]"
+        },
+        {
+          "member": "E.rear.brace",
+          "section": "HSS2-1/4X2-1/4X1/8",
+          "dcr": 1.358,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]"
+        },
+        {
+          "member": "BR-W-1",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 1.254,
+          "mode": "compression",
+          "combo": "C7 0.9D+1.0E [EY+]"
+        },
+        {
+          "member": "E.slope",
+          "section": "HSS2-1/2X2-1/2X1/8",
+          "dcr": 1.218,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "BR-S-2",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 1.148,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WX-.ni]"
+        },
+        {
+          "member": "BR-R-main-2",
+          "section": "HSS2X2X1/8",
+          "dcr": 1.109,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WX-.pi]"
+        },
+        {
+          "member": "BR-S-1",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 1.034,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WX+.pi]"
+        }
+      ],
+      "equilibrium": {
+        "C1 1.4D": {
+          "applied_lb": -32111.9,
+          "reaction_lb": 32111.9,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C2 1.2D+1.6L+0.5Lr": {
+          "applied_lb": -71133.3,
+          "reaction_lb": 71133.3,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C3 1.2D+1.6Lr+1.0L": {
+          "applied_lb": -70705.7,
+          "reaction_lb": 70705.7,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        }
+      },
+      "drift": {
+        "S5 D+0.6W [WX+.pi]": {
+          "drift_in": 0.4922,
+          "ratio": 465.0
+        },
+        "S5 D+0.6W [WX-.pi]": {
+          "drift_in": 0.5164,
+          "ratio": 443.0
+        },
+        "S5 D+0.6W [WY+.pi]": {
+          "drift_in": 0.3679,
+          "ratio": 622.0
+        },
+        "S5 D+0.6W [WY-.pi]": {
+          "drift_in": 0.3612,
+          "ratio": 633.0
+        }
+      },
+      "gaps": [
+        {
+          "surface": "upper_roof",
+          "label": "Flat upper roof with low hip cap",
+          "area_ft2": 311.9,
+          "clear_span_in": 245.5,
+          "members": [
+            "E.top",
+            "T-N top / segment 1",
+            "W.top"
+          ],
+          "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+        }
+      ],
+      "member_weight_lb": 6376.9
+    },
+    "completed": {
+      "stable": true,
+      "max_dcr": 4.458,
+      "deflection_violations": [],
+      "worst_deflections": [
+        {
+          "member": "A.purlin.3",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.9149,
+          "ratio": 200.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "A.purlin.2",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.9072,
+          "ratio": 202.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "A.purlin.4",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8444,
+          "ratio": 217.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "A.purlin.1",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8406,
+          "ratio": 218.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "BR-R-cap-2",
+          "group": "Bracing",
+          "rule": "roof",
+          "span_in": 261.3,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8618,
+          "ratio": 303.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 7-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2571,
+          "ratio": 424.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "B2 future floor beam",
+          "group": "LoftSteel",
+          "rule": "floor",
+          "span_in": 245.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.5781,
+          "ratio": 425.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 6-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2502,
+          "ratio": 435.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 8-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2435,
+          "ratio": 447.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 5-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2388,
+          "ratio": 456.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 4-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2378,
+          "ratio": 458.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 9-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.233,
+          "ratio": 467.0,
+          "limit": 240.0,
+          "passes": "True"
+        }
+      ],
+      "over_capacity": [
+        {
+          "member": "BR-R-cap-2",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 4.458,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WY-.pi]"
+        },
+        {
+          "member": "BR-W-2",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 1.929,
+          "mode": "compression",
+          "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]"
+        },
+        {
+          "member": "E.clerestory",
+          "section": "HSS4X4X3/16",
+          "dcr": 1.56,
+          "mode": "flexure",
+          "combo": "C3 1.2D+1.6Lr+1.0L"
+        },
+        {
+          "member": "T-SO",
+          "section": "W6X8.5",
+          "dcr": 1.493,
+          "mode": "H1-1b combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WX+.pi]"
+        },
+        {
+          "member": "E.rear.brace",
+          "section": "HSS2-1/4X2-1/4X1/8",
+          "dcr": 1.347,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "BR-W-1",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 1.324,
+          "mode": "compression",
+          "combo": "C7 0.9D+1.0E [EY+]"
+        },
+        {
+          "member": "E.slope",
+          "section": "HSS2-1/2X2-1/2X1/8",
+          "dcr": 1.206,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "BR-S-2",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 1.124,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WX-.ni]"
+        },
+        {
+          "member": "W.clerestory",
+          "section": "HSS4X4X3/16",
+          "dcr": 1.04,
+          "mode": "flexure",
+          "combo": "C3 1.2D+1.6Lr+1.0L"
+        },
+        {
+          "member": "BR-S-1",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 1.019,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WX+.pi]"
+        },
+        {
+          "member": "Wood joist 3-1",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.011,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        }
+      ],
+      "equilibrium": {
+        "C1 1.4D": {
+          "applied_lb": -33001.6,
+          "reaction_lb": 33001.6,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C2 1.2D+1.6L+0.5Lr": {
+          "applied_lb": -71896.6,
+          "reaction_lb": 71896.6,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C3 1.2D+1.6Lr+1.0L": {
+          "applied_lb": -71470.5,
+          "reaction_lb": 71470.5,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        }
+      },
+      "drift": {
+        "S5 D+0.6W [WX+.pi]": {
+          "drift_in": 0.4985,
+          "ratio": 459.0
+        },
+        "S5 D+0.6W [WX-.pi]": {
+          "drift_in": 0.5506,
+          "ratio": 415.0
+        },
+        "S5 D+0.6W [WY+.pi]": {
+          "drift_in": 0.3622,
+          "ratio": 632.0
+        },
+        "S5 D+0.6W [WY-.pi]": {
+          "drift_in": 0.3074,
+          "ratio": 744.0
+        }
+      },
+      "gaps": [],
+      "member_weight_lb": 7011.7
+    },
+    "live_sensitivity": {
+      "stable": true,
+      "max_dcr": 4.458,
+      "deflection_violations": [],
+      "worst_deflections": [
+        {
+          "member": "A.purlin.3",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.9149,
+          "ratio": 200.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "A.purlin.2",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.9072,
+          "ratio": 202.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "A.purlin.4",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8444,
+          "ratio": 217.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "A.purlin.1",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8406,
+          "ratio": 218.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 7-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.4079,
+          "ratio": 267.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "B2 future floor beam",
+          "group": "LoftSteel",
+          "rule": "floor",
+          "span_in": 245.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.9095,
+          "ratio": 270.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 6-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.397,
+          "ratio": 274.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 8-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.3869,
+          "ratio": 282.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 5-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.3787,
+          "ratio": 288.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 4-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.3766,
+          "ratio": 289.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 9-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.3701,
+          "ratio": 294.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 3-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.3648,
+          "ratio": 299.0,
+          "limit": 240.0,
+          "passes": "True"
+        }
+      ],
+      "over_capacity": [
+        {
+          "member": "BR-R-cap-2",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 4.458,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WY-.pi]"
+        },
+        {
+          "member": "BR-W-2",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 1.957,
+          "mode": "compression",
+          "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]"
+        },
+        {
+          "member": "E.rear.brace",
+          "section": "HSS2-1/4X2-1/4X1/8",
+          "dcr": 1.937,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "E.clerestory",
+          "section": "HSS4X4X3/16",
+          "dcr": 1.768,
+          "mode": "flexure",
+          "combo": "C3 1.2D+1.6Lr+1.0L"
+        },
+        {
+          "member": "E.slope",
+          "section": "HSS2-1/2X2-1/2X1/8",
+          "dcr": 1.713,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "Wood joist 3-1",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.549,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        },
+        {
+          "member": "Wood joist 7-0",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.514,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        },
+        {
+          "member": "T-SO",
+          "section": "W6X8.5",
+          "dcr": 1.493,
+          "mode": "H1-1b combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WX+.pi]"
+        },
+        {
+          "member": "Wood joist 6-0",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.459,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        },
+        {
+          "member": "Wood joist 8-0",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.405,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        },
+        {
+          "member": "Wood joist 5-0",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.378,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        },
+        {
+          "member": "Wood joist 4-0",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.372,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        },
+        {
+          "member": "Wood joist 9-0",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.351,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        },
+        {
+          "member": "Wood joist 3-0",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.334,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        },
+        {
+          "member": "BR-W-1",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 1.324,
+          "mode": "compression",
+          "combo": "C7 0.9D+1.0E [EY+]"
+        },
+        {
+          "member": "Wood joist 10-0",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.287,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        },
+        {
+          "member": "Wood joist 7-1",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.269,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        },
+        {
+          "member": "Wood joist 11-0",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.194,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        },
+        {
+          "member": "Wood joist 0-0",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.147,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        },
+        {
+          "member": "Wood joist 2-0",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.128,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        },
+        {
+          "member": "W.clerestory",
+          "section": "HSS4X4X3/16",
+          "dcr": 1.124,
+          "mode": "flexure",
+          "combo": "C3 1.2D+1.6Lr+1.0L"
+        },
+        {
+          "member": "BR-S-2",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 1.124,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WX-.ni]"
+        },
+        {
+          "member": "Wood joist 12-0",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.121,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        },
+        {
+          "member": "Wood joist 4-1",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.075,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        },
+        {
+          "member": "Wood joist 14-0",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.072,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        },
+        {
+          "member": "BR-S-1",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 1.019,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WX+.pi]"
+        }
+      ],
+      "equilibrium": {
+        "C1 1.4D": {
+          "applied_lb": -33001.6,
+          "reaction_lb": 33001.6,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C2 1.2D+1.6L+0.5Lr": {
+          "applied_lb": -96845.9,
+          "reaction_lb": 96845.9,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C3 1.2D+1.6Lr+1.0L": {
+          "applied_lb": -87063.8,
+          "reaction_lb": 87063.8,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        }
+      },
+      "drift": {
+        "S5 D+0.6W [WX+.pi]": {
+          "drift_in": 0.4985,
+          "ratio": 459.0
+        },
+        "S5 D+0.6W [WX-.pi]": {
+          "drift_in": 0.5506,
+          "ratio": 415.0
+        },
+        "S5 D+0.6W [WY+.pi]": {
+          "drift_in": 0.3622,
+          "ratio": 632.0
+        },
+        "S5 D+0.6W [WY-.pi]": {
+          "drift_in": 0.3074,
+          "ratio": 744.0
+        }
+      },
+      "gaps": [],
+      "member_weight_lb": 7011.7
+    },
+    "exposure_D": {
+      "stable": true,
+      "max_dcr": 5.403,
+      "deflection_violations": [],
+      "worst_deflections": [
+        {
+          "member": "A.purlin.3",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.9149,
+          "ratio": 200.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "A.purlin.2",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.9072,
+          "ratio": 202.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "A.purlin.4",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8444,
+          "ratio": 217.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "A.purlin.1",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8406,
+          "ratio": 218.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "BR-R-cap-2",
+          "group": "Bracing",
+          "rule": "roof",
+          "span_in": 261.3,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8618,
+          "ratio": 303.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 7-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2571,
+          "ratio": 424.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "B2 future floor beam",
+          "group": "LoftSteel",
+          "rule": "floor",
+          "span_in": 245.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.5781,
+          "ratio": 425.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 6-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2502,
+          "ratio": 435.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 8-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2435,
+          "ratio": 447.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 5-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2388,
+          "ratio": 456.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 4-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2378,
+          "ratio": 458.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 9-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.233,
+          "ratio": 467.0,
+          "limit": 240.0,
+          "passes": "True"
+        }
+      ],
+      "over_capacity": [
+        {
+          "member": "BR-R-cap-2",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 5.403,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WY-.pi]"
+        },
+        {
+          "member": "BR-W-2",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 2.332,
+          "mode": "compression",
+          "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]"
+        },
+        {
+          "member": "T-SO",
+          "section": "W6X8.5",
+          "dcr": 1.802,
+          "mode": "H1-1b combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WX+.pi]"
+        },
+        {
+          "member": "E.clerestory",
+          "section": "HSS4X4X3/16",
+          "dcr": 1.56,
+          "mode": "flexure",
+          "combo": "C3 1.2D+1.6Lr+1.0L"
+        },
+        {
+          "member": "E.rear.brace",
+          "section": "HSS2-1/4X2-1/4X1/8",
+          "dcr": 1.404,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]"
+        },
+        {
+          "member": "BR-S-2",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 1.379,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WX-.ni]"
+        },
+        {
+          "member": "BR-W-1",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 1.324,
+          "mode": "compression",
+          "combo": "C7 0.9D+1.0E [EY+]"
+        },
+        {
+          "member": "BR-S-1",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 1.244,
+          "mode": "compression",
+          "combo": "C5 0.9D+1.0W [WX+.pi]"
+        },
+        {
+          "member": "E.slope",
+          "section": "HSS2-1/2X2-1/2X1/8",
+          "dcr": 1.206,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "BR-R-main-2",
+          "section": "HSS2X2X1/8",
+          "dcr": 1.168,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WX-.ni]"
+        },
+        {
+          "member": "T-S top / segment 1",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 1.119,
+          "mode": "H1-1b combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WX+.pi]"
+        },
+        {
+          "member": "T-N diagonal 9",
+          "section": "HSS2X2X1/8",
+          "dcr": 1.098,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WX+.pi]"
+        },
+        {
+          "member": "BR-N-ground-1",
+          "section": "HSS2X2X1/8",
+          "dcr": 1.05,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.pi]"
+        },
+        {
+          "member": "BR-R-main-1",
+          "section": "HSS2-1/4X2-1/4X1/8",
+          "dcr": 1.042,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WX+.pi]"
+        },
+        {
+          "member": "W.clerestory",
+          "section": "HSS4X4X3/16",
+          "dcr": 1.04,
+          "mode": "flexure",
+          "combo": "C3 1.2D+1.6Lr+1.0L"
+        },
+        {
+          "member": "Wood joist 3-1",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.011,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        }
+      ],
+      "equilibrium": {
+        "C1 1.4D": {
+          "applied_lb": -33001.6,
+          "reaction_lb": 33001.6,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C2 1.2D+1.6L+0.5Lr": {
+          "applied_lb": -71896.6,
+          "reaction_lb": 71896.6,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C3 1.2D+1.6Lr+1.0L": {
+          "applied_lb": -71470.5,
+          "reaction_lb": 71470.5,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        }
+      },
+      "drift": {
+        "S5 D+0.6W [WX+.pi]": {
+          "drift_in": 0.6077,
+          "ratio": 376.0
+        },
+        "S5 D+0.6W [WX-.pi]": {
+          "drift_in": 0.6605,
+          "ratio": 346.0
+        },
+        "S5 D+0.6W [WY+.pi]": {
+          "drift_in": 0.4435,
+          "ratio": 516.0
+        },
+        "S5 D+0.6W [WY-.pi]": {
+          "drift_in": 0.3666,
+          "ratio": 624.0
+        }
+      },
+      "gaps": [],
+      "member_weight_lb": 7011.7
+    },
+    "crossings_joined": {
+      "stable": true,
+      "max_dcr": 1.558,
+      "deflection_violations": [],
+      "worst_deflections": [
+        {
+          "member": "A.purlin.3",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.9145,
+          "ratio": 200.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "A.purlin.2",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.9067,
+          "ratio": 202.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "A.purlin.4",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8442,
+          "ratio": 217.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "A.purlin.1",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8404,
+          "ratio": 218.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 7-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2574,
+          "ratio": 423.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "B2 future floor beam",
+          "group": "LoftSteel",
+          "rule": "floor",
+          "span_in": 245.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.5784,
+          "ratio": 424.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 6-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2503,
+          "ratio": 435.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 8-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2437,
+          "ratio": 447.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 5-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2388,
+          "ratio": 456.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 4-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2378,
+          "ratio": 458.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 9-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2332,
+          "ratio": 467.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 3-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2305,
+          "ratio": 473.0,
+          "limit": 240.0,
+          "passes": "True"
+        }
+      ],
+      "over_capacity": [
+        {
+          "member": "E.clerestory",
+          "section": "HSS4X4X3/16",
+          "dcr": 1.558,
+          "mode": "flexure",
+          "combo": "C3 1.2D+1.6Lr+1.0L"
+        },
+        {
+          "member": "T-SO",
+          "section": "W6X8.5",
+          "dcr": 1.506,
+          "mode": "H1-1b combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WX+.pi]"
+        },
+        {
+          "member": "E.rear.brace",
+          "section": "HSS2-1/4X2-1/4X1/8",
+          "dcr": 1.344,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "E.slope",
+          "section": "HSS2-1/2X2-1/2X1/8",
+          "dcr": 1.204,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "BR-R-cap-2",
+          "section": "HSS1-1/2X1-1/2X1/8",
+          "dcr": 1.154,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C5 0.9D+1.0W [WY-.pi]"
+        },
+        {
+          "member": "W.clerestory",
+          "section": "HSS4X4X3/16",
+          "dcr": 1.036,
+          "mode": "flexure",
+          "combo": "C3 1.2D+1.6Lr+1.0L"
+        },
+        {
+          "member": "Wood joist 3-1",
+          "section": "1.5x7.25 DF-L No.2",
+          "dcr": 1.009,
+          "mode": "bending",
+          "combo": "S2 D+L"
+        }
+      ],
+      "equilibrium": {
+        "C1 1.4D": {
+          "applied_lb": -33001.6,
+          "reaction_lb": 33001.6,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C2 1.2D+1.6L+0.5Lr": {
+          "applied_lb": -71896.6,
+          "reaction_lb": 71896.6,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C3 1.2D+1.6Lr+1.0L": {
+          "applied_lb": -71470.5,
+          "reaction_lb": 71470.5,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        }
+      },
+      "drift": {
+        "S5 D+0.6W [WX+.pi]": {
+          "drift_in": 0.5023,
+          "ratio": 455.0
+        },
+        "S5 D+0.6W [WX-.pi]": {
+          "drift_in": 0.5476,
+          "ratio": 418.0
+        },
+        "S5 D+0.6W [WY+.pi]": {
+          "drift_in": 0.364,
+          "ratio": 628.0
+        },
+        "S5 D+0.6W [WY-.pi]": {
+          "drift_in": 0.3074,
+          "ratio": 744.0
+        }
+      },
+      "gaps": [],
+      "member_weight_lb": 7011.7
+    },
+    "adequate": {
+      "stable": true,
+      "max_dcr": 0.971,
+      "deflection_violations": [],
+      "worst_deflections": [
+        {
+          "member": "A.purlin.3",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.9066,
+          "ratio": 202.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "A.purlin.2",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8994,
+          "ratio": 203.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "A.purlin.4",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8356,
+          "ratio": 219.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "A.purlin.1",
+          "group": "AssumedRoofPurlin",
+          "rule": "roof",
+          "span_in": 183.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8328,
+          "ratio": 220.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 7-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2576,
+          "ratio": 423.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "B2 future floor beam",
+          "group": "LoftSteel",
+          "rule": "floor",
+          "span_in": 245.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.5765,
+          "ratio": 426.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 6-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2511,
+          "ratio": 434.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 8-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2442,
+          "ratio": 446.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 5-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.24,
+          "ratio": 454.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 4-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.239,
+          "ratio": 456.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 9-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2335,
+          "ratio": 466.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "Wood joist 3-0",
+          "group": "LoftJoists",
+          "rule": "floor",
+          "span_in": 108.9,
+          "combination": "S2 D+L",
+          "deflection_in": 0.2317,
+          "ratio": 470.0,
+          "limit": 240.0,
+          "passes": "True"
+        }
+      ],
+      "over_capacity": [],
+      "equilibrium": {
+        "C1 1.4D": {
+          "applied_lb": -33001.6,
+          "reaction_lb": 33174.6,
+          "residual_lb": 173.038,
+          "relative": 0.00524333
+        },
+        "C2 1.2D+1.6L+0.5Lr": {
+          "applied_lb": -71896.6,
+          "reaction_lb": 72044.9,
+          "residual_lb": 148.319,
+          "relative": 0.00206295
+        },
+        "C3 1.2D+1.6Lr+1.0L": {
+          "applied_lb": -71470.5,
+          "reaction_lb": 71618.8,
+          "residual_lb": 148.319,
+          "relative": 0.00207524
+        }
+      },
+      "drift": {
+        "S5 D+0.6W [WX+.pi]": {
+          "drift_in": 0.3898,
+          "ratio": 587.0
+        },
+        "S5 D+0.6W [WX-.pi]": {
+          "drift_in": 0.4138,
+          "ratio": 553.0
+        },
+        "S5 D+0.6W [WY+.pi]": {
+          "drift_in": 0.2974,
+          "ratio": 769.0
+        },
+        "S5 D+0.6W [WY-.pi]": {
+          "drift_in": 0.274,
+          "ratio": 835.0
+        }
+      },
+      "gaps": [],
+      "member_weight_lb": 7135.3
+    }
+  },
+  "crossings": {
+    "joints": [
+      {
+        "node": "X.1",
+        "members": [
+          "BR-N-ground-1",
+          "BR-N-ground-2"
+        ],
+        "at": [
+          3.17,
+          259.0,
+          60.5
+        ],
+        "unbraced_before": {
+          "BR-N-ground-1": 131.9,
+          "BR-N-ground-2": 131.9
+        },
+        "unbraced_after": {
+          "BR-N-ground-1": 66.0,
+          "BR-N-ground-2": 66.0
+        }
+      },
+      {
+        "node": "X.2",
+        "members": [
+          "BR-R-cap-1",
+          "BR-R-cap-2"
+        ],
+        "at": [
+          88.75,
+          194.71,
+          228.75
+        ],
+        "unbraced_before": {
+          "BR-R-cap-1": 261.3,
+          "BR-R-cap-2": 261.3
+        },
+        "unbraced_after": {
+          "BR-R-cap-1": 130.6,
+          "BR-R-cap-2": 130.6
+        }
+      },
+      {
+        "node": "X.3",
+        "members": [
+          "BR-R-main-1",
+          "BR-R-main-2"
+        ],
+        "at": [
+          88.75,
+          38.04,
+          175.33
+        ],
+        "unbraced_before": {
+          "BR-R-main-1": 260.7,
+          "BR-R-main-2": 260.7
+        },
+        "unbraced_after": {
+          "BR-R-main-1": 130.4,
+          "BR-R-main-2": 130.4
+        }
+      },
+      {
+        "node": "X.4",
+        "members": [
+          "BR-S-1",
+          "BR-S-2"
+        ],
+        "at": [
+          178.5,
+          -63.0,
+          60.5
+        ],
+        "unbraced_before": {
+          "BR-S-1": 127.4,
+          "BR-S-2": 127.4
+        },
+        "unbraced_after": {
+          "BR-S-1": 63.7,
+          "BR-S-2": 63.7
+        }
+      },
+      {
+        "node": "X.5",
+        "members": [
+          "BR-W-1",
+          "BR-W-2"
+        ],
+        "at": [
+          -34.0,
+          222.0,
+          60.5
+        ],
+        "unbraced_before": {
+          "BR-W-1": 131.7,
+          "BR-W-2": 131.7
+        },
+        "unbraced_after": {
+          "BR-W-1": 65.9,
+          "BR-W-2": 65.9
+        }
+      },
+      {
+        "node": "X.6",
+        "members": [
+          "T-N diagonal 8",
+          "T-N diagonal 9"
+        ],
+        "at": [
+          150.12,
+          259.0,
+          169.62
+        ],
+        "unbraced_before": {
+          "T-N diagonal 8": 164.3,
+          "T-N diagonal 9": 164.3
+        },
+        "unbraced_after": {
+          "T-N diagonal 8": 82.2,
+          "T-N diagonal 9": 82.2
+        }
+      }
+    ]
+  },
+  "combinations": {
+    "total": 27,
+    "used_in_studies": [
+      "C1 1.4D",
+      "C2 1.2D+1.6L+0.5Lr",
+      "C3 1.2D+1.6Lr+1.0L",
+      "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.pi]",
+      "C4 1.2D+1.0W+1.0L+0.5Lr [WX-.ni]",
+      "C4 1.2D+1.0W+1.0L+0.5Lr [WX-.pi]",
+      "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "C5 0.9D+1.0W [WX+.pi]",
+      "C5 0.9D+1.0W [WX-.ni]",
+      "C5 0.9D+1.0W [WX-.pi]",
+      "C5 0.9D+1.0W [WY-.pi]",
+      "C7 0.9D+1.0E [EY+]"
+    ]
+  },
+  "sizing": {
+    "verified": true,
+    "converged": true,
+    "still_over_capacity": null,
+    "weight_saved_lb": 1309.7,
+    "max_dcr_after": 0.978,
+    "rounds": [
+      {
+        "round": 1,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.96
+      },
+      {
+        "round": 2,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.958
+      },
+      {
+        "round": 3,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.962
+      },
+      {
+        "round": 4,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.959
+      },
+      {
+        "round": 5,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.966
+      },
+      {
+        "round": 6,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.963
+      },
+      {
+        "round": 7,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.97
+      },
+      {
+        "round": 8,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.923
+      },
+      {
+        "round": 9,
+        "proposed": 12,
+        "accepted": 11,
+        "reverted": [
+          "A.clerestory.head"
+        ],
+        "max_dcr": 0.919
+      },
+      {
+        "round": 10,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.918
+      },
+      {
+        "round": 11,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.987
+      },
+      {
+        "round": 12,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.94
+      },
+      {
+        "round": 13,
+        "proposed": 12,
+        "accepted": 9,
+        "reverted": [
+          "B2 future floor beam",
+          "T-N top / segment 1",
+          "T1 future floor beam"
+        ],
+        "max_dcr": 0.981
+      },
+      {
+        "round": 14,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.985
+      },
+      {
+        "round": 15,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.955
+      },
+      {
+        "round": 16,
+        "proposed": 12,
+        "accepted": 0,
+        "reverted": [
+          "E.W1",
+          "E.W3",
+          "E.W4",
+          "E.top",
+          "East rafter 04",
+          "T-N",
+          "T-N upper east jamb",
+          "T-SO",
+          "W.W3",
+          "W.bottom",
+          "W.rear.brace",
+          "W.top"
+        ],
+        "max_dcr": 1.017
+      },
+      {
+        "round": 17,
+        "proposed": 10,
+        "accepted": 10,
+        "reverted": [],
+        "max_dcr": 0.951
+      },
+      {
+        "round": 18,
+        "proposed": 2,
+        "accepted": 1,
+        "reverted": [
+          "N2"
+        ],
+        "max_dcr": 0.978
+      }
+    ],
+    "lighter": [
+      "BR-N-ground-1",
+      "BR-N-ground-2",
+      "BR-R-cap-1",
+      "E-M option B",
+      "E-N",
+      "E-S",
+      "E.SW0",
+      "E.W1",
+      "E.W3",
+      "E.W4",
+      "E.square.brace",
+      "E.top",
+      "East rafter 01",
+      "East rafter 02",
+      "East rafter 03",
+      "East rafter 04",
+      "East rafter 05",
+      "East rafter 06",
+      "East rafter 07",
+      "East rafter 08",
+      "East rafter 09",
+      "East rafter 10",
+      "East rafter 11",
+      "East rafter 12",
+      "N1 / U-W",
+      "N2",
+      "S1",
+      "S2",
+      "S3",
+      "T-N diagonal 8",
+      "T-N diagonal 9",
+      "T-N top / segment 1",
+      "T-N upper east jamb",
+      "T1 diagonal 6",
+      "T1 diagonal 9",
+      "T1 future floor beam",
+      "T1 upper lower chord",
+      "W.SW0",
+      "W.W1",
+      "W.W3",
+      "W.W4",
+      "W.rear.brace",
+      "W.square.brace",
+      "W.top"
+    ],
+    "heavier": [
+      "BR-R-cap-2",
+      "E.clerestory",
+      "E.rear.brace",
+      "E.slope",
+      "T-SO",
+      "W.clerestory"
+    ],
+    "beyond_ladder": [],
+    "strengthen": {
+      "rounds": [
+        {
+          "round": 1,
+          "over_capacity": 6,
+          "max_dcr": 1.558,
+          "upsized": 6,
+          "at_ladder_top": 0
+        },
+        {
+          "round": 2,
+          "over_capacity": 4,
+          "max_dcr": 1.567,
+          "upsized": 4,
+          "at_ladder_top": 0
+        },
+        {
+          "round": 3,
+          "over_capacity": 2,
+          "max_dcr": 1.557,
+          "upsized": 2,
+          "at_ladder_top": 0
+        },
+        {
+          "round": 4,
+          "over_capacity": 1,
+          "max_dcr": 1.229,
+          "upsized": 1,
+          "at_ladder_top": 0
+        },
+        {
+          "round": 5,
+          "over_capacity": 0,
+          "max_dcr": 0.971,
+          "upsized": 0,
+          "at_ladder_top": 0
+        }
+      ],
+      "adequate": true,
+      "added_lb": 125.2,
+      "sections": {
+        "E.clerestory": "HSS5X5X1/4",
+        "T-SO": "HSS4X4X3/16",
+        "E.rear.brace": "HSS3X3X1/8",
+        "E.slope": "HSS3X3X1/8",
+        "BR-R-cap-2": "HSS2X2X1/8",
+        "W.clerestory": "HSS5X5X3/16"
+      },
+      "stuck": []
+    },
+    "proposals": {
+      "E.clerestory": "HSS5X5X1/4",
+      "T-SO": "HSS4X4X3/16",
+      "E.rear.brace": "HSS3X3X1/8",
+      "E.slope": "HSS3X3X1/8",
+      "BR-R-cap-2": "HSS2X2X1/8",
+      "W.clerestory": "HSS5X5X3/16",
+      "BR-R-cap-1": "HSS2X2X1/8",
+      "E.SW0": "HSS2-1/2X2-1/2X1/8",
+      "S1": "HSS2-1/2X2-1/2X1/8",
+      "E-N": "HSS1-1/2X1-1/2X1/8",
+      "W.W1": "HSS1-1/2X1-1/2X3/16",
+      "N1 / U-W": "HSS2-1/2X2-1/2X1/8",
+      "W.SW0": "HSS2X2X1/8",
+      "BR-N-ground-2": "HSS2X2X1/8",
+      "N2": "HSS2-1/2X2-1/2X1/8",
+      "S2": "HSS3X3X1/8",
+      "East rafter 07": "HSS2-1/2X2-1/2X1/8",
+      "East rafter 08": "HSS2-1/2X2-1/2X1/8",
+      "East rafter 11": "HSS2X2X1/8",
+      "W.W4": "HSS3X3X3/16",
+      "E.W4": "HSS3X3X1/8",
+      "East rafter 06": "HSS2-1/2X2-1/2X1/8",
+      "East rafter 03": "HSS1-1/2X1-1/2X1/8",
+      "East rafter 12": "HSS2-1/2X2-1/2X1/8",
+      "East rafter 10": "HSS2-1/2X2-1/2X1/8",
+      "T1 diagonal 9": "HSS1-1/2X1-1/2X1/8",
+      "T1 diagonal 6": "HSS1-1/2X1-1/2X1/8",
+      "BR-N-ground-1": "HSS1-1/2X1-1/2X1/8",
+      "S3": "HSS2-1/2X2-1/2X1/8",
+      "T-N top / segment 1": "HSS3-1/2X3-1/2X3/16",
+      "W.top": "HSS2-1/2X2-1/2X3/16",
+      "E.W1": "HSS2X2X1/8",
+      "T1 upper lower chord": "HSS1-1/2X1-1/2X1/8",
+      "T-N diagonal 9": "HSS1-1/2X1-1/2X1/8",
+      "W.rear.brace": "HSS1-1/2X1-1/2X3/16",
+      "E-S": "HSS2-1/2X2-1/2X1/8",
+      "W.W3": "HSS5X5X3/16",
+      "E-M option B": "HSS2-1/2X2-1/2X1/8",
+      "East rafter 05": "HSS2-1/2X2-1/2X1/8",
+      "East rafter 01": "HSS1-1/2X1-1/2X1/8",
+      "East rafter 02": "HSS1-1/2X1-1/2X1/8",
+      "A.clerestory.head": "HSS6X6X1/4",
+      "East rafter 09": "HSS2-1/2X2-1/2X1/8",
+      "T-N diagonal 8": "HSS1-1/2X1-1/2X1/8",
+      "East rafter 04": "HSS1-1/2X1-1/2X3/16",
+      "T1 future floor beam": "HSS3X3X1/4",
+      "B2 future floor beam": "W8X24",
+      "E.W3": "HSS3X3X3/16",
+      "E.square.brace": "HSS1-1/2X1-1/2X3/16",
+      "T-N upper east jamb": "HSS3X3X3/16",
+      "E.top": "HSS3-1/2X3-1/2X1/4",
+      "W.square.brace": "HSS1-1/2X1-1/2X3/16"
+    }
+  },
+  "removal": {
+    "tested": 135,
+    "redundant": [
+      "S3",
+      "E-N",
+      "BR-R-main-1",
+      "A.purlin.1",
+      "A.purlin.2",
+      "A.purlin.4",
+      "A.purlin.3",
+      "East rafter 06",
+      "East rafter 05",
+      "East rafter 07",
+      "East rafter 08",
+      "East rafter 09",
+      "East rafter 10",
+      "East rafter 11",
+      "East rafter 12",
+      "East rafter 04",
+      "East rafter 03",
+      "T-N garage door header",
+      "East rafter 02",
+      "East rafter 01",
+      "Wood joist 0-0",
+      "Wood joist 1-0",
+      "Wood joist 2-0",
+      "Wood joist 3-0",
+      "Wood joist 11-0",
+      "Wood joist 12-0",
+      "Wood joist 13-0",
+      "Wood joist 14-0",
+      "T-N loading header",
+      "Wood joist 0-1",
+      "Wood joist 1-1",
+      "Wood joist 2-1",
+      "Wood joist 3-1",
+      "Wood joist 4-1",
+      "Wood joist 5-1",
+      "Wood joist 6-1",
+      "Wood joist 7-1",
+      "Wood joist 8-1",
+      "Wood joist 9-1",
+      "Wood joist 10-1",
+      "Wood joist 11-1",
+      "Wood joist 12-1",
+      "Wood joist 13-1",
+      "Wood joist 14-1",
+      "T1 diagonal 7",
+      "T1 diagonal 8",
+      "T-S diagonal 11",
+      "T-S diagonal 9",
+      "T-S diagonal 10",
+      "T-N garage diagonal 3",
+      "T-N garage diagonal 2",
+      "T-N garage diagonal 1",
+      "T1 vertical 2",
+      "T1 vertical 4",
+      "T-S vertical 2",
+      "T-S vertical 4",
+      "T-S vertical 6",
+      "T-N diagonal 15",
+      "T-N diagonal 16",
+      "T-N diagonal 17",
+      "T-N diagonal 18",
+      "T1 future hanger 2",
+      "T1 future hanger 3",
+      "T1 future hanger 4",
+      "T-N garage vertical 2",
+      "T-N vertical 11",
+      "T-N vertical 12",
+      "T-N vertical 13"
+    ],
+    "critical": [
+      "W.W3",
+      "W.top",
+      "E.top",
+      "N1 / U-W",
+      "BR-R-cap-1",
+      "E-OB",
+      "S1",
+      "S2",
+      "BR-N-ground-1",
+      "BR-W-1",
+      "BR-S-1"
+    ],
+    "cumulative": {
+      "removed": [],
+      "rejected": [
+        {
+          "member": "S3",
+          "max_dcr": 0.983,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/370",
+          "drift": 370.0
+        },
+        {
+          "member": "E-N",
+          "max_dcr": 0.982,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/380",
+          "drift": 380.0
+        },
+        {
+          "member": "BR-R-main-1",
+          "max_dcr": 0.999,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/359",
+          "drift": 359.0
+        },
+        {
+          "member": "A.purlin.1",
+          "max_dcr": 0.95,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "A.purlin.2",
+          "max_dcr": 0.966,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "A.purlin.4",
+          "max_dcr": 0.974,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "A.purlin.3",
+          "max_dcr": 0.972,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "East rafter 06",
+          "reason": "EastRoofRafters: would leave a 46 in. gap against a 32 in. limit for the metal roof panel over exposed rafters",
+          "check": "deck spacing"
+        },
+        {
+          "member": "East rafter 05",
+          "reason": "EastRoofRafters: would leave a 46 in. gap against a 32 in. limit for the metal roof panel over exposed rafters",
+          "check": "deck spacing"
+        },
+        {
+          "member": "East rafter 07",
+          "reason": "EastRoofRafters: would leave a 46 in. gap against a 32 in. limit for the metal roof panel over exposed rafters",
+          "check": "deck spacing"
+        },
+        {
+          "member": "East rafter 08",
+          "reason": "EastRoofRafters: would leave a 46 in. gap against a 32 in. limit for the metal roof panel over exposed rafters",
+          "check": "deck spacing"
+        },
+        {
+          "member": "East rafter 09",
+          "reason": "EastRoofRafters: would leave a 46 in. gap against a 32 in. limit for the metal roof panel over exposed rafters",
+          "check": "deck spacing"
+        },
+        {
+          "member": "East rafter 10",
+          "reason": "EastRoofRafters: would leave a 46 in. gap against a 32 in. limit for the metal roof panel over exposed rafters",
+          "check": "deck spacing"
+        },
+        {
+          "member": "East rafter 11",
+          "reason": "EastRoofRafters: would leave a 46 in. gap against a 32 in. limit for the metal roof panel over exposed rafters",
+          "check": "deck spacing"
+        },
+        {
+          "member": "East rafter 12",
+          "max_dcr": 0.975,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "East rafter 04",
+          "reason": "EastRoofRafters: would leave a 46 in. gap against a 32 in. limit for the metal roof panel over exposed rafters",
+          "check": "deck spacing"
+        },
+        {
+          "member": "East rafter 03",
+          "reason": "EastRoofRafters: would leave a 46 in. gap against a 32 in. limit for the metal roof panel over exposed rafters",
+          "check": "deck spacing"
+        },
+        {
+          "member": "T-N garage door header",
+          "max_dcr": 0.987,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/359",
+          "drift": 359.0
+        },
+        {
+          "member": "East rafter 02",
+          "reason": "EastRoofRafters: would leave a 46 in. gap against a 32 in. limit for the metal roof panel over exposed rafters",
+          "check": "deck spacing"
+        },
+        {
+          "member": "East rafter 01",
+          "max_dcr": 0.984,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/385",
+          "drift": 385.0
+        },
+        {
+          "member": "Wood joist 0-0",
+          "max_dcr": 0.98,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 1-0",
+          "max_dcr": 0.98,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 2-0",
+          "max_dcr": 0.98,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 3-0",
+          "max_dcr": 0.995,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 11-0",
+          "max_dcr": 0.986,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 12-0",
+          "max_dcr": 0.979,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 13-0",
+          "max_dcr": 0.979,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 14-0",
+          "max_dcr": 0.979,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "T-N loading header",
+          "max_dcr": 0.977,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 0-1",
+          "max_dcr": 0.976,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 1-1",
+          "max_dcr": 0.975,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 2-1",
+          "max_dcr": 0.975,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 3-1",
+          "max_dcr": 0.976,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 4-1",
+          "max_dcr": 0.976,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 5-1",
+          "max_dcr": 0.977,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 6-1",
+          "max_dcr": 0.977,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 7-1",
+          "max_dcr": 0.979,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 8-1",
+          "max_dcr": 0.978,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 9-1",
+          "max_dcr": 0.978,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 10-1",
+          "max_dcr": 0.978,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 11-1",
+          "max_dcr": 0.978,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 12-1",
+          "max_dcr": 0.978,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 13-1",
+          "max_dcr": 0.978,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "Wood joist 14-1",
+          "max_dcr": 0.979,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "T1 diagonal 7",
+          "max_dcr": 0.965,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/375",
+          "drift": 375.0
+        },
+        {
+          "member": "T1 diagonal 8",
+          "max_dcr": 0.973,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/373",
+          "drift": 373.0
+        },
+        {
+          "member": "T-S diagonal 11",
+          "max_dcr": 0.977,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/364",
+          "drift": 364.0
+        },
+        {
+          "member": "T-S diagonal 9",
+          "max_dcr": 0.996,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/359",
+          "drift": 359.0
+        },
+        {
+          "member": "T-S diagonal 10",
+          "max_dcr": 0.975,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/361",
+          "drift": 361.0
+        },
+        {
+          "member": "T-N garage diagonal 3",
+          "max_dcr": 0.979,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "T-N garage diagonal 2",
+          "max_dcr": 0.98,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "T-N garage diagonal 1",
+          "max_dcr": 0.993,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/370",
+          "drift": 370.0
+        },
+        {
+          "member": "T1 vertical 2",
+          "max_dcr": 0.982,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/380",
+          "drift": 380.0
+        },
+        {
+          "member": "T1 vertical 4",
+          "max_dcr": 0.978,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "T-S vertical 2",
+          "max_dcr": 0.978,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "T-S vertical 4",
+          "max_dcr": 0.978,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "T-S vertical 6",
+          "max_dcr": 0.978,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "T-N diagonal 15",
+          "max_dcr": 0.979,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "T-N diagonal 16",
+          "max_dcr": 0.978,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "T-N diagonal 17",
+          "max_dcr": 0.978,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "T-N diagonal 18",
+          "max_dcr": 0.978,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "T1 future hanger 2",
+          "max_dcr": 0.98,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/380",
+          "drift": 380.0
+        },
+        {
+          "member": "T1 future hanger 3",
+          "max_dcr": 0.979,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "T1 future hanger 4",
+          "max_dcr": 0.977,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/380",
+          "drift": 380.0
+        },
+        {
+          "member": "T-N garage vertical 2",
+          "max_dcr": 0.977,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "T-N vertical 11",
+          "max_dcr": 0.978,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "T-N vertical 12",
+          "max_dcr": 0.978,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        },
+        {
+          "member": "T-N vertical 13",
+          "max_dcr": 0.978,
+          "stable": true,
+          "check": "strength and drift",
+          "reason": "wind drift falls to H/381",
+          "drift": 381.0
+        }
+      ],
+      "spacing_rules": {
+        "LoftJoists": {
+          "axis": 0,
+          "limit": 24.0,
+          "reason": "3/4 in. plywood floor deck"
+        },
+        "EastRoofRafters": {
+          "axis": 1,
+          "limit": 32.0,
+          "reason": "metal roof panel over exposed rafters"
+        }
+      },
+      "weight_saved_lb": 0,
+      "max_dcr_after": 0.978,
+      "stable": true,
+      "drift_ratio": 381.0
+    }
+  },
+  "totals": {
+    "baseline_lb": 7011.7,
+    "after_lb": 5702.0,
+    "saved_lb": 1309.7,
+    "saved_pct": 18.7,
+    "basis": "completed frame -- the members as drawn plus the assumed upper-roof framing; this is the baseline the reductions are measured against"
+  }
+}

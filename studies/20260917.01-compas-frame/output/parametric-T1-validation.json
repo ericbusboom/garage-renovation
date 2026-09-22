@@ -1,0 +1,77 @@
+{
+  "cases": {
+    "baseline": {
+      "parameters": {
+        "span": 224.25,
+        "depth": 84.6432482349228,
+        "x": 0,
+        "y": 69.75,
+        "bottom": 98.5,
+        "panels": 6,
+        "chord_size": 3,
+        "upright_size": 3,
+        "brace_size": 2.5
+      },
+      "physical_members": 11,
+      "plates": 5,
+      "joints": 14,
+      "graph_segments": 21,
+      "roundtrip": "passed"
+    },
+    "span-plus-24": {
+      "parameters": {
+        "span": 248.25,
+        "depth": 84.6432482349228,
+        "x": 0,
+        "y": 69.75,
+        "bottom": 98.5,
+        "panels": 6,
+        "chord_size": 3,
+        "upright_size": 3,
+        "brace_size": 2.5
+      },
+      "physical_members": 11,
+      "plates": 5,
+      "joints": 14,
+      "graph_segments": 21,
+      "roundtrip": "passed"
+    },
+    "depth-plus-12": {
+      "parameters": {
+        "span": 224.25,
+        "depth": 96.6432482349228,
+        "x": 0,
+        "y": 69.75,
+        "bottom": 98.5,
+        "panels": 6,
+        "chord_size": 3,
+        "upright_size": 3,
+        "brace_size": 2.5
+      },
+      "physical_members": 11,
+      "plates": 5,
+      "joints": 14,
+      "graph_segments": 21,
+      "roundtrip": "passed"
+    }
+  },
+  "sources": {
+    "structural-study/framing-member-register.json": "4409fbb7d0a9bc50298da76a5a67e2bac26e0749b5c67d134cc5bf56925d90b7",
+    "model-renders/garage-model.json": "46693129becb437dc221a164fa66efe3892d9ab729cfe9603582491297810c89",
+    "model-renders/build_and_render.py": "f4dc8f65fcc9341b569fb6cc8ef23c3780851778dff6ac170f6a621693687669"
+  },
+  "checks": [
+    "All 16 baseline member/plate vertex sets match original T1 to 1e-7 inches",
+    "Three variants preserve member IDs and shared-joint topology",
+    "Span +24 propagates to chord length; depth +12 propagates to upright length",
+    "All plates remain attached to their regenerated upper joints",
+    "All three models reloaded and validated before drawing"
+  ],
+  "expected_failures": {
+    "brace endpoint moved off joint": "Member endpoint misses joint: T1.brace.west",
+    "missing joint": "Joint IDs do not match panel layout",
+    "lost graph connection": "Connectivity graph differs from physical member attachments",
+    "negative span": "Span, depth and section envelopes must be positive",
+    "noninteger panels": "Panel count must be an integer of at least two"
+  }
+}

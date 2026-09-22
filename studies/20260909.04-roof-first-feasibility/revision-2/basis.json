@@ -1,0 +1,33 @@
+{
+  "units": "inches",
+  "existing_roof": {
+    "width": 249.5,
+    "length": 249.0,
+    "wall_height": 98.5,
+    "rise": 60.0,
+    "ridge_length": 0
+  },
+  "TE": {
+    "x": 224.25,
+    "y_start": -21.25,
+    "y_end": 253,
+    "supports": [
+      "S2",
+      "S3",
+      "N2"
+    ],
+    "illustrative_depth": 36.0
+  },
+  "T1": {
+    "y": 69.75,
+    "west_support": "W2",
+    "east_support": "connection to T-E",
+    "interior_post": false
+  },
+  "checks": {
+    "old_roof_peak": 158.5,
+    "old_roof_height_along_TE_max": 110.64428857715431,
+    "T1_joint_elevation": 147.1432482349228,
+    "TE_support_distance_S3_N2": 253
+  }
+}

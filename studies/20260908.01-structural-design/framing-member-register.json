@@ -1,0 +1,228 @@
+{
+  "units": "inches",
+  "origin": "SW exterior corner",
+  "members": [
+    {
+      "id": "T-SO",
+      "start": [
+        -32,
+        -63
+      ],
+      "end": [
+        249.5,
+        -63
+      ],
+      "description": "South outer BEAM; bottom at 98.5-in wall-top datum",
+      "bottom_elevation": 98.5,
+      "support_basis": "columns; aligned with wall tops"
+    },
+    {
+      "id": "T-S",
+      "start": [
+        0,
+        0
+      ],
+      "end": [
+        246.5,
+        0
+      ],
+      "description": "Truss bottom at common wall-top datum, extending to roof; column supported",
+      "bottom_elevation": 98.5,
+      "support_basis": "columns; aligned with wall tops"
+    },
+    {
+      "id": "T-W",
+      "start": [
+        0,
+        -63
+      ],
+      "end": [
+        0,
+        253
+      ],
+      "description": "Truss over existing WEST wall",
+      "bottom_elevation": 98.5,
+      "support_basis": "columns; aligned with wall tops"
+    },
+    {
+      "id": "T-E",
+      "start": [
+        224.25,
+        -63
+      ],
+      "end": [
+        224.25,
+        253
+      ],
+      "description": "East truss aligned above S2 and N2",
+      "bottom_elevation": 98.5,
+      "support_basis": "columns; aligned with wall tops"
+    },
+    {
+      "id": "B3",
+      "start": [
+        0,
+        249
+      ],
+      "end": [
+        246.5,
+        249
+      ],
+      "description": "Beam above NORTH wall, below loft floor",
+      "bottom_elevation": 98.5,
+      "support_basis": "columns; aligned with wall tops"
+    },
+    {
+      "id": "T-N",
+      "start": [
+        -32,
+        253
+      ],
+      "end": [
+        249.5,
+        253
+      ],
+      "description": "North wall-forming truss with loft door opening",
+      "bottom_elevation": 98.5,
+      "support_basis": "columns; aligned with wall tops"
+    },
+    {
+      "id": "B-WO",
+      "start": [
+        -32,
+        -63
+      ],
+      "end": [
+        -32,
+        253
+      ],
+      "description": "West outer beam on existing proposed post row",
+      "bottom_elevation": 98.5,
+      "support_basis": "columns; aligned with wall tops"
+    },
+    {
+      "id": "T1",
+      "start": [
+        0,
+        69.75
+      ],
+      "end": [
+        224.25,
+        69.75
+      ],
+      "description": "Truss from common wall-top bottom datum to roof underside",
+      "bottom_elevation": 98.5,
+      "support_basis": "columns; aligned with wall tops"
+    },
+    {
+      "id": "B2",
+      "start": [
+        0,
+        185
+      ],
+      "end": [
+        224.25,
+        185
+      ],
+      "description": "Main loft beam; maximum 8-inch overall depth",
+      "bottom_elevation": 98.5,
+      "support_basis": "columns; aligned with wall tops"
+    },
+    {
+      "id": "O2",
+      "start": [
+        -32,
+        69.75
+      ],
+      "end": [
+        0,
+        69.75
+      ],
+      "description": "West transfer / outrigger at T1",
+      "bottom_elevation": 98.5,
+      "support_basis": "columns; aligned with wall tops"
+    },
+    {
+      "id": "O3",
+      "start": [
+        -32,
+        185
+      ],
+      "end": [
+        0,
+        185
+      ],
+      "description": "West transfer / outrigger at B2",
+      "bottom_elevation": 98.5,
+      "support_basis": "columns; aligned with wall tops"
+    }
+  ],
+  "existing_shelter_beam": {
+    "id": "OB1",
+    "start": [
+      -164.25,
+      174
+    ],
+    "end": [
+      -27,
+      174
+    ]
+  },
+  "posts": [
+    {
+      "id": "W1",
+      "x": -32,
+      "y": -21.25,
+      "status": "proposed"
+    },
+    {
+      "id": "W2",
+      "x": -32,
+      "y": 69.75,
+      "status": "proposed"
+    },
+    {
+      "id": "W3",
+      "x": -32,
+      "y": 185,
+      "status": "proposed"
+    },
+    {
+      "id": "W4",
+      "x": -32,
+      "y": 253,
+      "status": "proposed"
+    },
+    {
+      "id": "S1",
+      "x": 148.5,
+      "y": -21.25,
+      "status": "proposed"
+    },
+    {
+      "id": "S2",
+      "x": 224.25,
+      "y": -21.25,
+      "status": "proposed"
+    },
+    {
+      "id": "N1",
+      "x": 53.25,
+      "y": 253,
+      "status": "proposed"
+    },
+    {
+      "id": "N2",
+      "x": 224.25,
+      "y": 253,
+      "status": "proposed"
+    },
+    {
+      "id": "S3",
+      "x": 224.25,
+      "y": 0,
+      "status": "optional"
+    }
+  ],
+  "note": "B-S removed; S1 south support needs revised connection/load path. Concept centerlines; wall framing elevated independently; B3 beam below loft floor; T-N upper-wall truss with door opening. Exact elevations unresolved."
+}

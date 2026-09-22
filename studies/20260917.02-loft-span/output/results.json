@@ -1,0 +1,563 @@
+{
+  "study": "loft span W1 -> E-S, three east-west beams",
+  "geometry": {
+    "west_x": -34.0,
+    "east_x": 247.5,
+    "span_in": 281.5,
+    "span_ft": 23.458333333333332,
+    "built_span_in": 245.5,
+    "loft_depth_ft": 15.244013597181535,
+    "loft_area_ft2": 357.59915230055014,
+    "floor_z": 116.0,
+    "existing_wall_top_z": 98.5,
+    "depth_budget_in": 17.5,
+    "west_overhang_in": 34.0
+  },
+  "load_basis": {
+    "dead_psf": 9.8106875,
+    "sdl_psf": 8.0,
+    "joist_psf": 1.8106875,
+    "joist": {
+      "b": 1.5,
+      "d": 7.25,
+      "spacing": 16.0,
+      "grade": "DF-L No.2"
+    },
+    "live_cases": {
+      "L40": {
+        "psf": 40.0,
+        "basis": "Project assumption ASM-006 -- residential attic/light domestic storage",
+        "status": "project assumption, open"
+      },
+      "L125": {
+        "psf": 125.0,
+        "basis": "ASCE 7-16 Table 4.3-1, \"Storage warehouses, light\"",
+        "status": "code minimum if the space is classified as storage occupancy"
+      }
+    },
+    "deflection_limits": {
+      "live": "L/360",
+      "total": "L/240",
+      "source": "IBC Table 1604.3"
+    },
+    "excluded": [
+      "roof and solar dead + live (carried by the trusses above)",
+      "the 1000 lb monorail hoist (hung from the roof frame)",
+      "wind and seismic (this is a gravity span study)"
+    ]
+  },
+  "beams": [
+    {
+      "case": "40 psf live \u00b7 even third\n5.08 ft tributary",
+      "name": "L40-even",
+      "live_psf": 40.0,
+      "trib_ft": 5.081337865727178,
+      "section": "W12X14",
+      "d": 11.9,
+      "nominal_depth": 12,
+      "weight_lb": 328.41666666666663,
+      "wt_plf": 14.0,
+      "wD_plf": 63.85141788256631,
+      "wL_plf": 203.25351462908714,
+      "Mu_kipft": 27.640365741174126,
+      "phiMn_kipft": 65.24999999999999,
+      "defl_live_in": 0.5389859879690014,
+      "defl_total_in": 0.7083066494761826,
+      "fn_hz": 6.4166197862890755,
+      "soffit_z": 104.1,
+      "fits_budget": true,
+      "governing": "live deflection L/360",
+      "dcr": 0.6892893629443713
+    },
+    {
+      "case": "40 psf live \u00b7 centre beam\n7.62 ft tributary",
+      "name": "L40-interior",
+      "live_psf": 40.0,
+      "trib_ft": 7.622006798590768,
+      "section": "W12X16",
+      "d": 12.0,
+      "nominal_depth": 12,
+      "weight_lb": 375.3333333333333,
+      "wt_plf": 16.0,
+      "wD_plf": 90.77712682384946,
+      "wL_plf": 304.8802719436307,
+      "Mu_kipft": 41.04782855967785,
+      "phiMn_kipft": 75.37500000000001,
+      "defl_live_in": 0.6954489106900997,
+      "defl_total_in": 0.9025166017635825,
+      "fn_hz": 5.732822851247543,
+      "soffit_z": 104.0,
+      "fits_budget": true,
+      "governing": "live deflection L/360",
+      "dcr": 0.8893840420903585
+    },
+    {
+      "case": "125 psf live \u00b7 even third\n5.08 ft tributary",
+      "name": "L125-even",
+      "live_psf": 125.0,
+      "trib_ft": 5.081337865727178,
+      "section": "W14X22",
+      "d": 13.7,
+      "nominal_depth": 14,
+      "weight_lb": 516.0833333333333,
+      "wt_plf": 22.0,
+      "wD_plf": 71.85141788256631,
+      "wL_plf": 635.1672332158973,
+      "Mu_kipft": 75.83657180601533,
+      "phiMn_kipft": 124.50000000000001,
+      "defl_live_in": 0.74990826843677,
+      "defl_total_in": 0.8347394271478921,
+      "fn_hz": 6.780483815485923,
+      "soffit_z": 102.3,
+      "fits_budget": true,
+      "governing": "live deflection L/360",
+      "dcr": 0.959030112388054
+    },
+    {
+      "case": "125 psf live \u00b7 centre beam\n7.62 ft tributary",
+      "name": "L125-interior",
+      "live_psf": 125.0,
+      "trib_ft": 7.622006798590768,
+      "section": "W16X26",
+      "d": 15.7,
+      "nominal_depth": 16,
+      "weight_lb": 609.9166666666666,
+      "wt_plf": 26.0,
+      "wD_plf": 100.77712682384946,
+      "wL_plf": 952.7508498238459,
+      "Mu_kipft": 113.1770496361063,
+      "phiMn_kipft": 165.75,
+      "defl_live_in": 0.7436797944464314,
+      "defl_total_in": 0.8223424510844382,
+      "fn_hz": 6.878764158650454,
+      "soffit_z": 100.3,
+      "fits_budget": true,
+      "governing": "live deflection L/360",
+      "dcr": 0.9510647460060935
+    }
+  ],
+  "by_nominal_depth": {
+    "L40-interior": {
+      "10": {
+        "section": "W10X19",
+        "d": 10.2,
+        "wt_plf": 19.0,
+        "weight_lb": 445.7083333333333,
+        "dcr": 0.9512622672409857,
+        "governing": "live deflection L/360"
+      },
+      "12": {
+        "section": "W12X16",
+        "d": 12.0,
+        "wt_plf": 16.0,
+        "weight_lb": 375.3333333333333,
+        "dcr": 0.8893840420903585,
+        "governing": "live deflection L/360"
+      },
+      "14": {
+        "section": "W14X22",
+        "d": 13.7,
+        "wt_plf": 22.0,
+        "weight_lb": 516.0833333333333,
+        "dcr": 0.46033445394626593,
+        "governing": "live deflection L/360"
+      },
+      "16": {
+        "section": "W16X26",
+        "d": 15.7,
+        "wt_plf": 26.0,
+        "weight_lb": 609.9166666666666,
+        "dcr": 0.3043407187219499,
+        "governing": "live deflection L/360"
+      },
+      "18": {
+        "section": "W18X35",
+        "d": 17.7,
+        "wt_plf": 35.0,
+        "weight_lb": 821.0416666666666,
+        "dcr": 0.1796206986966802,
+        "governing": "live deflection L/360"
+      },
+      "21": {
+        "section": "W21X44",
+        "d": 20.7,
+        "wt_plf": 44.0,
+        "weight_lb": 1032.1666666666665,
+        "dcr": 0.12119933152018036,
+        "governing": "flexure"
+      }
+    },
+    "L125-interior": {
+      "14": {
+        "section": "W14X30",
+        "d": 13.8,
+        "wt_plf": 30.0,
+        "weight_lb": 703.75,
+        "dcr": 0.9837473833258904,
+        "governing": "live deflection L/360"
+      },
+      "16": {
+        "section": "W16X26",
+        "d": 15.7,
+        "wt_plf": 26.0,
+        "weight_lb": 609.9166666666666,
+        "dcr": 0.9510647460060935,
+        "governing": "live deflection L/360"
+      },
+      "18": {
+        "section": "W18X35",
+        "d": 17.7,
+        "wt_plf": 35.0,
+        "weight_lb": 821.0416666666666,
+        "dcr": 0.5613146834271258,
+        "governing": "live deflection L/360"
+      },
+      "21": {
+        "section": "W21X44",
+        "d": 20.7,
+        "wt_plf": 44.0,
+        "weight_lb": 1032.1666666666665,
+        "dcr": 0.3395853956676561,
+        "governing": "live deflection L/360"
+      }
+    }
+  },
+  "trusses": [
+    {
+      "case": "L40-interior",
+      "depth": 12.0,
+      "span_over_depth": 23.458333333333332,
+      "n_panels": 4,
+      "chord": "HSS2-1/2X2-1/2X3/16",
+      "web": "HSS1-1/2X1-1/2X1/8",
+      "weight_lb": 267.01338900665024,
+      "n_joints": 22,
+      "dcr": 0.9884758478540612,
+      "governing": "live deflection L/360",
+      "defl_live_in": 0.7729331976969951
+    },
+    {
+      "case": "L40-interior",
+      "depth": 18.0,
+      "span_over_depth": 15.63888888888889,
+      "n_panels": 8,
+      "chord": "HSS2X2X1/8",
+      "web": "HSS1-1/2X1-1/2X1/8",
+      "weight_lb": 195.41702056175734,
+      "n_joints": 46,
+      "dcr": 0.8828676979748558,
+      "governing": "top chord, axial + local bending (H1-1)",
+      "defl_live_in": 0.5622913542112384
+    },
+    {
+      "case": "L40-interior",
+      "depth": 24.0,
+      "span_over_depth": 11.729166666666666,
+      "n_panels": 10,
+      "chord": "HSS1-1/2X1-1/2X1/8",
+      "web": "HSS1-1/2X1-1/2X1/8",
+      "weight_lb": 188.3640960964516,
+      "n_joints": 58,
+      "dcr": 0.9514760276392722,
+      "governing": "top chord, axial + local bending (H1-1)",
+      "defl_live_in": 0.44490652404738584
+    },
+    {
+      "case": "L40-interior",
+      "depth": 30.0,
+      "span_over_depth": 9.383333333333333,
+      "n_panels": 8,
+      "chord": "HSS1-1/2X1-1/2X1/8",
+      "web": "HSS1-1/2X1-1/2X1/8",
+      "weight_lb": 187.14939238326934,
+      "n_joints": 46,
+      "dcr": 0.9289476750692081,
+      "governing": "top chord, axial + local bending (H1-1)",
+      "defl_live_in": 0.2977882083366936
+    },
+    {
+      "case": "L40-interior",
+      "depth": 36.0,
+      "span_over_depth": 7.819444444444445,
+      "n_panels": 8,
+      "chord": "HSS1-1/2X1-1/2X1/8",
+      "web": "HSS1-1/2X1-1/2X1/8",
+      "weight_lb": 201.76069885804029,
+      "n_joints": 46,
+      "dcr": 0.8347756307780421,
+      "governing": "top chord, axial + local bending (H1-1)",
+      "defl_live_in": 0.2207213985810964
+    },
+    {
+      "case": "L125-interior",
+      "depth": 12.0,
+      "span_over_depth": 23.458333333333332,
+      "n_panels": 12,
+      "chord": "HSS5X5X1/4",
+      "web": "HSS3X3X1/8",
+      "weight_lb": 806.2902252217697,
+      "n_joints": 70,
+      "dcr": 0.9975425917229827,
+      "governing": "live deflection L/360",
+      "defl_live_in": 0.7800228876944989
+    },
+    {
+      "case": "L125-interior",
+      "depth": 18.0,
+      "span_over_depth": 15.63888888888889,
+      "n_panels": 6,
+      "chord": "HSS3-1/2X3-1/2X3/16",
+      "web": "HSS1-1/2X1-1/2X1/8",
+      "weight_lb": 389.27856621702415,
+      "n_joints": 34,
+      "dcr": 0.9734935199650759,
+      "governing": "live deflection L/360",
+      "defl_live_in": 0.761217849639358
+    },
+    {
+      "case": "L125-interior",
+      "depth": 24.0,
+      "span_over_depth": 11.729166666666666,
+      "n_panels": 10,
+      "chord": "HSS2-1/2X2-1/2X3/16",
+      "web": "HSS1-1/2X1-1/2X1/8",
+      "weight_lb": 330.2107521862668,
+      "n_joints": 58,
+      "dcr": 0.9414540477338119,
+      "governing": "top chord, axial + local bending (H1-1)",
+      "defl_live_in": 0.6198334588580903
+    },
+    {
+      "case": "L125-interior",
+      "depth": 30.0,
+      "span_over_depth": 9.383333333333333,
+      "n_panels": 8,
+      "chord": "HSS3X3X1/8",
+      "web": "HSS1-1/2X1-1/2X1/8",
+      "weight_lb": 291.5565108207687,
+      "n_joints": 46,
+      "dcr": 0.9676180830214572,
+      "governing": "top chord, axial + local bending (H1-1)",
+      "defl_live_in": 0.49684488660515624
+    },
+    {
+      "case": "L125-interior",
+      "depth": 36.0,
+      "span_over_depth": 7.819444444444445,
+      "n_panels": 10,
+      "chord": "HSS2-1/2X2-1/2X1/8",
+      "web": "HSS1-1/2X1-1/2X1/8",
+      "weight_lb": 296.28616285211876,
+      "n_joints": 58,
+      "dcr": 0.9721011406703959,
+      "governing": "top chord, axial + local bending (H1-1)",
+      "defl_live_in": 0.46154099459244224
+    }
+  ],
+  "joists": [
+    {
+      "section": "2x8 DF-L No.2 at 16 in. o.c.",
+      "bay_ft": 7.622006798590768,
+      "live_psf": 40.0,
+      "dcr": 0.3546121222350994,
+      "governing": "bending",
+      "defl_live_in": 0.053139144451788266,
+      "checks": {
+        "bending": 0.3546121222350994,
+        "horizontal shear": 0.19395013985567314,
+        "live deflection L/360": 0.2091541474154018,
+        "total deflection L/240": 0.17363519793729182
+      },
+      "basis": "NDS ASD",
+      "ok": true
+    },
+    {
+      "section": "2x8 DF-L No.2 at 16 in. o.c.",
+      "bay_ft": 7.622006798590768,
+      "live_psf": 125.0,
+      "dcr": 0.959743910267205,
+      "governing": "bending",
+      "defl_live_in": 0.1660598264118384,
+      "checks": {
+        "bending": 0.959743910267205,
+        "horizontal shear": 0.524918506588861,
+        "live deflection L/360": 0.6536067106731308,
+        "total deflection L/240": 0.46993690677577776
+      },
+      "basis": "NDS ASD",
+      "ok": true
+    },
+    {
+      "section": "2x8 DF-L No.2 at 16 in. o.c.",
+      "bay_ft": 5.081337865727178,
+      "live_psf": 40.0,
+      "dcr": 0.15760538766004417,
+      "governing": "bending",
+      "defl_live_in": 0.010496621126279164,
+      "checks": {
+        "bending": 0.15760538766004417,
+        "horizontal shear": 0.12930009323711542,
+        "live deflection L/360": 0.06197159923419312,
+        "total deflection L/240": 0.051447466055493885
+      },
+      "basis": "NDS ASD",
+      "ok": true
+    },
+    {
+      "section": "2x8 DF-L No.2 at 16 in. o.c.",
+      "bay_ft": 5.081337865727178,
+      "live_psf": 125.0,
+      "dcr": 0.4265528490076466,
+      "governing": "bending",
+      "defl_live_in": 0.03280194101962239,
+      "checks": {
+        "bending": 0.4265528490076466,
+        "horizontal shear": 0.3499456710592406,
+        "live deflection L/360": 0.19366124760685352,
+        "total deflection L/240": 0.13924056497060083
+      },
+      "basis": "NDS ASD",
+      "ok": true
+    }
+  ],
+  "cost": {
+    "L40-interior": {
+      "beam": "W12X16",
+      "truss_depth": 18.0,
+      "truss_chord": "HSS2X2X1/8",
+      "truss_web": "HSS1-1/2X1-1/2X1/8",
+      "beams": {
+        "weight_lb": 1126.0,
+        "joints": 0,
+        "low": 1101.1,
+        "high": 1747.1999999999998,
+        "lines": [
+          {
+            "item": "material, W shape delivered",
+            "low": 619.3,
+            "high": 788.1999999999999
+          },
+          {
+            "item": "end plates, shop welded",
+            "low": 144.0,
+            "high": 396.0
+          },
+          {
+            "item": "hot-dip galvanizing",
+            "low": 337.8,
+            "high": 563.0
+          }
+        ]
+      },
+      "trusses": {
+        "weight_lb": 586.251061685272,
+        "joints": 138,
+        "low": 3543.5636147695354,
+        "high": 8172.376592527908,
+        "lines": [
+          {
+            "item": "material, HSS delivered",
+            "low": 410.3757431796904,
+            "high": 527.6259555167447
+          },
+          {
+            "item": "shop fit-up, 138 fitted tube ends",
+            "low": 2208.0,
+            "high": 5313.0
+          },
+          {
+            "item": "jig layout and QC, 3 assemblies",
+            "low": 720.0,
+            "high": 1980.0
+          },
+          {
+            "item": "detailing",
+            "low": 29.312553084263598,
+            "high": 58.625106168527196
+          },
+          {
+            "item": "hot-dip galvanizing",
+            "low": 175.8753185055816,
+            "high": 293.125530842636
+          }
+        ]
+      },
+      "steel_saved_lb": 539.748938314728,
+      "premium_low": 2442.4636147695355,
+      "premium_high": 6425.176592527908
+    },
+    "L125-interior": {
+      "beam": "W16X26",
+      "truss_depth": 24.0,
+      "truss_chord": "HSS2-1/2X2-1/2X3/16",
+      "truss_web": "HSS1-1/2X1-1/2X1/8",
+      "beams": {
+        "weight_lb": 1829.75,
+        "joints": 0,
+        "low": 1699.2875,
+        "high": 2591.7,
+        "lines": [
+          {
+            "item": "material, W shape delivered",
+            "low": 1006.3625,
+            "high": 1280.825
+          },
+          {
+            "item": "end plates, shop welded",
+            "low": 144.0,
+            "high": 396.0
+          },
+          {
+            "item": "hot-dip galvanizing",
+            "low": 548.925,
+            "high": 914.875
+          }
+        ]
+      },
+      "trusses": {
+        "weight_lb": 990.6322565588005,
+        "joints": 174,
+        "low": 4544.163869386742,
+        "high": 10164.9483848382,
+        "lines": [
+          {
+            "item": "material, HSS delivered",
+            "low": 693.4425795911603,
+            "high": 891.5690309029204
+          },
+          {
+            "item": "shop fit-up, 174 fitted tube ends",
+            "low": 2784.0000000000005,
+            "high": 6699.0
+          },
+          {
+            "item": "jig layout and QC, 3 assemblies",
+            "low": 720.0,
+            "high": 1980.0
+          },
+          {
+            "item": "detailing",
+            "low": 49.53161282794002,
+            "high": 99.06322565588005
+          },
+          {
+            "item": "hot-dip galvanizing",
+            "low": 297.18967696764014,
+            "high": 495.31612827940023
+          }
+        ]
+      },
+      "steel_saved_lb": 839.1177434411995,
+      "premium_low": 2844.8763693867418,
+      "premium_high": 7573.248384838201
+    }
+  },
+  "source": {
+    "geometry": "roof-studies/square-upper-west/connected-frame/frame-spec.json",
+    "existing": "roof-studies/square-upper-west/connected-frame/scene-mesh.json",
+    "loads": "structural-analysis-v6/loads.py",
+    "hss": "structural-analysis-v6/sections.py",
+    "w_shapes": "AISC Shapes Database v15.0, transcribed in wshapes.py"
+  },
+  "caveat": "Preliminary sizing study. Not a structural verification. Connections, columns, foundations and lateral load are outside it. Requires review and sealing by the responsible California-licensed engineer."
+}

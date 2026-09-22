@@ -1,0 +1,48 @@
+{
+  "assumptions": {
+    "cabinet_wall": "east UNCONFIRMED",
+    "south_offset_from": "inside face UNCONFIRMED",
+    "paired_door_opening": 48,
+    "cabinet_run": 148,
+    "post_centers_from_south_outside": [
+      56.0,
+      105.0,
+      154.0,
+      203.0
+    ],
+    "cabinet_front_x": 213.25,
+    "east_beam_CL_x": 211.5,
+    "tube_wall": null,
+    "foundation_capacity": null
+  },
+  "simple_span_crossbeam": {
+    "span_ft": 20.291666666666668,
+    "per_100_plf": {
+      "each_end_reaction_lb": 1014.5833333333334,
+      "max_moment_lb_ft": 5146.89670138889
+    },
+    "description": "Simply supported uniform load only; excludes cantilevers, continuity, point loads and load combinations"
+  },
+  "transfer_locations": [
+    {
+      "beam_y": 69.75,
+      "post_south_y": 56.0,
+      "post_north_y": 105.0,
+      "a_in": 13.75,
+      "b_in": 35.25,
+      "south_post_fraction_of_point_load": 0.7193877551020408,
+      "north_post_fraction_of_point_load": 0.28061224489795916,
+      "header_max_moment_per_lb_in": 9.891581632653061
+    },
+    {
+      "beam_y": 185,
+      "post_south_y": 154.0,
+      "post_north_y": 203.0,
+      "a_in": 31.0,
+      "b_in": 18.0,
+      "south_post_fraction_of_point_load": 0.3673469387755102,
+      "north_post_fraction_of_point_load": 0.6326530612244898,
+      "header_max_moment_per_lb_in": 11.387755102040817
+    }
+  ]
+}

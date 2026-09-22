@@ -1,0 +1,68 @@
+{
+  "status": "Configured preliminary study; not construction design",
+  "analysis": "door-posts-1-4-pdelta-mesh12",
+  "section": "HSS6X2X1/4",
+  "through_wall_in": 6,
+  "along_wall_in": 2,
+  "physical_post_height_in": 106.5,
+  "analysis_length_in": 112.5,
+  "head": "pinned",
+  "base": "pinned; anchored translational restraint assumed",
+  "members": {
+    "DOOR-W": {
+      "member": "DOOR-W",
+      "group": "Columns",
+      "material": "steel",
+      "section": "HSS6X2X1/4",
+      "length": 112.5,
+      "weight": 107.34364586955878,
+      "dcr": 0.06427326479023408,
+      "mode": "compression",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": 5059.5902705756525,
+      "Mz": -1.1366108475914742e-12,
+      "My": -4.530119592370991e-14,
+      "V": -3.1725872171343283,
+      "slenderness": 138.9636533684257,
+      "Lb": 112.5,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "DOOR-E": {
+      "member": "DOOR-E",
+      "group": "Columns",
+      "material": "steel",
+      "section": "HSS6X2X1/4",
+      "length": 112.5,
+      "weight": 107.34364586955878,
+      "dcr": 0.23321371495204218,
+      "mode": "compression",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": 9179.289763692266,
+      "Mz": -3.1752570748536426e-13,
+      "My": -2.503413486848173e-14,
+      "V": -5.816074236302319,
+      "slenderness": 138.9636533684257,
+      "Lb": 112.5,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    }
+  },
+  "reactions": {
+    "DOOR-W": {
+      "max_compression": 5059.6,
+      "max_uplift": 1125.8,
+      "max_vertical": 5059.6,
+      "max_shear": 26.1
+    },
+    "DOOR-E": {
+      "max_compression": 9179.3,
+      "max_uplift": 766.6,
+      "max_vertical": 9179.3,
+      "max_shear": 45.1
+    }
+  },
+  "max_dcr": 0.9630206617340678,
+  "drift_ratio": 407.0,
+  "passes_screen": true
+}

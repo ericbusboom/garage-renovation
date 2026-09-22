@@ -1,0 +1,959 @@
+{
+  "model": "frame-20260918.10-beam-scheme.compas.json",
+  "passed": 190,
+  "total": 190,
+  "failures": [],
+  "checks": [
+    {
+      "check": "beam B-SO endpoints",
+      "result": "pass",
+      "detail": "(-34.0, -63.0, 104.5) -> (211.5, -63.0, 104.5)"
+    },
+    {
+      "check": "beam B-S endpoints",
+      "result": "pass",
+      "detail": "(-34.0, 3.0, 104.5) -> (247.5, 3.0, 104.5)"
+    },
+    {
+      "check": "beam B-1 endpoints",
+      "result": "pass",
+      "detail": "(-34.0, 71.0, 104.5) -> (247.5, 71.0, 104.5)"
+    },
+    {
+      "check": "beam B-1A endpoints",
+      "result": "pass",
+      "detail": "(3.75, 128.0, 104.5) -> (247.5, 128.0, 104.5)"
+    },
+    {
+      "check": "beam B-2 endpoints",
+      "result": "pass",
+      "detail": "(-34.0, 185.0, 104.5) -> (247.5, 185.0, 104.5)"
+    },
+    {
+      "check": "beam B-N endpoints",
+      "result": "pass",
+      "detail": "(-34.0, 268.0, 104.5) -> (211.5, 268.0, 104.5)"
+    },
+    {
+      "check": "beam C-EN endpoints",
+      "result": "pass",
+      "detail": "(211.5, 251.0, 104.5) -> (247.5, 251.0, 104.5)"
+    },
+    {
+      "check": "beam BW endpoints",
+      "result": "pass",
+      "detail": "(-34.0, -63.0, 104.5) -> (-34.0, 268.0, 104.5)"
+    },
+    {
+      "check": "beam BE endpoints",
+      "result": "pass",
+      "detail": "(211.5, -63.0, 104.5) -> (211.5, 268.0, 104.5)"
+    },
+    {
+      "check": "beam BWI-1 endpoints",
+      "result": "pass",
+      "detail": "(3.75, 185.0, 104.5) -> (3.75, 268.0, 104.5)"
+    },
+    {
+      "check": "beam BWI-2 endpoints",
+      "result": "pass",
+      "detail": "(3.75, 71.0, 104.5) -> (3.75, 185.0, 104.5)"
+    },
+    {
+      "check": "beam BWI-3 endpoints",
+      "result": "pass",
+      "detail": "(3.75, 3.0, 104.5) -> (3.75, 71.0, 104.5)"
+    },
+    {
+      "check": "beam BEW endpoints",
+      "result": "pass",
+      "detail": "(247.5, -4.0, 104.5) -> (247.5, 253.0, 104.5)"
+    },
+    {
+      "check": "every beam is a W12X16",
+      "result": "pass",
+      "detail": "13 beams"
+    },
+    {
+      "check": "all beams share one plane",
+      "result": "pass",
+      "detail": "z = [104.5]"
+    },
+    {
+      "check": "beam soffit sits on the existing wall top",
+      "result": "pass",
+      "detail": "104.5 - 12/2 = 98.5 = wall top 98.5"
+    },
+    {
+      "check": "one column per plan column",
+      "result": "pass",
+      "detail": "14 of 14"
+    },
+    {
+      "check": "every column base at z = 0",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "every column top at the beam plane or its declared envelope height",
+      "result": "pass",
+      "detail": "9 posts extended past the beams"
+    },
+    {
+      "check": "every column is 4 in",
+      "result": "pass",
+      "detail": "['HSS4X4X1/4']"
+    },
+    {
+      "check": "one pinned base per column",
+      "result": "pass",
+      "detail": "14 supports"
+    },
+    {
+      "check": "column SW0 at (-34, -63)",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "column W1 at (-34, 3)",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "column W2 at (-34, 71)",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "column W3 at (-34, 185)",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "column W4 at (-34, 268)",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "column S1 at (145.5, -63)",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "column S2 at (211.5, -63)",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "column S3 at (211.5, 3)",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "column N1 at (40.35, 268)",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "column N2 at (211.5, 268)",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "column E-S at (247.5, -2)",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "column E-M1/B at (247.5, 71)",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "column E-M/B at (247.5, 185)",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "column E-N at (247.5, 251)",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "loft bay 1: west edge has a framing member",
+      "result": "pass",
+      "detail": "x = 3.75"
+    },
+    {
+      "check": "loft bay 1: east edge has a framing member",
+      "result": "pass",
+      "detail": "x = 211.5"
+    },
+    {
+      "check": "loft bay 1: joist spacing within 16 in",
+      "result": "pass",
+      "detail": "max 15.98 in over 14 lines"
+    },
+    {
+      "check": "loft bay 2: west edge has a framing member",
+      "result": "pass",
+      "detail": "x = 3.75"
+    },
+    {
+      "check": "loft bay 2: east edge has a framing member",
+      "result": "pass",
+      "detail": "x = 211.5"
+    },
+    {
+      "check": "loft bay 2: joist spacing within 16 in",
+      "result": "pass",
+      "detail": "max 15.98 in over 14 lines"
+    },
+    {
+      "check": "loft bay 3: west edge has a framing member",
+      "result": "pass",
+      "detail": "x = -34"
+    },
+    {
+      "check": "loft bay 3: east edge has a framing member",
+      "result": "pass",
+      "detail": "x = 211.5"
+    },
+    {
+      "check": "loft bay 3: joist spacing within 16 in",
+      "result": "pass",
+      "detail": "max 15.34 in over 17 lines"
+    },
+    {
+      "check": "shelf SH: west edge has a framing member",
+      "result": "pass",
+      "detail": "x = -34"
+    },
+    {
+      "check": "shelf SH: east edge has a framing member",
+      "result": "pass",
+      "detail": "x = 211.5"
+    },
+    {
+      "check": "shelf SH: joist spacing within 16 in",
+      "result": "pass",
+      "detail": "max 15.34 in over 17 lines"
+    },
+    {
+      "check": "shelf SH-E: west edge has a framing member",
+      "result": "pass",
+      "detail": "x = 211.5"
+    },
+    {
+      "check": "shelf SH-E: east edge has a framing member",
+      "result": "pass",
+      "detail": "x = 247.5"
+    },
+    {
+      "check": "shelf SH-E: joist spacing within 16 in",
+      "result": "pass",
+      "detail": "max 12.00 in over 4 lines"
+    },
+    {
+      "check": "truss W.slope endpoints",
+      "result": "pass",
+      "detail": "(-63,117) -> (71,194.36)"
+    },
+    {
+      "check": "truss W.top endpoints",
+      "result": "pass",
+      "detail": "(71,228.75) -> (268,228.75)"
+    },
+    {
+      "check": "truss W.square.brace endpoints",
+      "result": "pass",
+      "detail": "(185,104.5) -> (71,228.75)"
+    },
+    {
+      "check": "truss W.rear.brace endpoints",
+      "result": "pass",
+      "detail": "(185,104.5) -> (268,228.75)"
+    },
+    {
+      "check": "truss E.slope endpoints",
+      "result": "pass",
+      "detail": "(-63,117) -> (71,194.36)"
+    },
+    {
+      "check": "truss E.top endpoints",
+      "result": "pass",
+      "detail": "(71,228.75) -> (268,228.75)"
+    },
+    {
+      "check": "truss E.square.brace endpoints",
+      "result": "pass",
+      "detail": "(185,104.5) -> (71,228.75)"
+    },
+    {
+      "check": "truss E.rear.brace endpoints",
+      "result": "pass",
+      "detail": "(185,104.5) -> (268,228.75)"
+    },
+    {
+      "check": "square top held at z = 228.75",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "solar slope still starts at z = 117",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "solar slope still 30 degrees",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "post SW0 reaches z = 117.00",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "post W1 reaches z = 155.11",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "post W2 reaches z = 228.75",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "post W3 reaches z = 228.75",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "post W4 reaches z = 228.75",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "post S2 reaches z = 117.00",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "post S3 reaches z = 155.11",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "post N2 reaches z = 228.75",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "post S1 reaches z = 117.00",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "W1 top lands on the W slope chord",
+      "result": "pass",
+      "detail": "chord z 155.105 vs post top 155.105"
+    },
+    {
+      "check": "S3 top lands on the E slope chord",
+      "result": "pass",
+      "detail": "chord z 155.105 vs post top 155.105"
+    },
+    {
+      "check": "roof beam R-W1 spans both truss planes at z = 147.36",
+      "result": "pass",
+      "detail": "y = 3"
+    },
+    {
+      "check": "R-W1 lands on a post at x = -34",
+      "result": "pass",
+      "detail": "W1"
+    },
+    {
+      "check": "R-W1 lands on a post at x = 211.5",
+      "result": "pass",
+      "detail": "S3"
+    },
+    {
+      "check": "roof beam R-W3 spans both truss planes at z = 225.25",
+      "result": "pass",
+      "detail": "y = 185"
+    },
+    {
+      "check": "R-W3 lands on a post at x = -34",
+      "result": "pass",
+      "detail": "W3"
+    },
+    {
+      "check": "R-W3 lands on a post at x = 211.5",
+      "result": "pass",
+      "detail": "E.W3"
+    },
+    {
+      "check": "roof beam R-W4 spans both truss planes at z = 225.25",
+      "result": "pass",
+      "detail": "y = 268"
+    },
+    {
+      "check": "R-W4 lands on a post at x = -34",
+      "result": "pass",
+      "detail": "W4"
+    },
+    {
+      "check": "R-W4 lands on a post at x = 211.5",
+      "result": "pass",
+      "detail": "N2"
+    },
+    {
+      "check": "R-W1 top is flush with the chord, not above it",
+      "result": "pass",
+      "detail": "beam top 153.36 vs chord top 153.36"
+    },
+    {
+      "check": "R-W3 top is flush with the chord, not above it",
+      "result": "pass",
+      "detail": "beam top 231.25 vs chord top 231.25"
+    },
+    {
+      "check": "R-W4 top is flush with the chord, not above it",
+      "result": "pass",
+      "detail": "beam top 231.25 vs chord top 231.25"
+    },
+    {
+      "check": "C-EN is the 36 in E-N tie at y = 251",
+      "result": "pass",
+      "detail": "36 in"
+    },
+    {
+      "check": "N-M stands midway between W4 and N2",
+      "result": "pass",
+      "detail": "x = 88.75, 122.75 in from W4"
+    },
+    {
+      "check": "N-M starts at the beam plane, not the ground",
+      "result": "pass",
+      "detail": "base z = 104.5"
+    },
+    {
+      "check": "N-M takes no footing",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "N-M is a hung vertical, not a column",
+      "result": "pass",
+      "detail": "Truss"
+    },
+    {
+      "check": "N-M divides the north wall into two equal bays",
+      "result": "pass",
+      "detail": "122.75 in each side"
+    },
+    {
+      "check": "N-M tops out on R-W4",
+      "result": "pass",
+      "detail": "z = 225.25, halving a 245.5 in span"
+    },
+    {
+      "check": "BR-S-1 rises the full bay height",
+      "result": "pass",
+      "detail": "south row, S1 to S2"
+    },
+    {
+      "check": "BR-S-2 rises the full bay height",
+      "result": "pass",
+      "detail": "south row, S1 to S2"
+    },
+    {
+      "check": "BR-S is in the pin-released Bracing group",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "BR-W-1 rises the full bay height",
+      "result": "pass",
+      "detail": "west row, W3 to W4"
+    },
+    {
+      "check": "BR-W-2 rises the full bay height",
+      "result": "pass",
+      "detail": "west row, W3 to W4"
+    },
+    {
+      "check": "BR-W is in the pin-released Bracing group",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "BR-N-1 rises the full bay height",
+      "result": "pass",
+      "detail": "north row ground floor, W4 to N1; the open bay is above this"
+    },
+    {
+      "check": "BR-N-2 rises the full bay height",
+      "result": "pass",
+      "detail": "north row ground floor, W4 to N1; the open bay is above this"
+    },
+    {
+      "check": "BR-N is in the pin-released Bracing group",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "BR-NU-1 rises the full bay height",
+      "result": "pass",
+      "detail": "north row second floor, N-M to N2"
+    },
+    {
+      "check": "BR-NU-2 rises the full bay height",
+      "result": "pass",
+      "detail": "north row second floor, N-M to N2"
+    },
+    {
+      "check": "BR-NU is in the pin-released Bracing group",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "slope rafter at x = 6.9167 is one straight run at 30 degrees",
+      "result": "pass",
+      "detail": "134.0 in of run, 77.4 in of rise"
+    },
+    {
+      "check": "slope rafter at x = 6.9167 runs across the top of R-W1",
+      "result": "pass",
+      "detail": "soffit 153.355 = R-W1 top 153.355"
+    },
+    {
+      "check": "flat rafter at x = 6.9167 runs dead level",
+      "result": "pass",
+      "detail": "z = 225.25"
+    },
+    {
+      "check": "slope rafter at x = 47.833 is one straight run at 30 degrees",
+      "result": "pass",
+      "detail": "134.0 in of run, 77.4 in of rise"
+    },
+    {
+      "check": "slope rafter at x = 47.833 runs across the top of R-W1",
+      "result": "pass",
+      "detail": "soffit 153.355 = R-W1 top 153.355"
+    },
+    {
+      "check": "flat rafter at x = 47.833 runs dead level",
+      "result": "pass",
+      "detail": "z = 225.25"
+    },
+    {
+      "check": "slope rafter at x = 88.75 is one straight run at 30 degrees",
+      "result": "pass",
+      "detail": "134.0 in of run, 77.4 in of rise"
+    },
+    {
+      "check": "slope rafter at x = 88.75 runs across the top of R-W1",
+      "result": "pass",
+      "detail": "soffit 153.355 = R-W1 top 153.355"
+    },
+    {
+      "check": "flat rafter at x = 88.75 runs dead level",
+      "result": "pass",
+      "detail": "z = 225.25"
+    },
+    {
+      "check": "slope rafter at x = 129.67 is one straight run at 30 degrees",
+      "result": "pass",
+      "detail": "134.0 in of run, 77.4 in of rise"
+    },
+    {
+      "check": "slope rafter at x = 129.67 runs across the top of R-W1",
+      "result": "pass",
+      "detail": "soffit 153.355 = R-W1 top 153.355"
+    },
+    {
+      "check": "flat rafter at x = 129.67 runs dead level",
+      "result": "pass",
+      "detail": "z = 225.25"
+    },
+    {
+      "check": "slope rafter at x = 170.58 is one straight run at 30 degrees",
+      "result": "pass",
+      "detail": "134.0 in of run, 77.4 in of rise"
+    },
+    {
+      "check": "slope rafter at x = 170.58 runs across the top of R-W1",
+      "result": "pass",
+      "detail": "soffit 153.355 = R-W1 top 153.355"
+    },
+    {
+      "check": "flat rafter at x = 170.58 runs dead level",
+      "result": "pass",
+      "detail": "z = 225.25"
+    },
+    {
+      "check": "CT.top shares the roof beams axis so the flat rafters stay level",
+      "result": "pass",
+      "detail": "z = 225.25"
+    },
+    {
+      "check": "R-SO sits on the slope line so the rafters frame into it",
+      "result": "pass",
+      "detail": "z = 117"
+    },
+    {
+      "check": "S1 reaches the eave to halve R-SO",
+      "result": "pass",
+      "detail": "z = 117.000"
+    },
+    {
+      "check": "every rafter, the eave and the four east rafters are present",
+      "result": "pass",
+      "detail": "15 members"
+    },
+    {
+      "check": "rafters sit on the clerestory mullion lines",
+      "result": "pass",
+      "detail": "40.92 in o.c."
+    },
+    {
+      "check": "R-SO low end lands on a supporting member",
+      "result": "pass",
+      "detail": "SW0, W.slope"
+    },
+    {
+      "check": "R-SO high end lands on a supporting member",
+      "result": "pass",
+      "detail": "E.slope, S2"
+    },
+    {
+      "check": "RE-M low end lands on a supporting member",
+      "result": "pass",
+      "detail": "B-2, BEW"
+    },
+    {
+      "check": "RE-M high end lands on a supporting member",
+      "result": "pass",
+      "detail": "E.W3, E.top"
+    },
+    {
+      "check": "RE-M1 low end lands on a supporting member",
+      "result": "pass",
+      "detail": "B-1, BEW"
+    },
+    {
+      "check": "RE-M1 high end lands on a supporting member",
+      "result": "pass",
+      "detail": "E.clerestory, E.square.brace"
+    },
+    {
+      "check": "RE-N low end lands on a supporting member",
+      "result": "pass",
+      "detail": "BEW, C-EN"
+    },
+    {
+      "check": "RE-N high end lands on a supporting member",
+      "result": "pass",
+      "detail": "E.rear.brace, E.top"
+    },
+    {
+      "check": "RE-S low end lands on a supporting member",
+      "result": "pass",
+      "detail": "BEW, E-S"
+    },
+    {
+      "check": "RE-S high end lands on a supporting member",
+      "result": "pass",
+      "detail": "E.slope, S3"
+    },
+    {
+      "check": "RF @ 129.67 low end lands on a supporting member",
+      "result": "pass",
+      "detail": "CT.mullion.4, CT.top"
+    },
+    {
+      "check": "RF @ 129.67 high end lands on a supporting member",
+      "result": "pass",
+      "detail": "R-W4"
+    },
+    {
+      "check": "RF @ 170.58 low end lands on a supporting member",
+      "result": "pass",
+      "detail": "CT.diag.E, CT.mullion.5"
+    },
+    {
+      "check": "RF @ 170.58 high end lands on a supporting member",
+      "result": "pass",
+      "detail": "R-W4"
+    },
+    {
+      "check": "RF @ 47.833 low end lands on a supporting member",
+      "result": "pass",
+      "detail": "CT.mullion.2, CT.top"
+    },
+    {
+      "check": "RF @ 47.833 high end lands on a supporting member",
+      "result": "pass",
+      "detail": "R-W4"
+    },
+    {
+      "check": "RF @ 6.9167 low end lands on a supporting member",
+      "result": "pass",
+      "detail": "CT.diag.W, CT.mullion.1"
+    },
+    {
+      "check": "RF @ 6.9167 high end lands on a supporting member",
+      "result": "pass",
+      "detail": "R-W4"
+    },
+    {
+      "check": "RF @ 88.75 low end lands on a supporting member",
+      "result": "pass",
+      "detail": "CT.mullion.3, CT.top"
+    },
+    {
+      "check": "RF @ 88.75 high end lands on a supporting member",
+      "result": "pass",
+      "detail": "BR-NU-2, N-M"
+    },
+    {
+      "check": "RS @ 129.67 low end lands on a supporting member",
+      "result": "pass",
+      "detail": "R-SO"
+    },
+    {
+      "check": "RS @ 129.67 high end lands on a supporting member",
+      "result": "pass",
+      "detail": "CT.bottom, CT.mullion.4"
+    },
+    {
+      "check": "RS @ 170.58 low end lands on a supporting member",
+      "result": "pass",
+      "detail": "R-SO"
+    },
+    {
+      "check": "RS @ 170.58 high end lands on a supporting member",
+      "result": "pass",
+      "detail": "CT.bottom, CT.mullion.5"
+    },
+    {
+      "check": "RS @ 47.833 low end lands on a supporting member",
+      "result": "pass",
+      "detail": "R-SO"
+    },
+    {
+      "check": "RS @ 47.833 high end lands on a supporting member",
+      "result": "pass",
+      "detail": "CT.bottom, CT.mullion.2"
+    },
+    {
+      "check": "RS @ 6.9167 low end lands on a supporting member",
+      "result": "pass",
+      "detail": "R-SO"
+    },
+    {
+      "check": "RS @ 6.9167 high end lands on a supporting member",
+      "result": "pass",
+      "detail": "CT.bottom, CT.mullion.1"
+    },
+    {
+      "check": "RS @ 88.75 low end lands on a supporting member",
+      "result": "pass",
+      "detail": "R-SO"
+    },
+    {
+      "check": "RS @ 88.75 high end lands on a supporting member",
+      "result": "pass",
+      "detail": "CT.bottom, CT.mullion.3"
+    },
+    {
+      "check": "east rafter RE-S runs E-S to the top of S3",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "east rafter RE-M1 runs E-M1/B to the top of E.clerestory",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "east rafter RE-M runs E-M/B to the top of E.W3",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "east rafter RE-N runs E-N to the top of N2",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "CT.top spans both truss planes",
+      "result": "pass",
+      "detail": "z = 225.25"
+    },
+    {
+      "check": "CT.top flange top is at or below the square chord",
+      "result": "pass",
+      "detail": "228.25 vs 231.25"
+    },
+    {
+      "check": "CT.bottom sits where the slope chords meet the posts",
+      "result": "pass",
+      "detail": "z = 194.365"
+    },
+    {
+      "check": "W.slope lands on the clerestory bottom chord level",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "E.slope lands on the clerestory bottom chord level",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "6 glazed panels needs 5 mullions",
+      "result": "pass",
+      "detail": "5 at 40.92 in centres"
+    },
+    {
+      "check": "CT.mullion.1 spans the full clerestory height",
+      "result": "pass",
+      "detail": "x = 6.92"
+    },
+    {
+      "check": "CT.mullion.2 spans the full clerestory height",
+      "result": "pass",
+      "detail": "x = 47.83"
+    },
+    {
+      "check": "CT.mullion.3 spans the full clerestory height",
+      "result": "pass",
+      "detail": "x = 88.75"
+    },
+    {
+      "check": "CT.mullion.4 spans the full clerestory height",
+      "result": "pass",
+      "detail": "x = 129.67"
+    },
+    {
+      "check": "CT.mullion.5 spans the full clerestory height",
+      "result": "pass",
+      "detail": "x = 170.58"
+    },
+    {
+      "check": "the centre mullion lines up with N-M",
+      "result": "pass",
+      "detail": "both at x = 88.75"
+    },
+    {
+      "check": "CT.top double-angle T is compact",
+      "result": "pass",
+      "detail": "2L3X3X3/8 T"
+    },
+    {
+      "check": "CT.bottom double-angle T is compact",
+      "result": "pass",
+      "detail": "2L3X3X3/8 T"
+    },
+    {
+      "check": "CT.mullion.1 double-angle T is compact",
+      "result": "pass",
+      "detail": "2L2X2X1/4 T"
+    },
+    {
+      "check": "CT.mullion.2 double-angle T is compact",
+      "result": "pass",
+      "detail": "2L2X2X1/4 T"
+    },
+    {
+      "check": "CT.mullion.3 double-angle T is compact",
+      "result": "pass",
+      "detail": "2L2X2X1/4 T"
+    },
+    {
+      "check": "CT.mullion.4 double-angle T is compact",
+      "result": "pass",
+      "detail": "2L2X2X1/4 T"
+    },
+    {
+      "check": "CT.mullion.5 double-angle T is compact",
+      "result": "pass",
+      "detail": "2L2X2X1/4 T"
+    },
+    {
+      "check": "stair well carries no joists",
+      "result": "pass",
+      "detail": "29.9 sf clear"
+    },
+    {
+      "check": "stair well west edge is framed by a beam",
+      "result": "pass",
+      "detail": "BW"
+    },
+    {
+      "check": "stair well east edge is framed by a beam",
+      "result": "pass",
+      "detail": "BWI-2"
+    },
+    {
+      "check": "stair well south edge is framed by a beam",
+      "result": "pass",
+      "detail": "B-1"
+    },
+    {
+      "check": "stair well north edge is framed by a beam",
+      "result": "pass",
+      "detail": "B-2"
+    },
+    {
+      "check": "no deck is defined inside the stair well",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "deck area agrees with the plan",
+      "result": "pass",
+      "detail": "438.9 sf"
+    },
+    {
+      "check": "deck area recomputed from the plan rectangles",
+      "result": "pass",
+      "detail": ""
+    },
+    {
+      "check": "every joint has a path to a support",
+      "result": "pass",
+      "detail": "187 of 187"
+    },
+    {
+      "check": "PyNite node count matches the joint graph",
+      "result": "pass",
+      "detail": "187 nodes"
+    },
+    {
+      "check": "PyNite element count matches the segments",
+      "result": "pass",
+      "detail": "308 elements"
+    },
+    {
+      "check": "W12X16 flange fits the south wall",
+      "result": "pass",
+      "detail": "3.99 in flange on a 6 in wall"
+    },
+    {
+      "check": "W12X16 flange fits the west wall",
+      "result": "pass",
+      "detail": "3.99 in flange on a 7.5 in wall"
+    },
+    {
+      "check": "W12X16 flange fits the east wall",
+      "result": "pass",
+      "detail": "3.99 in flange on a 6 in wall"
+    }
+  ],
+  "meaning": "Geometry and load-area bookkeeping only. No force, capacity, connection or foundation is verified here."
+}

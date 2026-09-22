@@ -1,0 +1,103 @@
+{
+  "members": 130,
+  "member_ends": 260,
+  "disconnected_ends": 0,
+  "joint_nodes": 168,
+  "element_interactions": 357,
+  "all_members_have_path_to_ground_support": true,
+  "source_members_accounted_for": 127,
+  "retired_members": {
+    "BR-E-upper-1 | HSS2X2X1/8": "Superseded historical east-wall brace; current east web explicitly mirrors owner-revised west web.",
+    "T-N vertical 5 | HSS1-1/2X1-1/2X1/8": "Coincident with the mirrored east rear post; one physical post retained.",
+    "BR-E-ground-1 | HSS2-1/2X2-1/2X1/8": "Owner requested removal of both ground-level cross-braces between S2 and S3.",
+    "BR-E-ground-2 | HSS2-1/4X2-1/4X1/8": "Owner requested removal of both ground-level cross-braces between S2 and S3.",
+    "BR-N-upper-1 | HSS2-1/2X2-1/2X1/8": "Owner-requested full western-half upper doorway; brace through that opening removed."
+  },
+  "support_alignments": [
+    {
+      "member": "S2",
+      "supports": "E.bottom",
+      "vertical": true,
+      "base_z": 0,
+      "base": [
+        211.5,
+        -63.0,
+        0.0
+      ],
+      "top": [
+        211.5,
+        -63.0,
+        115.0
+      ]
+    },
+    {
+      "member": "S3",
+      "supports": "E.bottom",
+      "vertical": true,
+      "base_z": 0,
+      "base": [
+        211.5,
+        0.0,
+        0.0
+      ],
+      "top": [
+        211.5,
+        0.0,
+        115.0
+      ]
+    },
+    {
+      "member": "N2",
+      "supports": "E.bottom",
+      "vertical": true,
+      "base_z": 0,
+      "base": [
+        211.5,
+        259.0,
+        0.0
+      ],
+      "top": [
+        211.5,
+        259.0,
+        115.0
+      ]
+    }
+  ],
+  "ground_supports": 12,
+  "declared_free_ends": {
+    "EOB.south": "2-inch beam overhang beyond E-S center",
+    "EOB.north": "2-inch beam overhang beyond E-N center"
+  },
+  "spec_sha256": "03ea5ba2aa9476eb115f372492000d0ca64b281e0d41de71597a0670470d381e",
+  "tests": [
+    {
+      "test": "east row moved 12 inches",
+      "result": "all endpoints and support paths remain connected"
+    },
+    {
+      "test": "square chord raised 6 inches",
+      "result": "all endpoints and support paths remain connected"
+    },
+    {
+      "test": "east support moved off truss axis",
+      "result": "rejected",
+      "message": "Support is not vertically below its truss: S3"
+    },
+    {
+      "test": "missing joint reference",
+      "result": "rejected",
+      "message": "Missing joint: W.front.top"
+    },
+    {
+      "test": "attachment beyond member end",
+      "result": "rejected",
+      "message": "Attachment outside member: T-S @ 0.166666666667"
+    },
+    {
+      "test": "isolated beam end",
+      "result": "rejected",
+      "message": "Unconnected end: BR-R-main-1 / end / bad"
+    }
+  ],
+  "meaning": "Explicit geometric connectivity and regeneration checks; this is not a verification of joints, stability, forces or capacity."
+}

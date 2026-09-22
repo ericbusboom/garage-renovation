@@ -1,0 +1,2271 @@
+{
+  "generated": "2026-09-18 11:15",
+  "frame_model": "frame-20260918.09-beam-scheme.compas.json",
+  "frame_version": "20260918.09",
+  "live_case": "L100",
+  "exposure": "C",
+  "software": "PyNite 3.2.0 (linear elastic 3-D frame), COMPAS 2.15.1 geometry",
+  "basis": {
+    "code": "2022 CBC / ASCE 7-16",
+    "site": "1370 Wilbur Avenue, San Diego, CA 92109",
+    "risk_category": "II",
+    "dead": {
+      "solar_roof": 8.0,
+      "upper_roof": 8.0,
+      "east_roof": 2.0,
+      "loft_floor": 8.0,
+      "wall": 5.0
+    },
+    "roof_live": 20.0,
+    "loft_live": {
+      "L40": 40.0,
+      "L75": 75.0,
+      "L100": 100.0,
+      "L125": 125.0
+    },
+    "hoist": {
+      "capacity": 1000.0,
+      "impact": 0.25,
+      "lateral": 0.1,
+      "factored": 1250.0
+    },
+    "wind": {
+      "V": 96.0,
+      "exposure": "C",
+      "Kd": 0.85,
+      "Kzt": 1.0,
+      "Ke": 1.0,
+      "G": 0.85,
+      "GCpi": 0.18,
+      "enclosure": "enclosed"
+    },
+    "seismic": {
+      "base_shear_lb": 5504.5,
+      "seismic_weight_lb": 26834.5,
+      "SDS": 0.6667,
+      "SD1": 0.4095,
+      "Ta": 0.1825,
+      "Cs": 0.2051,
+      "Cs_max": 0.6905,
+      "Cs_min": 0.0293,
+      "k": 1.0
+    }
+  },
+  "counts": {
+    "members": 127,
+    "elements": 310,
+    "supports": 14,
+    "added": [],
+    "concept_envelope": 10,
+    "links": []
+  },
+  "loft_sensitivity": {
+    "L100": {
+      "psf": 100.0,
+      "frame_max_dcr": 2.125,
+      "loft_max_dcr": 0.688,
+      "member": "BE",
+      "section": "W12X16",
+      "mode": "flexure",
+      "basis": "Owner direction, carried in the BEAM-001 model as design_live_psf; adopted for both schemes so they compare on one basis (DEC-014)"
+    },
+    "L40": {
+      "psf": 40.0,
+      "frame_max_dcr": 1.071,
+      "loft_max_dcr": 0.593,
+      "member": "B-SO",
+      "section": "W12X16",
+      "mode": "H1-1b combined axial + flexure",
+      "basis": "ASCE 7-16 Table 4.3-1, dwelling \"all other areas\" -- an ordinary residential floor; the value previously assumed in ASM-006"
+    },
+    "L75": {
+      "psf": 75.0,
+      "frame_max_dcr": 1.686,
+      "loft_max_dcr": 0.643,
+      "member": "BE",
+      "section": "W12X16",
+      "mode": "flexure",
+      "basis": "Intermediate equipment-loft value considered before DEC-014"
+    },
+    "L125": {
+      "psf": 125.0,
+      "frame_max_dcr": 2.563,
+      "loft_max_dcr": 0.734,
+      "member": "BE",
+      "section": "W12X16",
+      "mode": "flexure",
+      "basis": "ASCE 7-16 Table 4.3-1, \"Storage warehouses, light\" -- a commercial warehouse occupancy, retained as an upper bound"
+    }
+  },
+  "scenarios": {
+    "as_drawn": {
+      "stable": true,
+      "max_dcr": 2.125,
+      "deflection_violations": [],
+      "worst_deflections": [
+        {
+          "member": "R-SO",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 245.5,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8687,
+          "ratio": 283.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 88.75",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.4363,
+          "ratio": 452.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 129.67",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.4239,
+          "ratio": 465.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 47.833",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.4185,
+          "ratio": 471.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-2",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 281.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.5634,
+          "ratio": 500.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-1",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 281.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.5447,
+          "ratio": 517.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 170.58",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.3736,
+          "ratio": 527.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 6.9167",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.3681,
+          "ratio": 535.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-1A",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 243.8,
+          "combination": "S2 D+L",
+          "deflection_in": 0.4305,
+          "ratio": 566.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "R-W3",
+          "group": "Roof",
+          "rule": "roof",
+          "span_in": 245.5,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.2891,
+          "ratio": 849.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "loft bay 3 joist 6",
+          "group": "Joists",
+          "rule": "floor",
+          "span_in": 83.0,
+          "combination": "S2 D+L",
+          "deflection_in": 0.0864,
+          "ratio": 960.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "loft bay 3 joist 7",
+          "group": "Joists",
+          "rule": "floor",
+          "span_in": 83.0,
+          "combination": "S2 D+L",
+          "deflection_in": 0.0864,
+          "ratio": 961.0,
+          "limit": 240.0,
+          "passes": "True"
+        }
+      ],
+      "over_capacity": [
+        {
+          "member": "E.rear.brace",
+          "section": "HSS2.2X2.2X1/8",
+          "dcr": 2.125,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "E.square.brace",
+          "section": "HSS2.2X2.2X1/8",
+          "dcr": 1.463,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "R-SO",
+          "section": "HSS3-1/2X3-1/2X1/8",
+          "dcr": 1.017,
+          "mode": "flexure",
+          "combo": "C3 1.2D+1.6Lr+1.0L"
+        }
+      ],
+      "equilibrium": {
+        "C1 1.4D": {
+          "applied_lb": -37568.2,
+          "reaction_lb": 37568.2,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C2 1.2D+1.6L+0.5Lr": {
+          "applied_lb": -103459.8,
+          "reaction_lb": 103459.8,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C3 1.2D+1.6Lr+1.0L": {
+          "applied_lb": -93408.5,
+          "reaction_lb": 93408.5,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        }
+      },
+      "drift": {
+        "S5 D+0.6W [WX+.pi]": {
+          "drift_in": 0.4785,
+          "ratio": 478.0
+        },
+        "S5 D+0.6W [WX-.pi]": {
+          "drift_in": 0.4927,
+          "ratio": 464.0
+        },
+        "S5 D+0.6W [WY+.pi]": {
+          "drift_in": 0.262,
+          "ratio": 873.0
+        },
+        "S5 D+0.6W [WY-.pi]": {
+          "drift_in": 0.3654,
+          "ratio": 626.0
+        }
+      },
+      "gaps": [],
+      "member_weight_lb": 10448.4
+    },
+    "completed": {
+      "stable": true,
+      "max_dcr": 2.125,
+      "deflection_violations": [],
+      "worst_deflections": [
+        {
+          "member": "R-SO",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 245.5,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8687,
+          "ratio": 283.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 88.75",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.4363,
+          "ratio": 452.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 129.67",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.4239,
+          "ratio": 465.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 47.833",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.4185,
+          "ratio": 471.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-2",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 281.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.5634,
+          "ratio": 500.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-1",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 281.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.5447,
+          "ratio": 517.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 170.58",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.3736,
+          "ratio": 527.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 6.9167",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.3681,
+          "ratio": 535.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-1A",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 243.8,
+          "combination": "S2 D+L",
+          "deflection_in": 0.4305,
+          "ratio": 566.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "R-W3",
+          "group": "Roof",
+          "rule": "roof",
+          "span_in": 245.5,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.2891,
+          "ratio": 849.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "loft bay 3 joist 6",
+          "group": "Joists",
+          "rule": "floor",
+          "span_in": 83.0,
+          "combination": "S2 D+L",
+          "deflection_in": 0.0864,
+          "ratio": 960.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "loft bay 3 joist 7",
+          "group": "Joists",
+          "rule": "floor",
+          "span_in": 83.0,
+          "combination": "S2 D+L",
+          "deflection_in": 0.0864,
+          "ratio": 961.0,
+          "limit": 240.0,
+          "passes": "True"
+        }
+      ],
+      "over_capacity": [
+        {
+          "member": "E.rear.brace",
+          "section": "HSS2.2X2.2X1/8",
+          "dcr": 2.125,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "E.square.brace",
+          "section": "HSS2.2X2.2X1/8",
+          "dcr": 1.463,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "R-SO",
+          "section": "HSS3-1/2X3-1/2X1/8",
+          "dcr": 1.017,
+          "mode": "flexure",
+          "combo": "C3 1.2D+1.6Lr+1.0L"
+        }
+      ],
+      "equilibrium": {
+        "C1 1.4D": {
+          "applied_lb": -37568.2,
+          "reaction_lb": 37568.2,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C2 1.2D+1.6L+0.5Lr": {
+          "applied_lb": -103459.8,
+          "reaction_lb": 103459.8,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C3 1.2D+1.6Lr+1.0L": {
+          "applied_lb": -93408.5,
+          "reaction_lb": 93408.5,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        }
+      },
+      "drift": {
+        "S5 D+0.6W [WX+.pi]": {
+          "drift_in": 0.4785,
+          "ratio": 478.0
+        },
+        "S5 D+0.6W [WX-.pi]": {
+          "drift_in": 0.4927,
+          "ratio": 464.0
+        },
+        "S5 D+0.6W [WY+.pi]": {
+          "drift_in": 0.262,
+          "ratio": 873.0
+        },
+        "S5 D+0.6W [WY-.pi]": {
+          "drift_in": 0.3654,
+          "ratio": 626.0
+        }
+      },
+      "gaps": [],
+      "member_weight_lb": 10448.4
+    },
+    "live_sensitivity": {
+      "stable": true,
+      "max_dcr": 2.563,
+      "deflection_violations": [],
+      "worst_deflections": [
+        {
+          "member": "R-SO",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 245.5,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8687,
+          "ratio": 283.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-2",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 281.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.6846,
+          "ratio": 411.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-1",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 281.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.66,
+          "ratio": 427.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 88.75",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.4363,
+          "ratio": 452.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 129.67",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.4239,
+          "ratio": 465.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-1A",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 243.8,
+          "combination": "S2 D+L",
+          "deflection_in": 0.5216,
+          "ratio": 467.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 47.833",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.4185,
+          "ratio": 471.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 170.58",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.3736,
+          "ratio": 527.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 6.9167",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.3681,
+          "ratio": 535.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "loft bay 3 joist 6",
+          "group": "Joists",
+          "rule": "floor",
+          "span_in": 83.0,
+          "combination": "S2 D+L",
+          "deflection_in": 0.106,
+          "ratio": 783.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "loft bay 3 joist 7",
+          "group": "Joists",
+          "rule": "floor",
+          "span_in": 83.0,
+          "combination": "S2 D+L",
+          "deflection_in": 0.106,
+          "ratio": 783.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "loft bay 3 joist 8",
+          "group": "Joists",
+          "rule": "floor",
+          "span_in": 83.0,
+          "combination": "S2 D+L",
+          "deflection_in": 0.106,
+          "ratio": 783.0,
+          "limit": 240.0,
+          "passes": "True"
+        }
+      ],
+      "over_capacity": [
+        {
+          "member": "E.rear.brace",
+          "section": "HSS2.2X2.2X1/8",
+          "dcr": 2.563,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "E.square.brace",
+          "section": "HSS2.2X2.2X1/8",
+          "dcr": 1.759,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "R-SO",
+          "section": "HSS3-1/2X3-1/2X1/8",
+          "dcr": 1.018,
+          "mode": "flexure",
+          "combo": "C3 1.2D+1.6Lr+1.0L"
+        }
+      ],
+      "equilibrium": {
+        "C1 1.4D": {
+          "applied_lb": -37568.2,
+          "reaction_lb": 37568.2,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C2 1.2D+1.6L+0.5Lr": {
+          "applied_lb": -119655.9,
+          "reaction_lb": 119655.9,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C3 1.2D+1.6Lr+1.0L": {
+          "applied_lb": -103531.0,
+          "reaction_lb": 103531.0,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        }
+      },
+      "drift": {
+        "S5 D+0.6W [WX+.pi]": {
+          "drift_in": 0.4785,
+          "ratio": 478.0
+        },
+        "S5 D+0.6W [WX-.pi]": {
+          "drift_in": 0.4927,
+          "ratio": 464.0
+        },
+        "S5 D+0.6W [WY+.pi]": {
+          "drift_in": 0.262,
+          "ratio": 873.0
+        },
+        "S5 D+0.6W [WY-.pi]": {
+          "drift_in": 0.3654,
+          "ratio": 626.0
+        }
+      },
+      "gaps": [],
+      "member_weight_lb": 10448.4
+    },
+    "exposure_D": {
+      "stable": true,
+      "max_dcr": 2.125,
+      "deflection_violations": [],
+      "worst_deflections": [
+        {
+          "member": "R-SO",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 245.5,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8687,
+          "ratio": 283.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 88.75",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.4363,
+          "ratio": 452.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 129.67",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.4239,
+          "ratio": 465.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 47.833",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.4185,
+          "ratio": 471.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-2",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 281.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.5634,
+          "ratio": 500.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-1",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 281.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.5447,
+          "ratio": 517.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 170.58",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.3736,
+          "ratio": 527.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 6.9167",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.3681,
+          "ratio": 535.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-1A",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 243.8,
+          "combination": "S2 D+L",
+          "deflection_in": 0.4305,
+          "ratio": 566.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "R-W3",
+          "group": "Roof",
+          "rule": "roof",
+          "span_in": 245.5,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.2891,
+          "ratio": 849.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "loft bay 3 joist 6",
+          "group": "Joists",
+          "rule": "floor",
+          "span_in": 83.0,
+          "combination": "S2 D+L",
+          "deflection_in": 0.0864,
+          "ratio": 960.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "loft bay 3 joist 7",
+          "group": "Joists",
+          "rule": "floor",
+          "span_in": 83.0,
+          "combination": "S2 D+L",
+          "deflection_in": 0.0864,
+          "ratio": 961.0,
+          "limit": 240.0,
+          "passes": "True"
+        }
+      ],
+      "over_capacity": [
+        {
+          "member": "E.rear.brace",
+          "section": "HSS2.2X2.2X1/8",
+          "dcr": 2.125,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "E.square.brace",
+          "section": "HSS2.2X2.2X1/8",
+          "dcr": 1.463,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "R-SO",
+          "section": "HSS3-1/2X3-1/2X1/8",
+          "dcr": 1.017,
+          "mode": "flexure",
+          "combo": "C3 1.2D+1.6Lr+1.0L"
+        }
+      ],
+      "equilibrium": {
+        "C1 1.4D": {
+          "applied_lb": -37568.2,
+          "reaction_lb": 37568.2,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C2 1.2D+1.6L+0.5Lr": {
+          "applied_lb": -103459.8,
+          "reaction_lb": 103459.8,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C3 1.2D+1.6Lr+1.0L": {
+          "applied_lb": -93408.5,
+          "reaction_lb": 93408.5,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        }
+      },
+      "drift": {
+        "S5 D+0.6W [WX+.pi]": {
+          "drift_in": 0.5908,
+          "ratio": 387.0
+        },
+        "S5 D+0.6W [WX-.pi]": {
+          "drift_in": 0.5826,
+          "ratio": 393.0
+        },
+        "S5 D+0.6W [WY+.pi]": {
+          "drift_in": 0.3237,
+          "ratio": 707.0
+        },
+        "S5 D+0.6W [WY-.pi]": {
+          "drift_in": 0.4465,
+          "ratio": 512.0
+        }
+      },
+      "gaps": [],
+      "member_weight_lb": 10448.4
+    },
+    "crossings_joined": {
+      "stable": true,
+      "max_dcr": 2.124,
+      "deflection_violations": [],
+      "worst_deflections": [
+        {
+          "member": "R-SO",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 245.5,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.8687,
+          "ratio": 283.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 88.75",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.4364,
+          "ratio": 451.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 129.67",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.424,
+          "ratio": 465.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 47.833",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.4186,
+          "ratio": 471.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-2",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 281.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.562,
+          "ratio": 501.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-1",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 281.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.5442,
+          "ratio": 517.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 170.58",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.3737,
+          "ratio": 527.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 6.9167",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.3681,
+          "ratio": 535.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-1A",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 243.8,
+          "combination": "S2 D+L",
+          "deflection_in": 0.4305,
+          "ratio": 566.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "R-W3",
+          "group": "Roof",
+          "rule": "roof",
+          "span_in": 245.5,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.2891,
+          "ratio": 849.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "loft bay 3 joist 6",
+          "group": "Joists",
+          "rule": "floor",
+          "span_in": 83.0,
+          "combination": "S2 D+L",
+          "deflection_in": 0.0864,
+          "ratio": 960.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "loft bay 3 joist 7",
+          "group": "Joists",
+          "rule": "floor",
+          "span_in": 83.0,
+          "combination": "S2 D+L",
+          "deflection_in": 0.0864,
+          "ratio": 961.0,
+          "limit": 240.0,
+          "passes": "True"
+        }
+      ],
+      "over_capacity": [
+        {
+          "member": "E.rear.brace",
+          "section": "HSS2.2X2.2X1/8",
+          "dcr": 2.124,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "E.square.brace",
+          "section": "HSS2.2X2.2X1/8",
+          "dcr": 1.464,
+          "mode": "H1-1a combined axial + flexure",
+          "combo": "C2 1.2D+1.6L+0.5Lr"
+        },
+        {
+          "member": "R-SO",
+          "section": "HSS3-1/2X3-1/2X1/8",
+          "dcr": 1.019,
+          "mode": "flexure",
+          "combo": "C3 1.2D+1.6Lr+1.0L"
+        }
+      ],
+      "equilibrium": {
+        "C1 1.4D": {
+          "applied_lb": -37568.2,
+          "reaction_lb": 37568.2,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C2 1.2D+1.6L+0.5Lr": {
+          "applied_lb": -103459.8,
+          "reaction_lb": 103459.8,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        },
+        "C3 1.2D+1.6Lr+1.0L": {
+          "applied_lb": -93408.5,
+          "reaction_lb": 93408.5,
+          "residual_lb": 0.0,
+          "relative": 0.0
+        }
+      },
+      "drift": {
+        "S5 D+0.6W [WX+.pi]": {
+          "drift_in": 0.4781,
+          "ratio": 478.0
+        },
+        "S5 D+0.6W [WX-.pi]": {
+          "drift_in": 0.4892,
+          "ratio": 468.0
+        },
+        "S5 D+0.6W [WY+.pi]": {
+          "drift_in": 0.2614,
+          "ratio": 875.0
+        },
+        "S5 D+0.6W [WY-.pi]": {
+          "drift_in": 0.3637,
+          "ratio": 629.0
+        }
+      },
+      "gaps": [],
+      "member_weight_lb": 10448.4
+    },
+    "adequate": {
+      "stable": true,
+      "max_dcr": 0.981,
+      "deflection_violations": [],
+      "worst_deflections": [
+        {
+          "member": "R-SO",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 245.5,
+          "combination": "S3 D+Lr",
+          "deflection_in": 1.0068,
+          "ratio": 244.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 88.75",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.4356,
+          "ratio": 452.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 129.67",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.4231,
+          "ratio": 466.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 47.833",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.4181,
+          "ratio": 471.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-2",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 281.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.551,
+          "ratio": 511.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-1",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 281.5,
+          "combination": "S2 D+L",
+          "deflection_in": 0.5436,
+          "ratio": 518.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 170.58",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.3725,
+          "ratio": 529.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "RF @ 6.9167",
+          "group": "Rafters",
+          "rule": "roof",
+          "span_in": 197.0,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.368,
+          "ratio": 535.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "B-1A",
+          "group": "Beams",
+          "rule": "floor",
+          "span_in": 243.8,
+          "combination": "S2 D+L",
+          "deflection_in": 0.4255,
+          "ratio": 573.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "R-W3",
+          "group": "Roof",
+          "rule": "roof",
+          "span_in": 245.5,
+          "combination": "S3 D+Lr",
+          "deflection_in": 0.2893,
+          "ratio": 849.0,
+          "limit": 180.0,
+          "passes": "True"
+        },
+        {
+          "member": "loft bay 3 joist 6",
+          "group": "Joists",
+          "rule": "floor",
+          "span_in": 83.0,
+          "combination": "S2 D+L",
+          "deflection_in": 0.0864,
+          "ratio": 960.0,
+          "limit": 240.0,
+          "passes": "True"
+        },
+        {
+          "member": "loft bay 3 joist 7",
+          "group": "Joists",
+          "rule": "floor",
+          "span_in": 83.0,
+          "combination": "S2 D+L",
+          "deflection_in": 0.0864,
+          "ratio": 961.0,
+          "limit": 240.0,
+          "passes": "True"
+        }
+      ],
+      "over_capacity": [],
+      "equilibrium": {
+        "C1 1.4D": {
+          "applied_lb": -37568.2,
+          "reaction_lb": 37649.7,
+          "residual_lb": 81.471,
+          "relative": 0.00216861
+        },
+        "C2 1.2D+1.6L+0.5Lr": {
+          "applied_lb": -103459.8,
+          "reaction_lb": 103529.6,
+          "residual_lb": 69.832,
+          "relative": 0.00067497
+        },
+        "C3 1.2D+1.6Lr+1.0L": {
+          "applied_lb": -93408.5,
+          "reaction_lb": 93478.3,
+          "residual_lb": 69.832,
+          "relative": 0.0007476
+        }
+      },
+      "drift": {
+        "S5 D+0.6W [WX+.pi]": {
+          "drift_in": 0.4779,
+          "ratio": 479.0
+        },
+        "S5 D+0.6W [WX-.pi]": {
+          "drift_in": 0.4899,
+          "ratio": 467.0
+        },
+        "S5 D+0.6W [WY+.pi]": {
+          "drift_in": 0.2608,
+          "ratio": 877.0
+        },
+        "S5 D+0.6W [WY-.pi]": {
+          "drift_in": 0.3641,
+          "ratio": 628.0
+        }
+      },
+      "gaps": [],
+      "member_weight_lb": 10506.6
+    }
+  },
+  "crossings": {
+    "joints": [
+      {
+        "node": "X.1",
+        "members": [
+          "BR-N-1",
+          "BR-N-2"
+        ],
+        "at": [
+          3.18,
+          268.0,
+          52.25
+        ],
+        "unbraced_before": {
+          "BR-N-1": 128.3,
+          "BR-N-2": 128.3
+        },
+        "unbraced_after": {
+          "BR-N-1": 64.1,
+          "BR-N-2": 64.1
+        }
+      },
+      {
+        "node": "X.2",
+        "members": [
+          "BR-NU-1",
+          "BR-NU-2"
+        ],
+        "at": [
+          150.12,
+          268.0,
+          164.88
+        ],
+        "unbraced_before": {
+          "BR-NU-1": 172.2,
+          "BR-NU-2": 172.2
+        },
+        "unbraced_after": {
+          "BR-NU-1": 86.1,
+          "BR-NU-2": 86.1
+        }
+      },
+      {
+        "node": "X.3",
+        "members": [
+          "BR-S-1",
+          "BR-S-2"
+        ],
+        "at": [
+          178.5,
+          -63.0,
+          52.25
+        ],
+        "unbraced_before": {
+          "BR-S-1": 123.6,
+          "BR-S-2": 123.6
+        },
+        "unbraced_after": {
+          "BR-S-1": 61.8,
+          "BR-S-2": 61.8
+        }
+      },
+      {
+        "node": "X.4",
+        "members": [
+          "BR-W-1",
+          "BR-W-2"
+        ],
+        "at": [
+          -34.0,
+          226.5,
+          52.25
+        ],
+        "unbraced_before": {
+          "BR-W-1": 133.5,
+          "BR-W-2": 133.5
+        },
+        "unbraced_after": {
+          "BR-W-1": 66.7,
+          "BR-W-2": 66.7
+        }
+      }
+    ]
+  },
+  "combinations": {
+    "total": 27,
+    "used_in_studies": [
+      "C1 1.4D",
+      "C2 1.2D+1.6L+0.5Lr",
+      "C3 1.2D+1.6Lr+1.0L",
+      "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.pi]",
+      "C4 1.2D+1.0W+1.0L+0.5Lr [WX-.ni]",
+      "C4 1.2D+1.0W+1.0L+0.5Lr [WX-.pi]",
+      "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "C5 0.9D+1.0W [WX+.pi]",
+      "C5 0.9D+1.0W [WX-.ni]",
+      "C5 0.9D+1.0W [WY-.pi]",
+      "C6 1.2D+1.0E+1.0L [EY+]",
+      "C6 1.2D+1.0E+1.0L [EY-]"
+    ]
+  },
+  "sizing": {
+    "verified": true,
+    "converged": true,
+    "still_over_capacity": null,
+    "weight_saved_lb": 2058.9,
+    "max_dcr_after": 0.99,
+    "rounds": [
+      {
+        "round": 1,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.983
+      },
+      {
+        "round": 2,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.978
+      },
+      {
+        "round": 3,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.98
+      },
+      {
+        "round": 4,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.975
+      },
+      {
+        "round": 5,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.977
+      },
+      {
+        "round": 6,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.974
+      },
+      {
+        "round": 7,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.973
+      },
+      {
+        "round": 8,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.973
+      },
+      {
+        "round": 9,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.973
+      },
+      {
+        "round": 10,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.971
+      },
+      {
+        "round": 11,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.961
+      },
+      {
+        "round": 12,
+        "proposed": 12,
+        "accepted": 9,
+        "reverted": [
+          "R-W3",
+          "R-W4",
+          "RF @ 88.75"
+        ],
+        "max_dcr": 0.962
+      },
+      {
+        "round": 13,
+        "proposed": 12,
+        "accepted": 8,
+        "reverted": [
+          "CT.mullion.5",
+          "CT.top",
+          "RF @ 170.58",
+          "RF @ 47.833"
+        ],
+        "max_dcr": 0.967
+      },
+      {
+        "round": 14,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.958
+      },
+      {
+        "round": 15,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.959
+      },
+      {
+        "round": 16,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.956
+      },
+      {
+        "round": 17,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.956
+      },
+      {
+        "round": 18,
+        "proposed": 12,
+        "accepted": 12,
+        "reverted": [],
+        "max_dcr": 0.957
+      },
+      {
+        "round": 19,
+        "proposed": 12,
+        "accepted": 0,
+        "reverted": [
+          "BEW",
+          "BR-W-2",
+          "BWI-1",
+          "BWI-3",
+          "C-EN",
+          "CT.mullion.3",
+          "E-M/B",
+          "E-M1/B",
+          "E-S",
+          "R-W1",
+          "S3",
+          "W1"
+        ],
+        "max_dcr": 0.959
+      },
+      {
+        "round": 20,
+        "proposed": 12,
+        "accepted": 9,
+        "reverted": [
+          "B-2",
+          "BWI-2",
+          "E.W3"
+        ],
+        "max_dcr": 0.99
+      },
+      {
+        "round": 21,
+        "proposed": 12,
+        "accepted": 0,
+        "reverted": [
+          "B-N",
+          "BR-N-2",
+          "CT.bottom",
+          "CT.mullion.1",
+          "E.clerestory",
+          "E.top",
+          "N2",
+          "RS @ 170.58",
+          "S1",
+          "S2",
+          "SW0",
+          "W4"
+        ],
+        "max_dcr": 0.98
+      },
+      {
+        "round": 22,
+        "proposed": 9,
+        "accepted": 0,
+        "reverted": [
+          "B-S",
+          "B-SO",
+          "BE",
+          "BW",
+          "CT.mullion.2",
+          "N1",
+          "RS @ 129.67",
+          "W2",
+          "W3"
+        ],
+        "max_dcr": 1.009
+      }
+    ],
+    "lighter": [
+      "B-N",
+      "BEW",
+      "BR-N-1",
+      "BR-N-2",
+      "BR-NU-1",
+      "BR-NU-2",
+      "BR-S-1",
+      "BR-S-2",
+      "BR-W-1",
+      "BR-W-2",
+      "BWI-1",
+      "BWI-2",
+      "BWI-3",
+      "C-EN",
+      "CT.bottom",
+      "CT.diag.E",
+      "CT.diag.W",
+      "CT.mullion.1",
+      "CT.mullion.4",
+      "CT.mullion.5",
+      "E-M/B",
+      "E-M1/B",
+      "E-N",
+      "E-S",
+      "E.W3",
+      "E.clerestory",
+      "E.top",
+      "N-M",
+      "N1",
+      "N2",
+      "R-W1",
+      "R-W4",
+      "RE-S",
+      "RS @ 129.67",
+      "RS @ 170.58",
+      "RS @ 47.833",
+      "RS @ 6.9167",
+      "RS @ 88.75",
+      "S1",
+      "S2",
+      "S3",
+      "SW0",
+      "W.slope",
+      "W.top",
+      "W1",
+      "W4"
+    ],
+    "heavier": [
+      "E.rear.brace",
+      "E.square.brace",
+      "R-SO"
+    ],
+    "beyond_ladder": [],
+    "strengthen": {
+      "rounds": [
+        {
+          "round": 1,
+          "over_capacity": 3,
+          "max_dcr": 2.124,
+          "upsized": 3,
+          "at_ladder_top": 0
+        },
+        {
+          "round": 2,
+          "over_capacity": 3,
+          "max_dcr": 1.509,
+          "upsized": 3,
+          "at_ladder_top": 0
+        },
+        {
+          "round": 3,
+          "over_capacity": 2,
+          "max_dcr": 2.354,
+          "upsized": 2,
+          "at_ladder_top": 0
+        },
+        {
+          "round": 4,
+          "over_capacity": 0,
+          "max_dcr": 0.981,
+          "upsized": 0,
+          "at_ladder_top": 0
+        }
+      ],
+      "adequate": true,
+      "added_lb": 58.2,
+      "sections": {
+        "E.rear.brace": "HSS3X3X1/8",
+        "E.square.brace": "HSS3X3X1/8",
+        "R-SO": "HSS3X3X3/16"
+      },
+      "stuck": []
+    },
+    "proposals": {
+      "E.rear.brace": "HSS3X3X1/8",
+      "E.square.brace": "HSS3X3X1/8",
+      "R-SO": "HSS3X3X3/16",
+      "BR-NU-1": "HSS1-1/2X1-1/2X1/8",
+      "BR-N-1": "HSS1-1/2X1-1/2X1/8",
+      "W4": "HSS2X2X3/16",
+      "BR-N-2": "HSS2X2X1/8",
+      "BR-NU-2": "HSS1-1/2X1-1/2X1/8",
+      "N1": "HSS1-1/2X1-1/2X3/16",
+      "BR-S-1": "HSS1-1/2X1-1/2X1/8",
+      "N-M": "HSS2-1/2X2-1/2X1/8",
+      "BR-W-1": "HSS1-1/2X1-1/2X1/8",
+      "BR-S-2": "HSS1-1/2X1-1/2X1/8",
+      "SW0": "HSS2X2X1/8",
+      "W.top": "HSS1-1/2X1-1/2X1/8",
+      "CT.mullion.4": "HSS1-1/2X1-1/2X1/8",
+      "BR-W-2": "HSS2X2X1/8",
+      "E-S": "HSS2X2X3/16",
+      "E.W3": "HSS2-1/2X2-1/2X3/16",
+      "E-N": "HSS2-1/2X2-1/2X1/8",
+      "RE-S": "HSS1-1/2X1-1/2X1/8",
+      "CT.mullion.5": "HSS2X2X1/8",
+      "CT.diag.E": "HSS1-1/2X1-1/2X1/8",
+      "E.top": "HSS2X2X1/8",
+      "S2": "HSS2X2X3/16",
+      "R-W4": "HSS5X5X3/16",
+      "RS @ 129.67": "HSS2X2X3/16",
+      "RS @ 170.58": "HSS2X2X3/16",
+      "RF @ 88.75": "HSS2-1/2X2-1/2X1/8",
+      "R-W1": "HSS3-1/2X3-1/2X3/16",
+      "R-W3": "W12X16",
+      "W1": "HSS2-1/2X2-1/2X3/16",
+      "BEW": "HSS3X3X1/4",
+      "CT.top": "2L3X3X3/8 T",
+      "RF @ 170.58": "HSS2-1/2X2-1/2X1/8",
+      "RF @ 47.833": "HSS2-1/2X2-1/2X1/8",
+      "RS @ 88.75": "HSS3X3X1/8",
+      "BWI-3": "HSS4X4X3/16",
+      "E-M/B": "HSS3X3X1/4",
+      "W.slope": "HSS1-1/2X1-1/2X1/8",
+      "CT.diag.W": "HSS1-1/2X1-1/2X1/8",
+      "B-N": "HSS5X5X3/16",
+      "N2": "HSS5X5X3/16",
+      "RS @ 6.9167": "HSS3X3X1/8",
+      "RS @ 47.833": "HSS3X3X1/8",
+      "E-M1/B": "HSS5X5X3/16",
+      "S3": "HSS3-1/2X3-1/2X1/4",
+      "C-EN": "HSS4X4X1/4",
+      "BWI-2": "HSS5X5X1/4",
+      "BWI-1": "HSS5X5X1/4",
+      "CT.bottom": "HSS4X4X1/4",
+      "S1": "HSS5X5X3/16",
+      "E.clerestory": "HSS3X3X1/4",
+      "CT.mullion.1": "HSS2-1/2X2-1/2X3/16",
+      "B-2": "W12X16"
+    }
+  },
+  "removal": {
+    "tested": 127,
+    "redundant": [
+      "W.top",
+      "N-M",
+      "N1",
+      "E-N",
+      "RS @ 129.67",
+      "RF @ 6.9167",
+      "RF @ 47.833",
+      "RF @ 88.75",
+      "RF @ 129.67",
+      "RF @ 170.58",
+      "W.square.brace",
+      "E.square.brace",
+      "RE-N",
+      "W.rear.brace",
+      "E.rear.brace",
+      "RE-M1",
+      "RE-S",
+      "loft bay 3 joist 1",
+      "loft bay 3 joist 2",
+      "loft bay 3 joist 3",
+      "loft bay 3 joist 4",
+      "loft bay 3 joist 5",
+      "loft bay 3 joist 6",
+      "loft bay 3 joist 7",
+      "loft bay 3 joist 8",
+      "loft bay 3 joist 9",
+      "loft bay 3 joist 10",
+      "loft bay 3 joist 11",
+      "loft bay 3 joist 12",
+      "loft bay 3 joist 14",
+      "loft bay 3 joist 13",
+      "loft bay 3 joist 15",
+      "CT.mullion.1",
+      "CT.mullion.3",
+      "CT.mullion.2",
+      "CT.mullion.4",
+      "CT.mullion.5",
+      "shelf SH-W joist 1",
+      "shelf SH-W joist 2",
+      "shelf SH-W joist 3",
+      "shelf SH-W joist 4",
+      "shelf SH-M joist 1",
+      "shelf SH-W joist 5",
+      "shelf SH-M joist 2",
+      "shelf SH-M joist 3",
+      "shelf SH-M joist 4",
+      "shelf SH-M joist 5",
+      "shelf SH-M joist 6",
+      "shelf SH-M joist 8",
+      "shelf SH-M joist 7",
+      "shelf SH-E joist 1",
+      "shelf SH-E joist 2",
+      "CT.diag.W",
+      "loft bay 1 joist 1",
+      "loft bay 1 joist 2",
+      "loft bay 1 joist 3",
+      "loft bay 1 joist 4",
+      "loft bay 1 joist 5",
+      "loft bay 1 joist 7",
+      "loft bay 1 joist 6",
+      "loft bay 1 joist 8",
+      "loft bay 1 joist 9",
+      "loft bay 1 joist 10",
+      "loft bay 1 joist 11",
+      "loft bay 1 joist 12",
+      "loft bay 2 joist 1",
+      "loft bay 2 joist 2",
+      "loft bay 2 joist 4",
+      "loft bay 2 joist 3",
+      "loft bay 2 joist 5",
+      "loft bay 2 joist 6",
+      "loft bay 2 joist 7",
+      "loft bay 2 joist 9",
+      "loft bay 2 joist 8",
+      "loft bay 2 joist 11",
+      "loft bay 2 joist 10",
+      "loft bay 2 joist 12"
+    ],
+    "critical": [
+      "B-S",
+      "B-1",
+      "B-2",
+      "BEW",
+      "B-N",
+      "R-W4",
+      "B-1A",
+      "W3",
+      "S1",
+      "S2",
+      "R-SO",
+      "BR-NU-1",
+      "BR-W-1",
+      "BR-N-1",
+      "BR-S-1"
+    ],
+    "cumulative": {
+      "removed": [],
+      "rejected": [
+        {
+          "member": "W.top",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "N-M",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "N1",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "E-N",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "RS @ 129.67",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "RF @ 6.9167",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "RF @ 47.833",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "RF @ 88.75",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "RF @ 129.67",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "RF @ 170.58",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "W.square.brace",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "E.square.brace",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "RE-N",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "W.rear.brace",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "E.rear.brace",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "RE-M1",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "RE-S",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 3 joist 1",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 3 joist 2",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 3 joist 3",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 3 joist 4",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 3 joist 5",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 3 joist 6",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 3 joist 7",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 3 joist 8",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 3 joist 9",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 3 joist 10",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 3 joist 11",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 3 joist 12",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 3 joist 14",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 3 joist 13",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 3 joist 15",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "CT.mullion.1",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "CT.mullion.3",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "CT.mullion.2",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "CT.mullion.4",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "CT.mullion.5",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "shelf SH-W joist 1",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "shelf SH-W joist 2",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "shelf SH-W joist 3",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "shelf SH-W joist 4",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "shelf SH-M joist 1",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "shelf SH-W joist 5",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "shelf SH-M joist 2",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "shelf SH-M joist 3",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "shelf SH-M joist 4",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "shelf SH-M joist 5",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "shelf SH-M joist 6",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "shelf SH-M joist 8",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "shelf SH-M joist 7",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "shelf SH-E joist 1",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "shelf SH-E joist 2",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "CT.diag.W",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 1 joist 1",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 1 joist 2",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 1 joist 3",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 1 joist 4",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 1 joist 5",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 1 joist 7",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 1 joist 6",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 1 joist 8",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 1 joist 9",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 1 joist 10",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 1 joist 11",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 1 joist 12",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 2 joist 1",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 2 joist 2",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 2 joist 4",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 2 joist 3",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 2 joist 5",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 2 joist 6",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 2 joist 7",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 2 joist 9",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 2 joist 8",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 2 joist 11",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 2 joist 10",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        },
+        {
+          "member": "loft bay 2 joist 12",
+          "reason": "LoftJoists: fewer than two members would remain",
+          "check": "deck spacing"
+        }
+      ],
+      "spacing_rules": {
+        "LoftJoists": {
+          "axis": 0,
+          "limit": 24.0,
+          "reason": "3/4 in. plywood floor deck"
+        },
+        "EastRoofRafters": {
+          "axis": 1,
+          "limit": 32.0,
+          "reason": "metal roof panel over exposed rafters"
+        }
+      },
+      "weight_saved_lb": 0,
+      "max_dcr_after": 0.99,
+      "stable": true,
+      "drift_ratio": 405.0
+    }
+  },
+  "totals": {
+    "baseline_lb": 10448.4,
+    "after_lb": 8389.5,
+    "saved_lb": 2058.9,
+    "saved_pct": 19.7,
+    "basis": "completed frame -- the members as drawn plus the assumed upper-roof framing; this is the baseline the reductions are measured against"
+  }
+}

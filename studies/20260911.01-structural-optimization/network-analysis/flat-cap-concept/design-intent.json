@@ -1,0 +1,1305 @@
+{
+  "status": "geometry concept, not an analyzed replacement",
+  "scope": "rear hip-cap portion of TE/TW; preserve long south roof slope pending user clarification",
+  "primary_chord_proposed_axis_height_in": 224.25,
+  "note": "Coordinate concept joins existing main-slope endpoint. Final elevation needs secondary-roof depth allowance. No tube or angle size selected.",
+  "separate_roof_frame": {
+    "preserve_existing_hip_roof_shape": true,
+    "support_span_TE_TW_in": 256.25,
+    "members": "secondary rafters/purlins with short spacers to primary trusses; panel rails above",
+    "load_path": [
+      "solar panels / roof skin",
+      "secondary roof members",
+      "TE/TW panel points or explicitly checked chord load stations",
+      "primary trusses and columns",
+      "foundations"
+    ]
+  },
+  "original_top_chords": [
+    {
+      "id": "T-W top / segment 1",
+      "object": "TopChordTW",
+      "truss": "TW",
+      "role": "top_chord",
+      "stage": "permanent_roof_first",
+      "a": [
+        -32,
+        -63.0,
+        117.0
+      ],
+      "b": [
+        -32,
+        122.7624491117621,
+        224.25
+      ],
+      "section_family": "chord",
+      "section_description": "6-inch width, 6-inch VERTICAL depth placeholder",
+      "cad_bounding_box_inches": [
+        -35.0,
+        -62.99999999999999,
+        114.0,
+        -28.999999999999524,
+        253.00000000000006,
+        229.78460194267427
+      ],
+      "station_axis": "y",
+      "axis_source": {
+        "method": "Generator roof-plane polygon intersected with intended truss axis; centerline top minus3in",
+        "roof_plane_z_ax_by_c": [
+          0,
+          0.5773502691896257,
+          156.37306695894642
+        ],
+        "zone": "main",
+        "top_depth_vertical_inches": 6,
+        "plan_polygon_inches": [
+          [
+            -35,
+            -63
+          ],
+          [
+            -29,
+            -63
+          ],
+          [
+            -29,
+            122.7624491117621
+          ],
+          [
+            -35,
+            122.7624491117621
+          ]
+        ]
+      },
+      "length_inches": 214.5,
+      "intended_joint_offsets": [
+        {
+          "connection_id": "J0046",
+          "axis_fraction": 0.22609521031202126,
+          "own_point": [
+            -32.0,
+            -21.0,
+            141.2487113059643
+          ],
+          "target_member_id": "T-W vertical 1",
+          "target_point": [
+            -31.999999999999996,
+            -21.000000000000004,
+            138.67136103677467
+          ],
+          "offset_vector_inches": [
+            3.552713678800501e-15,
+            -3.552713678800501e-15,
+            -2.5773502691896226
+          ]
+        },
+        {
+          "connection_id": "J0048",
+          "axis_fraction": 0.3391428154680319,
+          "own_point": [
+            -32.0,
+            -7.105427357601002e-15,
+            153.37306695894642
+          ],
+          "target_member_id": "T-W vertical 2",
+          "target_point": [
+            -31.999999999999996,
+            -3.776506666441478e-15,
+            150.7957166897568
+          ],
+          "offset_vector_inches": [
+            3.552713678800501e-15,
+            3.328920691159524e-15,
+            -2.5773502691896226
+          ]
+        },
+        {
+          "connection_id": "J0050",
+          "axis_fraction": 0.7146223611647815,
+          "own_point": [
+            -32.0,
+            69.75,
+            193.64324823492282
+          ],
+          "target_member_id": "T-W vertical 3",
+          "target_point": [
+            -31.99999999999999,
+            69.74999999999999,
+            191.0658979657332
+          ],
+          "offset_vector_inches": [
+            1.0658141036401503e-14,
+            -1.4210854715202004e-14,
+            -2.5773502691896226
+          ]
+        },
+        {
+          "connection_id": "J0052",
+          "axis_fraction": 0.9999999999999999,
+          "own_point": [
+            -32.0,
+            122.76244911176207,
+            224.25
+          ],
+          "target_member_id": "T-W vertical 4",
+          "target_point": [
+            -31.999999999999986,
+            122.76244911176208,
+            221.67264973081035
+          ],
+          "offset_vector_inches": [
+            1.4210854715202004e-14,
+            1.4210854715202004e-14,
+            -2.577350269189651
+          ]
+        },
+        {
+          "connection_id": "J0060",
+          "axis_fraction": 0.22609521031202126,
+          "own_point": [
+            -32.0,
+            -21.0,
+            141.2487113059643
+          ],
+          "target_member_id": "T-W diagonal 8",
+          "target_point": [
+            -32.0,
+            -21.0,
+            141.2487113059643
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0062",
+          "axis_fraction": 0.7146223611647815,
+          "own_point": [
+            -32.0,
+            69.75,
+            193.64324823492282
+          ],
+          "target_member_id": "T-W diagonal 9",
+          "target_point": [
+            -32.00000000000001,
+            69.75000000000001,
+            193.64324823492282
+          ],
+          "offset_vector_inches": [
+            -7.105427357601002e-15,
+            1.4210854715202004e-14,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0063",
+          "axis_fraction": 0.7146223611647815,
+          "own_point": [
+            -32.0,
+            69.75,
+            193.64324823492282
+          ],
+          "target_member_id": "T-W diagonal 10",
+          "target_point": [
+            -32.0,
+            69.75,
+            193.64324823492282
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0155",
+          "axis_fraction": 0.33914281546803193,
+          "own_point": [
+            -32.0,
+            7.105427357601002e-15,
+            153.37306695894642
+          ],
+          "target_member_id": "W1",
+          "target_point": [
+            -32.0,
+            0.0,
+            153.37306695894642
+          ],
+          "offset_vector_inches": [
+            0.0,
+            -7.105427357601002e-15,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0160",
+          "axis_fraction": 0.7146223611647815,
+          "own_point": [
+            -32.0,
+            69.75,
+            193.64324823492282
+          ],
+          "target_member_id": "W2",
+          "target_point": [
+            -32.0,
+            69.75,
+            193.64324823492282
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0170",
+          "axis_fraction": 3.825007363746638e-17,
+          "own_point": [
+            -32.0,
+            -62.99999999999999,
+            117.0
+          ],
+          "target_member_id": "SW0",
+          "target_point": [
+            -32.0,
+            -62.99999999999999,
+            117.0
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0195",
+          "axis_fraction": 0.33914281546803193,
+          "own_point": [
+            -32.0,
+            7.105427357601002e-15,
+            153.37306695894642
+          ],
+          "target_member_id": "T-S top / segment 1",
+          "target_point": [
+            -32.0,
+            0,
+            153.37306695894642
+          ],
+          "offset_vector_inches": [
+            0.0,
+            -7.105427357601002e-15,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0197",
+          "axis_fraction": 0.7146223611647815,
+          "own_point": [
+            -32.0,
+            69.75,
+            193.64324823492282
+          ],
+          "target_member_id": "T1 top / segment 1",
+          "target_point": [
+            -32.0,
+            69.75,
+            193.64324823492282
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "segment_index": 1,
+      "segment_station_interval_inches": [
+        -63.0,
+        122.7624491117621
+      ],
+      "suggested_panel_split_stations_inches": [
+        -63,
+        -62,
+        -21,
+        0,
+        69.75,
+        122.7624491117621
+      ]
+    },
+    {
+      "id": "T-W top / segment 2",
+      "object": "TopChordTW",
+      "truss": "TW",
+      "role": "top_chord",
+      "stage": "permanent_roof_first",
+      "a": [
+        -32,
+        122.7624491117621,
+        226.09334686739948
+      ],
+      "b": [
+        -32,
+        253.0,
+        226.09334686739948
+      ],
+      "section_family": "chord",
+      "section_description": "6-inch width, 6-inch VERTICAL depth placeholder",
+      "cad_bounding_box_inches": [
+        -35.0,
+        -62.99999999999999,
+        114.0,
+        -28.999999999999524,
+        253.00000000000006,
+        229.78460194267427
+      ],
+      "station_axis": "y",
+      "axis_source": {
+        "method": "Generator roof-plane polygon intersected with intended truss axis; centerline top minus3in",
+        "roof_plane_z_ax_by_c": [
+          0.23041835842493485,
+          0,
+          236.4667343369974
+        ],
+        "zone": "cap",
+        "top_depth_vertical_inches": 6,
+        "plan_polygon_inches": [
+          [
+            -35,
+            122.7624491117621
+          ],
+          [
+            -32.00000000000011,
+            122.7624491117621
+          ],
+          [
+            -29.0,
+            125.76244911176221
+          ],
+          [
+            -29,
+            253
+          ],
+          [
+            -35,
+            253
+          ]
+        ]
+      },
+      "length_inches": 130.2375508882379,
+      "intended_joint_offsets": [
+        {
+          "connection_id": "J0054",
+          "axis_fraction": 0.47787715957317456,
+          "own_point": [
+            -32.0,
+            185.0,
+            226.09334686739948
+          ],
+          "target_member_id": "T-W vertical 5",
+          "target_point": [
+            -31.999999999999986,
+            185.0,
+            224.09334686739945
+          ],
+          "offset_vector_inches": [
+            1.4210854715202004e-14,
+            0.0,
+            -2.0000000000000284
+          ]
+        },
+        {
+          "connection_id": "J0056",
+          "axis_fraction": 0.9539303376093975,
+          "own_point": [
+            -32.0,
+            246.99999999999997,
+            226.09334686739948
+          ],
+          "target_member_id": "T-W vertical 6",
+          "target_point": [
+            -31.999999999999986,
+            246.99999999999997,
+            224.09334686739945
+          ],
+          "offset_vector_inches": [
+            1.4210854715202004e-14,
+            0.0,
+            -2.0000000000000284
+          ]
+        },
+        {
+          "connection_id": "J0058",
+          "axis_fraction": 0.9923217229348994,
+          "own_point": [
+            -32.0,
+            251.99999999999997,
+            226.09334686739948
+          ],
+          "target_member_id": "T-W vertical 7",
+          "target_point": [
+            -31.999999999999986,
+            251.99999999999997,
+            224.09334686739945
+          ],
+          "offset_vector_inches": [
+            1.4210854715202004e-14,
+            0.0,
+            -2.0000000000000284
+          ]
+        },
+        {
+          "connection_id": "J0066",
+          "axis_fraction": 0.4932337137033751,
+          "own_point": [
+            -32.0,
+            186.99999999999997,
+            226.09334686739948
+          ],
+          "target_member_id": "T-W vertical 11",
+          "target_point": [
+            -32.0,
+            186.99999999999997,
+            224.09334686739948
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            -2.0
+          ]
+        },
+        {
+          "connection_id": "J0068",
+          "axis_fraction": 0.538391385325502,
+          "own_point": [
+            -32.0,
+            192.88122455588106,
+            226.09334686739948
+          ],
+          "target_member_id": "T-W vertical 12",
+          "target_point": [
+            -32.0,
+            192.88122455588106,
+            224.09334686739948
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            -2.0
+          ]
+        },
+        {
+          "connection_id": "J0070",
+          "axis_fraction": 0.7159037485912861,
+          "own_point": [
+            -32.0,
+            216.0,
+            226.09334686739948
+          ],
+          "target_member_id": "T-W vertical 13",
+          "target_point": [
+            -32.0,
+            216.0,
+            224.09334686739948
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            -2.0
+          ]
+        },
+        {
+          "connection_id": "J0072",
+          "axis_fraction": 0.938573783479197,
+          "own_point": [
+            -32.0,
+            245.0,
+            226.09334686739948
+          ],
+          "target_member_id": "T-W vertical 14",
+          "target_point": [
+            -32.0,
+            245.0,
+            224.09334686739948
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            -2.0
+          ]
+        },
+        {
+          "connection_id": "J0074",
+          "axis_fraction": 0.7159037485912861,
+          "own_point": [
+            -32.0,
+            216.0,
+            226.09334686739948
+          ],
+          "target_member_id": "T-W diagonal 15",
+          "target_point": [
+            -32.0,
+            216.0,
+            226.09334686739948
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0075",
+          "axis_fraction": 0.7159037485912861,
+          "own_point": [
+            -32.0,
+            216.0,
+            226.09334686739948
+          ],
+          "target_member_id": "T-W diagonal 16",
+          "target_point": [
+            -32.0,
+            216.0,
+            226.09334686739948
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0163",
+          "axis_fraction": 0.47787715957317456,
+          "own_point": [
+            -32.0,
+            185.0,
+            226.09334686739948
+          ],
+          "target_member_id": "W3",
+          "target_point": [
+            -32.0,
+            185.0,
+            226.09334686739948
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0166",
+          "axis_fraction": 1,
+          "own_point": [
+            -32,
+            253.0,
+            226.09334686739948
+          ],
+          "target_member_id": "W4",
+          "target_point": [
+            -32.0,
+            253.0,
+            226.09334686739948
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0199",
+          "axis_fraction": 0.9692868917395985,
+          "own_point": [
+            -32.0,
+            249.0,
+            226.09334686739948
+          ],
+          "target_member_id": "T-N top / segment 1",
+          "target_point": [
+            -32.0,
+            249,
+            226.09334686739948
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "segment_index": 2,
+      "segment_station_interval_inches": [
+        122.7624491117621,
+        253.0
+      ],
+      "suggested_panel_split_stations_inches": [
+        122.7624491117621,
+        185,
+        192.88122455588103,
+        247,
+        252,
+        253
+      ]
+    },
+    {
+      "id": "T-E top / segment 1",
+      "object": "TopChordTE",
+      "truss": "TE",
+      "role": "top_chord",
+      "stage": "permanent_roof_first",
+      "a": [
+        224.25,
+        -63.0,
+        122.0
+      ],
+      "b": [
+        224.25,
+        122.7624491117621,
+        224.25
+      ],
+      "section_family": "chord",
+      "section_description": "6-inch width, 6-inch VERTICAL depth placeholder",
+      "cad_bounding_box_inches": [
+        221.25,
+        -62.99999999999999,
+        114.0,
+        227.25,
+        253.0,
+        235.60266549290392
+      ],
+      "station_axis": "y",
+      "axis_source": {
+        "method": "Generator roof-plane polygon intersected with intended truss axis; centerline top minus3in",
+        "roof_plane_z_ax_by_c": [
+          0,
+          0.5773502691896257,
+          156.37306695894642
+        ],
+        "zone": "main",
+        "top_depth_vertical_inches": 6,
+        "plan_polygon_inches": [
+          [
+            221.25,
+            -63
+          ],
+          [
+            227.25,
+            -63
+          ],
+          [
+            227.25,
+            122.7624491117621
+          ],
+          [
+            221.25,
+            122.7624491117621
+          ]
+        ]
+      },
+      "length_inches": 212.04421708690856,
+      "intended_joint_offsets": [
+        {
+          "connection_id": "J0078",
+          "axis_fraction": 0.22609521031202126,
+          "own_point": [
+            224.25,
+            -21.0,
+            141.2487113059643
+          ],
+          "target_member_id": "T-E vertical 1",
+          "target_point": [
+            224.24999999999997,
+            -21.000000000000004,
+            138.67136103677467
+          ],
+          "offset_vector_inches": [
+            -2.842170943040401e-14,
+            -3.552713678800501e-15,
+            -2.5773502691896226
+          ]
+        },
+        {
+          "connection_id": "J0080",
+          "axis_fraction": 0.3391428154680319,
+          "own_point": [
+            224.25,
+            -7.105427357601002e-15,
+            153.37306695894642
+          ],
+          "target_member_id": "T-E vertical 2",
+          "target_point": [
+            224.24999999999997,
+            -3.776506666441478e-15,
+            150.7957166897568
+          ],
+          "offset_vector_inches": [
+            -2.842170943040401e-14,
+            3.328920691159524e-15,
+            -2.5773502691896226
+          ]
+        },
+        {
+          "connection_id": "J0082",
+          "axis_fraction": 0.7146223611647815,
+          "own_point": [
+            224.25,
+            69.75,
+            193.64324823492282
+          ],
+          "target_member_id": "T-E vertical 3",
+          "target_point": [
+            224.24999999999997,
+            69.74999999999999,
+            191.0658979657332
+          ],
+          "offset_vector_inches": [
+            -2.842170943040401e-14,
+            -1.4210854715202004e-14,
+            -2.5773502691896226
+          ]
+        },
+        {
+          "connection_id": "J0084",
+          "axis_fraction": 0.9999999999999999,
+          "own_point": [
+            224.25,
+            122.76244911176207,
+            224.25
+          ],
+          "target_member_id": "T-E vertical 4",
+          "target_point": [
+            224.24999999999997,
+            122.76244911176208,
+            221.67264973081035
+          ],
+          "offset_vector_inches": [
+            -2.842170943040401e-14,
+            1.4210854715202004e-14,
+            -2.577350269189651
+          ]
+        },
+        {
+          "connection_id": "J0096",
+          "axis_fraction": 0.22609521031202126,
+          "own_point": [
+            224.25,
+            -21.0,
+            141.2487113059643
+          ],
+          "target_member_id": "T-E diagonal 10",
+          "target_point": [
+            224.24999999999997,
+            -21.0,
+            141.2487113059643
+          ],
+          "offset_vector_inches": [
+            -2.842170943040401e-14,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0098",
+          "axis_fraction": 0.7146223611647815,
+          "own_point": [
+            224.25,
+            69.75,
+            193.64324823492282
+          ],
+          "target_member_id": "T-E diagonal 11",
+          "target_point": [
+            224.24999999999997,
+            69.75000000000001,
+            193.64324823492282
+          ],
+          "offset_vector_inches": [
+            -2.842170943040401e-14,
+            1.4210854715202004e-14,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0099",
+          "axis_fraction": 0.7146223611647815,
+          "own_point": [
+            224.25,
+            69.75,
+            193.64324823492282
+          ],
+          "target_member_id": "T-E diagonal 12",
+          "target_point": [
+            224.24999999999997,
+            69.75,
+            193.64324823492282
+          ],
+          "offset_vector_inches": [
+            -2.842170943040401e-14,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0174",
+          "axis_fraction": 3.825007363746638e-17,
+          "own_point": [
+            224.25,
+            -62.99999999999999,
+            117.0
+          ],
+          "target_member_id": "S2",
+          "target_point": [
+            224.25,
+            -62.99999999999999,
+            117.0
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0178",
+          "axis_fraction": 0.33914281546803193,
+          "own_point": [
+            224.25,
+            7.105427357601002e-15,
+            153.37306695894642
+          ],
+          "target_member_id": "S3",
+          "target_point": [
+            224.25,
+            0.0,
+            153.37306695894642
+          ],
+          "offset_vector_inches": [
+            0.0,
+            -7.105427357601002e-15,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0196",
+          "axis_fraction": 0.33914281546803193,
+          "own_point": [
+            224.25,
+            7.105427357601002e-15,
+            153.37306695894642
+          ],
+          "target_member_id": "T-S top / segment 1",
+          "target_point": [
+            224.25,
+            0,
+            153.37306695894642
+          ],
+          "offset_vector_inches": [
+            0.0,
+            -7.105427357601002e-15,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0198",
+          "axis_fraction": 0.7146223611647815,
+          "own_point": [
+            224.25,
+            69.75,
+            193.64324823492282
+          ],
+          "target_member_id": "T1 top / segment 1",
+          "target_point": [
+            224.25,
+            69.75,
+            193.64324823492282
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "segment_index": 1,
+      "segment_station_interval_inches": [
+        -63.0,
+        122.7624491117621
+      ],
+      "suggested_panel_split_stations_inches": [
+        -63,
+        -62,
+        -21,
+        0,
+        69.75,
+        122.7624491117621
+      ]
+    },
+    {
+      "id": "T-E top / segment 2",
+      "object": "TopChordTE",
+      "truss": "TE",
+      "role": "top_chord",
+      "stage": "permanent_roof_first",
+      "a": [
+        224.25,
+        122.7624491117621,
+        226.09334686739948
+      ],
+      "b": [
+        224.25,
+        148.01244911176227,
+        231.9114104176291
+      ],
+      "section_family": "chord",
+      "section_description": "6-inch width, 6-inch VERTICAL depth placeholder",
+      "cad_bounding_box_inches": [
+        221.25,
+        -62.99999999999999,
+        114.0,
+        227.25,
+        253.0,
+        235.60266549290392
+      ],
+      "station_axis": "y",
+      "axis_source": {
+        "method": "Generator roof-plane polygon intersected with intended truss axis; centerline top minus3in",
+        "roof_plane_z_ax_by_c": [
+          0,
+          0.23041835842493485,
+          200.80662486684264
+        ],
+        "zone": "cap",
+        "top_depth_vertical_inches": 6,
+        "plan_polygon_inches": [
+          [
+            221.25,
+            122.7624491117621
+          ],
+          [
+            227.25,
+            122.7624491117621
+          ],
+          [
+            227.25,
+            145.01244911176227
+          ],
+          [
+            221.25,
+            151.01244911176227
+          ]
+        ]
+      },
+      "length_inches": 25.91162602914991,
+      "intended_joint_offsets": [
+        {
+          "connection_id": "J0086",
+          "axis_fraction": 0.9999999999999921,
+          "own_point": [
+            224.25,
+            148.01244911176207,
+            231.91141041762904
+          ],
+          "target_member_id": "T-E vertical 5",
+          "target_point": [
+            224.24999999999997,
+            148.01244911176207,
+            229.68099205920413
+          ],
+          "offset_vector_inches": [
+            -2.842170943040401e-14,
+            0.0,
+            -2.230418358424913
+          ]
+        }
+      ],
+      "segment_index": 2,
+      "segment_station_interval_inches": [
+        122.7624491117621,
+        148.01244911176227
+      ],
+      "suggested_panel_split_stations_inches": [
+        122.7624491117621,
+        148.0124491117621
+      ]
+    },
+    {
+      "id": "T-E top / segment 3",
+      "object": "TopChordTE",
+      "truss": "TE",
+      "role": "top_chord",
+      "stage": "permanent_roof_first",
+      "a": [
+        224.25,
+        148.01244911176227,
+        231.9114104176291
+      ],
+      "b": [
+        224.25,
+        237.74999999999994,
+        231.9114104176291
+      ],
+      "section_family": "chord",
+      "section_description": "6-inch width, 6-inch VERTICAL depth placeholder",
+      "cad_bounding_box_inches": [
+        221.25,
+        -62.99999999999999,
+        114.0,
+        227.25,
+        253.0,
+        235.60266549290392
+      ],
+      "station_axis": "y",
+      "axis_source": {
+        "method": "Generator roof-plane polygon intersected with intended truss axis; centerline top minus3in",
+        "roof_plane_z_ax_by_c": [
+          -0.23041835842493485,
+          0,
+          286.58272729442075
+        ],
+        "zone": "cap",
+        "top_depth_vertical_inches": 6,
+        "plan_polygon_inches": [
+          [
+            227.25,
+            145.01244911176227
+          ],
+          [
+            227.25,
+            240.74999999999994
+          ],
+          [
+            221.25,
+            234.74999999999997
+          ],
+          [
+            221.25,
+            151.01244911176227
+          ]
+        ]
+      },
+      "length_inches": 89.73755088823768,
+      "intended_joint_offsets": [
+        {
+          "connection_id": "J0088",
+          "axis_fraction": 0.4121747308916792,
+          "own_point": [
+            224.25,
+            185.0,
+            231.9114104176291
+          ],
+          "target_member_id": "T-E vertical 6",
+          "target_point": [
+            224.24999999999997,
+            185.0,
+            229.91141041762904
+          ],
+          "offset_vector_inches": [
+            -2.842170943040401e-14,
+            0.0,
+            -2.000000000000057
+          ]
+        },
+        {
+          "connection_id": "J0090",
+          "axis_fraction": 0.4999999999999995,
+          "own_point": [
+            224.25,
+            192.88122455588106,
+            231.9114104176291
+          ],
+          "target_member_id": "T-E vertical 7",
+          "target_point": [
+            224.24999999999997,
+            192.88122455588106,
+            229.91141041762904
+          ],
+          "offset_vector_inches": [
+            -2.842170943040401e-14,
+            0.0,
+            -2.000000000000057
+          ]
+        }
+      ],
+      "segment_index": 3,
+      "segment_station_interval_inches": [
+        148.01244911176227,
+        237.74999999999994
+      ],
+      "suggested_panel_split_stations_inches": [
+        185,
+        192.88122455588103
+      ]
+    },
+    {
+      "id": "T-E top / segment 4",
+      "object": "TopChordTE",
+      "truss": "TE",
+      "role": "top_chord",
+      "stage": "permanent_roof_first",
+      "a": [
+        224.25,
+        237.74999999999994,
+        231.9114104176291
+      ],
+      "b": [
+        224.25,
+        253.0,
+        228.39753045164883
+      ],
+      "section_family": "chord",
+      "section_description": "6-inch width, 6-inch VERTICAL depth placeholder",
+      "cad_bounding_box_inches": [
+        221.25,
+        -62.99999999999999,
+        114.0,
+        227.25,
+        253.0,
+        235.60266549290392
+      ],
+      "station_axis": "y",
+      "axis_source": {
+        "method": "Generator roof-plane polygon intersected with intended truss axis; centerline top minus3in",
+        "roof_plane_z_ax_by_c": [
+          0,
+          -0.23041835842493485,
+          289.69337513315736
+        ],
+        "zone": "cap",
+        "top_depth_vertical_inches": 6,
+        "plan_polygon_inches": [
+          [
+            227.25,
+            240.74999999999994
+          ],
+          [
+            227.25,
+            253
+          ],
+          [
+            221.25,
+            253
+          ],
+          [
+            221.25,
+            234.74999999999997
+          ]
+        ]
+      },
+      "length_inches": 15.649595918595445,
+      "intended_joint_offsets": [
+        {
+          "connection_id": "J0092",
+          "axis_fraction": 5.591155953522079e-15,
+          "own_point": [
+            224.25,
+            237.75000000000003,
+            231.91141041762907
+          ],
+          "target_member_id": "T-E vertical 8",
+          "target_point": [
+            224.24999999999997,
+            237.75000000000003,
+            229.68099205920413
+          ],
+          "offset_vector_inches": [
+            -2.842170943040401e-14,
+            0.0,
+            -2.2304183584249415
+          ]
+        },
+        {
+          "connection_id": "J0094",
+          "axis_fraction": 0.9344262295081951,
+          "own_point": [
+            224.25,
+            251.99999999999997,
+            228.62794881007378
+          ],
+          "target_member_id": "T-E vertical 9",
+          "target_point": [
+            224.24999999999997,
+            251.99999999999997,
+            226.3975304516488
+          ],
+          "offset_vector_inches": [
+            -2.842170943040401e-14,
+            0.0,
+            -2.23041835842497
+          ]
+        },
+        {
+          "connection_id": "J0102",
+          "axis_fraction": 0.868852459016394,
+          "own_point": [
+            224.25,
+            251.0,
+            228.85836716849872
+          ],
+          "target_member_id": "T-E diagonal 13",
+          "target_point": [
+            224.24999999999997,
+            251.0,
+            228.8583671684987
+          ],
+          "offset_vector_inches": [
+            -2.842170943040401e-14,
+            0.0,
+            -2.842170943040401e-14
+          ]
+        },
+        {
+          "connection_id": "J0181",
+          "axis_fraction": 1,
+          "own_point": [
+            224.25,
+            253.0,
+            228.39753045164883
+          ],
+          "target_member_id": "N2",
+          "target_point": [
+            224.25,
+            253.0,
+            228.39753045164883
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "connection_id": "J0200",
+          "axis_fraction": 0.7377049180327878,
+          "own_point": [
+            224.25,
+            249.0,
+            229.31920388534857
+          ],
+          "target_member_id": "T-N top / segment 2",
+          "target_point": [
+            224.25,
+            249.0,
+            229.31920388534857
+          ],
+          "offset_vector_inches": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "segment_index": 4,
+      "segment_station_interval_inches": [
+        237.74999999999994,
+        253.0
+      ],
+      "suggested_panel_split_stations_inches": [
+        237.75,
+        252,
+        253
+      ]
+    }
+  ]
+}

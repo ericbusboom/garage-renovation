@@ -1,0 +1,259 @@
+member,end,joint,status,connected_to,group
+B-SO,start,"@-34,-63",connected,BW; SW0,Beams
+B-SO,end,"@211.5,-63",connected,BE; BR-S-1; S2,Beams
+B-S,start,"@-34,3",connected,BW; W1,Beams
+B-S,end,"@247.5,3",connected,BEW,Beams
+B-1,start,"@-34,71",connected,BW; W2,Beams
+B-1,end,E-M1/B.top,connected,BEW; E-M1/B; RE-M1,Beams
+B-1A,start,"@3.75,128",connected,BWI-2,Beams
+B-1A,end,"@247.5,128",connected,BEW,Beams
+B-2,start,"@-34,185",connected,BR-W-2; BW; W.rear.brace; W.square.brace; W3,Beams
+B-2,end,E-M/B.top,connected,BEW; E-M/B; RE-M,Beams
+B-N,start,"@-34,268",connected,BR-N-2; BR-W-1; BW; W4,Beams
+B-N,end,"@211.5,268",connected,BE; BR-NU-2; N2,Beams
+C-EN,start,"@211.5,251",connected,BE,Beams
+C-EN,end,E-N.top,connected,BEW; E-N; RE-N,Beams
+BW,start,"@-34,-63",connected,B-SO; SW0,Beams
+BW,end,"@-34,268",connected,B-N; BR-N-2; BR-W-1; W4,Beams
+BE,start,"@211.5,-63",connected,B-SO; BR-S-1; S2,Beams
+BE,end,"@211.5,268",connected,B-N; BR-NU-2; N2,Beams
+BWI-1,start,"@3.75,185",connected,B-2; BWI-2,Beams
+BWI-1,end,"@3.75,268",connected,B-N,Beams
+BWI-2,start,"@3.75,71",connected,B-1; BWI-3,Beams
+BWI-2,end,"@3.75,185",connected,B-2; BWI-1,Beams
+BWI-3,start,"@3.75,3",connected,B-S,Beams
+BWI-3,end,"@3.75,71",connected,B-1; BWI-2,Beams
+BEW,start,"@247.5,-4",declared overhang,,Beams
+BEW,end,"@247.5,253",declared overhang,,Beams
+SW0,start,SW0.base,ground support,,Columns
+SW0,end,SW0.top,connected,R-SO; W.slope,Columns
+W1,start,W1.base,ground support,,Columns
+W1,end,W1.top,connected,W.slope,Columns
+W2,start,W2.base,ground support,,Columns
+W2,end,W2.top,connected,W.square.brace; W.top,Columns
+W3,start,W3.base,connected,BR-W-1,Columns
+W3,end,W3.top,connected,W.top,Columns
+W4,start,W4.base,connected,BR-N-1; BR-W-2,Columns
+W4,end,W4.top,connected,W.rear.brace; W.top,Columns
+S1,start,S1.base,connected,BR-S-1,Columns
+S1,end,S1.top,connected,R-SO,Columns
+S2,start,S2.base,connected,BR-S-2,Columns
+S2,end,S2.top,connected,E.slope; R-SO,Columns
+S3,start,S3.base,ground support,,Columns
+S3,end,S3.top,connected,E.slope; RE-S,Columns
+N1,start,N1.base,connected,BR-N-2,Columns
+N1,end,N1.top,connected,B-N; BR-N-1,Columns
+N2,start,N2.base,ground support,,Columns
+N2,end,N2.top,connected,E.rear.brace; E.top; RE-N,Columns
+E-S,start,E-S.base,ground support,,Columns
+E-S,end,E-S.top,connected,BEW; RE-S,Columns
+E-M1/B,start,E-M1/B.base,ground support,,Columns
+E-M1/B,end,E-M1/B.top,connected,B-1; BEW; RE-M1,Columns
+E-M/B,start,E-M/B.base,ground support,,Columns
+E-M/B,end,E-M/B.top,connected,B-2; BEW; RE-M,Columns
+E-N,start,E-N.base,ground support,,Columns
+E-N,end,E-N.top,connected,BEW; C-EN; RE-N,Columns
+E.clerestory,start,"@211.5,71",connected,B-1; BE,Truss
+E.clerestory,end,"@211.5,71,228.75",connected,E.square.brace; E.top; RE-M1,Truss
+E.W3,start,"@211.5,185",connected,B-2; BE; E.rear.brace; E.square.brace,Truss
+E.W3,end,"@211.5,185,228.75",connected,E.top; RE-M,Truss
+N-M,start,"@88.75,268",connected,B-N; BR-NU-1; loft bay 3 joist 8,Truss
+N-M,end,"@88.75,268,225.25",connected,BR-NU-2; R-W4; RF @ 88.75,Truss
+R-W1,start,"@-34,3,147.355",connected,W1,Roof
+R-W1,end,"@211.5,3,147.355",connected,S3,Roof
+R-W3,start,"@-34,185,225.25",connected,W3,Roof
+R-W3,end,"@211.5,185,225.25",connected,E.W3,Roof
+R-W4,start,"@-34,268,225.25",connected,W4,Roof
+R-W4,end,"@211.5,268,225.25",connected,BR-NU-1; N2,Roof
+BR-S-1,start,S1.base,connected,S1,Bracing
+BR-S-1,end,"@211.5,-63",connected,B-SO; BE; S2,Bracing
+BR-S-2,start,S2.base,connected,S2,Bracing
+BR-S-2,end,"@145.5,-63",connected,B-SO; S1,Bracing
+BR-W-1,start,W3.base,connected,W3,Bracing
+BR-W-1,end,"@-34,268",connected,B-N; BR-N-2; BW; W4,Bracing
+BR-W-2,start,W4.base,connected,BR-N-1; W4,Bracing
+BR-W-2,end,"@-34,185",connected,B-2; BW; W.rear.brace; W.square.brace; W3,Bracing
+BR-N-1,start,W4.base,connected,BR-W-2; W4,Bracing
+BR-N-1,end,N1.top,connected,B-N; N1,Bracing
+BR-N-2,start,N1.base,connected,N1,Bracing
+BR-N-2,end,"@-34,268",connected,B-N; BR-W-1; BW; W4,Bracing
+BR-NU-1,start,"@88.75,268",connected,B-N; N-M; loft bay 3 joist 8,Bracing
+BR-NU-1,end,"@211.5,268,225.25",connected,N2; R-W4,Bracing
+BR-NU-2,start,"@211.5,268",connected,B-N; BE; N2,Bracing
+BR-NU-2,end,"@88.75,268,225.25",connected,N-M; R-W4; RF @ 88.75,Bracing
+R-SO,start,SW0.top,connected,SW0; W.slope,Rafters
+R-SO,end,S2.top,connected,E.slope; S2,Rafters
+RS @ 6.9167,start,"@6.91667,-63,117",connected,R-SO,Rafters
+RS @ 6.9167,end,"@6.91667,71,194.365",connected,CT.bottom; CT.mullion.1,Rafters
+RF @ 6.9167,start,"@6.91667,71,225.25",connected,CT.diag.W; CT.mullion.1; CT.top,Rafters
+RF @ 6.9167,end,"@6.91667,268,225.25",connected,R-W4,Rafters
+RS @ 47.833,start,"@47.8333,-63,117",connected,R-SO,Rafters
+RS @ 47.833,end,"@47.8333,71,194.365",connected,CT.bottom; CT.mullion.2,Rafters
+RF @ 47.833,start,"@47.8333,71,225.25",connected,CT.mullion.2; CT.top,Rafters
+RF @ 47.833,end,"@47.8333,268,225.25",connected,R-W4,Rafters
+RS @ 88.75,start,"@88.75,-63,117",connected,R-SO,Rafters
+RS @ 88.75,end,"@88.75,71,194.365",connected,CT.bottom; CT.mullion.3,Rafters
+RF @ 88.75,start,"@88.75,71,225.25",connected,CT.mullion.3; CT.top,Rafters
+RF @ 88.75,end,"@88.75,268,225.25",connected,BR-NU-2; N-M; R-W4,Rafters
+RS @ 129.67,start,"@129.667,-63,117",connected,R-SO,Rafters
+RS @ 129.67,end,"@129.667,71,194.365",connected,CT.bottom; CT.mullion.4,Rafters
+RF @ 129.67,start,"@129.667,71,225.25",connected,CT.mullion.4; CT.top,Rafters
+RF @ 129.67,end,"@129.667,268,225.25",connected,R-W4,Rafters
+RS @ 170.58,start,"@170.583,-63,117",connected,R-SO,Rafters
+RS @ 170.58,end,"@170.583,71,194.365",connected,CT.bottom; CT.mullion.5,Rafters
+RF @ 170.58,start,"@170.583,71,225.25",connected,CT.diag.E; CT.mullion.5; CT.top,Rafters
+RF @ 170.58,end,"@170.583,268,225.25",connected,R-W4,Rafters
+RE-S,start,E-S.top,connected,BEW; E-S,Rafters
+RE-S,end,S3.top,connected,E.slope; S3,Rafters
+RE-M1,start,E-M1/B.top,connected,B-1; BEW; E-M1/B,Rafters
+RE-M1,end,"@211.5,71,228.75",connected,E.clerestory; E.square.brace; E.top,Rafters
+RE-M,start,E-M/B.top,connected,B-2; BEW; E-M/B,Rafters
+RE-M,end,"@211.5,185,228.75",connected,E.W3; E.top,Rafters
+RE-N,start,E-N.top,connected,BEW; C-EN; E-N,Rafters
+RE-N,end,N2.top,connected,E.rear.brace; E.top; N2,Rafters
+CT.top,start,"@-34,71,225.25",connected,W2,Clerestory
+CT.top,end,"@211.5,71,225.25",connected,E.clerestory,Clerestory
+CT.bottom,start,"@-34,71,194.365",connected,CT.diag.W; W.slope; W2,Clerestory
+CT.bottom,end,"@211.5,71,194.365",connected,CT.diag.E; E.clerestory; E.slope,Clerestory
+CT.mullion.1,start,"@6.91667,71,194.365",connected,CT.bottom; RS @ 6.9167,Clerestory
+CT.mullion.1,end,"@6.91667,71,225.25",connected,CT.diag.W; CT.top; RF @ 6.9167,Clerestory
+CT.mullion.2,start,"@47.8333,71,194.365",connected,CT.bottom; RS @ 47.833,Clerestory
+CT.mullion.2,end,"@47.8333,71,225.25",connected,CT.top; RF @ 47.833,Clerestory
+CT.mullion.3,start,"@88.75,71,194.365",connected,CT.bottom; RS @ 88.75,Clerestory
+CT.mullion.3,end,"@88.75,71,225.25",connected,CT.top; RF @ 88.75,Clerestory
+CT.mullion.4,start,"@129.667,71,194.365",connected,CT.bottom; RS @ 129.67,Clerestory
+CT.mullion.4,end,"@129.667,71,225.25",connected,CT.top; RF @ 129.67,Clerestory
+CT.mullion.5,start,"@170.583,71,194.365",connected,CT.bottom; RS @ 170.58,Clerestory
+CT.mullion.5,end,"@170.583,71,225.25",connected,CT.diag.E; CT.top; RF @ 170.58,Clerestory
+CT.diag.W,start,"@-34,71,194.365",connected,CT.bottom; W.slope; W2,Clerestory
+CT.diag.W,end,"@6.91667,71,225.25",connected,CT.mullion.1; CT.top; RF @ 6.9167,Clerestory
+CT.diag.E,start,"@211.5,71,194.365",connected,CT.bottom; E.clerestory; E.slope,Clerestory
+CT.diag.E,end,"@170.583,71,225.25",connected,CT.mullion.5; CT.top; RF @ 170.58,Clerestory
+W.slope,start,SW0.top,connected,R-SO; SW0,Truss
+W.slope,end,"@-34,71,194.365",connected,CT.bottom; CT.diag.W; W2,Truss
+W.top,start,W2.top,connected,W.square.brace; W2,Truss
+W.top,end,W4.top,connected,W.rear.brace; W4,Truss
+W.square.brace,start,"@-34,185",connected,B-2; BR-W-2; BW; W.rear.brace; W3,Truss
+W.square.brace,end,W2.top,connected,W.top; W2,Truss
+W.rear.brace,start,"@-34,185",connected,B-2; BR-W-2; BW; W.square.brace; W3,Truss
+W.rear.brace,end,W4.top,connected,W.top; W4,Truss
+E.slope,start,S2.top,connected,R-SO; S2,Truss
+E.slope,end,"@211.5,71,194.365",connected,CT.bottom; CT.diag.E; E.clerestory,Truss
+E.top,start,"@211.5,71,228.75",connected,E.clerestory; E.square.brace; RE-M1,Truss
+E.top,end,N2.top,connected,E.rear.brace; N2; RE-N,Truss
+E.square.brace,start,"@211.5,185",connected,B-2; BE; E.W3; E.rear.brace,Truss
+E.square.brace,end,"@211.5,71,228.75",connected,E.clerestory; E.top; RE-M1,Truss
+E.rear.brace,start,"@211.5,185",connected,B-2; BE; E.W3; E.square.brace,Truss
+E.rear.brace,end,N2.top,connected,E.top; N2; RE-N,Truss
+loft bay 1 joist 1,start,"@19.7308,71",connected,B-1,Joists
+loft bay 1 joist 1,end,"@19.7308,128",connected,B-1A; loft bay 2 joist 1,Joists
+loft bay 1 joist 2,start,"@35.7115,71",connected,B-1,Joists
+loft bay 1 joist 2,end,"@35.7115,128",connected,B-1A; loft bay 2 joist 2,Joists
+loft bay 1 joist 3,start,"@51.6923,71",connected,B-1,Joists
+loft bay 1 joist 3,end,"@51.6923,128",connected,B-1A; loft bay 2 joist 3,Joists
+loft bay 1 joist 4,start,"@67.6731,71",connected,B-1,Joists
+loft bay 1 joist 4,end,"@67.6731,128",connected,B-1A; loft bay 2 joist 4,Joists
+loft bay 1 joist 5,start,"@83.6538,71",connected,B-1,Joists
+loft bay 1 joist 5,end,"@83.6538,128",connected,B-1A; loft bay 2 joist 5,Joists
+loft bay 1 joist 6,start,"@99.6346,71",connected,B-1,Joists
+loft bay 1 joist 6,end,"@99.6346,128",connected,B-1A; loft bay 2 joist 6,Joists
+loft bay 1 joist 7,start,"@115.615,71",connected,B-1,Joists
+loft bay 1 joist 7,end,"@115.615,128",connected,B-1A; loft bay 2 joist 7,Joists
+loft bay 1 joist 8,start,"@131.596,71",connected,B-1,Joists
+loft bay 1 joist 8,end,"@131.596,128",connected,B-1A; loft bay 2 joist 8,Joists
+loft bay 1 joist 9,start,"@147.577,71",connected,B-1,Joists
+loft bay 1 joist 9,end,"@147.577,128",connected,B-1A; loft bay 2 joist 9,Joists
+loft bay 1 joist 10,start,"@163.558,71",connected,B-1,Joists
+loft bay 1 joist 10,end,"@163.558,128",connected,B-1A; loft bay 2 joist 10,Joists
+loft bay 1 joist 11,start,"@179.538,71",connected,B-1,Joists
+loft bay 1 joist 11,end,"@179.538,128",connected,B-1A; loft bay 2 joist 11,Joists
+loft bay 1 joist 12,start,"@195.519,71",connected,B-1,Joists
+loft bay 1 joist 12,end,"@195.519,128",connected,B-1A; loft bay 2 joist 12,Joists
+loft bay 2 joist 1,start,"@19.7308,128",connected,B-1A; loft bay 1 joist 1,Joists
+loft bay 2 joist 1,end,"@19.7308,185",connected,B-2,Joists
+loft bay 2 joist 2,start,"@35.7115,128",connected,B-1A; loft bay 1 joist 2,Joists
+loft bay 2 joist 2,end,"@35.7115,185",connected,B-2,Joists
+loft bay 2 joist 3,start,"@51.6923,128",connected,B-1A; loft bay 1 joist 3,Joists
+loft bay 2 joist 3,end,"@51.6923,185",connected,B-2,Joists
+loft bay 2 joist 4,start,"@67.6731,128",connected,B-1A; loft bay 1 joist 4,Joists
+loft bay 2 joist 4,end,"@67.6731,185",connected,B-2,Joists
+loft bay 2 joist 5,start,"@83.6538,128",connected,B-1A; loft bay 1 joist 5,Joists
+loft bay 2 joist 5,end,"@83.6538,185",connected,B-2,Joists
+loft bay 2 joist 6,start,"@99.6346,128",connected,B-1A; loft bay 1 joist 6,Joists
+loft bay 2 joist 6,end,"@99.6346,185",connected,B-2,Joists
+loft bay 2 joist 7,start,"@115.615,128",connected,B-1A; loft bay 1 joist 7,Joists
+loft bay 2 joist 7,end,"@115.615,185",connected,B-2,Joists
+loft bay 2 joist 8,start,"@131.596,128",connected,B-1A; loft bay 1 joist 8,Joists
+loft bay 2 joist 8,end,"@131.596,185",connected,B-2,Joists
+loft bay 2 joist 9,start,"@147.577,128",connected,B-1A; loft bay 1 joist 9,Joists
+loft bay 2 joist 9,end,"@147.577,185",connected,B-2,Joists
+loft bay 2 joist 10,start,"@163.558,128",connected,B-1A; loft bay 1 joist 10,Joists
+loft bay 2 joist 10,end,"@163.558,185",connected,B-2,Joists
+loft bay 2 joist 11,start,"@179.538,128",connected,B-1A; loft bay 1 joist 11,Joists
+loft bay 2 joist 11,end,"@179.538,185",connected,B-2,Joists
+loft bay 2 joist 12,start,"@195.519,128",connected,B-1A; loft bay 1 joist 12,Joists
+loft bay 2 joist 12,end,"@195.519,185",connected,B-2,Joists
+loft bay 3 joist 1,start,"@-18.6562,185",connected,B-2,Joists
+loft bay 3 joist 1,end,"@-18.6562,268",connected,B-N,Joists
+loft bay 3 joist 2,start,"@-3.3125,185",connected,B-2,Joists
+loft bay 3 joist 2,end,"@-3.3125,268",connected,B-N,Joists
+loft bay 3 joist 3,start,"@12.0312,185",connected,B-2,Joists
+loft bay 3 joist 3,end,"@12.0312,268",connected,B-N,Joists
+loft bay 3 joist 4,start,"@27.375,185",connected,B-2,Joists
+loft bay 3 joist 4,end,"@27.375,268",connected,B-N,Joists
+loft bay 3 joist 5,start,"@42.7188,185",connected,B-2,Joists
+loft bay 3 joist 5,end,"@42.7188,268",connected,B-N,Joists
+loft bay 3 joist 6,start,"@58.0625,185",connected,B-2,Joists
+loft bay 3 joist 6,end,"@58.0625,268",connected,B-N,Joists
+loft bay 3 joist 7,start,"@73.4062,185",connected,B-2,Joists
+loft bay 3 joist 7,end,"@73.4062,268",connected,B-N,Joists
+loft bay 3 joist 8,start,"@88.75,185",connected,B-2,Joists
+loft bay 3 joist 8,end,"@88.75,268",connected,B-N; BR-NU-1; N-M,Joists
+loft bay 3 joist 9,start,"@104.094,185",connected,B-2,Joists
+loft bay 3 joist 9,end,"@104.094,268",connected,B-N,Joists
+loft bay 3 joist 10,start,"@119.438,185",connected,B-2,Joists
+loft bay 3 joist 10,end,"@119.438,268",connected,B-N,Joists
+loft bay 3 joist 11,start,"@134.781,185",connected,B-2,Joists
+loft bay 3 joist 11,end,"@134.781,268",connected,B-N,Joists
+loft bay 3 joist 12,start,"@150.125,185",connected,B-2,Joists
+loft bay 3 joist 12,end,"@150.125,268",connected,B-N,Joists
+loft bay 3 joist 13,start,"@165.469,185",connected,B-2,Joists
+loft bay 3 joist 13,end,"@165.469,268",connected,B-N,Joists
+loft bay 3 joist 14,start,"@180.812,185",connected,B-2,Joists
+loft bay 3 joist 14,end,"@180.812,268",connected,B-N,Joists
+loft bay 3 joist 15,start,"@196.156,185",connected,B-2,Joists
+loft bay 3 joist 15,end,"@196.156,268",connected,B-N,Joists
+shelf SH joist 1,start,"@-18.6562,3",connected,B-S,Joists
+shelf SH joist 1,end,"@-18.6562,71",connected,B-1,Joists
+shelf SH joist 2,start,"@-3.3125,3",connected,B-S,Joists
+shelf SH joist 2,end,"@-3.3125,71",connected,B-1,Joists
+shelf SH joist 3,start,"@12.0312,3",connected,B-S,Joists
+shelf SH joist 3,end,"@12.0312,71",connected,B-1,Joists
+shelf SH joist 4,start,"@27.375,3",connected,B-S,Joists
+shelf SH joist 4,end,"@27.375,71",connected,B-1,Joists
+shelf SH joist 5,start,"@42.7188,3",connected,B-S,Joists
+shelf SH joist 5,end,"@42.7188,71",connected,B-1,Joists
+shelf SH joist 6,start,"@58.0625,3",connected,B-S,Joists
+shelf SH joist 6,end,"@58.0625,71",connected,B-1,Joists
+shelf SH joist 7,start,"@73.4062,3",connected,B-S,Joists
+shelf SH joist 7,end,"@73.4062,71",connected,B-1,Joists
+shelf SH joist 8,start,"@88.75,3",connected,B-S,Joists
+shelf SH joist 8,end,"@88.75,71",connected,B-1,Joists
+shelf SH joist 9,start,"@104.094,3",connected,B-S,Joists
+shelf SH joist 9,end,"@104.094,71",connected,B-1,Joists
+shelf SH joist 10,start,"@119.438,3",connected,B-S,Joists
+shelf SH joist 10,end,"@119.438,71",connected,B-1,Joists
+shelf SH joist 11,start,"@134.781,3",connected,B-S,Joists
+shelf SH joist 11,end,"@134.781,71",connected,B-1,Joists
+shelf SH joist 12,start,"@150.125,3",connected,B-S,Joists
+shelf SH joist 12,end,"@150.125,71",connected,B-1,Joists
+shelf SH joist 13,start,"@165.469,3",connected,B-S,Joists
+shelf SH joist 13,end,"@165.469,71",connected,B-1,Joists
+shelf SH joist 14,start,"@180.812,3",connected,B-S,Joists
+shelf SH joist 14,end,"@180.812,71",connected,B-1,Joists
+shelf SH joist 15,start,"@196.156,3",connected,B-S,Joists
+shelf SH joist 15,end,"@196.156,71",connected,B-1,Joists
+shelf SH-E joist 1,start,"@223.5,3",connected,B-S,Joists
+shelf SH-E joist 1,end,"@223.5,71",connected,B-1,Joists
+shelf SH-E joist 2,start,"@235.5,3",connected,B-S,Joists
+shelf SH-E joist 2,end,"@235.5,71",connected,B-1,Joists

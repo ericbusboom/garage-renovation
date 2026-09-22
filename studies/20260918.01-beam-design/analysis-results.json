@@ -1,0 +1,287 @@
+{
+  "model": "frame-20260918.09-beam-scheme.compas.json",
+  "basis": {
+    "live_psf": 100.0,
+    "live_basis": "owner direction; ASCE 7-16 Table 4.3-1 \"light storage\" is 125 psf",
+    "dead_floor_psf": 8.0,
+    "dead_basis": "3/4 in plywood 2.3 + underlayment/finish 1.7 + services and misc 4.0; joists and steel are modelled explicitly",
+    "deck_area_sf": 404.9,
+    "self_weight_lb": 10448.4,
+    "beam_section": "W12X16",
+    "column_section": "HSS4X4X1/4",
+    "joist_section": "2x8 DF-L No.2",
+    "strength_combos": {
+      "1.4D": {
+        "D": 1.4
+      },
+      "1.2D + 1.6L": {
+        "D": 1.2,
+        "L": 1.6
+      }
+    },
+    "service_combos": {
+      "D + L": {
+        "D": 1.0,
+        "L": 1.0
+      },
+      "L only": {
+        "L": 1.0
+      }
+    },
+    "deflection_limits": {
+      "floor_live": "L/360",
+      "floor_total": "L/240"
+    },
+    "steel": "AISC 360-16 LRFD, Fy = 50 ksi",
+    "wood": "NDS ASD, DF-L No.2",
+    "lateral": "NOT ANALYSED \u2014 this scheme has no roof, cladding or lateral system yet, so there is no enclosure to load with wind or seismic"
+  },
+  "loads": {
+    "D": {
+      "total_fy_lb": -13687.6,
+      "self_weight_lb": 10448.4,
+      "loft bay 1_ft2": 82.2,
+      "loft bay 2_ft2": 82.2,
+      "loft bay 3_ft2": 141.5,
+      "shelf SH-W_ft2": 34.8,
+      "shelf SH-M_ft2": 47.1,
+      "shelf SH-E_ft2": 17.0
+    },
+    "L": {
+      "total_fy_lb": -40490.3,
+      "loft bay 1_ft2": 82.2,
+      "loft bay 2_ft2": 82.2,
+      "loft bay 3_ft2": 141.5,
+      "shelf SH-W_ft2": 34.8,
+      "shelf SH-M_ft2": 47.1,
+      "shelf SH-E_ft2": 17.0
+    }
+  },
+  "equilibrium": {
+    "1.4D": {
+      "applied_lb": -19162.7,
+      "reactions_lb": 19162.7,
+      "closure": 0.0
+    },
+    "1.2D + 1.6L": {
+      "applied_lb": -81209.6,
+      "reactions_lb": 81209.6,
+      "closure": 0.0
+    }
+  },
+  "tributary_closure": {
+    "loft bay 1": 1.0,
+    "loft bay 2": 1.0,
+    "loft bay 3": 1.0,
+    "shelf SH-W": 1.0,
+    "shelf SH-M": 1.0,
+    "shelf SH-E": 1.0
+  },
+  "worst_by_group": {
+    "Beams": {
+      "member": "B-2",
+      "section": "W12X16",
+      "dcr": 0.533,
+      "mode": "flexure",
+      "combo": "1.2D + 1.6L"
+    },
+    "Bracing": {
+      "member": "BR-W-1",
+      "section": "HSS2-1/2X2-1/2X3/16",
+      "dcr": 0.046,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "1.2D + 1.6L"
+    },
+    "Clerestory": {
+      "member": "CT.mullion.2",
+      "section": "2L2X2X1/4 T",
+      "dcr": 0.373,
+      "mode": "flexure",
+      "combo": "1.2D + 1.6L"
+    },
+    "Columns": {
+      "member": "W2",
+      "section": "HSS4X4X1/4",
+      "dcr": 0.755,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "1.2D + 1.6L"
+    },
+    "Truss": {
+      "member": "E.slope",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "dcr": 0.529,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "1.2D + 1.6L"
+    },
+    "Rafters": {
+      "member": "RE-M1",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "dcr": 0.291,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "1.2D + 1.6L"
+    },
+    "Roof": {
+      "member": "R-W1",
+      "section": "W12X16",
+      "dcr": 0.274,
+      "mode": "flexure",
+      "combo": "1.2D + 1.6L"
+    },
+    "Joists": {
+      "member": "loft bay 3 joist 9",
+      "section": "1.5x7.25 DF-L No.2",
+      "dcr": 0.599,
+      "mode": "bending",
+      "combo": "D + L"
+    }
+  },
+  "beams": [
+    {
+      "member": "B-2",
+      "dcr": 0.533,
+      "mode": "flexure",
+      "combo": "1.2D + 1.6L",
+      "span_in": 281.5,
+      "ratio_live": 581,
+      "ratio_total": 507,
+      "Lb_in": 36.0,
+      "flags": ""
+    },
+    {
+      "member": "BE",
+      "dcr": 0.501,
+      "mode": "flexure",
+      "combo": "1.2D + 1.6L",
+      "span_in": 331.0,
+      "ratio_live": 1948,
+      "ratio_total": 1667,
+      "Lb_in": 68.0,
+      "flags": ""
+    },
+    {
+      "member": "B-1",
+      "dcr": 0.471,
+      "mode": "flexure",
+      "combo": "1.2D + 1.6L",
+      "span_in": 281.5,
+      "ratio_live": 610,
+      "ratio_total": 527,
+      "Lb_in": 16.0,
+      "flags": ""
+    },
+    {
+      "member": "B-1A",
+      "dcr": 0.419,
+      "mode": "flexure",
+      "combo": "1.2D + 1.6L",
+      "span_in": 243.8,
+      "ratio_live": 669,
+      "ratio_total": 581,
+      "Lb_in": 36.0,
+      "flags": ""
+    },
+    {
+      "member": "BWI-2",
+      "dcr": 0.387,
+      "mode": "flexure",
+      "combo": "1.2D + 1.6L",
+      "span_in": 114.0,
+      "ratio_live": 1715,
+      "ratio_total": 1492,
+      "Lb_in": 57.0,
+      "flags": ""
+    },
+    {
+      "member": "BWI-1",
+      "dcr": 0.274,
+      "mode": "flexure",
+      "combo": "1.2D + 1.6L",
+      "span_in": 83.0,
+      "ratio_live": 7510,
+      "ratio_total": 6560,
+      "Lb_in": 83.0,
+      "flags": ""
+    },
+    {
+      "member": "B-S",
+      "dcr": 0.24,
+      "mode": "flexure",
+      "combo": "1.2D + 1.6L",
+      "span_in": 281.5,
+      "ratio_live": 2253,
+      "ratio_total": 1903,
+      "Lb_in": 36.0,
+      "flags": ""
+    },
+    {
+      "member": "B-N",
+      "dcr": 0.235,
+      "mode": "flexure",
+      "combo": "1.2D + 1.6L",
+      "span_in": 245.5,
+      "ratio_live": 4547,
+      "ratio_total": 3660,
+      "Lb_in": 15.3,
+      "flags": ""
+    },
+    {
+      "member": "C-EN",
+      "dcr": 0.14,
+      "mode": "flexure",
+      "combo": "1.2D + 1.6L",
+      "span_in": 36.0,
+      "ratio_live": 99999,
+      "ratio_total": 99999,
+      "Lb_in": 36.0,
+      "flags": ""
+    },
+    {
+      "member": "BEW",
+      "dcr": 0.127,
+      "mode": "flexure",
+      "combo": "1.2D + 1.6L",
+      "span_in": 257.0,
+      "ratio_live": 52234,
+      "ratio_total": 41563,
+      "Lb_in": 68.0,
+      "flags": ""
+    },
+    {
+      "member": "BWI-3",
+      "dcr": 0.108,
+      "mode": "flexure",
+      "combo": "1.2D + 1.6L",
+      "span_in": 68.0,
+      "ratio_live": 26295,
+      "ratio_total": 22061,
+      "Lb_in": 68.0,
+      "flags": ""
+    },
+    {
+      "member": "BW",
+      "dcr": 0.096,
+      "mode": "flexure",
+      "combo": "1.2D + 1.6L",
+      "span_in": 331.0,
+      "ratio_live": 46855,
+      "ratio_total": 36379,
+      "Lb_in": 114.0,
+      "flags": ""
+    },
+    {
+      "member": "B-SO",
+      "dcr": 0.061,
+      "mode": "flexure",
+      "combo": "1.2D + 1.6L",
+      "span_in": 245.5,
+      "ratio_live": 99999,
+      "ratio_total": 72261,
+      "Lb_in": 179.5,
+      "flags": ""
+    }
+  ],
+  "over_capacity": [],
+  "deflection_over_limit": [],
+  "verdict": "W14X22 is adequate for gravity at this load",
+  "limits": "Gravity only. Linear elastic. Pinned bases, no foundation designed. No connection is designed or checked. Lateral load is absent from this model entirely. Requires review and sealing by the responsible California-licensed engineer."
+}

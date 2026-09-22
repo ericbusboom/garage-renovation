@@ -1,0 +1,124 @@
+{
+  "units": "in, lb, psi",
+  "purpose": "Repeatable preliminary structural/cost comparisons; not a construction design",
+  "location_zip": "92109",
+  "floor": {
+    "x": [
+      0,
+      224.25
+    ],
+    "y": [
+      72,
+      249
+    ],
+    "dead_psf_excluding_primary_steel": 12,
+    "live_psf": 40,
+    "typical_use_psf": 30,
+    "storage_patch_psf": 75,
+    "storage_patch_width_in": 36,
+    "patch_location": "east and north edges, editable provisional zoning",
+    "code_sensitivity_psf": 125,
+    "occupancy_classification": "not determined; 40psf owner study target, not approval of applicable code minimum"
+  },
+  "equipment": {
+    "machines": [
+      {
+        "weight_lb": 200,
+        "area_ft2": 6
+      }
+    ],
+    "additional_machine_description": "Owner said maybe 3 lb over4ft\u00b2; ambiguous, not silently changed to300lb",
+    "hoist_rated_load_lb": 1000,
+    "trolley_hoist_dead_lb_assumed": 100,
+    "vertical_impact_factor_assumed": 1.25,
+    "floor_patch_lb_sensitivity": 1000
+  },
+  "roof": {
+    "main_dead_psf_surface": 10.0,
+    "cap_dead_psf_surface": 7.0,
+    "live_psf_plan": 20,
+    "note": "Preliminary previous assembly allowances; replace with manufacturer takeoff; no final snow/wind/seismic determination"
+  },
+  "walls": {
+    "dead_psf_surface": 4,
+    "note": "Preliminary lightweight insulated metal cladding allowance"
+  },
+  "geometry_constraints": {
+    "preserve_existing_columns_until_case_accepted": true,
+    "no_old_wall_or_slab_support_credit": true,
+    "B2_max_depth_in": 8,
+    "T1_future_beam_trolley_compatible": true,
+    "roof_first_stage_required": true
+  },
+  "candidate_layouts": [
+    "baseline",
+    "remove_W2",
+    "remove_W3",
+    "remove_W2_W3"
+  ],
+  "cost": {
+    "objective": "material + shop labor + site labor + connections + delivery/lifting + foundations",
+    "fabrication_preference": "least total cost, compare shop-weld/site-bolt versus field-weld",
+    "rates": "scenario assumptions, not quotes",
+    "no_false_precision": true
+  },
+  "release_policy": "Do not silently assign rigid joints; compare ideal moment-connected upper bound and released-web/frame sensitivities; unstable cases are rejected, not stabilized with fictitious supports",
+  "approval_gate": "No automatic construction-ready or all-requirements-met result before connection, lateral, second-order, foundation and erection-stage design",
+  "steel_connection_dead_fraction_assumed": 0.1,
+  "load_audit": {
+    "main_roof_psf_surface": {
+      "PV_or_glass_allowance": 3.0,
+      "insulated_waterproof_metal_skin": 3.0,
+      "secondary_purlins_and_supports": 3.0,
+      "flashings_wiring_fasteners_margin": 1.0
+    },
+    "cap_roof_psf_surface": {
+      "insulated_metal_skin": 3.0,
+      "secondary_hip_frame": 3.0,
+      "trim_margin": 1.0
+    },
+    "wall_psf": {
+      "insulated_metal_panel": 3.0,
+      "girts_trim_allowance": 1.0
+    },
+    "floor_dead_psf": {
+      "plywood": 2.5,
+      "wood_joists_and_blocking": 3.5,
+      "hardware_minor_services_and_reserve": 6.0
+    },
+    "balcony": {
+      "area_ft2": 13.333333333333334,
+      "dead_psf": 12,
+      "live_psf": 100,
+      "load_path": "Full gravity and16in eccentric moment assigned to TW lower chord; provisional conservative loading of west balcony y186..246."
+    },
+    "primary_steel": "Catalog weight recalculated each solve plus10percent connection allowance; not in roof/floor psf.",
+    "roof_purlin_stations_north_in": [
+      -63,
+      -15,
+      33,
+      81,
+      122.7624491117621,
+      170.7624491117621,
+      218.7624491117621,
+      253
+    ],
+    "roof_transfer": "E-W purlin reactions at explicit stations; tributary splitting preserves load and first moment. Roof overhang north of253in contributes an end moment."
+  },
+  "sources": {
+    "PV": "https://www.canadiansolar.com/wp-content/uploads/sites/3/2026/01/CS-Datasheet-TOPHiKu6_All-Black_CS6.1-54TM-H_v1.4C25_F23_D2_TX.pdf",
+    "panel": "https://www.metlspan.com/wp-content/uploads/2024/11/MetlSpan-CF-PIR-Panel-Weights-1-1-1-002.pdf",
+    "roof_panel": "https://metlspan.com/wp-content/uploads/2022/11/PSF-Panel-Weights_2019.pdf",
+    "code": "https://www.sandiego.gov/development-services/codes-regulations",
+    "sections": "https://www.aisc.org/aisc/publications/steel-construction-manual/aisc-shapes-database-v160/"
+  },
+  "section_database_sha256": "82d0ceb96a0d938ae1a6bd9637cb10a1e269225b5d668dce5b0bdc8d86013496",
+  "service_criteria": {
+    "floor_live_primary_in": 0.7118055555555556,
+    "floor_total_primary_in": 1.0677083333333333,
+    "incremental_hoist_primary_in": 0.5694444444444444,
+    "roof_total_in": 1.0541666666666667,
+    "diagnostic_drift_in": 0.9645833333333333,
+    "note": "Study targets, not a complete code/serviceability verification. Wood joists, deck, glass supports and trolley-specific limits also require checks."
+  }
+}

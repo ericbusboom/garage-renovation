@@ -1,0 +1,17 @@
+id,type,x1,y1,x2,y2,length_in,bottom_in,position_status,basis
+B-WO,beam,-34.0,-66.0,-34.0,269.0,335.0,98.5,derived from current supports,Outer west beam follows west post row.
+B2,beam,-34.0,185.0,211.5,185.0,245.5,98.5,derived / west-row correction,Station from W3; continuous reference from far-west T-W to east T-E.
+B3,beam,-34.0,249.0,211.5,249.0,245.5,98.5,west-row correction / draft endpoints,Y=249 retained; extend to far-west T-W. Distinct from north upper truss Y=269.
+C-EM,beam,246.5,185.0,211.5,185.0,35.0,98.5,user-requested connection reference,E-M to T-E at column-top Z=98.5; section and joint detail unassigned. E-M retains option B status.
+C-EN,beam,247.5,251.0,211.5,251.0,36.0,98.5,user-requested connection reference,E-N to T-E at column-top Z=98.5; section and joint detail unassigned.
+C-ES,beam,247.5,-2.0,211.5,-2.0,36.0,98.5,user-requested connection reference,E-S to S3 at column-top Z=98.5; section and joint detail unassigned.
+E-OB,beam,247.5,-4.0,247.5,253.0,257.0,98.5,user-confirmed column-top beam,"Across E-S/E-N tops, level with truss bottom chords; retain plan end-face extents. 3-inch display envelope only."
+O2,subsegment reference,-34.0,69.75,0.0,69.75,34.0,98.5,absorbed into extended cross-member,Historical west extension now contained within T1; not a separate overlapping beam.
+O3,subsegment reference,-34.0,185.0,0.0,185.0,34.0,98.5,absorbed into extended cross-member,Historical west extension now contained within B2; not a separate overlapping beam.
+OB1,existing context beam,-164.25,174.0,-27.0,174.0,137.25,,historical context only,Outbuilding beam outside proposed frame; elevation/supports not supplied here.
+T-E,truss,211.5,-64.0,211.5,269.0,333.0,98.5,derived from current supports,Axis from N2/S2; ends use T-SO and north row.
+T-N,truss,-34.0,269.0,211.5,269.0,245.5,98.5,draft resized,North upper-wall truss uses W4/N1/N2 row; loft door remains separate from ground door.
+T-S,truss,-34.0,0.0,211.5,0.0,245.5,98.5,west-row correction / draft endpoints,Retain Y=0; extend between far-west T-W and revised T-E.
+T-SO,beam,-34.0,-64.0,211.5,-64.0,245.5,98.5,draft endpoints / source axis,Y=-64 retained; endpoint X from W1/S2. Source posts remain Y=-66.
+T-W,truss,-34.0,-66.0,-34.0,269.0,335.0,98.5,user-corrected far-west location,"Suspended on the far-west W1-W4 column row, not above the existing wall at X=0."
+T1,truss,-34.0,69.75,211.5,69.75,245.5,98.5,derived / west-row correction,Station from W2; continuous reference from far-west T-W to east T-E.

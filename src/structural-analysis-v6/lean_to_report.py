@@ -1,0 +1,46 @@
+"""Current analysis-colored viewer for the steel lean-to rafter option."""
+import json,math
+from dataclasses import fields
+import lean_to_rafters as L
+import solid_view as SV
+f,s,g=L.build()
+d=json.loads((L.OUT/'lean-to-rafters.json').read_text())
+r=L.T.A.Result(**{k:d[k] for k in {x.name for x in fields(L.T.A.Result)} if k in d and k!='members'})
+r.members={m:L.T.A.MemberOutcome(**v) for m,v in d['members'].items()}
+dr=min(v['ratio'] for v in d['drift'].values() if v['ratio'])
+worst=max((r.members[m] for m in g['rafters']),key=lambda m:m.dcr)
+rows=''.join(f'<tr><td>{m}</td><td>{r.members[m].section}</td><td>{r.members[m].dcr:.3f}</td><td>{r.members[m].combo}</td></tr>' for m in ['BE.upper','BE','E.clerestory','E.W3',worst.member])
+report=f'''<style>body{{font-family:system-ui;margin:16px;color:#222}}#frameplot{{height:76vh!important;min-height:480px}}.notes{{max-width:1080px;line-height:1.55;margin:24px auto}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left}}table{{border-collapse:collapse;width:100%}}</style>
+<section class="notes"><h2>Lean-to rafters — steel-supported fit</h2>
+<p><b>12 HSS2×2×⅛ steel rafters</b> at {g['spacing']:.3f} in. centers, running from the smaller BE.upper down to the outer BE beam. Top-edge horizontal span {g['horizontal_run']:.2f} in.; top-edge length about {g['cuts'][worst.member]['top_length']:.1f} in.; pitch about {g['cuts'][worst.member]['angle_deg']:.1f} degrees. The first and last rafters sit half a bay in from the roof ends, leaving room around the posts. Roof coverage y=2.5–268 in.; no extension south of BE.upper is assumed.</p>
+<p>The top edge runs directly from the top/east corner of BE.upper to the top/east corner of the lower BE flange. The upper end has a vertical bevel cut, flush with the higher beam’s east flange edge. The lower end has a horizontal bevel cut, sitting on the lower beam’s top flange and ending at its outer east edge. Both cuts are drawn in the solid geometry; raised brackets have been removed. The new rafters use current analysis colors.</p>
+<p><b>Changed load path:</b> both ends now bear on steel. The old assumed existing-wall bearing at z=98.5 in. would conflict with the retained outer beam; this option raises the low bearing to BE instead. Previous separate wood-roof reaction loads have been removed and replaced by actual rafter self weight, roof dead/live load and the inherited canopy wind cases. The full lean-to load now reaches the frame; none is assigned to the existing wall.</p>
+<h2>{'Passes' if d['passes'] else 'Does not pass'} the preliminary frame screen</h2>
+<p>Maximum checked ratio <b>{d['max_dcr']:.3f}</b>; worst top-roof drift <b>H/{dr:.0f}</b>; {len(d['deflection_violations'])} span-deflection violations. Worst new rafter ratio <b>{worst.dcr:.3f}</b>. Analysis uses corrected end releases and second-order effects. Rafter ends release bending; cut-face offsets transfer forces to the supporting beam axes. Existing beam buckling lengths are retained.</p>
+<table><tr><th>Member</th><th>Section</th><th>Checked ratio</th><th>Governing combination</th></tr>{rows}</table>
+<p>Continuous HSS5×5×¼ east posts, BE.upper W6×8.5, E.top HSS4×4×¼ and BE W14×22 remain. Lower W1/W2/S3 remain removed; no added roof-bay braces. Corrected solar rafters, steel door posts, existing information controls and cabinets remain.</p>
+<p>Proposed fit and preliminary screening, not a construction design. Connection plates, bolts, welds, local HSS/flange strength, uplift attachment and foundations remain unsized. The inherited steep-canopy wind approximation needs project-specific verification; cladding edge overhangs and attachment are also not checked. The rafter top is about 50 in. above the loft beam axis at the high end and 7 in. at the low end, so this covers the side strip rather than usable standing-height loft space. Simple connections must accommodate the modeled rotation: <a href="https://www.aisc.org/aisc/solutions-center/engineering-faqs/5-connections/">AISC connection guidance</a>.</p></section>'''
+SV.EX.THICK['south']=5
+original=SV._member_mesh
+cut_meshes={}
+for member,cut in g['cuts'].items():
+    _,i,j=next(v for v in f.segments if v[0]==member)
+    vertices=[[x,cut['y']+dy,z] for dy in [-1,1] for x,z in cut['polygon']]
+    faces=[(0,1,2),(0,2,3),(4,6,5),(4,7,6)]
+    for k in range(4):
+        n=(k+1)%4
+        faces.extend([(k,n,n+4),(k,n+4,k+4)])
+    cut_meshes[(f.xyz(i),f.xyz(j))]=(vertices,faces)
+def mesh(a,b,sec):
+    if (tuple(a),tuple(b)) in cut_meshes:return cut_meshes[(tuple(a),tuple(b))]
+    if sec.name=='HSS6X2X1/4':b=(b[0],b[1],106.5)
+    return original(a,b,sec)
+SV._member_mesh=mesh
+p=L.OUT/'lean-to-rafters-3d-solid.html'
+summary=dict(removal={},frame_model='Lean-to steel rafters + continuous east posts · CURRENT PRELIMINARY ANALYSIS',live_case='L100',exposure='C',basis=dict(loft_live={'L100':100},wind={'V':96}))
+SV.write(f,r,{},dict(sections={}),[],summary,p,cabinets=True,report_html=report,proposed_seats=g['seats'])
+h=p.read_text().replace('Garage frame &mdash; members at true section size','Lean-to steel rafters + continuous east posts')
+h=h.replace('How hard it is working','How hard is it working?').replace('What governs it"','What governs it?"')
+h=h.replace('</body>',"<script>Plotly.relayout('frameplot',{'scene.camera.eye':{x:1.8,y:-1.5,z:1.0}}).then(()=>Plotly.Plots.resize('frameplot'));</script></body>")
+p.write_text(h)
+print(p)

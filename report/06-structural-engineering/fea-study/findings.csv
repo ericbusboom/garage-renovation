@@ -1,0 +1,9 @@
+id,severity,area,finding,evidence,action
+F-1,blocking,Upper roof,No framing crosses the flat upper roof and the clerestory head has no beam; the roof load reaches only the perimeter,"0 sq ft, 0 in clear span; frame as drawn reaches DCR 4.92",Engineer of record to frame the upper roof and clerestory head
+F-2,blocking,East support frame,E-M option B is connected only by a declared eccentric bearing carried on no member,Singular stiffness matrix; zero-energy mode localised on that column,Design the bearing detail or delete the column
+F-3,high,Bracing,"Six X-brace crossings are not declared joints, so every brace is unbraced over its full length",Connecting them drops worst DCR from 4.46 to 1.56 at no material cost,Connect the six crossings
+F-4,high,Loft,Loft joists fail at the ASCE 7-16 light-storage live load,DCR 1.55 in bending at 125 psf; 0.64 at the assumed 40 psf,"Settle the occupancy classification, then redesign the loft framing if 125 psf applies"
+F-5,high,Members,11 members over capacity with the roof framed,BR-R-cap-2 4.46; BR-W-2 1.93; E.clerestory 1.56; T-SO 1.49; E.rear.brace 1.35,"Enlarge per the member schedule, after F-3 is applied"
+F-6,medium,Serviceability,Wind drift passes with almost no margin,H/415 against a H/400 target,Re-check drift after any bracing change
+F-7,medium,Wind,Exposure category not verified for the address,Exposure D raises worst DCR to 5.40,Verify distance to open water and fix the exposure category
+F-8,information,Optimisation,"44 sections verify lighter, 6 must be heavier, 0 members can be deleted","Net +1,310 lb from resizing; 0 lb from deletions",Use the member schedule as a starting set for design

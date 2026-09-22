@@ -1,0 +1,465 @@
+{
+  "model": "frame-20260918.01-beam-scheme.compas.json",
+  "live_psf": 60.0,
+  "dead_psf": 8.0,
+  "question": "smallest standard W shape per beam at 60 psf",
+  "method": "Iterative: every beam starts at the lightest shape in the catalogue, the whole grillage is solved, anything failing strength or deflection moves up one shape, repeat until a pass changes nothing.",
+  "acceptance": {
+    "strength": "AISC 360-16 LRFD, DCR <= 1.0, 1.4D and 1.2D+1.6L",
+    "live_deflection": "L/360",
+    "total_deflection": "L/240"
+  },
+  "ladder_source": "loft-span-study/wshapes.py, AISC v15; Sy, Zy, J and rx derived \u2014 see ladder.validate()",
+  "ladder_validation": [
+    {
+      "shape": "W8X24",
+      "property": "Sy",
+      "published": 5.63,
+      "derived": 5.6308,
+      "error_pct": 0.01
+    },
+    {
+      "shape": "W8X24",
+      "property": "Zy",
+      "published": 8.57,
+      "derived": 8.557,
+      "error_pct": -0.15
+    },
+    {
+      "shape": "W8X24",
+      "property": "J",
+      "published": 0.346,
+      "derived": 0.3123,
+      "error_pct": -9.74
+    },
+    {
+      "shape": "W8X24",
+      "property": "rx",
+      "published": 3.42,
+      "derived": 3.4177,
+      "error_pct": -0.07
+    },
+    {
+      "shape": "W14X22",
+      "property": "Sy",
+      "published": 2.8,
+      "derived": 2.8,
+      "error_pct": 0.0
+    },
+    {
+      "shape": "W14X22",
+      "property": "Zy",
+      "published": 4.39,
+      "derived": 4.3598,
+      "error_pct": -0.69
+    },
+    {
+      "shape": "W14X22",
+      "property": "J",
+      "published": 0.208,
+      "derived": 0.1782,
+      "error_pct": -14.34
+    },
+    {
+      "shape": "W14X22",
+      "property": "rx",
+      "published": 5.54,
+      "derived": 5.5374,
+      "error_pct": -0.05
+    }
+  ],
+  "passes": 8,
+  "history": [
+    {
+      "pass_no": 1,
+      "bumped": [
+        [
+          "B-1",
+          "live L/143",
+          "W6X9"
+        ],
+        [
+          "B-1A",
+          "DCR 1.04",
+          "W6X9"
+        ],
+        [
+          "B-2",
+          "DCR 1.16",
+          "W6X9"
+        ],
+        [
+          "B-S",
+          "live L/241 simple-span",
+          "W6X9"
+        ],
+        [
+          "BE",
+          "DCR 1.06",
+          "W6X9"
+        ]
+      ]
+    },
+    {
+      "pass_no": 2,
+      "bumped": [
+        [
+          "B-1",
+          "live L/153",
+          "W8X10"
+        ],
+        [
+          "B-1A",
+          "live L/141",
+          "W8X10"
+        ],
+        [
+          "B-2",
+          "DCR 1.09",
+          "W8X10"
+        ],
+        [
+          "B-S",
+          "live L/265 simple-span",
+          "W8X10"
+        ]
+      ]
+    },
+    {
+      "pass_no": 3,
+      "bumped": [
+        [
+          "B-1",
+          "live L/228",
+          "W6X12"
+        ],
+        [
+          "B-1A",
+          "live L/229",
+          "W6X12"
+        ],
+        [
+          "B-2",
+          "live L/184",
+          "W6X12"
+        ]
+      ]
+    },
+    {
+      "pass_no": 4,
+      "bumped": [
+        [
+          "B-1",
+          "live L/185",
+          "W10X12"
+        ],
+        [
+          "B-1A",
+          "live L/176",
+          "W10X12"
+        ],
+        [
+          "B-2",
+          "live L/149",
+          "W10X12"
+        ]
+      ]
+    },
+    {
+      "pass_no": 5,
+      "bumped": [
+        [
+          "B-1",
+          "live L/332",
+          "W8X13"
+        ],
+        [
+          "B-2",
+          "live L/268",
+          "W8X13"
+        ]
+      ]
+    },
+    {
+      "pass_no": 6,
+      "bumped": [
+        [
+          "B-1",
+          "live L/277",
+          "W12X14"
+        ],
+        [
+          "B-1A",
+          "live L/350",
+          "W8X13"
+        ],
+        [
+          "B-2",
+          "live L/222",
+          "W12X14"
+        ]
+      ]
+    },
+    {
+      "pass_no": 7,
+      "bumped": [
+        [
+          "B-1A",
+          "live L/333",
+          "W12X14"
+        ]
+      ]
+    },
+    {
+      "pass_no": 8,
+      "bumped": []
+    }
+  ],
+  "per_beam": [
+    {
+      "ss_dcr": 0.417,
+      "ss_live": 505,
+      "ss_span": 281.5,
+      "ss_column_supported": true,
+      "beam": "B-1",
+      "span_in": 281.5,
+      "as_drawn": "W14X22",
+      "as_drawn_dcr": 0.234,
+      "smallest": "W12X14",
+      "dcr": 0.478,
+      "mode": "flexure",
+      "live": 477,
+      "total": 388,
+      "governed_by": "strength",
+      "weight_lb": 328.4,
+      "depth_in": 11.9,
+      "flags": ""
+    },
+    {
+      "ss_dcr": 0.335,
+      "ss_live": 722,
+      "ss_span": 243.8,
+      "ss_column_supported": false,
+      "beam": "B-1A",
+      "span_in": 243.8,
+      "as_drawn": "W14X22",
+      "as_drawn_dcr": 0.229,
+      "smallest": "W12X14",
+      "dcr": 0.432,
+      "mode": "flexure",
+      "live": 596,
+      "total": 489,
+      "governed_by": "strength",
+      "weight_lb": 284.4,
+      "depth_in": 11.9,
+      "flags": ""
+    },
+    {
+      "ss_dcr": 0.518,
+      "ss_live": 402,
+      "ss_span": 281.5,
+      "ss_column_supported": true,
+      "beam": "B-2",
+      "span_in": 281.5,
+      "as_drawn": "W14X22",
+      "as_drawn_dcr": 0.279,
+      "smallest": "W12X14",
+      "dcr": 0.607,
+      "mode": "flexure",
+      "live": 386,
+      "total": 317,
+      "governed_by": "deflection",
+      "weight_lb": 328.4,
+      "depth_in": 11.9,
+      "flags": ""
+    },
+    {
+      "ss_dcr": 0.415,
+      "ss_live": 419,
+      "ss_span": 171.2,
+      "ss_column_supported": true,
+      "beam": "B-N",
+      "span_in": 245.5,
+      "as_drawn": "W14X22",
+      "as_drawn_dcr": 0.065,
+      "smallest": "W6X8.5",
+      "dcr": 0.342,
+      "mode": "flexure",
+      "live": 1330,
+      "total": 1104,
+      "governed_by": "deflection",
+      "weight_lb": 173.9,
+      "depth_in": 5.83,
+      "flags": ""
+    },
+    {
+      "ss_dcr": 0.337,
+      "ss_live": 498,
+      "ss_span": 245.5,
+      "ss_column_supported": true,
+      "beam": "B-S",
+      "span_in": 281.5,
+      "as_drawn": "W14X22",
+      "as_drawn_dcr": 0.083,
+      "smallest": "W8X10",
+      "dcr": 0.294,
+      "mode": "flexure",
+      "live": 1348,
+      "total": 1067,
+      "governed_by": "strength",
+      "weight_lb": 234.6,
+      "depth_in": 7.89,
+      "flags": ""
+    },
+    {
+      "ss_dcr": 0.013,
+      "ss_live": 99999,
+      "ss_span": 179.5,
+      "ss_column_supported": true,
+      "beam": "B-SO",
+      "span_in": 245.5,
+      "as_drawn": "W14X22",
+      "as_drawn_dcr": 0.018,
+      "smallest": "W6X8.5",
+      "dcr": 0.055,
+      "mode": "flexure",
+      "live": 83451,
+      "total": 19691,
+      "governed_by": "strength",
+      "weight_lb": 173.9,
+      "depth_in": 5.83,
+      "flags": ""
+    },
+    {
+      "ss_dcr": 0.148,
+      "ss_live": 901,
+      "ss_span": 265.0,
+      "ss_column_supported": true,
+      "beam": "BE",
+      "span_in": 331.0,
+      "as_drawn": "W14X22",
+      "as_drawn_dcr": 0.217,
+      "smallest": "W6X9",
+      "dcr": 0.405,
+      "mode": "flexure",
+      "live": 1056,
+      "total": 861,
+      "governed_by": "strength",
+      "weight_lb": 248.2,
+      "depth_in": 5.9,
+      "flags": ""
+    },
+    {
+      "ss_dcr": 0.012,
+      "ss_live": 37361,
+      "ss_span": 114.0,
+      "ss_column_supported": true,
+      "beam": "BEW",
+      "span_in": 257.0,
+      "as_drawn": "W14X22",
+      "as_drawn_dcr": 0.077,
+      "smallest": "W6X8.5",
+      "dcr": 0.353,
+      "mode": "flexure",
+      "live": 3539,
+      "total": 2820,
+      "governed_by": "strength",
+      "weight_lb": 182.0,
+      "depth_in": 5.83,
+      "flags": ""
+    },
+    {
+      "ss_dcr": 0.02,
+      "ss_live": 17372,
+      "ss_span": 114.0,
+      "ss_column_supported": true,
+      "beam": "BW",
+      "span_in": 331.0,
+      "as_drawn": "W14X22",
+      "as_drawn_dcr": 0.011,
+      "smallest": "W6X8.5",
+      "dcr": 0.051,
+      "mode": "flexure",
+      "live": 59429,
+      "total": 48503,
+      "governed_by": "strength",
+      "weight_lb": 234.5,
+      "depth_in": 5.83,
+      "flags": ""
+    },
+    {
+      "ss_dcr": 0.021,
+      "ss_live": 19117,
+      "ss_span": 83.0,
+      "ss_column_supported": false,
+      "beam": "BWI-1",
+      "span_in": 83.0,
+      "as_drawn": "W14X22",
+      "as_drawn_dcr": 0.148,
+      "smallest": "W6X8.5",
+      "dcr": 0.047,
+      "mode": "flexure",
+      "live": 28769,
+      "total": 23771,
+      "governed_by": "strength",
+      "weight_lb": 58.8,
+      "depth_in": 5.83,
+      "flags": ""
+    },
+    {
+      "ss_dcr": 0.037,
+      "ss_live": 7825,
+      "ss_span": 114.0,
+      "ss_column_supported": false,
+      "beam": "BWI-2",
+      "span_in": 114.0,
+      "as_drawn": "W14X22",
+      "as_drawn_dcr": 0.198,
+      "smallest": "W6X8.5",
+      "dcr": 0.559,
+      "mode": "flexure",
+      "live": 727,
+      "total": 595,
+      "governed_by": "strength",
+      "weight_lb": 80.8,
+      "depth_in": 5.83,
+      "flags": ""
+    },
+    {
+      "ss_dcr": 0.013,
+      "ss_live": 36661,
+      "ss_span": 68.0,
+      "ss_column_supported": false,
+      "beam": "BWI-3",
+      "span_in": 68.0,
+      "as_drawn": "W14X22",
+      "as_drawn_dcr": 0.043,
+      "smallest": "W6X8.5",
+      "dcr": 0.215,
+      "mode": "flexure",
+      "live": 4526,
+      "total": 3725,
+      "governed_by": "strength",
+      "weight_lb": 48.2,
+      "depth_in": 5.83,
+      "flags": ""
+    }
+  ],
+  "per_beam_total_lb": 2376.0,
+  "one_section": "W12X14",
+  "one_section_total_lb": 3223.8,
+  "as_drawn_total_lb": 5066.0,
+  "joists": {
+    "section": "1.5x7.25 DF-L No.2",
+    "worst": "loft bay 3 joist 9",
+    "dcr": 0.386,
+    "live_ratio": 1763,
+    "note": "joists and columns were not resized; this is what they do at 60 psf with the per-beam steel"
+  },
+  "columns": {
+    "section": "HSS4X4X1/4",
+    "worst": "W3",
+    "dcr": 0.47
+  },
+  "limits": "Gravity only, linear elastic, pinned bases. No lateral load, no connection, no footing. Lightest by weight is not the same as cheapest to fabricate or erect. Requires review and sealing by the responsible California-licensed engineer."
+}

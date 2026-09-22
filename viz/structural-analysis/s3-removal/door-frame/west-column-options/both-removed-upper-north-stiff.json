@@ -1,0 +1,4833 @@
+{
+  "frame_version": "20260920.01",
+  "live_case": "L100",
+  "exposure": "C",
+  "members": {
+    "B-1": {
+      "member": "B-1",
+      "group": "Beams",
+      "material": "steel",
+      "section": "W12X16",
+      "length": 243.75,
+      "weight": 325.590525,
+      "dcr": 0.45590108018355774,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": -231.38019734157405,
+      "Mz": -403004.9528273283,
+      "My": -47.95083440563758,
+      "V": -195.85795956805316,
+      "slenderness": 46.57179818887452,
+      "Lb": 36.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "B-1A": {
+      "member": "B-1A",
+      "group": "Beams",
+      "material": "steel",
+      "section": "W12X16",
+      "length": 281.5,
+      "weight": 376.01531400000005,
+      "dcr": 0.7429625579427958,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": -21.123677486759796,
+      "Mz": -589665.9030374686,
+      "My": 58.812817371414646,
+      "V": 244.92561980359207,
+      "slenderness": 67.24549706438451,
+      "Lb": 51.980769230769226,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "B-2": {
+      "member": "B-2",
+      "group": "Beams",
+      "material": "steel",
+      "section": "W12X16",
+      "length": 281.5,
+      "weight": 376.01531400000005,
+      "dcr": 0.5972047552941693,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": -302.6622669600541,
+      "Mz": -527554.0172284701,
+      "My": -104.1441352419987,
+      "V": -156.24401004959395,
+      "slenderness": 46.57179818887452,
+      "Lb": 36.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "B-N": {
+      "member": "B-N",
+      "group": "Beams",
+      "material": "steel",
+      "section": "W12X16",
+      "length": 281.5,
+      "weight": 376.01531400000005,
+      "dcr": 0.4621275586724503,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": -184.66044908405095,
+      "Mz": 77749.00867880242,
+      "My": -37961.82683531549,
+      "V": -4090.059107387817,
+      "slenderness": 46.57179818887452,
+      "Lb": 36.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "B-S": {
+      "member": "B-S",
+      "group": "Beams",
+      "material": "steel",
+      "section": "W12X16",
+      "length": 281.5,
+      "weight": 376.01531400000005,
+      "dcr": 0.6598991451490369,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": -456.90020933747263,
+      "Mz": -280371.81725700805,
+      "My": 34388.20321275336,
+      "V": 5319.7640926858685,
+      "slenderness": 48.83570504527814,
+      "Lb": 37.75,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "B-SO": {
+      "member": "B-SO",
+      "group": "Beams",
+      "material": "steel",
+      "section": "W12X16",
+      "length": 281.5,
+      "weight": 376.01531400000005,
+      "dcr": 0.7087411267889905,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX-.pi]",
+      "P": -2153.769407850525,
+      "Mz": 14391.85127715828,
+      "My": -62817.86978682585,
+      "V": 761.8708203003825,
+      "slenderness": 263.2600258732212,
+      "Lb": 203.5,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "BE": {
+      "member": "BE",
+      "group": "Beams",
+      "material": "steel",
+      "section": "W12X16",
+      "length": 331.0,
+      "weight": 442.1352360000001,
+      "dcr": 0.7162334645411277,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.pi]",
+      "P": -658.4698575311214,
+      "Mz": 127413.85543172441,
+      "My": 51573.52864164072,
+      "V": -2087.6058243939124,
+      "slenderness": 107.3738680465718,
+      "Lb": 83.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "BE.upper": {
+      "member": "BE.upper",
+      "group": "Beams",
+      "material": "steel",
+      "section": "W14X22",
+      "length": 265.5006082692382,
+      "weight": 488.6708615584622,
+      "dcr": 0.7123643091021182,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": 2802.149737446898,
+      "Mz": -691436.924848152,
+      "My": -945.212721202076,
+      "V": -12147.925518002254,
+      "slenderness": 109.61538461538461,
+      "Lb": 114.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "BR-N-1": {
+      "member": "BR-N-1",
+      "group": "Bracing",
+      "material": "steel",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "length": 134.84870225552785,
+      "weight": 41.058521860371556,
+      "dcr": 0.32910946234333655,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.ni]",
+      "P": 3983.7971885483275,
+      "Mz": 90.75781426892497,
+      "My": -329.300223181336,
+      "V": -5.7471020987305526,
+      "slenderness": 139.7411703427459,
+      "Lb": 134.84870225552785,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "BR-N-2": {
+      "member": "BR-N-2",
+      "group": "Bracing",
+      "material": "steel",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "length": 134.84870225552785,
+      "weight": 41.058521860371556,
+      "dcr": 0.3983896824302244,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P": 4688.6207410186735,
+      "Mz": -53.36681413020371,
+      "My": 995.9005800795587,
+      "V": 7.329122665728001,
+      "slenderness": 139.7411703427459,
+      "Lb": 134.84870225552785,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "BR-NU-1": {
+      "member": "BR-NU-1",
+      "group": "Bracing",
+      "material": "steel",
+      "section": "HSS3X3X3/16",
+      "length": 172.1863089795469,
+      "weight": 92.41553087343416,
+      "dcr": 0.09935630313246643,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P": 1713.0203761215416,
+      "Mz": 973.6000664441885,
+      "My": -4083.0731008914604,
+      "V": 35.46869442184494,
+      "slenderness": 150.89825715046427,
+      "Lb": 172.1863089795469,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "BR-S-1": {
+      "member": "BR-S-1",
+      "group": "Bracing",
+      "material": "steel",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "length": 136.89503278059433,
+      "weight": 41.68158537668021,
+      "dcr": 0.24898436129743068,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P": 2602.0578632092584,
+      "Mz": 460.59055005193005,
+      "My": 1200.1685987930664,
+      "V": 14.398988782587898,
+      "slenderness": 141.86174412430896,
+      "Lb": 136.89503278059433,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "BR-S-2": {
+      "member": "BR-S-2",
+      "group": "Bracing",
+      "material": "steel",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "length": 143.33200096279964,
+      "weight": 43.64150337665309,
+      "dcr": 0.3102577962942107,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.pi]",
+      "P": 2305.0886678116867,
+      "Mz": 643.2235688351622,
+      "My": 4406.347053313455,
+      "V": 19.025572687154764,
+      "slenderness": 148.53225301460503,
+      "Lb": 143.33200096279964,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "BR-W-2": {
+      "member": "BR-W-2",
+      "group": "Bracing",
+      "material": "steel",
+      "section": "HSS3X3X3/16",
+      "length": 139.80432754389258,
+      "weight": 75.03553113451672,
+      "dcr": 0.22572993714530187,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C6 1.2D+1.0E+1.0L [EY+]",
+      "P": 6012.217406736765,
+      "Mz": 691.2099158694868,
+      "My": -858.5592695857549,
+      "V": 31.81908344007724,
+      "slenderness": 122.51978391018271,
+      "Lb": 139.80432754389258,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "BW": {
+      "member": "BW",
+      "group": "Beams",
+      "material": "steel",
+      "section": "W12X16",
+      "length": 331.0,
+      "weight": 442.1352360000001,
+      "dcr": 0.6147628971736607,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX-.ni]",
+      "P": -5044.222216316584,
+      "Mz": -125579.22367044927,
+      "My": -40523.99327168754,
+      "V": 2761.8596170525857,
+      "slenderness": 107.3738680465718,
+      "Lb": 83.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "BWI": {
+      "member": "BWI",
+      "group": "Beams",
+      "material": "steel",
+      "section": "W12X16",
+      "length": 265.5,
+      "weight": 354.64321800000005,
+      "dcr": 0.74512535467879,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": -134.62142450714353,
+      "Mz": -434757.34702044714,
+      "My": 4022.908591379946,
+      "V": 6135.001032648056,
+      "slenderness": 107.3738680465718,
+      "Lb": 83.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "CT.bottom": {
+      "member": "CT.bottom",
+      "group": "Clerestory",
+      "material": "steel",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "length": 245.5,
+      "weight": 74.74945585772602,
+      "dcr": 0.7494347722634489,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WX+.pi]",
+      "P": 522.247575823682,
+      "Mz": 413.1810645301037,
+      "My": -32754.053861721055,
+      "V": 19.744540220183243,
+      "slenderness": 42.40117102268691,
+      "Lb": 40.916666666666686,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "CT.diag.E": {
+      "member": "CT.diag.E",
+      "group": "Clerestory",
+      "material": "steel",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "length": 54.25892914816711,
+      "weight": 16.520673846225666,
+      "dcr": 0.34861900179520944,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX-.pi]",
+      "P": 1641.8768412980146,
+      "Mz": 725.9133965042527,
+      "My": -13875.200617366176,
+      "V": -31.632734970355774,
+      "slenderness": 56.22750633774219,
+      "Lb": 54.25892914816711,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "CT.diag.W": {
+      "member": "CT.diag.W",
+      "group": "Clerestory",
+      "material": "steel",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "length": 54.25892914816712,
+      "weight": 16.52067384622567,
+      "dcr": 0.3152951469218325,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.pi]",
+      "P": 1522.039177892825,
+      "Mz": 858.1867116708279,
+      "My": 12325.640560002612,
+      "V": -30.898903666877068,
+      "slenderness": 56.2275063377422,
+      "Lb": 54.25892914816712,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "CT.mullion.1": {
+      "member": "CT.mullion.1",
+      "group": "Clerestory",
+      "material": "steel",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "length": 35.63506392859017,
+      "weight": 10.850108505569839,
+      "dcr": 0.39739676465149987,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": -1702.7678161261917,
+      "Mz": -15152.457522817695,
+      "My": -1794.356437286162,
+      "V": -815.4441391643409,
+      "slenderness": 36.92794558143868,
+      "Lb": 35.63506392859017,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "CT.mullion.2": {
+      "member": "CT.mullion.2",
+      "group": "Clerestory",
+      "material": "steel",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "length": 35.63506392859017,
+      "weight": 10.850108505569839,
+      "dcr": 0.5508036809106021,
+      "mode": "flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": -146.9862007157192,
+      "Mz": 23641.870711343243,
+      "My": 868.9615201902903,
+      "V": -1319.8177831455218,
+      "slenderness": 36.92794558143868,
+      "Lb": 35.63506392859017,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "CT.mullion.3": {
+      "member": "CT.mullion.3",
+      "group": "Clerestory",
+      "material": "steel",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "length": 35.63506392859017,
+      "weight": 10.850108505569839,
+      "dcr": 0.12169446243027313,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WX+.pi]",
+      "P": -12.689604275673396,
+      "Mz": 922.8326151259325,
+      "My": -4501.7233530095145,
+      "V": -51.4992858153515,
+      "slenderness": 36.92794558143868,
+      "Lb": 35.63506392859017,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "CT.mullion.4": {
+      "member": "CT.mullion.4",
+      "group": "Clerestory",
+      "material": "steel",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "length": 35.63506392859017,
+      "weight": 10.850108505569839,
+      "dcr": 0.5587506660087402,
+      "mode": "flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": 143.8566140849556,
+      "Mz": 22413.66644347252,
+      "My": -2446.266651688922,
+      "V": 1264.1975317708855,
+      "slenderness": 36.92794558143868,
+      "Lb": 35.63506392859017,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "CT.mullion.5": {
+      "member": "CT.mullion.5",
+      "group": "Clerestory",
+      "material": "steel",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "length": 35.63506392859017,
+      "weight": 10.850108505569839,
+      "dcr": 0.35864005491600837,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": -2288.7383775316057,
+      "Mz": -12824.25272194465,
+      "My": -2122.4955945896745,
+      "V": 753.0968612608823,
+      "slenderness": 36.92794558143868,
+      "Lb": 35.63506392859017,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "CT.top": {
+      "member": "CT.top",
+      "group": "Clerestory",
+      "material": "steel",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "length": 245.5,
+      "weight": 74.74945585772602,
+      "dcr": 0.6586219157961845,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": 5068.652214953487,
+      "Mz": 24331.063446803448,
+      "My": -2389.2262533052867,
+      "V": 1123.8322643113916,
+      "slenderness": 42.40117102268691,
+      "Lb": 40.916666666666686,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "DOOR-E": {
+      "member": "DOOR-E",
+      "group": "Columns",
+      "material": "steel",
+      "section": "HSS6X2X1/4",
+      "length": 112.5,
+      "weight": 107.34364586955878,
+      "dcr": 0.08918846160469686,
+      "mode": "compression",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": 7020.914124332768,
+      "Mz": 9.264658647040436e-13,
+      "My": -2.4660599414978795e-14,
+      "V": -3.345142443525758,
+      "slenderness": 138.9636533684257,
+      "Lb": 112.5,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "DOOR-W": {
+      "member": "DOOR-W",
+      "group": "Columns",
+      "material": "steel",
+      "section": "HSS6X2X1/4",
+      "length": 112.5,
+      "weight": 107.34364586955878,
+      "dcr": 0.22492837937153284,
+      "mode": "compression",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": 8853.179028315642,
+      "Mz": -7.677864885287985e-14,
+      "My": -3.340481436053036e-14,
+      "V": -4.2180486402105775,
+      "slenderness": 138.9636533684257,
+      "Lb": 112.5,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "E-N2": {
+      "member": "E-N2",
+      "group": "Columns",
+      "material": "steel",
+      "section": "HSS5X5X1/4",
+      "length": 112.5,
+      "weight": 137.01529586955888,
+      "dcr": 0.27368390810176235,
+      "mode": "flexure",
+      "combo": "C6 1.2D+1.0E+1.0L [EY+]",
+      "P": 924.6877256794302,
+      "Mz": -3636.1026029524783,
+      "My": -92970.52947476781,
+      "V": 32.26265146726802,
+      "slenderness": 58.29081556072027,
+      "Lb": 112.5,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "E-S2": {
+      "member": "E-S2",
+      "group": "Columns",
+      "material": "steel",
+      "section": "HSS5X5X1/4",
+      "length": 112.5,
+      "weight": 137.01529586955888,
+      "dcr": 0.21112735927430334,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C6 1.2D+1.0E+1.0L [EY+]",
+      "P": -3768.6629116744853,
+      "Mz": 294.48966632208675,
+      "My": -71594.35186250723,
+      "V": 1.8001895270177055,
+      "slenderness": 58.29081556072027,
+      "Lb": 112.5,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "E-S3": {
+      "member": "E-S3",
+      "group": "Columns",
+      "material": "steel",
+      "section": "HSS5X5X1/4",
+      "length": 112.5,
+      "weight": 137.01529586955888,
+      "dcr": 0.33079660766987395,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P": 12458.67925134636,
+      "Mz": -89957.63474186935,
+      "My": 13379.8671518393,
+      "V": 571.5374468108728,
+      "slenderness": 58.29081556072027,
+      "Lb": 112.5,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "E.W3": {
+      "member": "E.W3",
+      "group": "Truss",
+      "material": "steel",
+      "section": "HSS3X3X1/8",
+      "length": 81.39488223348471,
+      "weight": 30.149920730915397,
+      "dcr": 0.5253937370613564,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": 3344.373375196163,
+      "Mz": -22565.66907025502,
+      "My": -9167.651797855036,
+      "V": 392.5888616072689,
+      "slenderness": 66.62191507856231,
+      "Lb": 77.89488223348471,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "E.W3.lower": {
+      "member": "E.W3.lower",
+      "group": "Truss",
+      "material": "steel",
+      "section": "HSS3X3X1/8",
+      "length": 42.85511776651529,
+      "weight": 15.874197100845947,
+      "dcr": 0.633436654519395,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": -11785.456506208275,
+      "Mz": 31246.059710058697,
+      "My": 552.4695761403964,
+      "V": 460.0377195588562,
+      "slenderness": 36.653114231107345,
+      "Lb": 42.85511776651529,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "E.clerestory": {
+      "member": "E.clerestory",
+      "group": "Truss",
+      "material": "steel",
+      "section": "HSS3X3X1/8",
+      "length": 81.39488223348471,
+      "weight": 30.149920730915397,
+      "dcr": 0.8473936562424075,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": 515.0197013722259,
+      "Mz": -5656.832233911934,
+      "My": -49354.83588037257,
+      "V": -209.07276777543302,
+      "slenderness": 36.143966658876174,
+      "Lb": 42.25981830489454,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "E.clerestory.lower": {
+      "member": "E.clerestory.lower",
+      "group": "Truss",
+      "material": "steel",
+      "section": "HSS3X3X1/8",
+      "length": 42.85511776651529,
+      "weight": 15.874197100845947,
+      "dcr": 0.5063595695448335,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": -8008.7384912742145,
+      "Mz": 27553.263843473742,
+      "My": -1058.7719323857254,
+      "V": 517.5155784775618,
+      "slenderness": 36.653114231107345,
+      "Lb": 42.85511776651529,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "E.slope": {
+      "member": "E.slope",
+      "group": "Truss",
+      "material": "steel",
+      "section": "HSS3X3X1/8",
+      "length": 154.7298721428197,
+      "weight": 57.31433293838632,
+      "dcr": 0.5209809774081847,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.pi]",
+      "P": 3477.114192816401,
+      "Mz": -8010.274289878618,
+      "My": 23305.84094321858,
+      "V": 113.90032141231153,
+      "slenderness": 67.65005077667033,
+      "Lb": 79.0969868116813,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "E.top": {
+      "member": "E.top",
+      "group": "Truss",
+      "material": "steel",
+      "section": "HSS3X3X1/8",
+      "length": 197.0,
+      "weight": 72.97184074733993,
+      "dcr": 0.7829766863477324,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": 1638.4078489671656,
+      "Mz": 30552.149680338014,
+      "My": -18744.889339525245,
+      "V": -735.0482445926388,
+      "slenderness": 97.50189102527818,
+      "Lb": 114.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "N-M": {
+      "member": "N-M",
+      "group": "Truss",
+      "material": "steel",
+      "section": "HSS3X3X1/8",
+      "length": 120.75,
+      "weight": 44.72766380833145,
+      "dcr": 0.1412236749301697,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX+.pi]",
+      "P": 374.1076096832766,
+      "Mz": 24.212607001846262,
+      "My": -8743.07792760905,
+      "V": 3.714655175421308,
+      "slenderness": 103.27502930966966,
+      "Lb": 120.75,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "N-M2": {
+      "member": "N-M2",
+      "group": "Truss",
+      "material": "steel",
+      "section": "HSS3X3X1/8",
+      "length": 120.75,
+      "weight": 44.72766380833145,
+      "dcr": 0.15515237096654672,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX-.pi]",
+      "P": 1813.172466164806,
+      "Mz": 115.16040064888108,
+      "My": -7818.1786239883195,
+      "V": -10.823994489716664,
+      "slenderness": 103.27502930966966,
+      "Lb": 120.75,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "N1": {
+      "member": "N1",
+      "group": "Columns",
+      "material": "steel",
+      "section": "HSS5X5X1/4",
+      "length": 112.5,
+      "weight": 137.01529586955888,
+      "dcr": 0.06473627628344078,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.pi]",
+      "P": 7619.273957243936,
+      "Mz": -844.0373617883718,
+      "My": -13243.840212724494,
+      "V": 19.83884588218558,
+      "slenderness": 58.29081556072027,
+      "Lb": 112.5,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "N2": {
+      "member": "N2",
+      "group": "Columns",
+      "material": "steel",
+      "section": "HSS5X5X1/4",
+      "length": 236.75,
+      "weight": 288.34107819660505,
+      "dcr": 0.6331016117431961,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": 15532.357191955896,
+      "Mz": 5748.906684750974,
+      "My": -201867.92413060114,
+      "V": 102.56434318649123,
+      "slenderness": 58.29081556072027,
+      "Lb": 112.5,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "R-W1": {
+      "member": "R-W1",
+      "group": "Roof",
+      "material": "steel",
+      "section": "W14X22",
+      "length": 245.5,
+      "weight": 451.85846200000003,
+      "dcr": 0.1978734563578032,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX-.pi]",
+      "P": 651.5547669713882,
+      "Mz": 19670.235255626383,
+      "My": -24505.921720156657,
+      "V": 434.5432457115675,
+      "slenderness": 236.0576923076923,
+      "Lb": 245.5,
+      "basis": "AISC 360-16 LRFD",
+      "flags": [
+        "KL/r = 236 exceeds 200"
+      ]
+    },
+    "R-W3": {
+      "member": "R-W3",
+      "group": "Roof",
+      "material": "steel",
+      "section": "W12X16",
+      "length": 245.5,
+      "weight": 327.92809800000003,
+      "dcr": 0.30506542053020697,
+      "mode": "flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": 1006.1290967435094,
+      "Mz": -219691.01809965738,
+      "My": -4673.248543375569,
+      "V": -330.2251291044611,
+      "slenderness": 52.93229840448471,
+      "Lb": 40.916666666666686,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "R-W4": {
+      "member": "R-W4",
+      "group": "Roof",
+      "material": "steel",
+      "section": "W12X16",
+      "length": 245.5,
+      "weight": 327.92809800000003,
+      "dcr": 0.27026530674942534,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.pi]",
+      "P": 832.4862948298561,
+      "Mz": 7342.467202115792,
+      "My": -26323.624567489453,
+      "V": -55.79648409619624,
+      "slenderness": 52.93229840448471,
+      "Lb": 40.916666666666686,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "RF @ 129.67": {
+      "member": "RF @ 129.67",
+      "group": "Rafters",
+      "material": "steel",
+      "section": "HSS2X2X1/8",
+      "length": 197.0,
+      "weight": 46.992662747340134,
+      "dcr": 0.5435257019792351,
+      "mode": "flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": -65.91264065002257,
+      "Mz": 11053.684737817355,
+      "My": 4075.587725941305,
+      "V": 514.0462092513084,
+      "slenderness": 149.8586160865699,
+      "Lb": 114.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "RF @ 170.58": {
+      "member": "RF @ 170.58",
+      "group": "Rafters",
+      "material": "steel",
+      "section": "HSS2X2X1/8",
+      "length": 197.0,
+      "weight": 46.992662747340134,
+      "dcr": 0.5429811359365079,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": 396.2430643190007,
+      "Mz": 10599.736089254466,
+      "My": 3885.8113555342075,
+      "V": 512.2938468270978,
+      "slenderness": 149.8586160865699,
+      "Lb": 114.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "RF @ 47.833": {
+      "member": "RF @ 47.833",
+      "group": "Rafters",
+      "material": "steel",
+      "section": "HSS2X2X1/8",
+      "length": 197.0,
+      "weight": 46.992662747340134,
+      "dcr": 0.528363050547595,
+      "mode": "flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": 63.99377841371158,
+      "Mz": 11834.28669985467,
+      "My": 2791.0939017877668,
+      "V": 524.3649093431301,
+      "slenderness": 149.8586160865699,
+      "Lb": 114.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "RF @ 6.9167": {
+      "member": "RF @ 6.9167",
+      "group": "Rafters",
+      "material": "steel",
+      "section": "HSS2X2X1/8",
+      "length": 197.0,
+      "weight": 46.992662747340134,
+      "dcr": 0.5067747143834197,
+      "mode": "flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": -174.07629598132604,
+      "Mz": 12003.85032014749,
+      "My": 2060.9651772034053,
+      "V": 525.5570016533494,
+      "slenderness": 149.8586160865699,
+      "Lb": 114.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "RF @ 88.75": {
+      "member": "RF @ 88.75",
+      "group": "Rafters",
+      "material": "steel",
+      "section": "HSS2X2X1/8",
+      "length": 197.0,
+      "weight": 46.992662747340134,
+      "dcr": 0.543448068073202,
+      "mode": "flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": 60.21534684184024,
+      "Mz": 11531.855769110052,
+      "My": 3520.321574049365,
+      "V": 520.8743211100065,
+      "slenderness": 149.8586160865699,
+      "Lb": 114.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "RS @ 129.67": {
+      "member": "RS @ 129.67",
+      "group": "Rafters",
+      "material": "steel",
+      "section": "HSS2X2X1/8",
+      "length": 154.7298721428197,
+      "weight": 36.90948577942429,
+      "dcr": 0.9634824119606904,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": 934.3028462980333,
+      "Mz": -22679.25191977117,
+      "My": -1160.205986500656,
+      "V": 39.37436340247291,
+      "slenderness": 203.40003953135846,
+      "Lb": 154.7298721428197,
+      "basis": "AISC 360-16 LRFD",
+      "flags": [
+        "KL/r = 203 exceeds 200"
+      ]
+    },
+    "RS @ 170.58": {
+      "member": "RS @ 170.58",
+      "group": "Rafters",
+      "material": "steel",
+      "section": "HSS2X2X1/8",
+      "length": 154.7298721428197,
+      "weight": 36.90948577942429,
+      "dcr": 0.6609941159028728,
+      "mode": "flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": -983.7730786408629,
+      "Mz": -18055.429655248437,
+      "My": 10.831144466173741,
+      "V": -2.4832891447282073,
+      "slenderness": 203.40003953135846,
+      "Lb": 154.7298721428197,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "RS @ 47.833": {
+      "member": "RS @ 47.833",
+      "group": "Rafters",
+      "material": "steel",
+      "section": "HSS2X2X1/8",
+      "length": 154.7298721428197,
+      "weight": 36.90948577942429,
+      "dcr": 0.8781682575339835,
+      "mode": "flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": -34.6741038194412,
+      "Mz": -24151.455864811833,
+      "My": 319.18745740586365,
+      "V": -0.8423642547504642,
+      "slenderness": 203.40003953135846,
+      "Lb": 154.7298721428197,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "RS @ 6.9167": {
+      "member": "RS @ 6.9167",
+      "group": "Rafters",
+      "material": "steel",
+      "section": "HSS2X2X1/8",
+      "length": 154.7298721428197,
+      "weight": 36.90948577942429,
+      "dcr": 0.941089727923608,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": 771.9883218594853,
+      "Mz": -22965.80102189511,
+      "My": 928.8296830592487,
+      "V": 35.42192875411058,
+      "slenderness": 203.40003953135846,
+      "Lb": 154.7298721428197,
+      "basis": "AISC 360-16 LRFD",
+      "flags": [
+        "KL/r = 203 exceeds 200"
+      ]
+    },
+    "RS @ 88.75": {
+      "member": "RS @ 88.75",
+      "group": "Rafters",
+      "material": "steel",
+      "section": "HSS2X2X1/8",
+      "length": 154.7298721428197,
+      "weight": 36.90948577942429,
+      "dcr": 0.8789364949164588,
+      "mode": "flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": 7.350061795543411,
+      "Mz": -24165.688804889833,
+      "My": -316.83533736818475,
+      "V": 0.9975827903066374,
+      "slenderness": 203.40003953135846,
+      "Lb": 154.7298721428197,
+      "basis": "AISC 360-16 LRFD",
+      "flags": [
+        "KL/r = 203 exceeds 200"
+      ]
+    },
+    "S1": {
+      "member": "S1",
+      "group": "Columns",
+      "material": "steel",
+      "section": "HSS5X5X1/4",
+      "length": 120.25,
+      "weight": 146.45412736279516,
+      "dcr": 0.06141991207840285,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": 4144.975361184735,
+      "Mz": -8463.938387578111,
+      "My": 8554.022873631111,
+      "V": 73.13464920564245,
+      "slenderness": 58.29081556072027,
+      "Lb": 112.5,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "S3": {
+      "member": "S3",
+      "group": "Columns",
+      "material": "steel",
+      "section": "HSS5X5X1/4",
+      "length": 45.56644276651531,
+      "weight": 55.495996776688145,
+      "dcr": 0.6520921440306106,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": 14133.396713217538,
+      "Mz": -18038.55982498796,
+      "My": 201223.07322685196,
+      "V": 680.9045574183508,
+      "slenderness": 22.05540146114577,
+      "Lb": 42.56644276651531,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "SW0": {
+      "member": "SW0",
+      "group": "Columns",
+      "material": "steel",
+      "section": "HSS5X5X1/4",
+      "length": 120.25,
+      "weight": 146.45412736279516,
+      "dcr": 0.22335706719934922,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": 9129.278070449349,
+      "Mz": 17010.033096913023,
+      "My": 51915.36595441283,
+      "V": -150.95591527195717,
+      "slenderness": 58.29081556072027,
+      "Lb": 112.5,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "W.rear.brace": {
+      "member": "W.rear.brace",
+      "group": "Truss",
+      "material": "steel",
+      "section": "HSS3X3X1/8",
+      "length": 149.42242970852803,
+      "weight": 55.348374338940616,
+      "dcr": 0.3569158316963629,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": -4468.135867230649,
+      "Mz": 5259.257470772819,
+      "My": 15562.108826692485,
+      "V": 109.54325765623035,
+      "slenderness": 127.7979777032736,
+      "Lb": 149.42242970852803,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "W.slope": {
+      "member": "W.slope",
+      "group": "Truss",
+      "material": "steel",
+      "section": "HSS3X3X1/8",
+      "length": 154.7298721428197,
+      "weight": 57.31433293838632,
+      "dcr": 0.3914247836023581,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX-.pi]",
+      "P": 4565.8362531611665,
+      "Mz": 981.929554822584,
+      "My": 21030.43870921577,
+      "V": 39.010933211828956,
+      "slenderness": 67.65005077667033,
+      "Lb": 79.0969868116813,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "W.top": {
+      "member": "W.top",
+      "group": "Truss",
+      "material": "steel",
+      "section": "HSS3X3X1/8",
+      "length": 197.0,
+      "weight": 72.97184074733993,
+      "dcr": 0.37691722930956195,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": 2894.5784052728795,
+      "Mz": 9294.065618865963,
+      "My": 12093.192587153093,
+      "V": -312.6670249816199,
+      "slenderness": 97.50189102527818,
+      "Lb": 114.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "W1": {
+      "member": "W1",
+      "group": "Columns",
+      "material": "steel",
+      "section": "HSS5X5X1/4",
+      "length": 45.56644276651531,
+      "weight": 55.495996776688145,
+      "dcr": 0.10561481610968328,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": 549.5442361644102,
+      "Mz": -16973.081986808906,
+      "My": 20079.29902236494,
+      "V": -591.5946171624405,
+      "slenderness": 58.29081556072027,
+      "Lb": 112.5,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "W2": {
+      "member": "W2",
+      "group": "Columns",
+      "material": "steel",
+      "section": "HSS5X5X1/4",
+      "length": 124.25,
+      "weight": 151.32578232704614,
+      "dcr": 0.3403694553204042,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": -724.3135842701437,
+      "Mz": 8829.05401967061,
+      "My": -112009.38552574873,
+      "V": -107.42463993850498,
+      "slenderness": 58.29081556072027,
+      "Lb": 112.5,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "W3": {
+      "member": "W3",
+      "group": "Columns",
+      "material": "steel",
+      "section": "HSS5X5X1/4",
+      "length": 236.75,
+      "weight": 288.34107819660505,
+      "dcr": 0.6096049969530244,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": 24767.247688290085,
+      "Mz": 164041.84410322062,
+      "My": -23122.800135051726,
+      "V": -1462.586047365213,
+      "slenderness": 62.56547536850642,
+      "Lb": 120.75,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "W4": {
+      "member": "W4",
+      "group": "Columns",
+      "material": "steel",
+      "section": "HSS5X5X1/4",
+      "length": 236.75,
+      "weight": 288.34107819660505,
+      "dcr": 0.04914963195972373,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX-.pi]",
+      "P": 4093.7890417522385,
+      "Mz": -2349.490056054633,
+      "My": 10162.140415761247,
+      "V": 185.22219178245348,
+      "slenderness": 62.56547536850642,
+      "Lb": 120.75,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    "loft bay 1 joist 1": {
+      "member": "loft bay 1 joist 1",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.26864552756017696,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -98.39473248880813,
+      "Mz": -4309.081305053052,
+      "My": 15.597931728930556,
+      "V": -1.353449333656954,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 1 joist 10": {
+      "member": "loft bay 1 joist 10",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.26679792006435393,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": 287.2694120875426,
+      "Mz": -4238.345926423707,
+      "My": 23.99404451619131,
+      "V": -1.62471559331334,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 1 joist 11": {
+      "member": "loft bay 1 joist 11",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.27570493042642186,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -211.81649933248227,
+      "Mz": -4237.23533624361,
+      "My": 54.300012346797224,
+      "V": 1.3303924054110894,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 1 joist 12": {
+      "member": "loft bay 1 joist 12",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.34234044992737717,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -2502.1433256133078,
+      "Mz": -5323.605229453382,
+      "My": 54.54115329965769,
+      "V": 23.05195426080934,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 1 joist 2": {
+      "member": "loft bay 1 joist 2",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.26672702562622913,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -9.474287473318721,
+      "Mz": -4261.1026146571085,
+      "My": 19.046375829003804,
+      "V": 0.213422863841231,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 1 joist 3": {
+      "member": "loft bay 1 joist 3",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.267422222218792,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": 1.1784101546607457,
+      "Mz": -4260.184289426286,
+      "My": 21.583835796771776,
+      "V": 0.20836862928331357,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 1 joist 4": {
+      "member": "loft bay 1 joist 4",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.2680127500464488,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -0.7633083771516558,
+      "Mz": -4260.112367325156,
+      "My": 23.592744165539123,
+      "V": 0.22019137171605507,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 1 joist 5": {
+      "member": "loft bay 1 joist 5",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.268469494833983,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -0.6780074975545641,
+      "Mz": -4260.234069602625,
+      "My": 25.10984879875103,
+      "V": 0.22496151998410596,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 1 joist 6": {
+      "member": "loft bay 1 joist 6",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.2687306598385434,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -1.7940498289060125,
+      "Mz": -4260.245719773677,
+      "My": 25.989311024869743,
+      "V": 0.24451626646180102,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 1 joist 7": {
+      "member": "loft bay 1 joist 7",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.2677011996171714,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -10.038131986680717,
+      "Mz": -4242.4981536577325,
+      "My": 26.18505579450074,
+      "V": 0.30135201208781837,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 1 joist 8": {
+      "member": "loft bay 1 joist 8",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.26681333024983556,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -0.06235353326159071,
+      "Mz": -4232.701265410301,
+      "My": 25.21394079620512,
+      "V": 0.24462808061900887,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 1 joist 9": {
+      "member": "loft bay 1 joist 9",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.2660772014673624,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": 104.1026878759941,
+      "Mz": -4234.601953483575,
+      "My": 22.335018129774355,
+      "V": -0.45153509627942867,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 2 joist 1": {
+      "member": "loft bay 2 joist 1",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.26778277195636735,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -11.003769901671722,
+      "Mz": -4282.063704222975,
+      "My": 18.274524113593838,
+      "V": -0.5795978409982467,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 2 joist 10": {
+      "member": "loft bay 2 joist 10",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.26803587706351645,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": 309.1632933023606,
+      "Mz": -4253.651894147676,
+      "My": 25.00748649791071,
+      "V": 1.4202986360736531,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 2 joist 11": {
+      "member": "loft bay 2 joist 11",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.26911561193946537,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -234.86406667169356,
+      "Mz": -4257.948165673843,
+      "My": 27.764529992807287,
+      "V": -1.903981332574972,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 2 joist 12": {
+      "member": "loft bay 2 joist 12",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.3511992027282973,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -2546.8129471847824,
+      "Mz": -5599.341257803899,
+      "My": 27.40555969628357,
+      "V": -11.746439864453976,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 2 joist 2": {
+      "member": "loft bay 2 joist 2",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.2670595818296317,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -13.960191971835375,
+      "Mz": -4266.208030958345,
+      "My": 19.113021176238465,
+      "V": -0.05310348670747089,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 2 joist 3": {
+      "member": "loft bay 2 joist 3",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.26761675608995916,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -1.3814444601697418,
+      "Mz": -4266.322519752189,
+      "My": 20.970737199750914,
+      "V": -0.009551153167819848,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 2 joist 4": {
+      "member": "loft bay 2 joist 4",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.26822742683277495,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -2.77729160296925,
+      "Mz": -4266.883325852577,
+      "My": 22.916752615276373,
+      "V": -0.03526806325265852,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 2 joist 5": {
+      "member": "loft bay 2 joist 5",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.268734000549628,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -1.7260507185179264,
+      "Mz": -4267.83356114027,
+      "My": 24.43069334845216,
+      "V": -0.05472901360775495,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 2 joist 6": {
+      "member": "loft bay 2 joist 6",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.2690134902318437,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": 0.42309988649761576,
+      "Mz": -4268.9145282588,
+      "My": 25.150794295417974,
+      "V": -0.0673916155541292,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 2 joist 7": {
+      "member": "loft bay 2 joist 7",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.26802156146132566,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -9.405737732322871,
+      "Mz": -4252.341855828239,
+      "My": 25.23018959385591,
+      "V": -0.16136831620463,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 2 joist 8": {
+      "member": "loft bay 2 joist 8",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.2674710518564376,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -1.8684297749094403,
+      "Mz": -4243.909401928726,
+      "My": 25.115936326782638,
+      "V": -0.1605369754113326,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 2 joist 9": {
+      "member": "loft bay 2 joist 9",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.26761264472458957,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": 111.20219673766282,
+      "Mz": -4247.621282108935,
+      "My": 24.826075985062246,
+      "V": 0.422757400958119,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 3 joist 1": {
+      "member": "loft bay 3 joist 1",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 83.0,
+      "weight": 16.698562499999998,
+      "dcr": 0.5493307598691212,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -52.24078750676319,
+      "Mz": -8959.99077377005,
+      "My": -1.1271156424491926,
+      "V": 4.713888850084345,
+      "slenderness": 191.68028937095576,
+      "Lb": 83.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 3 joist 10": {
+      "member": "loft bay 3 joist 10",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 83.0,
+      "weight": 16.698562499999998,
+      "dcr": 0.5640042648260831,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -7.090161686275884,
+      "Mz": -9162.24388035769,
+      "My": 8.82948608333351,
+      "V": -0.30196111800421477,
+      "slenderness": 191.68028937095576,
+      "Lb": 83.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 3 joist 11": {
+      "member": "loft bay 3 joist 11",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 83.0,
+      "weight": 16.698562499999998,
+      "dcr": 0.5628105661953178,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": 4.126929771806455,
+      "Mz": -9138.951257034603,
+      "My": 9.617902284217015,
+      "V": -0.16771946201833998,
+      "slenderness": 191.68028937095576,
+      "Lb": 83.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 3 joist 12": {
+      "member": "loft bay 3 joist 12",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 83.0,
+      "weight": 16.698562499999998,
+      "dcr": 0.563680099032656,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": 81.17190992341268,
+      "Mz": -9144.218952173595,
+      "My": 11.464174987105302,
+      "V": 0.583483187976924,
+      "slenderness": 191.68028937095576,
+      "Lb": 83.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 3 joist 13": {
+      "member": "loft bay 3 joist 13",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 83.0,
+      "weight": 16.698562499999998,
+      "dcr": 0.5638502864602507,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": 237.95020874615273,
+      "Mz": -9157.9004142299,
+      "My": 9.208197424527143,
+      "V": 1.8471188615502,
+      "slenderness": 191.68028937095576,
+      "Lb": 83.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 3 joist 14": {
+      "member": "loft bay 3 joist 14",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 83.0,
+      "weight": 16.698562499999998,
+      "dcr": 0.5656934718923745,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": 73.22457174693895,
+      "Mz": -9187.71625918152,
+      "My": -9.263263126130191,
+      "V": -0.6439355560106605,
+      "slenderness": 191.68028937095576,
+      "Lb": 83.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 3 joist 15": {
+      "member": "loft bay 3 joist 15",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 83.0,
+      "weight": 16.698562499999998,
+      "dcr": 0.7752563161991006,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -2710.4738469599474,
+      "Mz": -12423.086352473636,
+      "My": 47.504584107557164,
+      "V": -17.901415063128184,
+      "slenderness": 191.68028937095576,
+      "Lb": 83.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 3 joist 2": {
+      "member": "loft bay 3 joist 2",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 83.0,
+      "weight": 16.698562499999998,
+      "dcr": 0.4104011750099904,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -45.211867646405516,
+      "Mz": -6695.4083900825235,
+      "My": -0.5396093486109517,
+      "V": 3.127788611439769,
+      "slenderness": 191.68028937095576,
+      "Lb": 83.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 3 joist 3": {
+      "member": "loft bay 3 joist 3",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 83.0,
+      "weight": 16.698562499999998,
+      "dcr": 0.4347835200977069,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": 21.300755661278014,
+      "Mz": -7086.598447256255,
+      "My": 1.9352953289764088,
+      "V": 2.9836657334747088,
+      "slenderness": 191.68028937095576,
+      "Lb": 83.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 3 joist 4": {
+      "member": "loft bay 3 joist 4",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 83.0,
+      "weight": 16.698562499999998,
+      "dcr": 0.5616978135191217,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -1.1930103760492812,
+      "Mz": -9145.806292548863,
+      "My": 4.442201022067495,
+      "V": 0.47525652253756334,
+      "slenderness": 191.68028937095576,
+      "Lb": 83.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 3 joist 5": {
+      "member": "loft bay 3 joist 5",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 83.0,
+      "weight": 16.698562499999998,
+      "dcr": 0.5618587814261394,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -4.7586706737198545,
+      "Mz": -9143.467241447086,
+      "My": 5.469680948859732,
+      "V": -0.3244129894563912,
+      "slenderness": 191.68028937095576,
+      "Lb": 83.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 3 joist 6": {
+      "member": "loft bay 3 joist 6",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 83.0,
+      "weight": 16.698562499999998,
+      "dcr": 0.5642666809397937,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -1.7125439724076117,
+      "Mz": -9177.46681040352,
+      "My": 6.566011560678529,
+      "V": -0.29727589450828873,
+      "slenderness": 191.68028937095576,
+      "Lb": 83.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 3 joist 7": {
+      "member": "loft bay 3 joist 7",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 83.0,
+      "weight": 16.698562499999998,
+      "dcr": 0.564631542432224,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -8.264054730254216,
+      "Mz": -9177.72291257149,
+      "My": 7.745048145957115,
+      "V": -0.3709456382531471,
+      "slenderness": 191.68028937095576,
+      "Lb": 83.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 3 joist 8": {
+      "member": "loft bay 3 joist 8",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 83.0,
+      "weight": 16.698562499999998,
+      "dcr": 0.5649469359158618,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -0.10397828705676224,
+      "Mz": -9178.633560209493,
+      "My": 8.621623523599965,
+      "V": -0.2786568621065726,
+      "slenderness": 191.68028937095576,
+      "Lb": 83.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "loft bay 3 joist 9": {
+      "member": "loft bay 3 joist 9",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 83.0,
+      "weight": 16.698562499999998,
+      "dcr": 0.5650174874564674,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": 5.447433331849424,
+      "Mz": -9178.754357608757,
+      "My": 8.834861463503419,
+      "V": -0.1946061910493313,
+      "slenderness": 191.68028937095576,
+      "Lb": 83.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "shelf SH joist 10": {
+      "member": "shelf SH joist 10",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 68.5,
+      "weight": 13.78134375,
+      "dcr": 0.37943454930128745,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -6.379464452618289,
+      "Mz": -6087.55290018263,
+      "My": -21.738196207729857,
+      "V": 0.5711935485115305,
+      "slenderness": 158.19397375795748,
+      "Lb": 68.5,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "shelf SH joist 11": {
+      "member": "shelf SH joist 11",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 68.5,
+      "weight": 13.78134375,
+      "dcr": 0.3789820440498845,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": 7.927027367623267,
+      "Mz": -6071.631724878105,
+      "My": -23.504263651534604,
+      "V": 0.3505654249844383,
+      "slenderness": 158.19397375795748,
+      "Lb": 68.5,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "shelf SH joist 12": {
+      "member": "shelf SH joist 12",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 68.5,
+      "weight": 13.78134375,
+      "dcr": 0.38019158020367405,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": 63.915820479767376,
+      "Mz": -6074.962063206762,
+      "My": -26.899453746560198,
+      "V": -0.3213191545638665,
+      "slenderness": 158.19397375795748,
+      "Lb": 68.5,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "shelf SH joist 13": {
+      "member": "shelf SH joist 13",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 68.5,
+      "weight": 13.78134375,
+      "dcr": 0.3798296253984132,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": 147.81858272265268,
+      "Mz": -6080.843148126341,
+      "My": -24.460469289813325,
+      "V": -1.1580586487898472,
+      "slenderness": 158.19397375795748,
+      "Lb": 68.5,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "shelf SH joist 14": {
+      "member": "shelf SH joist 14",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 68.5,
+      "weight": 13.78134375,
+      "dcr": 0.373570890480606,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": 213.25364850669274,
+      "Mz": -6065.615407681341,
+      "My": 6.477244315660693,
+      "V": -0.9582650871596456,
+      "slenderness": 158.19397375795748,
+      "Lb": 68.5,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "shelf SH joist 15": {
+      "member": "shelf SH joist 15",
+      "group": "Joists",
+      "material": "wood",
+      "section": "double 2x8 DF-L No.2",
+      "length": 68.5,
+      "weight": 27.5626875,
+      "dcr": 0.3069167133064254,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -2637.5420013008975,
+      "Mz": -8127.5294534118475,
+      "My": 782.3316815570035,
+      "V": 24.07836654514017,
+      "slenderness": 79.09698687897874,
+      "Lb": 68.5,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "shelf SH joist 3": {
+      "member": "shelf SH joist 3",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 68.5,
+      "weight": 13.78134375,
+      "dcr": 0.30424330158844065,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -0.4230774631589172,
+      "Mz": -4822.87118742687,
+      "My": -29.499135344099702,
+      "V": 0.26196749606498315,
+      "slenderness": 158.19397375795748,
+      "Lb": 68.5,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "shelf SH joist 4": {
+      "member": "shelf SH joist 4",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 68.5,
+      "weight": 13.78134375,
+      "dcr": 0.38206013154022267,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -21.498801475398093,
+      "Mz": -6094.48787449708,
+      "My": -29.16914466220899,
+      "V": 0.6047193166714919,
+      "slenderness": 158.19397375795748,
+      "Lb": 68.5,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "shelf SH joist 5": {
+      "member": "shelf SH joist 5",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 68.5,
+      "weight": 13.78134375,
+      "dcr": 0.3821140765118515,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -3.636601485278739,
+      "Mz": -6106.716524059142,
+      "My": -26.821234546962376,
+      "V": 0.1791261959281769,
+      "slenderness": 158.19397375795748,
+      "Lb": 68.5,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "shelf SH joist 6": {
+      "member": "shelf SH joist 6",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 68.5,
+      "weight": 13.78134375,
+      "dcr": 0.38142970735180076,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": 1.039000967166212,
+      "Mz": -6105.38106811177,
+      "My": -24.78663498932426,
+      "V": 0.22539262799813287,
+      "slenderness": 158.19397375795748,
+      "Lb": 68.5,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "shelf SH joist 7": {
+      "member": "shelf SH joist 7",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 68.5,
+      "weight": 13.78134375,
+      "dcr": 0.3808943120147033,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -0.01168196843954815,
+      "Mz": -6103.796752875463,
+      "My": -23.306561606225053,
+      "V": 0.3265527763011846,
+      "slenderness": 158.19397375795748,
+      "Lb": 68.5,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "shelf SH joist 8": {
+      "member": "shelf SH joist 8",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 68.5,
+      "weight": 13.78134375,
+      "dcr": 0.3804965504101882,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -0.35215548315863154,
+      "Mz": -6102.388938003556,
+      "My": -22.254717010742574,
+      "V": 0.41446147973204006,
+      "slenderness": 158.19397375795748,
+      "Lb": 68.5,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "shelf SH joist 9": {
+      "member": "shelf SH joist 9",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 68.5,
+      "weight": 13.78134375,
+      "dcr": 0.38030101007966716,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -2.8751068715666896,
+      "Mz": -6102.208880914973,
+      "My": -21.63169161166748,
+      "V": 0.5237532008954986,
+      "slenderness": 158.19397375795748,
+      "Lb": 68.5,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "west strip infill joist 1": {
+      "member": "west strip infill joist 1",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.000000000021934,
+      "weight": 11.467687500004413,
+      "dcr": 0.25045327417511787,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -257.5695558939012,
+      "Mz": -4078.9002728108185,
+      "My": 1.7920389699895534,
+      "V": 0.7430078941021634,
+      "slenderness": 131.63586137528534,
+      "Lb": 57.000000000021934,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    "west strip infill joist 2": {
+      "member": "west strip infill joist 2",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 57.0,
+      "weight": 11.4676875,
+      "dcr": 0.1971030462814527,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -43.42055408806397,
+      "Mz": -3168.908585317334,
+      "My": 9.919133559330193,
+      "V": -2.5052665119964104,
+      "slenderness": 131.63586137523467,
+      "Lb": 57.0,
+      "basis": "NDS ASD",
+      "flags": []
+    }
+  },
+  "equilibrium": {
+    "C1 1.4D": {
+      "applied_lb": -36041.7,
+      "reaction_lb": 36041.7,
+      "residual_lb": -0.0,
+      "relative": 1e-08
+    },
+    "C2 1.2D+1.6L+0.5Lr": {
+      "applied_lb": -103911.9,
+      "reaction_lb": 103911.9,
+      "residual_lb": -0.001,
+      "relative": 1e-08
+    },
+    "C3 1.2D+1.6Lr+1.0L": {
+      "applied_lb": -91918.0,
+      "reaction_lb": 91918.0,
+      "residual_lb": -0.004,
+      "relative": 4e-08
+    }
+  },
+  "applied": {
+    "D": {
+      "fx": 0.0,
+      "fy": -25744.1,
+      "fz": 0.0,
+      "self_weight_lb": 9454.2,
+      "solar_roof_ft2": 263.9,
+      "upper_roof_ft2": 335.9,
+      "loft_bay_1_ft2": 82.2,
+      "loft_bay_2_ft2": 82.2,
+      "loft_bay_3_ft2": 141.5,
+      "shelf_SH_ft2": 98.1,
+      "west_strip_infill_ft2": 14.9,
+      "west_wall_ft2": 467.0,
+      "east_wall_ft2": 208.4,
+      "east_outer_wall_ft2": 258.6,
+      "south_wall_ft2": 205.0,
+      "north_wall_ft2": 397.7,
+      "clerestory_ft2": 60.8,
+      "east_canopy_ft2": 0.0
+    },
+    "Lr": {
+      "fx": 0.0,
+      "fy": -11952.0,
+      "fz": 0.0
+    },
+    "L100": {
+      "fx": 0.0,
+      "fy": -41901.9,
+      "fz": 0.0
+    },
+    "WX+.pi": {
+      "fx": 8991.5,
+      "fy": 17577.5,
+      "fz": -446.5
+    },
+    "WX+.ni": {
+      "fx": 8991.5,
+      "fy": 11192.6,
+      "fz": -446.1
+    },
+    "WX-.pi": {
+      "fx": -9001.1,
+      "fy": 17165.1,
+      "fz": -432.1
+    },
+    "WX-.ni": {
+      "fx": -9001.1,
+      "fy": 10780.2,
+      "fz": -431.7
+    },
+    "WY+.pi": {
+      "fx": 0.0,
+      "fy": 14242.4,
+      "fz": 4723.1
+    },
+    "WY+.ni": {
+      "fx": 0.0,
+      "fy": 7857.5,
+      "fz": 4723.4
+    },
+    "WY-.pi": {
+      "fx": 0.0,
+      "fy": 15735.9,
+      "fz": -7018.1
+    },
+    "WY-.ni": {
+      "fx": 0.0,
+      "fy": 9351.0,
+      "fz": -7017.7
+    },
+    "EX+": {
+      "fx": 5280.8,
+      "fy": 0.0,
+      "fz": 0.0,
+      "base_shear_lb": 5280.8,
+      "seismic_weight_lb": 25744.1,
+      "Cs": 0.2051
+    },
+    "EX-": {
+      "fx": -5280.8,
+      "fy": 0.0,
+      "fz": 0.0,
+      "base_shear_lb": 5280.8,
+      "seismic_weight_lb": 25744.1,
+      "Cs": 0.2051
+    },
+    "EZ+": {
+      "fx": 0.0,
+      "fy": 0.0,
+      "fz": -5280.8,
+      "base_shear_lb": 5280.8,
+      "seismic_weight_lb": 25744.1,
+      "Cs": 0.2051
+    },
+    "EZ-": {
+      "fx": 0.0,
+      "fy": 0.0,
+      "fz": 5280.8,
+      "base_shear_lb": 5280.8,
+      "seismic_weight_lb": 25744.1,
+      "Cs": 0.2051
+    }
+  },
+  "reactions": {
+    "DOOR-E.base": {
+      "max_compression": 7020.9,
+      "max_uplift": 545.3,
+      "max_vertical": 7020.9,
+      "max_shear": 35.3
+    },
+    "DOOR-W.base": {
+      "max_compression": 8853.2,
+      "max_uplift": 390.1,
+      "max_vertical": 8853.2,
+      "max_shear": 41.2
+    },
+    "EF@-6.base": {
+      "max_compression": 17550.4,
+      "max_uplift": 324.3,
+      "max_vertical": 17550.4,
+      "max_shear": 1058.8
+    },
+    "EF@-63.base": {
+      "max_compression": 4260.8,
+      "max_uplift": 5437.2,
+      "max_vertical": 4260.8,
+      "max_shear": 1501.2
+    },
+    "EF@268.base": {
+      "max_compression": 1745.2,
+      "max_uplift": 250.2,
+      "max_vertical": 1745.2,
+      "max_shear": 819.4
+    },
+    "N1.base": {
+      "max_compression": 12178.8,
+      "max_uplift": 3976.4,
+      "max_vertical": 12178.8,
+      "max_shear": 2609.7
+    },
+    "N2.base": {
+      "max_compression": 21628.0,
+      "max_uplift": 278.4,
+      "max_vertical": 21628.0,
+      "max_shear": 569.8
+    },
+    "S1.base": {
+      "max_compression": 5567.1,
+      "max_uplift": 4070.4,
+      "max_vertical": 5567.1,
+      "max_shear": 1727.9
+    },
+    "SW0.base": {
+      "max_compression": 9818.6,
+      "max_uplift": 0.0,
+      "max_vertical": 9818.6,
+      "max_shear": 582.1
+    },
+    "W3.base": {
+      "max_compression": 25354.0,
+      "max_uplift": 3086.4,
+      "max_vertical": 25354.0,
+      "max_shear": 1538.0
+    },
+    "W4.base": {
+      "max_compression": 8281.7,
+      "max_uplift": 6358.4,
+      "max_vertical": 8281.7,
+      "max_shear": 4016.1
+    }
+  },
+  "drift": {
+    "S5 D+0.6W [WX+.pi]": {
+      "drift_in": 0.6044,
+      "ratio": 392.0
+    },
+    "S5 D+0.6W [WX-.pi]": {
+      "drift_in": 0.5903,
+      "ratio": 401.0
+    },
+    "S5 D+0.6W [WY+.pi]": {
+      "drift_in": 0.3308,
+      "ratio": 716.0
+    },
+    "S5 D+0.6W [WY-.pi]": {
+      "drift_in": 0.5727,
+      "ratio": 413.0
+    }
+  },
+  "deflection": {
+    "B-1": {
+      "span_in": 243.8,
+      "S1 D": {
+        "defl_in": -0.0746,
+        "ratio": 3267.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.4762,
+        "ratio": 512.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.1085,
+        "ratio": 2246.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.4006,
+        "ratio": 608.0
+      }
+    },
+    "B-1A": {
+      "span_in": 281.5,
+      "S1 D": {
+        "defl_in": -0.1019,
+        "ratio": 2764.0
+      },
+      "S2 D+L": {
+        "defl_in": -1.0142,
+        "ratio": 278.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.088,
+        "ratio": 3199.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.7757,
+        "ratio": 363.0
+      }
+    },
+    "B-2": {
+      "span_in": 281.5,
+      "S1 D": {
+        "defl_in": -0.1127,
+        "ratio": 2498.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.8104,
+        "ratio": 347.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.1425,
+        "ratio": 1975.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.6582,
+        "ratio": 428.0
+      }
+    },
+    "B-N": {
+      "span_in": 281.5,
+      "S1 D": {
+        "defl_in": -0.0142,
+        "ratio": 19843.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0481,
+        "ratio": 5854.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0174,
+        "ratio": 16156.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.042,
+        "ratio": 6706.0
+      }
+    },
+    "B-S": {
+      "span_in": 281.5,
+      "S1 D": {
+        "defl_in": -0.003,
+        "ratio": 92687.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0178,
+        "ratio": 15789.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0048,
+        "ratio": 58366.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0152,
+        "ratio": 18561.0
+      }
+    },
+    "B-SO": {
+      "span_in": 281.5,
+      "S1 D": {
+        "defl_in": -0.0319,
+        "ratio": 8835.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0321,
+        "ratio": 8774.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0651,
+        "ratio": 4326.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0569,
+        "ratio": 4946.0
+      }
+    },
+    "BE": {
+      "span_in": 331.0,
+      "S1 D": {
+        "defl_in": -0.1004,
+        "ratio": 3297.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.2636,
+        "ratio": 1256.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.1623,
+        "ratio": 2040.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.2692,
+        "ratio": 1229.0
+      }
+    },
+    "BE.upper": {
+      "span_in": 265.5,
+      "S1 D": {
+        "defl_in": -0.1232,
+        "ratio": 2155.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.4805,
+        "ratio": 553.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.1963,
+        "ratio": 1352.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.4461,
+        "ratio": 595.0
+      }
+    },
+    "BR-N-1": {
+      "span_in": 134.8,
+      "S1 D": {
+        "defl_in": -0.0008,
+        "ratio": 165669.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0045,
+        "ratio": 30062.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.001,
+        "ratio": 136888.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0037,
+        "ratio": 36307.0
+      }
+    },
+    "BR-N-2": {
+      "span_in": 134.8,
+      "S1 D": {
+        "defl_in": -0.0004,
+        "ratio": 342614.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0001,
+        "ratio": 1564764.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0004,
+        "ratio": 368396.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0001,
+        "ratio": 955093.0
+      }
+    },
+    "BR-NU-1": {
+      "span_in": 172.2,
+      "S1 D": {
+        "defl_in": -0.0296,
+        "ratio": 5818.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0456,
+        "ratio": 3776.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0311,
+        "ratio": 5537.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0427,
+        "ratio": 4030.0
+      }
+    },
+    "BR-S-1": {
+      "span_in": 136.9,
+      "S1 D": {
+        "defl_in": -0.0144,
+        "ratio": 9538.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0148,
+        "ratio": 9220.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0174,
+        "ratio": 7870.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.017,
+        "ratio": 8036.0
+      }
+    },
+    "BR-S-2": {
+      "span_in": 143.3,
+      "S1 D": {
+        "defl_in": -0.0147,
+        "ratio": 9762.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0148,
+        "ratio": 9689.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0165,
+        "ratio": 8672.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0161,
+        "ratio": 8882.0
+      }
+    },
+    "BR-W-2": {
+      "span_in": 139.8,
+      "S1 D": {
+        "defl_in": -0.0137,
+        "ratio": 10190.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0204,
+        "ratio": 6849.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.016,
+        "ratio": 8730.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0205,
+        "ratio": 6835.0
+      }
+    },
+    "BW": {
+      "span_in": 331.0,
+      "S1 D": {
+        "defl_in": -0.0994,
+        "ratio": 3328.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.2249,
+        "ratio": 1472.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.1637,
+        "ratio": 2021.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.2419,
+        "ratio": 1369.0
+      }
+    },
+    "BWI": {
+      "span_in": 265.5,
+      "S1 D": {
+        "defl_in": -0.0703,
+        "ratio": 3774.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.4789,
+        "ratio": 554.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0846,
+        "ratio": 3137.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.3876,
+        "ratio": 685.0
+      }
+    },
+    "CT.bottom": {
+      "span_in": 245.5,
+      "S1 D": {
+        "defl_in": -0.1624,
+        "ratio": 1512.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.161,
+        "ratio": 1525.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.4235,
+        "ratio": 580.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.3573,
+        "ratio": 687.0
+      }
+    },
+    "CT.diag.E": {
+      "span_in": 54.3,
+      "S1 D": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S2 D+L": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S3 D+Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      }
+    },
+    "CT.diag.W": {
+      "span_in": 54.3,
+      "S1 D": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S2 D+L": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S3 D+Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      }
+    },
+    "CT.top": {
+      "span_in": 245.5,
+      "S1 D": {
+        "defl_in": -0.1623,
+        "ratio": 1513.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.1608,
+        "ratio": 1527.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.4233,
+        "ratio": 580.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.3571,
+        "ratio": 687.0
+      }
+    },
+    "DOOR-E": {
+      "span_in": 112.5,
+      "S1 D": {
+        "defl_in": -0.0118,
+        "ratio": 9533.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.015,
+        "ratio": 7514.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0404,
+        "ratio": 2784.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0355,
+        "ratio": 3165.0
+      }
+    },
+    "DOOR-W": {
+      "span_in": 112.5,
+      "S1 D": {
+        "defl_in": -0.0119,
+        "ratio": 9416.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0137,
+        "ratio": 8233.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0412,
+        "ratio": 2728.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.035,
+        "ratio": 3217.0
+      }
+    },
+    "E-N2": {
+      "span_in": 112.5,
+      "S1 D": {
+        "defl_in": -0.0024,
+        "ratio": 46802.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0123,
+        "ratio": 9153.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0032,
+        "ratio": 35623.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0104,
+        "ratio": 10852.0
+      }
+    },
+    "E-S2": {
+      "span_in": 112.5,
+      "S1 D": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S2 D+L": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S3 D+Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      }
+    },
+    "E-S3": {
+      "span_in": 112.5,
+      "S1 D": {
+        "defl_in": -0.0199,
+        "ratio": 5649.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0398,
+        "ratio": 2823.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0567,
+        "ratio": 1984.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0604,
+        "ratio": 1863.0
+      }
+    },
+    "E.W3": {
+      "span_in": 81.4,
+      "S1 D": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S2 D+L": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S3 D+Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      }
+    },
+    "E.W3.lower": {
+      "span_in": 42.9,
+      "S1 D": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S2 D+L": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S3 D+Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      }
+    },
+    "E.clerestory": {
+      "span_in": 81.4,
+      "S1 D": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S2 D+L": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S3 D+Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      }
+    },
+    "E.clerestory.lower": {
+      "span_in": 42.9,
+      "S1 D": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S2 D+L": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S3 D+Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      }
+    },
+    "E.slope": {
+      "span_in": 154.7,
+      "S1 D": {
+        "defl_in": -0.0047,
+        "ratio": 32579.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0532,
+        "ratio": 2910.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.01,
+        "ratio": 15409.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.037,
+        "ratio": 4179.0
+      }
+    },
+    "E.top": {
+      "span_in": 197.0,
+      "S1 D": {
+        "defl_in": -0.0679,
+        "ratio": 2901.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.2614,
+        "ratio": 754.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.1104,
+        "ratio": 1785.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.2449,
+        "ratio": 804.0
+      }
+    },
+    "N-M": {
+      "span_in": 120.8,
+      "S1 D": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S2 D+L": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S3 D+Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      }
+    },
+    "N-M2": {
+      "span_in": 120.8,
+      "S1 D": {
+        "defl_in": -0.0005,
+        "ratio": 230333.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0045,
+        "ratio": 26660.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0007,
+        "ratio": 165889.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0037,
+        "ratio": 32792.0
+      }
+    },
+    "N1": {
+      "span_in": 112.5,
+      "S1 D": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S2 D+L": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S3 D+Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      }
+    },
+    "N2": {
+      "span_in": 236.8,
+      "S1 D": {
+        "defl_in": -0.0027,
+        "ratio": 89323.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0116,
+        "ratio": 20419.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.003,
+        "ratio": 77931.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0097,
+        "ratio": 24476.0
+      }
+    },
+    "R-W1": {
+      "span_in": 245.5,
+      "S1 D": {
+        "defl_in": -0.0171,
+        "ratio": 14337.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0128,
+        "ratio": 19153.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0316,
+        "ratio": 7763.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0248,
+        "ratio": 9910.0
+      }
+    },
+    "R-W3": {
+      "span_in": 245.5,
+      "S1 D": {
+        "defl_in": -0.1044,
+        "ratio": 2351.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0692,
+        "ratio": 3549.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.3151,
+        "ratio": 779.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.2357,
+        "ratio": 1041.0
+      }
+    },
+    "R-W4": {
+      "span_in": 245.5,
+      "S1 D": {
+        "defl_in": -0.0098,
+        "ratio": 24926.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.023,
+        "ratio": 10687.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.014,
+        "ratio": 17539.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0225,
+        "ratio": 10898.0
+      }
+    },
+    "RF @ 129.67": {
+      "span_in": 197.0,
+      "S1 D": {
+        "defl_in": -0.2272,
+        "ratio": 867.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.2895,
+        "ratio": 680.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.7041,
+        "ratio": 280.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.6343,
+        "ratio": 311.0
+      }
+    },
+    "RF @ 170.58": {
+      "span_in": 197.0,
+      "S1 D": {
+        "defl_in": -0.241,
+        "ratio": 817.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.3339,
+        "ratio": 590.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.7149,
+        "ratio": 276.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.6578,
+        "ratio": 299.0
+      }
+    },
+    "RF @ 47.833": {
+      "span_in": 197.0,
+      "S1 D": {
+        "defl_in": -0.1983,
+        "ratio": 994.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.1963,
+        "ratio": 1004.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.6535,
+        "ratio": 301.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.5385,
+        "ratio": 366.0
+      }
+    },
+    "RF @ 6.9167": {
+      "span_in": 197.0,
+      "S1 D": {
+        "defl_in": -0.1885,
+        "ratio": 1045.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.1684,
+        "ratio": 1170.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.6269,
+        "ratio": 314.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.5056,
+        "ratio": 390.0
+      }
+    },
+    "RF @ 88.75": {
+      "span_in": 197.0,
+      "S1 D": {
+        "defl_in": -0.2075,
+        "ratio": 950.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.232,
+        "ratio": 849.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.6692,
+        "ratio": 294.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.5723,
+        "ratio": 344.0
+      }
+    },
+    "RS @ 129.67": {
+      "span_in": 154.7,
+      "S1 D": {
+        "defl_in": -0.7494,
+        "ratio": 206.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.7251,
+        "ratio": 213.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -1.973,
+        "ratio": 78.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -1.6675,
+        "ratio": 93.0
+      }
+    },
+    "RS @ 170.58": {
+      "span_in": 154.7,
+      "S1 D": {
+        "defl_in": -0.8766,
+        "ratio": 177.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.8839,
+        "ratio": 175.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -2.389,
+        "ratio": 65.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -2.0361,
+        "ratio": 76.0
+      }
+    },
+    "RS @ 47.833": {
+      "span_in": 154.7,
+      "S1 D": {
+        "defl_in": -0.9465,
+        "ratio": 163.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.9506,
+        "ratio": 163.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -2.6969,
+        "ratio": 57.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -2.2703,
+        "ratio": 68.0
+      }
+    },
+    "RS @ 6.9167": {
+      "span_in": 154.7,
+      "S1 D": {
+        "defl_in": -0.7964,
+        "ratio": 194.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.7635,
+        "ratio": 203.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -2.1175,
+        "ratio": 73.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -1.7779,
+        "ratio": 87.0
+      }
+    },
+    "RS @ 88.75": {
+      "span_in": 154.7,
+      "S1 D": {
+        "defl_in": -0.9342,
+        "ratio": 166.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.9387,
+        "ratio": 165.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -2.6548,
+        "ratio": 58.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -2.2366,
+        "ratio": 69.0
+      }
+    },
+    "S1": {
+      "span_in": 120.2,
+      "S1 D": {
+        "defl_in": -0.0041,
+        "ratio": 29666.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0041,
+        "ratio": 29414.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0081,
+        "ratio": 14839.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0071,
+        "ratio": 16868.0
+      }
+    },
+    "S3": {
+      "span_in": 45.6,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 26976.0
+      },
+      "S2 D+L": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0318,
+        "ratio": 1435.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0056,
+        "ratio": 8153.0
+      }
+    },
+    "SW0": {
+      "span_in": 120.2,
+      "S1 D": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S2 D+L": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S3 D+Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      }
+    },
+    "W.rear.brace": {
+      "span_in": 149.4,
+      "S1 D": {
+        "defl_in": -0.0108,
+        "ratio": 13786.0
+      },
+      "S2 D+L": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0118,
+        "ratio": 12691.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      }
+    },
+    "W.slope": {
+      "span_in": 154.7,
+      "S1 D": {
+        "defl_in": -0.0429,
+        "ratio": 3605.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0964,
+        "ratio": 1605.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0683,
+        "ratio": 2265.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.102,
+        "ratio": 1517.0
+      }
+    },
+    "W.top": {
+      "span_in": 197.0,
+      "S1 D": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S2 D+L": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S3 D+Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0,
+        "ratio": null
+      }
+    },
+    "W1": {
+      "span_in": 45.6,
+      "S1 D": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S2 D+L": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S3 D+Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      }
+    },
+    "W2": {
+      "span_in": 124.2,
+      "S1 D": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S2 D+L": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S3 D+Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": 0.0,
+        "ratio": null
+      }
+    },
+    "W3": {
+      "span_in": 236.8,
+      "S1 D": {
+        "defl_in": -0.0813,
+        "ratio": 2913.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.3387,
+        "ratio": 699.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.1639,
+        "ratio": 1444.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.3376,
+        "ratio": 701.0
+      }
+    },
+    "W4": {
+      "span_in": 236.8,
+      "S1 D": {
+        "defl_in": -0.0006,
+        "ratio": 377693.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0066,
+        "ratio": 35956.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0006,
+        "ratio": 385263.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0051,
+        "ratio": 46509.0
+      }
+    },
+    "loft bay 1 joist 1": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0018,
+        "ratio": 31785.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0192,
+        "ratio": 2967.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0018,
+        "ratio": 31442.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0149,
+        "ratio": 3837.0
+      }
+    },
+    "loft bay 1 joist 10": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 33037.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0186,
+        "ratio": 3070.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 32855.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0144,
+        "ratio": 3963.0
+      }
+    },
+    "loft bay 1 joist 11": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32859.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.019,
+        "ratio": 3002.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 32771.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0147,
+        "ratio": 3887.0
+      }
+    },
+    "loft bay 1 joist 12": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.002,
+        "ratio": 27936.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0254,
+        "ratio": 2243.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.002,
+        "ratio": 28123.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0194,
+        "ratio": 2932.0
+      }
+    },
+    "loft bay 1 joist 2": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32773.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0189,
+        "ratio": 3012.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 32702.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0146,
+        "ratio": 3898.0
+      }
+    },
+    "loft bay 1 joist 3": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32788.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0189,
+        "ratio": 3014.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 32726.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0146,
+        "ratio": 3898.0
+      }
+    },
+    "loft bay 1 joist 4": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32786.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0189,
+        "ratio": 3014.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 32719.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0146,
+        "ratio": 3898.0
+      }
+    },
+    "loft bay 1 joist 5": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32784.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0189,
+        "ratio": 3014.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 32708.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0146,
+        "ratio": 3898.0
+      }
+    },
+    "loft bay 1 joist 6": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32783.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0189,
+        "ratio": 3014.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 32699.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0146,
+        "ratio": 3898.0
+      }
+    },
+    "loft bay 1 joist 7": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32890.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0188,
+        "ratio": 3025.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 32800.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0146,
+        "ratio": 3913.0
+      }
+    },
+    "loft bay 1 joist 8": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32953.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0188,
+        "ratio": 3034.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 32853.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0145,
+        "ratio": 3923.0
+      }
+    },
+    "loft bay 1 joist 9": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32981.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0187,
+        "ratio": 3047.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 32844.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0145,
+        "ratio": 3938.0
+      }
+    },
+    "loft bay 2 joist 1": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0018,
+        "ratio": 32374.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.019,
+        "ratio": 2996.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0018,
+        "ratio": 32149.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0147,
+        "ratio": 3869.0
+      }
+    },
+    "loft bay 2 joist 10": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32842.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.019,
+        "ratio": 2999.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 33019.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0147,
+        "ratio": 3886.0
+      }
+    },
+    "loft bay 2 joist 11": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32808.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0188,
+        "ratio": 3024.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 32865.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0146,
+        "ratio": 3909.0
+      }
+    },
+    "loft bay 2 joist 12": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0022,
+        "ratio": 25940.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0243,
+        "ratio": 2345.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0022,
+        "ratio": 25624.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0189,
+        "ratio": 3020.0
+      }
+    },
+    "loft bay 2 joist 2": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32837.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0189,
+        "ratio": 3009.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 32872.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0146,
+        "ratio": 3893.0
+      }
+    },
+    "loft bay 2 joist 3": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32844.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0189,
+        "ratio": 3009.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 32900.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0146,
+        "ratio": 3894.0
+      }
+    },
+    "loft bay 2 joist 4": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32834.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0189,
+        "ratio": 3008.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 32894.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0146,
+        "ratio": 3893.0
+      }
+    },
+    "loft bay 2 joist 5": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32819.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.019,
+        "ratio": 3008.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 32885.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0146,
+        "ratio": 3892.0
+      }
+    },
+    "loft bay 2 joist 6": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32803.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.019,
+        "ratio": 3007.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 32877.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0147,
+        "ratio": 3891.0
+      }
+    },
+    "loft bay 2 joist 7": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32898.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0189,
+        "ratio": 3019.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 32975.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0146,
+        "ratio": 3906.0
+      }
+    },
+    "loft bay 2 joist 8": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32942.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0188,
+        "ratio": 3024.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 33025.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0146,
+        "ratio": 3913.0
+      }
+    },
+    "loft bay 2 joist 9": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0017,
+        "ratio": 32903.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0189,
+        "ratio": 3015.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0017,
+        "ratio": 33024.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0146,
+        "ratio": 3903.0
+      }
+    },
+    "loft bay 3 joist 1": {
+      "span_in": 83.0,
+      "S1 D": {
+        "defl_in": -0.0075,
+        "ratio": 10995.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.084,
+        "ratio": 988.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0074,
+        "ratio": 11181.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0648,
+        "ratio": 1280.0
+      }
+    },
+    "loft bay 3 joist 10": {
+      "span_in": 83.0,
+      "S1 D": {
+        "defl_in": -0.0079,
+        "ratio": 10500.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0863,
+        "ratio": 962.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0079,
+        "ratio": 10497.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0667,
+        "ratio": 1245.0
+      }
+    },
+    "loft bay 3 joist 11": {
+      "span_in": 83.0,
+      "S1 D": {
+        "defl_in": -0.0079,
+        "ratio": 10522.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0861,
+        "ratio": 964.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0079,
+        "ratio": 10516.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0665,
+        "ratio": 1248.0
+      }
+    },
+    "loft bay 3 joist 12": {
+      "span_in": 83.0,
+      "S1 D": {
+        "defl_in": -0.0079,
+        "ratio": 10512.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0862,
+        "ratio": 963.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0079,
+        "ratio": 10488.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0666,
+        "ratio": 1246.0
+      }
+    },
+    "loft bay 3 joist 13": {
+      "span_in": 83.0,
+      "S1 D": {
+        "defl_in": -0.0079,
+        "ratio": 10488.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0864,
+        "ratio": 960.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.008,
+        "ratio": 10426.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0669,
+        "ratio": 1242.0
+      }
+    },
+    "loft bay 3 joist 14": {
+      "span_in": 83.0,
+      "S1 D": {
+        "defl_in": -0.0079,
+        "ratio": 10446.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0866,
+        "ratio": 958.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.008,
+        "ratio": 10403.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.067,
+        "ratio": 1239.0
+      }
+    },
+    "loft bay 3 joist 15": {
+      "span_in": 83.0,
+      "S1 D": {
+        "defl_in": -0.0106,
+        "ratio": 7818.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.1183,
+        "ratio": 702.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0106,
+        "ratio": 7832.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0911,
+        "ratio": 911.0
+      }
+    },
+    "loft bay 3 joist 2": {
+      "span_in": 83.0,
+      "S1 D": {
+        "defl_in": -0.0061,
+        "ratio": 13698.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0628,
+        "ratio": 1322.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.006,
+        "ratio": 13785.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0486,
+        "ratio": 1709.0
+      }
+    },
+    "loft bay 3 joist 3": {
+      "span_in": 83.0,
+      "S1 D": {
+        "defl_in": -0.0064,
+        "ratio": 13048.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0665,
+        "ratio": 1248.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0064,
+        "ratio": 13066.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0515,
+        "ratio": 1612.0
+      }
+    },
+    "loft bay 3 joist 4": {
+      "span_in": 83.0,
+      "S1 D": {
+        "defl_in": -0.0079,
+        "ratio": 10509.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0861,
+        "ratio": 964.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0079,
+        "ratio": 10491.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0666,
+        "ratio": 1247.0
+      }
+    },
+    "loft bay 3 joist 5": {
+      "span_in": 83.0,
+      "S1 D": {
+        "defl_in": -0.0079,
+        "ratio": 10503.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0861,
+        "ratio": 964.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0079,
+        "ratio": 10495.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0666,
+        "ratio": 1247.0
+      }
+    },
+    "loft bay 3 joist 6": {
+      "span_in": 83.0,
+      "S1 D": {
+        "defl_in": -0.0079,
+        "ratio": 10476.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0864,
+        "ratio": 960.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0079,
+        "ratio": 10475.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0668,
+        "ratio": 1242.0
+      }
+    },
+    "loft bay 3 joist 7": {
+      "span_in": 83.0,
+      "S1 D": {
+        "defl_in": -0.0079,
+        "ratio": 10481.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0864,
+        "ratio": 960.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0079,
+        "ratio": 10485.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0668,
+        "ratio": 1243.0
+      }
+    },
+    "loft bay 3 joist 8": {
+      "span_in": 83.0,
+      "S1 D": {
+        "defl_in": -0.0079,
+        "ratio": 10482.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0864,
+        "ratio": 960.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0079,
+        "ratio": 10481.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0668,
+        "ratio": 1242.0
+      }
+    },
+    "loft bay 3 joist 9": {
+      "span_in": 83.0,
+      "S1 D": {
+        "defl_in": -0.0079,
+        "ratio": 10482.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0865,
+        "ratio": 960.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0079,
+        "ratio": 10475.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0668,
+        "ratio": 1242.0
+      }
+    },
+    "shelf SH joist 10": {
+      "span_in": 68.5,
+      "S1 D": {
+        "defl_in": -0.0036,
+        "ratio": 19154.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.039,
+        "ratio": 1755.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0036,
+        "ratio": 19208.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0302,
+        "ratio": 2271.0
+      }
+    },
+    "shelf SH joist 11": {
+      "span_in": 68.5,
+      "S1 D": {
+        "defl_in": -0.0036,
+        "ratio": 19199.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0389,
+        "ratio": 1761.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0036,
+        "ratio": 19266.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0301,
+        "ratio": 2279.0
+      }
+    },
+    "shelf SH joist 12": {
+      "span_in": 68.5,
+      "S1 D": {
+        "defl_in": -0.0036,
+        "ratio": 19212.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0388,
+        "ratio": 1766.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0035,
+        "ratio": 19317.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.03,
+        "ratio": 2286.0
+      }
+    },
+    "shelf SH joist 13": {
+      "span_in": 68.5,
+      "S1 D": {
+        "defl_in": -0.0036,
+        "ratio": 19214.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0387,
+        "ratio": 1772.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0035,
+        "ratio": 19350.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0299,
+        "ratio": 2293.0
+      }
+    },
+    "shelf SH joist 14": {
+      "span_in": 68.5,
+      "S1 D": {
+        "defl_in": -0.0036,
+        "ratio": 19264.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0385,
+        "ratio": 1781.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0035,
+        "ratio": 19367.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0297,
+        "ratio": 2304.0
+      }
+    },
+    "shelf SH joist 15": {
+      "span_in": 68.5,
+      "S1 D": {
+        "defl_in": -0.0026,
+        "ratio": 26600.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0279,
+        "ratio": 2453.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0026,
+        "ratio": 26684.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0216,
+        "ratio": 3177.0
+      }
+    },
+    "shelf SH joist 3": {
+      "span_in": 68.5,
+      "S1 D": {
+        "defl_in": -0.003,
+        "ratio": 22652.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0309,
+        "ratio": 2215.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0031,
+        "ratio": 22458.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.024,
+        "ratio": 2854.0
+      }
+    },
+    "shelf SH joist 4": {
+      "span_in": 68.5,
+      "S1 D": {
+        "defl_in": -0.0036,
+        "ratio": 19061.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0391,
+        "ratio": 1752.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0036,
+        "ratio": 19075.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0302,
+        "ratio": 2267.0
+      }
+    },
+    "shelf SH joist 5": {
+      "span_in": 68.5,
+      "S1 D": {
+        "defl_in": -0.0036,
+        "ratio": 19048.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0392,
+        "ratio": 1749.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0036,
+        "ratio": 19082.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0303,
+        "ratio": 2264.0
+      }
+    },
+    "shelf SH joist 6": {
+      "span_in": 68.5,
+      "S1 D": {
+        "defl_in": -0.0036,
+        "ratio": 19062.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0391,
+        "ratio": 1750.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0036,
+        "ratio": 19087.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0303,
+        "ratio": 2264.0
+      }
+    },
+    "shelf SH joist 7": {
+      "span_in": 68.5,
+      "S1 D": {
+        "defl_in": -0.0036,
+        "ratio": 19081.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0391,
+        "ratio": 1751.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0036,
+        "ratio": 19111.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0302,
+        "ratio": 2265.0
+      }
+    },
+    "shelf SH joist 8": {
+      "span_in": 68.5,
+      "S1 D": {
+        "defl_in": -0.0036,
+        "ratio": 19101.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0391,
+        "ratio": 1751.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0036,
+        "ratio": 19144.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0302,
+        "ratio": 2266.0
+      }
+    },
+    "shelf SH joist 9": {
+      "span_in": 68.5,
+      "S1 D": {
+        "defl_in": -0.0036,
+        "ratio": 19116.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0391,
+        "ratio": 1751.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0036,
+        "ratio": 19168.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0302,
+        "ratio": 2266.0
+      }
+    },
+    "west strip infill joist 1": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0016,
+        "ratio": 34635.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.018,
+        "ratio": 3158.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0016,
+        "ratio": 35165.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0139,
+        "ratio": 4093.0
+      }
+    },
+    "west strip infill joist 2": {
+      "span_in": 57.0,
+      "S1 D": {
+        "defl_in": -0.0014,
+        "ratio": 40256.0
+      },
+      "S2 D+L": {
+        "defl_in": -0.0141,
+        "ratio": 4036.0
+      },
+      "S3 D+Lr": {
+        "defl_in": -0.0014,
+        "ratio": 39983.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+        "defl_in": -0.0109,
+        "ratio": 5207.0
+      }
+    }
+  },
+  "seismic": {
+    "base_shear_lb": 5280.8,
+    "seismic_weight_lb": 25744.1,
+    "SDS": 0.6667,
+    "SD1": 0.4095,
+    "Ta": 0.1825,
+    "Cs": 0.2051,
+    "Cs_max": 0.6905,
+    "Cs_min": 0.0293,
+    "k": 1.0
+  },
+  "gaps": [],
+  "stable": true,
+  "message": "",
+  "second_order": true,
+  "load_planes": "corrected named-member elevations",
+  "max_dcr": 0.9634824119606904,
+  "passes": false,
+  "deflection_violations": [],
+  "worst": [
+    {
+      "member": "RS @ 129.67",
+      "group": "Rafters",
+      "material": "steel",
+      "section": "HSS2X2X1/8",
+      "length": 154.7298721428197,
+      "weight": 36.90948577942429,
+      "dcr": 0.9634824119606904,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": 934.3028462980333,
+      "Mz": -22679.25191977117,
+      "My": -1160.205986500656,
+      "V": 39.37436340247291,
+      "slenderness": 203.40003953135846,
+      "Lb": 154.7298721428197,
+      "basis": "AISC 360-16 LRFD",
+      "flags": [
+        "KL/r = 203 exceeds 200"
+      ]
+    },
+    {
+      "member": "RS @ 6.9167",
+      "group": "Rafters",
+      "material": "steel",
+      "section": "HSS2X2X1/8",
+      "length": 154.7298721428197,
+      "weight": 36.90948577942429,
+      "dcr": 0.941089727923608,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": 771.9883218594853,
+      "Mz": -22965.80102189511,
+      "My": 928.8296830592487,
+      "V": 35.42192875411058,
+      "slenderness": 203.40003953135846,
+      "Lb": 154.7298721428197,
+      "basis": "AISC 360-16 LRFD",
+      "flags": [
+        "KL/r = 203 exceeds 200"
+      ]
+    },
+    {
+      "member": "RS @ 88.75",
+      "group": "Rafters",
+      "material": "steel",
+      "section": "HSS2X2X1/8",
+      "length": 154.7298721428197,
+      "weight": 36.90948577942429,
+      "dcr": 0.8789364949164588,
+      "mode": "flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": 7.350061795543411,
+      "Mz": -24165.688804889833,
+      "My": -316.83533736818475,
+      "V": 0.9975827903066374,
+      "slenderness": 203.40003953135846,
+      "Lb": 154.7298721428197,
+      "basis": "AISC 360-16 LRFD",
+      "flags": [
+        "KL/r = 203 exceeds 200"
+      ]
+    },
+    {
+      "member": "RS @ 47.833",
+      "group": "Rafters",
+      "material": "steel",
+      "section": "HSS2X2X1/8",
+      "length": 154.7298721428197,
+      "weight": 36.90948577942429,
+      "dcr": 0.8781682575339835,
+      "mode": "flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P": -34.6741038194412,
+      "Mz": -24151.455864811833,
+      "My": 319.18745740586365,
+      "V": -0.8423642547504642,
+      "slenderness": 203.40003953135846,
+      "Lb": 154.7298721428197,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    {
+      "member": "E.clerestory",
+      "group": "Truss",
+      "material": "steel",
+      "section": "HSS3X3X1/8",
+      "length": 81.39488223348471,
+      "weight": 30.149920730915397,
+      "dcr": 0.8473936562424075,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": 515.0197013722259,
+      "Mz": -5656.832233911934,
+      "My": -49354.83588037257,
+      "V": -209.07276777543302,
+      "slenderness": 36.143966658876174,
+      "Lb": 42.25981830489454,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    {
+      "member": "E.top",
+      "group": "Truss",
+      "material": "steel",
+      "section": "HSS3X3X1/8",
+      "length": 197.0,
+      "weight": 72.97184074733993,
+      "dcr": 0.7829766863477324,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": 1638.4078489671656,
+      "Mz": 30552.149680338014,
+      "My": -18744.889339525245,
+      "V": -735.0482445926388,
+      "slenderness": 97.50189102527818,
+      "Lb": 114.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    {
+      "member": "loft bay 3 joist 15",
+      "group": "Joists",
+      "material": "wood",
+      "section": "1.5x7.25 DF-L No.2",
+      "length": 83.0,
+      "weight": 16.698562499999998,
+      "dcr": 0.7752563161991006,
+      "mode": "bending",
+      "combo": "S2 D+L",
+      "P": -2710.4738469599474,
+      "Mz": -12423.086352473636,
+      "My": 47.504584107557164,
+      "V": -17.901415063128184,
+      "slenderness": 191.68028937095576,
+      "Lb": 83.0,
+      "basis": "NDS ASD",
+      "flags": []
+    },
+    {
+      "member": "CT.bottom",
+      "group": "Clerestory",
+      "material": "steel",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "length": 245.5,
+      "weight": 74.74945585772602,
+      "dcr": 0.7494347722634489,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WX+.pi]",
+      "P": 522.247575823682,
+      "Mz": 413.1810645301037,
+      "My": -32754.053861721055,
+      "V": 19.744540220183243,
+      "slenderness": 42.40117102268691,
+      "Lb": 40.916666666666686,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    {
+      "member": "BWI",
+      "group": "Beams",
+      "material": "steel",
+      "section": "W12X16",
+      "length": 265.5,
+      "weight": 354.64321800000005,
+      "dcr": 0.74512535467879,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": -134.62142450714353,
+      "Mz": -434757.34702044714,
+      "My": 4022.908591379946,
+      "V": 6135.001032648056,
+      "slenderness": 107.3738680465718,
+      "Lb": 83.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    {
+      "member": "B-1A",
+      "group": "Beams",
+      "material": "steel",
+      "section": "W12X16",
+      "length": 281.5,
+      "weight": 376.01531400000005,
+      "dcr": 0.7429625579427958,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": -21.123677486759796,
+      "Mz": -589665.9030374686,
+      "My": 58.812817371414646,
+      "V": 244.92561980359207,
+      "slenderness": 67.24549706438451,
+      "Lb": 51.980769230769226,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    {
+      "member": "BE",
+      "group": "Beams",
+      "material": "steel",
+      "section": "W12X16",
+      "length": 331.0,
+      "weight": 442.1352360000001,
+      "dcr": 0.7162334645411277,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.pi]",
+      "P": -658.4698575311214,
+      "Mz": 127413.85543172441,
+      "My": 51573.52864164072,
+      "V": -2087.6058243939124,
+      "slenderness": 107.3738680465718,
+      "Lb": 83.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    },
+    {
+      "member": "BE.upper",
+      "group": "Beams",
+      "material": "steel",
+      "section": "W14X22",
+      "length": 265.5006082692382,
+      "weight": 488.6708615584622,
+      "dcr": 0.7123643091021182,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P": 2802.149737446898,
+      "Mz": -691436.924848152,
+      "My": -945.212721202076,
+      "V": -12147.925518002254,
+      "slenderness": 109.61538461538461,
+      "Lb": 114.0,
+      "basis": "AISC 360-16 LRFD",
+      "flags": []
+    }
+  ]
+}

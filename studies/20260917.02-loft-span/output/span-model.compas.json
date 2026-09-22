@@ -1,0 +1,76 @@
+{
+    "data": {
+        "attributes": {},
+        "default_edge_attributes": {
+            "depth": 0.0,
+            "role": "member",
+            "section": ""
+        },
+        "default_node_attributes": {
+            "kind": "joint",
+            "label": "",
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+        },
+        "edge": {
+            "0": {
+                "2": {
+                    "depth": 4.0,
+                    "role": "column",
+                    "section": "HSS4X4X3/16"
+                }
+            },
+            "1": {
+                "3": {
+                    "depth": 4.0,
+                    "role": "column",
+                    "section": "HSS4X4 (concept)"
+                }
+            },
+            "2": {
+                "3": {
+                    "depth": 15.7,
+                    "role": "beam",
+                    "section": "W16X26"
+                }
+            },
+            "3": {}
+        },
+        "max_node": 3,
+        "node": {
+            "0": {
+                "kind": "support",
+                "label": "W1 base",
+                "x": -34.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "1": {
+                "kind": "support",
+                "label": "E-S base",
+                "x": 247.5,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "2": {
+                "kind": "bearing",
+                "label": "W1 head",
+                "x": -34.0,
+                "y": 0.0,
+                "z": 116.0
+            },
+            "3": {
+                "kind": "bearing",
+                "label": "E-S head",
+                "x": 247.5,
+                "y": 0.0,
+                "z": 116.0
+            }
+        }
+    },
+    "dtype": "compas.datastructures/Graph",
+    "guid": "6a45b87f-1e20-428e-bd2b-1a7a95676ef6",
+    "inheritance": [],
+    "name": "W1-ES span \u00b7 W16X26"
+}

@@ -1,0 +1,17 @@
+# Garage Renovation
+
+Working files for the garage renovation, including the controlled report, COMPAS structural data, analysis source, studies, drawings, visualizations, and renders.
+
+| Directory | Purpose |
+|---|---|
+| `report/` | Controlled project report and document manifest |
+| `studies/` | Dated one-off and versioned explorations |
+| `data/` | COMPAS and project model data |
+| `viz/` | Generated interactive visualizations |
+| `render/` | Dated Blender and other render packages |
+| `plans/` | Approved drawings when available |
+| `src/` | Active source code |
+| `public/` | Static site for `garage.busboom.org` |
+| `archive/` | Retained history and local tooling |
+
+See [archive/reorganization-manifest.csv](archive/reorganization-manifest.csv) for the 2026-09-21 move record. Structural analyses in this repository are preliminary unless signed and sealed by the responsible engineer.

@@ -1,0 +1,242 @@
+{
+  "units": "inches",
+  "source": "../data/model/parameters.json",
+  "origin": "existing outside southwest corner; x east, y north",
+  "existing_width": 249.5,
+  "existing_length": 249,
+  "east_property_x": 261.5,
+  "north_property_y": 331,
+  "east_truss_outside_edge_x": 213.5,
+  "truss_width": null,
+  "north_wall_outside_face_y": 271,
+  "north_roof_overhang": 27,
+  "north_roof_edge_y": 298,
+  "north_roof_edge_property_clearance": 33,
+  "remaining_roof_geometry": "slopes and east/west eave details to develop",
+  "upper_structure_outline": [
+    [
+      -36,
+      -68
+    ],
+    [
+      213.5,
+      -68
+    ],
+    [
+      213.5,
+      271
+    ],
+    [
+      -36,
+      271
+    ]
+  ],
+  "roof_outline": [
+    [
+      -36,
+      -68
+    ],
+    [
+      213.5,
+      -68
+    ],
+    [
+      213.5,
+      298
+    ],
+    [
+      -36,
+      298
+    ]
+  ],
+  "columns": [
+    {
+      "id": "W1",
+      "x": -34,
+      "y": -66,
+      "status": "proposed",
+      "source_x": -32,
+      "source_y": -21.25
+    },
+    {
+      "id": "W2",
+      "x": -34,
+      "y": 69.75,
+      "status": "proposed",
+      "source_x": -32,
+      "source_y": 69.75
+    },
+    {
+      "id": "W3",
+      "x": -34,
+      "y": 185,
+      "status": "proposed",
+      "source_x": -32,
+      "source_y": 185
+    },
+    {
+      "id": "W4",
+      "x": -34,
+      "y": 269,
+      "status": "proposed",
+      "source_x": -32,
+      "source_y": 253
+    },
+    {
+      "id": "S1",
+      "x": 148.5,
+      "y": -66,
+      "status": "proposed",
+      "source_x": 148.5,
+      "source_y": -21.25
+    },
+    {
+      "id": "S2",
+      "x": 211.5,
+      "y": -66,
+      "status": "proposed",
+      "source_x": 224.25,
+      "source_y": -21.25
+    },
+    {
+      "id": "N1",
+      "x": 19.5,
+      "y": 269,
+      "status": "proposed",
+      "source_x": 53.25,
+      "source_y": 253
+    },
+    {
+      "id": "N2",
+      "x": 211.5,
+      "y": 269,
+      "status": "proposed",
+      "source_x": 224.25,
+      "source_y": 253
+    },
+    {
+      "id": "S3",
+      "x": 211.5,
+      "y": -2,
+      "status": "proposed",
+      "source_x": 224.25,
+      "source_y": 0
+    },
+    {
+      "id": "WB3",
+      "x": -2,
+      "y": 185,
+      "status": "proposed",
+      "basis": "Aligned with W3; outside west wall"
+    }
+  ],
+  "column_symbol_width": 4,
+  "south_support_centerlines_y": {
+    "W1": -66,
+    "S1": -66,
+    "S2": -66
+  },
+  "south_beam_centerline_y": -64,
+  "south_beam_width_provisional": 8,
+  "south_roof_edge_y": -68,
+  "south_roof_edge_basis": "Blue edge retained at y=-68; W1/S1/S2 south faces flush with edge; column centers y=-66; provisional beam center remains y=-64",
+  "loft_outline": [
+    [
+      -36,
+      69.75
+    ],
+    [
+      213.5,
+      69.75
+    ],
+    [
+      213.5,
+      271
+    ],
+    [
+      -36,
+      271
+    ]
+  ],
+  "loft_outline_basis": "User expanded deck to full width and north border, south edge at W2 support line",
+  "north_column_alignment": "Outer faces flush to north border; W4 west face flush to west border",
+  "framing_source": "../studies/20260908.01-structural-design/framing-member-register.json",
+  "deck_and_member_width_source": "../render/20260907.02-garage-model/build_and_render.py",
+  "north_wall_extension_beyond_existing": 22,
+  "east_interpretation_confirmed": true,
+  "setback_basis": "User correction: east limit 4 ft; north wall 5 ft; north roof overhang 2 ft 3 in.",
+  "north_door_bay": {
+    "west_post": "N1",
+    "east_post": "N2",
+    "center_spacing_in": 192,
+    "clear_between_4in_posts_in": 188,
+    "finished_opening": "not yet sized"
+  },
+  "possible_ground_floor_extension": {
+    "status": "option only",
+    "path": [
+      [
+        -2,
+        185
+      ],
+      [
+        -34,
+        185
+      ],
+      [
+        -34,
+        269
+      ],
+      [
+        19.5,
+        269
+      ],
+      [
+        211.5,
+        269
+      ],
+      [
+        211.5,
+        249
+      ],
+      [
+        0,
+        249
+      ],
+      [
+        0,
+        185
+      ]
+    ],
+    "route": "WB3 -> W3 -> W4 -> N1 -> N2 -> existing north wall; close along existing wall to WB3",
+    "geometry_basis": "concept route through post centers; not finished wall faces"
+  },
+  "east_wall_posts": [
+    {
+      "id": "E-S",
+      "x": 245.5,
+      "y": -4,
+      "width": 4,
+      "depth": 4,
+      "option": "A and B"
+    },
+    {
+      "id": "E-N",
+      "x": 245.5,
+      "y": 249,
+      "width": 4,
+      "depth": 4,
+      "option": "A and B"
+    },
+    {
+      "id": "E-M",
+      "x": 244.5,
+      "y": 183,
+      "width": 4,
+      "depth": 4,
+      "option": "B only"
+    }
+  ],
+  "east_wall_source": "../studies/20260915.02-east-wall/README.md revision 04; task 01a0a6c5-3c15-70a2-b201-839830bb0b20",
+  "east_wall_overhead_beam": "symbolic centerline x=247.5, y=-4..253; width and connections unresolved"
+}

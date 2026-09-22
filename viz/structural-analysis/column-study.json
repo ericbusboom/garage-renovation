@@ -1,0 +1,2241 @@
+{
+ "generated": "2026-09-19 20:34",
+ "live_case": "L100",
+ "frame_model": "frame-20260918.10-beam-scheme.compas.json",
+ "candidates": [
+  "S1",
+  "SW0",
+  "W1",
+  "W2"
+ ],
+ "baseline": {
+  "max_dcr": 0.775,
+  "drift_ratio": 434.0,
+  "reactions": {
+   "N1.base": 2231.0,
+   "N2.base": 586.3,
+   "S1.base": 1820.7,
+   "S2.base": 6616.7,
+   "S3.base": 1754.9,
+   "SW0.base": -168.6,
+   "W1.base": -297.9,
+   "W2.base": -528.0,
+   "W3.base": 4611.0,
+   "W4.base": 5113.8
+  }
+ },
+ "variants": [
+  {
+   "columns": [
+    "S1"
+   ],
+   "cuts": {
+    "S1": {
+     "segments_cut": 1,
+     "stub_segments": 1,
+     "footing_removed": [
+      "S1.base"
+     ],
+     "collateral": [
+      "BR-S-1"
+     ]
+    }
+   },
+   "judge": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.775,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 398.0,
+    "deflection_violations": [],
+    "passes": false,
+    "biggest_rises": [
+     {
+      "member": "BR-N-1",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.119,
+      "after": 0.2
+     },
+     {
+      "member": "B-SO",
+      "section": "W12X16",
+      "before": 0.467,
+      "after": 0.534
+     },
+     {
+      "member": "SW0",
+      "section": "HSS5X5X1/4",
+      "before": 0.033,
+      "after": 0.096
+     },
+     {
+      "member": "CT.bottom",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.398,
+      "after": 0.424
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2190.6,
+     "N2.base": 638.7,
+     "S2.base": 6036.4,
+     "S3.base": 1853.4,
+     "SW0.base": -291.4,
+     "W1.base": -219.3,
+     "W2.base": -545.6,
+     "W3.base": 4762.4,
+     "W4.base": 5122.3
+    }
+   },
+   "fix": {
+    "adequate": true,
+    "added_lb": 663.7,
+    "rounds": 3,
+    "sections": {
+     "BR-N-1": "HSS3X3X1/8",
+     "BR-N-2": "HSS3X3X1/8",
+     "BR-NU-1": "HSS3X3X1/8",
+     "BR-S-2": "HSS3X3X1/8",
+     "BR-W-2": "HSS3X3X1/8",
+     "E.W3": "HSS3X3X3/16",
+     "E.clerestory": "HSS3X3X3/16",
+     "E.slope": "HSS3X3X3/16",
+     "E.top": "HSS3X3X3/16",
+     "N-M": "HSS3X3X3/16",
+     "N-M2": "HSS3X3X3/16",
+     "N1": "HSS6X6X1/4",
+     "N2": "HSS6X6X1/4",
+     "S1": "HSS6X6X1/4",
+     "S2": "HSS6X6X1/4",
+     "S3": "HSS6X6X1/4",
+     "SW0": "HSS6X6X1/4",
+     "W.rear.brace": "HSS3X3X3/16",
+     "W.slope": "HSS3X3X3/16",
+     "W.top": "HSS3X3X3/16",
+     "W1": "HSS6X6X1/4",
+     "W2": "HSS6X6X1/4",
+     "W3": "HSS6X6X1/4",
+     "W4": "HSS6X6X1/4"
+    },
+    "stuck": [],
+    "deflection_violations": [],
+    "max_dcr": 0.696,
+    "drift_ratio": 533.0
+   }
+  },
+  {
+   "columns": [
+    "SW0"
+   ],
+   "cuts": {
+    "SW0": {
+     "segments_cut": 1,
+     "stub_segments": 1,
+     "footing_removed": [
+      "SW0.base"
+     ],
+     "collateral": []
+    }
+   },
+   "judge": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.774,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 423.0,
+    "deflection_violations": [],
+    "passes": true,
+    "biggest_rises": [
+     {
+      "member": "BR-N-1",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.119,
+      "after": 0.219
+     },
+     {
+      "member": "CT.bottom",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.398,
+      "after": 0.447
+     },
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "before": 0.275,
+      "after": 0.306
+     },
+     {
+      "member": "B-SO",
+      "section": "W12X16",
+      "before": 0.467,
+      "after": 0.495
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2247.1,
+     "N2.base": 584.6,
+     "S1.base": 1596.9,
+     "S2.base": 6746.7,
+     "S3.base": 1787.8,
+     "W1.base": -658.3,
+     "W2.base": -181.1,
+     "W3.base": 4817.3,
+     "W4.base": 5813.5
+    },
+    "passes_full": true
+   },
+   "full_combos": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.774,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 423.0,
+    "deflection_violations": [],
+    "passes": true,
+    "biggest_rises": [
+     {
+      "member": "BR-N-1",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.119,
+      "after": 0.219
+     },
+     {
+      "member": "CT.bottom",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.398,
+      "after": 0.447
+     },
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "before": 0.275,
+      "after": 0.306
+     },
+     {
+      "member": "B-SO",
+      "section": "W12X16",
+      "before": 0.467,
+      "after": 0.495
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2247.1,
+     "N2.base": 584.6,
+     "S1.base": 1596.9,
+     "S2.base": 6933.4,
+     "S3.base": 1787.8,
+     "W1.base": -658.3,
+     "W2.base": -181.1,
+     "W3.base": 4817.3,
+     "W4.base": 5813.5
+    }
+   }
+  },
+  {
+   "columns": [
+    "W1"
+   ],
+   "cuts": {
+    "W1": {
+     "segments_cut": 1,
+     "stub_segments": 2,
+     "footing_removed": [
+      "W1.base"
+     ],
+     "collateral": []
+    }
+   },
+   "judge": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.812,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 430.0,
+    "deflection_violations": [],
+    "passes": true,
+    "biggest_rises": [
+     {
+      "member": "W1",
+      "section": "HSS5X5X1/4",
+      "before": 0.407,
+      "after": 0.526
+     },
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "before": 0.275,
+      "after": 0.342
+     },
+     {
+      "member": "SW0",
+      "section": "HSS5X5X1/4",
+      "before": 0.033,
+      "after": 0.072
+     },
+     {
+      "member": "S3",
+      "section": "HSS5X5X1/4",
+      "before": 0.775,
+      "after": 0.812
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2305.9,
+     "N2.base": 600.8,
+     "S1.base": 2312.3,
+     "S2.base": 7045.3,
+     "S3.base": 1718.6,
+     "SW0.base": -458.2,
+     "W2.base": -689.0,
+     "W3.base": 4731.8,
+     "W4.base": 4999.3
+    },
+    "passes_full": true
+   },
+   "full_combos": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.812,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 430.0,
+    "deflection_violations": [],
+    "passes": true,
+    "biggest_rises": [
+     {
+      "member": "W1",
+      "section": "HSS5X5X1/4",
+      "before": 0.407,
+      "after": 0.526
+     },
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "before": 0.275,
+      "after": 0.342
+     },
+     {
+      "member": "SW0",
+      "section": "HSS5X5X1/4",
+      "before": 0.033,
+      "after": 0.072
+     },
+     {
+      "member": "S3",
+      "section": "HSS5X5X1/4",
+      "before": 0.775,
+      "after": 0.812
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2305.9,
+     "N2.base": 600.8,
+     "S1.base": 2312.3,
+     "S2.base": 7298.4,
+     "S3.base": 1718.6,
+     "SW0.base": -458.2,
+     "W2.base": -689.0,
+     "W3.base": 4731.8,
+     "W4.base": 4999.3
+    }
+   }
+  },
+  {
+   "columns": [
+    "W2"
+   ],
+   "cuts": {
+    "W2": {
+     "segments_cut": 1,
+     "stub_segments": 3,
+     "footing_removed": [
+      "W2.base"
+     ],
+     "collateral": []
+    }
+   },
+   "judge": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.779,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 435.0,
+    "deflection_violations": [],
+    "passes": true,
+    "biggest_rises": [
+     {
+      "member": "BR-N-1",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.119,
+      "after": 0.224
+     },
+     {
+      "member": "W1",
+      "section": "HSS5X5X1/4",
+      "before": 0.407,
+      "after": 0.475
+     },
+     {
+      "member": "W.rear.brace",
+      "section": "HSS3X3X1/8",
+      "before": 0.238,
+      "after": 0.292
+     },
+     {
+      "member": "W3",
+      "section": "HSS5X5X1/4",
+      "before": 0.49,
+      "after": 0.538
+     },
+     {
+      "member": "W2",
+      "section": "HSS5X5X1/4",
+      "before": 0.098,
+      "after": 0.145
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2333.8,
+     "N2.base": 590.3,
+     "S1.base": 2053.1,
+     "S2.base": 6700.1,
+     "S3.base": 1741.4,
+     "SW0.base": 368.9,
+     "W1.base": -646.2,
+     "W3.base": 4375.9,
+     "W4.base": 5222.6
+    },
+    "passes_full": true
+   },
+   "full_combos": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.779,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 435.0,
+    "deflection_violations": [],
+    "passes": true,
+    "biggest_rises": [
+     {
+      "member": "BR-N-1",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.119,
+      "after": 0.224
+     },
+     {
+      "member": "W1",
+      "section": "HSS5X5X1/4",
+      "before": 0.407,
+      "after": 0.475
+     },
+     {
+      "member": "W.rear.brace",
+      "section": "HSS3X3X1/8",
+      "before": 0.238,
+      "after": 0.292
+     },
+     {
+      "member": "W3",
+      "section": "HSS5X5X1/4",
+      "before": 0.49,
+      "after": 0.538
+     },
+     {
+      "member": "W2",
+      "section": "HSS5X5X1/4",
+      "before": 0.098,
+      "after": 0.145
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2333.8,
+     "N2.base": 590.3,
+     "S1.base": 2053.1,
+     "S2.base": 7008.0,
+     "S3.base": 1741.4,
+     "SW0.base": 368.9,
+     "W1.base": -646.2,
+     "W3.base": 4375.9,
+     "W4.base": 5222.6
+    }
+   }
+  },
+  {
+   "columns": [
+    "S1",
+    "SW0"
+   ],
+   "cuts": {
+    "S1": {
+     "segments_cut": 1,
+     "stub_segments": 1,
+     "footing_removed": [
+      "S1.base"
+     ],
+     "collateral": [
+      "BR-S-1"
+     ]
+    },
+    "SW0": {
+     "segments_cut": 1,
+     "stub_segments": 1,
+     "footing_removed": [
+      "SW0.base"
+     ],
+     "collateral": []
+    }
+   },
+   "judge": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.775,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 375.0,
+    "deflection_violations": [],
+    "passes": false,
+    "biggest_rises": [
+     {
+      "member": "B-SO",
+      "section": "W12X16",
+      "before": 0.467,
+      "after": 0.589
+     },
+     {
+      "member": "BR-N-1",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.119,
+      "after": 0.22
+     },
+     {
+      "member": "CT.bottom",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.398,
+      "after": 0.472
+     },
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "before": 0.275,
+      "after": 0.319
+     },
+     {
+      "member": "W2",
+      "section": "HSS5X5X1/4",
+      "before": 0.098,
+      "after": 0.136
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2216.0,
+     "N2.base": 652.3,
+     "S2.base": 5942.4,
+     "S3.base": 1954.9,
+     "W1.base": -543.6,
+     "W2.base": 101.4,
+     "W3.base": 4866.4,
+     "W4.base": 6007.2
+    }
+   },
+   "fix": {
+    "adequate": true,
+    "added_lb": 636.2,
+    "rounds": 3,
+    "sections": {
+     "BR-N-1": "HSS3X3X1/8",
+     "BR-N-2": "HSS3X3X1/8",
+     "BR-NU-1": "HSS3X3X1/8",
+     "BR-S-2": "HSS3X3X1/8",
+     "BR-W-2": "HSS3X3X1/8",
+     "E.W3": "HSS3X3X3/16",
+     "E.clerestory": "HSS3X3X3/16",
+     "E.slope": "HSS3X3X3/16",
+     "E.top": "HSS3X3X3/16",
+     "N-M": "HSS3X3X3/16",
+     "N-M2": "HSS3X3X3/16",
+     "N1": "HSS6X6X1/4",
+     "N2": "HSS6X6X1/4",
+     "S1": "HSS6X6X1/4",
+     "S2": "HSS6X6X1/4",
+     "S3": "HSS6X6X1/4",
+     "SW0": "HSS6X6X1/4",
+     "W.rear.brace": "HSS3X3X3/16",
+     "W.slope": "HSS3X3X3/16",
+     "W.top": "HSS3X3X3/16",
+     "W1": "HSS6X6X1/4",
+     "W2": "HSS6X6X1/4",
+     "W3": "HSS6X6X1/4",
+     "W4": "HSS6X6X1/4"
+    },
+    "stuck": [],
+    "deflection_violations": [],
+    "max_dcr": 0.699,
+    "drift_ratio": 503.0
+   }
+  },
+  {
+   "columns": [
+    "S1",
+    "W1"
+   ],
+   "cuts": {
+    "S1": {
+     "segments_cut": 1,
+     "stub_segments": 1,
+     "footing_removed": [
+      "S1.base"
+     ],
+     "collateral": [
+      "BR-S-1"
+     ]
+    },
+    "W1": {
+     "segments_cut": 1,
+     "stub_segments": 2,
+     "footing_removed": [
+      "W1.base"
+     ],
+     "collateral": []
+    }
+   },
+   "judge": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.815,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 388.0,
+    "deflection_violations": [],
+    "passes": false,
+    "biggest_rises": [
+     {
+      "member": "B-SO",
+      "section": "W12X16",
+      "before": 0.467,
+      "after": 0.606
+     },
+     {
+      "member": "W1",
+      "section": "HSS5X5X1/4",
+      "before": 0.407,
+      "after": 0.53
+     },
+     {
+      "member": "SW0",
+      "section": "HSS5X5X1/4",
+      "before": 0.033,
+      "after": 0.142
+     },
+     {
+      "member": "BR-N-1",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.119,
+      "after": 0.211
+     },
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "before": 0.275,
+      "after": 0.326
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2284.6,
+     "N2.base": 667.2,
+     "S2.base": 6142.1,
+     "S3.base": 1795.1,
+     "SW0.base": -341.4,
+     "W2.base": -664.1,
+     "W3.base": 4897.1,
+     "W4.base": 4971.4
+    }
+   },
+   "fix": {
+    "adequate": true,
+    "added_lb": 636.2,
+    "rounds": 3,
+    "sections": {
+     "BR-N-1": "HSS3X3X1/8",
+     "BR-N-2": "HSS3X3X1/8",
+     "BR-NU-1": "HSS3X3X1/8",
+     "BR-S-2": "HSS3X3X1/8",
+     "BR-W-2": "HSS3X3X1/8",
+     "E.W3": "HSS3X3X3/16",
+     "E.clerestory": "HSS3X3X3/16",
+     "E.slope": "HSS3X3X3/16",
+     "E.top": "HSS3X3X3/16",
+     "N-M": "HSS3X3X3/16",
+     "N-M2": "HSS3X3X3/16",
+     "N1": "HSS6X6X1/4",
+     "N2": "HSS6X6X1/4",
+     "S1": "HSS6X6X1/4",
+     "S2": "HSS6X6X1/4",
+     "S3": "HSS6X6X1/4",
+     "SW0": "HSS6X6X1/4",
+     "W.rear.brace": "HSS3X3X3/16",
+     "W.slope": "HSS3X3X3/16",
+     "W.top": "HSS3X3X3/16",
+     "W1": "HSS6X6X1/4",
+     "W2": "HSS6X6X1/4",
+     "W3": "HSS6X6X1/4",
+     "W4": "HSS6X6X1/4"
+    },
+    "stuck": [],
+    "deflection_violations": [],
+    "max_dcr": 0.701,
+    "drift_ratio": 516.0
+   }
+  },
+  {
+   "columns": [
+    "S1",
+    "W2"
+   ],
+   "cuts": {
+    "S1": {
+     "segments_cut": 1,
+     "stub_segments": 1,
+     "footing_removed": [
+      "S1.base"
+     ],
+     "collateral": [
+      "BR-S-1"
+     ]
+    },
+    "W2": {
+     "segments_cut": 1,
+     "stub_segments": 3,
+     "footing_removed": [
+      "W2.base"
+     ],
+     "collateral": []
+    }
+   },
+   "judge": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.779,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 399.0,
+    "deflection_violations": [],
+    "passes": false,
+    "biggest_rises": [
+     {
+      "member": "BR-N-1",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.119,
+      "after": 0.226
+     },
+     {
+      "member": "B-SO",
+      "section": "W12X16",
+      "before": 0.467,
+      "after": 0.555
+     },
+     {
+      "member": "SW0",
+      "section": "HSS5X5X1/4",
+      "before": 0.033,
+      "after": 0.101
+     },
+     {
+      "member": "W1",
+      "section": "HSS5X5X1/4",
+      "before": 0.407,
+      "after": 0.475
+     },
+     {
+      "member": "W.rear.brace",
+      "section": "HSS3X3X1/8",
+      "before": 0.238,
+      "after": 0.292
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2300.3,
+     "N2.base": 644.9,
+     "S2.base": 6004.1,
+     "S3.base": 1840.1,
+     "SW0.base": 129.0,
+     "W1.base": -577.7,
+     "W3.base": 4542.1,
+     "W4.base": 5219.0
+    }
+   },
+   "fix": {
+    "adequate": true,
+    "added_lb": 636.2,
+    "rounds": 3,
+    "sections": {
+     "BR-N-1": "HSS3X3X1/8",
+     "BR-N-2": "HSS3X3X1/8",
+     "BR-NU-1": "HSS3X3X1/8",
+     "BR-S-2": "HSS3X3X1/8",
+     "BR-W-2": "HSS3X3X1/8",
+     "E.W3": "HSS3X3X3/16",
+     "E.clerestory": "HSS3X3X3/16",
+     "E.slope": "HSS3X3X3/16",
+     "E.top": "HSS3X3X3/16",
+     "N-M": "HSS3X3X3/16",
+     "N-M2": "HSS3X3X3/16",
+     "N1": "HSS6X6X1/4",
+     "N2": "HSS6X6X1/4",
+     "S1": "HSS6X6X1/4",
+     "S2": "HSS6X6X1/4",
+     "S3": "HSS6X6X1/4",
+     "SW0": "HSS6X6X1/4",
+     "W.rear.brace": "HSS3X3X3/16",
+     "W.slope": "HSS3X3X3/16",
+     "W.top": "HSS3X3X3/16",
+     "W1": "HSS6X6X1/4",
+     "W2": "HSS6X6X1/4",
+     "W3": "HSS6X6X1/4",
+     "W4": "HSS6X6X1/4"
+    },
+    "stuck": [],
+    "deflection_violations": [],
+    "max_dcr": 0.694,
+    "drift_ratio": 534.0
+   }
+  },
+  {
+   "columns": [
+    "SW0",
+    "W1"
+   ],
+   "cuts": {
+    "SW0": {
+     "segments_cut": 1,
+     "stub_segments": 1,
+     "footing_removed": [
+      "SW0.base"
+     ],
+     "collateral": []
+    },
+    "W1": {
+     "segments_cut": 1,
+     "stub_segments": 2,
+     "footing_removed": [
+      "W1.base"
+     ],
+     "collateral": []
+    }
+   },
+   "judge": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.802,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 410.0,
+    "deflection_violations": [],
+    "passes": true,
+    "biggest_rises": [
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "before": 0.275,
+      "after": 0.532
+     },
+     {
+      "member": "W2",
+      "section": "HSS5X5X1/4",
+      "before": 0.098,
+      "after": 0.252
+     },
+     {
+      "member": "W.slope",
+      "section": "HSS3X3X1/8",
+      "before": 0.23,
+      "after": 0.37
+     },
+     {
+      "member": "W1",
+      "section": "HSS5X5X1/4",
+      "before": 0.407,
+      "after": 0.537
+     },
+     {
+      "member": "BR-N-1",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.119,
+      "after": 0.23
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2405.7,
+     "N2.base": 593.4,
+     "S1.base": 2017.2,
+     "S2.base": 8251.5,
+     "S3.base": 1764.0,
+     "W2.base": -1625.8,
+     "W3.base": 4782.0,
+     "W4.base": 7856.4
+    },
+    "passes_full": true
+   },
+   "full_combos": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.802,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 410.0,
+    "deflection_violations": [],
+    "passes": true,
+    "biggest_rises": [
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "before": 0.275,
+      "after": 0.532
+     },
+     {
+      "member": "W2",
+      "section": "HSS5X5X1/4",
+      "before": 0.098,
+      "after": 0.252
+     },
+     {
+      "member": "W.slope",
+      "section": "HSS3X3X1/8",
+      "before": 0.23,
+      "after": 0.37
+     },
+     {
+      "member": "W1",
+      "section": "HSS5X5X1/4",
+      "before": 0.407,
+      "after": 0.537
+     },
+     {
+      "member": "BR-N-1",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.119,
+      "after": 0.23
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2405.7,
+     "N2.base": 593.4,
+     "S1.base": 2017.2,
+     "S2.base": 8251.5,
+     "S3.base": 1764.0,
+     "W2.base": -1625.8,
+     "W3.base": 4782.0,
+     "W4.base": 7856.4
+    }
+   }
+  },
+  {
+   "columns": [
+    "SW0",
+    "W2"
+   ],
+   "cuts": {
+    "SW0": {
+     "segments_cut": 1,
+     "stub_segments": 1,
+     "footing_removed": [
+      "SW0.base"
+     ],
+     "collateral": []
+    },
+    "W2": {
+     "segments_cut": 1,
+     "stub_segments": 3,
+     "footing_removed": [
+      "W2.base"
+     ],
+     "collateral": []
+    }
+   },
+   "judge": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.779,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 424.0,
+    "deflection_violations": [],
+    "passes": true,
+    "biggest_rises": [
+     {
+      "member": "BR-N-1",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.119,
+      "after": 0.227
+     },
+     {
+      "member": "W1",
+      "section": "HSS5X5X1/4",
+      "before": 0.407,
+      "after": 0.47
+     },
+     {
+      "member": "CT.bottom",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.398,
+      "after": 0.459
+     },
+     {
+      "member": "W.rear.brace",
+      "section": "HSS3X3X1/8",
+      "before": 0.238,
+      "after": 0.298
+     },
+     {
+      "member": "W2",
+      "section": "HSS5X5X1/4",
+      "before": 0.098,
+      "after": 0.15
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2349.4,
+     "N2.base": 589.3,
+     "S1.base": 1854.8,
+     "S2.base": 6727.1,
+     "S3.base": 1771.5,
+     "W1.base": -1237.5,
+     "W3.base": 4644.1,
+     "W4.base": 5523.8
+    },
+    "passes_full": true
+   },
+   "full_combos": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.779,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 424.0,
+    "deflection_violations": [],
+    "passes": true,
+    "biggest_rises": [
+     {
+      "member": "BR-N-1",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.119,
+      "after": 0.227
+     },
+     {
+      "member": "W1",
+      "section": "HSS5X5X1/4",
+      "before": 0.407,
+      "after": 0.47
+     },
+     {
+      "member": "CT.bottom",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.398,
+      "after": 0.459
+     },
+     {
+      "member": "W.rear.brace",
+      "section": "HSS3X3X1/8",
+      "before": 0.238,
+      "after": 0.298
+     },
+     {
+      "member": "W2",
+      "section": "HSS5X5X1/4",
+      "before": 0.098,
+      "after": 0.15
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2349.4,
+     "N2.base": 589.3,
+     "S1.base": 1854.8,
+     "S2.base": 7023.1,
+     "S3.base": 1771.5,
+     "W1.base": -1237.5,
+     "W3.base": 4644.1,
+     "W4.base": 5523.8
+    }
+   }
+  },
+  {
+   "columns": [
+    "W1",
+    "W2"
+   ],
+   "cuts": {
+    "W1": {
+     "segments_cut": 1,
+     "stub_segments": 2,
+     "footing_removed": [
+      "W1.base"
+     ],
+     "collateral": []
+    },
+    "W2": {
+     "segments_cut": 1,
+     "stub_segments": 3,
+     "footing_removed": [
+      "W2.base"
+     ],
+     "collateral": []
+    }
+   },
+   "judge": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.811,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 425.0,
+    "deflection_violations": [],
+    "passes": true,
+    "biggest_rises": [
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "before": 0.275,
+      "after": 0.605
+     },
+     {
+      "member": "W.rear.brace",
+      "section": "HSS3X3X1/8",
+      "before": 0.238,
+      "after": 0.554
+     },
+     {
+      "member": "W2",
+      "section": "HSS5X5X1/4",
+      "before": 0.098,
+      "after": 0.395
+     },
+     {
+      "member": "SW0",
+      "section": "HSS5X5X1/4",
+      "before": 0.033,
+      "after": 0.232
+     },
+     {
+      "member": "W3",
+      "section": "HSS5X5X1/4",
+      "before": 0.49,
+      "after": 0.621
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2476.4,
+     "N2.base": 607.1,
+     "S1.base": 2723.7,
+     "S2.base": 7271.6,
+     "S3.base": 1711.6,
+     "SW0.base": -1158.6,
+     "W3.base": 4272.8,
+     "W4.base": 4779.9
+    },
+    "passes_full": true
+   },
+   "full_combos": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.811,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 425.0,
+    "deflection_violations": [],
+    "passes": true,
+    "biggest_rises": [
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "before": 0.275,
+      "after": 0.605
+     },
+     {
+      "member": "W.rear.brace",
+      "section": "HSS3X3X1/8",
+      "before": 0.238,
+      "after": 0.554
+     },
+     {
+      "member": "W2",
+      "section": "HSS5X5X1/4",
+      "before": 0.098,
+      "after": 0.395
+     },
+     {
+      "member": "SW0",
+      "section": "HSS5X5X1/4",
+      "before": 0.033,
+      "after": 0.232
+     },
+     {
+      "member": "W3",
+      "section": "HSS5X5X1/4",
+      "before": 0.49,
+      "after": 0.621
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2476.4,
+     "N2.base": 607.1,
+     "S1.base": 2723.7,
+     "S2.base": 7736.7,
+     "S3.base": 1711.6,
+     "SW0.base": -1158.6,
+     "W3.base": 4272.8,
+     "W4.base": 4779.9
+    }
+   }
+  },
+  {
+   "columns": [
+    "S1",
+    "SW0",
+    "W1"
+   ],
+   "cuts": {
+    "S1": {
+     "segments_cut": 1,
+     "stub_segments": 1,
+     "footing_removed": [
+      "S1.base"
+     ],
+     "collateral": [
+      "BR-S-1"
+     ]
+    },
+    "SW0": {
+     "segments_cut": 1,
+     "stub_segments": 1,
+     "footing_removed": [
+      "SW0.base"
+     ],
+     "collateral": []
+    },
+    "W1": {
+     "segments_cut": 1,
+     "stub_segments": 2,
+     "footing_removed": [
+      "W1.base"
+     ],
+     "collateral": []
+    }
+   },
+   "judge": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.816,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 341.0,
+    "deflection_violations": [],
+    "passes": false,
+    "biggest_rises": [
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "before": 0.275,
+      "after": 0.588
+     },
+     {
+      "member": "B-SO",
+      "section": "W12X16",
+      "before": 0.467,
+      "after": 0.714
+     },
+     {
+      "member": "W2",
+      "section": "HSS5X5X1/4",
+      "before": 0.098,
+      "after": 0.334
+     },
+     {
+      "member": "W.slope",
+      "section": "HSS3X3X1/8",
+      "before": 0.23,
+      "after": 0.433
+     },
+     {
+      "member": "W1",
+      "section": "HSS5X5X1/4",
+      "before": 0.407,
+      "after": 0.552
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2463.2,
+     "N2.base": 690.6,
+     "S2.base": 5876.4,
+     "S3.base": 1929.3,
+     "W2.base": -1078.0,
+     "W3.base": 4742.9,
+     "W4.base": 8616.7
+    }
+   },
+   "fix": {
+    "adequate": true,
+    "added_lb": 608.6,
+    "rounds": 3,
+    "sections": {
+     "BR-N-1": "HSS3X3X1/8",
+     "BR-N-2": "HSS3X3X1/8",
+     "BR-NU-1": "HSS3X3X1/8",
+     "BR-S-2": "HSS3X3X1/8",
+     "BR-W-2": "HSS3X3X1/8",
+     "E.W3": "HSS3X3X3/16",
+     "E.clerestory": "HSS3X3X3/16",
+     "E.slope": "HSS3X3X3/16",
+     "E.top": "HSS3X3X3/16",
+     "N-M": "HSS3X3X3/16",
+     "N-M2": "HSS3X3X3/16",
+     "N1": "HSS6X6X1/4",
+     "N2": "HSS6X6X1/4",
+     "S1": "HSS6X6X1/4",
+     "S2": "HSS6X6X1/4",
+     "S3": "HSS6X6X1/4",
+     "SW0": "HSS6X6X1/4",
+     "W.rear.brace": "HSS3X3X3/16",
+     "W.slope": "HSS3X3X3/16",
+     "W.top": "HSS3X3X3/16",
+     "W1": "HSS6X6X1/4",
+     "W2": "HSS6X6X1/4",
+     "W3": "HSS6X6X1/4",
+     "W4": "HSS6X6X1/4"
+    },
+    "stuck": [],
+    "deflection_violations": [],
+    "max_dcr": 0.704,
+    "drift_ratio": 456.0
+   }
+  },
+  {
+   "columns": [
+    "S1",
+    "SW0",
+    "W2"
+   ],
+   "cuts": {
+    "S1": {
+     "segments_cut": 1,
+     "stub_segments": 1,
+     "footing_removed": [
+      "S1.base"
+     ],
+     "collateral": [
+      "BR-S-1"
+     ]
+    },
+    "SW0": {
+     "segments_cut": 1,
+     "stub_segments": 1,
+     "footing_removed": [
+      "SW0.base"
+     ],
+     "collateral": []
+    },
+    "W2": {
+     "segments_cut": 1,
+     "stub_segments": 3,
+     "footing_removed": [
+      "W2.base"
+     ],
+     "collateral": []
+    }
+   },
+   "judge": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.78,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 376.0,
+    "deflection_violations": [],
+    "passes": false,
+    "biggest_rises": [
+     {
+      "member": "B-SO",
+      "section": "W12X16",
+      "before": 0.467,
+      "after": 0.623
+     },
+     {
+      "member": "BR-N-1",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.119,
+      "after": 0.228
+     },
+     {
+      "member": "CT.bottom",
+      "section": "HSS2-1/2X2-1/2X1/8",
+      "before": 0.398,
+      "after": 0.485
+     },
+     {
+      "member": "W1",
+      "section": "HSS5X5X1/4",
+      "before": 0.407,
+      "after": 0.472
+     },
+     {
+      "member": "W.rear.brace",
+      "section": "HSS3X3X1/8",
+      "before": 0.238,
+      "after": 0.295
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2329.6,
+     "N2.base": 660.4,
+     "S2.base": 5943.2,
+     "S3.base": 1941.9,
+     "W1.base": -815.8,
+     "W3.base": 4730.3,
+     "W4.base": 5728.9
+    }
+   },
+   "fix": {
+    "adequate": true,
+    "added_lb": 608.6,
+    "rounds": 3,
+    "sections": {
+     "BR-N-1": "HSS3X3X1/8",
+     "BR-N-2": "HSS3X3X1/8",
+     "BR-NU-1": "HSS3X3X1/8",
+     "BR-S-2": "HSS3X3X1/8",
+     "BR-W-2": "HSS3X3X1/8",
+     "E.W3": "HSS3X3X3/16",
+     "E.clerestory": "HSS3X3X3/16",
+     "E.slope": "HSS3X3X3/16",
+     "E.top": "HSS3X3X3/16",
+     "N-M": "HSS3X3X3/16",
+     "N-M2": "HSS3X3X3/16",
+     "N1": "HSS6X6X1/4",
+     "N2": "HSS6X6X1/4",
+     "S1": "HSS6X6X1/4",
+     "S2": "HSS6X6X1/4",
+     "S3": "HSS6X6X1/4",
+     "SW0": "HSS6X6X1/4",
+     "W.rear.brace": "HSS3X3X3/16",
+     "W.slope": "HSS3X3X3/16",
+     "W.top": "HSS3X3X3/16",
+     "W1": "HSS6X6X1/4",
+     "W2": "HSS6X6X1/4",
+     "W3": "HSS6X6X1/4",
+     "W4": "HSS6X6X1/4"
+    },
+    "stuck": [],
+    "deflection_violations": [],
+    "max_dcr": 0.696,
+    "drift_ratio": 503.0
+   }
+  },
+  {
+   "columns": [
+    "S1",
+    "W1",
+    "W2"
+   ],
+   "cuts": {
+    "S1": {
+     "segments_cut": 1,
+     "stub_segments": 1,
+     "footing_removed": [
+      "S1.base"
+     ],
+     "collateral": [
+      "BR-S-1"
+     ]
+    },
+    "W1": {
+     "segments_cut": 1,
+     "stub_segments": 2,
+     "footing_removed": [
+      "W1.base"
+     ],
+     "collateral": []
+    },
+    "W2": {
+     "segments_cut": 1,
+     "stub_segments": 3,
+     "footing_removed": [
+      "W2.base"
+     ],
+     "collateral": []
+    }
+   },
+   "judge": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.815,
+    "worst": "S3",
+    "over": [],
+    "newly_over": [],
+    "drift_ratio": 381.0,
+    "deflection_violations": [],
+    "passes": false,
+    "biggest_rises": [
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "before": 0.275,
+      "after": 0.606
+     },
+     {
+      "member": "W.rear.brace",
+      "section": "HSS3X3X1/8",
+      "before": 0.238,
+      "after": 0.554
+     },
+     {
+      "member": "W2",
+      "section": "HSS5X5X1/4",
+      "before": 0.098,
+      "after": 0.395
+     },
+     {
+      "member": "SW0",
+      "section": "HSS5X5X1/4",
+      "before": 0.033,
+      "after": 0.273
+     },
+     {
+      "member": "B-SO",
+      "section": "W12X16",
+      "before": 0.467,
+      "after": 0.661
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2469.4,
+     "N2.base": 678.8,
+     "S2.base": 6122.3,
+     "S3.base": 1785.1,
+     "SW0.base": -664.6,
+     "W3.base": 4448.7,
+     "W4.base": 4723.3
+    }
+   },
+   "fix": {
+    "adequate": true,
+    "added_lb": 608.6,
+    "rounds": 3,
+    "sections": {
+     "BR-N-1": "HSS3X3X1/8",
+     "BR-N-2": "HSS3X3X1/8",
+     "BR-NU-1": "HSS3X3X1/8",
+     "BR-S-2": "HSS3X3X1/8",
+     "BR-W-2": "HSS3X3X1/8",
+     "E.W3": "HSS3X3X3/16",
+     "E.clerestory": "HSS3X3X3/16",
+     "E.slope": "HSS3X3X3/16",
+     "E.top": "HSS3X3X3/16",
+     "N-M": "HSS3X3X3/16",
+     "N-M2": "HSS3X3X3/16",
+     "N1": "HSS6X6X1/4",
+     "N2": "HSS6X6X1/4",
+     "S1": "HSS6X6X1/4",
+     "S2": "HSS6X6X1/4",
+     "S3": "HSS6X6X1/4",
+     "SW0": "HSS6X6X1/4",
+     "W.rear.brace": "HSS3X3X3/16",
+     "W.slope": "HSS3X3X3/16",
+     "W.top": "HSS3X3X3/16",
+     "W1": "HSS6X6X1/4",
+     "W2": "HSS6X6X1/4",
+     "W3": "HSS6X6X1/4",
+     "W4": "HSS6X6X1/4"
+    },
+    "stuck": [],
+    "deflection_violations": [],
+    "max_dcr": 0.697,
+    "drift_ratio": 504.0
+   }
+  },
+  {
+   "columns": [
+    "SW0",
+    "W1",
+    "W2"
+   ],
+   "cuts": {
+    "SW0": {
+     "segments_cut": 1,
+     "stub_segments": 1,
+     "footing_removed": [
+      "SW0.base"
+     ],
+     "collateral": []
+    },
+    "W1": {
+     "segments_cut": 1,
+     "stub_segments": 2,
+     "footing_removed": [
+      "W1.base"
+     ],
+     "collateral": []
+    },
+    "W2": {
+     "segments_cut": 1,
+     "stub_segments": 3,
+     "footing_removed": [
+      "W2.base"
+     ],
+     "collateral": []
+    }
+   },
+   "judge": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 2.522,
+    "worst": "B-SO",
+    "over": [
+     {
+      "member": "B-SO",
+      "section": "W12X16",
+      "dcr": 2.522,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr"
+     },
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "dcr": 1.411,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr"
+     },
+     {
+      "member": "W.top",
+      "section": "HSS3X3X1/8",
+      "dcr": 1.064,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr"
+     }
+    ],
+    "newly_over": [
+     {
+      "member": "B-SO",
+      "section": "W12X16",
+      "dcr": 2.522,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr"
+     },
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "dcr": 1.411,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr"
+     },
+     {
+      "member": "W.top",
+      "section": "HSS3X3X1/8",
+      "dcr": 1.064,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr"
+     }
+    ],
+    "drift_ratio": 363.0,
+    "deflection_violations": [],
+    "passes": false,
+    "biggest_rises": [
+     {
+      "member": "B-SO",
+      "section": "W12X16",
+      "before": 0.467,
+      "after": 2.522
+     },
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "before": 0.275,
+      "after": 1.411
+     },
+     {
+      "member": "W.top",
+      "section": "HSS3X3X1/8",
+      "before": 0.298,
+      "after": 1.064
+     },
+     {
+      "member": "W.slope",
+      "section": "HSS3X3X1/8",
+      "before": 0.23,
+      "after": 0.841
+     },
+     {
+      "member": "W3",
+      "section": "HSS5X5X1/4",
+      "before": 0.49,
+      "after": 0.962
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 2941.2,
+     "N2.base": 530.9,
+     "S1.base": 1357.0,
+     "S2.base": 14772.7,
+     "S3.base": 1787.3,
+     "W3.base": 1731.0,
+     "W4.base": 18225.5
+    }
+   },
+   "fix": {
+    "adequate": false,
+    "added_lb": 1719.0,
+    "rounds": 11,
+    "sections": {
+     "B-SO": "HSS4X4X3/8",
+     "BW": "HSS6X6X3/8",
+     "W.top": "HSS4X4X3/8",
+     "BR-N-1": "HSS3X3X3/16",
+     "BR-N-2": "HSS3X3X3/16",
+     "BR-NU-1": "HSS3X3X3/16",
+     "BR-S-1": "HSS3X3X3/16",
+     "BR-S-2": "HSS3X3X3/16",
+     "BR-W-2": "HSS3X3X3/16",
+     "E.W3": "HSS3X3X1/4",
+     "E.clerestory": "HSS3X3X1/4",
+     "E.slope": "HSS3X3X1/4",
+     "E.top": "HSS3X3X1/4",
+     "N-M": "HSS3X3X1/4",
+     "N-M2": "HSS3X3X1/4",
+     "N1": "HSS5X5X3/8",
+     "N2": "HSS5X5X3/8",
+     "S1": "HSS5X5X3/8",
+     "S2": "HSS5X5X3/8",
+     "S3": "HSS5X5X3/8",
+     "SW0": "HSS5X5X3/8",
+     "W.rear.brace": "HSS3X3X1/4",
+     "W.slope": "HSS3X3X1/4",
+     "W1": "HSS5X5X3/8",
+     "W2": "HSS5X5X3/8",
+     "W3": "HSS5X5X3/8",
+     "W4": "HSS5X5X3/8",
+     "BWI-1": "HSS4X4X3/8",
+     "BWI-2": "HSS4X4X3/8"
+    },
+    "stuck": [
+     "BW"
+    ],
+    "deflection_violations": [],
+    "max_dcr": 1.032,
+    "drift_ratio": 498.0,
+    "beam_upgrade": {
+     "beams": {
+      "BW": "W14X22"
+     },
+     "adequate": true,
+     "added_lb": 1026.1,
+     "sections": {
+      "B-SO": "HSS4X4X3/8",
+      "BR-N-1": "HSS3X3X1/8",
+      "BR-N-2": "HSS3X3X1/8",
+      "BR-NU-1": "HSS3X3X1/8",
+      "BR-S-1": "HSS3X3X1/8",
+      "BR-S-2": "HSS3X3X1/8",
+      "BR-W-2": "HSS3X3X1/8",
+      "E.W3": "HSS3X3X3/16",
+      "E.clerestory": "HSS3X3X3/16",
+      "E.slope": "HSS3X3X3/16",
+      "E.top": "HSS3X3X3/16",
+      "N-M": "HSS3X3X3/16",
+      "N-M2": "HSS3X3X3/16",
+      "N1": "HSS6X6X1/4",
+      "N2": "HSS6X6X1/4",
+      "S1": "HSS6X6X1/4",
+      "S2": "HSS6X6X1/4",
+      "S3": "HSS6X6X1/4",
+      "SW0": "HSS6X6X1/4",
+      "W.rear.brace": "HSS3X3X3/16",
+      "W.slope": "HSS3X3X3/16",
+      "W.top": "HSS5X5X1/4",
+      "W1": "HSS6X6X1/4",
+      "W2": "HSS6X6X1/4",
+      "W3": "HSS6X6X1/4",
+      "W4": "HSS6X6X1/4",
+      "BW": "HSS6X6X3/8"
+     },
+     "stuck": [],
+     "deflection_violations": [],
+     "max_dcr": 0.935,
+     "drift_ratio": 553.0
+    }
+   }
+  },
+  {
+   "columns": [
+    "S1",
+    "SW0",
+    "W1",
+    "W2"
+   ],
+   "cuts": {
+    "S1": {
+     "segments_cut": 1,
+     "stub_segments": 1,
+     "footing_removed": [
+      "S1.base"
+     ],
+     "collateral": [
+      "BR-S-1"
+     ]
+    },
+    "SW0": {
+     "segments_cut": 1,
+     "stub_segments": 1,
+     "footing_removed": [
+      "SW0.base"
+     ],
+     "collateral": []
+    },
+    "W1": {
+     "segments_cut": 1,
+     "stub_segments": 2,
+     "footing_removed": [
+      "W1.base"
+     ],
+     "collateral": []
+    },
+    "W2": {
+     "segments_cut": 1,
+     "stub_segments": 3,
+     "footing_removed": [
+      "W2.base"
+     ],
+     "collateral": []
+    }
+   },
+   "judge": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 1.755,
+    "worst": "BW",
+    "over": [
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "dcr": 1.755,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr"
+     },
+     {
+      "member": "W.top",
+      "section": "HSS3X3X1/8",
+      "dcr": 1.411,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr"
+     },
+     {
+      "member": "W.slope",
+      "section": "HSS3X3X1/8",
+      "dcr": 1.245,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr"
+     },
+     {
+      "member": "W3",
+      "section": "HSS5X5X1/4",
+      "dcr": 1.159,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr"
+     }
+    ],
+    "newly_over": [
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "dcr": 1.755,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr"
+     },
+     {
+      "member": "W.top",
+      "section": "HSS3X3X1/8",
+      "dcr": 1.411,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr"
+     },
+     {
+      "member": "W.slope",
+      "section": "HSS3X3X1/8",
+      "dcr": 1.245,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr"
+     },
+     {
+      "member": "W3",
+      "section": "HSS5X5X1/4",
+      "dcr": 1.159,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr"
+     }
+    ],
+    "drift_ratio": 233.0,
+    "deflection_violations": [],
+    "passes": false,
+    "biggest_rises": [
+     {
+      "member": "BW",
+      "section": "W12X16",
+      "before": 0.275,
+      "after": 1.755
+     },
+     {
+      "member": "W.top",
+      "section": "HSS3X3X1/8",
+      "before": 0.298,
+      "after": 1.411
+     },
+     {
+      "member": "W.slope",
+      "section": "HSS3X3X1/8",
+      "before": 0.23,
+      "after": 1.245
+     },
+     {
+      "member": "W3",
+      "section": "HSS5X5X1/4",
+      "before": 0.49,
+      "after": 1.159
+     },
+     {
+      "member": "W2",
+      "section": "HSS5X5X1/4",
+      "before": 0.098,
+      "after": 0.717
+     }
+    ],
+    "gaps": [
+     {
+      "surface": "solar_roof",
+      "label": "South-facing photovoltaic roof, 30 deg",
+      "area_ft2": 236.2,
+      "clear_span_in": 245.5,
+      "members": [],
+      "issue": "no framing crosses this surface in the model; its secondary framing is not modelled and its load is delivered directly to the perimeter"
+     }
+    ],
+    "reactions": {
+     "N1.base": 3428.3,
+     "N2.base": 625.8,
+     "S2.base": 4916.9,
+     "S3.base": 2084.3,
+     "W3.base": -822.8,
+     "W4.base": 24201.4
+    }
+   },
+   "fix": {
+    "adequate": false,
+    "added_lb": 3450.3,
+    "rounds": 12,
+    "sections": {
+     "BW": "HSS6X6X3/8",
+     "W.top": "HSS6X6X1/4",
+     "W.slope": "HSS6X6X1/4",
+     "W3": "HSS6X6X3/8",
+     "BR-N-1": "HSS5X5X1/4",
+     "BR-N-2": "HSS5X5X1/4",
+     "BR-NU-1": "HSS5X5X1/4",
+     "BR-S-2": "HSS5X5X1/4",
+     "BR-W-2": "HSS5X5X1/4",
+     "E.W3": "HSS6X6X1/4",
+     "E.clerestory": "HSS6X6X1/4",
+     "E.slope": "HSS6X6X1/4",
+     "E.top": "HSS6X6X1/4",
+     "N-M": "HSS6X6X1/4",
+     "N-M2": "HSS6X6X1/4",
+     "N1": "HSS6X6X3/8",
+     "N2": "HSS6X6X3/8",
+     "S1": "HSS6X6X3/8",
+     "S2": "HSS6X6X3/8",
+     "S3": "HSS6X6X3/8",
+     "SW0": "HSS6X6X3/8",
+     "W.rear.brace": "HSS6X6X1/4",
+     "W1": "HSS6X6X3/8",
+     "W2": "HSS6X6X3/8",
+     "W4": "HSS6X6X3/8",
+     "BWI-1": "HSS4X4X3/8",
+     "BWI-2": "HSS4X4X3/8",
+     "RF @ 6.9167": "HSS1-1/2X1-1/2X3/16"
+    },
+    "stuck": [],
+    "deflection_violations": [
+     {
+      "member": "BWI-2",
+      "group": "Beams",
+      "rule": "floor",
+      "span_in": 182.0,
+      "combo": "S2 D+L",
+      "deflection_in": -0.7745,
+      "ratio": 235.0,
+      "limit": 240.0
+     }
+    ],
+    "max_dcr": 0.948,
+    "drift_ratio": 419.0,
+    "beam_upgrade": {
+     "beams": {
+      "BWI-2": "W14X22"
+     },
+     "adequate": true,
+     "added_lb": 3537.0,
+     "sections": {
+      "BW": "HSS6X6X3/8",
+      "W.top": "HSS6X6X1/4",
+      "W.slope": "HSS6X6X1/4",
+      "W3": "HSS6X6X3/8",
+      "BR-N-1": "HSS5X5X1/4",
+      "BR-N-2": "HSS5X5X1/4",
+      "BR-NU-1": "HSS5X5X1/4",
+      "BR-S-2": "HSS5X5X1/4",
+      "BR-W-2": "HSS5X5X1/4",
+      "E.W3": "HSS6X6X1/4",
+      "E.clerestory": "HSS6X6X1/4",
+      "E.slope": "HSS6X6X1/4",
+      "E.top": "HSS6X6X1/4",
+      "N-M": "HSS6X6X1/4",
+      "N-M2": "HSS6X6X1/4",
+      "N1": "HSS6X6X3/8",
+      "N2": "HSS6X6X3/8",
+      "S1": "HSS6X6X3/8",
+      "S2": "HSS6X6X3/8",
+      "S3": "HSS6X6X3/8",
+      "SW0": "HSS6X6X3/8",
+      "W.rear.brace": "HSS6X6X1/4",
+      "W1": "HSS6X6X3/8",
+      "W2": "HSS6X6X3/8",
+      "W4": "HSS6X6X3/8",
+      "BWI-1": "HSS4X4X3/8"
+     },
+     "stuck": [],
+     "deflection_violations": [],
+     "max_dcr": 0.82,
+     "drift_ratio": 422.0
+    }
+   }
+  }
+ ]
+}

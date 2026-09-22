@@ -1,0 +1,1414 @@
+{
+    "graph": {
+        "data": {
+            "attributes": {},
+            "default_edge_attributes": {},
+            "default_node_attributes": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "edge": {
+                "'L0'": {
+                    "'L1'": {
+                        "member": "T1.bottom"
+                    },
+                    "'U0'": {
+                        "member": "T1.upright.0"
+                    },
+                    "'U1'": {
+                        "member": "T1.brace.west"
+                    }
+                },
+                "'L1'": {
+                    "'L2'": {
+                        "member": "T1.bottom"
+                    },
+                    "'U1'": {
+                        "member": "T1.upright.1"
+                    }
+                },
+                "'L2'": {
+                    "'L3'": {
+                        "member": "T1.bottom"
+                    },
+                    "'U2'": {
+                        "member": "T1.upright.2"
+                    }
+                },
+                "'L3'": {
+                    "'L4'": {
+                        "member": "T1.bottom"
+                    },
+                    "'U3'": {
+                        "member": "T1.upright.3"
+                    }
+                },
+                "'L4'": {
+                    "'L5'": {
+                        "member": "T1.bottom"
+                    },
+                    "'U4'": {
+                        "member": "T1.upright.4"
+                    }
+                },
+                "'L5'": {
+                    "'L6'": {
+                        "member": "T1.bottom"
+                    },
+                    "'U5'": {
+                        "member": "T1.upright.5"
+                    }
+                },
+                "'L6'": {
+                    "'U6'": {
+                        "member": "T1.upright.6"
+                    }
+                },
+                "'U0'": {
+                    "'U1'": {
+                        "member": "T1.top"
+                    }
+                },
+                "'U1'": {
+                    "'U2'": {
+                        "member": "T1.top"
+                    }
+                },
+                "'U2'": {
+                    "'U3'": {
+                        "member": "T1.top"
+                    }
+                },
+                "'U3'": {
+                    "'U4'": {
+                        "member": "T1.top"
+                    }
+                },
+                "'U4'": {
+                    "'U5'": {
+                        "member": "T1.top"
+                    }
+                },
+                "'U5'": {
+                    "'L6'": {
+                        "member": "T1.brace.east"
+                    },
+                    "'U6'": {
+                        "member": "T1.top"
+                    }
+                },
+                "'U6'": {}
+            },
+            "max_node": -1,
+            "node": {
+                "'L0'": {
+                    "x": 0.0,
+                    "y": 69.75,
+                    "z": 100.0
+                },
+                "'L1'": {
+                    "x": 37.375,
+                    "y": 69.75,
+                    "z": 100.0
+                },
+                "'L2'": {
+                    "x": 74.75,
+                    "y": 69.75,
+                    "z": 100.0
+                },
+                "'L3'": {
+                    "x": 112.125,
+                    "y": 69.75,
+                    "z": 100.0
+                },
+                "'L4'": {
+                    "x": 149.5,
+                    "y": 69.75,
+                    "z": 100.0
+                },
+                "'L5'": {
+                    "x": 186.875,
+                    "y": 69.75,
+                    "z": 100.0
+                },
+                "'L6'": {
+                    "x": 224.25,
+                    "y": 69.75,
+                    "z": 100.0
+                },
+                "'U0'": {
+                    "x": 0.0,
+                    "y": 69.75,
+                    "z": 181.6432482349228
+                },
+                "'U1'": {
+                    "x": 37.375,
+                    "y": 69.75,
+                    "z": 181.6432482349228
+                },
+                "'U2'": {
+                    "x": 74.75,
+                    "y": 69.75,
+                    "z": 181.6432482349228
+                },
+                "'U3'": {
+                    "x": 112.125,
+                    "y": 69.75,
+                    "z": 181.6432482349228
+                },
+                "'U4'": {
+                    "x": 149.5,
+                    "y": 69.75,
+                    "z": 181.6432482349228
+                },
+                "'U5'": {
+                    "x": 186.875,
+                    "y": 69.75,
+                    "z": 181.6432482349228
+                },
+                "'U6'": {
+                    "x": 224.25,
+                    "y": 69.75,
+                    "z": 181.6432482349228
+                }
+            }
+        },
+        "dtype": "compas.datastructures/Graph",
+        "guid": "77090f5a-6eff-4c96-97de-45933268e84a",
+        "inheritance": [],
+        "name": "T1 shared geometric joints (not connection specifications)"
+    },
+    "members": {
+        "T1.bottom": {
+            "joints": [
+                "L0",
+                "L1",
+                "L2",
+                "L3",
+                "L4",
+                "L5",
+                "L6"
+            ],
+            "role": "bottom chord",
+            "section_basis": "source visualization envelope; not a selected section"
+        },
+        "T1.brace.east": {
+            "joints": [
+                "U5",
+                "L6"
+            ],
+            "role": "end brace",
+            "section_basis": "source visualization envelope; not a selected section"
+        },
+        "T1.brace.west": {
+            "joints": [
+                "L0",
+                "U1"
+            ],
+            "role": "end brace",
+            "section_basis": "source visualization envelope; not a selected section"
+        },
+        "T1.top": {
+            "joints": [
+                "U0",
+                "U1",
+                "U2",
+                "U3",
+                "U4",
+                "U5",
+                "U6"
+            ],
+            "role": "top chord",
+            "section_basis": "source visualization envelope; not a selected section"
+        },
+        "T1.upright.0": {
+            "joints": [
+                "L0",
+                "U0"
+            ],
+            "role": "upright",
+            "section_basis": "source visualization envelope; not a selected section"
+        },
+        "T1.upright.1": {
+            "joints": [
+                "L1",
+                "U1"
+            ],
+            "role": "upright",
+            "section_basis": "source visualization envelope; not a selected section"
+        },
+        "T1.upright.2": {
+            "joints": [
+                "L2",
+                "U2"
+            ],
+            "role": "upright",
+            "section_basis": "source visualization envelope; not a selected section"
+        },
+        "T1.upright.3": {
+            "joints": [
+                "L3",
+                "U3"
+            ],
+            "role": "upright",
+            "section_basis": "source visualization envelope; not a selected section"
+        },
+        "T1.upright.4": {
+            "joints": [
+                "L4",
+                "U4"
+            ],
+            "role": "upright",
+            "section_basis": "source visualization envelope; not a selected section"
+        },
+        "T1.upright.5": {
+            "joints": [
+                "L5",
+                "U5"
+            ],
+            "role": "upright",
+            "section_basis": "source visualization envelope; not a selected section"
+        },
+        "T1.upright.6": {
+            "joints": [
+                "L6",
+                "U6"
+            ],
+            "role": "upright",
+            "section_basis": "source visualization envelope; not a selected section"
+        }
+    },
+    "model": {
+        "data": {
+            "elements": {
+                "13f2227a-01a7-4584-b3bc-c2b6e53fde07": {
+                    "data": {
+                        "depth": 2.5,
+                        "end": {
+                            "data": [
+                                37.375,
+                                69.75,
+                                181.6432482349228
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "9c68c9a6-4f97-460e-a653-eed93d7ffe88"
+                        },
+                        "features": [],
+                        "material": null,
+                        "name": "T1.brace.west",
+                        "start": {
+                            "data": [
+                                0.0,
+                                69.75,
+                                100.0
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "fdaa0b2d-2eeb-4422-a7a0-6007520c68ae"
+                        },
+                        "transformation": null,
+                        "width": 2.5
+                    },
+                    "dtype": "geometry_types/MemberElement",
+                    "guid": "13f2227a-01a7-4584-b3bc-c2b6e53fde07",
+                    "name": "T1.brace.west"
+                },
+                "1b2fb10b-b90e-4deb-8cb2-026c72f3b8ac": {
+                    "data": {
+                        "features": [],
+                        "geometry": {
+                            "data": {
+                                "attributes": {},
+                                "default_edge_attributes": {},
+                                "default_face_attributes": {},
+                                "default_vertex_attributes": {
+                                    "x": 0.0,
+                                    "y": 0.0,
+                                    "z": 0.0
+                                },
+                                "edgedata": {},
+                                "face": {
+                                    "0": [
+                                        0,
+                                        3,
+                                        2,
+                                        1
+                                    ],
+                                    "1": [
+                                        4,
+                                        5,
+                                        6,
+                                        7
+                                    ],
+                                    "2": [
+                                        0,
+                                        1,
+                                        5,
+                                        4
+                                    ],
+                                    "3": [
+                                        1,
+                                        2,
+                                        6,
+                                        5
+                                    ],
+                                    "4": [
+                                        2,
+                                        3,
+                                        7,
+                                        6
+                                    ],
+                                    "5": [
+                                        3,
+                                        0,
+                                        4,
+                                        7
+                                    ]
+                                },
+                                "facedata": {
+                                    "0": {},
+                                    "1": {},
+                                    "2": {},
+                                    "3": {},
+                                    "4": {},
+                                    "5": {}
+                                },
+                                "max_face": 5,
+                                "max_vertex": 7,
+                                "vertex": {
+                                    "0": {
+                                        "x": 34.375,
+                                        "y": 68.0,
+                                        "z": 176.6432482349228
+                                    },
+                                    "1": {
+                                        "x": 40.375,
+                                        "y": 68.0,
+                                        "z": 176.6432482349228
+                                    },
+                                    "2": {
+                                        "x": 40.375,
+                                        "y": 68.5,
+                                        "z": 176.6432482349228
+                                    },
+                                    "3": {
+                                        "x": 34.375,
+                                        "y": 68.5,
+                                        "z": 176.6432482349228
+                                    },
+                                    "4": {
+                                        "x": 34.375,
+                                        "y": 68.0,
+                                        "z": 182.6432482349228
+                                    },
+                                    "5": {
+                                        "x": 40.375,
+                                        "y": 68.0,
+                                        "z": 182.6432482349228
+                                    },
+                                    "6": {
+                                        "x": 40.375,
+                                        "y": 68.5,
+                                        "z": 182.6432482349228
+                                    },
+                                    "7": {
+                                        "x": 34.375,
+                                        "y": 68.5,
+                                        "z": 182.6432482349228
+                                    }
+                                }
+                            },
+                            "dtype": "compas.datastructures/Mesh",
+                            "guid": "2921d511-f501-47e9-b1e5-1747fcdce33c",
+                            "inheritance": []
+                        },
+                        "material": null,
+                        "name": "T1.plate.1",
+                        "transformation": null
+                    },
+                    "dtype": "geometry_types/MeshElement",
+                    "guid": "1b2fb10b-b90e-4deb-8cb2-026c72f3b8ac",
+                    "name": "T1.plate.1"
+                },
+                "791f7160-b1c8-4c7a-849c-32631a457fd2": {
+                    "data": {
+                        "depth": 3.0,
+                        "end": {
+                            "data": [
+                                186.875,
+                                69.75,
+                                181.6432482349228
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "80c43c87-899e-49f5-8976-a24c3be093ce"
+                        },
+                        "features": [],
+                        "material": null,
+                        "name": "T1.upright.5",
+                        "start": {
+                            "data": [
+                                186.875,
+                                69.75,
+                                100.0
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "18e7b5ca-fb69-45e3-a412-d64b05015252"
+                        },
+                        "transformation": null,
+                        "width": 3.0
+                    },
+                    "dtype": "geometry_types/MemberElement",
+                    "guid": "791f7160-b1c8-4c7a-849c-32631a457fd2",
+                    "name": "T1.upright.5"
+                },
+                "7e117c69-574c-4e9d-bae1-ec9275ba4e88": {
+                    "data": {
+                        "depth": 3.0,
+                        "end": {
+                            "data": [
+                                112.125,
+                                69.75,
+                                181.6432482349228
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "d4cf5329-d4f4-48a3-8a94-b07432c3c306"
+                        },
+                        "features": [],
+                        "material": null,
+                        "name": "T1.upright.3",
+                        "start": {
+                            "data": [
+                                112.125,
+                                69.75,
+                                100.0
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "f365ca36-349b-4787-a41c-b5af456335dd"
+                        },
+                        "transformation": null,
+                        "width": 3.0
+                    },
+                    "dtype": "geometry_types/MemberElement",
+                    "guid": "7e117c69-574c-4e9d-bae1-ec9275ba4e88",
+                    "name": "T1.upright.3"
+                },
+                "821ea4e4-9c3a-4a8e-92c6-a55af137b011": {
+                    "data": {
+                        "depth": 2.5,
+                        "end": {
+                            "data": [
+                                224.25,
+                                69.75,
+                                100.0
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "be0632ec-900b-4545-9e03-36f6ed1d7c82"
+                        },
+                        "features": [],
+                        "material": null,
+                        "name": "T1.brace.east",
+                        "start": {
+                            "data": [
+                                186.875,
+                                69.75,
+                                181.6432482349228
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "a2fe6814-8931-45f3-a397-3dfd60749e99"
+                        },
+                        "transformation": null,
+                        "width": 2.5
+                    },
+                    "dtype": "geometry_types/MemberElement",
+                    "guid": "821ea4e4-9c3a-4a8e-92c6-a55af137b011",
+                    "name": "T1.brace.east"
+                },
+                "83913ed3-0059-447f-92a6-8748037f3c91": {
+                    "data": {
+                        "depth": 3.0,
+                        "end": {
+                            "data": [
+                                149.5,
+                                69.75,
+                                181.6432482349228
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "05c5697e-6cf4-4a89-989d-77971d052e8e"
+                        },
+                        "features": [],
+                        "material": null,
+                        "name": "T1.upright.4",
+                        "start": {
+                            "data": [
+                                149.5,
+                                69.75,
+                                100.0
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "3a96196e-0088-4f40-b682-4f9516e613b5"
+                        },
+                        "transformation": null,
+                        "width": 3.0
+                    },
+                    "dtype": "geometry_types/MemberElement",
+                    "guid": "83913ed3-0059-447f-92a6-8748037f3c91",
+                    "name": "T1.upright.4"
+                },
+                "86f58bfa-fb85-4e8f-a80e-12455af0c2df": {
+                    "data": {
+                        "depth": 3.0,
+                        "end": {
+                            "data": [
+                                224.25,
+                                69.75,
+                                181.6432482349228
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "dcfc1315-bf29-4e43-8296-0b96c16fc4c7"
+                        },
+                        "features": [],
+                        "material": null,
+                        "name": "T1.top",
+                        "start": {
+                            "data": [
+                                0.0,
+                                69.75,
+                                181.6432482349228
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "da2e34cf-de57-47ee-bc28-d74f378bcd07"
+                        },
+                        "transformation": null,
+                        "width": 3.0
+                    },
+                    "dtype": "geometry_types/MemberElement",
+                    "guid": "86f58bfa-fb85-4e8f-a80e-12455af0c2df",
+                    "name": "T1.top"
+                },
+                "876b1c38-a868-455b-8384-7dde65b43efc": {
+                    "data": {
+                        "features": [],
+                        "geometry": {
+                            "data": {
+                                "attributes": {},
+                                "default_edge_attributes": {},
+                                "default_face_attributes": {},
+                                "default_vertex_attributes": {
+                                    "x": 0.0,
+                                    "y": 0.0,
+                                    "z": 0.0
+                                },
+                                "edgedata": {},
+                                "face": {
+                                    "0": [
+                                        0,
+                                        3,
+                                        2,
+                                        1
+                                    ],
+                                    "1": [
+                                        4,
+                                        5,
+                                        6,
+                                        7
+                                    ],
+                                    "2": [
+                                        0,
+                                        1,
+                                        5,
+                                        4
+                                    ],
+                                    "3": [
+                                        1,
+                                        2,
+                                        6,
+                                        5
+                                    ],
+                                    "4": [
+                                        2,
+                                        3,
+                                        7,
+                                        6
+                                    ],
+                                    "5": [
+                                        3,
+                                        0,
+                                        4,
+                                        7
+                                    ]
+                                },
+                                "facedata": {
+                                    "0": {},
+                                    "1": {},
+                                    "2": {},
+                                    "3": {},
+                                    "4": {},
+                                    "5": {}
+                                },
+                                "max_face": 5,
+                                "max_vertex": 7,
+                                "vertex": {
+                                    "0": {
+                                        "x": 71.75,
+                                        "y": 68.0,
+                                        "z": 176.6432482349228
+                                    },
+                                    "1": {
+                                        "x": 77.75,
+                                        "y": 68.0,
+                                        "z": 176.6432482349228
+                                    },
+                                    "2": {
+                                        "x": 77.75,
+                                        "y": 68.5,
+                                        "z": 176.6432482349228
+                                    },
+                                    "3": {
+                                        "x": 71.75,
+                                        "y": 68.5,
+                                        "z": 176.6432482349228
+                                    },
+                                    "4": {
+                                        "x": 71.75,
+                                        "y": 68.0,
+                                        "z": 182.6432482349228
+                                    },
+                                    "5": {
+                                        "x": 77.75,
+                                        "y": 68.0,
+                                        "z": 182.6432482349228
+                                    },
+                                    "6": {
+                                        "x": 77.75,
+                                        "y": 68.5,
+                                        "z": 182.6432482349228
+                                    },
+                                    "7": {
+                                        "x": 71.75,
+                                        "y": 68.5,
+                                        "z": 182.6432482349228
+                                    }
+                                }
+                            },
+                            "dtype": "compas.datastructures/Mesh",
+                            "guid": "a4f5083b-56db-4397-9794-40f7a62fd323",
+                            "inheritance": []
+                        },
+                        "material": null,
+                        "name": "T1.plate.2",
+                        "transformation": null
+                    },
+                    "dtype": "geometry_types/MeshElement",
+                    "guid": "876b1c38-a868-455b-8384-7dde65b43efc",
+                    "name": "T1.plate.2"
+                },
+                "94786136-e5ed-4314-b57f-fa3b7554e809": {
+                    "data": {
+                        "features": [],
+                        "geometry": {
+                            "data": {
+                                "attributes": {},
+                                "default_edge_attributes": {},
+                                "default_face_attributes": {},
+                                "default_vertex_attributes": {
+                                    "x": 0.0,
+                                    "y": 0.0,
+                                    "z": 0.0
+                                },
+                                "edgedata": {},
+                                "face": {
+                                    "0": [
+                                        0,
+                                        3,
+                                        2,
+                                        1
+                                    ],
+                                    "1": [
+                                        4,
+                                        5,
+                                        6,
+                                        7
+                                    ],
+                                    "2": [
+                                        0,
+                                        1,
+                                        5,
+                                        4
+                                    ],
+                                    "3": [
+                                        1,
+                                        2,
+                                        6,
+                                        5
+                                    ],
+                                    "4": [
+                                        2,
+                                        3,
+                                        7,
+                                        6
+                                    ],
+                                    "5": [
+                                        3,
+                                        0,
+                                        4,
+                                        7
+                                    ]
+                                },
+                                "facedata": {
+                                    "0": {},
+                                    "1": {},
+                                    "2": {},
+                                    "3": {},
+                                    "4": {},
+                                    "5": {}
+                                },
+                                "max_face": 5,
+                                "max_vertex": 7,
+                                "vertex": {
+                                    "0": {
+                                        "x": 183.875,
+                                        "y": 68.0,
+                                        "z": 176.6432482349228
+                                    },
+                                    "1": {
+                                        "x": 189.875,
+                                        "y": 68.0,
+                                        "z": 176.6432482349228
+                                    },
+                                    "2": {
+                                        "x": 189.875,
+                                        "y": 68.5,
+                                        "z": 176.6432482349228
+                                    },
+                                    "3": {
+                                        "x": 183.875,
+                                        "y": 68.5,
+                                        "z": 176.6432482349228
+                                    },
+                                    "4": {
+                                        "x": 183.875,
+                                        "y": 68.0,
+                                        "z": 182.6432482349228
+                                    },
+                                    "5": {
+                                        "x": 189.875,
+                                        "y": 68.0,
+                                        "z": 182.6432482349228
+                                    },
+                                    "6": {
+                                        "x": 189.875,
+                                        "y": 68.5,
+                                        "z": 182.6432482349228
+                                    },
+                                    "7": {
+                                        "x": 183.875,
+                                        "y": 68.5,
+                                        "z": 182.6432482349228
+                                    }
+                                }
+                            },
+                            "dtype": "compas.datastructures/Mesh",
+                            "guid": "414d0c9a-5f75-4649-8915-cff7aacb6d9c",
+                            "inheritance": []
+                        },
+                        "material": null,
+                        "name": "T1.plate.5",
+                        "transformation": null
+                    },
+                    "dtype": "geometry_types/MeshElement",
+                    "guid": "94786136-e5ed-4314-b57f-fa3b7554e809",
+                    "name": "T1.plate.5"
+                },
+                "9d7612a4-63a4-43f2-9f45-1f070119764c": {
+                    "data": {
+                        "depth": 3.0,
+                        "end": {
+                            "data": [
+                                224.25,
+                                69.75,
+                                100.0
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "ab37555a-446f-4874-ac9f-5b53376feb00"
+                        },
+                        "features": [],
+                        "material": null,
+                        "name": "T1.bottom",
+                        "start": {
+                            "data": [
+                                0.0,
+                                69.75,
+                                100.0
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "123bc65d-ee88-4971-b813-f3be4210a9b7"
+                        },
+                        "transformation": null,
+                        "width": 3.0
+                    },
+                    "dtype": "geometry_types/MemberElement",
+                    "guid": "9d7612a4-63a4-43f2-9f45-1f070119764c",
+                    "name": "T1.bottom"
+                },
+                "c902620a-6462-41de-900c-667b4af6303a": {
+                    "data": {
+                        "features": [],
+                        "geometry": {
+                            "data": {
+                                "attributes": {},
+                                "default_edge_attributes": {},
+                                "default_face_attributes": {},
+                                "default_vertex_attributes": {
+                                    "x": 0.0,
+                                    "y": 0.0,
+                                    "z": 0.0
+                                },
+                                "edgedata": {},
+                                "face": {
+                                    "0": [
+                                        0,
+                                        3,
+                                        2,
+                                        1
+                                    ],
+                                    "1": [
+                                        4,
+                                        5,
+                                        6,
+                                        7
+                                    ],
+                                    "2": [
+                                        0,
+                                        1,
+                                        5,
+                                        4
+                                    ],
+                                    "3": [
+                                        1,
+                                        2,
+                                        6,
+                                        5
+                                    ],
+                                    "4": [
+                                        2,
+                                        3,
+                                        7,
+                                        6
+                                    ],
+                                    "5": [
+                                        3,
+                                        0,
+                                        4,
+                                        7
+                                    ]
+                                },
+                                "facedata": {
+                                    "0": {},
+                                    "1": {},
+                                    "2": {},
+                                    "3": {},
+                                    "4": {},
+                                    "5": {}
+                                },
+                                "max_face": 5,
+                                "max_vertex": 7,
+                                "vertex": {
+                                    "0": {
+                                        "x": 146.5,
+                                        "y": 68.0,
+                                        "z": 176.6432482349228
+                                    },
+                                    "1": {
+                                        "x": 152.5,
+                                        "y": 68.0,
+                                        "z": 176.6432482349228
+                                    },
+                                    "2": {
+                                        "x": 152.5,
+                                        "y": 68.5,
+                                        "z": 176.6432482349228
+                                    },
+                                    "3": {
+                                        "x": 146.5,
+                                        "y": 68.5,
+                                        "z": 176.6432482349228
+                                    },
+                                    "4": {
+                                        "x": 146.5,
+                                        "y": 68.0,
+                                        "z": 182.6432482349228
+                                    },
+                                    "5": {
+                                        "x": 152.5,
+                                        "y": 68.0,
+                                        "z": 182.6432482349228
+                                    },
+                                    "6": {
+                                        "x": 152.5,
+                                        "y": 68.5,
+                                        "z": 182.6432482349228
+                                    },
+                                    "7": {
+                                        "x": 146.5,
+                                        "y": 68.5,
+                                        "z": 182.6432482349228
+                                    }
+                                }
+                            },
+                            "dtype": "compas.datastructures/Mesh",
+                            "guid": "3f9e40e1-6a02-4766-9f34-8e51b5259ece",
+                            "inheritance": []
+                        },
+                        "material": null,
+                        "name": "T1.plate.4",
+                        "transformation": null
+                    },
+                    "dtype": "geometry_types/MeshElement",
+                    "guid": "c902620a-6462-41de-900c-667b4af6303a",
+                    "name": "T1.plate.4"
+                },
+                "cd518cdb-7a78-4aaf-9216-2588a9a727f0": {
+                    "data": {
+                        "depth": 3.0,
+                        "end": {
+                            "data": [
+                                74.75,
+                                69.75,
+                                181.6432482349228
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "37f7d13c-21c6-4905-8c8e-7355f6b6d199"
+                        },
+                        "features": [],
+                        "material": null,
+                        "name": "T1.upright.2",
+                        "start": {
+                            "data": [
+                                74.75,
+                                69.75,
+                                100.0
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "d3ac6941-afd3-4d26-8d29-43159f8abb44"
+                        },
+                        "transformation": null,
+                        "width": 3.0
+                    },
+                    "dtype": "geometry_types/MemberElement",
+                    "guid": "cd518cdb-7a78-4aaf-9216-2588a9a727f0",
+                    "name": "T1.upright.2"
+                },
+                "d5664fbc-8725-4643-8abc-97da5832627b": {
+                    "data": {
+                        "depth": 3.0,
+                        "end": {
+                            "data": [
+                                37.375,
+                                69.75,
+                                181.6432482349228
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "d4ab61ff-df14-4753-bdd6-357ede8d86b1"
+                        },
+                        "features": [],
+                        "material": null,
+                        "name": "T1.upright.1",
+                        "start": {
+                            "data": [
+                                37.375,
+                                69.75,
+                                100.0
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "6c9cf5cf-df5d-4fe8-9ac5-a1d85f3c9743"
+                        },
+                        "transformation": null,
+                        "width": 3.0
+                    },
+                    "dtype": "geometry_types/MemberElement",
+                    "guid": "d5664fbc-8725-4643-8abc-97da5832627b",
+                    "name": "T1.upright.1"
+                },
+                "e106ac56-45b4-470c-b465-853ddbe7acc2": {
+                    "data": {
+                        "depth": 3.0,
+                        "end": {
+                            "data": [
+                                0.0,
+                                69.75,
+                                181.6432482349228
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "c73aae36-7ce3-4dd6-be22-4e90a065cf3d"
+                        },
+                        "features": [],
+                        "material": null,
+                        "name": "T1.upright.0",
+                        "start": {
+                            "data": [
+                                0.0,
+                                69.75,
+                                100.0
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "7ace3917-2488-4f4d-8a29-ddb65b87899f"
+                        },
+                        "transformation": null,
+                        "width": 3.0
+                    },
+                    "dtype": "geometry_types/MemberElement",
+                    "guid": "e106ac56-45b4-470c-b465-853ddbe7acc2",
+                    "name": "T1.upright.0"
+                },
+                "e3f402d9-bb90-4521-85db-d67c1c5f6638": {
+                    "data": {
+                        "features": [],
+                        "geometry": {
+                            "data": {
+                                "attributes": {},
+                                "default_edge_attributes": {},
+                                "default_face_attributes": {},
+                                "default_vertex_attributes": {
+                                    "x": 0.0,
+                                    "y": 0.0,
+                                    "z": 0.0
+                                },
+                                "edgedata": {},
+                                "face": {
+                                    "0": [
+                                        0,
+                                        3,
+                                        2,
+                                        1
+                                    ],
+                                    "1": [
+                                        4,
+                                        5,
+                                        6,
+                                        7
+                                    ],
+                                    "2": [
+                                        0,
+                                        1,
+                                        5,
+                                        4
+                                    ],
+                                    "3": [
+                                        1,
+                                        2,
+                                        6,
+                                        5
+                                    ],
+                                    "4": [
+                                        2,
+                                        3,
+                                        7,
+                                        6
+                                    ],
+                                    "5": [
+                                        3,
+                                        0,
+                                        4,
+                                        7
+                                    ]
+                                },
+                                "facedata": {
+                                    "0": {},
+                                    "1": {},
+                                    "2": {},
+                                    "3": {},
+                                    "4": {},
+                                    "5": {}
+                                },
+                                "max_face": 5,
+                                "max_vertex": 7,
+                                "vertex": {
+                                    "0": {
+                                        "x": 109.125,
+                                        "y": 68.0,
+                                        "z": 176.6432482349228
+                                    },
+                                    "1": {
+                                        "x": 115.125,
+                                        "y": 68.0,
+                                        "z": 176.6432482349228
+                                    },
+                                    "2": {
+                                        "x": 115.125,
+                                        "y": 68.5,
+                                        "z": 176.6432482349228
+                                    },
+                                    "3": {
+                                        "x": 109.125,
+                                        "y": 68.5,
+                                        "z": 176.6432482349228
+                                    },
+                                    "4": {
+                                        "x": 109.125,
+                                        "y": 68.0,
+                                        "z": 182.6432482349228
+                                    },
+                                    "5": {
+                                        "x": 115.125,
+                                        "y": 68.0,
+                                        "z": 182.6432482349228
+                                    },
+                                    "6": {
+                                        "x": 115.125,
+                                        "y": 68.5,
+                                        "z": 182.6432482349228
+                                    },
+                                    "7": {
+                                        "x": 109.125,
+                                        "y": 68.5,
+                                        "z": 182.6432482349228
+                                    }
+                                }
+                            },
+                            "dtype": "compas.datastructures/Mesh",
+                            "guid": "ebe4d332-08ef-430b-ad7d-41930d9ac425",
+                            "inheritance": []
+                        },
+                        "material": null,
+                        "name": "T1.plate.3",
+                        "transformation": null
+                    },
+                    "dtype": "geometry_types/MeshElement",
+                    "guid": "e3f402d9-bb90-4521-85db-d67c1c5f6638",
+                    "name": "T1.plate.3"
+                },
+                "f5a01769-b4c4-4927-85f3-0df7cd0668b4": {
+                    "data": {
+                        "depth": 3.0,
+                        "end": {
+                            "data": [
+                                224.25,
+                                69.75,
+                                181.6432482349228
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "861fc59e-139f-407a-941d-92d16511e0ef"
+                        },
+                        "features": [],
+                        "material": null,
+                        "name": "T1.upright.6",
+                        "start": {
+                            "data": [
+                                224.25,
+                                69.75,
+                                100.0
+                            ],
+                            "dtype": "compas.geometry/Point",
+                            "guid": "f11c0eab-3fd7-4db7-954e-6e27dd306e89"
+                        },
+                        "transformation": null,
+                        "width": 3.0
+                    },
+                    "dtype": "geometry_types/MemberElement",
+                    "guid": "f5a01769-b4c4-4927-85f3-0df7cd0668b4",
+                    "name": "T1.upright.6"
+                }
+            },
+            "graph": {
+                "attributes": {},
+                "default_edge_attributes": {
+                    "contacts": null,
+                    "modifiers": null
+                },
+                "default_node_attributes": {
+                    "element": null,
+                    "x": 0.0,
+                    "y": 0.0,
+                    "z": 0.0
+                },
+                "edge": {
+                    "0": {},
+                    "1": {},
+                    "10": {},
+                    "11": {},
+                    "12": {},
+                    "13": {},
+                    "14": {},
+                    "15": {},
+                    "2": {},
+                    "3": {},
+                    "4": {},
+                    "5": {},
+                    "6": {},
+                    "7": {},
+                    "8": {},
+                    "9": {}
+                },
+                "max_node": 15,
+                "node": {
+                    "0": {
+                        "element": "9d7612a4-63a4-43f2-9f45-1f070119764c"
+                    },
+                    "1": {
+                        "element": "86f58bfa-fb85-4e8f-a80e-12455af0c2df"
+                    },
+                    "10": {
+                        "element": "821ea4e4-9c3a-4a8e-92c6-a55af137b011"
+                    },
+                    "11": {
+                        "element": "1b2fb10b-b90e-4deb-8cb2-026c72f3b8ac"
+                    },
+                    "12": {
+                        "element": "876b1c38-a868-455b-8384-7dde65b43efc"
+                    },
+                    "13": {
+                        "element": "e3f402d9-bb90-4521-85db-d67c1c5f6638"
+                    },
+                    "14": {
+                        "element": "c902620a-6462-41de-900c-667b4af6303a"
+                    },
+                    "15": {
+                        "element": "94786136-e5ed-4314-b57f-fa3b7554e809"
+                    },
+                    "2": {
+                        "element": "e106ac56-45b4-470c-b465-853ddbe7acc2"
+                    },
+                    "3": {
+                        "element": "d5664fbc-8725-4643-8abc-97da5832627b"
+                    },
+                    "4": {
+                        "element": "cd518cdb-7a78-4aaf-9216-2588a9a727f0"
+                    },
+                    "5": {
+                        "element": "7e117c69-574c-4e9d-bae1-ec9275ba4e88"
+                    },
+                    "6": {
+                        "element": "83913ed3-0059-447f-92a6-8748037f3c91"
+                    },
+                    "7": {
+                        "element": "791f7160-b1c8-4c7a-849c-32631a457fd2"
+                    },
+                    "8": {
+                        "element": "f5a01769-b4c4-4927-85f3-0df7cd0668b4"
+                    },
+                    "9": {
+                        "element": "13f2227a-01a7-4584-b3bc-c2b6e53fde07"
+                    }
+                }
+            },
+            "materials": {},
+            "transformation": null,
+            "tree": {
+                "attributes": {},
+                "root": {
+                    "children": [
+                        {
+                            "element": "9d7612a4-63a4-43f2-9f45-1f070119764c",
+                            "name": "ElementNode"
+                        },
+                        {
+                            "element": "86f58bfa-fb85-4e8f-a80e-12455af0c2df",
+                            "name": "ElementNode"
+                        },
+                        {
+                            "element": "e106ac56-45b4-470c-b465-853ddbe7acc2",
+                            "name": "ElementNode"
+                        },
+                        {
+                            "element": "d5664fbc-8725-4643-8abc-97da5832627b",
+                            "name": "ElementNode"
+                        },
+                        {
+                            "element": "cd518cdb-7a78-4aaf-9216-2588a9a727f0",
+                            "name": "ElementNode"
+                        },
+                        {
+                            "element": "7e117c69-574c-4e9d-bae1-ec9275ba4e88",
+                            "name": "ElementNode"
+                        },
+                        {
+                            "element": "83913ed3-0059-447f-92a6-8748037f3c91",
+                            "name": "ElementNode"
+                        },
+                        {
+                            "element": "791f7160-b1c8-4c7a-849c-32631a457fd2",
+                            "name": "ElementNode"
+                        },
+                        {
+                            "element": "f5a01769-b4c4-4927-85f3-0df7cd0668b4",
+                            "name": "ElementNode"
+                        },
+                        {
+                            "element": "13f2227a-01a7-4584-b3bc-c2b6e53fde07",
+                            "name": "ElementNode"
+                        },
+                        {
+                            "element": "821ea4e4-9c3a-4a8e-92c6-a55af137b011",
+                            "name": "ElementNode"
+                        },
+                        {
+                            "element": "1b2fb10b-b90e-4deb-8cb2-026c72f3b8ac",
+                            "name": "ElementNode"
+                        },
+                        {
+                            "element": "876b1c38-a868-455b-8384-7dde65b43efc",
+                            "name": "ElementNode"
+                        },
+                        {
+                            "element": "e3f402d9-bb90-4521-85db-d67c1c5f6638",
+                            "name": "ElementNode"
+                        },
+                        {
+                            "element": "c902620a-6462-41de-900c-667b4af6303a",
+                            "name": "ElementNode"
+                        },
+                        {
+                            "element": "94786136-e5ed-4314-b57f-fa3b7554e809",
+                            "name": "ElementNode"
+                        }
+                    ],
+                    "name": "root"
+                }
+            }
+        },
+        "dtype": "compas_model.models/Model",
+        "guid": "4196c848-f83f-4ff4-b0f7-98e79fa772f8",
+        "inheritance": [],
+        "name": "T1 parametric concept assembly"
+    },
+    "notes": [
+        "End-braced rectangular layout retained from source; not a pin-jointed triangulated design.",
+        "Joint sharing checks geometry only; physical joints, bearing and load capacity are unresolved.",
+        "Span measures end joint centers; end uprights extend half a section beyond them.",
+        "Depth is chord outside-face to outside-face; decorative plate envelopes can extend above it."
+    ],
+    "parameters": {
+        "bottom": 98.5,
+        "brace_size": 2.5,
+        "chord_size": 3,
+        "depth": 84.6432482349228,
+        "panels": 6,
+        "span": 224.25,
+        "upright_size": 3,
+        "x": 0,
+        "y": 69.75
+    },
+    "plates": {
+        "T1.plate.1": {
+            "basis": "original illustrative plate, regenerated from joint",
+            "joint": "U1"
+        },
+        "T1.plate.2": {
+            "basis": "original illustrative plate, regenerated from joint",
+            "joint": "U2"
+        },
+        "T1.plate.3": {
+            "basis": "original illustrative plate, regenerated from joint",
+            "joint": "U3"
+        },
+        "T1.plate.4": {
+            "basis": "original illustrative plate, regenerated from joint",
+            "joint": "U4"
+        },
+        "T1.plate.5": {
+            "basis": "original illustrative plate, regenerated from joint",
+            "joint": "U5"
+        }
+    },
+    "units": "inches"
+}

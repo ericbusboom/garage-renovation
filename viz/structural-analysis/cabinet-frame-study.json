@@ -1,0 +1,6111 @@
+{
+ "frame": "20260918.10",
+ "live": "L100",
+ "schemes": {
+  "as-is": "the frames as they stand, legs continued up to the BE axis",
+  "strengthened": "front legs doubled to 1 x 4, N-bracing in every side frame, X-bracing in the rear plane of every bay, all in the same 2 x 1 stock"
+ },
+ "geometry": {
+  "as-is": {
+   "scheme": "as-is",
+   "description": "the frames as they stand, legs continued up to the BE axis",
+   "members": 34,
+   "added": 0,
+   "added_length_ft": 0.0,
+   "frames": {
+    "CF1": 56.0,
+    "CF2": 105.0,
+    "CF3": 154.0,
+    "CF4": 203.0
+   }
+  },
+  "strengthened": {
+   "scheme": "strengthened",
+   "description": "front legs doubled to 1 x 4, N-bracing in every side frame, X-bracing in the rear plane of every bay, all in the same 2 x 1 stock",
+   "members": 52,
+   "added": 22,
+   "added_length_ft": 138.3,
+   "frames": {
+    "CF1": 56.0,
+    "CF2": 105.0,
+    "CF3": 154.0,
+    "CF4": 203.0
+   }
+  }
+ },
+ "sections": {
+  "HSS2X1X0.120": {
+   "name": "HSS2X1X0.120",
+   "family": "HSS",
+   "b": 2.0,
+   "d": 1.0,
+   "t": 0.1116,
+   "A": 0.5876875526828487,
+   "Iy": 0.08993528022661575,
+   "Iz": 0.27282780262703005,
+   "J": 0.23178596365743137,
+   "Zy": 0.3869070577920001,
+   "Zz": 0.23196161779200003,
+   "Sy": 0.08993528022661575,
+   "Sz": 0.5456556052540601,
+   "ry": 0.3911936530301856,
+   "rz": 0.6813512647419439,
+   "weight": 2.0000182792902708,
+   "compact": true,
+   "note": ""
+  },
+  "2-HSS2X1X0.120": {
+   "name": "2-HSS2X1X0.120",
+   "family": "HSS",
+   "b": 4.0,
+   "d": 1.0,
+   "t": 0.1116,
+   "A": 1.1753751053656973,
+   "Iy": 0.1798705604532315,
+   "Iz": 1.7210307106197575,
+   "J": 0.46357192731486274,
+   "Zy": 0.7738141155840002,
+   "Zz": 1.1753751053656973,
+   "Sy": 0.359741120906463,
+   "Sz": 0.8605153553098788,
+   "ry": 0.3911936530301856,
+   "rz": 1.2100576622481454,
+   "weight": 4.0000365585805415,
+   "compact": true,
+   "note": "second 2x1 tube welded behind the existing leg: 1 x 4 built-up"
+  }
+ },
+ "variants": {
+  "baseline": {
+   "label": "recommended frame, no cabinets",
+   "digest": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.777,
+    "worst": "N2",
+    "drift": 434.0,
+    "passes": true,
+    "over": [],
+    "deflection_violations": [],
+    "watch": {
+     "BE": {
+      "section": "W14X22",
+      "dcr": 0.706,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": -8245,
+      "Mz_lbin": 812908,
+      "V_lb": 15909,
+      "Lb_in": 83.0,
+      "KLr": 80
+     },
+     "BE.upper": {
+      "section": "W12X16",
+      "dcr": 0.602,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P_lb": 6823,
+      "Mz_lbin": 190192,
+      "V_lb": -4604,
+      "Lb_in": 114.0,
+      "KLr": 147
+     },
+     "B-S": {
+      "section": "W12X16",
+      "dcr": 0.519,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": -913,
+      "Mz_lbin": 149788,
+      "V_lb": -3696,
+      "Lb_in": 37.8,
+      "KLr": 49
+     },
+     "B-1": {
+      "section": "W12X16",
+      "dcr": 0.454,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": -82,
+      "Mz_lbin": -410313,
+      "V_lb": 442,
+      "Lb_in": 15.3,
+      "KLr": 20
+     },
+     "B-1A": {
+      "section": "W12X16",
+      "dcr": 0.602,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 88,
+      "Mz_lbin": -541694,
+      "V_lb": -272,
+      "Lb_in": 16.0,
+      "KLr": 21
+     },
+     "B-2": {
+      "section": "W12X16",
+      "dcr": 0.56,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": -77,
+      "Mz_lbin": -505702,
+      "V_lb": -586,
+      "Lb_in": 15.3,
+      "KLr": 20
+     },
+     "S2": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.235,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -2106,
+      "Mz_lbin": 478,
+      "V_lb": -1,
+      "Lb_in": 104.5,
+      "KLr": 54
+     },
+     "S3": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.775,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 1212,
+      "Mz_lbin": 133399,
+      "V_lb": 4042,
+      "Lb_in": 104.5,
+      "KLr": 54
+     },
+     "N2": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.777,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 5266,
+      "Mz_lbin": 21345,
+      "V_lb": 356,
+      "Lb_in": 104.5,
+      "KLr": 54
+     }
+    },
+    "cabinet": {},
+    "worst_leg": null,
+    "reactions": {
+     "N2.base": 20462,
+     "S2.base": 1520,
+     "S3.base": 31982
+    },
+    "uplift": {},
+    "deflection": {
+     "B-1": {
+      "span_in": 207.8,
+      "S1 D": {
+       "defl_in": -0.0455,
+       "ratio": 4568.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.397,
+       "ratio": 523.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0455,
+       "ratio": 4568.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.3091,
+       "ratio": 672.0
+      }
+     },
+     "B-1A": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0878,
+       "ratio": 2797.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.7358,
+       "ratio": 334.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0863,
+       "ratio": 2844.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.5727,
+       "ratio": 429.0
+      }
+     },
+     "B-2": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0736,
+       "ratio": 3337.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.636,
+       "ratio": 386.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0712,
+       "ratio": 3447.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.4937,
+       "ratio": 497.0
+      }
+     },
+     "B-S": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0342,
+       "ratio": 7185.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.2583,
+       "ratio": 950.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0342,
+       "ratio": 7174.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.2023,
+       "ratio": 1213.0
+      }
+     },
+     "BE": {
+      "span_in": 331.0,
+      "S1 D": {
+       "defl_in": -0.0543,
+       "ratio": 6092.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.4244,
+       "ratio": 780.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0472,
+       "ratio": 7011.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.3265,
+       "ratio": 1014.0
+      }
+     },
+     "BE.upper": {
+      "span_in": 265.0,
+      "S1 D": {
+       "defl_in": -0.1062,
+       "ratio": 2496.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0726,
+       "ratio": 3652.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.2295,
+       "ratio": 1155.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.1735,
+       "ratio": 1528.0
+      }
+     },
+     "N2": {
+      "span_in": 228.8,
+      "S1 D": {
+       "defl_in": -0.0044,
+       "ratio": 52327.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0195,
+       "ratio": 11731.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0042,
+       "ratio": 53848.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0156,
+       "ratio": 14640.0
+      }
+     },
+     "S2": {
+      "span_in": 112.2,
+      "S1 D": {
+       "defl_in": 0.0,
+       "ratio": null
+      },
+      "S2 D+L": {
+       "defl_in": -0.001,
+       "ratio": 115481.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0,
+       "ratio": 9357441.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0007,
+       "ratio": 150738.0
+      }
+     },
+     "S3": {
+      "span_in": 150.4,
+      "S1 D": {
+       "defl_in": -0.0081,
+       "ratio": 18523.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0701,
+       "ratio": 2143.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.008,
+       "ratio": 18683.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0546,
+       "ratio": 2754.0
+      }
+     }
+    },
+    "steel_lb": 0
+   },
+   "seconds": 7.4
+  },
+  "as-is": {
+   "label": "cabinet frames as they stand",
+   "digest": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.794,
+    "worst": "CF3.front",
+    "drift": 455.0,
+    "passes": true,
+    "over": [],
+    "deflection_violations": [],
+    "watch": {
+     "BE": {
+      "section": "W14X22",
+      "dcr": 0.218,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.pi]",
+      "P_lb": -817,
+      "Mz_lbin": -17334,
+      "V_lb": -465,
+      "Lb_in": 66.0,
+      "KLr": 63
+     },
+     "BE.upper": {
+      "section": "W12X16",
+      "dcr": 0.525,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P_lb": 2666,
+      "Mz_lbin": -180162,
+      "V_lb": -3817,
+      "Lb_in": 114.0,
+      "KLr": 147
+     },
+     "B-S": {
+      "section": "W12X16",
+      "dcr": 0.519,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": -877,
+      "Mz_lbin": 147923,
+      "V_lb": -3666,
+      "Lb_in": 37.8,
+      "KLr": 49
+     },
+     "B-1": {
+      "section": "W12X16",
+      "dcr": 0.453,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": -64,
+      "Mz_lbin": -409485,
+      "V_lb": -119,
+      "Lb_in": 15.3,
+      "KLr": 20
+     },
+     "B-1A": {
+      "section": "W12X16",
+      "dcr": 0.612,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 100,
+      "Mz_lbin": -552537,
+      "V_lb": -372,
+      "Lb_in": 16.0,
+      "KLr": 21
+     },
+     "B-2": {
+      "section": "W12X16",
+      "dcr": 0.572,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": -72,
+      "Mz_lbin": -516808,
+      "V_lb": -707,
+      "Lb_in": 15.3,
+      "KLr": 20
+     },
+     "S2": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.213,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 1687,
+      "Mz_lbin": 886,
+      "V_lb": -6,
+      "Lb_in": 104.5,
+      "KLr": 54
+     },
+     "S3": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.487,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 3278,
+      "Mz_lbin": 131417,
+      "V_lb": 3976,
+      "Lb_in": 104.5,
+      "KLr": 54
+     },
+     "N2": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.331,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P_lb": 6957,
+      "Mz_lbin": 3674,
+      "V_lb": 326,
+      "Lb_in": 104.5,
+      "KLr": 54
+     }
+    },
+    "cabinet": {
+     "CF1.front": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.538,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 4688,
+      "Mz_lbin": -1424,
+      "V_lb": 8,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF1.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.114,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 61,
+      "Mz_lbin": -1106,
+      "V_lb": 11,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF1.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.131,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX-.pi]",
+      "P_lb": -3,
+      "Mz_lbin": 1189,
+      "V_lb": 64,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF2.front": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.753,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 7336,
+      "Mz_lbin": -1701,
+      "V_lb": 14,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF2.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.13,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 75,
+      "Mz_lbin": -1263,
+      "V_lb": 13,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF2.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.135,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX-.pi]",
+      "P_lb": -9,
+      "Mz_lbin": 1302,
+      "V_lb": 68,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF3.front": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.794,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 7766,
+      "Mz_lbin": -1731,
+      "V_lb": 13,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF3.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.123,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 70,
+      "Mz_lbin": -1199,
+      "V_lb": 13,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF3.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.133,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 19,
+      "Mz_lbin": 1199,
+      "V_lb": -60,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF4.front": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.607,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 5564,
+      "Mz_lbin": -1336,
+      "V_lb": 7,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF4.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.081,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 46,
+      "Mz_lbin": -827,
+      "V_lb": 8,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF4.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.112,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX-.pi]",
+      "P_lb": -2,
+      "Mz_lbin": 929,
+      "V_lb": 49,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF1-CF2.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.167,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -27,
+      "Mz_lbin": 1724,
+      "V_lb": 40,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.147,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -21,
+      "Mz_lbin": 1516,
+      "V_lb": 35,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.123,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": 27,
+      "Mz_lbin": 1249,
+      "V_lb": 30,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.113,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 17,
+      "Mz_lbin": 1136,
+      "V_lb": 27,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.071,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -111,
+      "Mz_lbin": 650,
+      "V_lb": 18,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.078,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY+.pi]",
+      "P_lb": 8,
+      "Mz_lbin": -594,
+      "V_lb": -8,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.166,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -50,
+      "Mz_lbin": 1716,
+      "V_lb": 39,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.148,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -42,
+      "Mz_lbin": 1518,
+      "V_lb": 35,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.123,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 49,
+      "Mz_lbin": 1230,
+      "V_lb": 29,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.115,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 35,
+      "Mz_lbin": 1139,
+      "V_lb": 27,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.065,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -158,
+      "Mz_lbin": 557,
+      "V_lb": 16,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.079,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 14,
+      "Mz_lbin": 654,
+      "V_lb": 17,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.167,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -77,
+      "Mz_lbin": 1722,
+      "V_lb": 39,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.148,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -64,
+      "Mz_lbin": 1520,
+      "V_lb": 35,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.125,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 75,
+      "Mz_lbin": 1235,
+      "V_lb": 29,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.117,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 53,
+      "Mz_lbin": 1140,
+      "V_lb": 27,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.065,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.pi]",
+      "P_lb": -50,
+      "Mz_lbin": 541,
+      "V_lb": 15,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.083,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 9,
+      "Mz_lbin": 653,
+      "V_lb": 17,
+      "Lb_in": 49.0,
+      "KLr": 125
+     }
+    },
+    "worst_leg": {
+     "member": "CF3.front",
+     "section": "HSS2X1X0.120",
+     "dcr": 0.794,
+     "mode": "H1-1a combined axial + flexure",
+     "combo": "C2 1.2D+1.6L+0.5Lr",
+     "P_lb": 7766,
+     "Mz_lbin": -1731,
+     "V_lb": 13,
+     "Lb_in": 40.0,
+     "KLr": 102
+    },
+    "reactions": {
+     "CF1.front.base": 4747,
+     "CF1.rear.base": 83,
+     "CF2.front.base": 7398,
+     "CF2.rear.base": 114,
+     "CF3.front.base": 7829,
+     "CF3.rear.base": 109,
+     "CF4.front.base": 5622,
+     "CF4.rear.base": 83,
+     "N2.base": 10827,
+     "S2.base": 2614,
+     "S3.base": 10606
+    },
+    "uplift": {},
+    "deflection": {
+     "B-1": {
+      "span_in": 207.8,
+      "S1 D": {
+       "defl_in": -0.0454,
+       "ratio": 4579.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.396,
+       "ratio": 525.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0454,
+       "ratio": 4579.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.3084,
+       "ratio": 674.0
+      }
+     },
+     "B-1A": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.09,
+       "ratio": 2729.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.7522,
+       "ratio": 326.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0883,
+       "ratio": 2780.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.5854,
+       "ratio": 419.0
+      }
+     },
+     "B-2": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0763,
+       "ratio": 3217.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.657,
+       "ratio": 374.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0736,
+       "ratio": 3335.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.5098,
+       "ratio": 482.0
+      }
+     },
+     "B-S": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0337,
+       "ratio": 7296.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.2543,
+       "ratio": 965.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0338,
+       "ratio": 7273.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.1993,
+       "ratio": 1232.0
+      }
+     },
+     "BE": {
+      "span_in": 331.0,
+      "S1 D": {
+       "defl_in": -0.0027,
+       "ratio": 123551.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0292,
+       "ratio": 11342.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0031,
+       "ratio": 106314.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0214,
+       "ratio": 15460.0
+      }
+     },
+     "BE.upper": {
+      "span_in": 265.0,
+      "S1 D": {
+       "defl_in": -0.1109,
+       "ratio": 2390.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.1086,
+       "ratio": 2439.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.2337,
+       "ratio": 1134.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.2013,
+       "ratio": 1316.0
+      }
+     },
+     "N2": {
+      "span_in": 228.8,
+      "S1 D": {
+       "defl_in": -0.0046,
+       "ratio": 50190.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0209,
+       "ratio": 10929.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0044,
+       "ratio": 51836.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0167,
+       "ratio": 13674.0
+      }
+     },
+     "S2": {
+      "span_in": 112.2,
+      "S1 D": {
+       "defl_in": 0.0,
+       "ratio": null
+      },
+      "S2 D+L": {
+       "defl_in": -0.001,
+       "ratio": 108315.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0,
+       "ratio": 5012114.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0008,
+       "ratio": 135807.0
+      }
+     },
+     "S3": {
+      "span_in": 150.4,
+      "S1 D": {
+       "defl_in": -0.0085,
+       "ratio": 17751.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0721,
+       "ratio": 2086.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0085,
+       "ratio": 17782.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0562,
+       "ratio": 2677.0
+      }
+     }
+    },
+    "steel_lb": 302.3
+   },
+   "seconds": 8.6
+  },
+  "strengthened": {
+   "label": "strengthened frames",
+   "digest": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.636,
+    "worst": "R-W1",
+    "drift": 547.0,
+    "passes": true,
+    "over": [],
+    "deflection_violations": [],
+    "watch": {
+     "BE": {
+      "section": "W14X22",
+      "dcr": 0.177,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.ni]",
+      "P_lb": 1927,
+      "Mz_lbin": -51617,
+      "V_lb": -975,
+      "Lb_in": 66.0,
+      "KLr": 63
+     },
+     "BE.upper": {
+      "section": "W12X16",
+      "dcr": 0.525,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P_lb": 2523,
+      "Mz_lbin": -180921,
+      "V_lb": -3813,
+      "Lb_in": 114.0,
+      "KLr": 147
+     },
+     "B-S": {
+      "section": "W12X16",
+      "dcr": 0.285,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "P_lb": -2197,
+      "Mz_lbin": 114513,
+      "V_lb": 4740,
+      "Lb_in": 37.8,
+      "KLr": 49
+     },
+     "B-1": {
+      "section": "W12X16",
+      "dcr": 0.453,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 54,
+      "Mz_lbin": -409223,
+      "V_lb": -122,
+      "Lb_in": 15.3,
+      "KLr": 20
+     },
+     "B-1A": {
+      "section": "W12X16",
+      "dcr": 0.611,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 287,
+      "Mz_lbin": -551911,
+      "V_lb": -371,
+      "Lb_in": 16.0,
+      "KLr": 21
+     },
+     "B-2": {
+      "section": "W12X16",
+      "dcr": 0.571,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 124,
+      "Mz_lbin": -516147,
+      "V_lb": -706,
+      "Lb_in": 15.3,
+      "KLr": 20
+     },
+     "S2": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.15,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": 1367,
+      "Mz_lbin": 652,
+      "V_lb": -3,
+      "Lb_in": 104.5,
+      "KLr": 54
+     },
+     "S3": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.477,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 3333,
+      "Mz_lbin": 132098,
+      "V_lb": 3979,
+      "Lb_in": 104.5,
+      "KLr": 54
+     },
+     "N2": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.327,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P_lb": 6926,
+      "Mz_lbin": 3719,
+      "V_lb": 324,
+      "Lb_in": 104.5,
+      "KLr": 54
+     }
+    },
+    "cabinet": {
+     "CF1.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.264,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 5371,
+      "Mz_lbin": -1881,
+      "V_lb": 222,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF1.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.239,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2919,
+      "Mz_lbin": -23,
+      "V_lb": 1,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF1.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.29,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "P_lb": -46,
+      "Mz_lbin": 773,
+      "V_lb": 43,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF1.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.044,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": 40,
+      "Mz_lbin": -42,
+      "V_lb": 2,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF1.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.269,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1594,
+      "Mz_lbin": 87,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF1.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.373,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2197,
+      "Mz_lbin": 128,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF2.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.346,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 7523,
+      "Mz_lbin": -2174,
+      "V_lb": 214,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF2.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.098,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2320,
+      "Mz_lbin": -35,
+      "V_lb": 0,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF2.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.281,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "P_lb": -9,
+      "Mz_lbin": 748,
+      "V_lb": 41,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF2.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.045,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 17,
+      "Mz_lbin": -39,
+      "V_lb": 2,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF2.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.108,
+      "mode": "compression",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1221,
+      "Mz_lbin": 70,
+      "V_lb": 3,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF2.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.338,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 1981,
+      "Mz_lbin": 130,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF3.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.366,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 7935,
+      "Mz_lbin": -2210,
+      "V_lb": 230,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF3.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.229,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2791,
+      "Mz_lbin": -14,
+      "V_lb": 0,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF3.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.31,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "P_lb": -12,
+      "Mz_lbin": 969,
+      "V_lb": 52,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF3.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.046,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 38,
+      "Mz_lbin": -50,
+      "V_lb": 1,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF3.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.259,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1531,
+      "Mz_lbin": 83,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF3.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.404,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2375,
+      "Mz_lbin": 146,
+      "V_lb": 6,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF4.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.287,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 5842,
+      "Mz_lbin": -1712,
+      "V_lb": 192,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF4.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.221,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2655,
+      "Mz_lbin": -48,
+      "V_lb": -1,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF4.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.221,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": -43,
+      "Mz_lbin": 751,
+      "V_lb": 34,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF4.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.014,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -14,
+      "Mz_lbin": 31,
+      "V_lb": 3,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF4.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.232,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1378,
+      "Mz_lbin": 78,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF4.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.332,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 1964,
+      "Mz_lbin": 122,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF1-CF2.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.18,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -23,
+      "Mz_lbin": 1583,
+      "V_lb": 36,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.05,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -8,
+      "Mz_lbin": 292,
+      "V_lb": 11,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.173,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": 28,
+      "Mz_lbin": 1511,
+      "V_lb": 36,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.056,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 5,
+      "Mz_lbin": 264,
+      "V_lb": 10,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.11,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -101,
+      "Mz_lbin": 780,
+      "V_lb": 21,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.125,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 152,
+      "Mz_lbin": 162,
+      "V_lb": 8,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.048,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 574,
+      "Mz_lbin": 25,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF1-CF2.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.069,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 822,
+      "Mz_lbin": 8,
+      "V_lb": -3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF2-CF3.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.18,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -45,
+      "Mz_lbin": 1582,
+      "V_lb": 36,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.052,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -2,
+      "Mz_lbin": 345,
+      "V_lb": 11,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.175,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 53,
+      "Mz_lbin": 1508,
+      "V_lb": 34,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.056,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 14,
+      "Mz_lbin": 271,
+      "V_lb": 10,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.105,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -118,
+      "Mz_lbin": 709,
+      "V_lb": 19,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.122,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 102,
+      "Mz_lbin": 157,
+      "V_lb": 8,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.052,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 621,
+      "Mz_lbin": 39,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF2-CF3.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.065,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.ni]",
+      "P_lb": 309,
+      "Mz_lbin": 135,
+      "V_lb": -5,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF3-CF4.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.181,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -69,
+      "Mz_lbin": 1586,
+      "V_lb": 36,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.052,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 4,
+      "Mz_lbin": 349,
+      "V_lb": 11,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.177,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 81,
+      "Mz_lbin": 1515,
+      "V_lb": 35,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.057,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 23,
+      "Mz_lbin": 282,
+      "V_lb": 11,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.102,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 15,
+      "Mz_lbin": 688,
+      "V_lb": 18,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.118,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY+.pi]",
+      "P_lb": 102,
+      "Mz_lbin": 157,
+      "V_lb": 7,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.06,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 715,
+      "Mz_lbin": 41,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF3-CF4.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.067,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.ni]",
+      "P_lb": 274,
+      "Mz_lbin": 212,
+      "V_lb": 6,
+      "Lb_in": 55.0,
+      "KLr": 141
+     }
+    },
+    "worst_leg": {
+     "member": "CF3.front",
+     "section": "2-HSS2X1X0.120",
+     "dcr": 0.366,
+     "mode": "H1-1a combined axial + flexure",
+     "combo": "C2 1.2D+1.6L+0.5Lr",
+     "P_lb": 7935,
+     "Mz_lbin": -2210,
+     "V_lb": 230,
+     "Lb_in": 40.0,
+     "KLr": 102
+    },
+    "reactions": {
+     "CF1.front.base": 5147,
+     "CF1.rear.base": 3458,
+     "CF2.front.base": 6935,
+     "CF2.rear.base": 3663,
+     "CF3.front.base": 7292,
+     "CF3.rear.base": 3953,
+     "CF4.front.base": 5357,
+     "CF4.rear.base": 3318,
+     "N2.base": 10551,
+     "S2.base": 1658,
+     "S3.base": 9240
+    },
+    "uplift": {},
+    "deflection": {
+     "B-1": {
+      "span_in": 207.8,
+      "S1 D": {
+       "defl_in": -0.0453,
+       "ratio": 4583.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.3957,
+       "ratio": 525.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0453,
+       "ratio": 4584.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.3081,
+       "ratio": 674.0
+      }
+     },
+     "B-1A": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.09,
+       "ratio": 2728.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.7511,
+       "ratio": 327.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0886,
+       "ratio": 2771.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.5848,
+       "ratio": 420.0
+      }
+     },
+     "B-2": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0763,
+       "ratio": 3217.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.6557,
+       "ratio": 374.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0739,
+       "ratio": 3321.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.5091,
+       "ratio": 482.0
+      }
+     },
+     "B-S": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0336,
+       "ratio": 7304.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.254,
+       "ratio": 966.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0337,
+       "ratio": 7280.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.199,
+       "ratio": 1234.0
+      }
+     },
+     "BE": {
+      "span_in": 331.0,
+      "S1 D": {
+       "defl_in": -0.0018,
+       "ratio": 181378.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0131,
+       "ratio": 25246.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0031,
+       "ratio": 106703.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0091,
+       "ratio": 36354.0
+      }
+     },
+     "BE.upper": {
+      "span_in": 265.0,
+      "S1 D": {
+       "defl_in": -0.1111,
+       "ratio": 2386.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.1105,
+       "ratio": 2398.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.2337,
+       "ratio": 1134.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.2026,
+       "ratio": 1308.0
+      }
+     },
+     "N2": {
+      "span_in": 228.8,
+      "S1 D": {
+       "defl_in": -0.0046,
+       "ratio": 49503.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0198,
+       "ratio": 11525.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0049,
+       "ratio": 47078.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0162,
+       "ratio": 14103.0
+      }
+     },
+     "S2": {
+      "span_in": 112.2,
+      "S1 D": {
+       "defl_in": 0.0,
+       "ratio": null
+      },
+      "S2 D+L": {
+       "defl_in": -0.0,
+       "ratio": 2964277.0
+      },
+      "S3 D+Lr": {
+       "defl_in": 0.0,
+       "ratio": null
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0001,
+       "ratio": 1138375.0
+      }
+     },
+     "S3": {
+      "span_in": 150.4,
+      "S1 D": {
+       "defl_in": -0.0063,
+       "ratio": 24004.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0448,
+       "ratio": 3358.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0089,
+       "ratio": 16878.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0368,
+       "ratio": 4084.0
+      }
+     }
+    },
+    "steel_lb": 578.9
+   },
+   "seconds": 8.6
+  },
+  "strengthened-full": {
+   "label": "strengthened, all 27 combinations",
+   "digest": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.636,
+    "worst": "R-W1",
+    "drift": 547.0,
+    "passes": true,
+    "over": [],
+    "deflection_violations": [],
+    "watch": {
+     "BE": {
+      "section": "W14X22",
+      "dcr": 0.184,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY+.ni]",
+      "P_lb": 1835,
+      "Mz_lbin": -51760,
+      "V_lb": -1061,
+      "Lb_in": 66.0,
+      "KLr": 63
+     },
+     "BE.upper": {
+      "section": "W12X16",
+      "dcr": 0.525,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P_lb": 2523,
+      "Mz_lbin": -180921,
+      "V_lb": -3813,
+      "Lb_in": 114.0,
+      "KLr": 147
+     },
+     "B-S": {
+      "section": "W12X16",
+      "dcr": 0.285,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "P_lb": -2197,
+      "Mz_lbin": 114513,
+      "V_lb": 4740,
+      "Lb_in": 37.8,
+      "KLr": 49
+     },
+     "B-1": {
+      "section": "W12X16",
+      "dcr": 0.453,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 54,
+      "Mz_lbin": -409223,
+      "V_lb": -122,
+      "Lb_in": 15.3,
+      "KLr": 20
+     },
+     "B-1A": {
+      "section": "W12X16",
+      "dcr": 0.611,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 287,
+      "Mz_lbin": -551911,
+      "V_lb": -371,
+      "Lb_in": 16.0,
+      "KLr": 21
+     },
+     "B-2": {
+      "section": "W12X16",
+      "dcr": 0.571,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 124,
+      "Mz_lbin": -516147,
+      "V_lb": -706,
+      "Lb_in": 15.3,
+      "KLr": 20
+     },
+     "S2": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.15,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": 1367,
+      "Mz_lbin": 652,
+      "V_lb": -3,
+      "Lb_in": 104.5,
+      "KLr": 54
+     },
+     "S3": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.477,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 3333,
+      "Mz_lbin": 132098,
+      "V_lb": 3979,
+      "Lb_in": 104.5,
+      "KLr": 54
+     },
+     "N2": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.327,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P_lb": 6926,
+      "Mz_lbin": 3719,
+      "V_lb": 324,
+      "Lb_in": 104.5,
+      "KLr": 54
+     }
+    },
+    "cabinet": {
+     "CF1.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.264,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 5371,
+      "Mz_lbin": -1881,
+      "V_lb": 222,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF1.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.239,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2919,
+      "Mz_lbin": -23,
+      "V_lb": 1,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF1.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.29,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "P_lb": -46,
+      "Mz_lbin": 773,
+      "V_lb": 43,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF1.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.044,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": 40,
+      "Mz_lbin": -42,
+      "V_lb": 2,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF1.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.269,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1594,
+      "Mz_lbin": 87,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF1.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.373,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2197,
+      "Mz_lbin": 128,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF2.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.346,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 7523,
+      "Mz_lbin": -2174,
+      "V_lb": 214,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF2.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.098,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2320,
+      "Mz_lbin": -35,
+      "V_lb": 0,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF2.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.281,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "P_lb": -9,
+      "Mz_lbin": 748,
+      "V_lb": 41,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF2.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.045,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 17,
+      "Mz_lbin": -39,
+      "V_lb": 2,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF2.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.108,
+      "mode": "compression",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1221,
+      "Mz_lbin": 70,
+      "V_lb": 3,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF2.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.338,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 1981,
+      "Mz_lbin": 130,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF3.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.366,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 7935,
+      "Mz_lbin": -2210,
+      "V_lb": 230,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF3.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.229,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2791,
+      "Mz_lbin": -14,
+      "V_lb": 0,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF3.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.31,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "P_lb": -12,
+      "Mz_lbin": 969,
+      "V_lb": 52,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF3.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.046,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 38,
+      "Mz_lbin": -50,
+      "V_lb": 1,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF3.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.259,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1531,
+      "Mz_lbin": 83,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF3.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.404,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2375,
+      "Mz_lbin": 146,
+      "V_lb": 6,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF4.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.287,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 5842,
+      "Mz_lbin": -1712,
+      "V_lb": 192,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF4.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.221,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2655,
+      "Mz_lbin": -48,
+      "V_lb": -1,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF4.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.221,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": -43,
+      "Mz_lbin": 751,
+      "V_lb": 34,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF4.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.014,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -14,
+      "Mz_lbin": 31,
+      "V_lb": 3,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF4.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.232,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1378,
+      "Mz_lbin": 78,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF4.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.332,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 1964,
+      "Mz_lbin": 122,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF1-CF2.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.18,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -23,
+      "Mz_lbin": 1583,
+      "V_lb": 36,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.05,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -8,
+      "Mz_lbin": 292,
+      "V_lb": 11,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.173,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": 28,
+      "Mz_lbin": 1511,
+      "V_lb": 36,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.056,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 5,
+      "Mz_lbin": 264,
+      "V_lb": 10,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.11,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -101,
+      "Mz_lbin": 780,
+      "V_lb": 21,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.125,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 152,
+      "Mz_lbin": 162,
+      "V_lb": 8,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.048,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 574,
+      "Mz_lbin": 25,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF1-CF2.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.069,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 822,
+      "Mz_lbin": 8,
+      "V_lb": -3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF2-CF3.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.18,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -45,
+      "Mz_lbin": 1582,
+      "V_lb": 36,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.052,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -2,
+      "Mz_lbin": 345,
+      "V_lb": 11,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.175,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 53,
+      "Mz_lbin": 1508,
+      "V_lb": 34,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.056,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 14,
+      "Mz_lbin": 271,
+      "V_lb": 10,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.105,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -118,
+      "Mz_lbin": 709,
+      "V_lb": 19,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.122,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 102,
+      "Mz_lbin": 157,
+      "V_lb": 8,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.052,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 621,
+      "Mz_lbin": 39,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF2-CF3.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.065,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.ni]",
+      "P_lb": 309,
+      "Mz_lbin": 135,
+      "V_lb": -5,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF3-CF4.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.181,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -69,
+      "Mz_lbin": 1586,
+      "V_lb": 36,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.052,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 4,
+      "Mz_lbin": 349,
+      "V_lb": 11,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.177,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 81,
+      "Mz_lbin": 1515,
+      "V_lb": 35,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.057,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 23,
+      "Mz_lbin": 282,
+      "V_lb": 11,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.102,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 15,
+      "Mz_lbin": 688,
+      "V_lb": 18,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.118,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY+.pi]",
+      "P_lb": 102,
+      "Mz_lbin": 157,
+      "V_lb": 7,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.06,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 715,
+      "Mz_lbin": 41,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF3-CF4.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.071,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C6 1.2D+1.0E+1.0L [EY+]",
+      "P_lb": 410,
+      "Mz_lbin": 198,
+      "V_lb": 6,
+      "Lb_in": 55.0,
+      "KLr": 141
+     }
+    },
+    "worst_leg": {
+     "member": "CF3.front",
+     "section": "2-HSS2X1X0.120",
+     "dcr": 0.366,
+     "mode": "H1-1a combined axial + flexure",
+     "combo": "C2 1.2D+1.6L+0.5Lr",
+     "P_lb": 7935,
+     "Mz_lbin": -2210,
+     "V_lb": 230,
+     "Lb_in": 40.0,
+     "KLr": 102
+    },
+    "reactions": {
+     "CF1.front.base": 5211,
+     "CF1.rear.base": 3458,
+     "CF2.front.base": 6935,
+     "CF2.rear.base": 3663,
+     "CF3.front.base": 7292,
+     "CF3.rear.base": 3953,
+     "CF4.front.base": 5357,
+     "CF4.rear.base": 3318,
+     "N2.base": 10551,
+     "S2.base": 1838,
+     "S3.base": 9240
+    },
+    "uplift": {},
+    "deflection": {
+     "B-1": {
+      "span_in": 207.8,
+      "S1 D": {
+       "defl_in": -0.0453,
+       "ratio": 4583.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.3957,
+       "ratio": 525.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0453,
+       "ratio": 4584.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.3081,
+       "ratio": 674.0
+      }
+     },
+     "B-1A": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.09,
+       "ratio": 2728.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.7511,
+       "ratio": 327.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0886,
+       "ratio": 2771.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.5848,
+       "ratio": 420.0
+      }
+     },
+     "B-2": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0763,
+       "ratio": 3217.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.6557,
+       "ratio": 374.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0739,
+       "ratio": 3321.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.5091,
+       "ratio": 482.0
+      }
+     },
+     "B-S": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0336,
+       "ratio": 7304.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.254,
+       "ratio": 966.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0337,
+       "ratio": 7280.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.199,
+       "ratio": 1234.0
+      }
+     },
+     "BE": {
+      "span_in": 331.0,
+      "S1 D": {
+       "defl_in": -0.0018,
+       "ratio": 181378.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0131,
+       "ratio": 25246.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0031,
+       "ratio": 106703.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0091,
+       "ratio": 36354.0
+      }
+     },
+     "BE.upper": {
+      "span_in": 265.0,
+      "S1 D": {
+       "defl_in": -0.1111,
+       "ratio": 2386.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.1105,
+       "ratio": 2398.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.2337,
+       "ratio": 1134.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.2026,
+       "ratio": 1308.0
+      }
+     },
+     "N2": {
+      "span_in": 228.8,
+      "S1 D": {
+       "defl_in": -0.0046,
+       "ratio": 49503.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0198,
+       "ratio": 11525.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0049,
+       "ratio": 47078.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0162,
+       "ratio": 14103.0
+      }
+     },
+     "S2": {
+      "span_in": 112.2,
+      "S1 D": {
+       "defl_in": 0.0,
+       "ratio": null
+      },
+      "S2 D+L": {
+       "defl_in": -0.0,
+       "ratio": 2964277.0
+      },
+      "S3 D+Lr": {
+       "defl_in": 0.0,
+       "ratio": null
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0001,
+       "ratio": 1138375.0
+      }
+     },
+     "S3": {
+      "span_in": 150.4,
+      "S1 D": {
+       "defl_in": -0.0063,
+       "ratio": 24004.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0448,
+       "ratio": 3358.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0089,
+       "ratio": 16878.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0368,
+       "ratio": 4084.0
+      }
+     }
+    },
+    "steel_lb": 578.9
+   },
+   "seconds": 12.2
+  },
+  "strengthened-no-S3": {
+   "label": "strengthened, S3 cut at the beam",
+   "digest": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.67,
+    "worst": "R-W1",
+    "drift": 494.0,
+    "passes": true,
+    "over": [],
+    "deflection_violations": [],
+    "watch": {
+     "BE": {
+      "section": "W14X22",
+      "dcr": 0.274,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": -2812,
+      "Mz_lbin": -121858,
+      "V_lb": -3376,
+      "Lb_in": 66.0,
+      "KLr": 63
+     },
+     "BE.upper": {
+      "section": "W12X16",
+      "dcr": 0.541,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P_lb": 3440,
+      "Mz_lbin": 181454,
+      "V_lb": -4633,
+      "Lb_in": 114.0,
+      "KLr": 147
+     },
+     "B-S": {
+      "section": "W12X16",
+      "dcr": 0.294,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "P_lb": -2359,
+      "Mz_lbin": 119431,
+      "V_lb": 4805,
+      "Lb_in": 37.8,
+      "KLr": 49
+     },
+     "B-1": {
+      "section": "W12X16",
+      "dcr": 0.453,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 152,
+      "Mz_lbin": -409222,
+      "V_lb": -122,
+      "Lb_in": 15.3,
+      "KLr": 20
+     },
+     "B-1A": {
+      "section": "W12X16",
+      "dcr": 0.613,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 295,
+      "Mz_lbin": -552949,
+      "V_lb": -380,
+      "Lb_in": 16.0,
+      "KLr": 21
+     },
+     "B-2": {
+      "section": "W12X16",
+      "dcr": 0.571,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 103,
+      "Mz_lbin": -516227,
+      "V_lb": -707,
+      "Lb_in": 15.3,
+      "KLr": 20
+     },
+     "S2": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.198,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": 3057,
+      "Mz_lbin": 809,
+      "V_lb": -5,
+      "Lb_in": 104.5,
+      "KLr": 54
+     },
+     "S3": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.445,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 2011,
+      "Mz_lbin": 147384,
+      "V_lb": 4329,
+      "Lb_in": 42.9,
+      "KLr": 22
+     },
+     "N2": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.383,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P_lb": 7086,
+      "Mz_lbin": 3732,
+      "V_lb": 323,
+      "Lb_in": 104.5,
+      "KLr": 54
+     }
+    },
+    "cabinet": {
+     "CF1.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.484,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 10930,
+      "Mz_lbin": -1954,
+      "V_lb": 605,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF1.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.313,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 3740,
+      "Mz_lbin": -110,
+      "V_lb": 3,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF1.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.346,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.pi]",
+      "P_lb": -55,
+      "Mz_lbin": 772,
+      "V_lb": 44,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF1.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.054,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": -80,
+      "Mz_lbin": 13,
+      "V_lb": 3,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF1.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.281,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1665,
+      "Mz_lbin": 86,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF1.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.485,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2839,
+      "Mz_lbin": 189,
+      "V_lb": 6,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF2.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.344,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 7424,
+      "Mz_lbin": -2164,
+      "V_lb": 179,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF2.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.099,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2303,
+      "Mz_lbin": -37,
+      "V_lb": 0,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF2.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.331,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": -3,
+      "Mz_lbin": 477,
+      "V_lb": 15,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF2.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.055,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 23,
+      "Mz_lbin": -42,
+      "V_lb": 2,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF2.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.214,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1261,
+      "Mz_lbin": 71,
+      "V_lb": 3,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF2.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.333,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 1948,
+      "Mz_lbin": 125,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF3.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.337,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 7350,
+      "Mz_lbin": -2213,
+      "V_lb": 201,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF3.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.227,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2750,
+      "Mz_lbin": -23,
+      "V_lb": 0,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF3.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.356,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "P_lb": -13,
+      "Mz_lbin": 1018,
+      "V_lb": 56,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF3.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.056,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 45,
+      "Mz_lbin": -53,
+      "V_lb": 1,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF3.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.261,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1545,
+      "Mz_lbin": 84,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF3.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.398,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2336,
+      "Mz_lbin": 138,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF4.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.27,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 5413,
+      "Mz_lbin": -1715,
+      "V_lb": 179,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF4.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.221,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2628,
+      "Mz_lbin": -71,
+      "V_lb": -2,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF4.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.264,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": -52,
+      "Mz_lbin": 786,
+      "V_lb": 36,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF4.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.017,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 72,
+      "Mz_lbin": -55,
+      "V_lb": 1,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF4.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.233,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1381,
+      "Mz_lbin": 79,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF4.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.329,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 1946,
+      "Mz_lbin": 115,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF1-CF2.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.218,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 26,
+      "Mz_lbin": -1892,
+      "V_lb": -34,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.06,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -10,
+      "Mz_lbin": 344,
+      "V_lb": 11,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.208,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 33,
+      "Mz_lbin": 1820,
+      "V_lb": 41,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.069,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 6,
+      "Mz_lbin": 316,
+      "V_lb": 11,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.124,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -36,
+      "Mz_lbin": 865,
+      "V_lb": 23,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.151,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 115,
+      "Mz_lbin": 198,
+      "V_lb": 9,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.051,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 595,
+      "Mz_lbin": 17,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF1-CF2.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.094,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.ni]",
+      "P_lb": 518,
+      "Mz_lbin": 174,
+      "V_lb": -6,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF2-CF3.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.218,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -55,
+      "Mz_lbin": 1913,
+      "V_lb": 43,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.062,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -2,
+      "Mz_lbin": 413,
+      "V_lb": 12,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.211,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 65,
+      "Mz_lbin": 1824,
+      "V_lb": 41,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.07,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 17,
+      "Mz_lbin": 338,
+      "V_lb": 12,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.126,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -74,
+      "Mz_lbin": 866,
+      "V_lb": 23,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.149,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 80,
+      "Mz_lbin": 200,
+      "V_lb": 9,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.054,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 634,
+      "Mz_lbin": 39,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF2-CF3.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.077,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.ni]",
+      "P_lb": 331,
+      "Mz_lbin": 175,
+      "V_lb": -6,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF3-CF4.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.221,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 79,
+      "Mz_lbin": -1894,
+      "V_lb": -34,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.063,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 5,
+      "Mz_lbin": 417,
+      "V_lb": 12,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.214,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 98,
+      "Mz_lbin": 1835,
+      "V_lb": 41,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.071,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 28,
+      "Mz_lbin": 350,
+      "V_lb": 12,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.123,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 21,
+      "Mz_lbin": 832,
+      "V_lb": 21,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.145,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 57,
+      "Mz_lbin": 207,
+      "V_lb": 9,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.06,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 722,
+      "Mz_lbin": 41,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF3-CF4.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.082,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.ni]",
+      "P_lb": 311,
+      "Mz_lbin": 270,
+      "V_lb": 7,
+      "Lb_in": 55.0,
+      "KLr": 141
+     }
+    },
+    "worst_leg": {
+     "member": "CF1.front",
+     "section": "2-HSS2X1X0.120",
+     "dcr": 0.484,
+     "mode": "H1-1a combined axial + flexure",
+     "combo": "C2 1.2D+1.6L+0.5Lr",
+     "P_lb": 10930,
+     "Mz_lbin": -1954,
+     "V_lb": 605,
+     "Lb_in": 40.0,
+     "KLr": 102
+    },
+    "reactions": {
+     "CF1.front.base": 8977,
+     "CF1.rear.base": 4297,
+     "CF2.front.base": 6961,
+     "CF2.rear.base": 3829,
+     "CF3.front.base": 6809,
+     "CF3.rear.base": 3883,
+     "CF4.front.base": 5105,
+     "CF4.rear.base": 3262,
+     "N2.base": 11073,
+     "S2.base": 4538
+    },
+    "uplift": {},
+    "deflection": {
+     "B-1": {
+      "span_in": 207.8,
+      "S1 D": {
+       "defl_in": -0.0453,
+       "ratio": 4582.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.3957,
+       "ratio": 525.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0453,
+       "ratio": 4583.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.3081,
+       "ratio": 674.0
+      }
+     },
+     "B-1A": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0904,
+       "ratio": 2715.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.7527,
+       "ratio": 326.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0892,
+       "ratio": 2752.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.5862,
+       "ratio": 419.0
+      }
+     },
+     "B-2": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0764,
+       "ratio": 3214.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.6559,
+       "ratio": 374.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.074,
+       "ratio": 3317.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.5093,
+       "ratio": 482.0
+      }
+     },
+     "B-S": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0351,
+       "ratio": 6992.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.2683,
+       "ratio": 915.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0351,
+       "ratio": 6997.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.21,
+       "ratio": 1169.0
+      }
+     },
+     "BE": {
+      "span_in": 331.0,
+      "S1 D": {
+       "defl_in": -0.0122,
+       "ratio": 27122.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0279,
+       "ratio": 11860.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0196,
+       "ratio": 16876.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0295,
+       "ratio": 11205.0
+      }
+     },
+     "BE.upper": {
+      "span_in": 265.0,
+      "S1 D": {
+       "defl_in": -0.1131,
+       "ratio": 2342.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.1152,
+       "ratio": 2301.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.2371,
+       "ratio": 1118.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.2076,
+       "ratio": 1276.0
+      }
+     },
+     "N2": {
+      "span_in": 228.8,
+      "S1 D": {
+       "defl_in": -0.0046,
+       "ratio": 50052.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0197,
+       "ratio": 11605.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0048,
+       "ratio": 47877.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0161,
+       "ratio": 14224.0
+      }
+     },
+     "S2": {
+      "span_in": 112.2,
+      "S1 D": {
+       "defl_in": 0.0,
+       "ratio": null
+      },
+      "S2 D+L": {
+       "defl_in": -0.0006,
+       "ratio": 179326.0
+      },
+      "S3 D+Lr": {
+       "defl_in": 0.0,
+       "ratio": null
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0005,
+       "ratio": 224230.0
+      }
+     },
+     "S3": {
+      "span_in": 45.9,
+      "S1 D": {
+       "defl_in": 0.0,
+       "ratio": null
+      },
+      "S2 D+L": {
+       "defl_in": 0.0,
+       "ratio": null
+      },
+      "S3 D+Lr": {
+       "defl_in": 0.0,
+       "ratio": null
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": 0.0,
+       "ratio": null
+      }
+     }
+    },
+    "steel_lb": 578.9
+   },
+   "seconds": 9.1,
+   "cut": {
+    "segments_cut": 1,
+    "stub_segments": 2,
+    "footing_removed": [
+     "S3.base"
+    ],
+    "collateral": []
+   }
+  },
+  "strengthened-no-S2": {
+   "label": "strengthened, S2 cut at the beam",
+   "digest": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.636,
+    "worst": "R-W1",
+    "drift": 494.0,
+    "passes": true,
+    "over": [],
+    "deflection_violations": [],
+    "watch": {
+     "BE": {
+      "section": "W14X22",
+      "dcr": 0.185,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": -1759,
+      "Mz_lbin": 40257,
+      "V_lb": 501,
+      "Lb_in": 66.0,
+      "KLr": 63
+     },
+     "BE.upper": {
+      "section": "W12X16",
+      "dcr": 0.525,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P_lb": 2468,
+      "Mz_lbin": -181226,
+      "V_lb": -3805,
+      "Lb_in": 114.0,
+      "KLr": 147
+     },
+     "B-S": {
+      "section": "W12X16",
+      "dcr": 0.291,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "P_lb": -2173,
+      "Mz_lbin": 114595,
+      "V_lb": 4741,
+      "Lb_in": 37.8,
+      "KLr": 49
+     },
+     "B-1": {
+      "section": "W12X16",
+      "dcr": 0.453,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 56,
+      "Mz_lbin": -409222,
+      "V_lb": -122,
+      "Lb_in": 15.3,
+      "KLr": 20
+     },
+     "B-1A": {
+      "section": "W12X16",
+      "dcr": 0.611,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 288,
+      "Mz_lbin": -551918,
+      "V_lb": -372,
+      "Lb_in": 16.0,
+      "KLr": 21
+     },
+     "B-2": {
+      "section": "W12X16",
+      "dcr": 0.571,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 124,
+      "Mz_lbin": -516145,
+      "V_lb": -706,
+      "Lb_in": 15.3,
+      "KLr": 20
+     },
+     "S2": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.026,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": -724,
+      "Mz_lbin": 1008,
+      "V_lb": 25,
+      "Lb_in": 7.8,
+      "KLr": 4
+     },
+     "S3": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.478,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 3367,
+      "Mz_lbin": 132098,
+      "V_lb": 3980,
+      "Lb_in": 104.5,
+      "KLr": 54
+     },
+     "N2": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.324,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P_lb": 6919,
+      "Mz_lbin": 3719,
+      "V_lb": 324,
+      "Lb_in": 104.5,
+      "KLr": 54
+     }
+    },
+    "cabinet": {
+     "CF1.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.274,
+      "mode": "shear",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 3365,
+      "Mz_lbin": 5044,
+      "V_lb": 1100,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF1.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.248,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 3044,
+      "Mz_lbin": 6,
+      "V_lb": 0,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF1.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.341,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "P_lb": -54,
+      "Mz_lbin": 828,
+      "V_lb": 46,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF1.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.053,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": 48,
+      "Mz_lbin": -45,
+      "V_lb": 1,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF1.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.279,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1650,
+      "Mz_lbin": 87,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF1.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.386,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2277,
+      "Mz_lbin": 124,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF2.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.346,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 7510,
+      "Mz_lbin": -2174,
+      "V_lb": 215,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF2.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.1,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2367,
+      "Mz_lbin": -26,
+      "V_lb": 0,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF2.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.329,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -8,
+      "Mz_lbin": 620,
+      "V_lb": 37,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF2.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.053,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 17,
+      "Mz_lbin": -39,
+      "V_lb": 2,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF2.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.21,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1236,
+      "Mz_lbin": 70,
+      "V_lb": 3,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF2.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.342,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2004,
+      "Mz_lbin": 128,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF3.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.366,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 7937,
+      "Mz_lbin": -2210,
+      "V_lb": 230,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF3.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.23,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2801,
+      "Mz_lbin": -16,
+      "V_lb": 0,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF3.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.357,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "P_lb": -13,
+      "Mz_lbin": 993,
+      "V_lb": 55,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF3.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.054,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 40,
+      "Mz_lbin": -51,
+      "V_lb": 1,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF3.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.26,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1536,
+      "Mz_lbin": 83,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF3.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.406,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2384,
+      "Mz_lbin": 146,
+      "V_lb": 6,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF4.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.288,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 5854,
+      "Mz_lbin": -1712,
+      "V_lb": 192,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF4.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.223,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2667,
+      "Mz_lbin": -54,
+      "V_lb": -1,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF4.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.257,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": -51,
+      "Mz_lbin": 782,
+      "V_lb": 36,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF4.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.017,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -22,
+      "Mz_lbin": 35,
+      "V_lb": 3,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF4.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.233,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1381,
+      "Mz_lbin": 79,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF4.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.334,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 1973,
+      "Mz_lbin": 123,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF1-CF2.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.217,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -27,
+      "Mz_lbin": 1912,
+      "V_lb": 43,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.06,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -10,
+      "Mz_lbin": 348,
+      "V_lb": 12,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.209,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": 34,
+      "Mz_lbin": 1825,
+      "V_lb": 42,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.067,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 6,
+      "Mz_lbin": 313,
+      "V_lb": 11,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.131,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -102,
+      "Mz_lbin": 926,
+      "V_lb": 24,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.15,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 186,
+      "Mz_lbin": 193,
+      "V_lb": 9,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.049,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 581,
+      "Mz_lbin": 24,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF1-CF2.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.075,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.ni]",
+      "P_lb": 313,
+      "Mz_lbin": 165,
+      "V_lb": -5,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF2-CF3.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.218,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -55,
+      "Mz_lbin": 1911,
+      "V_lb": 43,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.062,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -2,
+      "Mz_lbin": 412,
+      "V_lb": 12,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.211,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 65,
+      "Mz_lbin": 1822,
+      "V_lb": 41,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.067,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 17,
+      "Mz_lbin": 321,
+      "V_lb": 11,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.127,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -120,
+      "Mz_lbin": 851,
+      "V_lb": 22,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.145,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 117,
+      "Mz_lbin": 186,
+      "V_lb": 9,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.053,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 623,
+      "Mz_lbin": 39,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF2-CF3.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.078,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.ni]",
+      "P_lb": 376,
+      "Mz_lbin": 163,
+      "V_lb": -5,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF3-CF4.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.219,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -83,
+      "Mz_lbin": 1917,
+      "V_lb": 43,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.063,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 5,
+      "Mz_lbin": 416,
+      "V_lb": 12,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.214,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 98,
+      "Mz_lbin": 1830,
+      "V_lb": 41,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.068,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 27,
+      "Mz_lbin": 333,
+      "V_lb": 12,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.123,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 20,
+      "Mz_lbin": 826,
+      "V_lb": 21,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.141,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 73,
+      "Mz_lbin": -162,
+      "V_lb": 0,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.06,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 718,
+      "Mz_lbin": 41,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF3-CF4.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.081,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.ni]",
+      "P_lb": 341,
+      "Mz_lbin": 255,
+      "V_lb": 7,
+      "Lb_in": 55.0,
+      "KLr": 141
+     }
+    },
+    "worst_leg": {
+     "member": "CF3.front",
+     "section": "2-HSS2X1X0.120",
+     "dcr": 0.366,
+     "mode": "H1-1a combined axial + flexure",
+     "combo": "C2 1.2D+1.6L+0.5Lr",
+     "P_lb": 7937,
+     "Mz_lbin": -2210,
+     "V_lb": 230,
+     "Lb_in": 40.0,
+     "KLr": 102
+    },
+    "reactions": {
+     "CF1.front.base": 5444,
+     "CF1.rear.base": 3575,
+     "CF2.front.base": 6918,
+     "CF2.rear.base": 3722,
+     "CF3.front.base": 7293,
+     "CF3.rear.base": 3971,
+     "CF4.front.base": 5313,
+     "CF4.rear.base": 3332,
+     "N2.base": 10523,
+     "S3.base": 9365
+    },
+    "uplift": {},
+    "deflection": {
+     "B-1": {
+      "span_in": 207.8,
+      "S1 D": {
+       "defl_in": -0.0453,
+       "ratio": 4583.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.3957,
+       "ratio": 525.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0453,
+       "ratio": 4585.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.3081,
+       "ratio": 674.0
+      }
+     },
+     "B-1A": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.09,
+       "ratio": 2728.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.7511,
+       "ratio": 327.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0886,
+       "ratio": 2770.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.5848,
+       "ratio": 420.0
+      }
+     },
+     "B-2": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0763,
+       "ratio": 3217.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.6557,
+       "ratio": 374.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0739,
+       "ratio": 3321.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.5091,
+       "ratio": 482.0
+      }
+     },
+     "B-S": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0336,
+       "ratio": 7303.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.254,
+       "ratio": 966.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0337,
+       "ratio": 7278.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.199,
+       "ratio": 1234.0
+      }
+     },
+     "BE": {
+      "span_in": 331.0,
+      "S1 D": {
+       "defl_in": -0.0012,
+       "ratio": 278632.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0127,
+       "ratio": 25986.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0019,
+       "ratio": 176596.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0084,
+       "ratio": 39444.0
+      }
+     },
+     "BE.upper": {
+      "span_in": 265.0,
+      "S1 D": {
+       "defl_in": -0.111,
+       "ratio": 2387.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.1104,
+       "ratio": 2399.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.2336,
+       "ratio": 1134.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.2025,
+       "ratio": 1308.0
+      }
+     },
+     "N2": {
+      "span_in": 228.8,
+      "S1 D": {
+       "defl_in": -0.0046,
+       "ratio": 49499.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0198,
+       "ratio": 11525.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0049,
+       "ratio": 47065.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0162,
+       "ratio": 14103.0
+      }
+     },
+     "S3": {
+      "span_in": 150.4,
+      "S1 D": {
+       "defl_in": -0.0069,
+       "ratio": 21832.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0454,
+       "ratio": 3314.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0103,
+       "ratio": 14545.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0377,
+       "ratio": 3984.0
+      }
+     }
+    },
+    "steel_lb": 578.9
+   },
+   "seconds": 8.5,
+   "cut": {
+    "segments_cut": 1,
+    "stub_segments": 1,
+    "footing_removed": [
+     "S2.base"
+    ],
+    "collateral": [
+     "BR-S-2"
+    ]
+   }
+  },
+  "strengthened-no-S2-S3": {
+   "label": "strengthened, S2 and S3 both cut",
+   "digest": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.677,
+    "worst": "R-W1",
+    "drift": 446.0,
+    "passes": true,
+    "over": [],
+    "deflection_violations": [],
+    "watch": {
+     "BE": {
+      "section": "W14X22",
+      "dcr": 0.276,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": -484,
+      "Mz_lbin": -107888,
+      "V_lb": -5285,
+      "Lb_in": 66.0,
+      "KLr": 63
+     },
+     "BE.upper": {
+      "section": "W12X16",
+      "dcr": 0.524,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P_lb": 1896,
+      "Mz_lbin": -184086,
+      "V_lb": -3785,
+      "Lb_in": 114.0,
+      "KLr": 147
+     },
+     "B-S": {
+      "section": "W12X16",
+      "dcr": 0.326,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -2250,
+      "Mz_lbin": 124998,
+      "V_lb": 5079,
+      "Lb_in": 37.8,
+      "KLr": 49
+     },
+     "B-1": {
+      "section": "W12X16",
+      "dcr": 0.453,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 350,
+      "Mz_lbin": -409168,
+      "V_lb": -122,
+      "Lb_in": 15.3,
+      "KLr": 20
+     },
+     "B-1A": {
+      "section": "W12X16",
+      "dcr": 0.614,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 315,
+      "Mz_lbin": -554052,
+      "V_lb": 547,
+      "Lb_in": 16.0,
+      "KLr": 21
+     },
+     "B-2": {
+      "section": "W12X16",
+      "dcr": 0.572,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 101,
+      "Mz_lbin": -516152,
+      "V_lb": -706,
+      "Lb_in": 15.3,
+      "KLr": 20
+     },
+     "S2": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.031,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "P_lb": 578,
+      "Mz_lbin": -1251,
+      "V_lb": -58,
+      "Lb_in": 7.8,
+      "KLr": 4
+     },
+     "S3": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.464,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 3418,
+      "Mz_lbin": 149742,
+      "V_lb": 4428,
+      "Lb_in": 42.9,
+      "KLr": 22
+     },
+     "N2": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.306,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P_lb": 6913,
+      "Mz_lbin": 3775,
+      "V_lb": 321,
+      "Lb_in": 104.5,
+      "KLr": 54
+     }
+    },
+    "cabinet": {
+     "CF1.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.67,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 14614,
+      "Mz_lbin": -2091,
+      "V_lb": 1099,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF1.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.435,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 5180,
+      "Mz_lbin": -169,
+      "V_lb": 5,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF1.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.427,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.ni]",
+      "P_lb": 67,
+      "Mz_lbin": -829,
+      "V_lb": -44,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF1.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.069,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": -116,
+      "Mz_lbin": 28,
+      "V_lb": 4,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF1.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.301,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1781,
+      "Mz_lbin": 93,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF1.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.673,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 3940,
+      "Mz_lbin": 260,
+      "V_lb": 8,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF2.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.3,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 6204,
+      "Mz_lbin": -2181,
+      "V_lb": 151,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF2.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.1,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2241,
+      "Mz_lbin": -63,
+      "V_lb": -1,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF2.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.404,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -10,
+      "Mz_lbin": 726,
+      "V_lb": 44,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF2.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.067,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 27,
+      "Mz_lbin": -43,
+      "V_lb": 2,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF2.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.214,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1262,
+      "Mz_lbin": 70,
+      "V_lb": 3,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF2.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.322,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 1882,
+      "Mz_lbin": 104,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF3.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.323,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 6821,
+      "Mz_lbin": -2216,
+      "V_lb": 176,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF3.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.225,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2689,
+      "Mz_lbin": -34,
+      "V_lb": -1,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF3.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.428,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "P_lb": -14,
+      "Mz_lbin": 1079,
+      "V_lb": 61,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF3.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.068,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 47,
+      "Mz_lbin": -55,
+      "V_lb": 1,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF3.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.261,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1541,
+      "Mz_lbin": 83,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF3.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.389,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2279,
+      "Mz_lbin": 127,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF4.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.278,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 5884,
+      "Mz_lbin": -1711,
+      "V_lb": 191,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF4.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.226,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2644,
+      "Mz_lbin": -96,
+      "V_lb": -2,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF4.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.314,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": -63,
+      "Mz_lbin": 815,
+      "V_lb": 37,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF4.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.02,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -31,
+      "Mz_lbin": 41,
+      "V_lb": 4,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF4.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.233,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1383,
+      "Mz_lbin": 80,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF4.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.335,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 1975,
+      "Mz_lbin": 118,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF1-CF2.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.272,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -34,
+      "Mz_lbin": 2390,
+      "V_lb": 52,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.075,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -12,
+      "Mz_lbin": 424,
+      "V_lb": 12,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.26,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 41,
+      "Mz_lbin": 2271,
+      "V_lb": 50,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.084,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 7,
+      "Mz_lbin": 381,
+      "V_lb": 13,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.159,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 120,
+      "Mz_lbin": -1042,
+      "V_lb": -16,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.186,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY+.pi]",
+      "P_lb": 269,
+      "Mz_lbin": 227,
+      "V_lb": 8,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.058,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": 527,
+      "Mz_lbin": 13,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF1-CF2.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.225,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 1407,
+      "Mz_lbin": 22,
+      "V_lb": -3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF2-CF3.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.274,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -68,
+      "Mz_lbin": 2400,
+      "V_lb": 53,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.078,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -3,
+      "Mz_lbin": 515,
+      "V_lb": 14,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.266,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 81,
+      "Mz_lbin": 2289,
+      "V_lb": 50,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.086,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 20,
+      "Mz_lbin": 415,
+      "V_lb": 13,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.162,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": 35,
+      "Mz_lbin": 1117,
+      "V_lb": 28,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.182,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 67,
+      "Mz_lbin": 244,
+      "V_lb": 10,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.059,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": 475,
+      "Mz_lbin": 34,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF2-CF3.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.095,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 367,
+      "Mz_lbin": 226,
+      "V_lb": -7,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF3-CF4.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.276,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -104,
+      "Mz_lbin": 2410,
+      "V_lb": 53,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.079,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 6,
+      "Mz_lbin": 518,
+      "V_lb": 14,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.269,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 123,
+      "Mz_lbin": 2305,
+      "V_lb": 51,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.087,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 34,
+      "Mz_lbin": 428,
+      "V_lb": 14,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.156,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 32,
+      "Mz_lbin": 1049,
+      "V_lb": 25,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.178,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 45,
+      "Mz_lbin": 253,
+      "V_lb": 10,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.063,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 755,
+      "Mz_lbin": 41,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF3-CF4.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.101,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.ni]",
+      "P_lb": 379,
+      "Mz_lbin": 336,
+      "V_lb": 9,
+      "Lb_in": 55.0,
+      "KLr": 141
+     }
+    },
+    "worst_leg": {
+     "member": "CF1.front",
+     "section": "2-HSS2X1X0.120",
+     "dcr": 0.67,
+     "mode": "H1-1a combined axial + flexure",
+     "combo": "C2 1.2D+1.6L+0.5Lr",
+     "P_lb": 14614,
+     "Mz_lbin": -2091,
+     "V_lb": 1099,
+     "Lb_in": 40.0,
+     "KLr": 102
+    },
+    "reactions": {
+     "CF1.front.base": 10946,
+     "CF1.rear.base": 5775,
+     "CF2.front.base": 5908,
+     "CF2.rear.base": 4124,
+     "CF3.front.base": 6385,
+     "CF3.rear.base": 3788,
+     "CF4.front.base": 5331,
+     "CF4.rear.base": 3229,
+     "N2.base": 10418
+    },
+    "uplift": {},
+    "deflection": {
+     "B-1": {
+      "span_in": 207.8,
+      "S1 D": {
+       "defl_in": -0.0453,
+       "ratio": 4585.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.3957,
+       "ratio": 525.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0453,
+       "ratio": 4587.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.3081,
+       "ratio": 674.0
+      }
+     },
+     "B-1A": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0911,
+       "ratio": 2694.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.7544,
+       "ratio": 325.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0904,
+       "ratio": 2716.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.588,
+       "ratio": 418.0
+      }
+     },
+     "B-2": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0763,
+       "ratio": 3217.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.6558,
+       "ratio": 374.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0739,
+       "ratio": 3321.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.5091,
+       "ratio": 482.0
+      }
+     },
+     "B-S": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0358,
+       "ratio": 6852.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.2699,
+       "ratio": 910.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0363,
+       "ratio": 6767.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.2117,
+       "ratio": 1160.0
+      }
+     },
+     "BE": {
+      "span_in": 331.0,
+      "S1 D": {
+       "defl_in": -0.002,
+       "ratio": 162132.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0033,
+       "ratio": 99375.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0034,
+       "ratio": 96619.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.004,
+       "ratio": 81795.0
+      }
+     },
+     "BE.upper": {
+      "span_in": 265.0,
+      "S1 D": {
+       "defl_in": -0.113,
+       "ratio": 2344.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.1149,
+       "ratio": 2306.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.2369,
+       "ratio": 1119.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.2073,
+       "ratio": 1278.0
+      }
+     },
+     "N2": {
+      "span_in": 228.8,
+      "S1 D": {
+       "defl_in": -0.0045,
+       "ratio": 50479.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0196,
+       "ratio": 11657.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0047,
+       "ratio": 48513.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.016,
+       "ratio": 14308.0
+      }
+     },
+     "S3": {
+      "span_in": 45.9,
+      "S1 D": {
+       "defl_in": -0.0018,
+       "ratio": 25641.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0196,
+       "ratio": 2342.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0048,
+       "ratio": 9564.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0174,
+       "ratio": 2637.0
+      }
+     }
+    },
+    "steel_lb": 578.9
+   },
+   "seconds": 10.1
+  },
+  "strengthened-no-S2-S3-full": {
+   "label": "S2 and S3 cut, all 27 combinations",
+   "digest": {
+    "stable": true,
+    "message": "",
+    "max_dcr": 0.677,
+    "worst": "R-W1",
+    "drift": 446.0,
+    "passes": true,
+    "over": [],
+    "deflection_violations": [],
+    "watch": {
+     "BE": {
+      "section": "W14X22",
+      "dcr": 0.276,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": -484,
+      "Mz_lbin": -107888,
+      "V_lb": -5285,
+      "Lb_in": 66.0,
+      "KLr": 63
+     },
+     "BE.upper": {
+      "section": "W12X16",
+      "dcr": 0.524,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P_lb": 1896,
+      "Mz_lbin": -184086,
+      "V_lb": -3785,
+      "Lb_in": 114.0,
+      "KLr": 147
+     },
+     "B-S": {
+      "section": "W12X16",
+      "dcr": 0.326,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -2250,
+      "Mz_lbin": 124998,
+      "V_lb": 5079,
+      "Lb_in": 37.8,
+      "KLr": 49
+     },
+     "B-1": {
+      "section": "W12X16",
+      "dcr": 0.453,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 350,
+      "Mz_lbin": -409168,
+      "V_lb": -122,
+      "Lb_in": 15.3,
+      "KLr": 20
+     },
+     "B-1A": {
+      "section": "W12X16",
+      "dcr": 0.614,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 315,
+      "Mz_lbin": -554052,
+      "V_lb": 547,
+      "Lb_in": 16.0,
+      "KLr": 21
+     },
+     "B-2": {
+      "section": "W12X16",
+      "dcr": 0.572,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 101,
+      "Mz_lbin": -516152,
+      "V_lb": -706,
+      "Lb_in": 15.3,
+      "KLr": 20
+     },
+     "S2": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.031,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "P_lb": 578,
+      "Mz_lbin": -1251,
+      "V_lb": -58,
+      "Lb_in": 7.8,
+      "KLr": 4
+     },
+     "S3": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.464,
+      "mode": "flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 3418,
+      "Mz_lbin": 149742,
+      "V_lb": 4428,
+      "Lb_in": 42.9,
+      "KLr": 22
+     },
+     "N2": {
+      "section": "HSS5X5X1/4",
+      "dcr": 0.306,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C3 1.2D+1.6Lr+1.0L",
+      "P_lb": 6913,
+      "Mz_lbin": 3775,
+      "V_lb": 321,
+      "Lb_in": 104.5,
+      "KLr": 54
+     }
+    },
+    "cabinet": {
+     "CF1.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.67,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 14614,
+      "Mz_lbin": -2091,
+      "V_lb": 1099,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF1.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.435,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 5180,
+      "Mz_lbin": -169,
+      "V_lb": 5,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF1.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.427,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.ni]",
+      "P_lb": 67,
+      "Mz_lbin": -829,
+      "V_lb": -44,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF1.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.069,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": -116,
+      "Mz_lbin": 28,
+      "V_lb": 4,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF1.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.301,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1781,
+      "Mz_lbin": 93,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF1.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.673,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 3940,
+      "Mz_lbin": 260,
+      "V_lb": 8,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF2.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.3,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 6204,
+      "Mz_lbin": -2181,
+      "V_lb": 151,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF2.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.1,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2241,
+      "Mz_lbin": -63,
+      "V_lb": -1,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF2.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.404,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": -10,
+      "Mz_lbin": 726,
+      "V_lb": 44,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF2.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.067,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 27,
+      "Mz_lbin": -43,
+      "V_lb": 2,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF2.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.214,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1262,
+      "Mz_lbin": 70,
+      "V_lb": 3,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF2.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.322,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 1882,
+      "Mz_lbin": 104,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF3.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.323,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 6821,
+      "Mz_lbin": -2216,
+      "V_lb": 176,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF3.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.225,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2689,
+      "Mz_lbin": -34,
+      "V_lb": -1,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF3.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.428,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.pi]",
+      "P_lb": -14,
+      "Mz_lbin": 1079,
+      "V_lb": 61,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF3.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.068,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 47,
+      "Mz_lbin": -55,
+      "V_lb": 1,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF3.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.261,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1541,
+      "Mz_lbin": 83,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF3.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.389,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2279,
+      "Mz_lbin": 127,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF4.front": {
+      "section": "2-HSS2X1X0.120",
+      "dcr": 0.278,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C2 1.2D+1.6L+0.5Lr",
+      "P_lb": 5884,
+      "Mz_lbin": -1711,
+      "V_lb": 191,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF4.rear": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.226,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 2644,
+      "Mz_lbin": -96,
+      "V_lb": -2,
+      "Lb_in": 40.0,
+      "KLr": 102
+     },
+     "CF4.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.314,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": -63,
+      "Mz_lbin": 815,
+      "V_lb": 37,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF4.strut": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.02,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -31,
+      "Mz_lbin": 41,
+      "V_lb": 4,
+      "Lb_in": 30.0,
+      "KLr": 77
+     },
+     "CF4.diag.lower": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.233,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WX-.pi]",
+      "P_lb": 1383,
+      "Mz_lbin": 80,
+      "V_lb": 4,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF4.diag.upper": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.335,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 1975,
+      "Mz_lbin": 118,
+      "V_lb": 5,
+      "Lb_in": 57.7,
+      "KLr": 147
+     },
+     "CF1-CF2.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.272,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -34,
+      "Mz_lbin": 2390,
+      "V_lb": 52,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.075,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -12,
+      "Mz_lbin": 424,
+      "V_lb": 12,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.26,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 41,
+      "Mz_lbin": 2271,
+      "V_lb": 50,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.084,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 7,
+      "Mz_lbin": 381,
+      "V_lb": 13,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.159,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 120,
+      "Mz_lbin": -1042,
+      "V_lb": -16,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.186,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY+.pi]",
+      "P_lb": 269,
+      "Mz_lbin": 227,
+      "V_lb": 8,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF1-CF2.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.058,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": 527,
+      "Mz_lbin": 13,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF1-CF2.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.225,
+      "mode": "H1-1a combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 1407,
+      "Mz_lbin": 22,
+      "V_lb": -3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF2-CF3.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.274,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -68,
+      "Mz_lbin": 2400,
+      "V_lb": 53,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.078,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -3,
+      "Mz_lbin": 515,
+      "V_lb": 14,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.266,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 81,
+      "Mz_lbin": 2289,
+      "V_lb": 50,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.086,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 20,
+      "Mz_lbin": 415,
+      "V_lb": 13,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.162,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": 35,
+      "Mz_lbin": 1117,
+      "V_lb": 28,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.182,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 67,
+      "Mz_lbin": 244,
+      "V_lb": 10,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF2-CF3.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.059,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY-.ni]",
+      "P_lb": 475,
+      "Mz_lbin": 34,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF2-CF3.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.095,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 367,
+      "Mz_lbin": 226,
+      "V_lb": -7,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF3-CF4.front.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.276,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": -104,
+      "Mz_lbin": 2410,
+      "V_lb": 53,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.bench": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.079,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 6,
+      "Mz_lbin": 518,
+      "V_lb": 14,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.front.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.269,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 123,
+      "Mz_lbin": 2305,
+      "V_lb": 51,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.sill": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.087,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 34,
+      "Mz_lbin": 428,
+      "V_lb": 14,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.front.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.156,
+      "mode": "flexure",
+      "combo": "C5 0.9D+1.0W [WY-.ni]",
+      "P_lb": 32,
+      "Mz_lbin": 1049,
+      "V_lb": 25,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.top": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.178,
+      "mode": "flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.pi]",
+      "P_lb": 45,
+      "Mz_lbin": 253,
+      "V_lb": 10,
+      "Lb_in": 49.0,
+      "KLr": 125
+     },
+     "CF3-CF4.rear.X1": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.063,
+      "mode": "compression",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WX+.ni]",
+      "P_lb": 755,
+      "Mz_lbin": 41,
+      "V_lb": 3,
+      "Lb_in": 55.0,
+      "KLr": 141
+     },
+     "CF3-CF4.rear.X2": {
+      "section": "HSS2X1X0.120",
+      "dcr": 0.101,
+      "mode": "H1-1b combined axial + flexure",
+      "combo": "C4 1.2D+1.0W+1.0L+0.5Lr [WY+.ni]",
+      "P_lb": 379,
+      "Mz_lbin": 336,
+      "V_lb": 9,
+      "Lb_in": 55.0,
+      "KLr": 141
+     }
+    },
+    "worst_leg": {
+     "member": "CF1.front",
+     "section": "2-HSS2X1X0.120",
+     "dcr": 0.67,
+     "mode": "H1-1a combined axial + flexure",
+     "combo": "C2 1.2D+1.6L+0.5Lr",
+     "P_lb": 14614,
+     "Mz_lbin": -2091,
+     "V_lb": 1099,
+     "Lb_in": 40.0,
+     "KLr": 102
+    },
+    "reactions": {
+     "CF1.front.base": 10946,
+     "CF1.rear.base": 5775,
+     "CF2.front.base": 6129,
+     "CF2.rear.base": 4124,
+     "CF3.front.base": 6385,
+     "CF3.rear.base": 3788,
+     "CF4.front.base": 5331,
+     "CF4.rear.base": 3229,
+     "N2.base": 10418
+    },
+    "uplift": {},
+    "deflection": {
+     "B-1": {
+      "span_in": 207.8,
+      "S1 D": {
+       "defl_in": -0.0453,
+       "ratio": 4585.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.3957,
+       "ratio": 525.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0453,
+       "ratio": 4587.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.3081,
+       "ratio": 674.0
+      }
+     },
+     "B-1A": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0911,
+       "ratio": 2694.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.7544,
+       "ratio": 325.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0904,
+       "ratio": 2716.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.588,
+       "ratio": 418.0
+      }
+     },
+     "B-2": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0763,
+       "ratio": 3217.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.6558,
+       "ratio": 374.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0739,
+       "ratio": 3321.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.5091,
+       "ratio": 482.0
+      }
+     },
+     "B-S": {
+      "span_in": 245.5,
+      "S1 D": {
+       "defl_in": -0.0358,
+       "ratio": 6852.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.2699,
+       "ratio": 910.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0363,
+       "ratio": 6767.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.2117,
+       "ratio": 1160.0
+      }
+     },
+     "BE": {
+      "span_in": 331.0,
+      "S1 D": {
+       "defl_in": -0.002,
+       "ratio": 162132.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0033,
+       "ratio": 99375.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0034,
+       "ratio": 96619.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.004,
+       "ratio": 81795.0
+      }
+     },
+     "BE.upper": {
+      "span_in": 265.0,
+      "S1 D": {
+       "defl_in": -0.113,
+       "ratio": 2344.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.1149,
+       "ratio": 2306.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.2369,
+       "ratio": 1119.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.2073,
+       "ratio": 1278.0
+      }
+     },
+     "N2": {
+      "span_in": 228.8,
+      "S1 D": {
+       "defl_in": -0.0045,
+       "ratio": 50479.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0196,
+       "ratio": 11657.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0047,
+       "ratio": 48513.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.016,
+       "ratio": 14308.0
+      }
+     },
+     "S3": {
+      "span_in": 45.9,
+      "S1 D": {
+       "defl_in": -0.0018,
+       "ratio": 25641.0
+      },
+      "S2 D+L": {
+       "defl_in": -0.0196,
+       "ratio": 2342.0
+      },
+      "S3 D+Lr": {
+       "defl_in": -0.0048,
+       "ratio": 9564.0
+      },
+      "S4 D+0.75L+0.75Lr": {
+       "defl_in": -0.0174,
+       "ratio": 2637.0
+      }
+     }
+    },
+    "steel_lb": 578.9
+   },
+   "seconds": 12.6
+  }
+ },
+ "footing_basis": "strengthened",
+ "footings": {
+  "bearing_psf": 1500.0,
+  "lrfd_to_asd": 1.4,
+  "frames": {
+   "CF1": {
+    "front_lrfd_lb": 5147,
+    "rear_lrfd_lb": 3458,
+    "service_lb": 6146,
+    "pad_sf": 4.1,
+    "pad_in": [
+     30,
+     20
+    ]
+   },
+   "CF2": {
+    "front_lrfd_lb": 6935,
+    "rear_lrfd_lb": 3663,
+    "service_lb": 7570,
+    "pad_sf": 5.05,
+    "pad_in": [
+     30,
+     24
+    ]
+   },
+   "CF3": {
+    "front_lrfd_lb": 7292,
+    "rear_lrfd_lb": 3953,
+    "service_lb": 8032,
+    "pad_sf": 5.35,
+    "pad_in": [
+     30,
+     26
+    ]
+   },
+   "CF4": {
+    "front_lrfd_lb": 5357,
+    "rear_lrfd_lb": 3318,
+    "service_lb": 6196,
+    "pad_sf": 4.13,
+    "pad_in": [
+     30,
+     20
+    ]
+   }
+  },
+  "strip": {
+   "service_lb": 27945,
+   "length_ft": 14.3,
+   "width_in": 16,
+   "note": "continuous under the frame line, one foot past each end frame"
+  }
+ },
+ "notes": [
+  "Frame stations, tube gauge, rail levels and the 98.5 in. height are assumptions listed in cabinet_frames.py; none has been measured for this study.",
+  "The front leg is joined rigidly to BE at its station and its top 6 in. stands in for the beam half-depth. A real seat would be a cap plate under the bottom flange.",
+  "Unbraced lengths are taken between nodes where any member frames in, so a bolted rail along the wall counts as a brace point in both directions. That is right for the weak (1 in.) axis and optimistic for the front-to-back axis of an unbraced frame.",
+  "Combinations are the pruned governing set from the baseline unless --full is given; cabinet members could in principle be governed by a combination not in that set.",
+  "Bearing is presumptive (1500 psf). Nothing is known about the slab thickness or the soil; the pads assume the slab is cut out under each frame.",
+  "No connection, base plate, anchor, weld or cap plate is designed here."
+ ],
+ "seconds": 77
+}

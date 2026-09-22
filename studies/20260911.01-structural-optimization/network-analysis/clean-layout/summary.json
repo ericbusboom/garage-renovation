@@ -1,0 +1,53 @@
+{
+  "physical_members_before": 117,
+  "physical_members_after": 88,
+  "merged_members": 17,
+  "removed_members": 12,
+  "steel_before_lb": 9321.729239198223,
+  "steel_after_lb": 8511.527764697166,
+  "steel_saved_lb": 810.2014745010565,
+  "partial_screen_before": 0.8341663936201396,
+  "partial_screen_after": 0.9348500855867381,
+  "governing_member": "W3",
+  "validation": {
+    "complete": {
+      "cases": 51,
+      "max_displacement_error": 1.5872154665308447e-06,
+      "max_reaction_error_lb_or_lb_in": 0.12737504488177365,
+      "worst_reaction_component": [
+        "strength_lateral_HX_-2",
+        "N289",
+        "RxnMX",
+        26587.067312599982,
+        0.12737504488177365
+      ],
+      "max_normalized_error": 0.6002020178795332,
+      "reaction_tolerance": "0.05 absolute + 0.0001 relative; force lb, moment lb-in"
+    },
+    "roof_first": {
+      "cases": 19,
+      "max_displacement_error": 1.0501269086249376e-07,
+      "max_reaction_error_lb_or_lb_in": 0.03714122162637068,
+      "worst_reaction_component": [
+        "strength_lateral_HZ_2",
+        "N42",
+        "RxnMX",
+        -25481.0468824499,
+        0.03714122162637068
+      ],
+      "max_normalized_error": 0.052888883422012783,
+      "reaction_tolerance": "0.05 absolute + 0.0001 relative; force lb, moment lb-in"
+    }
+  },
+  "remaining_adjacent_members": [
+    {
+      "members": [
+        "W4",
+        "T-W vertical 6"
+      ],
+      "gap_inches": 6.000000000000028,
+      "overlap_inches": 104.74999999999997,
+      "type": "adjacent"
+    }
+  ]
+}
