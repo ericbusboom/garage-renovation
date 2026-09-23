@@ -24,6 +24,7 @@ import math
 import plotly.graph_objects as go
 
 import frame as framemod
+import existing as EX
 
 # --------------------------------------------------------------------------
 # the layout
@@ -50,6 +51,8 @@ S3_SOUTH = NORTH_FACE - 90.0
 NORTH_POST = 'N-M2'
 NORTH_POST_X = 16.75
 SHED_WALL_T = 5.0              # conceptual infill wall thickness
+NEW_WALL_T = 5.0               # conceptual architectural infill thickness
+GROUND_FLOOR = '#c6ced3'       # new ground-floor layout outside the old walls
 
 #: The east wall is now stacked three deep, so there are three set-out lines
 #: rather than one. Everything on the shelf hangs off them.
@@ -649,6 +652,109 @@ def east_wall_traces(frame: framemod.Frame) -> list:
                          f'BE.upper / E.W3 line, x = {x:g}<br>{tag}',
                          opacity=0.94))
     return out
+
+
+def _base_point(frame: framemod.Frame, member: str) -> tuple[float, float, float]:
+    """The ground endpoint of a vertical post."""
+    ground = [p for p in _ends(frame, member) if abs(p[2]) < 1e-6]
+    if len(ground) != 1:
+        raise ValueError(f'{member} does not have one ground endpoint: {ground}')
+    return ground[0]
+
+
+def _soffit(frame: framemod.Frame, member: str) -> float:
+    """Bottom of a horizontal wall beam."""
+    ends = _ends(frame, member)
+    z = {round(p[2], 6) for p in ends}
+    if len(z) != 1:
+        raise ValueError(f'{member} is not horizontal: {z}')
+    return z.pop() - frame.section_of[member].d / 2.0
+
+
+def ground_floor_layout_traces(frame: framemod.Frame) -> list:
+    """New ground-floor footprint outside the existing building envelope."""
+    w3 = _base_point(frame, 'W3')
+    w4 = _base_point(frame, 'W4')
+    en2 = _base_point(frame, 'E-N2')
+    slabs = [
+        ('west addition', (w4[0], 0.0, w3[1], w4[1], -0.3, 0.0)),
+        ('north addition', (0.0, en2[0], EX.L, en2[1], -0.3, 0.0)),
+    ]
+    out = []
+    for name, bounds in slabs:
+        v, f = _box(*bounds)
+        out.append(_mesh(v, f, GROUND_FLOOR, f'ground floor {name}',
+                         f'<b>New ground-floor layout — {name}</b><br>'
+                         f'outside the existing building footprint', opacity=0.92))
+    return out
+
+
+def new_wall_traces(frame: framemod.Frame) -> list:
+    """Owner-requested infill walls around the north and west additions."""
+    w3 = _base_point(frame, 'W3')
+    w4 = _base_point(frame, 'W4')
+    n1 = _base_point(frame, 'N1')
+    n2 = _base_point(frame, 'N2')
+    en2 = _base_point(frame, 'E-N2')
+    t = NEW_WALL_T / 2.0
+    walls = [
+        ('E-N2 south to existing building',
+         (en2[0] - t, en2[0] + t, EX.L, en2[1], 0.0, _soffit(frame, 'BE'))),
+        ('N2 to E-N2',
+         (n2[0], en2[0], en2[1] - t, en2[1] + t, 0.0, _soffit(frame, 'B-N'))),
+        ('W4 to N1',
+         (w4[0], n1[0], w4[1] - t, w4[1] + t, 0.0, _soffit(frame, 'B-N'))),
+        ('W3 to W4',
+         (w4[0] - t, w4[0] + t, w3[1], w4[1], 0.0, _soffit(frame, 'BW'))),
+        ('W3 east to existing building',
+         (w3[0], 0.0, w3[1] - t, w3[1] + t, 0.0, _soffit(frame, 'B-2'))),
+    ]
+    out = []
+    for name, bounds in walls:
+        v, f = _box(*bounds)
+        out.append(_mesh(v, f, WALL, f'new wall {name}',
+                         f'<b>New infill wall — {name}</b><br>{NEW_WALL_T:g} in. '
+                         f'conceptual thickness · to underside of steel', opacity=0.78))
+
+    # A second electrical panel, centered in the short north wall between the
+    # N2 and E-N2 posts. It faces south into the new floor area.
+    width, depth, height, z0 = 16.0, 5.0, 30.0, 48.0
+    cx = (n2[0] + en2[0]) / 2.0
+    x0, x1 = cx - width / 2.0, cx + width / 2.0
+    y1 = en2[1] - t
+    y0 = y1 - depth
+    v, f = _box(x0, x1, y0, y1, z0, z0 + height)
+    out.append(_mesh(v, f, KINDS['electrical']['face'], 'north wall EP-N',
+                     '<b>Electrical panel EP-N</b><br>between N2 and E-N2 · faces south'
+                     '<br>conceptual 16 × 5 × 30 in. envelope<br>bottom z = 48 · top z = 78'))
+    ex, ey, ez = _box_edges(x0, x1, y0, y1, z0, z0 + height)
+    out.append(go.Scatter3d(x=ex, y=ey, z=ez, mode='lines',
+                            line=dict(color=EDGE, width=4), hoverinfo='skip',
+                            showlegend=False, visible=False, name='EP-N edges'))
+    out.append(go.Scatter3d(x=[cx], y=[y0 - 2.0], z=[z0 + height + 5.0],
+                            mode='text', text=['EP-N'], textposition='middle center',
+                            textfont=dict(size=18, color=EDGE, family='Helvetica, Arial'),
+                            hoverinfo='skip', showlegend=False, visible=False,
+                            name='EP-N label'))
+    return out
+
+
+def new_walls_html(frame: framemod.Frame) -> str:
+    """Describe the ground-floor architectural overlay."""
+    n2, en2 = _base_point(frame, 'N2'), _base_point(frame, 'E-N2')
+    clear = en2[0] - n2[0]
+    return f"""
+<div class="notes">
+  <h2>New ground-floor walls</h2>
+  <p>The cabinet-layout view now shades the new floor outside the existing
+  building and adds five conceptual {NEW_WALL_T:g}-inch infill runs: E-N2 south
+  to the existing north wall; N2 to E-N2; W4 to N1; W3 to W4; and W3 east to
+  the existing west wall. Electrical panel <b>EP-N</b> is centered in the
+  {clear:g}-inch N2–E-N2 wall and faces south.</p>
+  <p><small>Wall framing, openings, fire/weather assemblies, panel working
+  clearance, feeds and connections remain to be designed.</small></p>
+</div>
+"""
 
 
 def _shed_bounds(frame: framemod.Frame) -> tuple[float, float, float, float]:

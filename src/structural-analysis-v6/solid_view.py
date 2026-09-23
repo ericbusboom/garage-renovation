@@ -155,8 +155,9 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     recomputes visibility for every trace from all of them together, so they
     compose in any order and nothing is ever left stranded.
 
-    No camera presets: the owner tumbles the view by hand, and Plotly's own
-    modebar already has a reset.
+    The room-layout checkbox uses one elevated plan camera so the new ground
+    floor and wall equipment are legible. Its previous camera is restored when
+    the layout is turned off; all other controls leave the camera alone.
     """
     groups = dict(n=n_traces, frame=n_frame,
                   wall=wall_i, roof=roof_i,
@@ -178,7 +179,7 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     items = ''.join(
         f'<label class="cbx"><input type="checkbox" id="cb_{key}"'
         f'{" checked" if on else ""} onchange="'
-        f'{"toggleStage()" if key == "stage" else "applyVis()"}"> {label}</label>'
+        f'{"toggleStage()" if key == "stage" else "toggleExtra()" if key == "extra" else "applyVis()"}"> {label}</label>'
         for key, label, on in boxes)
     stage_hint = (f'<span class="phasehint"><b>Pre-demo frame</b> shows the '
                   f'members that can be erected before the existing roof is removed.</span>'
@@ -186,8 +187,9 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     return f"""
 <div id="viewbar">{items}
   {stage_hint}
-  <span class="hint">Cabinet layout puts in the deck, the correctly aligned east
-  wall, the concrete shed walls and equipment, and everything stored on the loft; tick
+  <span class="hint">Cabinet layout puts in the loft deck, the new ground-floor
+  plan and infill walls, both electrical panels, the concrete shed equipment,
+  and everything stored on the loft; tick
   <b>Hide existing roof</b> with it to see down into the loft.</span>
 </div>
 <style>
@@ -209,6 +211,24 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
 </style>
 <script>
   var VIS = {json.dumps(groups)};
+  var roomCamera = null;
+  function toggleExtra() {{
+    var gd = document.getElementById('{PLOT_ID}');
+    var extra = document.getElementById('cb_extra');
+    if (!gd || !extra || typeof Plotly === 'undefined') return;
+    if (extra.checked) {{
+      roomCamera = JSON.parse(JSON.stringify(gd._fullLayout.scene.camera));
+      applyVis();
+      Plotly.relayout(gd, {{'scene.camera': {{
+        eye: {{x: -0.9, y: -1.35, z: 2.0}},
+        up: {{x: 0, y: 0, z: 1}}, center: {{x: 0, y: 0, z: -0.08}}
+      }}}});
+    }} else {{
+      applyVis();
+      if (roomCamera) Plotly.relayout(gd, {{'scene.camera': roomCamera}});
+      roomCamera = null;
+    }}
+  }}
   function toggleStage() {{
     var stage = document.getElementById('cb_stage');
     if (stage && stage.checked) {{
@@ -417,7 +437,8 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
         import cabinets as CB
         cab_traces, cabinet_rows = CB.item_traces(frame)
         walk_traces, walk_rows = CB.walkway_traces(frame)
-        extra_traces = (CB.floor_traces(frame) + CB.east_wall_traces(frame)
+        extra_traces = (CB.floor_traces(frame) + CB.ground_floor_layout_traces(frame)
+                        + CB.east_wall_traces(frame) + CB.new_wall_traces(frame)
                         + CB.shed_traces(frame) + walk_traces + cab_traces)
         first = len(traces)
         traces += extra_traces
@@ -472,7 +493,8 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
     extra = report_html if report_html is not None else viewer._legend_html(summary)
     if cabinet_rows:
         import cabinets as CB
-        extra += (CB.legend_html(cabinet_rows) + CB.shed_html(frame)
+        extra += (CB.legend_html(cabinet_rows) + CB.new_walls_html(frame)
+                  + CB.shed_html(frame)
                   + CB.walkway_html(walk_rows)
                   + CB.loads_html(frame, cabinet_rows))
     if plan_png and Path(plan_png).exists():
