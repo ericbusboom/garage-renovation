@@ -247,6 +247,21 @@ SHED_ITEMS = [
          what='15 gal electric water heater · 20 in. diameter × 29 in. high'),
 ]
 
+# The original first-floor cabinet study recorded four one-inch frame stations
+# around three 48-inch paired-door bays.  The owner has since decided that the
+# built-ins have no structural role, so only their architectural envelopes are
+# carried into this viewer.  In particular, these are deliberately separate
+# from ``ITEMS`` (which drives loft loads) and from the finite-element frame.
+FIRST_FLOOR_CABINETS = [
+    dict(n=f'GF-C{i + 1}', x0=211.5, x1=241.5,
+         y0=a + 0.5, y1=b - 0.5)
+    for i, (a, b) in enumerate(zip((56.0, 105.0, 154.0),
+                                    (105.0, 154.0, 203.0)))
+]
+FIRST_FLOOR_CABINET_HEIGHT = 98.5
+FIRST_FLOOR_BENCH = 40.0
+FIRST_FLOOR_UPPER_SILL = 60.0
+
 KINDS = {
     'cabinet': dict(face='#d6d8da', label='Cabinet'),      # light grey
     'machine': dict(face='#c9a87c', label='Machine'),      # light brown
@@ -687,6 +702,56 @@ def ground_floor_layout_traces(frame: framemod.Frame) -> list:
                          f'<b>New ground-floor layout — {name}</b><br>'
                          f'outside the existing building footprint', opacity=0.92))
     return out
+
+
+def first_floor_cabinet_traces(frame: framemod.Frame) -> list:
+    """The cabinet-study built-ins, drawn as nonstructural furniture only."""
+    del frame                              # geometry is the cabinet-study set-out
+    out = []
+    face = KINDS['cabinet']['face']
+    for c in FIRST_FLOOR_CABINETS:
+        hover = (f'<b>{c["n"]} — first-floor built-in</b><br>'
+                 f'48 in. paired-door bay · 30 in. deep<br>'
+                 f'lower cabinet 0–{FIRST_FLOOR_BENCH:g} in. · upper cabinet '
+                 f'{FIRST_FLOOR_UPPER_SILL:g}–{FIRST_FLOOR_CABINET_HEIGHT:g} in.'
+                 f'<br><b>Architectural only — no structural credit</b>')
+        for z0, z1, part in ((0.0, FIRST_FLOOR_BENCH, 'lower'),
+                             (FIRST_FLOOR_UPPER_SILL,
+                              FIRST_FLOOR_CABINET_HEIGHT, 'upper')):
+            v, f = _box(c['x0'], c['x1'], c['y0'], c['y1'], z0, z1)
+            out.append(_mesh(v, f, face, f'{c["n"]} {part}', hover, opacity=0.95))
+            ex, ey, ez = _box_edges(c['x0'], c['x1'], c['y0'], c['y1'], z0, z1)
+            out.append(go.Scatter3d(
+                x=ex, y=ey, z=ez, mode='lines', line=dict(color=EDGE, width=3),
+                hoverinfo='skip', showlegend=False, visible=False,
+                name=f'{c["n"]} {part} edges'))
+        out.append(go.Scatter3d(
+            x=[(c['x0'] + c['x1']) / 2.0], y=[(c['y0'] + c['y1']) / 2.0],
+            z=[FIRST_FLOOR_CABINET_HEIGHT + 5.0], mode='text', text=[c['n']],
+            textposition='middle center',
+            textfont=dict(size=16, color=EDGE, family='Helvetica, Arial'),
+            hoverinfo='skip', showlegend=False, visible=False,
+            name=f'{c["n"]} label'))
+    return out
+
+
+def first_floor_cabinets_html() -> str:
+    """Describe the recovered cabinet study without assigning load capacity."""
+    return f"""
+<div class="notes">
+  <h2>First-floor built-in cabinets</h2>
+  <p>The cabinet-layout view restores the three paired-door bays from the
+  2026-09-19 cabinet study. Each clear bay is 48 inches wide and nominally
+  30 inches deep. The lower cabinets rise to {FIRST_FLOOR_BENCH:g} inches;
+  the upper cabinets run from {FIRST_FLOOR_UPPER_SILL:g} to
+  {FIRST_FLOOR_CABINET_HEIGHT:g} inches, leaving the open work zone shown in
+  the study elevation.</p>
+  <p><b>These cabinets are architectural furniture only.</b> They are not
+  members of the analysis model, carry no building loads, and receive no
+  structural credit. Their frame stations, rail heights and overall height
+  remain study assumptions to be checked in the building.</p>
+</div>
+"""
 
 
 def new_wall_traces(frame: framemod.Frame) -> list:
