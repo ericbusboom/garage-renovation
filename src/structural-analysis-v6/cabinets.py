@@ -273,6 +273,10 @@ SOUTH_BENCH_DEPTH = 30.0
 WEST_BENCH_DEPTH = 26.0
 WEST_BENCH_RUN = 104.0
 
+LATHE_DEPTH = 24.0
+LATHE_LENGTH = 57.0
+LATHE_DISPLAY_HEIGHT = 48.0       # display envelope only; owner gave no height
+
 KINDS = {
     'cabinet': dict(face='#d6d8da', label='Cabinet'),      # light grey
     'machine': dict(face='#c9a87c', label='Machine'),      # light brown
@@ -904,6 +908,64 @@ def benches_html(frame: framemod.Frame) -> str:
   window sills. The gray bases are layout envelopes only; drawers, legs,
   cabinets, utilities and construction have not been specified. Neither bench
   participates in the structural analysis.</p>
+</div>
+"""
+
+
+def _lathe_bounds(frame: framemod.Frame) -> tuple[float, float, float, float, float, float]:
+    """Lathe footprint ending on the centerline of the north west window."""
+    del frame
+    west_windows = [o for o in EX.openings('west') if o[2] > 0.0]
+    if not west_windows:
+        raise ValueError('west-wall lathe set-out needs a west window')
+    north_window = max(west_windows, key=lambda o: (o[0] + o[1]) / 2.0)
+    y1 = (north_window[0] + north_window[1]) / 2.0
+    x0 = EX.THICK['west']
+    return (x0, x0 + LATHE_DEPTH, y1 - LATHE_LENGTH, y1,
+            0.0, LATHE_DISPLAY_HEIGHT)
+
+
+def lathe_traces(frame: framemod.Frame) -> list:
+    """West-wall lathe envelope, located from the bench and window geometry."""
+    x0, x1, y0, y1, z0, z1 = _lathe_bounds(frame)
+    bench_end = EX.THICK['south'] + WEST_BENCH_RUN
+    gap = y0 - bench_end
+    hover = (f'<b>LATHE — west-wall equipment</b><br>{LATHE_LENGTH:g} in. long × '
+             f'{LATHE_DEPTH:g} in. out from wall<br>north end at y = {y1:g}, '
+             f'center of north west window<br>{gap:g} in. gap after B-W'
+             f'<br>height shown as {LATHE_DISPLAY_HEIGHT:g} in. for display only')
+    v, f = _box(x0, x1, y0, y1, z0, z1)
+    out = [_mesh(v, f, '#657783', 'LATHE envelope', hover, opacity=0.82)]
+    ex, ey, ez = _box_edges(x0, x1, y0, y1, z0, z1)
+    out.append(go.Scatter3d(x=ex, y=ey, z=ez, mode='lines',
+                            line=dict(color=EDGE, width=4), hoverinfo='skip',
+                            showlegend=False, visible=False, name='LATHE edges'))
+    out.append(go.Scatter3d(
+        x=[(x0 + x1) / 2.0], y=[(y0 + y1) / 2.0], z=[z1 + 4.0],
+        mode='text', text=['LATHE'], textposition='middle center',
+        textfont=dict(size=15, color=EDGE, family='Helvetica, Arial'),
+        hoverinfo='skip', showlegend=False, visible=False, name='LATHE label'))
+    return out
+
+
+def lathe_html(frame: framemod.Frame) -> str:
+    """Describe the west-wall lathe placement and its one display assumption."""
+    x0, x1, y0, y1, _, _ = _lathe_bounds(frame)
+    bench_end = EX.THICK['south'] + WEST_BENCH_RUN
+    gap = y0 - bench_end
+    return f"""
+<div class="notes">
+  <h2>West-wall lathe</h2>
+  <p><b>LATHE</b> extends {LATHE_DEPTH:g} inches east from the inside west-wall
+  face and runs {LATHE_LENGTH:g} inches north, from y = {y0:g} to {y1:g}.
+  Its north end lands on the centerline of the northern west-wall window
+  (window y = 153.25–182 inches). This leaves a {gap:g}-inch gap after the
+  west bench, whose overall run ends at y = {bench_end:g}.</p>
+  <p>The owner supplied the plan dimensions and alignment but no height, so the
+  3D view uses a {LATHE_DISPLAY_HEIGHT:g}-inch-high display envelope. Confirm
+  the actual machine and stand height before checking the window or services.
+  The lathe is equipment only and does not participate in the structural
+  analysis.</p>
 </div>
 """
 
