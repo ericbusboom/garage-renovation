@@ -3798,10 +3798,6 @@ return Plotly;
     walk.renderer.domElement.style.width = '100%';
     walk.renderer.domElement.style.height = '100%';
     capture.appendChild(walk.renderer.domElement);
-    walk.scene.add(new THREE.HemisphereLight(0xffffff, 0x6b737b, 1.65));
-    var sun = new THREE.DirectionalLight(0xffffff, 1.15);
-    sun.position.set(-180, -220, 420);
-    walk.scene.add(sun);
     walk.objects = new Array(gd.data.length).fill(null);
     gd.data.forEach(function(trace, traceIndex) {
       var object = null;
@@ -3818,9 +3814,12 @@ return Plotly;
           new THREE.Float32BufferAttribute(positions, 3));
         geometry.setIndex(indices);
         geometry.computeVertexNormals();
-        var material = new THREE.MeshLambertMaterial({
+        // Walkthrough uses the exact active Plotly trace color. An unlit
+        // material prevents this second renderer from inventing a brighter
+        // palette through its own lamps and shading.
+        var material = new THREE.MeshBasicMaterial({
           color: walkColor(trace.color, '#7a858f'),
-          side: THREE.DoubleSide, flatShading: true,
+          side: THREE.DoubleSide,
           transparent: opacity < 0.995, opacity: opacity,
           depthWrite: opacity > 0.7
         });
