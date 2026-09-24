@@ -144,7 +144,7 @@ def _header_html(summary: dict) -> str:
 
 
 def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
-                   stage, extra_range) -> str:
+                   stage, extra_range, fixed_views=None) -> str:
     """A row of real checkboxes that drive trace visibility.
 
     These were Plotly ``updatemenus`` buttons with ``args``/``args2``, which is
@@ -184,9 +184,20 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     stage_hint = (f'<span class="phasehint"><b>Pre-demo frame</b> shows the '
                   f'members that can be erected before the existing roof is removed.</span>'
                   if stage else '')
+    fixed_views = fixed_views or {}
+    fixed_options = ''.join(
+        f'<option value="{key}">{view["label"]}</option>'
+        for key, view in fixed_views.items())
+    fixed_select = (f'<label class="fixed"><b>Fixed view</b> '
+                    f'<select id="fixed_view" onchange="setFixedView(this.value)">'
+                    f'<option value="free">Free orbit</option>{fixed_options}'
+                    f'</select></label><span id="fixed_status" class="fixedstatus">'
+                    f'Choose a standing location; drag the model to look around.</span>'
+                    if fixed_views else '')
     return f"""
 <div id="viewbar">{items}
   {stage_hint}
+  {fixed_select}
   <span class="hint">Cabinet layout puts in the loft deck, the first-floor
   built-ins, laundry console, workbenches and lathe, the new ground-floor plan and infill walls, both electrical
   panels, the concrete shed equipment, and everything stored on the loft; tick
@@ -200,22 +211,85 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
   #viewbar .cbx {{ display: inline-flex; align-items: center; gap: 6px;
                    cursor: pointer; user-select: none; white-space: nowrap; }}
   #viewbar input {{ width: 15px; height: 15px; cursor: pointer; margin: 0; }}
+  #viewbar .fixed {{ display: inline-flex; align-items: center; gap: 7px;
+                     white-space: nowrap; }}
+  #viewbar select {{ font: inherit; color: inherit; background: #fff;
+                     border: 1px solid #b8bec5; border-radius: 4px;
+                     padding: 3px 24px 3px 7px; }}
+  #viewbar .fixedstatus {{ color: #5c6672; font-size: 12px;
+                           flex: 1 1 260px; min-width: 230px; }}
   #viewbar .hint {{ color: #5c6672; font-size: 12px; flex: 1 1 260px;
                     min-width: 220px; }}
   #viewbar .phasehint {{ color: #5c6672; font-size: 12px; flex: 1 1 260px;
                          min-width: 220px; }}
   @media (prefers-color-scheme: dark) {{
     #viewbar {{ color: #e8eaec; }}
-    #viewbar .hint, #viewbar .phasehint {{ color: #9aa3ab; }}
+    #viewbar .hint, #viewbar .phasehint, #viewbar .fixedstatus {{ color: #9aa3ab; }}
+    #viewbar select {{ background: #25282c; border-color: #59616a; }}
   }}
 </style>
 <script>
   var VIS = {json.dumps(groups)};
+  var FIXED_VIEWS = {json.dumps(fixed_views)};
   var roomCamera = null;
+  var freeCamera = null;
+  var freeDragMode = null;
+  function dataToScene(gd, point) {{
+    var scene = gd._fullLayout.scene;
+    var ar = scene.aspectratio || {{x: 1, y: 1, z: 1}};
+    var one = function(axis, value, aspect) {{
+      var r = axis.range;
+      return (value - (r[0] + r[1]) / 2) / (r[1] - r[0]) * aspect;
+    }};
+    return {{x: one(scene.xaxis, point[0], ar.x),
+             y: one(scene.yaxis, point[1], ar.y),
+             z: one(scene.zaxis, point[2], ar.z)}};
+  }}
+  function setFixedView(key) {{
+    var gd = document.getElementById('{PLOT_ID}');
+    var status = document.getElementById('fixed_status');
+    if (!gd || !gd._fullLayout || typeof Plotly === 'undefined') return;
+    if (key === 'free' || !FIXED_VIEWS[key]) {{
+      if (freeCamera) Plotly.relayout(gd, {{'scene.camera': freeCamera,
+                                           'scene.dragmode': freeDragMode || 'orbit'}});
+      if (status) status.textContent =
+        'Choose a standing location; drag the model to look around.';
+      freeCamera = null;
+      freeDragMode = null;
+      return;
+    }}
+    if (!freeCamera) {{
+      freeCamera = JSON.parse(JSON.stringify(gd._fullLayout.scene.camera));
+      freeDragMode = gd._fullLayout.scene.dragmode;
+    }}
+    var extra = document.getElementById('cb_extra');
+    var walls = document.getElementById('cb_walls');
+    var roof = document.getElementById('cb_roof');
+    if (extra) extra.checked = true;
+    // The existing-wall mesh surrounds the selected interior point and can
+    // white-out a perspective view when the camera turns through it.
+    if (walls) walls.checked = true;
+    if (roof) roof.checked = true;
+    applyVis();
+    var view = FIXED_VIEWS[key];
+    // The head point is the native Plotly turntable center. Dragging orbits
+    // around it, and wheel zoom changes only the eye-to-center distance.
+    var center = dataToScene(gd, view.center);
+    var eye = dataToScene(gd, [view.center[0] + view.eye_offset[0],
+                               view.center[1] + view.eye_offset[1],
+                               view.center[2] + view.eye_offset[2]]);
+    Plotly.relayout(gd, {{'scene.camera': {{eye: eye, center: center,
+      up: {{x: 0, y: 0, z: 1}}, projection: {{type: 'perspective'}}}},
+      'scene.dragmode': 'turntable'}});
+    if (status) status.textContent = view.detail +
+      ' · fixed 6 ft head point · drag to orbit; scroll to widen or tighten';
+  }}
   function toggleExtra() {{
     var gd = document.getElementById('{PLOT_ID}');
     var extra = document.getElementById('cb_extra');
     if (!gd || !extra || typeof Plotly === 'undefined') return;
+    if (document.getElementById('fixed_view') &&
+        document.getElementById('fixed_view').value !== 'free') {{ applyVis(); return; }}
     if (extra.checked) {{
       roomCamera = JSON.parse(JSON.stringify(gd._fullLayout.scene.camera));
       applyVis();
@@ -433,6 +507,7 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
     # takes the existing roof off, and shows the five units with their numbers.
     cabinet_rows: list = []
     extra_range = None
+    fixed_views = {}
     if cabinets:
         import cabinets as CB
         cab_traces, cabinet_rows = CB.item_traces(frame)
@@ -448,6 +523,39 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
         traces += extra_traces
         extra_range = (first, len(traces))
         summary['cabinets'] = cabinet_rows
+
+        # Fixed standing inspection points. Ground-floor center uses the clear
+        # faces of the existing walls. Loft center is the area centroid of the
+        # actual deck rectangles rather than the frame bounding box. All
+        # standing views fix the turntable center at a six-foot head height.
+        # The initial eye starts four feet south of that point and faces north;
+        # native turntable drag and wheel zoom then keep the head point fixed.
+        ground_x = (EX.THICK['west'] + EX.W - EX.THICK['east']) / 2.0
+        ground_y = (EX.THICK['south'] + EX.L - EX.THICK['north']) / 2.0
+        deck_area = sum((d['x'][1] - d['x'][0]) * (d['y'][1] - d['y'][0])
+                        for d in frame.decks)
+        loft_x = sum((d['x'][1] - d['x'][0]) * (d['y'][1] - d['y'][0])
+                     * (d['x'][0] + d['x'][1]) / 2.0 for d in frame.decks) / deck_area
+        loft_y = sum((d['x'][1] - d['x'][0]) * (d['y'][1] - d['y'][0])
+                     * (d['y'][0] + d['y'][1]) / 2.0 for d in frame.decks) / deck_area
+        door_w = CB._base_point(frame, 'DOOR-W')
+        door_e = CB._base_point(frame, 'DOOR-E')
+        door_x = (door_w[0] + door_e[0]) / 2.0
+        door_y = (door_w[1] + door_e[1]) / 2.0 - 1.18
+        fixed_views = {
+            'ground': dict(label='Ground-floor center',
+                           center=[ground_x, ground_y, 72.0],
+                           eye_offset=[0.0, -48.0, 0.0],
+                           detail=f'Ground floor center · x {ground_x:g}, y {ground_y:g}'),
+            'loft': dict(label='Loft center',
+                         center=[loft_x, loft_y, CB.floor_top(frame) + 72.0],
+                         eye_offset=[0.0, -48.0, 0.0],
+                         detail=f'Loft deck centroid · x {loft_x:.2f}, y {loft_y:.2f}'),
+            'south-door': dict(label='South door − 1.18 in.',
+                               center=[door_x, door_y, 72.0],
+                               eye_offset=[0.0, -48.0, 0.0],
+                               detail=f'South door center · 1.18 in. south · x {door_x:g}, y {door_y:.2f}'),
+        }
 
     # Restyling 'color' with a null resets that trace to Plotly's default, so
     # every trace past the members carries its own colour into each mode.
@@ -492,7 +600,7 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
                         _header_html(summary)
                         + _controls_html(len(traces), n_frame, wall_i, roof_i,
                                          stage_visible if before_demo else None,
-                                         extra_range)
+                                         extra_range, fixed_views)
                         + f'<div id="{PLOT_ID}"', 1)
     extra = report_html if report_html is not None else viewer._legend_html(summary)
     if cabinet_rows:

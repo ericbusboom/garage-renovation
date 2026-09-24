@@ -3648,6 +3648,7 @@ return Plotly;
 
 <div id="viewbar"><label class="cbx"><input type="checkbox" id="cb_walls" onchange="applyVis()"> Hide existing walls</label><label class="cbx"><input type="checkbox" id="cb_roof" checked onchange="applyVis()"> Hide existing roof</label><label class="cbx"><input type="checkbox" id="cb_frame" onchange="applyVis()"> Hide new frame</label><label class="cbx"><input type="checkbox" id="cb_stage" onchange="toggleStage()"> Pre-demo frame</label><label class="cbx"><input type="checkbox" id="cb_extra" onchange="toggleExtra()"> Cabinet layout</label>
   <span class="phasehint"><b>Pre-demo frame</b> shows the members that can be erected before the existing roof is removed.</span>
+  <label class="fixed"><b>Fixed view</b> <select id="fixed_view" onchange="setFixedView(this.value)"><option value="free">Free orbit</option><option value="ground">Ground-floor center</option><option value="loft">Loft center</option><option value="south-door">South door − 1.18 in.</option></select></label><span id="fixed_status" class="fixedstatus">Choose a standing location; drag the model to look around.</span>
   <span class="hint">Cabinet layout puts in the loft deck, the first-floor
   built-ins, laundry console, workbenches and lathe, the new ground-floor plan and infill walls, both electrical
   panels, the concrete shed equipment, and everything stored on the loft; tick
@@ -3661,22 +3662,85 @@ return Plotly;
   #viewbar .cbx { display: inline-flex; align-items: center; gap: 6px;
                    cursor: pointer; user-select: none; white-space: nowrap; }
   #viewbar input { width: 15px; height: 15px; cursor: pointer; margin: 0; }
+  #viewbar .fixed { display: inline-flex; align-items: center; gap: 7px;
+                     white-space: nowrap; }
+  #viewbar select { font: inherit; color: inherit; background: #fff;
+                     border: 1px solid #b8bec5; border-radius: 4px;
+                     padding: 3px 24px 3px 7px; }
+  #viewbar .fixedstatus { color: #5c6672; font-size: 12px;
+                           flex: 1 1 260px; min-width: 230px; }
   #viewbar .hint { color: #5c6672; font-size: 12px; flex: 1 1 260px;
                     min-width: 220px; }
   #viewbar .phasehint { color: #5c6672; font-size: 12px; flex: 1 1 260px;
                          min-width: 220px; }
   @media (prefers-color-scheme: dark) {
     #viewbar { color: #e8eaec; }
-    #viewbar .hint, #viewbar .phasehint { color: #9aa3ab; }
+    #viewbar .hint, #viewbar .phasehint, #viewbar .fixedstatus { color: #9aa3ab; }
+    #viewbar select { background: #25282c; border-color: #59616a; }
   }
 </style>
 <script>
   var VIS = {"n": 242, "frame": 128, "wall": [128, 129], "roof": 130, "stage": [false, false, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true], "extra": [131, 242]};
+  var FIXED_VIEWS = {"ground": {"label": "Ground-floor center", "center": [125.5, 123.0, 72.0], "eye_offset": [0.0, -48.0, 0.0], "detail": "Ground floor center \u00b7 x 125.5, y 123"}, "loft": {"label": "Loft center", "center": [96.87347216755401, 140.97430134034929, 191.25], "eye_offset": [0.0, -48.0, 0.0], "detail": "Loft deck centroid \u00b7 x 96.87, y 140.97"}, "south-door": {"label": "South door \u2212 1.18 in.", "center": [127.5, 1.32, 72.0], "eye_offset": [0.0, -48.0, 0.0], "detail": "South door center \u00b7 1.18 in. south \u00b7 x 127.5, y 1.32"}};
   var roomCamera = null;
+  var freeCamera = null;
+  var freeDragMode = null;
+  function dataToScene(gd, point) {
+    var scene = gd._fullLayout.scene;
+    var ar = scene.aspectratio || {x: 1, y: 1, z: 1};
+    var one = function(axis, value, aspect) {
+      var r = axis.range;
+      return (value - (r[0] + r[1]) / 2) / (r[1] - r[0]) * aspect;
+    };
+    return {x: one(scene.xaxis, point[0], ar.x),
+             y: one(scene.yaxis, point[1], ar.y),
+             z: one(scene.zaxis, point[2], ar.z)};
+  }
+  function setFixedView(key) {
+    var gd = document.getElementById('frameplot');
+    var status = document.getElementById('fixed_status');
+    if (!gd || !gd._fullLayout || typeof Plotly === 'undefined') return;
+    if (key === 'free' || !FIXED_VIEWS[key]) {
+      if (freeCamera) Plotly.relayout(gd, {'scene.camera': freeCamera,
+                                           'scene.dragmode': freeDragMode || 'orbit'});
+      if (status) status.textContent =
+        'Choose a standing location; drag the model to look around.';
+      freeCamera = null;
+      freeDragMode = null;
+      return;
+    }
+    if (!freeCamera) {
+      freeCamera = JSON.parse(JSON.stringify(gd._fullLayout.scene.camera));
+      freeDragMode = gd._fullLayout.scene.dragmode;
+    }
+    var extra = document.getElementById('cb_extra');
+    var walls = document.getElementById('cb_walls');
+    var roof = document.getElementById('cb_roof');
+    if (extra) extra.checked = true;
+    // The existing-wall mesh surrounds the selected interior point and can
+    // white-out a perspective view when the camera turns through it.
+    if (walls) walls.checked = true;
+    if (roof) roof.checked = true;
+    applyVis();
+    var view = FIXED_VIEWS[key];
+    // The head point is the native Plotly turntable center. Dragging orbits
+    // around it, and wheel zoom changes only the eye-to-center distance.
+    var center = dataToScene(gd, view.center);
+    var eye = dataToScene(gd, [view.center[0] + view.eye_offset[0],
+                               view.center[1] + view.eye_offset[1],
+                               view.center[2] + view.eye_offset[2]]);
+    Plotly.relayout(gd, {'scene.camera': {eye: eye, center: center,
+      up: {x: 0, y: 0, z: 1}, projection: {type: 'perspective'}},
+      'scene.dragmode': 'turntable'});
+    if (status) status.textContent = view.detail +
+      ' · fixed 6 ft head point · drag to orbit; scroll to widen or tighten';
+  }
   function toggleExtra() {
     var gd = document.getElementById('frameplot');
     var extra = document.getElementById('cb_extra');
     if (!gd || !extra || typeof Plotly === 'undefined') return;
+    if (document.getElementById('fixed_view') &&
+        document.getElementById('fixed_view').value !== 'free') { applyVis(); return; }
     if (extra.checked) {
       roomCamera = JSON.parse(JSON.stringify(gd._fullLayout.scene.camera));
       applyVis();
