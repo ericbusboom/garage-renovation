@@ -188,7 +188,7 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
 <div id="viewbar">{items}
   {stage_hint}
   <span class="hint">Cabinet layout puts in the loft deck, the first-floor
-  built-ins and laundry console, the new ground-floor plan and infill walls, both electrical
+  built-ins, laundry console and workbenches, the new ground-floor plan and infill walls, both electrical
   panels, the concrete shed equipment, and everything stored on the loft; tick
   <b>Hide existing roof</b> with it to see down into the loft.</span>
 </div>
@@ -440,6 +440,7 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
         extra_traces = (CB.floor_traces(frame) + CB.ground_floor_layout_traces(frame)
                         + CB.first_floor_cabinet_traces(frame)
                         + CB.laundry_console_traces(frame)
+                        + CB.bench_traces(frame)
                         + CB.east_wall_traces(frame) + CB.new_wall_traces(frame)
                         + CB.shed_traces(frame) + walk_traces + cab_traces)
         first = len(traces)
@@ -497,6 +498,7 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
         import cabinets as CB
         extra += (CB.legend_html(cabinet_rows) + CB.first_floor_cabinets_html()
                   + CB.laundry_console_html(frame)
+                  + CB.benches_html(frame)
                   + CB.new_walls_html(frame)
                   + CB.shed_html(frame)
                   + CB.walkway_html(walk_rows)

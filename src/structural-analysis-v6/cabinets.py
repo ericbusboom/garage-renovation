@@ -267,6 +267,12 @@ LAUNDRY_DEPTH = 30.0
 LAUNDRY_HEIGHT = 66.0
 LAUNDRY_JAMB_CLEAR = 4.0
 
+BENCH_HEIGHT = 37.5
+BENCH_TOP_T = 1.5
+SOUTH_BENCH_DEPTH = 30.0
+WEST_BENCH_DEPTH = 26.0
+WEST_BENCH_RUN = 104.0
+
 KINDS = {
     'cabinet': dict(face='#d6d8da', label='Cabinet'),      # light grey
     'machine': dict(face='#c9a87c', label='Machine'),      # light brown
@@ -821,6 +827,83 @@ def laundry_console_html(frame: framemod.Frame) -> str:
   for layout; exact appliance sizes and the washer/dryer side assignment have
   not been specified. The console is architectural only and has no role in the
   structural analysis.</p>
+</div>
+"""
+
+
+def _bench_bounds(frame: framemod.Frame) -> dict[str, tuple[float, float, float, float]]:
+    """Plan rectangles for the L-shaped south/west first-floor workbench."""
+    door_w = _base_point(frame, 'DOOR-W')
+    sec = frame.section_of['DOOR-W']
+    jamb_west = door_w[0] - min(sec.b, sec.d) / 2.0
+    x_wall = EX.THICK['west']
+    y_wall = EX.THICK['south']
+    south = (x_wall, jamb_west, y_wall, y_wall + SOUTH_BENCH_DEPTH)
+    # The shared corner is already drawn by the south bench.  Draw only the
+    # exposed part of the west return so the two volumes do not overlap.
+    west = (x_wall, x_wall + WEST_BENCH_DEPTH,
+            y_wall + SOUTH_BENCH_DEPTH, y_wall + WEST_BENCH_RUN)
+    return dict(south=south, west=west)
+
+
+def bench_traces(frame: framemod.Frame) -> list:
+    """The first-floor L-shaped workbench, shown as an architectural envelope."""
+    out = []
+    for key, label in (('south', 'B-S · south-wall bench'),
+                       ('west', 'B-W · west-wall bench')):
+        x0, x1, y0, y1 = _bench_bounds(frame)[key]
+        if key == 'south':
+            detail = (f'{x1 - x0:g} in. run · {SOUTH_BENCH_DEPTH:g} in. deep · '
+                      f'ends at west face of DOOR-W jamb')
+        else:
+            detail = (f'{WEST_BENCH_RUN:g} in. overall wall run · '
+                      f'{WEST_BENCH_DEPTH:g} in. deep · {y1 - y0:g} in. visible '
+                      f'beyond the south-bench corner')
+        hover = (f'<b>{label}</b><br>{detail}<br>top z = {BENCH_HEIGHT:g} in.'
+                 f'<br>architectural envelope · construction unspecified')
+        v, f = _box(x0, x1, y0, y1, 0.0, BENCH_HEIGHT - BENCH_TOP_T)
+        out.append(_mesh(v, f, '#aeb4b8', label + ' base', hover, opacity=0.38))
+        v, f = _box(x0, x1, y0, y1,
+                    BENCH_HEIGHT - BENCH_TOP_T, BENCH_HEIGHT)
+        out.append(_mesh(v, f, '#a46f3e', label + ' top', hover, opacity=0.98))
+        ex, ey, ez = _box_edges(x0, x1, y0, y1, 0.0, BENCH_HEIGHT)
+        out.append(go.Scatter3d(x=ex, y=ey, z=ez, mode='lines',
+                                line=dict(color=EDGE, width=3), hoverinfo='skip',
+                                showlegend=False, visible=False,
+                                name=label + ' edges'))
+        out.append(go.Scatter3d(
+            x=[(x0 + x1) / 2.0], y=[(y0 + y1) / 2.0],
+            z=[BENCH_HEIGHT + 4.0], mode='text',
+            text=['B-S' if key == 'south' else 'B-W'],
+            textposition='middle center',
+            textfont=dict(size=15, color=EDGE, family='Helvetica, Arial'),
+            hoverinfo='skip', showlegend=False, visible=False,
+            name=label + ' label'))
+    return out
+
+
+def benches_html(frame: framemod.Frame) -> str:
+    """Describe the L-shaped south/west bench set-out."""
+    south, west = _bench_bounds(frame)['south'], _bench_bounds(frame)['west']
+    exposed = west[3] - west[2]
+    window_clear = EX.PARAMS['window_sill'] - BENCH_HEIGHT
+    return f"""
+<div class="notes">
+  <h2>South and west workbenches</h2>
+  <p><b>B-S</b> is {BENCH_HEIGHT:g} inches high and
+  {SOUTH_BENCH_DEPTH:g} inches deep. It runs along the inside south wall from
+  x = {south[0]:g} at the west wall to x = {south[1]:g}, the outer west face
+  of the DOOR-W steel jamb.</p>
+  <p><b>B-W</b> returns north along the inside west wall. It is
+  {WEST_BENCH_DEPTH:g} inches deep and its full wall run is
+  {WEST_BENCH_RUN:g} inches from y = {EX.THICK['south']:g} to
+  {EX.THICK['south'] + WEST_BENCH_RUN:g}. The south bench occupies the first
+  {SOUTH_BENCH_DEPTH:g} inches of that run, leaving {exposed:g} inches drawn
+  beyond the corner (the stated approximately 75-inch extension).</p>
+  <p>Both tops remain {window_clear:g} inches below the existing 48-inch
+  window sills. The gray bases are layout envelopes only; drawers, legs,
+  cabinets, utilities and construction have not been specified. Neither bench
+  participates in the structural analysis.</p>
 </div>
 """
 
