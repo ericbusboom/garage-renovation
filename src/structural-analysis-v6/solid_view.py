@@ -418,6 +418,25 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
       if (walk.objects[i]) walk.objects[i].visible = Boolean(vis[i]);
     renderWalk();
   }}
+  function syncWalkStyles() {{
+    var gd = document.getElementById('{PLOT_ID}');
+    if (!gd || !gd.data || !walk.objects.length) return;
+    for (var i = 0; i < walk.objects.length; i++) {{
+      var object = walk.objects[i];
+      if (!object || !object.material || !gd.data[i]) continue;
+      var trace = gd.data[i];
+      var source = trace.type === 'scatter3d' && trace.line
+        ? trace.line.color : trace.color;
+      object.material.color.copy(walkColor(source,
+        trace.type === 'scatter3d' ? '#313941' : '#7a858f'));
+      var opacity = trace.opacity === undefined ? 1 : Number(trace.opacity);
+      object.material.opacity = opacity;
+      object.material.transparent = opacity < 0.995;
+      object.material.depthWrite = trace.type === 'mesh3d' ? opacity > 0.7 : true;
+      object.material.needsUpdate = true;
+    }}
+    renderWalk();
+  }}
   function renderWalk() {{
     if (walk.enabled && walk.renderer && walk.scene && walk.camera)
       walk.renderer.render(walk.scene, walk.camera);
@@ -487,6 +506,10 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     gd.appendChild(capture);
     walk.capture = capture;
     buildWalkScene(gd);
+    if (!gd.__walkStyleHandler && gd.on) {{
+      gd.__walkStyleHandler = true;
+      gd.on('plotly_restyle', syncWalkStyles);
+    }}
     return capture;
   }}
   function disableWalkthrough(restoreFixed) {{
@@ -520,6 +543,7 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     walk.pitch = 0;
     walk.fov = 75;
     var capture = ensureWalkCapture(gd);
+    syncWalkStyles();
     capture.style.display = 'block';
     resizeWalkRenderer();
     capture.focus({{preventScroll: true}});
