@@ -343,7 +343,6 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     walk.camera.up.set(0, 0, 1);
     walk.renderer = new THREE.WebGLRenderer({{antialias: true, alpha: false}});
     walk.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    walk.renderer.outputEncoding = THREE.sRGBEncoding;
     walk.renderer.setSize(width, height, false);
     walk.renderer.domElement.style.width = '100%';
     walk.renderer.domElement.style.height = '100%';
