@@ -262,6 +262,11 @@ FIRST_FLOOR_CABINET_HEIGHT = 98.5
 FIRST_FLOOR_BENCH = 40.0
 FIRST_FLOOR_UPPER_SILL = 60.0
 
+LAUNDRY_WIDTH = 58.0
+LAUNDRY_DEPTH = 30.0
+LAUNDRY_HEIGHT = 66.0
+LAUNDRY_JAMB_CLEAR = 4.0
+
 KINDS = {
     'cabinet': dict(face='#d6d8da', label='Cabinet'),      # light grey
     'machine': dict(face='#c9a87c', label='Machine'),      # light brown
@@ -750,6 +755,72 @@ def first_floor_cabinets_html() -> str:
   members of the analysis model, carry no building loads, and receive no
   structural credit. Their frame stations, rail heights and overall height
   remain study assumptions to be checked in the building.</p>
+</div>
+"""
+
+
+def _laundry_bounds(frame: framemod.Frame) -> tuple[float, float, float, float, float, float]:
+    """Laundry cabinet against the inside south wall, east of its door jamb."""
+    door_e = _base_point(frame, 'DOOR-E')
+    sec = frame.section_of['DOOR-E']
+    # The HSS6x2 post has its 2-inch face along the wall; the 6-inch dimension
+    # runs through it.  Start four inches beyond the post's east face.
+    jamb_east = door_e[0] + min(sec.b, sec.d) / 2.0
+    x0 = jamb_east + LAUNDRY_JAMB_CLEAR
+    y0 = EX.THICK['south']
+    return x0, x0 + LAUNDRY_WIDTH, y0, y0 + LAUNDRY_DEPTH, 0.0, LAUNDRY_HEIGHT
+
+
+def laundry_console_traces(frame: framemod.Frame) -> list:
+    """Washer/dryer console, an architectural item with no structural role."""
+    x0, x1, y0, y1, z0, z1 = _laundry_bounds(frame)
+    hover = (f'<b>LC — laundry console</b><br>{LAUNDRY_WIDTH:g} wide × '
+             f'{LAUNDRY_HEIGHT:g} high × {LAUNDRY_DEPTH:g} in. deep<br>'
+             f'inside south wall · faces north<br>{LAUNDRY_JAMB_CLEAR:g} in. '
+             f'east of the DOOR-E jamb face<br><b>Architectural only — no '
+             f'structural credit</b>')
+    v, f = _box(x0, x1, y0, y1, z0, z1)
+    out = [_mesh(v, f, '#c8cdd1', 'LC laundry cabinet', hover, opacity=0.72)]
+    ex, ey, ez = _box_edges(x0, x1, y0, y1, z0, z1)
+    out.append(go.Scatter3d(x=ex, y=ey, z=ez, mode='lines',
+                            line=dict(color=EDGE, width=4), hoverinfo='skip',
+                            showlegend=False, visible=False, name='LC cabinet edges'))
+
+    # Two equal front openings make the side-by-side arrangement legible. The
+    # exact appliance widths and which machine goes on which side are open.
+    gap, side, face_t, machine_h = 1.5, 1.5, 0.5, 39.0
+    mid = (x0 + x1) / 2.0
+    bays = ((x0 + side, mid - gap / 2.0),
+            (mid + gap / 2.0, x1 - side))
+    for i, (a, b) in enumerate(bays, 1):
+        v, f = _box(a, b, y1 - face_t, y1, 1.5, machine_h)
+        out.append(_mesh(v, f, '#8fa5b3', f'LC appliance bay {i}',
+                         '<b>Laundry appliance bay</b><br>washer/dryer side-by-side'
+                         '<br>side assignment and appliance dimensions not specified'))
+    out.append(go.Scatter3d(
+        x=[(x0 + x1) / 2.0], y=[y1 + 2.0], z=[z1 + 5.0], mode='text',
+        text=['LC · W + D'], textposition='middle center',
+        textfont=dict(size=16, color=EDGE, family='Helvetica, Arial'),
+        hoverinfo='skip', showlegend=False, visible=False, name='LC label'))
+    return out
+
+
+def laundry_console_html(frame: framemod.Frame) -> str:
+    """Describe the south-wall laundry-console set-out."""
+    x0, x1, y0, y1, _, _ = _laundry_bounds(frame)
+    return f"""
+<div class="notes">
+  <h2>Laundry console</h2>
+  <p><b>LC</b> contains the side-by-side washer and dryer on the first floor.
+  Its overall cabinet is {LAUNDRY_WIDTH:g} inches wide,
+  {LAUNDRY_HEIGHT:g} inches high and {LAUNDRY_DEPTH:g} inches deep. It stands
+  against the inside of the south wall, faces north, and runs x = {x0:g} to
+  {x1:g}, y = {y0:g} to {y1:g} inches.</p>
+  <p>The west cabinet edge is {LAUNDRY_JAMB_CLEAR:g} inches east of the outer
+  face of the DOOR-E steel jamb. The two appliance openings are shown equally
+  for layout; exact appliance sizes and the washer/dryer side assignment have
+  not been specified. The console is architectural only and has no role in the
+  structural analysis.</p>
 </div>
 """
 
