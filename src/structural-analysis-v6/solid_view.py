@@ -194,9 +194,17 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
                     f'</select></label><span id="fixed_status" class="fixedstatus">'
                     f'Choose a standing location; drag the model to look around.</span>'
                     if fixed_views else '')
+    walk_toggle = (f'<label class="cbx"><input type="checkbox" id="cb_walk" '
+                   f'onchange="toggleWalkthrough()"> Walkthrough mode</label>'
+                   if fixed_views else '')
+    three_script = ''
+    if fixed_views:
+        three_path = Path(__file__).with_name('vendor') / 'three.min.js'
+        three_script = f'<script>{three_path.read_text()}</script>'
     return f"""
 <div id="viewbar">{items}
   {stage_hint}
+  {walk_toggle}
   {fixed_select}
   <span class="hint">Cabinet layout puts in the loft deck, the first-floor
   built-ins, laundry console, workbenches and lathe, the new ground-floor plan and infill walls, both electrical
@@ -228,12 +236,17 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     #viewbar select {{ background: #25282c; border-color: #59616a; }}
   }}
 </style>
+{three_script}
 <script>
   var VIS = {json.dumps(groups)};
   var FIXED_VIEWS = {json.dumps(fixed_views)};
   var roomCamera = null;
   var freeCamera = null;
   var freeDragMode = null;
+  var walk = {{enabled: false, position: null, yaw: 0, pitch: 0,
+               fov: 75, capture: null, dragging: false,
+               lastX: 0, lastY: 0, scene: null, camera: null,
+               renderer: null, objects: []}};
   function dataToScene(gd, point) {{
     var scene = gd._fullLayout.scene;
     var ar = scene.aspectratio || {{x: 1, y: 1, z: 1}};
@@ -250,6 +263,7 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     var status = document.getElementById('fixed_status');
     if (!gd || !gd._fullLayout || typeof Plotly === 'undefined') return;
     if (key === 'free' || !FIXED_VIEWS[key]) {{
+      if (walk.enabled) disableWalkthrough(false);
       if (freeCamera) Plotly.relayout(gd, {{'scene.camera': freeCamera,
                                            'scene.dragmode': freeDragMode || 'orbit'}});
       if (status) status.textContent =
@@ -272,6 +286,13 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     if (roof) roof.checked = true;
     applyVis();
     var view = FIXED_VIEWS[key];
+    if (walk.enabled) {{
+      walk.position = view.center.slice();
+      walk.yaw = 0;
+      walk.pitch = 0;
+      updateWalkCamera();
+      return;
+    }}
     // The head point is the native Plotly turntable center. Dragging orbits
     // around it, and wheel zoom changes only the eye-to-center distance.
     var center = dataToScene(gd, view.center);
@@ -283,6 +304,249 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
       'scene.dragmode': 'turntable'}});
     if (status) status.textContent = view.detail +
       ' · fixed 6 ft head point · drag to orbit; scroll to widen or tighten';
+  }}
+  function walkDirection(distance) {{
+    var flat = Math.cos(walk.pitch);
+    return [Math.sin(walk.yaw) * flat * distance,
+            Math.cos(walk.yaw) * flat * distance,
+            Math.sin(walk.pitch) * distance];
+  }}
+  function updateWalkStatus() {{
+    var status = document.getElementById('fixed_status');
+    if (!status || !walk.position) return;
+    status.textContent = 'Walkthrough · x ' + walk.position[0].toFixed(1) +
+      ', y ' + walk.position[1].toFixed(1) +
+      ' · 6 ft head point · FOV ' + Math.round(walk.fov) +
+      '° · arrows move · drag to look · wheel changes FOV';
+  }}
+  function applyWalkFov(gd) {{
+    if (!walk.camera) return;
+    walk.camera.fov = walk.fov;
+    walk.camera.updateProjectionMatrix();
+    renderWalk();
+  }}
+  function walkColor(value, fallback) {{
+    var color = new THREE.Color(fallback || '#77828c');
+    if (typeof value === 'string') {{
+      try {{ color.setStyle(value); }} catch (e) {{}}
+    }}
+    return color;
+  }}
+  function buildWalkScene(gd) {{
+    if (walk.renderer) return;
+    var capture = walk.capture;
+    var width = Math.max(320, gd.clientWidth);
+    var height = Math.max(320, gd.clientHeight);
+    walk.scene = new THREE.Scene();
+    walk.scene.background = new THREE.Color('#fafbfc');
+    walk.camera = new THREE.PerspectiveCamera(walk.fov, width / height, 0.5, 5000);
+    walk.camera.up.set(0, 0, 1);
+    walk.renderer = new THREE.WebGLRenderer({{antialias: true, alpha: false}});
+    walk.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    walk.renderer.outputEncoding = THREE.sRGBEncoding;
+    walk.renderer.setSize(width, height, false);
+    walk.renderer.domElement.style.width = '100%';
+    walk.renderer.domElement.style.height = '100%';
+    capture.appendChild(walk.renderer.domElement);
+    walk.scene.add(new THREE.HemisphereLight(0xffffff, 0x6b737b, 1.65));
+    var sun = new THREE.DirectionalLight(0xffffff, 1.15);
+    sun.position.set(-180, -220, 420);
+    walk.scene.add(sun);
+    walk.objects = new Array(gd.data.length).fill(null);
+    gd.data.forEach(function(trace, traceIndex) {{
+      var object = null;
+      var opacity = trace.opacity === undefined ? 1 : Number(trace.opacity);
+      if (trace.type === 'mesh3d' && trace.x && trace.i) {{
+        var geometry = new THREE.BufferGeometry();
+        var positions = [];
+        for (var p = 0; p < trace.x.length; p++)
+          positions.push(Number(trace.x[p]), Number(trace.y[p]), Number(trace.z[p]));
+        var indices = [];
+        for (var q = 0; q < trace.i.length; q++)
+          indices.push(Number(trace.i[q]), Number(trace.j[q]), Number(trace.k[q]));
+        geometry.setAttribute('position',
+          new THREE.Float32BufferAttribute(positions, 3));
+        geometry.setIndex(indices);
+        geometry.computeVertexNormals();
+        var material = new THREE.MeshLambertMaterial({{
+          color: walkColor(trace.color, '#7a858f'),
+          side: THREE.DoubleSide, flatShading: true,
+          transparent: opacity < 0.995, opacity: opacity,
+          depthWrite: opacity > 0.7
+        }});
+        object = new THREE.Mesh(geometry, material);
+      }} else if (trace.type === 'scatter3d' && trace.x &&
+                 String(trace.mode || '').indexOf('lines') !== -1) {{
+        var segments = [];
+        for (var s = 1; s < trace.x.length; s++) {{
+          var a = [trace.x[s - 1], trace.y[s - 1], trace.z[s - 1]];
+          var b = [trace.x[s], trace.y[s], trace.z[s]];
+          if (a.every(Number.isFinite) && b.every(Number.isFinite))
+            segments.push(a[0], a[1], a[2], b[0], b[1], b[2]);
+        }}
+        if (segments.length) {{
+          var lineGeometry = new THREE.BufferGeometry();
+          lineGeometry.setAttribute('position',
+            new THREE.Float32BufferAttribute(segments, 3));
+          var lineColor = trace.line && trace.line.color;
+          var lineMaterial = new THREE.LineBasicMaterial({{
+            color: walkColor(lineColor, '#313941'),
+            transparent: opacity < 0.995, opacity: opacity
+          }});
+          object = new THREE.LineSegments(lineGeometry, lineMaterial);
+        }}
+      }}
+      if (object) {{
+        object.visible = trace.visible !== false && trace.visible !== 'legendonly';
+        walk.scene.add(object);
+        walk.objects[traceIndex] = object;
+      }}
+    }});
+    window.addEventListener('resize', resizeWalkRenderer);
+  }}
+  function resizeWalkRenderer() {{
+    if (!walk.renderer || !walk.capture || !walk.capture.isConnected) return;
+    var width = Math.max(320, walk.capture.clientWidth);
+    var height = Math.max(320, walk.capture.clientHeight);
+    walk.camera.aspect = width / height;
+    walk.camera.updateProjectionMatrix();
+    walk.renderer.setSize(width, height, false);
+    renderWalk();
+  }}
+  function syncWalkVisibility(vis) {{
+    if (!walk.objects.length) return;
+    for (var i = 0; i < walk.objects.length; i++)
+      if (walk.objects[i]) walk.objects[i].visible = Boolean(vis[i]);
+    renderWalk();
+  }}
+  function renderWalk() {{
+    if (walk.enabled && walk.renderer && walk.scene && walk.camera)
+      walk.renderer.render(walk.scene, walk.camera);
+  }}
+  function updateWalkCamera() {{
+    if (!walk.enabled || !walk.position) return;
+    var gd = document.getElementById('{PLOT_ID}');
+    if (!gd || !walk.camera) return;
+    var aim = walkDirection(120.0);
+    var target = [walk.position[0] + aim[0],
+                  walk.position[1] + aim[1],
+                  walk.position[2] + aim[2]];
+    walk.camera.position.set(walk.position[0], walk.position[1], walk.position[2]);
+    walk.camera.lookAt(target[0], target[1], target[2]);
+    renderWalk();
+    updateWalkStatus();
+  }}
+  function ensureWalkCapture(gd) {{
+    if (walk.capture && walk.capture.isConnected) return walk.capture;
+    var capture = document.createElement('div');
+    capture.id = 'walk_capture';
+    capture.tabIndex = 0;
+    capture.setAttribute('role', 'application');
+    capture.setAttribute('aria-label',
+      'Walkthrough view. Arrow keys move, drag to look, mouse wheel changes field of view.');
+    capture.style.cssText = 'display:none;position:absolute;inset:0;z-index:20;' +
+      'cursor:grab;touch-action:none;outline:none;background:transparent;';
+    capture.addEventListener('pointerdown', function(e) {{
+      if (!walk.enabled || e.button !== 0) return;
+      walk.dragging = true;
+      walk.lastX = e.clientX;
+      walk.lastY = e.clientY;
+      capture.style.cursor = 'grabbing';
+      capture.focus({{preventScroll: true}});
+      capture.setPointerCapture(e.pointerId);
+      e.preventDefault();
+    }});
+    capture.addEventListener('pointermove', function(e) {{
+      if (!walk.enabled || !walk.dragging) return;
+      var dx = e.clientX - walk.lastX;
+      var dy = e.clientY - walk.lastY;
+      walk.lastX = e.clientX;
+      walk.lastY = e.clientY;
+      walk.yaw += dx * 0.005;
+      walk.pitch = Math.max(-1.35, Math.min(1.35, walk.pitch - dy * 0.004));
+      updateWalkCamera();
+      e.preventDefault();
+    }});
+    var endDrag = function(e) {{
+      if (!walk.dragging) return;
+      walk.dragging = false;
+      capture.style.cursor = 'grab';
+      if (e.pointerId !== undefined && capture.hasPointerCapture(e.pointerId))
+        capture.releasePointerCapture(e.pointerId);
+    }};
+    capture.addEventListener('pointerup', endDrag);
+    capture.addEventListener('pointercancel', endDrag);
+    capture.addEventListener('wheel', function(e) {{
+      if (!walk.enabled) return;
+      walk.fov = Math.max(10, Math.min(100,
+        walk.fov + (e.deltaY > 0 ? 5 : -5)));
+      applyWalkFov(gd);
+      updateWalkStatus();
+      e.preventDefault();
+    }}, {{passive: false}});
+    if (getComputedStyle(gd).position === 'static') gd.style.position = 'relative';
+    gd.appendChild(capture);
+    walk.capture = capture;
+    buildWalkScene(gd);
+    return capture;
+  }}
+  function disableWalkthrough(restoreFixed) {{
+    var gd = document.getElementById('{PLOT_ID}');
+    walk.enabled = false;
+    walk.dragging = false;
+    if (walk.capture) walk.capture.style.display = 'none';
+    var box = document.getElementById('cb_walk');
+    if (box) box.checked = false;
+    walk.fov = 75;
+    if (restoreFixed) {{
+      var select = document.getElementById('fixed_view');
+      if (select && select.value !== 'free') setFixedView(select.value);
+    }}
+  }}
+  function toggleWalkthrough() {{
+    var gd = document.getElementById('{PLOT_ID}');
+    var box = document.getElementById('cb_walk');
+    var select = document.getElementById('fixed_view');
+    if (!gd || !box || !select || typeof Plotly === 'undefined') return;
+    if (!box.checked) {{ disableWalkthrough(true); return; }}
+    var key = select.value;
+    if (key === 'free' || !FIXED_VIEWS[key]) {{
+      key = Object.keys(FIXED_VIEWS)[0];
+      select.value = key;
+      setFixedView(key);
+    }}
+    walk.enabled = true;
+    walk.position = FIXED_VIEWS[key].center.slice();
+    walk.yaw = 0;
+    walk.pitch = 0;
+    walk.fov = 75;
+    var capture = ensureWalkCapture(gd);
+    capture.style.display = 'block';
+    resizeWalkRenderer();
+    capture.focus({{preventScroll: true}});
+    updateWalkCamera();
+  }}
+  function walkKeyHandler(e) {{
+    if (!walk.enabled || !walk.position) return;
+    var tag = e.target && e.target.tagName;
+    if (tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA' || tag === 'BUTTON') return;
+    var forward = [Math.sin(walk.yaw), Math.cos(walk.yaw)];
+    var right = [Math.cos(walk.yaw), -Math.sin(walk.yaw)];
+    var step = e.shiftKey ? 18.0 : 6.0;
+    var dx = 0, dy = 0;
+    if (e.key === 'ArrowUp' || e.key === 'w' || e.key === 'W') {{
+      dx = forward[0] * step; dy = forward[1] * step;
+    }} else if (e.key === 'ArrowDown' || e.key === 's' || e.key === 'S') {{
+      dx = -forward[0] * step; dy = -forward[1] * step;
+    }} else if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {{
+      dx = right[0] * step; dy = right[1] * step;
+    }} else if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {{
+      dx = -right[0] * step; dy = -right[1] * step;
+    }} else return;
+    walk.position[0] += dx;
+    walk.position[1] += dy;
+    updateWalkCamera();
+    e.preventDefault();
   }}
   function toggleExtra() {{
     var gd = document.getElementById('{PLOT_ID}');
@@ -344,7 +608,9 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     var idx = [];
     for (var i = 0; i < VIS.n; i++) idx.push(i);
     Plotly.restyle(gd, {{visible: vis}}, idx);
+    syncWalkVisibility(vis);
   }}
+  document.addEventListener('keydown', walkKeyHandler);
   document.addEventListener('DOMContentLoaded', applyVis);
   if (document.readyState !== 'loading') setTimeout(applyVis, 0);
 </script>
