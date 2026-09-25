@@ -10,11 +10,12 @@ import column_study as CS
 import solid_view as SV
 import analysis as A
 import studies as ST
-from project_paths import VIZ_DIR
+from project_paths import ANALYSIS_STUDY_DIR
 
 HERE=Path(__file__).resolve().parent
-OUT=VIZ_DIR/'s3-removal'
-SOURCE=VIZ_DIR/'column-removal-3d-solid.html'
+OUT=ANALYSIS_STUDY_DIR/'lineage'
+SOURCE=ANALYSIS_STUDY_DIR/'baseline'/'column-removal-3d-solid.html'
+OUT.mkdir(parents=True, exist_ok=True)
 
 def traces():
     s=SOURCE.read_text(); q=s[s.rfind('Plotly.newPlot(')+len('Plotly.newPlot('):].lstrip()

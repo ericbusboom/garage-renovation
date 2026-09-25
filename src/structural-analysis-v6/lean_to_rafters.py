@@ -2,8 +2,9 @@
 import json, math
 import east_continuous_posts as E
 import completion as C
-OUT=E.OUT/'lean-to-rafters'
-OUT.mkdir(exist_ok=True)
+from project_paths import VIZ_DIR
+OUT=VIZ_DIR
+OUT.mkdir(parents=True, exist_ok=True)
 T=E.T.B.W.D.T
 
 def build():
@@ -68,4 +69,4 @@ if __name__=='__main__':
     f,s,g=build()
     (OUT/'geometry.json').write_text(json.dumps(dict(**g,nodes=f.nodes,segments=f.segments,links=f.links,sections={m:v.name for m,v in f.section_of.items()}),indent=2))
     T.OUT=OUT
-    T.solve('lean-to-rafters',f,s,second_order=True)
+    T.solve('analysis',f,s,second_order=True)

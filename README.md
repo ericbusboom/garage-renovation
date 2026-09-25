@@ -7,7 +7,7 @@ Working files for the garage renovation, including the controlled report, COMPAS
 | `report/` | Controlled project report and document manifest |
 | `studies/` | Dated one-off and versioned explorations |
 | `data/` | COMPAS and project model data |
-| `viz/` | Generated interactive visualizations |
+| `viz/` | Dated visualization releases; `viz/latest` selects the current one |
 | `render/` | Dated Blender and other render packages |
 | `plans/` | Approved drawings when available |
 | `src/` | Active source code |
@@ -15,3 +15,8 @@ Working files for the garage renovation, including the controlled report, COMPAS
 | `archive/` | Retained history and local tooling |
 
 See [archive/reorganization-manifest.csv](archive/reorganization-manifest.csv) for the 2026-09-21 move record. Structural analyses in this repository are preliminary unless signed and sealed by the responsible engineer.
+
+The current interactive frame is always available at
+[`viz/latest/lean-to-frame-3d.html`](viz/latest/lean-to-frame-3d.html). Visualization
+release directories use `YYYYMMDD.NN-<slug>`; see [`viz/README.md`](viz/README.md)
+for revision and rollback rules.

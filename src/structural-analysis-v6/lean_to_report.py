@@ -11,7 +11,7 @@ import moment_frames as MF
 f,s,g=L.build()
 stage=phasing.before_demo(f,defer=set(OR.DEFER_BEFORE_DEMO),
                           include=set(OR.BUILD_BEFORE_DEMO))
-d=json.loads((L.OUT/'lean-to-rafters.json').read_text())
+d=json.loads((L.OUT/'analysis.json').read_text())
 r=L.T.A.Result(**{k:d[k] for k in {x.name for x in fields(L.T.A.Result)} if k in d and k!='members'})
 r.members={m:L.T.A.MemberOutcome(**v) for m,v in d['members'].items()}
 dr=min(v['ratio'] for v in d['drift'].values() if v['ratio'])
@@ -54,12 +54,13 @@ def mesh(a,b,sec):
     if sec.name=='HSS6X2X1/4':b=(b[0],b[1],106.5)
     return original(a,b,sec)
 SV._member_mesh=mesh
-p=L.OUT/'lean-to-rafters-3d-solid.html'
+p=L.OUT/'lean-to-frame-3d.html'
 summary=dict(removal={},frame_model='Lean-to steel rafters + continuous east posts · CURRENT PRELIMINARY ANALYSIS',live_case='L100',exposure='C',basis=dict(loft_live={'L100':100},wind={'V':96}))
 SV.write(f,r,{},dict(sections={}),[],summary,p,cabinets=True,report_html=report,
          proposed_seats=g['seats'],before_demo=set(stage['build']))
 h=p.read_text().replace('Garage frame &mdash; members at true section size','Lean-to steel rafters + continuous east posts')
 h=h.replace('How hard it is working','How hard is it working?').replace('What governs it"','What governs it?"')
 h=h.replace('</body>',"<script>Plotly.relayout('frameplot',{'scene.camera.eye':{x:1.8,y:-1.5,z:1.0}}).then(()=>Plotly.Plots.resize('frameplot'));</script></body>")
+h='\n'.join(line.rstrip() for line in h.splitlines())+'\n'
 p.write_text(h)
 print(p)

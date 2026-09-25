@@ -8,6 +8,7 @@ import completion as C
 import frame as F
 
 OUT=T.OUT/'door-frame'
+OUT.mkdir(parents=True, exist_ok=True)
 
 def build(thickness='1/4', mesh=0):
     f,s=FC.final_frame();T.clean(f)
