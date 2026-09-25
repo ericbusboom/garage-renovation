@@ -20,3 +20,9 @@ The current interactive frame is always available at
 [`viz/latest/lean-to-frame-3d.html`](viz/latest/lean-to-frame-3d.html). Visualization
 release directories use `YYYYMMDD.NN-<slug>`; see [`viz/README.md`](viz/README.md)
 for revision and rollback rules.
+
+The current large-format concept drawing set is
+[`studies/20260924.02-concept-drawing-set/garage-concept-drawing-set.pdf`](studies/20260924.02-concept-drawing-set/garage-concept-drawing-set.pdf).
+It combines the current frame and equipment layout with diagrammatic electrical,
+Ethernet, dust-collection, and compressed-air routing. Approved drawing packages
+will move to `plans/` only after review.
