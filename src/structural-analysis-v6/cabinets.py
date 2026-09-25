@@ -230,7 +230,7 @@ ITEMS = [
 #: is intentionally an assumption: 12U gives 21 in. of rail height, represented
 #: here by a 24 in. tall cabinet, and the owner selected the shallow 14 in. depth.
 SHED_ITEMS = [
-    dict(n='PW', kind='battery', wall='south', along=4.0,
+    dict(n='PW', kind='battery', wall='south', align='east',
          width=24.0, depth=7.6, h=43.5, z=12.0,
          what='Tesla Powerwall 3 · 291 lb · moved from the loft wall'),
     dict(n='EP', kind='electrical', wall='north', along=18.5,
@@ -1057,8 +1057,12 @@ def shed_item_rows(frame: framemod.Frame) -> list[dict]:
     rows = []
     for item in SHED_ITEMS:
         if item['wall'] == 'south':
-            x0 = bx0 + item['along']
-            x1 = x0 + item['width']
+            if item.get('align') == 'east':
+                x1 = bx1 - SHED_WALL_T
+                x0 = x1 - item['width']
+            else:
+                x0 = bx0 + item['along']
+                x1 = x0 + item['width']
             y0 = by0 + SHED_WALL_T
             y1 = y0 + item['depth']
             faces = 'north'
@@ -1170,8 +1174,8 @@ def shed_html(frame: framemod.Frame) -> str:
 <div class="notes">
   <h2>Concrete shed equipment</h2>
   <p>The shed is enclosed on its south and east sides with conceptual
-  {SHED_WALL_T:g}-inch infill walls. The Powerwall faces north from the south
-  wall. The 100 A panel and shallow sprinkler cabinet face south from the
+  {SHED_WALL_T:g}-inch infill walls. The Powerwall is tight to the southeast
+  corner and faces north from the south wall. The 100 A panel and shallow sprinkler cabinet face south from the
   existing building wall at the north side. The shallow rack faces west from
   the east wall. The 15-gallon electric water heater stands on the concrete pad
   in the northeast corner against the east and existing-building walls. The
