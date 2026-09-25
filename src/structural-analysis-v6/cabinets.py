@@ -237,12 +237,12 @@ SHED_ITEMS = [
          width=16.0, depth=5.0, h=30.0, z=48.0,
          what='100 A electrical panel · conceptual 16 × 5 × 30 in. envelope'),
     dict(n='SPK', kind='sprinkler', wall='north', along=40.5,
-         width=18.0, depth=12.0, h=24.0, z=48.0,
+         width=18.0, depth=12.0, h=24.0, z=54.0,
          what='sprinkler equipment cabinet · conceptual 18 × 12 × 24 in. envelope'),
     dict(n='RACK', kind='rack', wall='east', along=27.0,
-         width=22.0, depth=14.0, h=24.0, z=48.0,
+         width=22.0, depth=14.0, h=24.0, z=54.0,
          what='wall-mounted 19 in. rack · conceptual 12U · 14 in. deep'),
-    dict(n='WH', kind='water_heater', wall='floor', east=5.0, north=27.0,
+    dict(n='WH', kind='water_heater', wall='floor', corner='northeast',
          width=20.0, depth=20.0, h=29.0, z=0.0, shape='cylinder',
          what='15 gal electric water heater · 20 in. diameter × 29 in. high'),
 ]
@@ -1075,10 +1075,16 @@ def shed_item_rows(frame: framemod.Frame) -> list[dict]:
             y0 = y1 - item['depth']
             faces = 'south'
         elif item['wall'] == 'floor':
-            x0 = bx0 + item['east']
-            x1 = x0 + item['width']
-            y0 = by0 + item['north']
-            y1 = y0 + item['depth']
+            if item.get('corner') == 'northeast':
+                x1 = bx1 - SHED_WALL_T
+                x0 = x1 - item['width']
+                y1 = by1
+                y0 = y1 - item['depth']
+            else:
+                x0 = bx0 + item['east']
+                x1 = x0 + item['width']
+                y0 = by0 + item['north']
+                y1 = y0 + item['depth']
             faces = 'freestanding'
         else:
             raise ValueError(f'unknown shed wall {item["wall"]!r}')
@@ -1168,7 +1174,9 @@ def shed_html(frame: framemod.Frame) -> str:
   wall. The 100 A panel and shallow sprinkler cabinet face south from the
   existing building wall at the north side. The shallow rack faces west from
   the east wall. The 15-gallon electric water heater stands on the concrete pad
-  in the west-center floor area.</p>
+  in the northeast corner against the east and existing-building walls. The
+  sprinkler cabinet and rack tops align at 78 inches with both electrical
+  panels.</p>
   <table style="border-collapse:collapse;font-size:13px">
     <tr style="text-align:left"><th>#</th><th>item</th><th>wall</th>
       <th>width × depth × height</th><th>z</th><th>basis</th></tr>
