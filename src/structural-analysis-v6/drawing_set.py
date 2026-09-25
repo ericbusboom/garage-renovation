@@ -17,6 +17,7 @@ from matplotlib.patches import Circle, FancyArrowPatch, Rectangle
 from matplotlib.lines import Line2D
 
 import cabinets as CB
+import connections as CN
 import lean_to_rafters as MODEL
 
 
@@ -90,12 +91,26 @@ def panel_title(ax, text, subtitle="SCALE: DIAGRAMMATIC"):
             ha="right", va="bottom")
 
 
+def draw_joints(ax, frame, project):
+    """Offset links as short ink lines, and a dot per joint by connection kind."""
+    for i, j, _ in frame.links:
+        a, b = project(frame.xyz(i)), project(frame.xyz(j))
+        ax.plot([a[0], b[0]], [a[1], b[1]], color=INK, lw=1.1, alpha=.9,
+                solid_capstyle="round")
+    for row in CN.schedule(frame):
+        u, v = project(row["at"])
+        ax.plot([u], [v], "o", ms=2.6, color=CN.KINDS[row["kind"]][0],
+                mec="white", mew=.3, zorder=5)
+
+
 def draw_elevation(ax, frame, plane, title, flip=False):
     for _, group, a, b in member_segments(frame):
         c, lw = GROUP_STYLE.get(group, (INK, 1))
         if plane == "xz": u = (a[0], b[0]); v = (a[2], b[2])
         else: u = (a[1], b[1]); v = (a[2], b[2])
         ax.plot(u, v, color=c, lw=lw, alpha=.92, solid_capstyle="round")
+    draw_joints(ax, frame, (lambda p: (p[0], p[2])) if plane == "xz"
+                else (lambda p: (p[1], p[2])))
     style_axes(ax)
     if flip: ax.invert_xaxis()
     ax.set_xlabel("HORIZONTAL SET-OUT · INCHES", fontsize=6, color=MUTED)
@@ -226,6 +241,11 @@ def views(pdf, frame):
     for g,(c,_) in GROUP_STYLE.items():
         fig.add_artist(Line2D([x,x+.015],[.071,.071],transform=fig.transFigure,color=c,lw=3))
         fig.text(x+.018,.069,g,fontsize=6); x += .09
+    fig.text(.048, .055, "JOINTS  ", fontsize=7, weight="bold")
+    x=.085
+    for kind,(c,label) in CN.KINDS.items():
+        fig.add_artist(Line2D([x+.007],[.057],transform=fig.transFigure,marker="o",ms=5,color=c,lw=0))
+        fig.text(x+.018,.055,label,fontsize=6); x += .135
     pdf.savefig(fig); plt.close(fig)
 
 

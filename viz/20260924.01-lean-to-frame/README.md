@@ -8,6 +8,11 @@ and walkthrough controls.
 - **Open:** [lean-to-frame-3d.html](lean-to-frame-3d.html)
 - **Analysis:** [analysis.json](analysis.json)
 - **Geometry:** [geometry.json](geometry.json)
+- **Connections:** the *Connections* checkbox puts a dot on every physical
+  joint, coloured welded / welded-with-pinned-attachments / pinned / pinned
+  base. The 2026-09-24 connection audit (`src/structural-analysis-v6/connections.py`)
+  joined four places where members touched or crossed without a joint; the
+  joint schedule is in `geometry.json` under `connections`.
 - **Status:** current preliminary working visualization; not construction design
 - **Generator:** `src/structural-analysis-v6/lean_to_report.py`
 - **Layout source:** `src/structural-analysis-v6/cabinets.py`

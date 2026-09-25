@@ -350,8 +350,18 @@ def _ordered(frame: Frame, pairs: list[tuple[str, str]]) -> list[tuple[str, str]
     pts = {n: frame.xyz(n) for p in pairs for n in p}
     ends = [n for n in pts if sum(n in p for p in pairs) == 1]
     origin = pts[min(ends, key=lambda n: pts[n])] if ends else min(pts.values())
-    return sorted(pairs,
-                  key=lambda p: min(_d2(pts[p[0]], origin), _d2(pts[p[1]], origin)))
+    out = sorted(pairs,
+                 key=lambda p: min(_d2(pts[p[0]], origin), _d2(pts[p[1]], origin)))
+    # Orient every pair head-to-tail. A segment split after the fact keeps its
+    # parent's direction, which can run against the sort, and then the first
+    # and last nodes -- where end releases go and where the solid is drawn
+    # from -- would be interior nodes.
+    if len(out) > 1 and out[0][0] in out[1]:
+        out[0] = out[0][::-1]
+    for k in range(1, len(out)):
+        if out[k][0] != out[k - 1][1] and out[k][1] == out[k - 1][1]:
+            out[k] = out[k][::-1]
+    return out
 
 
 def _d2(a, b) -> float:

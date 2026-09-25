@@ -2,6 +2,7 @@
 import json, math
 import east_continuous_posts as E
 import completion as C
+import connections as CN
 from project_paths import VIZ_DIR
 OUT=VIZ_DIR
 OUT.mkdir(parents=True, exist_ok=True)
@@ -59,14 +60,18 @@ def build():
         rafters.append(name)
     f.unbraced_length_overrides.update(lengths)
     T.clean(f)
+    # Members that touch or pass through one another are joined. Unbraced
+    # lengths were fixed above, so the new crossing nodes are not credited as
+    # brace points.
+    joins=CN.connect(f)
     info=dict(rafters=rafters,section='HSS2X2X1/8',count=12,spacing=pitch,
               horizontal_run=cuts[rafters[0]]['top_run'],roof_y=[2.5,268],seats=seats,cuts=cuts,
               fit='Top edge from high beam top/east corner to lower beam top/east corner; vertical high cut, horizontal low cut; no raised seats',
-              original_reactions_removed=True,existing_wall_bearing=False)
+              original_reactions_removed=True,existing_wall_bearing=False,connections_added=joins)
     return f,s,info
 
 if __name__=='__main__':
     f,s,g=build()
-    (OUT/'geometry.json').write_text(json.dumps(dict(**g,nodes=f.nodes,segments=f.segments,links=f.links,sections={m:v.name for m,v in f.section_of.items()}),indent=2))
+    (OUT/'geometry.json').write_text(json.dumps(dict(**g,nodes=f.nodes,segments=f.segments,links=f.links,pinned_ends=f.pinned_ends,connections=CN.schedule(f,g['connections_added']),sections={m:v.name for m,v in f.section_of.items()}),indent=2))
     T.OUT=OUT
     T.solve('analysis',f,s,second_order=True)

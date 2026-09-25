@@ -315,6 +315,83 @@
   "fit": "Top edge from high beam top/east corner to lower beam top/east corner; vertical high cut, horizontal low cut; no raised seats",
   "original_reactions_removed": true,
   "existing_wall_bearing": false,
+  "connections_added": [
+    {
+      "kind": "crossing",
+      "members": [
+        "B-SO",
+        "BR-S-2"
+      ],
+      "at": [
+        174.53,
+        -63.0,
+        112.5
+      ],
+      "released": [
+        "BR-S-2"
+      ],
+      "gap": 0.0,
+      "nodes": [
+        "JOIN.X1"
+      ]
+    },
+    {
+      "kind": "crossing",
+      "members": [
+        "BR-N-1",
+        "BR-N-2"
+      ],
+      "at": [
+        3.18,
+        268.0,
+        56.25
+      ],
+      "released": [
+        "BR-N-2"
+      ],
+      "gap": 0.0,
+      "nodes": [
+        "MESH.197"
+      ]
+    },
+    {
+      "kind": "crossing",
+      "members": [
+        "BR-S-1",
+        "BR-S-2"
+      ],
+      "at": [
+        209.8,
+        -63.0,
+        58.12
+      ],
+      "released": [
+        "BR-S-2"
+      ],
+      "gap": 0.0,
+      "nodes": [
+        "JOIN.X3"
+      ]
+    },
+    {
+      "kind": "end contact",
+      "members": [
+        "BR-S-2",
+        "RS @ 170.58"
+      ],
+      "at": [
+        169.5,
+        -63.0,
+        120.25
+      ],
+      "gap": -1.17,
+      "nodes": [
+        "S1.top",
+        "@170.583,-63,117"
+      ],
+      "length": 1.22
+    }
+  ],
   "nodes": {
     "@-34,-63": {
       "x": -34.0,
@@ -2469,7 +2546,8 @@
       "support": false,
       "free_end": false,
       "members": [
-        "BR-N-1"
+        "BR-N-1",
+        "BR-N-2"
       ]
     },
     "MESH.198": {
@@ -3831,6 +3909,28 @@
       "members": [
         "LT.R12"
       ]
+    },
+    "JOIN.X1": {
+      "x": 174.52702702702703,
+      "y": -63.0,
+      "z": 112.5,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "B-SO",
+        "BR-S-2"
+      ]
+    },
+    "JOIN.X3": {
+      "x": 209.79860365198712,
+      "y": -63.0,
+      "z": 58.12298603651987,
+      "support": false,
+      "free_end": false,
+      "members": [
+        "BR-S-1",
+        "BR-S-2"
+      ]
     }
   },
   "segments": [
@@ -4192,6 +4292,11 @@
     [
       "BR-N-2",
       "N1.base",
+      "MESH.197"
+    ],
+    [
+      "BR-N-2",
+      "MESH.197",
       "@-34,268"
     ],
     [
@@ -5472,6 +5577,11 @@
     [
       "B-SO",
       "B-SO.seat@170.6",
+      "JOIN.X1"
+    ],
+    [
+      "B-SO",
+      "JOIN.X1",
       "@211.5,-63"
     ],
     [
@@ -5722,6 +5832,11 @@
     [
       "BR-S-1",
       "TRIM.367",
+      "JOIN.X3"
+    ],
+    [
+      "BR-S-1",
+      "JOIN.X3",
       "TRIM.368"
     ],
     [
@@ -5777,6 +5892,11 @@
     [
       "BR-S-2",
       "TRIM.378",
+      "JOIN.X3"
+    ],
+    [
+      "BR-S-2",
+      "JOIN.X3",
       "TRIM.377"
     ],
     [
@@ -5807,6 +5927,11 @@
     [
       "BR-S-2",
       "S1.top",
+      "JOIN.X1"
+    ],
+    [
+      "BR-S-2",
+      "JOIN.X1",
       "TRIM.383"
     ],
     [
@@ -6145,7 +6270,4137 @@
       "LT.beam.12.low",
       "LT.rafter.12.low",
       "Direct bevel-cut connection; eccentric offset to pinned rafter end"
+    ],
+    [
+      "S1.top",
+      "@170.583,-63,117",
+      "contact joint: BR-S-2 end on RS @ 170.58"
     ]
+  ],
+  "pinned_ends": [
+    [
+      "DOOR-W",
+      "DOOR-W.top"
+    ],
+    [
+      "DOOR-E",
+      "DOOR-E.top"
+    ],
+    [
+      "BE.upper",
+      "BE.small@2.5"
+    ],
+    [
+      "BE.upper",
+      "BE.small@71.0"
+    ],
+    [
+      "BE.upper",
+      "BE.small@185.0"
+    ],
+    [
+      "BE.upper",
+      "BE.small@268.0"
+    ],
+    [
+      "BR-S-2",
+      "JOIN.X1"
+    ],
+    [
+      "BR-N-2",
+      "MESH.197"
+    ],
+    [
+      "BR-S-2",
+      "JOIN.X3"
+    ]
+  ],
+  "connections": [
+    {
+      "joint": "SW0.base",
+      "kind": "base",
+      "at": [
+        -34.0,
+        -63.0,
+        0.0
+      ],
+      "members": [
+        "SW0"
+      ],
+      "detail": [
+        "SW0 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "W3.base",
+      "kind": "base",
+      "at": [
+        -34.0,
+        185.0,
+        0.0
+      ],
+      "members": [
+        "W3"
+      ],
+      "detail": [
+        "W3 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "W4.base",
+      "kind": "base",
+      "at": [
+        -34.0,
+        268.0,
+        0.0
+      ],
+      "members": [
+        "BR-N-1",
+        "BR-W-2",
+        "W4"
+      ],
+      "detail": [
+        "BR-N-1 end \u2014 pinned",
+        "BR-W-2 end \u2014 pinned",
+        "W4 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "N1.base",
+      "kind": "base",
+      "at": [
+        40.35,
+        268.0,
+        0.0
+      ],
+      "members": [
+        "BR-N-2",
+        "N1"
+      ],
+      "detail": [
+        "BR-N-2 end \u2014 pinned",
+        "N1 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "DOOR-W.base",
+      "kind": "base",
+      "at": [
+        110.5,
+        2.5,
+        0
+      ],
+      "members": [
+        "DOOR-W"
+      ],
+      "detail": [
+        "DOOR-W end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "DOOR-E.base",
+      "kind": "base",
+      "at": [
+        144.5,
+        2.5,
+        0
+      ],
+      "members": [
+        "DOOR-E"
+      ],
+      "detail": [
+        "DOOR-E end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "S1.base",
+      "kind": "base",
+      "at": [
+        169.5,
+        -63.0,
+        0.0
+      ],
+      "members": [
+        "BR-S-1",
+        "S1"
+      ],
+      "detail": [
+        "BR-S-1 end \u2014 pinned",
+        "S1 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "N2.base",
+      "kind": "base",
+      "at": [
+        211.5,
+        268.0,
+        0.0
+      ],
+      "members": [
+        "N2"
+      ],
+      "detail": [
+        "N2 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "EF@-63.base",
+      "kind": "base",
+      "at": [
+        247.5,
+        -63.0,
+        0.0
+      ],
+      "members": [
+        "BR-S-2",
+        "E-S2"
+      ],
+      "detail": [
+        "BR-S-2 end \u2014 pinned",
+        "E-S2 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "EF@-6.base",
+      "kind": "base",
+      "at": [
+        247.5,
+        2.5,
+        0.0
+      ],
+      "members": [
+        "E-S3"
+      ],
+      "detail": [
+        "E-S3 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "EF@268.base",
+      "kind": "base",
+      "at": [
+        247.5,
+        268.0,
+        0.0
+      ],
+      "members": [
+        "E-N2"
+      ],
+      "detail": [
+        "E-N2 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@-34,185",
+      "kind": "mixed",
+      "at": [
+        -34.0,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "BR-W-2",
+        "BW",
+        "W.rear.brace",
+        "W3"
+      ],
+      "detail": [
+        "B-2 end",
+        "BR-W-2 end \u2014 pinned",
+        "BW through",
+        "W.rear.brace end",
+        "W3 through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@-34,268",
+      "kind": "mixed",
+      "at": [
+        -34.0,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "BR-N-2",
+        "BW",
+        "W4"
+      ],
+      "detail": [
+        "B-N end",
+        "BR-N-2 end \u2014 pinned",
+        "BW end",
+        "W4 through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@6.91667,71,194.365",
+      "kind": "mixed",
+      "at": [
+        6.92,
+        71.0,
+        208.52
+      ],
+      "members": [
+        "CT.bottom",
+        "CT.mullion.1",
+        "RS @ 6.9167"
+      ],
+      "detail": [
+        "CT.bottom through",
+        "CT.mullion.1 end",
+        "RS @ 6.9167 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@6.91667,71,225.25",
+      "kind": "mixed",
+      "at": [
+        6.92,
+        71.0,
+        233.25
+      ],
+      "members": [
+        "CT.diag.W",
+        "CT.mullion.1",
+        "CT.top",
+        "RF @ 6.9167"
+      ],
+      "detail": [
+        "CT.diag.W end",
+        "CT.mullion.1 end",
+        "CT.top through",
+        "RF @ 6.9167 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "N1.top",
+      "kind": "mixed",
+      "at": [
+        40.35,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "BR-N-1",
+        "N1"
+      ],
+      "detail": [
+        "B-N through",
+        "BR-N-1 end \u2014 pinned",
+        "N1 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@47.8333,71,194.365",
+      "kind": "mixed",
+      "at": [
+        47.83,
+        71.0,
+        208.52
+      ],
+      "members": [
+        "CT.bottom",
+        "CT.mullion.2",
+        "RS @ 47.833"
+      ],
+      "detail": [
+        "CT.bottom through",
+        "CT.mullion.2 end",
+        "RS @ 47.833 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@47.8333,71,225.25",
+      "kind": "mixed",
+      "at": [
+        47.83,
+        71.0,
+        233.25
+      ],
+      "members": [
+        "CT.mullion.2",
+        "CT.top",
+        "RF @ 47.833"
+      ],
+      "detail": [
+        "CT.mullion.2 end",
+        "CT.top through",
+        "RF @ 47.833 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@88.75,71,194.365",
+      "kind": "mixed",
+      "at": [
+        88.75,
+        71.0,
+        208.52
+      ],
+      "members": [
+        "CT.bottom",
+        "CT.mullion.3",
+        "RS @ 88.75"
+      ],
+      "detail": [
+        "CT.bottom through",
+        "CT.mullion.3 end",
+        "RS @ 88.75 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@88.75,71,225.25",
+      "kind": "mixed",
+      "at": [
+        88.75,
+        71.0,
+        233.25
+      ],
+      "members": [
+        "CT.mullion.3",
+        "CT.top",
+        "RF @ 88.75"
+      ],
+      "detail": [
+        "CT.mullion.3 end",
+        "CT.top through",
+        "RF @ 88.75 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@88.75,268",
+      "kind": "mixed",
+      "at": [
+        88.75,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "BR-NU-1",
+        "N-M",
+        "loft bay 3 joist 8"
+      ],
+      "detail": [
+        "B-N through",
+        "BR-NU-1 end \u2014 pinned",
+        "N-M end",
+        "loft bay 3 joist 8 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@88.75,268,225.25",
+      "kind": "mixed",
+      "at": [
+        88.75,
+        268.0,
+        233.25
+      ],
+      "members": [
+        "N-M",
+        "R-W4",
+        "RF @ 88.75"
+      ],
+      "detail": [
+        "N-M end",
+        "R-W4 through",
+        "RF @ 88.75 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@129.667,71,194.365",
+      "kind": "mixed",
+      "at": [
+        129.67,
+        71.0,
+        208.52
+      ],
+      "members": [
+        "CT.bottom",
+        "CT.mullion.4",
+        "RS @ 129.67"
+      ],
+      "detail": [
+        "CT.bottom through",
+        "CT.mullion.4 end",
+        "RS @ 129.67 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@129.667,71,225.25",
+      "kind": "mixed",
+      "at": [
+        129.67,
+        71.0,
+        233.25
+      ],
+      "members": [
+        "CT.mullion.4",
+        "CT.top",
+        "RF @ 129.67"
+      ],
+      "detail": [
+        "CT.mullion.4 end",
+        "CT.top through",
+        "RF @ 129.67 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "S1.top",
+      "kind": "mixed",
+      "at": [
+        169.5,
+        -63.0,
+        120.25
+      ],
+      "members": [
+        "B-SO",
+        "BR-S-2",
+        "RS @ 170.58",
+        "S1"
+      ],
+      "detail": [
+        "BR-S-2 end \u2014 pinned",
+        "S1 end",
+        "RS @ 170.58 end \u2014 pinned",
+        "B-SO through"
+      ],
+      "added": true,
+      "spread": 7.83
+    },
+    {
+      "joint": "@170.583,71,194.365",
+      "kind": "mixed",
+      "at": [
+        170.58,
+        71.0,
+        208.52
+      ],
+      "members": [
+        "CT.bottom",
+        "CT.mullion.5",
+        "RS @ 170.58"
+      ],
+      "detail": [
+        "CT.bottom through",
+        "CT.mullion.5 end",
+        "RS @ 170.58 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@170.583,71,225.25",
+      "kind": "mixed",
+      "at": [
+        170.58,
+        71.0,
+        233.25
+      ],
+      "members": [
+        "CT.diag.E",
+        "CT.mullion.5",
+        "CT.top",
+        "RF @ 170.58"
+      ],
+      "detail": [
+        "CT.diag.E end",
+        "CT.mullion.5 end",
+        "CT.top through",
+        "RF @ 170.58 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@211.5,268,225.25",
+      "kind": "mixed",
+      "at": [
+        211.5,
+        268.0,
+        233.25
+      ],
+      "members": [
+        "BR-NU-1",
+        "N2",
+        "R-W4"
+      ],
+      "detail": [
+        "BR-NU-1 end \u2014 pinned",
+        "N2 through",
+        "R-W4 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "EF@-63",
+      "kind": "mixed",
+      "at": [
+        247.5,
+        -63.0,
+        112.5
+      ],
+      "members": [
+        "B-SO",
+        "BE",
+        "BR-S-1",
+        "E-S2"
+      ],
+      "detail": [
+        "B-SO end",
+        "BE end",
+        "BR-S-1 end \u2014 pinned",
+        "E-S2 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@-18.6562,128",
+      "kind": "pinned",
+      "at": [
+        -18.66,
+        128.0,
+        112.5
+      ],
+      "members": [
+        "B-1A",
+        "west strip infill joist 1"
+      ],
+      "detail": [
+        "B-1A through",
+        "west strip infill joist 1 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@-18.6562,185",
+      "kind": "pinned",
+      "at": [
+        -18.66,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 3 joist 1",
+        "west strip infill joist 1"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 3 joist 1 end \u2014 pinned",
+        "west strip infill joist 1 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@-18.6562,268",
+      "kind": "pinned",
+      "at": [
+        -18.66,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "loft bay 3 joist 1"
+      ],
+      "detail": [
+        "B-N through",
+        "loft bay 3 joist 1 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@-3.3125,128",
+      "kind": "pinned",
+      "at": [
+        -3.31,
+        128.0,
+        112.5
+      ],
+      "members": [
+        "B-1A",
+        "west strip infill joist 2"
+      ],
+      "detail": [
+        "B-1A through",
+        "west strip infill joist 2 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@-3.3125,185",
+      "kind": "pinned",
+      "at": [
+        -3.31,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 3 joist 2",
+        "west strip infill joist 2"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 3 joist 2 end \u2014 pinned",
+        "west strip infill joist 2 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@-3.3125,268",
+      "kind": "pinned",
+      "at": [
+        -3.31,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "loft bay 3 joist 2"
+      ],
+      "detail": [
+        "B-N through",
+        "loft bay 3 joist 2 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "MESH.197",
+      "kind": "pinned",
+      "at": [
+        3.17,
+        268.0,
+        56.25
+      ],
+      "members": [
+        "BR-N-1",
+        "BR-N-2"
+      ],
+      "detail": [
+        "BR-N-1 through",
+        "BR-N-2 through \u2014 pinned"
+      ],
+      "added": true,
+      "spread": 0.0
+    },
+    {
+      "joint": "@6.91667,-63,117",
+      "kind": "pinned",
+      "at": [
+        6.92,
+        -63.0,
+        119.7
+      ],
+      "members": [
+        "B-SO",
+        "RS @ 6.9167"
+      ],
+      "detail": [
+        "RS @ 6.9167 end \u2014 pinned",
+        "B-SO through"
+      ],
+      "added": false,
+      "spread": 7.2
+    },
+    {
+      "joint": "@6.91667,268,225.25",
+      "kind": "pinned",
+      "at": [
+        6.92,
+        268.0,
+        233.25
+      ],
+      "members": [
+        "R-W4",
+        "RF @ 6.9167"
+      ],
+      "detail": [
+        "R-W4 through",
+        "RF @ 6.9167 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@12.0312,3",
+      "kind": "pinned",
+      "at": [
+        12.03,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "shelf SH joist 3"
+      ],
+      "detail": [
+        "B-S through",
+        "shelf SH joist 3 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@12.0312,71",
+      "kind": "pinned",
+      "at": [
+        12.03,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "shelf SH joist 3"
+      ],
+      "detail": [
+        "B-1 through",
+        "shelf SH joist 3 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@12.0312,185",
+      "kind": "pinned",
+      "at": [
+        12.03,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 3 joist 3"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 3 joist 3 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@12.0312,268",
+      "kind": "pinned",
+      "at": [
+        12.03,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "loft bay 3 joist 3"
+      ],
+      "detail": [
+        "B-N through",
+        "loft bay 3 joist 3 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@19.7308,71",
+      "kind": "pinned",
+      "at": [
+        19.73,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "loft bay 1 joist 1"
+      ],
+      "detail": [
+        "B-1 through",
+        "loft bay 1 joist 1 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@19.7308,128",
+      "kind": "pinned",
+      "at": [
+        19.73,
+        128.0,
+        112.5
+      ],
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 1",
+        "loft bay 2 joist 1"
+      ],
+      "detail": [
+        "B-1A through",
+        "loft bay 1 joist 1 end \u2014 pinned",
+        "loft bay 2 joist 1 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@19.7308,185",
+      "kind": "pinned",
+      "at": [
+        19.73,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 2 joist 1"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 2 joist 1 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@27.375,3",
+      "kind": "pinned",
+      "at": [
+        27.38,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "shelf SH joist 4"
+      ],
+      "detail": [
+        "B-S through",
+        "shelf SH joist 4 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@27.375,71",
+      "kind": "pinned",
+      "at": [
+        27.38,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "shelf SH joist 4"
+      ],
+      "detail": [
+        "B-1 through",
+        "shelf SH joist 4 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@27.375,185",
+      "kind": "pinned",
+      "at": [
+        27.38,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 3 joist 4"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 3 joist 4 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@27.375,268",
+      "kind": "pinned",
+      "at": [
+        27.38,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "loft bay 3 joist 4"
+      ],
+      "detail": [
+        "B-N through",
+        "loft bay 3 joist 4 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@35.7115,71",
+      "kind": "pinned",
+      "at": [
+        35.71,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "loft bay 1 joist 2"
+      ],
+      "detail": [
+        "B-1 through",
+        "loft bay 1 joist 2 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@35.7115,128",
+      "kind": "pinned",
+      "at": [
+        35.71,
+        128.0,
+        112.5
+      ],
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 2",
+        "loft bay 2 joist 2"
+      ],
+      "detail": [
+        "B-1A through",
+        "loft bay 1 joist 2 end \u2014 pinned",
+        "loft bay 2 joist 2 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@35.7115,185",
+      "kind": "pinned",
+      "at": [
+        35.71,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 2 joist 2"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 2 joist 2 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@42.7188,3",
+      "kind": "pinned",
+      "at": [
+        42.72,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "shelf SH joist 5"
+      ],
+      "detail": [
+        "B-S through",
+        "shelf SH joist 5 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@42.7188,71",
+      "kind": "pinned",
+      "at": [
+        42.72,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "shelf SH joist 5"
+      ],
+      "detail": [
+        "B-1 through",
+        "shelf SH joist 5 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@42.7188,185",
+      "kind": "pinned",
+      "at": [
+        42.72,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 3 joist 5"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 3 joist 5 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@42.7188,268",
+      "kind": "pinned",
+      "at": [
+        42.72,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "loft bay 3 joist 5"
+      ],
+      "detail": [
+        "B-N through",
+        "loft bay 3 joist 5 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@47.8333,-63,117",
+      "kind": "pinned",
+      "at": [
+        47.83,
+        -63.0,
+        119.7
+      ],
+      "members": [
+        "B-SO",
+        "RS @ 47.833"
+      ],
+      "detail": [
+        "RS @ 47.833 end \u2014 pinned",
+        "B-SO through"
+      ],
+      "added": false,
+      "spread": 7.2
+    },
+    {
+      "joint": "@47.8333,268,225.25",
+      "kind": "pinned",
+      "at": [
+        47.83,
+        268.0,
+        233.25
+      ],
+      "members": [
+        "R-W4",
+        "RF @ 47.833"
+      ],
+      "detail": [
+        "R-W4 through",
+        "RF @ 47.833 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@51.6923,71",
+      "kind": "pinned",
+      "at": [
+        51.69,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "loft bay 1 joist 3"
+      ],
+      "detail": [
+        "B-1 through",
+        "loft bay 1 joist 3 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@51.6923,128",
+      "kind": "pinned",
+      "at": [
+        51.69,
+        128.0,
+        112.5
+      ],
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 3",
+        "loft bay 2 joist 3"
+      ],
+      "detail": [
+        "B-1A through",
+        "loft bay 1 joist 3 end \u2014 pinned",
+        "loft bay 2 joist 3 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@51.6923,185",
+      "kind": "pinned",
+      "at": [
+        51.69,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 2 joist 3"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 2 joist 3 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@58.0625,3",
+      "kind": "pinned",
+      "at": [
+        58.06,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "shelf SH joist 6"
+      ],
+      "detail": [
+        "B-S through",
+        "shelf SH joist 6 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@58.0625,71",
+      "kind": "pinned",
+      "at": [
+        58.06,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "shelf SH joist 6"
+      ],
+      "detail": [
+        "B-1 through",
+        "shelf SH joist 6 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@58.0625,185",
+      "kind": "pinned",
+      "at": [
+        58.06,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 3 joist 6"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 3 joist 6 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@58.0625,268",
+      "kind": "pinned",
+      "at": [
+        58.06,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "loft bay 3 joist 6"
+      ],
+      "detail": [
+        "B-N through",
+        "loft bay 3 joist 6 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@67.6731,71",
+      "kind": "pinned",
+      "at": [
+        67.67,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "loft bay 1 joist 4"
+      ],
+      "detail": [
+        "B-1 through",
+        "loft bay 1 joist 4 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@67.6731,128",
+      "kind": "pinned",
+      "at": [
+        67.67,
+        128.0,
+        112.5
+      ],
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 4",
+        "loft bay 2 joist 4"
+      ],
+      "detail": [
+        "B-1A through",
+        "loft bay 1 joist 4 end \u2014 pinned",
+        "loft bay 2 joist 4 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@67.6731,185",
+      "kind": "pinned",
+      "at": [
+        67.67,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 2 joist 4"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 2 joist 4 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@73.4062,3",
+      "kind": "pinned",
+      "at": [
+        73.41,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "shelf SH joist 7"
+      ],
+      "detail": [
+        "B-S through",
+        "shelf SH joist 7 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@73.4062,71",
+      "kind": "pinned",
+      "at": [
+        73.41,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "shelf SH joist 7"
+      ],
+      "detail": [
+        "B-1 through",
+        "shelf SH joist 7 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@73.4062,185",
+      "kind": "pinned",
+      "at": [
+        73.41,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 3 joist 7"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 3 joist 7 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@73.4062,268",
+      "kind": "pinned",
+      "at": [
+        73.41,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "loft bay 3 joist 7"
+      ],
+      "detail": [
+        "B-N through",
+        "loft bay 3 joist 7 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@83.6538,71",
+      "kind": "pinned",
+      "at": [
+        83.65,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "loft bay 1 joist 5"
+      ],
+      "detail": [
+        "B-1 through",
+        "loft bay 1 joist 5 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@83.6538,128",
+      "kind": "pinned",
+      "at": [
+        83.65,
+        128.0,
+        112.5
+      ],
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 5",
+        "loft bay 2 joist 5"
+      ],
+      "detail": [
+        "B-1A through",
+        "loft bay 1 joist 5 end \u2014 pinned",
+        "loft bay 2 joist 5 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@83.6538,185",
+      "kind": "pinned",
+      "at": [
+        83.65,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 2 joist 5"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 2 joist 5 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@88.75,-63,117",
+      "kind": "pinned",
+      "at": [
+        88.75,
+        -63.0,
+        119.7
+      ],
+      "members": [
+        "B-SO",
+        "RS @ 88.75"
+      ],
+      "detail": [
+        "RS @ 88.75 end \u2014 pinned",
+        "B-SO through"
+      ],
+      "added": false,
+      "spread": 7.2
+    },
+    {
+      "joint": "@88.75,3",
+      "kind": "pinned",
+      "at": [
+        88.75,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "shelf SH joist 8"
+      ],
+      "detail": [
+        "B-S through",
+        "shelf SH joist 8 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@88.75,71",
+      "kind": "pinned",
+      "at": [
+        88.75,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "shelf SH joist 8"
+      ],
+      "detail": [
+        "B-1 through",
+        "shelf SH joist 8 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@88.75,185",
+      "kind": "pinned",
+      "at": [
+        88.75,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 3 joist 8"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 3 joist 8 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@99.6346,71",
+      "kind": "pinned",
+      "at": [
+        99.63,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "loft bay 1 joist 6"
+      ],
+      "detail": [
+        "B-1 through",
+        "loft bay 1 joist 6 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@99.6346,128",
+      "kind": "pinned",
+      "at": [
+        99.63,
+        128.0,
+        112.5
+      ],
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 6",
+        "loft bay 2 joist 6"
+      ],
+      "detail": [
+        "B-1A through",
+        "loft bay 1 joist 6 end \u2014 pinned",
+        "loft bay 2 joist 6 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@99.6346,185",
+      "kind": "pinned",
+      "at": [
+        99.63,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 2 joist 6"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 2 joist 6 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@104.094,3",
+      "kind": "pinned",
+      "at": [
+        104.09,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "shelf SH joist 9"
+      ],
+      "detail": [
+        "B-S through",
+        "shelf SH joist 9 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@104.094,71",
+      "kind": "pinned",
+      "at": [
+        104.09,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "shelf SH joist 9"
+      ],
+      "detail": [
+        "B-1 through",
+        "shelf SH joist 9 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@104.094,185",
+      "kind": "pinned",
+      "at": [
+        104.09,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 3 joist 9"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 3 joist 9 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@104.094,268",
+      "kind": "pinned",
+      "at": [
+        104.09,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "loft bay 3 joist 9"
+      ],
+      "detail": [
+        "B-N through",
+        "loft bay 3 joist 9 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "DOOR-W.top",
+      "kind": "pinned",
+      "at": [
+        110.5,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "DOOR-W"
+      ],
+      "detail": [
+        "B-S through",
+        "DOOR-W end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@115.615,71",
+      "kind": "pinned",
+      "at": [
+        115.62,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "loft bay 1 joist 7"
+      ],
+      "detail": [
+        "B-1 through",
+        "loft bay 1 joist 7 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@115.615,128",
+      "kind": "pinned",
+      "at": [
+        115.62,
+        128.0,
+        112.5
+      ],
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 7",
+        "loft bay 2 joist 7"
+      ],
+      "detail": [
+        "B-1A through",
+        "loft bay 1 joist 7 end \u2014 pinned",
+        "loft bay 2 joist 7 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@115.615,185",
+      "kind": "pinned",
+      "at": [
+        115.62,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 2 joist 7"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 2 joist 7 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@119.438,3",
+      "kind": "pinned",
+      "at": [
+        119.44,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "shelf SH joist 10"
+      ],
+      "detail": [
+        "B-S through",
+        "shelf SH joist 10 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@119.438,71",
+      "kind": "pinned",
+      "at": [
+        119.44,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "shelf SH joist 10"
+      ],
+      "detail": [
+        "B-1 through",
+        "shelf SH joist 10 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@119.438,185",
+      "kind": "pinned",
+      "at": [
+        119.44,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 3 joist 10"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 3 joist 10 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@119.438,268",
+      "kind": "pinned",
+      "at": [
+        119.44,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "loft bay 3 joist 10"
+      ],
+      "detail": [
+        "B-N through",
+        "loft bay 3 joist 10 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@129.667,-63,117",
+      "kind": "pinned",
+      "at": [
+        129.67,
+        -63.0,
+        119.7
+      ],
+      "members": [
+        "B-SO",
+        "RS @ 129.67"
+      ],
+      "detail": [
+        "RS @ 129.67 end \u2014 pinned",
+        "B-SO through"
+      ],
+      "added": false,
+      "spread": 7.2
+    },
+    {
+      "joint": "@129.667,268,225.25",
+      "kind": "pinned",
+      "at": [
+        129.67,
+        268.0,
+        233.25
+      ],
+      "members": [
+        "R-W4",
+        "RF @ 129.67"
+      ],
+      "detail": [
+        "R-W4 through",
+        "RF @ 129.67 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@131.596,71",
+      "kind": "pinned",
+      "at": [
+        131.6,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "loft bay 1 joist 8"
+      ],
+      "detail": [
+        "B-1 through",
+        "loft bay 1 joist 8 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@131.596,128",
+      "kind": "pinned",
+      "at": [
+        131.6,
+        128.0,
+        112.5
+      ],
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 8",
+        "loft bay 2 joist 8"
+      ],
+      "detail": [
+        "B-1A through",
+        "loft bay 1 joist 8 end \u2014 pinned",
+        "loft bay 2 joist 8 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@131.596,185",
+      "kind": "pinned",
+      "at": [
+        131.6,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 2 joist 8"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 2 joist 8 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@134.781,3",
+      "kind": "pinned",
+      "at": [
+        134.78,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "shelf SH joist 11"
+      ],
+      "detail": [
+        "B-S through",
+        "shelf SH joist 11 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@134.781,71",
+      "kind": "pinned",
+      "at": [
+        134.78,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "shelf SH joist 11"
+      ],
+      "detail": [
+        "B-1 through",
+        "shelf SH joist 11 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@134.781,185",
+      "kind": "pinned",
+      "at": [
+        134.78,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 3 joist 11"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 3 joist 11 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@134.781,268",
+      "kind": "pinned",
+      "at": [
+        134.78,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "loft bay 3 joist 11"
+      ],
+      "detail": [
+        "B-N through",
+        "loft bay 3 joist 11 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "DOOR-E.top",
+      "kind": "pinned",
+      "at": [
+        144.5,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "DOOR-E"
+      ],
+      "detail": [
+        "B-S through",
+        "DOOR-E end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@147.577,71",
+      "kind": "pinned",
+      "at": [
+        147.58,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "loft bay 1 joist 9"
+      ],
+      "detail": [
+        "B-1 through",
+        "loft bay 1 joist 9 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@147.577,128",
+      "kind": "pinned",
+      "at": [
+        147.58,
+        128.0,
+        112.5
+      ],
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 9",
+        "loft bay 2 joist 9"
+      ],
+      "detail": [
+        "B-1A through",
+        "loft bay 1 joist 9 end \u2014 pinned",
+        "loft bay 2 joist 9 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@147.577,185",
+      "kind": "pinned",
+      "at": [
+        147.58,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 2 joist 9"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 2 joist 9 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@150.125,3",
+      "kind": "pinned",
+      "at": [
+        150.12,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "shelf SH joist 12"
+      ],
+      "detail": [
+        "B-S through",
+        "shelf SH joist 12 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@150.125,71",
+      "kind": "pinned",
+      "at": [
+        150.12,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "shelf SH joist 12"
+      ],
+      "detail": [
+        "B-1 through",
+        "shelf SH joist 12 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@150.125,185",
+      "kind": "pinned",
+      "at": [
+        150.12,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 3 joist 12"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 3 joist 12 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@150.125,268",
+      "kind": "pinned",
+      "at": [
+        150.12,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "loft bay 3 joist 12"
+      ],
+      "detail": [
+        "B-N through",
+        "loft bay 3 joist 12 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@163.558,71",
+      "kind": "pinned",
+      "at": [
+        163.56,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "loft bay 1 joist 10"
+      ],
+      "detail": [
+        "B-1 through",
+        "loft bay 1 joist 10 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@163.558,128",
+      "kind": "pinned",
+      "at": [
+        163.56,
+        128.0,
+        112.5
+      ],
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 10",
+        "loft bay 2 joist 10"
+      ],
+      "detail": [
+        "B-1A through",
+        "loft bay 1 joist 10 end \u2014 pinned",
+        "loft bay 2 joist 10 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@163.558,185",
+      "kind": "pinned",
+      "at": [
+        163.56,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 2 joist 10"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 2 joist 10 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@165.469,3",
+      "kind": "pinned",
+      "at": [
+        165.47,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "shelf SH joist 13"
+      ],
+      "detail": [
+        "B-S through",
+        "shelf SH joist 13 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@165.469,71",
+      "kind": "pinned",
+      "at": [
+        165.47,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "shelf SH joist 13"
+      ],
+      "detail": [
+        "B-1 through",
+        "shelf SH joist 13 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@165.469,185",
+      "kind": "pinned",
+      "at": [
+        165.47,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 3 joist 13"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 3 joist 13 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@165.469,268",
+      "kind": "pinned",
+      "at": [
+        165.47,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "loft bay 3 joist 13"
+      ],
+      "detail": [
+        "B-N through",
+        "loft bay 3 joist 13 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@170.583,268,225.25",
+      "kind": "pinned",
+      "at": [
+        170.58,
+        268.0,
+        233.25
+      ],
+      "members": [
+        "R-W4",
+        "RF @ 170.58"
+      ],
+      "detail": [
+        "R-W4 through",
+        "RF @ 170.58 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "JOIN.X1",
+      "kind": "pinned",
+      "at": [
+        174.53,
+        -63.0,
+        112.5
+      ],
+      "members": [
+        "B-SO",
+        "BR-S-2"
+      ],
+      "detail": [
+        "B-SO through",
+        "BR-S-2 through \u2014 pinned"
+      ],
+      "added": true,
+      "spread": 0.0
+    },
+    {
+      "joint": "@179.538,71",
+      "kind": "pinned",
+      "at": [
+        179.54,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "loft bay 1 joist 11"
+      ],
+      "detail": [
+        "B-1 through",
+        "loft bay 1 joist 11 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@179.538,128",
+      "kind": "pinned",
+      "at": [
+        179.54,
+        128.0,
+        112.5
+      ],
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 11",
+        "loft bay 2 joist 11"
+      ],
+      "detail": [
+        "B-1A through",
+        "loft bay 1 joist 11 end \u2014 pinned",
+        "loft bay 2 joist 11 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@179.538,185",
+      "kind": "pinned",
+      "at": [
+        179.54,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 2 joist 11"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 2 joist 11 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@180.812,3",
+      "kind": "pinned",
+      "at": [
+        180.81,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "shelf SH joist 14"
+      ],
+      "detail": [
+        "B-S through",
+        "shelf SH joist 14 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@180.812,71",
+      "kind": "pinned",
+      "at": [
+        180.81,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "shelf SH joist 14"
+      ],
+      "detail": [
+        "B-1 through",
+        "shelf SH joist 14 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@180.812,185",
+      "kind": "pinned",
+      "at": [
+        180.81,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 3 joist 14"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 3 joist 14 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@180.812,268",
+      "kind": "pinned",
+      "at": [
+        180.81,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "loft bay 3 joist 14"
+      ],
+      "detail": [
+        "B-N through",
+        "loft bay 3 joist 14 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@195.519,71",
+      "kind": "pinned",
+      "at": [
+        195.52,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "loft bay 1 joist 12"
+      ],
+      "detail": [
+        "B-1 through",
+        "loft bay 1 joist 12 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@195.519,128",
+      "kind": "pinned",
+      "at": [
+        195.52,
+        128.0,
+        112.5
+      ],
+      "members": [
+        "B-1A",
+        "loft bay 1 joist 12",
+        "loft bay 2 joist 12"
+      ],
+      "detail": [
+        "B-1A through",
+        "loft bay 1 joist 12 end \u2014 pinned",
+        "loft bay 2 joist 12 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@195.519,185",
+      "kind": "pinned",
+      "at": [
+        195.52,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 2 joist 12"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 2 joist 12 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@196.156,3",
+      "kind": "pinned",
+      "at": [
+        196.16,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "shelf SH joist 15"
+      ],
+      "detail": [
+        "B-S through",
+        "shelf SH joist 15 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@196.156,71",
+      "kind": "pinned",
+      "at": [
+        196.16,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "shelf SH joist 15"
+      ],
+      "detail": [
+        "B-1 through",
+        "shelf SH joist 15 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@196.156,185",
+      "kind": "pinned",
+      "at": [
+        196.16,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "loft bay 3 joist 15"
+      ],
+      "detail": [
+        "B-2 through",
+        "loft bay 3 joist 15 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@196.156,268",
+      "kind": "pinned",
+      "at": [
+        196.16,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "loft bay 3 joist 15"
+      ],
+      "detail": [
+        "B-N through",
+        "loft bay 3 joist 15 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "JOIN.X3",
+      "kind": "pinned",
+      "at": [
+        209.8,
+        -63.0,
+        58.12
+      ],
+      "members": [
+        "BR-S-1",
+        "BR-S-2"
+      ],
+      "detail": [
+        "BR-S-1 through",
+        "BR-S-2 through \u2014 pinned"
+      ],
+      "added": true,
+      "spread": 0.0
+    },
+    {
+      "joint": "BE.small@2.5",
+      "kind": "pinned",
+      "at": [
+        211.5,
+        2.5,
+        159.0
+      ],
+      "members": [
+        "BE.upper",
+        "S3"
+      ],
+      "detail": [
+        "BE.upper end \u2014 pinned",
+        "S3 through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "LT.beam.1.high",
+      "kind": "pinned",
+      "at": [
+        211.5,
+        13.56,
+        159.05
+      ],
+      "members": [
+        "BE.upper",
+        "LT.R01"
+      ],
+      "detail": [
+        "BE.upper through",
+        "LT.R01 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 2.4
+    },
+    {
+      "joint": "LT.beam.2.high",
+      "kind": "pinned",
+      "at": [
+        211.5,
+        35.69,
+        159.14
+      ],
+      "members": [
+        "BE.upper",
+        "LT.R02"
+      ],
+      "detail": [
+        "BE.upper through",
+        "LT.R02 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 2.4
+    },
+    {
+      "joint": "LT.beam.3.high",
+      "kind": "pinned",
+      "at": [
+        211.5,
+        57.81,
+        159.23
+      ],
+      "members": [
+        "BE.upper",
+        "LT.R03"
+      ],
+      "detail": [
+        "BE.upper through",
+        "LT.R03 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 2.4
+    },
+    {
+      "joint": "BE.small@71.0",
+      "kind": "pinned",
+      "at": [
+        211.5,
+        71.0,
+        159.29
+      ],
+      "members": [
+        "BE.upper",
+        "E.clerestory"
+      ],
+      "detail": [
+        "BE.upper through \u2014 pinned",
+        "E.clerestory through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "LT.beam.4.high",
+      "kind": "pinned",
+      "at": [
+        211.5,
+        79.94,
+        159.29
+      ],
+      "members": [
+        "BE.upper",
+        "LT.R04"
+      ],
+      "detail": [
+        "BE.upper through",
+        "LT.R04 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 2.4
+    },
+    {
+      "joint": "LT.beam.5.high",
+      "kind": "pinned",
+      "at": [
+        211.5,
+        102.06,
+        159.29
+      ],
+      "members": [
+        "BE.upper",
+        "LT.R05"
+      ],
+      "detail": [
+        "BE.upper through",
+        "LT.R05 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 2.4
+    },
+    {
+      "joint": "LT.beam.6.high",
+      "kind": "pinned",
+      "at": [
+        211.5,
+        124.19,
+        159.29
+      ],
+      "members": [
+        "BE.upper",
+        "LT.R06"
+      ],
+      "detail": [
+        "BE.upper through",
+        "LT.R06 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 2.4
+    },
+    {
+      "joint": "LT.beam.7.high",
+      "kind": "pinned",
+      "at": [
+        211.5,
+        146.31,
+        159.29
+      ],
+      "members": [
+        "BE.upper",
+        "LT.R07"
+      ],
+      "detail": [
+        "BE.upper through",
+        "LT.R07 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 2.4
+    },
+    {
+      "joint": "LT.beam.8.high",
+      "kind": "pinned",
+      "at": [
+        211.5,
+        168.44,
+        159.29
+      ],
+      "members": [
+        "BE.upper",
+        "LT.R08"
+      ],
+      "detail": [
+        "BE.upper through",
+        "LT.R08 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 2.4
+    },
+    {
+      "joint": "BE.small@185.0",
+      "kind": "pinned",
+      "at": [
+        211.5,
+        185.0,
+        159.29
+      ],
+      "members": [
+        "BE.upper",
+        "E.W3"
+      ],
+      "detail": [
+        "BE.upper through \u2014 pinned",
+        "E.W3 through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "LT.beam.9.high",
+      "kind": "pinned",
+      "at": [
+        211.5,
+        190.56,
+        159.29
+      ],
+      "members": [
+        "BE.upper",
+        "LT.R09"
+      ],
+      "detail": [
+        "BE.upper through",
+        "LT.R09 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 2.4
+    },
+    {
+      "joint": "LT.beam.10.high",
+      "kind": "pinned",
+      "at": [
+        211.5,
+        212.69,
+        159.29
+      ],
+      "members": [
+        "BE.upper",
+        "LT.R10"
+      ],
+      "detail": [
+        "BE.upper through",
+        "LT.R10 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 2.4
+    },
+    {
+      "joint": "LT.beam.11.high",
+      "kind": "pinned",
+      "at": [
+        211.5,
+        234.81,
+        159.29
+      ],
+      "members": [
+        "BE.upper",
+        "LT.R11"
+      ],
+      "detail": [
+        "BE.upper through",
+        "LT.R11 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 2.4
+    },
+    {
+      "joint": "LT.beam.12.high",
+      "kind": "pinned",
+      "at": [
+        211.5,
+        256.94,
+        159.29
+      ],
+      "members": [
+        "BE.upper",
+        "LT.R12"
+      ],
+      "detail": [
+        "BE.upper through",
+        "LT.R12 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 2.4
+    },
+    {
+      "joint": "BE.small@268.0",
+      "kind": "pinned",
+      "at": [
+        211.5,
+        268.0,
+        159.29
+      ],
+      "members": [
+        "BE.upper",
+        "N2"
+      ],
+      "detail": [
+        "BE.upper end \u2014 pinned",
+        "N2 through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "LT.beam.1.low",
+      "kind": "pinned",
+      "at": [
+        247.5,
+        13.56,
+        112.5
+      ],
+      "members": [
+        "BE",
+        "LT.R01"
+      ],
+      "detail": [
+        "BE through",
+        "LT.R01 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 6.95
+    },
+    {
+      "joint": "LT.beam.2.low",
+      "kind": "pinned",
+      "at": [
+        247.5,
+        35.69,
+        112.5
+      ],
+      "members": [
+        "BE",
+        "LT.R02"
+      ],
+      "detail": [
+        "BE through",
+        "LT.R02 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 6.95
+    },
+    {
+      "joint": "LT.beam.3.low",
+      "kind": "pinned",
+      "at": [
+        247.5,
+        57.81,
+        112.5
+      ],
+      "members": [
+        "BE",
+        "LT.R03"
+      ],
+      "detail": [
+        "BE through",
+        "LT.R03 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 6.95
+    },
+    {
+      "joint": "LT.beam.4.low",
+      "kind": "pinned",
+      "at": [
+        247.5,
+        79.94,
+        112.5
+      ],
+      "members": [
+        "BE",
+        "LT.R04"
+      ],
+      "detail": [
+        "BE through",
+        "LT.R04 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 6.95
+    },
+    {
+      "joint": "LT.beam.5.low",
+      "kind": "pinned",
+      "at": [
+        247.5,
+        102.06,
+        112.5
+      ],
+      "members": [
+        "BE",
+        "LT.R05"
+      ],
+      "detail": [
+        "BE through",
+        "LT.R05 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 6.95
+    },
+    {
+      "joint": "LT.beam.6.low",
+      "kind": "pinned",
+      "at": [
+        247.5,
+        124.19,
+        112.5
+      ],
+      "members": [
+        "BE",
+        "LT.R06"
+      ],
+      "detail": [
+        "BE through",
+        "LT.R06 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 6.95
+    },
+    {
+      "joint": "LT.beam.7.low",
+      "kind": "pinned",
+      "at": [
+        247.5,
+        146.31,
+        112.5
+      ],
+      "members": [
+        "BE",
+        "LT.R07"
+      ],
+      "detail": [
+        "BE through",
+        "LT.R07 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 6.95
+    },
+    {
+      "joint": "LT.beam.8.low",
+      "kind": "pinned",
+      "at": [
+        247.5,
+        168.44,
+        112.5
+      ],
+      "members": [
+        "BE",
+        "LT.R08"
+      ],
+      "detail": [
+        "BE through",
+        "LT.R08 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 6.95
+    },
+    {
+      "joint": "LT.beam.9.low",
+      "kind": "pinned",
+      "at": [
+        247.5,
+        190.56,
+        112.5
+      ],
+      "members": [
+        "BE",
+        "LT.R09"
+      ],
+      "detail": [
+        "BE through",
+        "LT.R09 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 6.95
+    },
+    {
+      "joint": "LT.beam.10.low",
+      "kind": "pinned",
+      "at": [
+        247.5,
+        212.69,
+        112.5
+      ],
+      "members": [
+        "BE",
+        "LT.R10"
+      ],
+      "detail": [
+        "BE through",
+        "LT.R10 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 6.95
+    },
+    {
+      "joint": "LT.beam.11.low",
+      "kind": "pinned",
+      "at": [
+        247.5,
+        234.81,
+        112.5
+      ],
+      "members": [
+        "BE",
+        "LT.R11"
+      ],
+      "detail": [
+        "BE through",
+        "LT.R11 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 6.95
+    },
+    {
+      "joint": "LT.beam.12.low",
+      "kind": "pinned",
+      "at": [
+        247.5,
+        256.94,
+        112.5
+      ],
+      "members": [
+        "BE",
+        "LT.R12"
+      ],
+      "detail": [
+        "BE through",
+        "LT.R12 end \u2014 pinned"
+      ],
+      "added": false,
+      "spread": 6.95
+    },
+    {
+      "joint": "@-34,-63",
+      "kind": "welded",
+      "at": [
+        -34.0,
+        -63.0,
+        112.5
+      ],
+      "members": [
+        "B-SO",
+        "BW",
+        "SW0",
+        "W.slope"
+      ],
+      "detail": [
+        "B-SO end",
+        "BW end",
+        "SW0 through",
+        "SW0 end",
+        "W.slope end"
+      ],
+      "added": false,
+      "spread": 7.2
+    },
+    {
+      "joint": "@-34,3",
+      "kind": "welded",
+      "at": [
+        -34.0,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "BW",
+        "W1"
+      ],
+      "detail": [
+        "B-S end",
+        "BW through",
+        "W1 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "W1.top",
+      "kind": "welded",
+      "at": [
+        -34.0,
+        2.5,
+        163.12
+      ],
+      "members": [
+        "R-W1",
+        "W.slope",
+        "W1"
+      ],
+      "detail": [
+        "W.slope through",
+        "W1 end",
+        "R-W1 end",
+        "W1 through"
+      ],
+      "added": false,
+      "spread": 8.05
+    },
+    {
+      "joint": "@-34,71",
+      "kind": "welded",
+      "at": [
+        -34.0,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "BW",
+        "W2"
+      ],
+      "detail": [
+        "BW through",
+        "W2 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@-34,71,194.365",
+      "kind": "welded",
+      "at": [
+        -34.0,
+        71.0,
+        208.52
+      ],
+      "members": [
+        "CT.bottom",
+        "CT.diag.W",
+        "W.slope",
+        "W2"
+      ],
+      "detail": [
+        "CT.bottom end",
+        "CT.diag.W end",
+        "W.slope end",
+        "W2 through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@-34,71,225.25",
+      "kind": "welded",
+      "at": [
+        -34.0,
+        71.0,
+        233.25
+      ],
+      "members": [
+        "CT.top",
+        "W2"
+      ],
+      "detail": [
+        "CT.top end",
+        "W2 through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "W2.top",
+      "kind": "welded",
+      "at": [
+        -34.0,
+        71.0,
+        236.75
+      ],
+      "members": [
+        "W.top",
+        "W2"
+      ],
+      "detail": [
+        "W.top end",
+        "W2 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "BW@128",
+      "kind": "welded",
+      "at": [
+        -34.0,
+        128.0,
+        112.5
+      ],
+      "members": [
+        "B-1A",
+        "BW"
+      ],
+      "detail": [
+        "B-1A end",
+        "BW through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@-34,185,225.25",
+      "kind": "welded",
+      "at": [
+        -34.0,
+        185.0,
+        233.25
+      ],
+      "members": [
+        "R-W3",
+        "W3"
+      ],
+      "detail": [
+        "R-W3 end",
+        "W3 through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "W3.top",
+      "kind": "welded",
+      "at": [
+        -34.0,
+        185.0,
+        236.75
+      ],
+      "members": [
+        "W.top",
+        "W3"
+      ],
+      "detail": [
+        "W.top through",
+        "W3 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@-34,268,225.25",
+      "kind": "welded",
+      "at": [
+        -34.0,
+        268.0,
+        233.25
+      ],
+      "members": [
+        "R-W4",
+        "W4"
+      ],
+      "detail": [
+        "R-W4 end",
+        "W4 through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "W4.top",
+      "kind": "welded",
+      "at": [
+        -34.0,
+        268.0,
+        236.75
+      ],
+      "members": [
+        "W.rear.brace",
+        "W.top",
+        "W4"
+      ],
+      "detail": [
+        "W.rear.brace end",
+        "W.top end",
+        "W4 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@3.75,3",
+      "kind": "welded",
+      "at": [
+        3.75,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "BWI"
+      ],
+      "detail": [
+        "B-S through",
+        "BWI end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@3.75,71",
+      "kind": "welded",
+      "at": [
+        3.75,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "BWI"
+      ],
+      "detail": [
+        "B-1 end",
+        "BWI through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@3.75,128",
+      "kind": "welded",
+      "at": [
+        3.75,
+        128.0,
+        112.5
+      ],
+      "members": [
+        "B-1A",
+        "BWI"
+      ],
+      "detail": [
+        "B-1A through",
+        "BWI through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@3.75,185",
+      "kind": "welded",
+      "at": [
+        3.75,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "BWI"
+      ],
+      "detail": [
+        "B-2 through",
+        "BWI through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@3.75,268",
+      "kind": "welded",
+      "at": [
+        3.75,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "BWI"
+      ],
+      "detail": [
+        "B-N through",
+        "BWI end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "RS @ 6.9167.RW1",
+      "kind": "welded",
+      "at": [
+        6.92,
+        2.5,
+        163.12
+      ],
+      "members": [
+        "R-W1",
+        "RS @ 6.9167"
+      ],
+      "detail": [
+        "RS @ 6.9167 through",
+        "R-W1 through"
+      ],
+      "added": false,
+      "spread": 8.05
+    },
+    {
+      "joint": "@6.91667,185,225.25",
+      "kind": "welded",
+      "at": [
+        6.92,
+        185.0,
+        233.25
+      ],
+      "members": [
+        "R-W3",
+        "RF @ 6.9167"
+      ],
+      "detail": [
+        "R-W3 through",
+        "RF @ 6.9167 through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@16.75,268",
+      "kind": "welded",
+      "at": [
+        16.75,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "N-M2"
+      ],
+      "detail": [
+        "B-N through",
+        "N-M2 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@16.75,268,225.25",
+      "kind": "welded",
+      "at": [
+        16.75,
+        268.0,
+        233.25
+      ],
+      "members": [
+        "N-M2",
+        "R-W4"
+      ],
+      "detail": [
+        "N-M2 end",
+        "R-W4 through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "RS @ 47.833.RW1",
+      "kind": "welded",
+      "at": [
+        47.83,
+        2.5,
+        163.12
+      ],
+      "members": [
+        "R-W1",
+        "RS @ 47.833"
+      ],
+      "detail": [
+        "RS @ 47.833 through",
+        "R-W1 through"
+      ],
+      "added": false,
+      "spread": 8.05
+    },
+    {
+      "joint": "@47.8333,185,225.25",
+      "kind": "welded",
+      "at": [
+        47.83,
+        185.0,
+        233.25
+      ],
+      "members": [
+        "R-W3",
+        "RF @ 47.833"
+      ],
+      "detail": [
+        "R-W3 through",
+        "RF @ 47.833 through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "RS @ 88.75.RW1",
+      "kind": "welded",
+      "at": [
+        88.75,
+        2.5,
+        163.12
+      ],
+      "members": [
+        "R-W1",
+        "RS @ 88.75"
+      ],
+      "detail": [
+        "RS @ 88.75 through",
+        "R-W1 through"
+      ],
+      "added": false,
+      "spread": 8.05
+    },
+    {
+      "joint": "@88.75,185,225.25",
+      "kind": "welded",
+      "at": [
+        88.75,
+        185.0,
+        233.25
+      ],
+      "members": [
+        "R-W3",
+        "RF @ 88.75"
+      ],
+      "detail": [
+        "R-W3 through",
+        "RF @ 88.75 through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "RS @ 129.67.RW1",
+      "kind": "welded",
+      "at": [
+        129.67,
+        2.5,
+        163.12
+      ],
+      "members": [
+        "R-W1",
+        "RS @ 129.67"
+      ],
+      "detail": [
+        "RS @ 129.67 through",
+        "R-W1 through"
+      ],
+      "added": false,
+      "spread": 8.05
+    },
+    {
+      "joint": "@129.667,185,225.25",
+      "kind": "welded",
+      "at": [
+        129.67,
+        185.0,
+        233.25
+      ],
+      "members": [
+        "R-W3",
+        "RF @ 129.67"
+      ],
+      "detail": [
+        "R-W3 through",
+        "RF @ 129.67 through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@145.5,-63",
+      "kind": "welded",
+      "at": [
+        169.5,
+        -63.0,
+        112.5
+      ],
+      "members": [
+        "B-SO",
+        "S1"
+      ],
+      "detail": [
+        "B-SO through",
+        "S1 through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "RS @ 170.58.RW1",
+      "kind": "welded",
+      "at": [
+        170.58,
+        2.5,
+        163.12
+      ],
+      "members": [
+        "R-W1",
+        "RS @ 170.58"
+      ],
+      "detail": [
+        "RS @ 170.58 through",
+        "R-W1 through"
+      ],
+      "added": false,
+      "spread": 8.05
+    },
+    {
+      "joint": "@170.583,185,225.25",
+      "kind": "welded",
+      "at": [
+        170.58,
+        185.0,
+        233.25
+      ],
+      "members": [
+        "R-W3",
+        "RF @ 170.58"
+      ],
+      "detail": [
+        "R-W3 through",
+        "RF @ 170.58 through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@211.5,-63",
+      "kind": "welded",
+      "at": [
+        211.5,
+        -63.0,
+        112.5
+      ],
+      "members": [
+        "B-SO",
+        "E.slope"
+      ],
+      "detail": [
+        "B-SO through",
+        "E.slope end"
+      ],
+      "added": false,
+      "spread": 7.2
+    },
+    {
+      "joint": "@211.5,3",
+      "kind": "welded",
+      "at": [
+        211.5,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "S3"
+      ],
+      "detail": [
+        "B-S through",
+        "S3 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "S3.top",
+      "kind": "welded",
+      "at": [
+        211.5,
+        2.5,
+        163.12
+      ],
+      "members": [
+        "E.slope",
+        "R-W1",
+        "S3"
+      ],
+      "detail": [
+        "E.slope through",
+        "S3 end",
+        "R-W1 end",
+        "S3 through"
+      ],
+      "added": false,
+      "spread": 8.05
+    },
+    {
+      "joint": "@211.5,71",
+      "kind": "welded",
+      "at": [
+        211.5,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "E.clerestory"
+      ],
+      "detail": [
+        "B-1 through",
+        "E.clerestory end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@211.5,71,194.365",
+      "kind": "welded",
+      "at": [
+        211.5,
+        71.0,
+        208.52
+      ],
+      "members": [
+        "CT.bottom",
+        "CT.diag.E",
+        "E.clerestory",
+        "E.slope"
+      ],
+      "detail": [
+        "CT.bottom end",
+        "CT.diag.E end",
+        "E.clerestory through",
+        "E.slope end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@211.5,71,225.25",
+      "kind": "welded",
+      "at": [
+        211.5,
+        71.0,
+        233.25
+      ],
+      "members": [
+        "CT.top",
+        "E.clerestory"
+      ],
+      "detail": [
+        "CT.top end",
+        "E.clerestory through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@211.5,71,228.75",
+      "kind": "welded",
+      "at": [
+        211.5,
+        71.0,
+        236.75
+      ],
+      "members": [
+        "E.clerestory",
+        "E.top"
+      ],
+      "detail": [
+        "E.clerestory end",
+        "E.top end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@211.5,185",
+      "kind": "welded",
+      "at": [
+        211.5,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "E.W3"
+      ],
+      "detail": [
+        "B-2 through",
+        "E.W3 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@211.5,185,225.25",
+      "kind": "welded",
+      "at": [
+        211.5,
+        185.0,
+        233.25
+      ],
+      "members": [
+        "E.W3",
+        "R-W3"
+      ],
+      "detail": [
+        "E.W3 through",
+        "R-W3 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@211.5,185,228.75",
+      "kind": "welded",
+      "at": [
+        211.5,
+        185.0,
+        236.75
+      ],
+      "members": [
+        "E.W3",
+        "E.top"
+      ],
+      "detail": [
+        "E.W3 end",
+        "E.top through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "@211.5,268",
+      "kind": "welded",
+      "at": [
+        211.5,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "N2"
+      ],
+      "detail": [
+        "B-N through",
+        "N2 through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "N2.top",
+      "kind": "welded",
+      "at": [
+        211.5,
+        268.0,
+        236.75
+      ],
+      "members": [
+        "E.top",
+        "N2"
+      ],
+      "detail": [
+        "E.top end",
+        "N2 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "EF@-6",
+      "kind": "welded",
+      "at": [
+        247.5,
+        2.5,
+        112.5
+      ],
+      "members": [
+        "B-S",
+        "BE",
+        "E-S3"
+      ],
+      "detail": [
+        "B-S end",
+        "BE through",
+        "E-S3 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "EF@71",
+      "kind": "welded",
+      "at": [
+        247.5,
+        71.0,
+        112.5
+      ],
+      "members": [
+        "B-1",
+        "BE"
+      ],
+      "detail": [
+        "B-1 end",
+        "BE through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "EF@128",
+      "kind": "welded",
+      "at": [
+        247.5,
+        128.0,
+        112.5
+      ],
+      "members": [
+        "B-1A",
+        "BE"
+      ],
+      "detail": [
+        "B-1A end",
+        "BE through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "EF@185",
+      "kind": "welded",
+      "at": [
+        247.5,
+        185.0,
+        112.5
+      ],
+      "members": [
+        "B-2",
+        "BE"
+      ],
+      "detail": [
+        "B-2 end",
+        "BE through"
+      ],
+      "added": false,
+      "spread": 0.0
+    },
+    {
+      "joint": "EF@268",
+      "kind": "welded",
+      "at": [
+        247.5,
+        268.0,
+        112.5
+      ],
+      "members": [
+        "B-N",
+        "BE",
+        "E-N2"
+      ],
+      "detail": [
+        "B-N end",
+        "BE end",
+        "E-N2 end"
+      ],
+      "added": false,
+      "spread": 0.0
+    }
   ],
   "sections": {
     "B-SO": "W12X16",

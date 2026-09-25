@@ -8,6 +8,7 @@ import owner_revisions as OR
 import cost
 import frame as F
 import moment_frames as MF
+import connections as CN
 f,s,g=L.build()
 stage=phasing.before_demo(f,defer=set(OR.DEFER_BEFORE_DEMO),
                           include=set(OR.BUILD_BEFORE_DEMO))
@@ -21,6 +22,10 @@ pin_groups={group:[m for m in f.members if f.group(m)==group]
 pin_members=sum(len(v) for v in pin_groups.values())
 quantities=cost.measure(f)
 moment_audit=MF.audit(f)
+joints=CN.schedule(f,g['connections_added'])
+joint_counts={k:sum(r['kind']==k for r in joints) for k in CN.KINDS}
+joins=g['connections_added']
+join_list='; '.join(f"{' × '.join(j['members'])} ({j['kind']})" for j in joins)
 rows=''.join(f'<tr><td>{m}</td><td>{r.members[m].section}</td><td>{r.members[m].dcr:.3f}</td><td>{r.members[m].combo}</td></tr>' for m in ['BE.upper','BE','E.clerestory','E.W3',worst.member])
 report=f'''<style>body{{font-family:system-ui;margin:16px;color:#222}}#frameplot{{height:76vh!important;min-height:480px}}.notes{{max-width:1080px;line-height:1.55;margin:24px auto}}td,th{{padding:8px;border-bottom:1px solid #ddd;text-align:left}}table{{border-collapse:collapse;width:100%}}</style>
 <section class="notes"><h2>Lean-to rafters — steel-supported fit</h2>
@@ -32,7 +37,10 @@ report=f'''<style>body{{font-family:system-ui;margin:16px;color:#222}}#frameplot
 <table><tr><th>Member</th><th>Section</th><th>Checked ratio</th><th>Governing combination</th></tr>{rows}</table>
 <p>Continuous HSS5×5×¼ east posts, BE.upper W6×8.5, E.top HSS4×4×¼ and BE W14×22 remain. Lower W1/W2/S3 remain removed; no added roof-bay braces. Corrected solar rafters, steel door posts, existing information controls and cabinets remain.</p>
 <h2>Connection assumptions in this model</h2>
-<p><b>{pin_members} members are pin-ended:</b> {len(pin_groups['Bracing'])} braces, {len(pin_groups['Joists'])} wood joists and {len(pin_groups['Rafters'])} rafters. That creates {2*pin_members} released member ends. There are also <b>{len(f.pinned_ends)} explicitly declared pin locations</b>—the two steel door-post heads and four simple-support locations along BE.upper—and <b>{len(f.supports)} pinned bases</b>. The remaining modeled joints transfer moment unless an end release says otherwise.</p>
+<p><b>{pin_members} members are pin-ended:</b> {len(pin_groups['Bracing'])} braces, {len(pin_groups['Joists'])} wood joists and {len(pin_groups['Rafters'])} rafters. That creates {2*pin_members} released member ends. There are also <b>{len(f.pinned_ends)} explicitly declared pin locations</b>—the two steel door-post heads, four simple-support locations along BE.upper and the brace hinges at the new crossing joints—and <b>{len(f.supports)} pinned bases</b>. The remaining modeled joints transfer moment unless an end release says otherwise.</p>
+<h2>Connections</h2>
+<p>Tick <b>Connections</b> above the model to put a dot on every one of the <b>{len(joints)} physical joints</b>, coloured by the connection the analysis assumes: <b style="color:{CN.KINDS['welded'][0]}">{joint_counts['welded']} welded</b> (every attaching end moment-continuous), <b style="color:{CN.KINDS['mixed'][0]}">{joint_counts['mixed']} welded joints with pinned attachments</b> (for example a welded beam-column joint receiving a bolted brace), <b style="color:{CN.KINDS['pinned'][0]}">{joint_counts['pinned']} pinned</b> (bolted gussets, rafter seats, joist hangers) and <b>{joint_counts['base']} pinned bases</b>. The members dim while the dots are on; hover a dot to see which member ends meet there and which are released.</p>
+<p><b>Connection audit.</b> Every member end was checked against the solid of every other member. Where an end touched another member, or two members passed through each other, with no joint in the model, a joint was added: {join_list}. The south brace BR-S-2 ran straight through the B-SO web and now connects to it with a pinned gusset; the S1 column top, the BR-S-2 head and the RS @ 170.58 solar-rafter seat now form one joint; both X-brace pairs are bolted at their crossings. The brace is released at each new joint, and the crossing nodes are not credited as brace points in the member checks. After re-running the analysis the maximum ratio is {d['max_dcr']:.3f} (0.896 before); RS @ 170.58 went from 0.558 to {r.members['RS @ 170.58'].dcr:.3f} because it now shares the S1 column head. “Welded” means moment-continuous in the solver, not a designed weld.</p>
 <p><b>No actual fastener schedule exists.</b> The cost model counts {quantities.steel_joints} fitted steel ends and carries a budgeting allowance for about {round(quantities.steel_joints/2)} field-bolted connection locations, plus shop fitting/welding and end plates on {quantities.beams} W-shape pieces. Those are cost placeholders, not bolt counts, screw counts, weld sizes or approved joint details. The {len(f.links)} short analytical links transfer loads across bearing offsets; they do not prove that the physical connection is welded or moment-resisting.</p>
 <p><b>Moment-frame designation:</b> the new “What are the moment frames?” view marks two intentional ground-to-floor longitudinal frames in red: the west <b>BW</b> line (BW with SW0/W1/W2/W3/W4) and the east <b>BE</b> line (BE with E-S2/E-S3/E-N2). Green members are diagonal bracing; blue members are deliberately simple/pinned. The <b>{moment_audit['counts']['unassigned']} amber members</b> are the important warning: the solver currently transfers moment through them, but they have not been assigned to a deliberate moment frame. The upper roof and clerestory are still largely in this category and must be released or formally added to the lateral system before connection detailing.</p>
 <table><tr><th style="color:#c83e4d">Red</th><td>designated moment-frame member</td><th style="color:#6b8e23">Green</th><td>braced-frame member</td></tr><tr><th style="color:#377eb8">Blue</th><td>simple or pin-ended</td><th style="color:#d89028">Amber</th><td>rigid in solver; lateral role unresolved</td></tr></table>
@@ -57,7 +65,7 @@ SV._member_mesh=mesh
 p=L.OUT/'lean-to-frame-3d.html'
 summary=dict(removal={},frame_model='Lean-to steel rafters + continuous east posts · CURRENT PRELIMINARY ANALYSIS',live_case='L100',exposure='C',basis=dict(loft_live={'L100':100},wind={'V':96}))
 SV.write(f,r,{},dict(sections={}),[],summary,p,cabinets=True,report_html=report,
-         proposed_seats=g['seats'],before_demo=set(stage['build']))
+         proposed_seats=g['seats'],before_demo=set(stage['build']),connections=joints)
 h=p.read_text().replace('Garage frame &mdash; members at true section size','Lean-to steel rafters + continuous east posts')
 h=h.replace('How hard it is working','How hard is it working?').replace('What governs it"','What governs it?"')
 h=h.replace('</body>',"<script>Plotly.relayout('frameplot',{'scene.camera.eye':{x:1.8,y:-1.5,z:1.0}}).then(()=>Plotly.Plots.resize('frameplot'));</script></body>")

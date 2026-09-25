@@ -100,6 +100,68 @@ def _member_mesh(a, b, sec: S.Section):
     return verts, faces
 
 
+def _sphere(c, r, level=1):
+    """An icosphere of radius r at c: vertices and triangles."""
+    t = (1.0 + 5 ** 0.5) / 2.0
+    v = [(-1, t, 0), (1, t, 0), (-1, -t, 0), (1, -t, 0), (0, -1, t), (0, 1, t),
+         (0, -1, -t), (0, 1, -t), (t, 0, -1), (t, 0, 1), (-t, 0, -1), (-t, 0, 1)]
+    f = [(0, 11, 5), (0, 5, 1), (0, 1, 7), (0, 7, 10), (0, 10, 11), (1, 5, 9),
+         (5, 11, 4), (11, 10, 2), (10, 7, 6), (7, 1, 8), (3, 9, 4), (3, 4, 2),
+         (3, 2, 6), (3, 6, 8), (3, 8, 9), (4, 9, 5), (2, 4, 11), (6, 2, 10),
+         (8, 6, 7), (9, 8, 1)]
+    v = [list(p) for p in v]
+
+    def midpoint(a, b, cache):
+        key = (min(a, b), max(a, b))
+        if key not in cache:
+            v.append([(v[a][k] + v[b][k]) / 2 for k in range(3)])
+            cache[key] = len(v) - 1
+        return cache[key]
+    for _ in range(level):
+        cache, nf = {}, []
+        for a, b, cc in f:
+            ab, bc, ca = (midpoint(a, b, cache), midpoint(b, cc, cache),
+                          midpoint(cc, a, cache))
+            nf += [(a, ab, ca), (b, bc, ab), (cc, ca, bc), (ab, bc, ca)]
+        f = nf
+    out = []
+    for p in v:
+        n = math.sqrt(sum(x * x for x in p))
+        out.append([c[k] + r * p[k] / n for k in range(3)])
+    return out, f
+
+
+def _connection_traces(rows, radius=4.0):
+    """One sphere mesh per connection kind, with hover text on every vertex."""
+    import connections as CN
+    traces = []
+    for kind, (color, label) in CN.KINDS.items():
+        verts, faces, text = [], [], []
+        for r in rows:
+            if r['kind'] != kind:
+                continue
+            v, f = _sphere(r['at'], radius)
+            base = len(verts)
+            verts += v
+            faces += [(a + base, b + base, c + base) for a, b, c in f]
+            tip = (f'<b>{label}</b><br>joint {r["joint"]} · x {r["at"][0]:g}, '
+                   f'y {r["at"][1]:g}, z {r["at"][2]:g}<br>'
+                   + '<br>'.join(r['detail'])
+                   + ('<br><b>joint added by the 2026-09-24 connection audit</b>'
+                      if r['added'] else ''))
+            text += [tip] * len(v)
+        if not verts:
+            continue
+        traces.append(go.Mesh3d(
+            x=[p[0] for p in verts], y=[p[1] for p in verts], z=[p[2] for p in verts],
+            i=[q[0] for q in faces], j=[q[1] for q in faces], k=[q[2] for q in faces],
+            color=color, opacity=1.0, flatshading=False, text=text,
+            lighting=dict(ambient=0.55, diffuse=0.8, specular=0.35, roughness=0.5),
+            hovertemplate='%{text}<extra></extra>', name=f'connections: {kind}',
+            showlegend=False, visible=False))
+    return traces
+
+
 # --------------------------------------------------------------------------
 # the page
 # --------------------------------------------------------------------------
@@ -144,7 +206,8 @@ def _header_html(summary: dict) -> str:
 
 
 def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
-                   stage, extra_range, fixed_views=None) -> str:
+                   stage, extra_range, fixed_views=None,
+                   conn_range=None, conn_rows=None) -> str:
     """A row of real checkboxes that drive trace visibility.
 
     These were Plotly ``updatemenus`` buttons with ``args``/``args2``, which is
@@ -162,7 +225,8 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     groups = dict(n=n_traces, frame=n_frame,
                   wall=wall_i, roof=roof_i,
                   stage=list(stage) if stage else None,
-                  extra=list(extra_range) if extra_range else None)
+                  extra=list(extra_range) if extra_range else None,
+                  conn=list(conn_range) if conn_range else None)
     boxes = []
     if wall_i is not None:
         boxes.append(('walls', 'Hide existing walls', False))
@@ -174,6 +238,8 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
         boxes.append(('stage', 'Pre-demo frame', False))
     if extra_range:
         boxes.append(('extra', 'Cabinet layout', False))
+    if conn_range:
+        boxes.append(('conn', 'Connections', False))
     if not boxes:
         return ''
     items = ''.join(
@@ -194,6 +260,21 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
                     f'</select></label><span id="fixed_status" class="fixedstatus">'
                     f'Choose a standing location; drag the model to look around.</span>'
                     if fixed_views else '')
+    conn_legend = ''
+    if conn_range:
+        import connections as CN
+        rows = conn_rows or []
+        keys = ''.join(
+            f'<span class="ckey"><i style="background:{color}"></i>{label} '
+            f'<b>{sum(r["kind"] == kind for r in rows)}</b></span>'
+            for kind, (color, label) in CN.KINDS.items())
+        added = sum(r['added'] for r in rows)
+        conn_legend = (f'<span id="conn_legend" class="connlegend" style="display:none">'
+                       f'{keys}<span class="cnote">{len(rows)} joints. Frame is '
+                       f'dimmed so the dots show; hover a dot for its members. '
+                       f'{added} joints were added where members touched or '
+                       f'crossed without a joint. "Welded" is the solver\'s '
+                       f'moment-continuous assumption, not a designed weld.</span></span>')
     walk_toggle = (f'<label class="cbx"><input type="checkbox" id="cb_walk" '
                    f'onchange="toggleWalkthrough()"> Walkthrough mode</label>'
                    if fixed_views else '')
@@ -203,6 +284,7 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
         three_script = f'<script>{three_path.read_text()}</script>'
     return f"""
 <div id="viewbar">{items}
+  {conn_legend}
   {stage_hint}
   {walk_toggle}
   {fixed_select}
@@ -228,6 +310,12 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
                            flex: 1 1 260px; min-width: 230px; }}
   #viewbar .hint {{ color: #5c6672; font-size: 12px; flex: 1 1 260px;
                     min-width: 220px; }}
+  #viewbar .connlegend {{ flex: 1 1 100%; display: flex; flex-wrap: wrap;
+                          gap: 4px 16px; font-size: 12px; align-items: center; }}
+  #viewbar .ckey {{ display: inline-flex; align-items: center; gap: 6px; }}
+  #viewbar .ckey i {{ width: 11px; height: 11px; border-radius: 50%;
+                      display: inline-block; }}
+  #viewbar .cnote {{ color: #5c6672; flex: 1 1 320px; }}
   #viewbar .phasehint {{ color: #5c6672; font-size: 12px; flex: 1 1 260px;
                          min-width: 220px; }}
   @media (prefers-color-scheme: dark) {{
@@ -627,9 +715,21 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
       var show = on('extra');
       for (var i = VIS.extra[0]; i < VIS.extra[1]; i++) vis[i] = show;
     }}
+    var conn = VIS.conn && on('conn');
+    if (VIS.conn) {{
+      for (var i = VIS.conn[0]; i < VIS.conn[1]; i++) vis[i] = conn;
+      var legend = document.getElementById('conn_legend');
+      if (legend) legend.style.display = conn ? 'flex' : 'none';
+    }}
     var idx = [];
     for (var i = 0; i < VIS.n; i++) idx.push(i);
     Plotly.restyle(gd, {{visible: vis}}, idx);
+    if (VIS.conn) {{
+      // Dim the members so dots inside a beam or column still read.
+      var frameIdx = [];
+      for (var i = 0; i < VIS.frame; i++) frameIdx.push(i);
+      Plotly.restyle(gd, {{opacity: conn ? 0.3 : 1.0}}, frameIdx);
+    }}
     syncWalkVisibility(vis);
   }}
   document.addEventListener('keydown', walkKeyHandler);
@@ -644,7 +744,8 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
           show_existing: bool = True, before_demo: set | None = None,
           lean_to: dict | None = None, plan_png: Path | None = None,
           cabinets: bool = True, report_html: str | None = None,
-          proposed_seats: list | None = None) -> None:
+          proposed_seats: list | None = None,
+          connections: list | None = None) -> None:
     verdicts = {r.member: r for r in removal}
     proposals = down.get('sections', {}) if down.get('verified') else {}
     removed = set(summary['removal'].get('cumulative', {}).get('removed', []))
@@ -845,6 +946,14 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
                                detail=f'South door center · 1.18 in. south · x {door_x:g}, y {door_y:.2f}'),
         }
 
+    # Connection dots: one sphere per physical joint, coloured by the kind of
+    # connection the analysis assumes there. Hidden until the checkbox is on.
+    conn_range = None
+    if connections:
+        first = len(traces)
+        traces += _connection_traces(connections)
+        conn_range = (first, len(traces))
+
     # Restyling 'color' with a null resets that trace to Plotly's default, so
     # every trace past the members carries its own colour into each mode.
     def own_color(t):
@@ -888,7 +997,8 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
                         _header_html(summary)
                         + _controls_html(len(traces), n_frame, wall_i, roof_i,
                                          stage_visible if before_demo else None,
-                                         extra_range, fixed_views)
+                                         extra_range, fixed_views,
+                                         conn_range, connections)
                         + f'<div id="{PLOT_ID}"', 1)
     extra = report_html if report_html is not None else viewer._legend_html(summary)
     if cabinet_rows:
