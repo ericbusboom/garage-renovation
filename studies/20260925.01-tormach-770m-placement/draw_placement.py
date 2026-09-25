@@ -43,7 +43,8 @@ def r(a, x0, x1, y0, y1, fc, ec='#444', label=None, ls='-', alpha=1, fs=7, lw=0.
         a.text((x0 + x1) / 2, (y0 + y1) / 2, label, ha='center', va='center', fontsize=fs)
 
 
-def plan(ax):
+def base_plan(ax):
+    """New envelope, removed walls, posts and the current ground-floor layout."""
     T, W, L = EX.THICK, EX.W, EX.L
     old, new, slab = '#bdb8ae', '#8c9aa6', '#eef1f3'
     r(ax, W3[0], 0, W3[1], W4[1], slab, ec='none')
@@ -89,6 +90,13 @@ def plan(ax):
     r(ax, 149.5, 207.5, 6, 36, '#cfdce4', label='laundry')
     for c in CB.FIRST_FLOOR_CABINETS:
         r(ax, c['x0'], c['x1'], c['y0'], c['y1'], tan, label=c['n'])
+    ax.set_xlim(-45, 258); ax.set_ylim(-5, 288); ax.set_aspect('equal'); ax.grid(alpha=.25)
+    ax.set_xlabel('east (in.)', fontsize=7); ax.set_ylabel('north (in.)', fontsize=7)
+    ax.tick_params(labelsize=6)
+
+
+def plan(ax):
+    base_plan(ax)
     # Option A machine and clearances.
     r(ax, MX1, MX1 + RIGHT_CLEAR, MY0, MY1, '#fff4e0', ec='#c98', ls=':')
     ax.text(MX1 + RIGHT_CLEAR / 2, 240, '18 in.\ncabinet\ndoor +\nconsole',
@@ -106,11 +114,8 @@ def plan(ax):
     ax.text((MX0 + MX1 + RIGHT_CLEAR) / 2, 279.5,
             f'{MACHINE_W + RIGHT_CLEAR:g} in. = {MACHINE_W:g} + {RIGHT_CLEAR:g}',
             fontsize=7, ha='center')
-    ax.set_xlim(-45, 258); ax.set_ylim(-5, 288); ax.set_aspect('equal'); ax.grid(alpha=.25)
     ax.set_title('Ground floor with the NW pop-out (W3–W4–N1) and north wall at y = 268',
                  fontsize=9)
-    ax.set_xlabel('east (in.)', fontsize=7); ax.set_ylabel('north (in.)', fontsize=7)
-    ax.tick_params(labelsize=6)
 
 
 def elevation(ev):

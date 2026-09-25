@@ -1,4 +1,4 @@
-# Tormach 770M placement
+# Tormach placement (770M, then PCNC 440)
 
 **Status:** working study; not yet in the 3-D model.
 
@@ -34,8 +34,36 @@ The plan uses the new envelope, not the old garage:
 - The door (about x −31 to −4, 0 to 80 in.) is crossed by both BR-N-1 and BR-N-2.
 - It would need a portal frame or a relocated brace, followed by a lateral re-analysis.
 
+## PCNC 440 (current direction)
+
+Tormach's space-planning drawing is D35684, "PCNC 440 w Stand and Enclosure":
+
+- **Typical footprint:** 42 × 36 in., 72 in. tall, about 600 lb equipped.
+- **ATC:** hangs off the left of the head, so plan 46 × 36 in. to be safe.
+- **Console:** mounts on the wall, so no side clearance is needed.
+- **Front:** 24 in. for one person, 36 in. for two.
+
+The machine and its 36 in. front zone fit entirely inside the NW pop-out, which has about 69 × 78 in. clear.
+
+**Option 1 (recommended): back on the W3–W4 wall, facing east.**
+
+- **Machine position:** x −31.5 to 4.5, y 219.5 to 265.5.
+- **Front zone:** runs east to x 40.5, which is the N1 line.
+- **Console:** on the north wall, at the operator's right.
+- **ATC side:** faces south into a free strip about 69 × 32 in. along the W3 wall. That strip can take a bench or tooling cart and leaves room to service the ATC.
+
+**Option 2: back on the W4–N1 wall, facing south.**
+
+- **Machine position:** x −31.5 to 14.5, y 229.5 to 265.5.
+- **Front zone:** reaches y 193.5, which leaves 6 in. to the W3 wall.
+- **ATC side:** sits against the west wall.
+- **Spare space:** only a 23 in. strip east of the machine.
+
+In both options the X-brace in the W4–N1 wall stays as it is. The only wall attachment is the console.
+
 ## Files
 
+- `draw_440.py` regenerates `tormach-440-popout.png` and `.pdf`: the two 440 orientations.
 - `draw_placement.py` regenerates `tormach-popout.png` and `.pdf`: the plan, plus the W4–N1 wall elevation.
 
   ```sh
