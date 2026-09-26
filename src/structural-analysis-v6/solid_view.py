@@ -405,7 +405,7 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     status.textContent = 'Walkthrough · x ' + walk.position[0].toFixed(1) +
       ', y ' + walk.position[1].toFixed(1) +
       ' · 6 ft head point · FOV ' + Math.round(walk.fov) +
-      '° · arrows move · drag to look · wheel changes FOV';
+      '° · ↑↓ move · ←→ turn · drag to look up/down · wheel changes FOV';
   }}
   function applyWalkFov(gd) {{
     if (!walk.camera) return;
@@ -548,26 +548,21 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     capture.tabIndex = 0;
     capture.setAttribute('role', 'application');
     capture.setAttribute('aria-label',
-      'Walkthrough view. Arrow keys move, drag to look, mouse wheel changes field of view.');
+      'Walkthrough view. Up and down arrows move, left and right arrows turn, drag to look up or down, mouse wheel changes field of view.');
     capture.style.cssText = 'display:none;position:absolute;inset:0;z-index:20;' +
-      'cursor:grab;touch-action:none;outline:none;background:transparent;';
+      'cursor:ns-resize;touch-action:none;outline:none;background:transparent;';
     capture.addEventListener('pointerdown', function(e) {{
       if (!walk.enabled || e.button !== 0) return;
       walk.dragging = true;
-      walk.lastX = e.clientX;
       walk.lastY = e.clientY;
-      capture.style.cursor = 'grabbing';
       capture.focus({{preventScroll: true}});
       capture.setPointerCapture(e.pointerId);
       e.preventDefault();
     }});
     capture.addEventListener('pointermove', function(e) {{
       if (!walk.enabled || !walk.dragging) return;
-      var dx = e.clientX - walk.lastX;
       var dy = e.clientY - walk.lastY;
-      walk.lastX = e.clientX;
       walk.lastY = e.clientY;
-      walk.yaw += dx * 0.005;
       walk.pitch = Math.max(-1.35, Math.min(1.35, walk.pitch - dy * 0.004));
       updateWalkCamera();
       e.preventDefault();
@@ -575,7 +570,7 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     var endDrag = function(e) {{
       if (!walk.dragging) return;
       walk.dragging = false;
-      capture.style.cursor = 'grab';
+      capture.style.cursor = 'ns-resize';
       if (e.pointerId !== undefined && capture.hasPointerCapture(e.pointerId))
         capture.releasePointerCapture(e.pointerId);
     }};
@@ -641,17 +636,18 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     var tag = e.target && e.target.tagName;
     if (tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA' || tag === 'BUTTON') return;
     var forward = [Math.sin(walk.yaw), Math.cos(walk.yaw)];
-    var right = [Math.cos(walk.yaw), -Math.sin(walk.yaw)];
     var step = e.shiftKey ? 18.0 : 6.0;
+    // Left/right turn in place; the mouse only tilts the view up and down.
+    var turn = (e.shiftKey ? 15 : 5) * Math.PI / 180;
     var dx = 0, dy = 0;
     if (e.key === 'ArrowUp' || e.key === 'w' || e.key === 'W') {{
       dx = forward[0] * step; dy = forward[1] * step;
     }} else if (e.key === 'ArrowDown' || e.key === 's' || e.key === 'S') {{
       dx = -forward[0] * step; dy = -forward[1] * step;
     }} else if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {{
-      dx = right[0] * step; dy = right[1] * step;
+      walk.yaw += turn;
     }} else if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {{
-      dx = -right[0] * step; dy = -right[1] * step;
+      walk.yaw -= turn;
     }} else return;
     walk.position[0] += dx;
     walk.position[1] += dy;
