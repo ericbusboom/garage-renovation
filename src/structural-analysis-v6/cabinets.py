@@ -232,17 +232,22 @@ ITEMS = [
 #: is intentionally an assumption: 12U gives 21 in. of rail height, represented
 #: here by a 24 in. tall cabinet, and the owner selected the shallow 14 in. depth.
 SHED_ITEMS = [
-    dict(n='PW', kind='battery', wall='south', align='east',
-         width=24.0, depth=7.6, h=43.5, z=12.0,
-         what='Tesla Powerwall 3 · 291 lb · moved from the loft wall'),
+    # 2026-09-25 (owner): the Powerwall moves to the east wall, where the rack
+    # was, over the water heater. North end in the corner; top at 78 in. to
+    # line up with the panels, which leaves 5.5 in. over the heater.
+    dict(n='PW', kind='battery', wall='east', along=63.0 - 24.0,
+         width=24.0, depth=7.6, h=43.5, z=78.0 - 43.5,
+         what='Tesla Powerwall 3 · 291 lb · east wall, over the water heater'),
     dict(n='EP', kind='electrical', wall='north', along=18.5,
          width=16.0, depth=5.0, h=30.0, z=48.0,
          what='100 A electrical panel · conceptual 16 × 5 × 30 in. envelope'),
     dict(n='SPK', kind='sprinkler', wall='north', along=40.5,
          width=18.0, depth=12.0, h=24.0, z=54.0,
          what='sprinkler equipment cabinet · conceptual 18 × 12 × 24 in. envelope'),
-    dict(n='RACK', kind='rack', wall='east', along=27.0,
-         width=22.0, depth=14.0, h=24.0, z=54.0,
+    # The rack joins the sprinkler cabinet: centred over it on the north wall,
+    # standing on its top at 78 in., clear of the B-S soffit at about 106.
+    dict(n='RACK', kind='rack', wall='north', along=40.5 - 2.0,
+         width=22.0, depth=14.0, h=24.0, z=78.0,
          what='wall-mounted 19 in. rack · conceptual 12U · 14 in. deep'),
     dict(n='WH', kind='water_heater', wall='floor', corner='northeast',
          width=20.0, depth=20.0, h=29.0, z=0.0, shape='cylinder',
@@ -1369,13 +1374,15 @@ def shed_html(frame: framemod.Frame) -> str:
 <div class="notes">
   <h2>Concrete shed equipment</h2>
   <p>The shed is enclosed on its south and east sides with conceptual
-  {SHED_WALL_T:g}-inch infill walls. The Powerwall is tight to the southeast
-  corner and faces north from the south wall. The 100 A panel and shallow sprinkler cabinet face south from the
-  existing building wall at the north side. The shallow rack faces west from
-  the east wall. The 15-gallon electric water heater stands on the concrete pad
-  in the northeast corner against the east and existing-building walls. The
-  sprinkler cabinet and rack tops align at 78 inches with both electrical
-  panels.</p>
+  {SHED_WALL_T:g}-inch infill walls. The 100 A panel and shallow sprinkler cabinet face south from the
+  existing building wall at the north side, and the shallow rack sits on top
+  of the sprinkler cabinet, centred over it, from 78 to 102 inches. The
+  15-gallon electric water heater stands on the concrete pad in the northeast
+  corner against the east and existing-building walls, and the Powerwall hangs
+  on the east wall above it, facing west, north end in the corner, top at 78
+  inches in line with the panels. The south wall is now clear.</p>
+  <p><small>Check Tesla's Powerwall 3 installation clearances for mounting
+  directly over a water heater before building.</small></p>
   <table style="border-collapse:collapse;font-size:13px">
     <tr style="text-align:left"><th>#</th><th>item</th><th>wall</th>
       <th>width × depth × height</th><th>z</th><th>basis</th></tr>

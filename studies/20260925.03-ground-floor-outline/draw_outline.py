@@ -156,8 +156,20 @@ def main(solid=False):
         w, d, h = u['x1'] - u['x0'], u['y1'] - u['y0'], u['z1'] - u['z0']
         label = '' if u['part_of'] else f"{u['n'].lower()}\n{w:g} × {d:g} × {h:g}"
         ghosts.append(((u['x0'], u['x1'], u['y0'], u['y1']), label, u['color']))
-    for r in CB.shed_item_rows(frame):
-        ghosts.append(((r['x0'], r['x1'], r['y0'], r['y1']), r['n'], '#ccd3d8'))
+    # Stacked shed items (one hung over another) share one label on the upper.
+    shed = CB.shed_item_rows(frame)
+    under = {}
+    for o in shed:
+        below = [r for r in shed if r is not o and r['top'] <= o['z0'] + 0.01 and
+                 min(r['x1'], o['x1']) > max(r['x0'], o['x0']) and
+                 min(r['y1'], o['y1']) > max(r['y0'], o['y0'])]
+        if below:
+            under[o['n']] = max(below, key=lambda r: r['top'])['n']
+    lower = set(under.values())
+    for r in shed:
+        label = ('' if r['n'] in lower else
+                 f"{r['n']}\nover {under[r['n']]}" if r['n'] in under else r['n'])
+        ghosts.append(((r['x0'], r['x1'], r['y0'], r['y1']), label or ' ', '#ccd3d8'))
     for (x0, x1, y0, y1), label, color in ghosts:
         if solid:
             part = not label
