@@ -160,9 +160,13 @@ def main(solid=False):
     shed = CB.shed_item_rows(frame)
     under = {}
     for o in shed:
-        below = [r for r in shed if r is not o and r['top'] <= o['z0'] + 0.01 and
-                 min(r['x1'], o['x1']) > max(r['x0'], o['x0']) and
-                 min(r['y1'], o['y1']) > max(r['y0'], o['y0'])]
+        def share(r):     # fraction of o's footprint over r
+            dx = min(r['x1'], o['x1']) - max(r['x0'], o['x0'])
+            dy = min(r['y1'], o['y1']) - max(r['y0'], o['y0'])
+            area = (o['x1'] - o['x0']) * (o['y1'] - o['y0'])
+            return max(dx, 0) * max(dy, 0) / area
+        below = [r for r in shed if r is not o and r['top'] <= o['z0'] + 0.01
+                 and share(r) > 0.5]
         if below:
             under[o['n']] = max(below, key=lambda r: r['top'])['n']
     lower = set(under.values())

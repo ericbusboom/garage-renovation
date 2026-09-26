@@ -232,23 +232,22 @@ ITEMS = [
 #: is intentionally an assumption: 12U gives 21 in. of rail height, represented
 #: here by a 24 in. tall cabinet, and the owner selected the shallow 14 in. depth.
 SHED_ITEMS = [
-    # 2026-09-25 (owner): the Powerwall moves to the east wall, where the rack
-    # was, over the water heater. North end in the corner; top at 78 in. to
-    # line up with the panels, which leaves 5.5 in. over the heater.
-    dict(n='PW', kind='battery', wall='east', along=63.0 - 24.0,
-         width=24.0, depth=7.6, h=43.5, z=78.0 - 43.5,
-         what='Tesla Powerwall 3 · 291 lb · east wall, over the water heater'),
+    # 2026-09-25 (owner): the Powerwall hangs on the east wall at its south
+    # end, against the south wall, facing west; back at its old 12 in. mounting
+    # height now that nothing stands under it.
+    dict(n='PW', kind='battery', wall='east', along=SHED_WALL_T,
+         width=24.0, depth=7.6, h=43.5, z=12.0,
+         what='Tesla Powerwall 3 · 291 lb · east wall, south end'),
     dict(n='EP', kind='electrical', wall='north', along=18.5,
          width=16.0, depth=5.0, h=30.0, z=48.0,
          what='100 A electrical panel · conceptual 16 × 5 × 30 in. envelope'),
-    dict(n='SPK', kind='sprinkler', wall='north', along=40.5,
-         width=18.0, depth=12.0, h=24.0, z=54.0,
-         what='sprinkler equipment cabinet · conceptual 18 × 12 × 24 in. envelope'),
-    # The rack joins the sprinkler cabinet: centred over it on the north wall,
-    # standing on its top at 78 in., clear of the B-S soffit at about 106.
+    # 2026-09-25 (owner): the separate sprinkler cabinet is gone; its
+    # equipment goes in the rack, which takes the cabinet's place on the north
+    # wall, centred where the 18 in. cabinet was, top at 78 in. with the panels.
     dict(n='RACK', kind='rack', wall='north', along=40.5 - 2.0,
-         width=22.0, depth=14.0, h=24.0, z=78.0,
-         what='wall-mounted 19 in. rack · conceptual 12U · 14 in. deep'),
+         width=22.0, depth=14.0, h=24.0, z=54.0,
+         what='wall-mounted 19 in. rack · conceptual 12U · 14 in. deep · '
+              'houses the sprinkler equipment'),
     dict(n='WH', kind='water_heater', wall='floor', corner='northeast',
          width=20.0, depth=20.0, h=29.0, z=0.0, shape='cylinder',
          what='15 gal electric water heater · 20 in. diameter × 29 in. high'),
@@ -1374,21 +1373,19 @@ def shed_html(frame: framemod.Frame) -> str:
 <div class="notes">
   <h2>Concrete shed equipment</h2>
   <p>The shed is enclosed on its south and east sides with conceptual
-  {SHED_WALL_T:g}-inch infill walls. The 100 A panel and shallow sprinkler cabinet face south from the
-  existing building wall at the north side, and the shallow rack sits on top
-  of the sprinkler cabinet, centred over it, from 78 to 102 inches. The
+  {SHED_WALL_T:g}-inch infill walls. The 100 A panel and the shallow rack face south from the
+  existing building wall at the north side; the rack also houses the
+  sprinkler equipment, so there is no separate sprinkler cabinet. The
   15-gallon electric water heater stands on the concrete pad in the northeast
   corner against the east and existing-building walls, and the Powerwall hangs
-  on the east wall above it, facing west, north end in the corner, top at 78
-  inches in line with the panels. The south wall is now clear.</p>
-  <p><small>Check Tesla's Powerwall 3 installation clearances for mounting
-  directly over a water heater before building.</small></p>
+  on the east wall at its south end, tight to the south wall, facing west.
+  The south wall is clear.</p>
   <table style="border-collapse:collapse;font-size:13px">
     <tr style="text-align:left"><th>#</th><th>item</th><th>wall</th>
       <th>width × depth × height</th><th>z</th><th>basis</th></tr>
     {body}
   </table>
-  <p><small>The panel, sprinkler cabinet and rack envelopes are layout assumptions. Final equipment,
+  <p><small>The panel and rack envelopes are layout assumptions; confirm the sprinkler equipment fits the rack. Final equipment,
   working clearances, ventilation, weather rating, conduit routes, mounting and
   electrical/plumbing design remain to be selected.</small></p>
 </div>
