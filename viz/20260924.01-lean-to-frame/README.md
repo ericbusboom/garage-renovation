@@ -13,6 +13,13 @@ and walkthrough controls.
   base. The 2026-09-24 connection audit (`src/structural-analysis-v6/connections.py`)
   joined four places where members touched or crossed without a joint; the
   joint schedule is in `geometry.json` under `connections`.
+- **Outer walls / Roofs:** *Outer walls* closes the building in: white frame,
+  light-grey 2 in. panels on the inside of the steel, blue-grey doors, each
+  section hover-labelled by face, storey and number (e.g. `WL2`, `NU3`). *Roofs*
+  adds the black solar slope, the 18 in. hipped cap with white soffit and
+  fascia, and the dark-grey lean-to and shed roofs. `NJ` is the non-structural
+  garage-door jamb post between N1 and N2. Source:
+  `src/structural-analysis-v6/outer_walls.py`.
 - **Status:** current preliminary working visualization; not construction design
 - **Generator:** `src/structural-analysis-v6/lean_to_report.py`
 - **Layout source:** `src/structural-analysis-v6/cabinets.py`

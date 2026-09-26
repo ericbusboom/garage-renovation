@@ -178,6 +178,7 @@ CONNECTION_MODE = ('connection', 'What are the moment frames?',
 
 #: The plot div's id, so the checkboxes below it can find the graph.
 PLOT_ID = 'frameplot'
+BEAM_WHITE = '#f4f4f1'        # frame colour in the outer-walls view
 
 
 def _header_html(summary: dict) -> str:
@@ -207,7 +208,8 @@ def _header_html(summary: dict) -> str:
 
 def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
                    stage, extra_range, fixed_views=None,
-                   conn_range=None, conn_rows=None) -> str:
+                   conn_range=None, conn_rows=None,
+                   walls_range=None, roofs_range=None) -> str:
     """A row of real checkboxes that drive trace visibility.
 
     These were Plotly ``updatemenus`` buttons with ``args``/``args2``, which is
@@ -226,7 +228,9 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
                   wall=wall_i, roof=roof_i,
                   stage=list(stage) if stage else None,
                   extra=list(extra_range) if extra_range else None,
-                  conn=list(conn_range) if conn_range else None)
+                  conn=list(conn_range) if conn_range else None,
+                  outer=list(walls_range) if walls_range else None,
+                  roofs=list(roofs_range) if roofs_range else None)
     boxes = []
     if wall_i is not None:
         boxes.append(('walls', 'Hide existing walls', False))
@@ -240,12 +244,16 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
         boxes.append(('extra', 'Cabinet layout', False))
     if conn_range:
         boxes.append(('conn', 'Connections', False))
+    if walls_range:
+        boxes.append(('outer', 'Outer walls', False))
+    if roofs_range:
+        boxes.append(('roofs', 'Roofs', False))
     if not boxes:
         return ''
     items = ''.join(
         f'<label class="cbx"><input type="checkbox" id="cb_{key}"'
         f'{" checked" if on else ""} onchange="'
-        f'{"toggleStage()" if key == "stage" else "toggleExtra()" if key == "extra" else "applyVis()"}"> {label}</label>'
+        f'{"toggleStage()" if key == "stage" else "toggleExtra()" if key == "extra" else "toggleOuter()" if key == "outer" else "applyVis()"}"> {label}</label>'
         for key, label, on in boxes)
     stage_hint = (f'<span class="phasehint"><b>Pre-demo frame</b> shows the '
                   f'members that can be erected before the existing roof is removed.</span>'
@@ -289,7 +297,7 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
   {walk_toggle}
   {fixed_select}
   <span class="hint">Cabinet layout puts in the loft deck, the first-floor
-  built-ins, laundry console, workbenches, lathe and Tormach mill, the new ground-floor plan and infill walls, both electrical
+  built-ins, laundry console, workbenches, lathe and Tormach mill, the new ground-floor plan{'' if walls_range else ' and infill walls'}, both electrical
   panels, the concrete shed equipment, and everything stored on the loft; tick
   <b>Hide existing roof</b> with it to see down into the loft.</span>
 </div>
@@ -673,6 +681,29 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
       roomCamera = null;
     }}
   }}
+  var frameColors = null;
+  function toggleOuter() {{
+    // Outer walls: frame goes white, roofs go on with the walls, and the
+    // existing-roof ghost comes off. Unticking restores the frame colours.
+    var gd = document.getElementById('{PLOT_ID}');
+    var outer = document.getElementById('cb_outer');
+    if (!gd || !outer || typeof Plotly === 'undefined') return;
+    var idx = [];
+    for (var i = 0; i < VIS.frame; i++)
+      if (gd.data[i].type === 'mesh3d') idx.push(i);
+    if (outer.checked) {{
+      var roofs = document.getElementById('cb_roofs');
+      var roof = document.getElementById('cb_roof');
+      if (roofs) roofs.checked = true;
+      if (roof) roof.checked = true;
+      if (!frameColors) frameColors = idx.map(function (i) {{ return gd.data[i].color; }});
+      Plotly.restyle(gd, {{color: '{BEAM_WHITE}'}}, idx);
+    }} else if (frameColors) {{
+      Plotly.restyle(gd, {{color: frameColors}}, idx);
+      frameColors = null;
+    }}
+    applyVis();
+  }}
   function toggleStage() {{
     var stage = document.getElementById('cb_stage');
     if (stage && stage.checked) {{
@@ -703,13 +734,21 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     if (on('frame')) {{
       for (var i = 0; i < VIS.frame; i++) vis[i] = false;
     }}
-    if (VIS.wall && on('walls')) {{
+    if (VIS.wall && (on('walls') || (VIS.outer && on('outer')))) {{
       for (var w = 0; w < VIS.wall.length; w++) vis[VIS.wall[w]] = false;
     }}
     if (VIS.roof !== null && on('roof')) vis[VIS.roof] = false;
     if (VIS.extra) {{
       var show = on('extra');
       for (var i = VIS.extra[0]; i < VIS.extra[1]; i++) vis[i] = show;
+    }}
+    if (VIS.outer) {{
+      var ow = on('outer');
+      for (var i = VIS.outer[0]; i < VIS.outer[1]; i++) vis[i] = ow;
+    }}
+    if (VIS.roofs) {{
+      var rf = on('roofs');
+      for (var i = VIS.roofs[0]; i < VIS.roofs[1]; i++) vis[i] = rf;
     }}
     var conn = VIS.conn && on('conn');
     if (VIS.conn) {{
@@ -741,7 +780,8 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
           lean_to: dict | None = None, plan_png: Path | None = None,
           cabinets: bool = True, report_html: str | None = None,
           proposed_seats: list | None = None,
-          connections: list | None = None) -> None:
+          connections: list | None = None,
+          outer_walls: bool = False) -> None:
     verdicts = {r.member: r for r in removal}
     proposals = down.get('sections', {}) if down.get('verified') else {}
     removed = set(summary['removal'].get('cumulative', {}).get('removed', []))
@@ -856,6 +896,14 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
         for key in colors:colors[key].append('#87919d')
         stage_visible.append(True)
 
+    # The garage-door jamb post: drawn with the frame, but not in the model.
+    if outer_walls:
+        import outer_walls as OW
+        traces.append(OW.jamb_trace(frame))
+        for key in colors:
+            colors[key].append('#87919d')
+        stage_visible.append(False)
+
     n_frame = len(traces)                      # frame meshes + the support markers
     wall_i = roof_i = None
     if show_existing:
@@ -903,8 +951,10 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
                         + CB.bench_traces(frame)
                         + CB.lathe_traces(frame)
                         + CB.tormach_traces(frame)
-                        + CB.east_wall_traces(frame) + CB.new_wall_traces(frame)
-                        + CB.shed_traces(frame) + walk_traces + cab_traces)
+                        + ([] if outer_walls else CB.east_wall_traces(frame))
+                        + CB.new_wall_traces(frame, walls=not outer_walls)
+                        + CB.shed_traces(frame, walls=not outer_walls)
+                        + walk_traces + cab_traces)
         first = len(traces)
         traces += extra_traces
         extra_range = (first, len(traces))
@@ -942,6 +992,19 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
                                eye_offset=[0.0, -48.0, 0.0],
                                detail=f'South door center · 1.18 in. south · x {door_x:g}, y {door_y:.2f}'),
         }
+
+    # Outer walls and roofs, each on its own checkbox.
+    walls_range = roofs_range = None
+    wall_rows: list = []
+    if outer_walls:
+        import outer_walls as OW
+        wt, wall_rows = OW.wall_traces(frame)
+        first = len(traces)
+        traces += wt
+        walls_range = (first, len(traces))
+        first = len(traces)
+        traces += OW.roof_traces(frame)
+        roofs_range = (first, len(traces))
 
     # Connection dots: one sphere per physical joint, coloured by the kind of
     # connection the analysis assumes there. Hidden until the checkbox is on.
@@ -995,7 +1058,8 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
                         + _controls_html(len(traces), n_frame, wall_i, roof_i,
                                          stage_visible if before_demo else None,
                                          extra_range, fixed_views,
-                                         conn_range, connections)
+                                         conn_range, connections,
+                                         walls_range, roofs_range)
                         + f'<div id="{PLOT_ID}"', 1)
     extra = report_html if report_html is not None else viewer._legend_html(summary)
     if cabinet_rows:
@@ -1005,7 +1069,7 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
                   + CB.benches_html(frame)
                   + CB.lathe_html(frame)
                   + CB.tormach_html(frame)
-                  + CB.new_walls_html(frame)
+                  + ('' if outer_walls else CB.new_walls_html(frame))
                   + CB.shed_html(frame)
                   + CB.walkway_html(walk_rows)
                   + CB.loads_html(frame, cabinet_rows))
@@ -1041,6 +1105,8 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
     #planwrap img {{ border-color: #2c3136; background: white; }}
   }}
 </style>'''
+    if outer_walls:
+        extra += OW.html(frame, wall_rows)
     html = html.replace('</body>', extra + '</body>')
     html = html.replace('<head>', '<head>\n<meta name="viewport" '
                         'content="width=device-width, initial-scale=1">')

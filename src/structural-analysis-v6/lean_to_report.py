@@ -65,7 +65,8 @@ SV._member_mesh=mesh
 p=L.OUT/'lean-to-frame-3d.html'
 summary=dict(removal={},frame_model='Lean-to steel rafters + continuous east posts · CURRENT PRELIMINARY ANALYSIS',live_case='L100',exposure='C',basis=dict(loft_live={'L100':100},wind={'V':96}))
 SV.write(f,r,{},dict(sections={}),[],summary,p,cabinets=True,report_html=report,
-         proposed_seats=g['seats'],before_demo=set(stage['build']),connections=joints)
+         proposed_seats=g['seats'],before_demo=set(stage['build']),connections=joints,
+         outer_walls=True)
 h=p.read_text().replace('Garage frame &mdash; members at true section size','Lean-to steel rafters + continuous east posts')
 h=h.replace('How hard it is working','How hard is it working?').replace('What governs it"','What governs it?"')
 h=h.replace('</body>',"<script>Plotly.relayout('frameplot',{'scene.camera.eye':{x:1.8,y:-1.5,z:1.0}}).then(()=>Plotly.Plots.resize('frameplot'));</script></body>")

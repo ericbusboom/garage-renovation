@@ -1169,14 +1169,19 @@ def tormach_html(frame: framemod.Frame) -> str:
 """
 
 
-def new_wall_traces(frame: framemod.Frame) -> list:
-    """Owner-requested infill walls around the north and west additions."""
+def new_wall_traces(frame: framemod.Frame, walls: bool = True) -> list:
+    """Owner-requested infill walls around the north and west additions.
+
+    With ``walls=False`` only the EP-N panel is drawn: the walls themselves
+    belong to the viewer's outer-walls layer (``outer_walls.py``).
+    """
     w3 = _base_point(frame, 'W3')
     w4 = _base_point(frame, 'W4')
     n1 = _base_point(frame, 'N1')
     n2 = _base_point(frame, 'N2')
     en2 = _base_point(frame, 'E-N2')
     t = NEW_WALL_T / 2.0
+    draw_walls = walls
     walls = [
         ('E-N2 south to existing building',
          (en2[0] - t, en2[0] + t, EX.L, en2[1], 0.0, _soffit(frame, 'BE'))),
@@ -1190,7 +1195,7 @@ def new_wall_traces(frame: framemod.Frame) -> list:
          (w3[0], 0.0, w3[1] - t, w3[1] + t, 0.0, _soffit(frame, 'B-2'))),
     ]
     out = []
-    for name, bounds in walls:
+    for name, bounds in (walls if draw_walls else []):
         v, f = _box(*bounds)
         out.append(_mesh(v, f, WALL, f'new wall {name}',
                          f'<b>New infill wall — {name}</b><br>{NEW_WALL_T:g} in. '
@@ -1306,7 +1311,7 @@ def shed_item_rows(frame: framemod.Frame) -> list[dict]:
     return rows
 
 
-def shed_traces(frame: framemod.Frame) -> list:
+def shed_traces(frame: framemod.Frame, walls: bool = True) -> list:
     """Concrete pad, south/east infill walls, and wall-mounted equipment."""
     x0, x1, y0, y1 = _shed_bounds(frame)
     z0, z1 = -4.0, 0.0            # conceptual four-inch slab at ground datum
@@ -1323,7 +1328,7 @@ def shed_traces(frame: framemod.Frame) -> list:
         ('south', (x0, x1, y0, y0 + SHED_WALL_T, 0.0, south_top)),
         ('east', (x1 - SHED_WALL_T, x1, y0, y1, 0.0, east_top)),
     ]
-    for name, bounds in wall_specs:
+    for name, bounds in (wall_specs if walls else []):
         v, f = _box(*bounds)
         out.append(_mesh(v, f, WALL, f'shed {name} wall',
                          f'<b>Shed {name} infill wall</b><br>{SHED_WALL_T:g} in. '
