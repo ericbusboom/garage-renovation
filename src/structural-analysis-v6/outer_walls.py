@@ -30,6 +30,7 @@ import frame as framemod
 WALL_T = 2.0                 # panel thickness, outward from the steel's inside face
 POST_HALF = 2.5              # HSS5X5 posts: inside face is 2.5 in. off the line
 WALL = '#d3d6d9'             # light grey panels
+INNER = '#d9c7a6'            # interior partitions, warmer so they read against the shell
 DOOR = '#8fa9c2'             # door leaves, blue-grey so they read as doors
 GLASS = '#a9c8da'            # clerestory glazing
 BEAM = '#f4f4f1'             # frame colour in this view
@@ -213,9 +214,10 @@ def sections(frame: framemod.Frame) -> list[dict]:
     add('WU1', 'SW0 → W1, under the solar slope', 'wall', 'x', _outside(wi, -1),
         _under(south, w1y, LOFT_Z, slope))
     # The two stairwell windows look in on the BWI partition, not the storage.
-    add('WU2', 'W1 → W2, under the solar slope · stairwell window', 'wall', 'x',
-        _outside(wi, -1), _under(w1y, g['clerestory'], LOFT_Z, slope),
-        windows=[_window(g['clerestory'] - 4.0 - WINDOW[0], g['clerestory'] - 4.0)])
+    # WU2 is glazed over the whole bay, loft floor to the solar-roof soffit.
+    add('WU2', 'W1 → W2, under the solar slope · whole bay glazed, stairwell window',
+        'glass', 'x', (wi - WALL_T + 0.5, wi - 0.5),
+        _under(w1y, g['clerestory'], CB.floor_top(frame), slope))
     add('WU3', 'W2 → W3 · stairwell window', 'wall', 'x', _outside(wi, -1),
         _rect(g['clerestory'], w3y, LOFT_Z, top),
         windows=[_window(*_centred((g['clerestory'] + STAIR_N) / 2.0))])
@@ -297,7 +299,7 @@ def _soffit_bn(frame):
 # traces
 # --------------------------------------------------------------------------
 
-KIND_TEXT = dict(wall='new wall panel', door='door', glass='clerestory glazing',
+KIND_TEXT = dict(wall='new wall panel', door='door', glass='glazing',
                  existing='existing garage wall (retained)')
 KIND_COLOR = dict(wall=WALL, door=DOOR, glass=GLASS, existing=WALL)
 FACE = dict(N='north', S='south', E='east', W='west', I='interior')
@@ -337,8 +339,10 @@ def _hover(s):
     return '<br>'.join(lines)
 
 
-def wall_traces(frame: framemod.Frame) -> tuple[list, list[dict]]:
+def wall_traces(frame: framemod.Frame) -> tuple[list, list, list[dict]]:
+    """(outer wall traces, inner wall traces, schedule rows)."""
     rows = sections(frame)
+    inner = []
     be_top = _top(frame, 'BE')
     out = []
     for s in rows:
@@ -363,12 +367,14 @@ def wall_traces(frame: framemod.Frame) -> tuple[list, list[dict]]:
                                   opacity=1.0 if is_door else 0.6))
             continue
         verts, faces = [], []
+        is_inner = s['code'][0] == 'I'
         for poly in _pieces(s['pts'], s['windows']):
             v, f = _panel(s['axis'], *s['t'], poly)
             faces += [(a + len(verts), b + len(verts), c + len(verts)) for a, b, c in f]
             verts += v
-        out.append(_trace(verts, faces, KIND_COLOR[s['kind']], s['code'], _hover(s),
-                          opacity=0.55 if s['kind'] == 'glass' else 1.0))
+        (inner if is_inner else out).append(
+            _trace(verts, faces, INNER if is_inner else KIND_COLOR[s['kind']],
+                   s['code'], _hover(s), opacity=0.55 if s['kind'] == 'glass' else 1.0))
         for n, (a0, a1, z0, z1) in enumerate(s['windows'], 1):
             t0, t1 = s['t']
             v, f = _panel(s['axis'], t0 + 0.5, t1 - 0.5, _rect(a0, a1, z0, z1))
@@ -376,7 +382,7 @@ def wall_traces(frame: framemod.Frame) -> tuple[list, list[dict]]:
                               f'<b>{s["code"]}</b> · window {n}<br>{a1 - a0:g} × '
                               f'{z1 - z0:g} in. · sill z {z0:g}<br>looks into the '
                               'stairwell, onto the BWI partition', opacity=0.6))
-    return out, rows
+    return out, inner, rows
 
 
 def roof_traces(frame: framemod.Frame) -> list:
@@ -503,7 +509,7 @@ def html(frame: framemod.Frame, rows: list[dict]) -> str:
   two door leaves either side of it.</p>
   <p><b>IU1</b> is an interior partition standing on BWI along the stair opening,
   from B-S to the stair head at B-1A. It is the guard on that edge, and it gives
-  the two stairwell windows in WU2 and WU3 a wall to look at instead of the
+  the WU2 (glazed over the whole bay) and the WU3 window a wall to look at instead of the
   storage. It rises to the rafter soffit under the solar slope and stops level
   with the clerestory sill north of it. It stops at B-1A because the walkway
   crosses BWI there, from T1 to T2.</p>

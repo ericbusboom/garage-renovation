@@ -209,7 +209,8 @@ def _header_html(summary: dict) -> str:
 def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
                    stage, extra_range, fixed_views=None,
                    conn_range=None, conn_rows=None,
-                   walls_range=None, roofs_range=None, modes=None) -> str:
+                   walls_range=None, roofs_range=None, inner_range=None,
+                   modes=None) -> str:
     """A row of real checkboxes that drive trace visibility.
 
     These were Plotly ``updatemenus`` buttons with ``args``/``args2``, which is
@@ -230,7 +231,8 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
                   extra=list(extra_range) if extra_range else None,
                   conn=list(conn_range) if conn_range else None,
                   outer=list(walls_range) if walls_range else None,
-                  roofs=list(roofs_range) if roofs_range else None)
+                  roofs=list(roofs_range) if roofs_range else None,
+                  inner=list(inner_range) if inner_range else None)
     def box(key, label, on, handler='applyVis()'):
         return (f'<label class="cbx"><input type="checkbox" id="cb_{key}"'
                 f'{" checked" if on else ""} onchange="{handler}"> {label}</label>')
@@ -243,6 +245,8 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
         hide.append(box('frame', 'Hide new frame', False))
     if walls_range:
         hide.append(box('hideouter', 'Hide outer walls', True, 'toggleOuter()'))
+    if inner_range:
+        hide.append(box('hideinner', 'Hide inner walls', False))
     if roofs_range:
         hide.append(box('hideroofs', 'Hide roofs', True))
     if stage:
@@ -262,17 +266,18 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
                      f'<select id="fixed_view" onchange="setFixedView(this.value)">'
                      f'<option value="free">Free orbit</option>{fixed_options}'
                      f'</select></label><span id="fixed_status" class="fixedstatus"></span>')
-    modes = modes or []
-    mode_buttons = ''.join(
-        f'<button type="button" class="mode{" on" if i == 0 else ""}" '
-        f'onclick="setMode({i})">{label}</button>'
-        for i, (label, _) in enumerate(modes))
-    columns = [c for c in (hide, layers, views) if c]
-    if not columns and not modes:
-        return ''
-    items = ''.join(f'<div class="col">{"".join(c)}</div>' for c in columns)
+    modes = list(modes or [])
     if modes:
-        items += f'<div class="col modes">{mode_buttons}</div>'
+        modes.append(('White', None))          # the frame in white, for the outside view
+    colour = [f'<label class="cbx"><input type="radio" name="colormode" '
+              f'id="mode_{i}"{" checked" if i == 0 else ""} onchange="setMode({i})"> '
+              f'{label}</label>' for i, (label, _) in enumerate(modes)]
+    columns = [(t, c) for t, c in (('View', hide), ('Features', layers),
+                                   ('Walkthrough', views), ('Color', colour)) if c]
+    if not columns:
+        return ''
+    items = ''.join(f'<div class="col"><div class="head">{t}</div>{"".join(c)}</div>'
+                    for t, c in columns)
     conn_legend = ''
     if conn_range:
         import connections as CN
@@ -303,6 +308,8 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
               padding: 10px 0 12px; }}
   #viewbar .col {{ display: flex; flex-direction: column; gap: 5px;
                    align-items: flex-start; }}
+  #viewbar .head {{ align-self: stretch; text-align: center; font-weight: 700;
+                    font-size: 14.5px; margin-bottom: 2px; }}
   #viewbar .mode {{ font: inherit; font-size: 12px; color: inherit;
                     background: #fff; border: 1px solid #d6d9dd; border-radius: 4px;
                     padding: 3px 10px; cursor: pointer; }}
@@ -682,8 +689,9 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
       roomCamera = null;
     }}
   }}
-  var MODES = {json.dumps([c for _, c in (modes or [])])};
-  var modeIndex = 0;
+  var MODES = {json.dumps([c for _, c in (modes or []) if c is not None])};
+  var WHITE = MODES.length;                 // the last radio: frame in white
+  var modeIndex = 0, modeBeforeWalls = null;
   function wallsShown() {{
     var el = document.getElementById('cb_hideouter');
     return !!(VIS.outer && el && !el.checked);
@@ -692,17 +700,16 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     // The colour mode, with the frame turned white while the outer walls show.
     var gd = document.getElementById('{PLOT_ID}');
     if (!gd || !gd.data || !MODES.length || typeof Plotly === 'undefined') return;
-    var colors = MODES[modeIndex].slice();
-    if (wallsShown())
+    var colors = MODES[modeIndex === WHITE ? 0 : modeIndex].slice();
+    if (modeIndex === WHITE)
       for (var i = 0; i < VIS.frame; i++)
         if (gd.data[i].type === 'mesh3d') colors[i] = '{BEAM_WHITE}';
     Plotly.restyle(gd, {{color: colors}});
   }}
   function setMode(i) {{
     modeIndex = i;
-    var buttons = document.querySelectorAll('#viewbar .mode');
-    for (var b = 0; b < buttons.length; b++)
-      buttons[b].classList.toggle('on', b === i);
+    var radio = document.getElementById('mode_' + i);
+    if (radio) radio.checked = true;
     applyColors();
   }}
   function toggleOuter() {{
@@ -713,8 +720,12 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
       var roof = document.getElementById('cb_roof');
       if (roofs) roofs.checked = false;
       if (roof) roof.checked = true;
+      // The outside view is white; put the previous colours back afterwards.
+      if (modeIndex !== WHITE) {{ modeBeforeWalls = modeIndex; setMode(WHITE); }}
+    }} else if (modeIndex === WHITE && modeBeforeWalls !== null) {{
+      setMode(modeBeforeWalls);
     }}
-    applyColors();
+    if (!wallsShown()) modeBeforeWalls = null;
     applyVis();
   }}
   function toggleStage() {{
@@ -758,6 +769,10 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     if (VIS.outer) {{
       var ow = wallsShown();
       for (var i = VIS.outer[0]; i < VIS.outer[1]; i++) vis[i] = ow;
+    }}
+    if (VIS.inner) {{
+      var iw = !on('hideinner');
+      for (var i = VIS.inner[0]; i < VIS.inner[1]; i++) vis[i] = iw;
     }}
     if (VIS.roofs) {{
       var rf = !on('hideroofs');
@@ -1007,14 +1022,17 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
         }
 
     # Outer walls and roofs, each on its own checkbox.
-    walls_range = roofs_range = None
+    walls_range = roofs_range = inner_range = None
     wall_rows: list = []
     if outer_walls:
         import outer_walls as OW
-        wt, wall_rows = OW.wall_traces(frame)
+        wt, it, wall_rows = OW.wall_traces(frame)
         first = len(traces)
         traces += wt
         walls_range = (first, len(traces))
+        first = len(traces)
+        traces += it
+        inner_range = (first, len(traces))
         first = len(traces)
         traces += OW.roof_traces(frame)
         roofs_range = (first, len(traces))
@@ -1067,7 +1085,7 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
                                          stage_visible if before_demo else None,
                                          extra_range, fixed_views,
                                          conn_range, connections,
-                                         walls_range, roofs_range,
+                                         walls_range, roofs_range, inner_range,
                                          [(b['label'], b['args'][0]['color'])
                                           for b in buttons])
                         + f'<div id="{PLOT_ID}"', 1)
