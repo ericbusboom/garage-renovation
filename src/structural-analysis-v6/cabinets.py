@@ -277,6 +277,21 @@ LATHE_DEPTH = 24.0
 LATHE_LENGTH = 57.0
 LATHE_DISPLAY_HEIGHT = 48.0       # display envelope only; owner gave no height
 
+#: Tormach PCNC 440 with stand and enclosure, planned from Tormach drawing
+#: D35684: 42 x 36 x 72 in., widened to 46 in. for the ATC on the left of the
+#: head. It sits in the NW pop-out facing east, with its back to the W3-W4
+#: wall and its right side to the W4-N1 wall, TORMACH_WALL_GAP clear of each.
+#: The operator faces west, so the left (ATC) side faces south into the open
+#: strip along the W3 wall, and the console on the north wall is at the
+#: operator's right.
+#: Study: studies/20260925.01-tormach-770m-placement/.
+TORMACH_WIDTH = 46.0              # along the wall, north-south
+TORMACH_DEPTH = 36.0              # out from the wall, east-west
+TORMACH_HEIGHT = 72.0
+TORMACH_WALL_GAP = 2.0
+TORMACH_FRONT = 36.0              # two people at the machine
+TORMACH_CONSOLE = (16.0, 4.0, 12.0, 48.0)   # width, depth, height, bottom z
+
 KINDS = {
     'cabinet': dict(face='#d6d8da', label='Cabinet'),      # light grey
     'machine': dict(face='#c9a87c', label='Machine'),      # light brown
@@ -966,6 +981,76 @@ def lathe_html(frame: framemod.Frame) -> str:
   the actual machine and stand height before checking the window or services.
   The lathe is equipment only and does not participate in the structural
   analysis.</p>
+</div>
+"""
+
+
+def _tormach_bounds(frame: framemod.Frame) -> dict:
+    """Machine, operator zone and console boxes, set out from W3/W4 and the walls."""
+    w4 = _base_point(frame, 'W4')
+    west_face = w4[0] + NEW_WALL_T / 2.0
+    north_face = w4[1] - NEW_WALL_T / 2.0
+    x0 = west_face + TORMACH_WALL_GAP
+    x1 = x0 + TORMACH_DEPTH
+    y1 = north_face - TORMACH_WALL_GAP
+    y0 = y1 - TORMACH_WIDTH
+    cw, cd, ch, cz = TORMACH_CONSOLE
+    return dict(machine=(x0, x1, y0, y1, 0.0, TORMACH_HEIGHT),
+                operator=(x1, x1 + TORMACH_FRONT, y0, y1),
+                console=(x1 + 2.0, x1 + 2.0 + cw, north_face - cd, north_face,
+                         cz, cz + ch))
+
+
+def tormach_traces(frame: framemod.Frame) -> list:
+    """The PCNC 440 envelope, its wall console and the operator standing zone."""
+    b = _tormach_bounds(frame)
+    x0, x1, y0, y1, z0, z1 = b['machine']
+    hover = (f'<b>TORMACH PCNC 440</b> with stand and enclosure<br>'
+             f'{TORMACH_WIDTH:g} × {TORMACH_DEPTH:g} × {TORMACH_HEIGHT:g} in. '
+             f'(42 in. + ATC allowance) · about 600 lb<br>faces east; back and right '
+             f'side {TORMACH_WALL_GAP:g} in. off the W3–W4 and W4–N1 walls; '
+             f'ATC side faces south')
+    v, f = _box(x0, x1, y0, y1, z0, z1)
+    out = [_mesh(v, f, '#5f8f7e', 'TORMACH 440 envelope', hover, opacity=1.0)]
+    ex, ey, ez = _box_edges(x0, x1, y0, y1, z0, z1)
+    out.append(go.Scatter3d(x=ex, y=ey, z=ez, mode='lines',
+                            line=dict(color=EDGE, width=4), hoverinfo='skip',
+                            showlegend=False, visible=False, name='TORMACH edges'))
+    ox0, ox1, oy0, oy1 = b['operator']
+    v, f = _box(ox0, ox1, oy0, oy1, 0.0, 0.3)
+    out.append(_mesh(v, f, '#bfe3d4', 'TORMACH operator zone',
+                     f'<b>Tormach operator zone</b><br>{TORMACH_FRONT:g} in. in front '
+                     f'of the machine, room for two', opacity=0.7))
+    v, f = _box(*b['console'])
+    out.append(_mesh(v, f, '#d9b36a', 'TORMACH console',
+                     '<b>Tormach console</b><br>wall-mounted on the W4–N1 wall at '
+                     'the operator\'s right', opacity=0.95))
+    out.append(go.Scatter3d(
+        x=[(x0 + x1) / 2.0], y=[(y0 + y1) / 2.0], z=[z1 + 4.0],
+        mode='text', text=['TORMACH 440'], textposition='middle center',
+        textfont=dict(size=15, color=EDGE, family='Helvetica, Arial'),
+        hoverinfo='skip', showlegend=False, visible=False, name='TORMACH label'))
+    return out
+
+
+def tormach_html(frame: framemod.Frame) -> str:
+    """Describe the Tormach placement."""
+    b = _tormach_bounds(frame)
+    x0, x1, y0, y1, _, _ = b['machine']
+    return f"""
+<div class="notes">
+  <h2>Tormach PCNC 440</h2>
+  <p>The mill stands in the northwest pop-out, facing east. Its back is
+  {TORMACH_WALL_GAP:g} inches off the W3–W4 wall and its right side
+  {TORMACH_WALL_GAP:g} inches off the W4–N1 wall; the left (ATC) side faces
+  south into the open strip along the W3 wall: x = {x0:g} to {x1:g},
+  y = {y0:g} to {y1:g}. The {TORMACH_WIDTH:g} × {TORMACH_DEPTH:g} × {TORMACH_HEIGHT:g}
+  inch envelope is Tormach's 42 × 36 × 72 inch space-planning footprint
+  (drawing D35684), widened 4 inches for the ATC. Confirm that allowance against the drawing before
+  building. The operator zone runs {TORMACH_FRONT:g} inches east, to
+  x = {x1 + TORMACH_FRONT:g}, and the console hangs on the north wall at the
+  operator's right. The machine is about 600 pounds on the slab and does not load
+  the frame.</p>
 </div>
 """
 

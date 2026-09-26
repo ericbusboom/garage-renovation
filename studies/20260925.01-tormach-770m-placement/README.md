@@ -48,17 +48,18 @@ The machine and its 36 in. front zone fit entirely inside the NW pop-out, which 
 **Option 3 (owner's direction): 23 in. off the north and west walls, facing east.**
 
 - **Machine position:** x −8.5 to 27.5, y 196.5 to 242.5.
-- **Service access:** a 23 in. walk-in strip behind the machine (along the west wall) and another along the ATC side (the north wall).
+- **Service access:** a 23 in. walk-in strip behind the machine (along the west wall) and another along its right side (the north wall).
 - **Operator:** stands east of the machine, in the main room rather than in the pop-out, with 36 in. clear running to x 63.5.
 - **Console:** at the operator's right hand (north), on an arm or stand at the machine's northeast corner.
-- **South side:** 9 in. to the W3 infill wall. It needs no access, since the right side has no cabinet door.
+- **South side:** this is the left (ATC) side, only 9 in. from the W3 infill wall. That is tight for ATC service; Option 1 gives it about 30 in.
 
-**Option 1: back on the W3–W4 wall, facing east.**
+**Option 1 (chosen 2026-09-25): back to the W3–W4 wall, facing east, 2 in. off both walls.**
 
-- **Machine position:** x −31.5 to 4.5, y 219.5 to 265.5.
-- **Front zone:** runs east to x 40.5, which is the N1 line.
+- **Machine position:** x −29.5 to 6.5, y 217.5 to 263.5.
+- **Front zone:** runs east to x 42.5, just past the N1 line.
+- **In the 3-D model:** yes, under the Cabinet layout toggle (`TORMACH_*` in `src/structural-analysis-v6/cabinets.py`).
 - **Console:** on the north wall, at the operator's right.
-- **ATC side:** faces south into a free strip about 69 × 32 in. along the W3 wall. That strip can take a bench or tooling cart and leaves room to service the ATC.
+- **ATC side:** faces south into a free strip about 69 × 30 in. along the W3 wall. That strip can take a bench or tooling cart and leaves room to service the ATC.
 
 **Option 2: back on the W4–N1 wall, facing south.**
 

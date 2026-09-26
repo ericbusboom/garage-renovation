@@ -177,6 +177,9 @@ def ground_layout(ax, frame, compact=False):
     for n,b in CB._bench_bounds(frame).items(): rect(ax, b, "#d5bd8d", f"{n.upper()} BENCH", fontsize=5)
     x0,x1,y0,y1,_,_ = CB._lathe_bounds(frame)
     rect(ax, (x0,x1,y0,y1), "#b9a17b", "LATHE", fontsize=6)
+    tm = CB._tormach_bounds(frame)
+    rect(ax, tm["operator"], "#e3f2ec", "", alpha=.6)
+    rect(ax, tm["machine"][:4], "#9cc9b8", "TORMACH\n440", fontsize=5)
     for r in CB.shed_item_rows(frame):
         color = {"PW":"#e9edf0", "EP":"#7da7c1", "SPK":"#c86a65",
                  "RACK":"#65717b", "WH":"#e7e9eb"}.get(r["n"], "#ccc")
