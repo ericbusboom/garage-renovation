@@ -209,7 +209,7 @@ def _header_html(summary: dict) -> str:
 def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
                    stage, extra_range, fixed_views=None,
                    conn_range=None, conn_rows=None,
-                   walls_range=None, roofs_range=None) -> str:
+                   walls_range=None, roofs_range=None, modes=None) -> str:
     """A row of real checkboxes that drive trace visibility.
 
     These were Plotly ``updatemenus`` buttons with ``args``/``args2``, which is
@@ -231,43 +231,48 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
                   conn=list(conn_range) if conn_range else None,
                   outer=list(walls_range) if walls_range else None,
                   roofs=list(roofs_range) if roofs_range else None)
-    boxes = []
+    def box(key, label, on, handler='applyVis()'):
+        return (f'<label class="cbx"><input type="checkbox" id="cb_{key}"'
+                f'{" checked" if on else ""} onchange="{handler}"> {label}</label>')
+    hide, layers, views = [], [], []
     if wall_i is not None:
-        boxes.append(('walls', 'Hide existing walls', False))
+        hide.append(box('walls', 'Hide existing walls', False))
         # Ticked by default: the existing roof sits between the new floor and
         # the new roof, so leaving it on hides most of what the page is for.
-        boxes.append(('roof', 'Hide existing roof', True))
-        boxes.append(('frame', 'Hide new frame', False))
-    if stage:
-        boxes.append(('stage', 'Pre-demo frame', False))
-    if extra_range:
-        boxes.append(('extra', 'Cabinet layout', False))
-    if conn_range:
-        boxes.append(('conn', 'Connections', False))
+        hide.append(box('roof', 'Hide existing roof', True))
+        hide.append(box('frame', 'Hide new frame', False))
     if walls_range:
-        boxes.append(('outer', 'Outer walls', False))
+        hide.append(box('hideouter', 'Hide outer walls', True, 'toggleOuter()'))
     if roofs_range:
-        boxes.append(('roofs', 'Roofs', False))
-    if not boxes:
-        return ''
-    items = ''.join(
-        f'<label class="cbx"><input type="checkbox" id="cb_{key}"'
-        f'{" checked" if on else ""} onchange="'
-        f'{"toggleStage()" if key == "stage" else "toggleExtra()" if key == "extra" else "toggleOuter()" if key == "outer" else "applyVis()"}"> {label}</label>'
-        for key, label, on in boxes)
-    stage_hint = (f'<span class="phasehint"><b>Pre-demo frame</b> shows the '
-                  f'members that can be erected before the existing roof is removed.</span>'
-                  if stage else '')
+        hide.append(box('hideroofs', 'Hide roofs', True))
+    if stage:
+        layers.append(box('stage', 'Pre-demo frame', False, 'toggleStage()'))
+    if extra_range:
+        layers.append(box('extra', 'Cabinet layout', False, 'toggleExtra()'))
+    if conn_range:
+        layers.append(box('conn', 'Connections', False))
     fixed_views = fixed_views or {}
-    fixed_options = ''.join(
-        f'<option value="{key}">{view["label"]}</option>'
-        for key, view in fixed_views.items())
-    fixed_select = (f'<label class="fixed"><b>Fixed view</b> '
-                    f'<select id="fixed_view" onchange="setFixedView(this.value)">'
-                    f'<option value="free">Free orbit</option>{fixed_options}'
-                    f'</select></label><span id="fixed_status" class="fixedstatus">'
-                    f'Choose a standing location; drag the model to look around.</span>'
-                    if fixed_views else '')
+    if fixed_views:
+        fixed_options = ''.join(
+            f'<option value="{key}">{view["label"]}</option>'
+            for key, view in fixed_views.items())
+        views.append('<label class="cbx"><input type="checkbox" id="cb_walk" '
+                     'onchange="toggleWalkthrough()"> Walkthrough mode</label>')
+        views.append(f'<label class="fixed">Fixed view '
+                     f'<select id="fixed_view" onchange="setFixedView(this.value)">'
+                     f'<option value="free">Free orbit</option>{fixed_options}'
+                     f'</select></label><span id="fixed_status" class="fixedstatus"></span>')
+    modes = modes or []
+    mode_buttons = ''.join(
+        f'<button type="button" class="mode{" on" if i == 0 else ""}" '
+        f'onclick="setMode({i})">{label}</button>'
+        for i, (label, _) in enumerate(modes))
+    columns = [c for c in (hide, layers, views) if c]
+    if not columns and not modes:
+        return ''
+    items = ''.join(f'<div class="col">{"".join(c)}</div>' for c in columns)
+    if modes:
+        items += f'<div class="col modes">{mode_buttons}</div>'
     conn_legend = ''
     if conn_range:
         import connections as CN
@@ -283,9 +288,6 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
                        f'{added} joints were added where members touched or '
                        f'crossed without a joint. "Welded" is the solver\'s '
                        f'moment-continuous assumption, not a designed weld.</span></span>')
-    walk_toggle = (f'<label class="cbx"><input type="checkbox" id="cb_walk" '
-                   f'onchange="toggleWalkthrough()"> Walkthrough mode</label>'
-                   if fixed_views else '')
     three_script = ''
     if fixed_views:
         three_path = Path(__file__).with_name('vendor') / 'three.min.js'
@@ -293,19 +295,18 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     return f"""
 <div id="viewbar">{items}
   {conn_legend}
-  {stage_hint}
-  {walk_toggle}
-  {fixed_select}
-  <span class="hint">Cabinet layout puts in the loft deck, the first-floor
-  built-ins, laundry console, workbenches, lathe and Tormach mill, the new ground-floor plan{'' if walls_range else ' and infill walls'}, both electrical
-  panels, the concrete shed equipment, and everything stored on the loft; tick
-  <b>Hide existing roof</b> with it to see down into the loft.</span>
 </div>
 <style>
   #viewbar {{ font: 13px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI",
               Helvetica, Arial, sans-serif; color: #22262b;
-              display: flex; flex-wrap: wrap; align-items: center; gap: 4px 18px;
+              display: flex; flex-wrap: wrap; align-items: flex-start; gap: 10px 36px;
               padding: 10px 0 12px; }}
+  #viewbar .col {{ display: flex; flex-direction: column; gap: 5px;
+                   align-items: flex-start; }}
+  #viewbar .mode {{ font: inherit; font-size: 12px; color: inherit;
+                    background: #fff; border: 1px solid #d6d9dd; border-radius: 4px;
+                    padding: 3px 10px; cursor: pointer; }}
+  #viewbar .mode.on {{ background: #e8eef4; border-color: #9fb2c4; }}
   #viewbar .cbx {{ display: inline-flex; align-items: center; gap: 6px;
                    cursor: pointer; user-select: none; white-space: nowrap; }}
   #viewbar input {{ width: 15px; height: 15px; cursor: pointer; margin: 0; }}
@@ -314,8 +315,7 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
   #viewbar select {{ font: inherit; color: inherit; background: #fff;
                      border: 1px solid #b8bec5; border-radius: 4px;
                      padding: 3px 24px 3px 7px; }}
-  #viewbar .fixedstatus {{ color: #5c6672; font-size: 12px;
-                           flex: 1 1 260px; min-width: 230px; }}
+  #viewbar .fixedstatus {{ color: #5c6672; font-size: 12px; max-width: 300px; }}
   #viewbar .hint {{ color: #5c6672; font-size: 12px; flex: 1 1 260px;
                     min-width: 220px; }}
   #viewbar .connlegend {{ flex: 1 1 100%; display: flex; flex-wrap: wrap;
@@ -330,6 +330,8 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     #viewbar {{ color: #e8eaec; }}
     #viewbar .hint, #viewbar .phasehint, #viewbar .fixedstatus {{ color: #9aa3ab; }}
     #viewbar select {{ background: #25282c; border-color: #59616a; }}
+    #viewbar .mode {{ background: #25282c; border-color: #59616a; }}
+    #viewbar .mode.on {{ background: #33404c; }}
   }}
 </style>
 {three_script}
@@ -362,8 +364,7 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
       if (walk.enabled) disableWalkthrough(false);
       if (freeCamera) Plotly.relayout(gd, {{'scene.camera': freeCamera,
                                            'scene.dragmode': freeDragMode || 'orbit'}});
-      if (status) status.textContent =
-        'Choose a standing location; drag the model to look around.';
+      if (status) status.textContent = '';
       freeCamera = null;
       freeDragMode = null;
       return;
@@ -681,27 +682,39 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
       roomCamera = null;
     }}
   }}
-  var frameColors = null;
-  function toggleOuter() {{
-    // Outer walls: frame goes white, roofs go on with the walls, and the
-    // existing-roof ghost comes off. Unticking restores the frame colours.
+  var MODES = {json.dumps([c for _, c in (modes or [])])};
+  var modeIndex = 0;
+  function wallsShown() {{
+    var el = document.getElementById('cb_hideouter');
+    return !!(VIS.outer && el && !el.checked);
+  }}
+  function applyColors() {{
+    // The colour mode, with the frame turned white while the outer walls show.
     var gd = document.getElementById('{PLOT_ID}');
-    var outer = document.getElementById('cb_outer');
-    if (!gd || !outer || typeof Plotly === 'undefined') return;
-    var idx = [];
-    for (var i = 0; i < VIS.frame; i++)
-      if (gd.data[i].type === 'mesh3d') idx.push(i);
-    if (outer.checked) {{
-      var roofs = document.getElementById('cb_roofs');
+    if (!gd || !gd.data || !MODES.length || typeof Plotly === 'undefined') return;
+    var colors = MODES[modeIndex].slice();
+    if (wallsShown())
+      for (var i = 0; i < VIS.frame; i++)
+        if (gd.data[i].type === 'mesh3d') colors[i] = '{BEAM_WHITE}';
+    Plotly.restyle(gd, {{color: colors}});
+  }}
+  function setMode(i) {{
+    modeIndex = i;
+    var buttons = document.querySelectorAll('#viewbar .mode');
+    for (var b = 0; b < buttons.length; b++)
+      buttons[b].classList.toggle('on', b === i);
+    applyColors();
+  }}
+  function toggleOuter() {{
+    // Showing the outer walls brings the roofs with them and takes the
+    // existing-roof ghost off; hide the roofs again to look inside.
+    if (wallsShown()) {{
+      var roofs = document.getElementById('cb_hideroofs');
       var roof = document.getElementById('cb_roof');
-      if (roofs) roofs.checked = true;
+      if (roofs) roofs.checked = false;
       if (roof) roof.checked = true;
-      if (!frameColors) frameColors = idx.map(function (i) {{ return gd.data[i].color; }});
-      Plotly.restyle(gd, {{color: '{BEAM_WHITE}'}}, idx);
-    }} else if (frameColors) {{
-      Plotly.restyle(gd, {{color: frameColors}}, idx);
-      frameColors = null;
     }}
+    applyColors();
     applyVis();
   }}
   function toggleStage() {{
@@ -734,7 +747,7 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
     if (on('frame')) {{
       for (var i = 0; i < VIS.frame; i++) vis[i] = false;
     }}
-    if (VIS.wall && (on('walls') || (VIS.outer && on('outer')))) {{
+    if (VIS.wall && (on('walls') || wallsShown())) {{
       for (var w = 0; w < VIS.wall.length; w++) vis[VIS.wall[w]] = false;
     }}
     if (VIS.roof !== null && on('roof')) vis[VIS.roof] = false;
@@ -743,11 +756,11 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
       for (var i = VIS.extra[0]; i < VIS.extra[1]; i++) vis[i] = show;
     }}
     if (VIS.outer) {{
-      var ow = on('outer');
+      var ow = wallsShown();
       for (var i = VIS.outer[0]; i < VIS.outer[1]; i++) vis[i] = ow;
     }}
     if (VIS.roofs) {{
-      var rf = on('roofs');
+      var rf = !on('hideroofs');
       for (var i = VIS.roofs[0]; i < VIS.roofs[1]; i++) vis[i] = rf;
     }}
     var conn = VIS.conn && on('conn');
@@ -1034,12 +1047,7 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
                    yaxis=dict(title='north (in)', backgroundcolor='#fafbfc'),
                    zaxis=dict(title='up (in)', backgroundcolor='#fafbfc'),
                    camera=dict(eye=dict(x=-1.6, y=-1.45, z=0.75))),
-        margin=dict(l=0, r=0, t=62, b=0),
-        updatemenus=[dict(type='buttons', direction='right', showactive=True,
-                          x=0.0, xanchor='left', y=1.02, yanchor='bottom',
-                          bgcolor='#ffffff', bordercolor='#d6d9dd', borderwidth=1,
-                          font=dict(size=11), pad=dict(l=6, r=6, t=4, b=4),
-                          buttons=buttons)],
+        margin=dict(l=0, r=0, t=10, b=0),
         hoverlabel=dict(bgcolor='white', font_size=11, align='left'))
 
     # Plotly is embedded, not pulled from a CDN. This file gets opened from
@@ -1059,7 +1067,9 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
                                          stage_visible if before_demo else None,
                                          extra_range, fixed_views,
                                          conn_range, connections,
-                                         walls_range, roofs_range)
+                                         walls_range, roofs_range,
+                                         [(b['label'], b['args'][0]['color'])
+                                          for b in buttons])
                         + f'<div id="{PLOT_ID}"', 1)
     extra = report_html if report_html is not None else viewer._legend_html(summary)
     if cabinet_rows:

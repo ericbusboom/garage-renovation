@@ -46,6 +46,17 @@ ROOF_T = 1.5
 JAMB = dict(name='NJ', b=2.0, d=5.0, section='HSS5X2X1/8 (conceptual)')
 
 LOFT_Z = 112.5               # loft beam centreline: the storey split
+STAIR_N = 128.0              # stair head, B-1A: north end of the stair opening
+WINDOW = (36.0, 36.0)        # stairwell windows, width x height
+WINDOW_SILL = 140.0          # about 21 in. above the loft floor
+
+
+def _centred(c):
+    return c - WINDOW[0] / 2.0, c + WINDOW[0] / 2.0
+
+
+def _window(a0, a1):
+    return (a0, a1, WINDOW_SILL, WINDOW_SILL + WINDOW[1])
 
 
 def _pt(frame, member):
@@ -95,6 +106,39 @@ def _panel(axis, t0, t1, pts):
         poly = [(a, t0, z) for a, z in pts]
         off = (0.0, t1 - t0, 0.0)
     return CB._slab(poly, off)
+
+
+def _clip(pts, axis, lo, hi):
+    """Clip a convex (along, z) polygon to lo <= coordinate ``axis`` <= hi."""
+    def half(poly, keep, cut):
+        out = []
+        for i, p in enumerate(poly):
+            q = poly[(i + 1) % len(poly)]
+            if keep(p):
+                out.append(p)
+            if keep(p) != keep(q):
+                t = (cut - p[axis]) / (q[axis] - p[axis])
+                out.append((p[0] + t * (q[0] - p[0]), p[1] + t * (q[1] - p[1])))
+        return out
+    poly = half(list(pts), lambda p: p[axis] >= lo - 1e-9, lo)
+    return half(poly, lambda p: p[axis] <= hi + 1e-9, hi) if poly else []
+
+
+def _pieces(pts, windows):
+    """The solid pieces of a panel once rectangular windows are cut out of it."""
+    if not windows:
+        return [pts]
+    amin, amax = min(p[0] for p in pts), max(p[0] for p in pts)
+    zmin, zmax = min(p[1] for p in pts), max(p[1] for p in pts)
+    out, cursor = [], amin
+    for a0, a1, z0, z1 in sorted(windows):
+        out.append(_clip(pts, 0, cursor, a0))
+        strip = _clip(pts, 0, a0, a1)
+        out.append(_clip(strip, 1, zmin, z0))
+        out.append(_clip(strip, 1, z1, zmax))
+        cursor = a1
+    out.append(_clip(pts, 0, cursor, amax))
+    return [p for p in out if len(p) >= 3]
 
 
 def _rect(a0, a1, z0, z1):
@@ -156,9 +200,9 @@ def sections(frame: framemod.Frame) -> list[dict]:
     lean_s = s3y + POST_HALF                       # lean-to south end, inside is +y
 
     out = []
-    def add(code, where, kind, axis, trange, pts, note=''):
+    def add(code, where, kind, axis, trange, pts, note='', windows=()):
         out.append(dict(code=code, where=where, kind=kind, axis=axis,
-                        t=trange, pts=pts, note=note))
+                        t=trange, pts=pts, note=note, windows=list(windows)))
 
     # ---- west face (south to north)
     add('WL1', 'existing west wall, y 0 → W3', 'existing', 'x',
@@ -168,12 +212,29 @@ def sections(frame: framemod.Frame) -> list[dict]:
         _rect(w3y, north, 0.0, LOFT_Z))
     add('WU1', 'SW0 → W1, under the solar slope', 'wall', 'x', _outside(wi, -1),
         _under(south, w1y, LOFT_Z, slope))
-    add('WU2', 'W1 → W2, under the solar slope', 'wall', 'x', _outside(wi, -1),
-        _under(w1y, g['clerestory'], LOFT_Z, slope))
-    add('WU3', 'W2 → W3', 'wall', 'x', _outside(wi, -1),
-        _rect(g['clerestory'], w3y, LOFT_Z, top))
+    # The two stairwell windows look in on the BWI partition, not the storage.
+    add('WU2', 'W1 → W2, under the solar slope · stairwell window', 'wall', 'x',
+        _outside(wi, -1), _under(w1y, g['clerestory'], LOFT_Z, slope),
+        windows=[_window(g['clerestory'] - 4.0 - WINDOW[0], g['clerestory'] - 4.0)])
+    add('WU3', 'W2 → W3 · stairwell window', 'wall', 'x', _outside(wi, -1),
+        _rect(g['clerestory'], w3y, LOFT_Z, top),
+        windows=[_window(*_centred((g['clerestory'] + STAIR_N) / 2.0))])
     add('WU4', 'W3 → W4, behind W.rear.brace', 'wall', 'x', _outside(wi, -1),
         _rect(w3y, north, LOFT_Z, top))
+
+    # ---- interior: the partition on BWI along the stair opening. It stands on
+    # BWI, west face on the stair side, and stops at the stair head (B-1A):
+    # north of that the walkway crosses BWI from T1 to T2. Under the slope it
+    # runs up to the rafter soffit; north of the clerestory it stops level with
+    # the clerestory sill rather than going on up to the flat roof.
+    bwi = CB._ends(frame, 'BWI')[0]
+    bwi_top = _top(frame, 'BWI')
+    rafter = lambda y: slope(y) - 1.8 - 1.2        # HSS2 rafter soffit
+    sill = g['slope'](g['clerestory']) - 1.8
+    add('IU1', 'BWI partition, stair side · B-S → B-1A', 'wall', 'x',
+        (bwi[0] - WALL_T, bwi[0]),
+        [(bwi[1], bwi_top), (STAIR_N, bwi_top), (STAIR_N, sill),
+         (g['clerestory'], sill), (bwi[1], rafter(bwi[1]))])
 
     # ---- north face (west to east)
     ny = _outside(ni, +1)
@@ -239,7 +300,7 @@ def _soffit_bn(frame):
 KIND_TEXT = dict(wall='new wall panel', door='door', glass='clerestory glazing',
                  existing='existing garage wall (retained)')
 KIND_COLOR = dict(wall=WALL, door=DOOR, glass=GLASS, existing=WALL)
-FACE = dict(N='north', S='south', E='east', W='west')
+FACE = dict(N='north', S='south', E='east', W='west', I='interior')
 LEVEL = dict(L='lower', U='upper')
 
 
@@ -261,7 +322,10 @@ def _hover(s):
     if s['kind'] == 'door':
         kind = '<b>DOOR</b>'
     lines = [head, s['where'], kind]
-    if s['kind'] == 'wall':
+    if s['kind'] == 'wall' and code[0] == 'I':
+        lines.append(f'{WALL_T:g} in. partition standing on BWI, stair face on the '
+                     'BWI centreline · replaces a guard rail on this edge')
+    elif s['kind'] == 'wall':
         lines.append(f'{WALL_T:g} in. panel, inside face flush with the steel')
     if s['kind'] == 'existing':
         lines.append(f'openings cut; new infill above z = {EX.WALL_TOP:g}')
@@ -298,9 +362,20 @@ def wall_traces(frame: framemod.Frame) -> tuple[list, list[dict]]:
                                   f'{o0:g} → {o1:g} · z {z0:g} → {z1:g}',
                                   opacity=1.0 if is_door else 0.6))
             continue
-        v, f = _panel(s['axis'], *s['t'], s['pts'])
-        out.append(_trace(v, f, KIND_COLOR[s['kind']], s['code'], _hover(s),
+        verts, faces = [], []
+        for poly in _pieces(s['pts'], s['windows']):
+            v, f = _panel(s['axis'], *s['t'], poly)
+            faces += [(a + len(verts), b + len(verts), c + len(verts)) for a, b, c in f]
+            verts += v
+        out.append(_trace(verts, faces, KIND_COLOR[s['kind']], s['code'], _hover(s),
                           opacity=0.55 if s['kind'] == 'glass' else 1.0))
+        for n, (a0, a1, z0, z1) in enumerate(s['windows'], 1):
+            t0, t1 = s['t']
+            v, f = _panel(s['axis'], t0 + 0.5, t1 - 0.5, _rect(a0, a1, z0, z1))
+            out.append(_trace(v, f, GLASS, f'{s["code"]} window {n}',
+                              f'<b>{s["code"]}</b> · window {n}<br>{a1 - a0:g} × '
+                              f'{z1 - z0:g} in. · sill z {z0:g}<br>looks into the '
+                              'stairwell, onto the BWI partition', opacity=0.6))
     return out, rows
 
 
@@ -426,6 +501,12 @@ def html(frame: framemod.Frame, rows: list[dict]) -> str:
   and N2, is conceptual HSS5×2: 5 in. deep through the wall, 2 in. wide. It is
   pinned top and bottom, removable, and not in the analysis; NL2 and NL3 are the
   two door leaves either side of it.</p>
+  <p><b>IU1</b> is an interior partition standing on BWI along the stair opening,
+  from B-S to the stair head at B-1A. It is the guard on that edge, and it gives
+  the two stairwell windows in WU2 and WU3 a wall to look at instead of the
+  storage. It rises to the rafter soffit under the solar slope and stops level
+  with the clerestory sill north of it. It stops at B-1A because the walkway
+  crosses BWI there, from T1 to T2.</p>
   <table><tr><th>Code</th><th>Face</th><th>Where</th><th>What</th></tr>{body}</table>
   <p><small>Conceptual envelope for appearance only: panel system, attachment,
   weatherproofing, the flat roof over the shed and the cap's framing are not
