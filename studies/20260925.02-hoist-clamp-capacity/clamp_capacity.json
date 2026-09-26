@@ -1,0 +1,5394 @@
+{
+ "continuous": {
+  "pinned": false,
+  "base": {
+   "L100": [
+    0.8937802511504319,
+    "E.top",
+    "flexure"
+   ],
+   "L40": [
+    0.47686505467511414,
+    "E.top",
+    "flexure"
+   ],
+   "L0": [
+    0.2830435574464011,
+    "R-W1",
+    "H1-1b combined axial + flexure"
+   ]
+  },
+  "rows": [
+   {
+    "node": "@3.75,71",
+    "xyz": [
+     3.75,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "BWI",
+      68.5,
+      265.5
+     ]
+    ],
+    "defl_per_1000": 0.028339047361995696,
+    "L100": {
+     "capacity_lb": 1371,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.58
+    },
+    "L40": {
+     "capacity_lb": 5122,
+     "base_dcr": 0.477,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.426
+    },
+    "L0": {
+     "capacity_lb": 7623,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.323
+    }
+   },
+   {
+    "node": "@3.75,128",
+    "xyz": [
+     3.75,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "BWI",
+      125.5,
+      265.5
+     ],
+     [
+      "B-1A",
+      37.75,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.020912333750427906,
+    "L100": {
+     "capacity_lb": 3987,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.665
+    },
+    "L40": {
+     "capacity_lb": 10948,
+     "base_dcr": 0.477,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.525
+    },
+    "L0": {
+     "capacity_lb": 14174,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.401
+    }
+   },
+   {
+    "node": "@3.75,185",
+    "xyz": [
+     3.75,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "BWI",
+      182.5,
+      265.5
+     ],
+     [
+      "B-2",
+      37.75,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.012623159763945221,
+    "L100": {
+     "capacity_lb": 5983,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.475
+    },
+    "L40": {
+     "capacity_lb": 17646,
+     "base_dcr": 0.477,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.423
+    },
+    "L0": {
+     "capacity_lb": 19059,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.309
+    }
+   },
+   {
+    "node": "@12.0312,71",
+    "xyz": [
+     12.03125,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      8.28125,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.027488500142627277,
+    "L100": {
+     "capacity_lb": 1684,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.637
+    },
+    "L40": {
+     "capacity_lb": 6116,
+     "base_dcr": 0.477,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.474
+    },
+    "L0": {
+     "capacity_lb": 8768,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.357
+    }
+   },
+   {
+    "node": "@19.7308,71",
+    "xyz": [
+     19.73076923076923,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      15.98076923076923,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.02930175169238853,
+    "L100": {
+     "capacity_lb": 1752,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.687
+    },
+    "L40": {
+     "capacity_lb": 6263,
+     "base_dcr": 0.477,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.512
+    },
+    "L0": {
+     "capacity_lb": 8978,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.387
+    }
+   },
+   {
+    "node": "@27.375,71",
+    "xyz": [
+     27.375,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      23.625,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.032893840504010334,
+    "L100": {
+     "capacity_lb": 1823,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.74
+    },
+    "L40": {
+     "capacity_lb": 6423,
+     "base_dcr": 0.477,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.562
+    },
+    "L0": {
+     "capacity_lb": 9207,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.434
+    }
+   },
+   {
+    "node": "@35.7115,71",
+    "xyz": [
+     35.71153846153846,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      31.96153846153846,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.038286151743622356,
+    "L100": {
+     "capacity_lb": 1905,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.798
+    },
+    "L40": {
+     "capacity_lb": 6607,
+     "base_dcr": 0.477,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.626
+    },
+    "L0": {
+     "capacity_lb": 9471,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.502
+    }
+   },
+   {
+    "node": "@42.7188,71",
+    "xyz": [
+     42.71875,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      38.96875,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.04361137690797377,
+    "L100": {
+     "capacity_lb": 1978,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.847
+    },
+    "L40": {
+     "capacity_lb": 6773,
+     "base_dcr": 0.477,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.687
+    },
+    "L0": {
+     "capacity_lb": 9709,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.569
+    }
+   },
+   {
+    "node": "@51.6923,71",
+    "xyz": [
+     51.69230769230769,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      47.94230769230769,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.050987404909016154,
+    "L100": {
+     "capacity_lb": 2078,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.908
+    },
+    "L40": {
+     "capacity_lb": 7004,
+     "base_dcr": 0.477,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.77
+    },
+    "L0": {
+     "capacity_lb": 10042,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.665
+    }
+   },
+   {
+    "node": "@58.0625,71",
+    "xyz": [
+     58.0625,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      54.3125,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.05632473233394756,
+    "L100": {
+     "capacity_lb": 2152,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.949
+    },
+    "L40": {
+     "capacity_lb": 7184,
+     "base_dcr": 0.477,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.831
+    },
+    "L0": {
+     "capacity_lb": 9840,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.712
+    }
+   },
+   {
+    "node": "@67.6731,71",
+    "xyz": [
+     67.67307692307692,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      63.92307692307692,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.06411262694062354,
+    "L100": {
+     "capacity_lb": 2272,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.008
+    },
+    "L40": {
+     "capacity_lb": 7487,
+     "base_dcr": 0.477,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.924
+    },
+    "L0": {
+     "capacity_lb": 8921,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.736
+    }
+   },
+   {
+    "node": "@73.4062,71",
+    "xyz": [
+     73.40625,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      69.65625,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.06842611315368463,
+    "L100": {
+     "capacity_lb": 2348,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.04
+    },
+    "L40": {
+     "capacity_lb": 7132,
+     "base_dcr": 0.477,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.941
+    },
+    "L0": {
+     "capacity_lb": 8446,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.746
+    }
+   },
+   {
+    "node": "@83.6538,71",
+    "xyz": [
+     83.65384615384616,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      79.90384615384616,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.07518799461555595,
+    "L100": {
+     "capacity_lb": 2494,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.091
+    },
+    "L40": {
+     "capacity_lb": 6620,
+     "base_dcr": 0.477,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.963
+    },
+    "L0": {
+     "capacity_lb": 7943,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.771
+    }
+   },
+   {
+    "node": "@88.75,71",
+    "xyz": [
+     88.75,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      85.0,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.0779932539440268,
+    "L100": {
+     "capacity_lb": 2572,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.113
+    },
+    "L40": {
+     "capacity_lb": 6393,
+     "base_dcr": 0.477,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.969
+    },
+    "L0": {
+     "capacity_lb": 7710,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.777
+    }
+   },
+   {
+    "node": "@99.6346,71",
+    "xyz": [
+     99.63461538461539,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      95.88461538461539,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.08252428196486149,
+    "L100": {
+     "capacity_lb": 2753,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.15
+    },
+    "L40": {
+     "capacity_lb": 6159,
+     "base_dcr": 0.477,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.985
+    },
+    "L0": {
+     "capacity_lb": 7478,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.796
+    }
+   },
+   {
+    "node": "@104.094,71",
+    "xyz": [
+     104.09375,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      100.34375,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.08375815675744488,
+    "L100": {
+     "capacity_lb": 2833,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.162
+    },
+    "L40": {
+     "capacity_lb": 6068,
+     "base_dcr": 0.477,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.986
+    },
+    "L0": {
+     "capacity_lb": 7380,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.798
+    }
+   },
+   {
+    "node": "@115.615,71",
+    "xyz": [
+     115.61538461538461,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      111.86538461538461,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.08517171245375448,
+    "L100": {
+     "capacity_lb": 3063,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.181
+    },
+    "L40": {
+     "capacity_lb": 6057,
+     "base_dcr": 0.477,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.992
+    },
+    "L0": {
+     "capacity_lb": 7366,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.809
+    }
+   },
+   {
+    "node": "@119.438,71",
+    "xyz": [
+     119.4375,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      115.6875,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.08506708064168274,
+    "L100": {
+     "capacity_lb": 3147,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.183
+    },
+    "L40": {
+     "capacity_lb": 6053,
+     "base_dcr": 0.477,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.99
+    },
+    "L0": {
+     "capacity_lb": 7353,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.807
+    }
+   },
+   {
+    "node": "@131.596,71",
+    "xyz": [
+     131.59615384615384,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      127.84615384615384,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.08286373516965925,
+    "L100": {
+     "capacity_lb": 3450,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.179
+    },
+    "L40": {
+     "capacity_lb": 6272,
+     "base_dcr": 0.477,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.985
+    },
+    "L0": {
+     "capacity_lb": 7558,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.806
+    }
+   },
+   {
+    "node": "@134.781,71",
+    "xyz": [
+     134.78125,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      131.03125,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.08183221660802018,
+    "L100": {
+     "capacity_lb": 3539,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.175
+    },
+    "L40": {
+     "capacity_lb": 6332,
+     "base_dcr": 0.477,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.98
+    },
+    "L0": {
+     "capacity_lb": 7607,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.802
+    }
+   },
+   {
+    "node": "@147.577,71",
+    "xyz": [
+     147.57692307692307,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      143.82692307692307,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.0759513928568346,
+    "L100": {
+     "capacity_lb": 3955,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.145
+    },
+    "L40": {
+     "capacity_lb": 6842,
+     "base_dcr": 0.477,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.962
+    },
+    "L0": {
+     "capacity_lb": 8083,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.789
+    }
+   },
+   {
+    "node": "@150.125,71",
+    "xyz": [
+     150.125,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      146.375,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.07447623326586329,
+    "L100": {
+     "capacity_lb": 4051,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.137
+    },
+    "L40": {
+     "capacity_lb": 6951,
+     "base_dcr": 0.477,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.956
+    },
+    "L0": {
+     "capacity_lb": 8180,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.783
+    }
+   },
+   {
+    "node": "@163.558,71",
+    "xyz": [
+     163.55769230769232,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      159.80769230769232,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.06532811981822517,
+    "L100": {
+     "capacity_lb": 4071,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.042
+    },
+    "L40": {
+     "capacity_lb": 7874,
+     "base_dcr": 0.477,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.924
+    },
+    "L0": {
+     "capacity_lb": 9037,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.757
+    }
+   },
+   {
+    "node": "@165.469,71",
+    "xyz": [
+     165.46875,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      161.71875,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.06386899489778633,
+    "L100": {
+     "capacity_lb": 4065,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.026
+    },
+    "L40": {
+     "capacity_lb": 8004,
+     "base_dcr": 0.477,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.917
+    },
+    "L0": {
+     "capacity_lb": 9155,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.75
+    }
+   },
+   {
+    "node": "@179.538,71",
+    "xyz": [
+     179.53846153846155,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      175.78846153846155,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.052343320697035976,
+    "L100": {
+     "capacity_lb": 4052,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.902
+    },
+    "L40": {
+     "capacity_lb": 9648,
+     "base_dcr": 0.477,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.874
+    },
+    "L0": {
+     "capacity_lb": 10682,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.713
+    }
+   },
+   {
+    "node": "@180.812,71",
+    "xyz": [
+     180.8125,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      177.0625,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.051255521107705836,
+    "L100": {
+     "capacity_lb": 4054,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.891
+    },
+    "L40": {
+     "capacity_lb": 9814,
+     "base_dcr": 0.477,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.868
+    },
+    "L0": {
+     "capacity_lb": 10830,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.708
+    }
+   },
+   {
+    "node": "@195.519,71",
+    "xyz": [
+     195.51923076923077,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      191.76923076923077,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.03872000690524896,
+    "L100": {
+     "capacity_lb": 4106,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.751
+    },
+    "L40": {
+     "capacity_lb": 12656,
+     "base_dcr": 0.477,
+     "governs": "E.slope",
+     "mode": "H1-1a combined axial + flexure",
+     "defl_total_at_capacity": 0.811
+    },
+    "L0": {
+     "capacity_lb": 15152,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.726
+    }
+   },
+   {
+    "node": "@196.156,71",
+    "xyz": [
+     196.15625,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      192.40625,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.03819158150544628,
+    "L100": {
+     "capacity_lb": 4110,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.745
+    },
+    "L40": {
+     "capacity_lb": 12732,
+     "base_dcr": 0.477,
+     "governs": "E.slope",
+     "mode": "H1-1a combined axial + flexure",
+     "defl_total_at_capacity": 0.805
+    },
+    "L0": {
+     "capacity_lb": 15253,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.721
+    }
+   },
+   {
+    "node": "@211.5,71",
+    "xyz": [
+     211.5,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      207.75,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.026445606238738352,
+    "L100": {
+     "capacity_lb": 4256,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.599
+    },
+    "L40": {
+     "capacity_lb": 12353,
+     "base_dcr": 0.477,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.595
+    },
+    "L0": {
+     "capacity_lb": 13169,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.47
+    }
+   },
+   {
+    "node": "@-18.6562,128",
+    "xyz": [
+     -18.6562,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      15.343800000000002,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.011644741249433332,
+    "L100": {
+     "capacity_lb": 9378,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.43
+    },
+    "L40": {
+     "capacity_lb": 13765,
+     "base_dcr": 0.477,
+     "governs": "BW",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.333
+    },
+    "L0": {
+     "capacity_lb": 15977,
+     "base_dcr": 0.283,
+     "governs": "BW",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.26
+    }
+   },
+   {
+    "node": "@-3.3125,128",
+    "xyz": [
+     -3.3125,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      30.6875,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.016748622913408916,
+    "L100": {
+     "capacity_lb": 6323,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.607
+    },
+    "L40": {
+     "capacity_lb": 14267,
+     "base_dcr": 0.477,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.497
+    },
+    "L0": {
+     "capacity_lb": 18471,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.405
+    }
+   },
+   {
+    "node": "@19.7308,128",
+    "xyz": [
+     19.73076923076923,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      53.730769230769226,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.03291320477873155,
+    "L100": {
+     "capacity_lb": 4727,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.911
+    },
+    "L40": {
+     "capacity_lb": 9597,
+     "base_dcr": 0.477,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.694
+    },
+    "L0": {
+     "capacity_lb": 12425,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.535
+    }
+   },
+   {
+    "node": "@35.7115,128",
+    "xyz": [
+     35.71153846153846,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      69.71153846153845,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.048129507185411854,
+    "L100": {
+     "capacity_lb": 4248,
+     "base_dcr": 0.894,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.117
+    },
+    "L40": {
+     "capacity_lb": 8343,
+     "base_dcr": 0.477,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.854
+    },
+    "L0": {
+     "capacity_lb": 10801,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.665
+    }
+   },
+   {
+    "node": "@51.6923,128",
+    "xyz": [
+     51.69230769230769,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      85.6923076923077,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.06454849928854745,
+    "L100": {
+     "capacity_lb": 3444,
+     "base_dcr": 0.894,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.27
+    },
+    "L40": {
+     "capacity_lb": 7413,
+     "base_dcr": 0.477,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.995
+    },
+    "L0": {
+     "capacity_lb": 9608,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.782
+    }
+   },
+   {
+    "node": "@67.6731,128",
+    "xyz": [
+     67.67307692307692,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      101.67307692307692,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.08037780902505315,
+    "L100": {
+     "capacity_lb": 2682,
+     "base_dcr": 0.894,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.373
+    },
+    "L40": {
+     "capacity_lb": 6011,
+     "base_dcr": 0.477,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.052
+    },
+    "L0": {
+     "capacity_lb": 8111,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.829
+    }
+   },
+   {
+    "node": "@83.6538,128",
+    "xyz": [
+     83.65384615384616,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      117.65384615384616,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.09397255650032213,
+    "L100": {
+     "capacity_lb": 2143,
+     "base_dcr": 0.894,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.438
+    },
+    "L40": {
+     "capacity_lb": 5162,
+     "base_dcr": 0.477,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.093
+    },
+    "L0": {
+     "capacity_lb": 7175,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.862
+    }
+   },
+   {
+    "node": "@99.6346,128",
+    "xyz": [
+     99.63461538461539,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      133.6346153846154,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.10393866341057287,
+    "L100": {
+     "capacity_lb": 1770,
+     "base_dcr": 0.894,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.47
+    },
+    "L40": {
+     "capacity_lb": 4672,
+     "base_dcr": 0.477,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.118
+    },
+    "L0": {
+     "capacity_lb": 6606,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.883
+    }
+   },
+   {
+    "node": "@115.615,128",
+    "xyz": [
+     115.61538461538461,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      149.6153846153846,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.10922681442286879,
+    "L100": {
+     "capacity_lb": 1636,
+     "base_dcr": 0.894,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.48
+    },
+    "L40": {
+     "capacity_lb": 4436,
+     "base_dcr": 0.477,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.126
+    },
+    "L0": {
+     "capacity_lb": 6303,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.889
+    }
+   },
+   {
+    "node": "@131.596,128",
+    "xyz": [
+     131.59615384615384,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      165.59615384615384,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.10921732277511416,
+    "L100": {
+     "capacity_lb": 1705,
+     "base_dcr": 0.894,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.47
+    },
+    "L40": {
+     "capacity_lb": 4417,
+     "base_dcr": 0.477,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.117
+    },
+    "L0": {
+     "capacity_lb": 6226,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.882
+    }
+   },
+   {
+    "node": "@147.577,128",
+    "xyz": [
+     147.57692307692307,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      181.57692307692307,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.10379634101368349,
+    "L100": {
+     "capacity_lb": 1979,
+     "base_dcr": 0.894,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.441
+    },
+    "L40": {
+     "capacity_lb": 4616,
+     "base_dcr": 0.477,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.093
+    },
+    "L0": {
+     "capacity_lb": 6373,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.861
+    }
+   },
+   {
+    "node": "@163.558,128",
+    "xyz": [
+     163.55769230769232,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      197.55769230769232,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.09342319846455413,
+    "L100": {
+     "capacity_lb": 2438,
+     "base_dcr": 0.894,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.383
+    },
+    "L40": {
+     "capacity_lb": 5076,
+     "base_dcr": 0.477,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.052
+    },
+    "L0": {
+     "capacity_lb": 6789,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.828
+    }
+   },
+   {
+    "node": "@179.538,128",
+    "xyz": [
+     179.53846153846155,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      213.53846153846155,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.07918961898907127,
+    "L100": {
+     "capacity_lb": 3044,
+     "base_dcr": 0.894,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.289
+    },
+    "L40": {
+     "capacity_lb": 5992,
+     "base_dcr": 0.477,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.004
+    },
+    "L0": {
+     "capacity_lb": 7643,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.79
+    }
+   },
+   {
+    "node": "@195.519,128",
+    "xyz": [
+     195.51923076923077,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      229.51923076923077,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.06287026145770834,
+    "L100": {
+     "capacity_lb": 3021,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.106
+    },
+    "L40": {
+     "capacity_lb": 7524,
+     "base_dcr": 0.477,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.943
+    },
+    "L0": {
+     "capacity_lb": 9151,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.748
+    }
+   },
+   {
+    "node": "@211.5,128",
+    "xyz": [
+     211.5,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      245.5,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.04695881161024069,
+    "L100": {
+     "capacity_lb": 2969,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.905
+    },
+    "L40": {
+     "capacity_lb": 9628,
+     "base_dcr": 0.477,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.854
+    },
+    "L0": {
+     "capacity_lb": 10985,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.674
+    }
+   },
+   {
+    "node": "@-18.6562,185",
+    "xyz": [
+     -18.65625,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      15.34375,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.00313145325458579,
+    "L100": {
+     "capacity_lb": 18017,
+     "base_dcr": 0.894,
+     "governs": "W3",
+     "mode": "H1-1a combined axial + flexure",
+     "defl_total_at_capacity": 0.221
+    },
+    "L40": {
+     "capacity_lb": 20000,
+     "base_dcr": 0.477,
+     "governs": "W3",
+     "mode": "H1-1a combined axial + flexure",
+     "defl_total_at_capacity": 0.146
+    },
+    "L0": {
+     "capacity_lb": 20000,
+     "base_dcr": 0.283,
+     "governs": "W3",
+     "mode": "H1-1a combined axial + flexure",
+     "defl_total_at_capacity": 0.091
+    }
+   },
+   {
+    "node": "@-3.3125,185",
+    "xyz": [
+     -3.3125,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      30.6875,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.0088902673815802,
+    "L100": {
+     "capacity_lb": 9732,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.412
+    },
+    "L40": {
+     "capacity_lb": 20000,
+     "base_dcr": 0.477,
+     "governs": "W3",
+     "mode": "H1-1a combined axial + flexure",
+     "defl_total_at_capacity": 0.341
+    },
+    "L0": {
+     "capacity_lb": 20000,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.233
+    }
+   },
+   {
+    "node": "@12.0312,185",
+    "xyz": [
+     12.03125,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      46.03125,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.017294207012781632,
+    "L100": {
+     "capacity_lb": 6467,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.596
+    },
+    "L40": {
+     "capacity_lb": 17370,
+     "base_dcr": 0.477,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.543
+    },
+    "L0": {
+     "capacity_lb": 18761,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.407
+    }
+   },
+   {
+    "node": "@19.7308,185",
+    "xyz": [
+     19.73076923076923,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      53.730769230769226,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.022357873860191044,
+    "L100": {
+     "capacity_lb": 5516,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.684
+    },
+    "L40": {
+     "capacity_lb": 15475,
+     "base_dcr": 0.477,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.628
+    },
+    "L0": {
+     "capacity_lb": 16714,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.469
+    }
+   },
+   {
+    "node": "@27.375,185",
+    "xyz": [
+     27.375,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      61.375,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.027797648036429496,
+    "L100": {
+     "capacity_lb": 4812,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.767
+    },
+    "L40": {
+     "capacity_lb": 14159,
+     "base_dcr": 0.477,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.712
+    },
+    "L0": {
+     "capacity_lb": 15293,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.534
+    }
+   },
+   {
+    "node": "@35.7115,185",
+    "xyz": [
+     35.71153846153846,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      69.71153846153845,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.03404745441135747,
+    "L100": {
+     "capacity_lb": 4228,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.852
+    },
+    "L40": {
+     "capacity_lb": 12647,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.787
+    },
+    "L0": {
+     "capacity_lb": 14187,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.605
+    }
+   },
+   {
+    "node": "@42.7188,185",
+    "xyz": [
+     42.71875,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      76.71875,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.03943123091177835,
+    "L100": {
+     "capacity_lb": 3840,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.918
+    },
+    "L40": {
+     "capacity_lb": 11075,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.823
+    },
+    "L0": {
+     "capacity_lb": 13268,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.656
+    }
+   },
+   {
+    "node": "@51.6923,185",
+    "xyz": [
+     51.69230769230769,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      85.6923076923077,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.04631862099077475,
+    "L100": {
+     "capacity_lb": 3443,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.996
+    },
+    "L40": {
+     "capacity_lb": 9735,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.873
+    },
+    "L0": {
+     "capacity_lb": 11944,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.699
+    }
+   },
+   {
+    "node": "@58.0625,185",
+    "xyz": [
+     58.0625,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      92.0625,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.05108971779646191,
+    "L100": {
+     "capacity_lb": 3213,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.045
+    },
+    "L40": {
+     "capacity_lb": 8845,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.896
+    },
+    "L0": {
+     "capacity_lb": 11021,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.717
+    }
+   },
+   {
+    "node": "@67.6731,185",
+    "xyz": [
+     67.67307692307692,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      101.67307692307692,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.05790927213717312,
+    "L100": {
+     "capacity_lb": 2926,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.11
+    },
+    "L40": {
+     "capacity_lb": 7983,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.938
+    },
+    "L0": {
+     "capacity_lb": 10141,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.753
+    }
+   },
+   {
+    "node": "@73.4062,185",
+    "xyz": [
+     73.40625,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      107.40625,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.061669709882474964,
+    "L100": {
+     "capacity_lb": 2783,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.143
+    },
+    "L40": {
+     "capacity_lb": 7475,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.953
+    },
+    "L0": {
+     "capacity_lb": 9599,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.764
+    }
+   },
+   {
+    "node": "@83.6538,185",
+    "xyz": [
+     83.65384615384616,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      117.65384615384616,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.06763529027829004,
+    "L100": {
+     "capacity_lb": 2569,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.191
+    },
+    "L40": {
+     "capacity_lb": 6936,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.985
+    },
+    "L0": {
+     "capacity_lb": 9025,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.793
+    }
+   },
+   {
+    "node": "@88.75,185",
+    "xyz": [
+     88.75,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      122.75,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.07017699289542761,
+    "L100": {
+     "capacity_lb": 2479,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.209
+    },
+    "L40": {
+     "capacity_lb": 6665,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.994
+    },
+    "L0": {
+     "capacity_lb": 8718,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.799
+    }
+   },
+   {
+    "node": "@99.6346,185",
+    "xyz": [
+     99.63461538461539,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      133.6346153846154,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.07451003518580283,
+    "L100": {
+     "capacity_lb": 2316,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.237
+    },
+    "L40": {
+     "capacity_lb": 6368,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.017
+    },
+    "L0": {
+     "capacity_lb": 8379,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.819
+    }
+   },
+   {
+    "node": "@104.094,185",
+    "xyz": [
+     104.09375,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      138.09375,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.07581713748674632,
+    "L100": {
+     "capacity_lb": 2260,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.243
+    },
+    "L40": {
+     "capacity_lb": 6244,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.021
+    },
+    "L0": {
+     "capacity_lb": 8222,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.821
+    }
+   },
+   {
+    "node": "@115.615,185",
+    "xyz": [
+     115.61538461538461,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      149.6153846153846,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.0778406665275431,
+    "L100": {
+     "capacity_lb": 2137,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.247
+    },
+    "L40": {
+     "capacity_lb": 6155,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.033
+    },
+    "L0": {
+     "capacity_lb": 8085,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.833
+    }
+   },
+   {
+    "node": "@119.438,185",
+    "xyz": [
+     119.4375,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      153.4375,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.07806747082099075,
+    "L100": {
+     "capacity_lb": 2103,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.245
+    },
+    "L40": {
+     "capacity_lb": 6120,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.033
+    },
+    "L0": {
+     "capacity_lb": 8023,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.831
+    }
+   },
+   {
+    "node": "@131.596,185",
+    "xyz": [
+     131.59615384615384,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      165.59615384615384,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.07730050666229357,
+    "L100": {
+     "capacity_lb": 2014,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.223
+    },
+    "L40": {
+     "capacity_lb": 6263,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.035
+    },
+    "L0": {
+     "capacity_lb": 8105,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.833
+    }
+   },
+   {
+    "node": "@134.781,185",
+    "xyz": [
+     134.78125,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      168.78125,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.07673033057848595,
+    "L100": {
+     "capacity_lb": 1995,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.214
+    },
+    "L40": {
+     "capacity_lb": 6296,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.032
+    },
+    "L0": {
+     "capacity_lb": 8112,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.829
+    }
+   },
+   {
+    "node": "@147.577,185",
+    "xyz": [
+     147.57692307692307,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      181.57692307692307,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.0729780003936042,
+    "L100": {
+     "capacity_lb": 1936,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.167
+    },
+    "L40": {
+     "capacity_lb": 6716,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.024
+    },
+    "L0": {
+     "capacity_lb": 8454,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.823
+    }
+   },
+   {
+    "node": "@150.125,185",
+    "xyz": [
+     150.125,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      184.125,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.07196813204184098,
+    "L100": {
+     "capacity_lb": 1928,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.155
+    },
+    "L40": {
+     "capacity_lb": 6801,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.019
+    },
+    "L0": {
+     "capacity_lb": 8513,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.818
+    }
+   },
+   {
+    "node": "@163.558,185",
+    "xyz": [
+     163.55769230769232,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      197.55769230769232,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.06540235995520759,
+    "L100": {
+     "capacity_lb": 1900,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.081
+    },
+    "L40": {
+     "capacity_lb": 7609,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.001
+    },
+    "L0": {
+     "capacity_lb": 9210,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.803
+    }
+   },
+   {
+    "node": "@165.469,185",
+    "xyz": [
+     165.46875,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      199.46875,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.06432010844015071,
+    "L100": {
+     "capacity_lb": 1899,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.069
+    },
+    "L40": {
+     "capacity_lb": 7731,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.996
+    },
+    "L0": {
+     "capacity_lb": 9305,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.798
+    }
+   },
+   {
+    "node": "@179.538,185",
+    "xyz": [
+     179.53846153846155,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      213.53846153846155,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.055545998752507555,
+    "L100": {
+     "capacity_lb": 1906,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.972
+    },
+    "L40": {
+     "capacity_lb": 9231,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.974
+    },
+    "L0": {
+     "capacity_lb": 10600,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.779
+    }
+   },
+   {
+    "node": "@180.812,185",
+    "xyz": [
+     180.8125,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      214.8125,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.054700927718489945,
+    "L100": {
+     "capacity_lb": 1909,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.963
+    },
+    "L40": {
+     "capacity_lb": 9394,
+     "base_dcr": 0.477,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.971
+    },
+    "L0": {
+     "capacity_lb": 10735,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.777
+    }
+   },
+   {
+    "node": "@195.519,185",
+    "xyz": [
+     195.51923076923077,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      229.51923076923077,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.0448048520139705,
+    "L100": {
+     "capacity_lb": 1960,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.846
+    },
+    "L40": {
+     "capacity_lb": 9652,
+     "base_dcr": 0.477,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.842
+    },
+    "L0": {
+     "capacity_lb": 13766,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.794
+    }
+   },
+   {
+    "node": "@196.156,185",
+    "xyz": [
+     196.15625,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      230.15625,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.04438226287951946,
+    "L100": {
+     "capacity_lb": 1963,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.841
+    },
+    "L40": {
+     "capacity_lb": 9668,
+     "base_dcr": 0.477,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.837
+    },
+    "L0": {
+     "capacity_lb": 13918,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.794
+    }
+   },
+   {
+    "node": "@211.5,185",
+    "xyz": [
+     211.5,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      245.5,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.03494650869915299,
+    "L100": {
+     "capacity_lb": 2069,
+     "base_dcr": 0.894,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.712
+    },
+    "L40": {
+     "capacity_lb": 10188,
+     "base_dcr": 0.477,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.708
+    },
+    "L0": {
+     "capacity_lb": 13537,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.634
+    }
+   }
+  ]
+ },
+ "pinned": {
+  "pinned": true,
+  "base": {
+   "L100": [
+    0.9179992407166361,
+    "E.top",
+    "flexure"
+   ],
+   "L40": [
+    0.4856475842797041,
+    "E.top",
+    "flexure"
+   ],
+   "L0": [
+    0.28342102569497163,
+    "R-W1",
+    "H1-1b combined axial + flexure"
+   ]
+  },
+  "rows": [
+   {
+    "node": "@3.75,71",
+    "xyz": [
+     3.75,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "BWI",
+      68.5,
+      265.5
+     ]
+    ],
+    "defl_per_1000": 0.02914280880631325,
+    "L100": {
+     "capacity_lb": 2132,
+     "base_dcr": 0.918,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.663
+    },
+    "L40": {
+     "capacity_lb": 5714,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.478
+    },
+    "L0": {
+     "capacity_lb": 8103,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.355
+    }
+   },
+   {
+    "node": "@3.75,128",
+    "xyz": [
+     3.75,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "BWI",
+      125.5,
+      265.5
+     ],
+     [
+      "B-1A",
+      37.75,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.023295931901901355,
+    "L100": {
+     "capacity_lb": 6031,
+     "base_dcr": 0.918,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.826
+    },
+    "L40": {
+     "capacity_lb": 10894,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.603
+    },
+    "L0": {
+     "capacity_lb": 13906,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.449
+    }
+   },
+   {
+    "node": "@3.75,185",
+    "xyz": [
+     3.75,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "BWI",
+      182.5,
+      265.5
+     ],
+     [
+      "B-2",
+      37.75,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.016341397269568885,
+    "L100": {
+     "capacity_lb": 8467,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.665
+    },
+    "L40": {
+     "capacity_lb": 13031,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.479
+    },
+    "L0": {
+     "capacity_lb": 15776,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.35
+    }
+   },
+   {
+    "node": "@12.0312,71",
+    "xyz": [
+     12.03125,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      8.28125,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.028308014196282434,
+    "L100": {
+     "capacity_lb": 2413,
+     "base_dcr": 0.918,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.718
+    },
+    "L40": {
+     "capacity_lb": 6446,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.519
+    },
+    "L0": {
+     "capacity_lb": 9134,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.386
+    }
+   },
+   {
+    "node": "@19.7308,71",
+    "xyz": [
+     19.73076923076923,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      15.98076923076923,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.030097500924614322,
+    "L100": {
+     "capacity_lb": 2491,
+     "base_dcr": 0.918,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.769
+    },
+    "L40": {
+     "capacity_lb": 6659,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.559
+    },
+    "L0": {
+     "capacity_lb": 9436,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.419
+    }
+   },
+   {
+    "node": "@27.375,71",
+    "xyz": [
+     27.375,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      23.625,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.03367981602660958,
+    "L100": {
+     "capacity_lb": 2571,
+     "base_dcr": 0.918,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.823
+    },
+    "L40": {
+     "capacity_lb": 6881,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.612
+    },
+    "L0": {
+     "capacity_lb": 9751,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.471
+    }
+   },
+   {
+    "node": "@35.7115,71",
+    "xyz": [
+     35.71153846153846,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      31.96153846153846,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.03907614768718626,
+    "L100": {
+     "capacity_lb": 2667,
+     "base_dcr": 0.918,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.885
+    },
+    "L40": {
+     "capacity_lb": 7142,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.681
+    },
+    "L0": {
+     "capacity_lb": 10123,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.545
+    }
+   },
+   {
+    "node": "@42.7188,71",
+    "xyz": [
+     42.71875,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      38.96875,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.0444154031496989,
+    "L100": {
+     "capacity_lb": 2755,
+     "base_dcr": 0.918,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.938
+    },
+    "L40": {
+     "capacity_lb": 7378,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.747
+    },
+    "L0": {
+     "capacity_lb": 10459,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.621
+    }
+   },
+   {
+    "node": "@51.6923,71",
+    "xyz": [
+     51.69230769230769,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      47.94230769230769,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.05182189141769954,
+    "L100": {
+     "capacity_lb": 2878,
+     "base_dcr": 0.918,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.005
+    },
+    "L40": {
+     "capacity_lb": 7706,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.84
+    },
+    "L0": {
+     "capacity_lb": 10598,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.713
+    }
+   },
+   {
+    "node": "@58.0625,71",
+    "xyz": [
+     58.0625,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      54.3125,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.057188125945773306,
+    "L100": {
+     "capacity_lb": 2972,
+     "base_dcr": 0.918,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.051
+    },
+    "L40": {
+     "capacity_lb": 7958,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.908
+    },
+    "L0": {
+     "capacity_lb": 9663,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.721
+    }
+   },
+   {
+    "node": "@67.6731,71",
+    "xyz": [
+     67.67307692307692,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      63.92307692307692,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.06502852782559199,
+    "L100": {
+     "capacity_lb": 3127,
+     "base_dcr": 0.918,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.117
+    },
+    "L40": {
+     "capacity_lb": 7468,
+     "base_dcr": 0.486,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.956
+    },
+    "L0": {
+     "capacity_lb": 8775,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.745
+    }
+   },
+   {
+    "node": "@73.4062,71",
+    "xyz": [
+     73.40625,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      69.65625,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.06937707876663605,
+    "L100": {
+     "capacity_lb": 3229,
+     "base_dcr": 0.918,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.154
+    },
+    "L40": {
+     "capacity_lb": 7013,
+     "base_dcr": 0.486,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.965
+    },
+    "L0": {
+     "capacity_lb": 8316,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.755
+    }
+   },
+   {
+    "node": "@83.6538,71",
+    "xyz": [
+     83.65384615384616,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      79.90384615384616,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.0762052652282054,
+    "L100": {
+     "capacity_lb": 3428,
+     "base_dcr": 0.918,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.214
+    },
+    "L40": {
+     "capacity_lb": 6514,
+     "base_dcr": 0.486,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.987
+    },
+    "L0": {
+     "capacity_lb": 7829,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.779
+    }
+   },
+   {
+    "node": "@88.75,71",
+    "xyz": [
+     88.75,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      85.0,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.07904384207537599,
+    "L100": {
+     "capacity_lb": 3537,
+     "base_dcr": 0.918,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.24
+    },
+    "L40": {
+     "capacity_lb": 6293,
+     "base_dcr": 0.486,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.992
+    },
+    "L0": {
+     "capacity_lb": 7603,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.786
+    }
+   },
+   {
+    "node": "@99.6346,71",
+    "xyz": [
+     99.63461538461539,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      95.88461538461539,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.08364275258871832,
+    "L100": {
+     "capacity_lb": 3549,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.266
+    },
+    "L40": {
+     "capacity_lb": 6063,
+     "base_dcr": 0.486,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.007
+    },
+    "L0": {
+     "capacity_lb": 7379,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.805
+    }
+   },
+   {
+    "node": "@104.094,71",
+    "xyz": [
+     104.09375,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      100.34375,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.08490187987599968,
+    "L100": {
+     "capacity_lb": 3476,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.264
+    },
+    "L40": {
+     "capacity_lb": 5973,
+     "base_dcr": 0.486,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.008
+    },
+    "L0": {
+     "capacity_lb": 7283,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.807
+    }
+   },
+   {
+    "node": "@115.615,71",
+    "xyz": [
+     115.61538461538461,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      111.86538461538461,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.08636933901048953,
+    "L100": {
+     "capacity_lb": 3321,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.249
+    },
+    "L40": {
+     "capacity_lb": 5959,
+     "base_dcr": 0.486,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.013
+    },
+    "L0": {
+     "capacity_lb": 7268,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.817
+    }
+   },
+   {
+    "node": "@119.438,71",
+    "xyz": [
+     119.4375,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      115.6875,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.08627795719293772,
+    "L100": {
+     "capacity_lb": 3280,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.24
+    },
+    "L40": {
+     "capacity_lb": 5954,
+     "base_dcr": 0.486,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.01
+    },
+    "L0": {
+     "capacity_lb": 7255,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.815
+    }
+   },
+   {
+    "node": "@131.596,71",
+    "xyz": [
+     131.59615384615384,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      127.84615384615384,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.08409703507030294,
+    "L100": {
+     "capacity_lb": 3179,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.2
+    },
+    "L40": {
+     "capacity_lb": 6162,
+     "base_dcr": 0.486,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.004
+    },
+    "L0": {
+     "capacity_lb": 7452,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.814
+    }
+   },
+   {
+    "node": "@134.781,71",
+    "xyz": [
+     134.78125,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      131.03125,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.08306573787569185,
+    "L100": {
+     "capacity_lb": 3160,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.186
+    },
+    "L40": {
+     "capacity_lb": 6219,
+     "base_dcr": 0.486,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.998
+    },
+    "L0": {
+     "capacity_lb": 7499,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.81
+    }
+   },
+   {
+    "node": "@147.577,71",
+    "xyz": [
+     147.57692307692307,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      143.82692307692307,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.07715861651673768,
+    "L100": {
+     "capacity_lb": 3115,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.12
+    },
+    "L40": {
+     "capacity_lb": 6707,
+     "base_dcr": 0.486,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.979
+    },
+    "L0": {
+     "capacity_lb": 7956,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.796
+    }
+   },
+   {
+    "node": "@150.125,71",
+    "xyz": [
+     150.125,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      146.375,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.07567268410902411,
+    "L100": {
+     "capacity_lb": 3111,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.105
+    },
+    "L40": {
+     "capacity_lb": 6814,
+     "base_dcr": 0.486,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.972
+    },
+    "L0": {
+     "capacity_lb": 8050,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.79
+    }
+   },
+   {
+    "node": "@163.558,71",
+    "xyz": [
+     163.55769230769232,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      159.80769230769232,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.06643562238003324,
+    "L100": {
+     "capacity_lb": 3127,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.015
+    },
+    "L40": {
+     "capacity_lb": 7693,
+     "base_dcr": 0.486,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.937
+    },
+    "L0": {
+     "capacity_lb": 8868,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.762
+    }
+   },
+   {
+    "node": "@165.469,71",
+    "xyz": [
+     165.46875,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      161.71875,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.06495940572443197,
+    "L100": {
+     "capacity_lb": 3134,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.001
+    },
+    "L40": {
+     "capacity_lb": 7816,
+     "base_dcr": 0.486,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.929
+    },
+    "L0": {
+     "capacity_lb": 8980,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.754
+    }
+   },
+   {
+    "node": "@179.538,71",
+    "xyz": [
+     179.53846153846155,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      175.78846153846155,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.05327510892690026,
+    "L100": {
+     "capacity_lb": 3227,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.889
+    },
+    "L40": {
+     "capacity_lb": 9388,
+     "base_dcr": 0.486,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.883
+    },
+    "L0": {
+     "capacity_lb": 10439,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.716
+    }
+   },
+   {
+    "node": "@180.812,71",
+    "xyz": [
+     180.8125,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      177.0625,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.05217026276742415,
+    "L100": {
+     "capacity_lb": 3239,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.878
+    },
+    "L40": {
+     "capacity_lb": 9562,
+     "base_dcr": 0.486,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.878
+    },
+    "L0": {
+     "capacity_lb": 10593,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.711
+    }
+   },
+   {
+    "node": "@195.519,71",
+    "xyz": [
+     195.51923076923077,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      191.76923076923077,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.03941704894005647,
+    "L100": {
+     "capacity_lb": 3437,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.749
+    },
+    "L40": {
+     "capacity_lb": 12754,
+     "base_dcr": 0.486,
+     "governs": "E.slope",
+     "mode": "H1-1a combined axial + flexure",
+     "defl_total_at_capacity": 0.835
+    },
+    "L0": {
+     "capacity_lb": 14257,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.706
+    }
+   },
+   {
+    "node": "@196.156,71",
+    "xyz": [
+     196.15625,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      192.40625,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.03887871798410946,
+    "L100": {
+     "capacity_lb": 3448,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.744
+    },
+    "L40": {
+     "capacity_lb": 12830,
+     "base_dcr": 0.486,
+     "governs": "E.slope",
+     "mode": "H1-1a combined axial + flexure",
+     "defl_total_at_capacity": 0.829
+    },
+    "L0": {
+     "capacity_lb": 14330,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.7
+    }
+   },
+   {
+    "node": "@211.5,71",
+    "xyz": [
+     211.5,
+     71.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1",
+      207.75,
+      243.75
+     ]
+    ],
+    "defl_per_1000": 0.026890547961039256,
+    "L100": {
+     "capacity_lb": 3811,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.605
+    },
+    "L40": {
+     "capacity_lb": 11531,
+     "base_dcr": 0.486,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.586
+    },
+    "L0": {
+     "capacity_lb": 12395,
+     "base_dcr": 0.283,
+     "governs": "B-1",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.459
+    }
+   },
+   {
+    "node": "@-18.6562,128",
+    "xyz": [
+     -18.6562,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      15.343800000000002,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.012491970293831993,
+    "L100": {
+     "capacity_lb": 7996,
+     "base_dcr": 0.918,
+     "governs": "BW",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.481
+    },
+    "L40": {
+     "capacity_lb": 12618,
+     "base_dcr": 0.486,
+     "governs": "BW",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.361
+    },
+    "L0": {
+     "capacity_lb": 15568,
+     "base_dcr": 0.283,
+     "governs": "BW",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.28
+    }
+   },
+   {
+    "node": "@-3.3125,128",
+    "xyz": [
+     -3.3125,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      30.6875,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.018680904857044812,
+    "L100": {
+     "capacity_lb": 6877,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.721
+    },
+    "L40": {
+     "capacity_lb": 13821,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.563
+    },
+    "L0": {
+     "capacity_lb": 17642,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.442
+    }
+   },
+   {
+    "node": "@19.7308,128",
+    "xyz": [
+     19.73076923076923,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      53.730769230769226,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.036724170603781095,
+    "L100": {
+     "capacity_lb": 3807,
+     "base_dcr": 0.918,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.023
+    },
+    "L40": {
+     "capacity_lb": 9297,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.785
+    },
+    "L0": {
+     "capacity_lb": 11869,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.586
+    }
+   },
+   {
+    "node": "@35.7115,128",
+    "xyz": [
+     35.71153846153846,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      69.71153846153845,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.05309266092379038,
+    "L100": {
+     "capacity_lb": 2665,
+     "base_dcr": 0.918,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.2
+    },
+    "L40": {
+     "capacity_lb": 8054,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.955
+    },
+    "L0": {
+     "capacity_lb": 10282,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.719
+    }
+   },
+   {
+    "node": "@51.6923,128",
+    "xyz": [
+     51.69230769230769,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      85.6923076923077,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.07038994915389797,
+    "L100": {
+     "capacity_lb": 2004,
+     "base_dcr": 0.918,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.347
+    },
+    "L40": {
+     "capacity_lb": 6300,
+     "base_dcr": 0.486,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.041
+    },
+    "L0": {
+     "capacity_lb": 8712,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.806
+    }
+   },
+   {
+    "node": "@67.6731,128",
+    "xyz": [
+     67.67307692307692,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      101.67307692307692,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.08675718309359545,
+    "L100": {
+     "capacity_lb": 1581,
+     "base_dcr": 0.918,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.459
+    },
+    "L40": {
+     "capacity_lb": 5194,
+     "base_dcr": 0.486,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.104
+    },
+    "L0": {
+     "capacity_lb": 7471,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.856
+    }
+   },
+   {
+    "node": "@83.6538,128",
+    "xyz": [
+     83.65384615384616,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      117.65384615384616,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.10052983713688417,
+    "L100": {
+     "capacity_lb": 1288,
+     "base_dcr": 0.918,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.533
+    },
+    "L40": {
+     "capacity_lb": 4532,
+     "base_dcr": 0.486,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.149
+    },
+    "L0": {
+     "capacity_lb": 6695,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.893
+    }
+   },
+   {
+    "node": "@99.6346,128",
+    "xyz": [
+     99.63461538461539,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      133.6346153846154,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.11033063211473015,
+    "L100": {
+     "capacity_lb": 1064,
+     "base_dcr": 0.918,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.567
+    },
+    "L40": {
+     "capacity_lb": 4165,
+     "base_dcr": 0.486,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.176
+    },
+    "L0": {
+     "capacity_lb": 6233,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.915
+    }
+   },
+   {
+    "node": "@115.615,128",
+    "xyz": [
+     115.61538461538461,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      149.6153846153846,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.11515437597390459,
+    "L100": {
+     "capacity_lb": 1032,
+     "base_dcr": 0.918,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.577
+    },
+    "L40": {
+     "capacity_lb": 4015,
+     "base_dcr": 0.486,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.184
+    },
+    "L0": {
+     "capacity_lb": 6004,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.922
+    }
+   },
+   {
+    "node": "@131.596,128",
+    "xyz": [
+     131.59615384615384,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      165.59615384615384,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.1144446372404978,
+    "L100": {
+     "capacity_lb": 1174,
+     "base_dcr": 0.918,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.565
+    },
+    "L40": {
+     "capacity_lb": 4057,
+     "base_dcr": 0.486,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.175
+    },
+    "L0": {
+     "capacity_lb": 5979,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.914
+    }
+   },
+   {
+    "node": "@147.577,128",
+    "xyz": [
+     147.57692307692307,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      181.57692307692307,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.10816277461030117,
+    "L100": {
+     "capacity_lb": 1411,
+     "base_dcr": 0.918,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.521
+    },
+    "L40": {
+     "capacity_lb": 4298,
+     "base_dcr": 0.486,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.147
+    },
+    "L0": {
+     "capacity_lb": 6163,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.891
+    }
+   },
+   {
+    "node": "@163.558,128",
+    "xyz": [
+     163.55769230769232,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      197.55769230769232,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.09684907203782096,
+    "L100": {
+     "capacity_lb": 1701,
+     "base_dcr": 0.918,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.437
+    },
+    "L40": {
+     "capacity_lb": 4789,
+     "base_dcr": 0.486,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.102
+    },
+    "L0": {
+     "capacity_lb": 6604,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.855
+    }
+   },
+   {
+    "node": "@179.538,128",
+    "xyz": [
+     179.53846153846155,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      213.53846153846155,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.08167682644548334,
+    "L100": {
+     "capacity_lb": 2137,
+     "base_dcr": 0.918,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.321
+    },
+    "L40": {
+     "capacity_lb": 5747,
+     "base_dcr": 0.486,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.05
+    },
+    "L0": {
+     "capacity_lb": 7496,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.815
+    }
+   },
+   {
+    "node": "@195.519,128",
+    "xyz": [
+     195.51923076923077,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      229.51923076923077,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.06449835621707214,
+    "L100": {
+     "capacity_lb": 2583,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.162
+    },
+    "L40": {
+     "capacity_lb": 7245,
+     "base_dcr": 0.486,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.978
+    },
+    "L0": {
+     "capacity_lb": 9024,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.77
+    }
+   },
+   {
+    "node": "@211.5,128",
+    "xyz": [
+     211.5,
+     128.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-1A",
+      245.5,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.0478764328193088,
+    "L100": {
+     "capacity_lb": 2638,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.949
+    },
+    "L40": {
+     "capacity_lb": 9289,
+     "base_dcr": 0.486,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.875
+    },
+    "L0": {
+     "capacity_lb": 10743,
+     "base_dcr": 0.283,
+     "governs": "B-1A",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.684
+    }
+   },
+   {
+    "node": "@-18.6562,185",
+    "xyz": [
+     -18.65625,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      15.34375,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.004018265616325403,
+    "L100": {
+     "capacity_lb": 12983,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.278
+    },
+    "L40": {
+     "capacity_lb": 20000,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.195
+    },
+    "L0": {
+     "capacity_lb": 20000,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.121
+    }
+   },
+   {
+    "node": "@-3.3125,185",
+    "xyz": [
+     -3.3125,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      30.6875,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.011710561475981124,
+    "L100": {
+     "capacity_lb": 6495,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.511
+    },
+    "L40": {
+     "capacity_lb": 16109,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.408
+    },
+    "L0": {
+     "capacity_lb": 19504,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.305
+    }
+   },
+   {
+    "node": "@12.0312,185",
+    "xyz": [
+     12.03125,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      46.03125,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.022369503175120133,
+    "L100": {
+     "capacity_lb": 4249,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.726
+    },
+    "L40": {
+     "capacity_lb": 11241,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.57
+    },
+    "L0": {
+     "capacity_lb": 13610,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.415
+    }
+   },
+   {
+    "node": "@19.7308,185",
+    "xyz": [
+     19.73076923076923,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      53.730769230769226,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.02857289477249537,
+    "L100": {
+     "capacity_lb": 3596,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.826
+    },
+    "L40": {
+     "capacity_lb": 10079,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.653
+    },
+    "L0": {
+     "capacity_lb": 12203,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.476
+    }
+   },
+   {
+    "node": "@27.375,185",
+    "xyz": [
+     27.375,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      61.375,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.03509849255716345,
+    "L100": {
+     "capacity_lb": 3110,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.919
+    },
+    "L40": {
+     "capacity_lb": 9265,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.734
+    },
+    "L0": {
+     "capacity_lb": 11217,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.536
+    }
+   },
+   {
+    "node": "@35.7115,185",
+    "xyz": [
+     35.71153846153846,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      69.71153846153845,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.042444741403183335,
+    "L100": {
+     "capacity_lb": 2707,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.012
+    },
+    "L40": {
+     "capacity_lb": 8627,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.82
+    },
+    "L0": {
+     "capacity_lb": 10446,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.601
+    }
+   },
+   {
+    "node": "@42.7188,185",
+    "xyz": [
+     42.71875,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      76.71875,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.0486573338611319,
+    "L100": {
+     "capacity_lb": 2441,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.084
+    },
+    "L40": {
+     "capacity_lb": 8239,
+     "base_dcr": 0.486,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.889
+    },
+    "L0": {
+     "capacity_lb": 9975,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.656
+    }
+   },
+   {
+    "node": "@51.6923,185",
+    "xyz": [
+     51.69230769230769,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      85.6923076923077,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.056458451946038365,
+    "L100": {
+     "capacity_lb": 2169,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.167
+    },
+    "L40": {
+     "capacity_lb": 7678,
+     "base_dcr": 0.486,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.962
+    },
+    "L0": {
+     "capacity_lb": 9552,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.725
+    }
+   },
+   {
+    "node": "@58.0625,185",
+    "xyz": [
+     58.0625,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      92.0625,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.06176670573635294,
+    "L100": {
+     "capacity_lb": 2013,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.219
+    },
+    "L40": {
+     "capacity_lb": 7059,
+     "base_dcr": 0.486,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.991
+    },
+    "L0": {
+     "capacity_lb": 9349,
+     "base_dcr": 0.283,
+     "governs": "BWI",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.772
+    }
+   },
+   {
+    "node": "@67.6731,185",
+    "xyz": [
+     67.67307692307692,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      101.67307692307692,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.06920932697742646,
+    "L100": {
+     "capacity_lb": 1820,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.286
+    },
+    "L40": {
+     "capacity_lb": 6456,
+     "base_dcr": 0.486,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.036
+    },
+    "L0": {
+     "capacity_lb": 8832,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.819
+    }
+   },
+   {
+    "node": "@73.4062,185",
+    "xyz": [
+     73.40625,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      107.40625,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.07323094849561765,
+    "L100": {
+     "capacity_lb": 1725,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.319
+    },
+    "L40": {
+     "capacity_lb": 6099,
+     "base_dcr": 0.486,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.053
+    },
+    "L0": {
+     "capacity_lb": 8427,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.832
+    }
+   },
+   {
+    "node": "@83.6538,185",
+    "xyz": [
+     83.65384615384616,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      117.65384615384616,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.07945649721322721,
+    "L100": {
+     "capacity_lb": 1583,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.367
+    },
+    "L40": {
+     "capacity_lb": 5736,
+     "base_dcr": 0.486,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.088
+    },
+    "L0": {
+     "capacity_lb": 8014,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.862
+    }
+   },
+   {
+    "node": "@88.75,185",
+    "xyz": [
+     88.75,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      122.75,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.08203016345649791,
+    "L100": {
+     "capacity_lb": 1525,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.385
+    },
+    "L40": {
+     "capacity_lb": 5553,
+     "base_dcr": 0.486,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.097
+    },
+    "L0": {
+     "capacity_lb": 7788,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.869
+    }
+   },
+   {
+    "node": "@99.6346,185",
+    "xyz": [
+     99.63461538461539,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      133.6346153846154,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.08622378555634196,
+    "L100": {
+     "capacity_lb": 1421,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.41
+    },
+    "L40": {
+     "capacity_lb": 5377,
+     "base_dcr": 0.486,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.121
+    },
+    "L0": {
+     "capacity_lb": 7562,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.89
+    }
+   },
+   {
+    "node": "@104.094,185",
+    "xyz": [
+     104.09375,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      138.09375,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.08739597740749008,
+    "L100": {
+     "capacity_lb": 1386,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.414
+    },
+    "L40": {
+     "capacity_lb": 5304,
+     "base_dcr": 0.486,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.125
+    },
+    "L0": {
+     "capacity_lb": 7453,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.892
+    }
+   },
+   {
+    "node": "@115.615,185",
+    "xyz": [
+     115.61538461538461,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      149.6153846153846,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.08887905130207188,
+    "L100": {
+     "capacity_lb": 1312,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.413
+    },
+    "L40": {
+     "capacity_lb": 5300,
+     "base_dcr": 0.486,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.136
+    },
+    "L0": {
+     "capacity_lb": 7396,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.902
+    }
+   },
+   {
+    "node": "@119.438,185",
+    "xyz": [
+     119.4375,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      153.4375,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.0888702580493557,
+    "L100": {
+     "capacity_lb": 1292,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.408
+    },
+    "L40": {
+     "capacity_lb": 5296,
+     "base_dcr": 0.486,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.135
+    },
+    "L0": {
+     "capacity_lb": 7362,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.9
+    }
+   },
+   {
+    "node": "@131.596,185",
+    "xyz": [
+     131.59615384615384,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      165.59615384615384,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.08719208049757418,
+    "L100": {
+     "capacity_lb": 1243,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.379
+    },
+    "L40": {
+     "capacity_lb": 5494,
+     "base_dcr": 0.486,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.135
+    },
+    "L0": {
+     "capacity_lb": 7500,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.9
+    }
+   },
+   {
+    "node": "@134.781,185",
+    "xyz": [
+     134.78125,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      168.78125,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.08634724586585488,
+    "L100": {
+     "capacity_lb": 1234,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.368
+    },
+    "L40": {
+     "capacity_lb": 5544,
+     "base_dcr": 0.486,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.131
+    },
+    "L0": {
+     "capacity_lb": 7523,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.895
+    }
+   },
+   {
+    "node": "@147.577,185",
+    "xyz": [
+     147.57692307692307,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      181.57692307692307,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.08137195238003644,
+    "L100": {
+     "capacity_lb": 1210,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.31
+    },
+    "L40": {
+     "capacity_lb": 5995,
+     "base_dcr": 0.486,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.117
+    },
+    "L0": {
+     "capacity_lb": 7898,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.884
+    }
+   },
+   {
+    "node": "@150.125,185",
+    "xyz": [
+     150.125,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      184.125,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.08009975496081087,
+    "L100": {
+     "capacity_lb": 1208,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.296
+    },
+    "L40": {
+     "capacity_lb": 6086,
+     "base_dcr": 0.486,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.111
+    },
+    "L0": {
+     "capacity_lb": 7963,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.878
+    }
+   },
+   {
+    "node": "@163.558,185",
+    "xyz": [
+     163.55769230769232,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      197.55769230769232,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.07208366868823333,
+    "L100": {
+     "capacity_lb": 1213,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.209
+    },
+    "L40": {
+     "capacity_lb": 6898,
+     "base_dcr": 0.486,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.085
+    },
+    "L0": {
+     "capacity_lb": 8669,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.857
+    }
+   },
+   {
+    "node": "@165.469,185",
+    "xyz": [
+     165.46875,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      199.46875,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.07078899256516384,
+    "L100": {
+     "capacity_lb": 1215,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.195
+    },
+    "L40": {
+     "capacity_lb": 7016,
+     "base_dcr": 0.486,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.079
+    },
+    "L0": {
+     "capacity_lb": 8762,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.851
+    }
+   },
+   {
+    "node": "@179.538,185",
+    "xyz": [
+     179.53846153846155,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      213.53846153846155,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.060444144729924584,
+    "L100": {
+     "capacity_lb": 1256,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.082
+    },
+    "L40": {
+     "capacity_lb": 7879,
+     "base_dcr": 0.486,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.009
+    },
+    "L0": {
+     "capacity_lb": 10046,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.825
+    }
+   },
+   {
+    "node": "@180.812,185",
+    "xyz": [
+     180.8125,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      214.8125,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.05945831598438482,
+    "L100": {
+     "capacity_lb": 1262,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 1.071
+    },
+    "L40": {
+     "capacity_lb": 7915,
+     "base_dcr": 0.486,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.999
+    },
+    "L0": {
+     "capacity_lb": 10180,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.822
+    }
+   },
+   {
+    "node": "@195.519,185",
+    "xyz": [
+     195.51923076923077,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      229.51923076923077,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.047998900634311135,
+    "L100": {
+     "capacity_lb": 1358,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.935
+    },
+    "L40": {
+     "capacity_lb": 8517,
+     "base_dcr": 0.486,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.876
+    },
+    "L0": {
+     "capacity_lb": 13289,
+     "base_dcr": 0.283,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.837
+    }
+   },
+   {
+    "node": "@196.156,185",
+    "xyz": [
+     196.15625,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      230.15625,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.047512182096742885,
+    "L100": {
+     "capacity_lb": 1363,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.929
+    },
+    "L40": {
+     "capacity_lb": 8553,
+     "base_dcr": 0.486,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.871
+    },
+    "L0": {
+     "capacity_lb": 13345,
+     "base_dcr": 0.283,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.832
+    }
+   },
+   {
+    "node": "@211.5,185",
+    "xyz": [
+     211.5,
+     185.0,
+     112.5
+    ],
+    "beams": [
+     [
+      "B-2",
+      245.5,
+      281.5
+     ]
+    ],
+    "defl_per_1000": 0.036671819522582826,
+    "L100": {
+     "capacity_lb": 1561,
+     "base_dcr": 0.918,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.778
+    },
+    "L40": {
+     "capacity_lb": 9793,
+     "base_dcr": 0.486,
+     "governs": "E.top",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.753
+    },
+    "L0": {
+     "capacity_lb": 12418,
+     "base_dcr": 0.283,
+     "governs": "B-2",
+     "mode": "flexure",
+     "defl_total_at_capacity": 0.632
+    }
+   }
+  ]
+ }
+}
