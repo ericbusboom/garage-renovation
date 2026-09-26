@@ -48,6 +48,12 @@ W3_Y, W4_Y = 185.0, 268.0      # the west wall bay that cabinet 5 stands in
 S3_EAST = MIDDLE_POST_X + 2 * 24.0
 S3_SOUTH = NORTH_FACE - 90.0
 
+#: The RF-30's table (owner, 2026-09-25): 50 in. across the 24 in. front, the
+#: sweep of its travel; 16 deep; 4 thick; underside 36 in. above the floor;
+#: front edge 8 in. back from the machine's front face.
+D1_TABLE_W, D1_TABLE_D, D1_TABLE_H = 50.0, 16.0, 4.0
+D1_TABLE_Z, D1_TABLE_INSET = 36.0, 8.0
+
 NORTH_POST = 'N-M2'
 NORTH_POST_X = 16.75
 SHED_WALL_T = 5.0              # conceptual infill wall thickness
@@ -178,13 +184,28 @@ ITEMS = [
          what='dust collector — envelope assumed, 24 × 36 × 60 in.',
          weight=70.0),
     # Rong Fu RF-30 mill/drill on its stand. 72 in. tall, so it cannot go under
-    # the slope at all -- it needs the flat roof, which starts at y = 71. Turned
-    # broadside and tucked against S3's south end, east faces flush, so the two
-    # read as one block rather than two things near each other.
-    dict(n='D1', kind='machine', w=36.0, d=24.0, h=72.0,
-         x=S3_EAST - 36.0, y=S3_SOUTH - 24.0,
-         what='Rong Fu RF-30, 30 mm mill/drill on a stand',
+    # the slope at all -- it needs the flat roof, which starts at y = 71.
+    #
+    # 2026-09-25: the front is the 24 in. side and the table runs across it --
+    # 50 in. of travel envelope, 16 deep, 4 thick, 36 in. off the floor and set
+    # 8 in. back from the front face. Broadside, with the front east or west,
+    # the table ran north-south and hit S3 by 13 in.; the 48 in. between the
+    # east walkway run and S3 is 2 in. short of the table in any case. So D1
+    # faces south onto the east run, its back against S3's south end, and sits
+    # 3 in. west of S3's east face so the table's east end stops 1 in. short of
+    # the shelving run.
+    dict(n='D1', kind='machine', w=24.0, d=36.0, h=72.0,
+         x=S3_EAST - 27.0, y=S3_SOUTH - 36.0,
+         what='Rong Fu RF-30, 30 mm mill/drill on a stand; faces south',
          weight=300.0),
+    # Its table, drawn as the full 50 in. it sweeps rather than the table at
+    # rest. Part of D1: no deck load of its own (D1's 300 lb includes it), and
+    # it is allowed to sit over D1's footprint but over nothing else's.
+    dict(n='D1-T', kind='table', part_of='D1', mount='attached',
+         w=D1_TABLE_W, d=D1_TABLE_D, h=D1_TABLE_H, z=D1_TABLE_Z,
+         x=S3_EAST - 15.0 - D1_TABLE_W / 2, y=S3_SOUTH - 36.0 + D1_TABLE_INSET,
+         what='RF-30 table, 50 in. travel envelope × 16 deep × 4 thick',
+         weight=0.0),
     # Shapeoko 5 Pro 4x4, west of the machines, wholly under the solar slope.
     # It lives here; it is on wheels and gets rolled north into the room to cut,
     # so this is a parking space and nothing else. Y travel under the slope is
@@ -270,8 +291,13 @@ LAUNDRY_JAMB_CLEAR = 4.0
 BENCH_HEIGHT = 37.5
 BENCH_TOP_T = 1.5
 SOUTH_BENCH_DEPTH = 30.0
-WEST_BENCH_DEPTH = 26.0
-WEST_BENCH_RUN = 104.0
+#: B-W is retired (owner, 2026-09-25): the west-wall run north of B-S is two
+#: pieces of rolling storage, not a bench. From B-S's north face going north:
+#: label, name, length along the wall, depth off the wall, height.
+WEST_WALL_UNITS = [
+    ('CHEST', 'Craftsman tool chest', 26.0, 18.0, 58.0),
+    ('HUSKY', 'Husky rolling tool cabinet', 46.0, 25.0, 36.0),
+]
 
 LATHE_DEPTH = 24.0
 LATHE_LENGTH = 57.0
@@ -303,6 +329,7 @@ KINDS = {
     'sprinkler': dict(face='#b84a45', label='Sprinkler cabinet'),
     'rack': dict(face='#3f4852', label='Network rack'),
     'water_heater': dict(face='#e7e9eb', label='Water heater'),
+    'table': dict(face='#8a6f4d', label='Machine table'),
 }
 EDGE = '#141618'               # near-black edges so the boxes read as boxes
 FLOOR = '#d8c69f'              # plywood
@@ -485,6 +512,7 @@ def report(frame: framemod.Frame) -> list[dict]:
         rows.append(dict(
             n=c['n'], kind=c['kind'], w=c['w'], d=c['d'], h=c['h'],
             shape=c.get('shape', 'box'), mount=c.get('mount', 'floor'),
+            part_of=c.get('part_of'),
             what=c.get('what', ''),
             between_rafters=not blocked,
             bay_slack=round(slack, 2) if slack is not None else None,
@@ -547,6 +575,8 @@ def _check_footprints(rows: list[dict]) -> None:
     overlap without anything in the drawing objecting.
     """
     for a, b in ((a, b) for i, a in enumerate(rows) for b in rows[i + 1:]):
+        if a['n'] == b.get('part_of') or b['n'] == a.get('part_of'):
+            continue                          # a machine and its own table
         dx = min(a['x1'], b['x1']) - max(a['x0'], b['x0'])
         dy = min(a['y1'], b['y1']) - max(a['y0'], b['y0'])
         if dx > 0.01 and dy > 0.01:
@@ -858,26 +888,51 @@ def _bench_bounds(frame: framemod.Frame) -> dict[str, tuple[float, float, float,
     x_wall = EX.THICK['west']
     y_wall = EX.THICK['south']
     south = (x_wall, jamb_west, y_wall, y_wall + SOUTH_BENCH_DEPTH)
-    # The shared corner is already drawn by the south bench.  Draw only the
-    # exposed part of the west return so the two volumes do not overlap.
-    west = (x_wall, x_wall + WEST_BENCH_DEPTH,
-            y_wall + SOUTH_BENCH_DEPTH, y_wall + WEST_BENCH_RUN)
-    return dict(south=south, west=west)
+    return dict(south=south)
+
+
+def _west_wall_units(frame: framemod.Frame) -> dict[str, dict]:
+    """The chest and the Husky, backs on the west wall, stacked north of B-S."""
+    x_wall = EX.THICK['west']
+    y = _bench_bounds(frame)['south'][3]
+    out = {}
+    for n, what, run, depth, h in WEST_WALL_UNITS:
+        out[n] = dict(n=n, what=what, x0=x_wall, x1=x_wall + depth,
+                      y0=y, y1=y + run, h=h)
+        y += run
+    return out
+
+
+def _west_wall_end(frame: framemod.Frame) -> float:
+    return max(u['y1'] for u in _west_wall_units(frame).values())
 
 
 def bench_traces(frame: framemod.Frame) -> list:
-    """The first-floor L-shaped workbench, shown as an architectural envelope."""
+    """The south bench and the rolling storage on the west wall."""
     out = []
-    for key, label in (('south', 'B-S · south-wall bench'),
-                       ('west', 'B-W · west-wall bench')):
+    for u in _west_wall_units(frame).values():
+        x0, x1, y0, y1 = u['x0'], u['x1'], u['y0'], u['y1']
+        hover = (f'<b>{u["n"]} · {u["what"]}</b><br>{y1 - y0:g} in. along the wall × '
+                 f'{x1 - x0:g} in. deep × {u["h"]:g} in. high<br>'
+                 f'x {x0:g} → {x1:g} · y {y0:g} → {y1:g}')
+        v, f = _box(x0, x1, y0, y1, 0.0, u['h'])
+        out.append(_mesh(v, f, '#b23a32' if u['n'] == 'CHEST' else '#e0782a',
+                         u['n'], hover, opacity=0.95))
+        ex, ey, ez = _box_edges(x0, x1, y0, y1, 0.0, u['h'])
+        out.append(go.Scatter3d(x=ex, y=ey, z=ez, mode='lines',
+                                line=dict(color=EDGE, width=3), hoverinfo='skip',
+                                showlegend=False, visible=False,
+                                name=u['n'] + ' edges'))
+        out.append(go.Scatter3d(
+            x=[(x0 + x1) / 2.0], y=[(y0 + y1) / 2.0], z=[u['h'] + 4.0],
+            mode='text', text=[u['n']], textposition='middle center',
+            textfont=dict(size=15, color=EDGE, family='Helvetica, Arial'),
+            hoverinfo='skip', showlegend=False, visible=False,
+            name=u['n'] + ' label'))
+    for key, label in (('south', 'B-S · south-wall bench'),):
         x0, x1, y0, y1 = _bench_bounds(frame)[key]
-        if key == 'south':
-            detail = (f'{x1 - x0:g} in. run · {SOUTH_BENCH_DEPTH:g} in. deep · '
-                      f'ends at west face of DOOR-W jamb')
-        else:
-            detail = (f'{WEST_BENCH_RUN:g} in. overall wall run · '
-                      f'{WEST_BENCH_DEPTH:g} in. deep · {y1 - y0:g} in. visible '
-                      f'beyond the south-bench corner')
+        detail = (f'{x1 - x0:g} in. run · {SOUTH_BENCH_DEPTH:g} in. deep · '
+                  f'ends at west face of DOOR-W jamb')
         hover = (f'<b>{label}</b><br>{detail}<br>top z = {BENCH_HEIGHT:g} in.'
                  f'<br>architectural envelope · construction unspecified')
         v, f = _box(x0, x1, y0, y1, 0.0, BENCH_HEIGHT - BENCH_TOP_T)
@@ -893,7 +948,7 @@ def bench_traces(frame: framemod.Frame) -> list:
         out.append(go.Scatter3d(
             x=[(x0 + x1) / 2.0], y=[(y0 + y1) / 2.0],
             z=[BENCH_HEIGHT + 4.0], mode='text',
-            text=['B-S' if key == 'south' else 'B-W'],
+            text=['B-S'],
             textposition='middle center',
             textfont=dict(size=15, color=EDGE, family='Helvetica, Arial'),
             hoverinfo='skip', showlegend=False, visible=False,
@@ -903,25 +958,29 @@ def bench_traces(frame: framemod.Frame) -> list:
 
 def benches_html(frame: framemod.Frame) -> str:
     """Describe the L-shaped south/west bench set-out."""
-    south, west = _bench_bounds(frame)['south'], _bench_bounds(frame)['west']
-    exposed = west[3] - west[2]
+    south = _bench_bounds(frame)['south']
+    units = _west_wall_units(frame)
+    chest, husky = units['CHEST'], units['HUSKY']
+    window_s = min(o[0] for o in EX.openings('west') if o[2] > 0.0)
     window_clear = EX.PARAMS['window_sill'] - BENCH_HEIGHT
     return f"""
 <div class="notes">
-  <h2>South and west workbenches</h2>
+  <h2>South bench and west-wall storage</h2>
   <p><b>B-S</b> is {BENCH_HEIGHT:g} inches high and
   {SOUTH_BENCH_DEPTH:g} inches deep. It runs along the inside south wall from
   x = {south[0]:g} at the west wall to x = {south[1]:g}, the outer west face
   of the DOOR-W steel jamb.</p>
-  <p><b>B-W</b> returns north along the inside west wall. It is
-  {WEST_BENCH_DEPTH:g} inches deep and its full wall run is
-  {WEST_BENCH_RUN:g} inches from y = {EX.THICK['south']:g} to
-  {EX.THICK['south'] + WEST_BENCH_RUN:g}. The south bench occupies the first
-  {SOUTH_BENCH_DEPTH:g} inches of that run, leaving {exposed:g} inches drawn
-  beyond the corner (the stated approximately 75-inch extension).</p>
-  <p>Both tops remain {window_clear:g} inches below the existing 48-inch
-  window sills. The gray bases are layout envelopes only; drawers, legs,
-  cabinets, utilities and construction have not been specified. Neither bench
+  <p>The west wall north of B-S holds two pieces of rolling storage, backs
+  to the wall. <b>CHEST</b>, the {chest['what']}, is {chest['y1'] - chest['y0']:g}
+  wide, {chest['x1'] - chest['x0']:g} deep and {chest['h']:g} inches high, and
+  abuts B-S: y = {chest['y0']:g} to {chest['y1']:g}. <b>HUSKY</b>, the
+  {husky['what']}, is {husky['y1'] - husky['y0']:g} long,
+  {husky['x1'] - husky['x0']:g} deep and {husky['h']:g} inches high, and abuts
+  the chest on its north side: y = {husky['y0']:g} to {husky['y1']:g}. The
+  chest ends {window_s - chest['y1']:g} inches short of the southern west window; the Husky passes
+  under its 48-inch sill.</p>
+  <p>The bench top is {window_clear:g} inches below the existing 48-inch
+  window sills. The gray base is a layout envelope only. None of these
   participates in the structural analysis.</p>
 </div>
 """
@@ -941,13 +1000,13 @@ def _lathe_bounds(frame: framemod.Frame) -> tuple[float, float, float, float, fl
 
 
 def lathe_traces(frame: framemod.Frame) -> list:
-    """West-wall lathe envelope, located from the bench and window geometry."""
+    """West-wall lathe envelope, located from the window geometry."""
     x0, x1, y0, y1, z0, z1 = _lathe_bounds(frame)
-    bench_end = EX.THICK['south'] + WEST_BENCH_RUN
+    bench_end = _west_wall_end(frame)
     gap = y0 - bench_end
     hover = (f'<b>LATHE — west-wall equipment</b><br>{LATHE_LENGTH:g} in. long × '
              f'{LATHE_DEPTH:g} in. out from wall<br>north end at y = {y1:g}, '
-             f'center of north west window<br>{gap:g} in. gap after B-W'
+             f'center of north west window<br>{gap:g} in. gap after HUSKY'
              f'<br>height shown as {LATHE_DISPLAY_HEIGHT:g} in. for display only')
     v, f = _box(x0, x1, y0, y1, z0, z1)
     out = [_mesh(v, f, '#657783', 'LATHE envelope', hover, opacity=0.82)]
@@ -966,7 +1025,7 @@ def lathe_traces(frame: framemod.Frame) -> list:
 def lathe_html(frame: framemod.Frame) -> str:
     """Describe the west-wall lathe placement and its one display assumption."""
     x0, x1, y0, y1, _, _ = _lathe_bounds(frame)
-    bench_end = EX.THICK['south'] + WEST_BENCH_RUN
+    bench_end = _west_wall_end(frame)
     gap = y0 - bench_end
     return f"""
 <div class="notes">
@@ -975,7 +1034,7 @@ def lathe_html(frame: framemod.Frame) -> str:
   face and runs {LATHE_LENGTH:g} inches north, from y = {y0:g} to {y1:g}.
   Its north end lands on the centerline of the northern west-wall window
   (window y = 153.25–182 inches). This leaves a {gap:g}-inch gap after the
-  west bench, whose overall run ends at y = {bench_end:g}.</p>
+  Husky cabinet, which ends at y = {bench_end:g}.</p>
   <p>The owner supplied the plan dimensions and alignment but no height, so the
   3D view uses a {LATHE_DISPLAY_HEIGHT:g}-inch-high display envelope. Confirm
   the actual machine and stand height before checking the window or services.
@@ -1304,10 +1363,13 @@ def item_traces(frame: framemod.Frame) -> tuple[list, list[dict]]:
                 f'{r["w"]/12:g} ft × {r["d"]/12:g} ft × {r["h"]:g} in. tall')
         what = f'{r["what"]}<br>' if r['what'] else ''
         stands = ('hung on the wall, bottom at z = {:g}'.format(z0)
-                  if r['mount'] == 'wall' else f'on the deck at z = {z0:g}')
+                  if r['mount'] == 'wall' else
+                  f'on {r["part_of"]}, underside at z = {z0:g}' if r['part_of'] else
+                  f'on the deck at z = {z0:g}')
         load = (f'{r["weight"]:,.0f} lb'
                 + (f' ({r["weight"]/r["area_sf"]:.0f} psf on {r["area_sf"]:.1f} sq ft)'
-                   if r['psf'] is not None else ', hung on the wall'))
+                   if r['psf'] is not None else
+                   f', included in {r["part_of"]}' if r['part_of'] else ', hung on the wall'))
         hover = (f'<b>{kind["label"]} {r["n"]}</b> · {size}<br>{what}'
                  f'x {x0:g} → {x1:g} · y {y0:g} → {y1:g} · top at z = {z1:g}<br>'
                  f'{load}<br>{stands}<br>{fit}<br>{over}')
@@ -1601,10 +1663,14 @@ def walkway_traces(frame: framemod.Frame) -> tuple[list, list[dict]]:
 
 
 def _check_walkway(frame: framemod.Frame, rows: list[dict]) -> None:
-    """Nothing may stand on the walkway -- that is the whole point of it."""
+    """Nothing may stand on the walkway -- that is the whole point of it.
+
+    A machine's table counts too: at hip height it is in the way of anyone
+    walking the tile, whatever it stands on.
+    """
     for t in tiles(frame):
         for r in rows:
-            if r['mount'] != 'floor':
+            if r['mount'] == 'wall':
                 continue
             dx = min(r['x1'], t['x1']) - max(r['x0'], t['x0'])
             dy = min(r['y1'], t['y1']) - max(r['y0'], t['y0'])

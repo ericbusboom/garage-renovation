@@ -146,6 +146,8 @@ def main():
     ghosts.append((CB._laundry_bounds(frame)[:4], 'laundry'))
     for n, b in CB._bench_bounds(frame).items():
         ghosts.append((b, f'{n} bench'))
+    for u in CB._west_wall_units(frame).values():
+        ghosts.append(((u['x0'], u['x1'], u['y0'], u['y1']), u['n'].lower()))
     ghosts.append((CB._lathe_bounds(frame)[:4], 'lathe'))
     for r in CB.shed_item_rows(frame):
         ghosts.append(((r['x0'], r['x1'], r['y0'], r['y1']), r['n']))

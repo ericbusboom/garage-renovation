@@ -175,6 +175,7 @@ def ground_layout(ax, frame, compact=False):
     lx0,lx1,ly0,ly1,_,_ = CB._laundry_bounds(frame)
     rect(ax, (lx0,lx1,ly0,ly1), "#c6d6df", "LAUNDRY\n58 × 30")
     for n,b in CB._bench_bounds(frame).items(): rect(ax, b, "#d5bd8d", f"{n.upper()} BENCH", fontsize=5)
+    for u in CB._west_wall_units(frame).values(): rect(ax, (u["x0"],u["x1"],u["y0"],u["y1"]), "#d9a07a", u["n"], fontsize=5)
     x0,x1,y0,y1,_,_ = CB._lathe_bounds(frame)
     rect(ax, (x0,x1,y0,y1), "#b9a17b", "LATHE", fontsize=6)
     tm = CB._tormach_bounds(frame)
@@ -275,7 +276,7 @@ def plan_sheet(pdf, frame, loft):
         ])
     else:
         fig.text(nx,.88,"GROUND-FLOOR ELEMENTS",fontsize=11,weight="bold")
-        lines=["GF-C1–C3  east built-ins","LAUNDRY  58 × 30 × 66 in","SOUTH BENCH  30 in deep","WEST BENCH  26 in deep","LATHE  24 × 57 in"]
+        lines=["GF-C1–C3  east built-ins","LAUNDRY  58 × 30 × 66 in","SOUTH BENCH  30 in deep","CHEST  Craftsman 26 × 18 × 58 in","HUSKY  rolling cabinet 46 × 25 × 36 in","LATHE  24 × 57 in"]
         lines += [f"{r['n']:<5} {r['what']}" for r in CB.shed_item_rows(frame)]
         fig.text(nx,.84,"\n".join(lines),fontsize=6.6,va="top",linespacing=1.45,wrap=True)
         note_box(fig,nx,.11,.19,.19,"Coordination notes",[
@@ -316,7 +317,7 @@ def ethernet(pdf,frame):
     fig=new_sheet("Concept Ethernet Distribution","T1.01")
     ax=fig.add_axes([.05,.095,.68,.82]);plan_base(ax,frame,"DATA PLAN — CONCEPT HOME RUNS");ground_layout(ax,frame,True)
     rack=next(r for r in CB.shed_item_rows(frame) if r['n']=='RACK'); origin=item_center(rack)
-    targets=[((180,32),"LAUNDRY / SOUTH"),((30,95),"WEST BENCH"),((30,160),"LATHE"),((110,180),"LOFT / SHOP"),((90,130),"CEILING AP")]
+    targets=[((180,32),"LAUNDRY / SOUTH"),((30,85),"HUSKY / CHEST"),((30,160),"LATHE"),((110,180),"LOFT / SHOP"),((90,130),"CEILING AP")]
     for target,label in targets:
         route(ax,[origin,(215,-5),(215,target[1]),target],PURPLE,label,ls="--",lw=1.6)
         ax.scatter(*target,s=35,facecolor="white",edgecolor=PURPLE,lw=1.5,zorder=10)
@@ -345,7 +346,7 @@ def mechanical(pdf,frame):
         ax.scatter(*target,s=30,c=GREEN,zorder=10)
     lathe=CB._lathe_bounds(frame); lt=((lathe[0]+lathe[1])/2,(lathe[2]+lathe[3])/2)
     route(ax,[dc,(145,110),(75,110),(75,lt[1]),lt],GREEN,"DROP TO LATHE",ls="--")
-    air_targets=[((35,36),"SOUTH BENCH"),((33,90),"WEST BENCH"),((160,70),"LOFT WORK")]
+    air_targets=[((35,36),"SOUTH BENCH"),((33,85),"HUSKY"),((160,70),"LOFT WORK")]
     for target,label in air_targets: route(ax,[comp,(175,95),(target[0],95),target],BLUE,label,ls="--",lw=1.5)
     ax.scatter(*dc,s=90,c=GREEN,zorder=10);ax.scatter(*comp,s=75,c=BLUE,zorder=10)
     note_box(fig,.765,.55,.19,.33,"Dust collection concept",[
