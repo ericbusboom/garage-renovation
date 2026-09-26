@@ -63,17 +63,53 @@ def option_south(ax):
                 spare_east=N1_FACE - x1)
 
 
+WALL_GAP = 23.0                                # service space behind and beside
+
+
+def option_offset(ax):
+    """Held 23 in. off the north and west walls, facing east into the room.
+
+    The back and the left (ATC) side get walk-in service space; the operator
+    stands east of the machine in the main room, not in the pop-out.
+    """
+    x0 = WEST_FACE + WALL_GAP
+    x1 = x0 + D440
+    y1 = NORTH_FACE - WALL_GAP
+    y0 = y1 - W440
+    r(ax, x1, x1 + FRONT_MIN, y0, y1, CLEAR1, ec='#2a7f62', ls=':')
+    r(ax, x1 + FRONT_MIN, x1 + FRONT_TWO, y0, y1, CLEAR2, ec='#2a7f62', ls=':')
+    r(ax, x0, x1, y0, y1, MACHINE, ec='#1d5c46', label='PCNC 440\n46 × 36\nfaces east', fs=6.5)
+    r(ax, x0 + 4, x1 - 4, y1 - 3, y1, '#e8d9b8', ec='#998')          # ATC side (left, north)
+    # Console at the operator's right hand: facing west, that is north.
+    r(ax, x1, x1 + 4, y1 + 2, y1 + 2 + CONSOLE_W, CONSOLE, ec='#998')
+    ax.text(x1 + 7, y1 + 10, 'console\n(arm or stand)', fontsize=5, ha='left', va='center')
+    ax.text(x1 + FRONT_TWO / 2, (y0 + y1) / 2, f'operator\n{FRONT_TWO:g} in.', fontsize=5.5,
+            ha='center', va='center')
+    r(ax, WEST_FACE, x0, y0, NORTH_FACE, 'none', ec='#8e44ad', ls='--', lw=1)
+    r(ax, x0, x1, y1, NORTH_FACE, 'none', ec='#8e44ad', ls='--', lw=1)
+    ax.text((WEST_FACE + x0) / 2, (y0 + y1) / 2, f'{WALL_GAP:g} in.\nback\naccess',
+            fontsize=5.5, ha='center', va='center', color='#8e44ad')
+    ax.text((x0 + x1) / 2, (y1 + NORTH_FACE) / 2, f'{WALL_GAP:g} in. ATC access',
+            fontsize=5.5, ha='center', va='center', color='#8e44ad')
+    ax.text((x0 + x1) / 2, (POP_SOUTH_FACE + y0) / 2, f'{y0 - POP_SOUTH_FACE:.0f} in.',
+            fontsize=5.5, ha='center', va='center', color='#8e44ad')
+    return dict(machine=(x0, x1, y0, y1), front_to=x1 + FRONT_TWO,
+                south_gap=y0 - POP_SOUTH_FACE)
+
+
 def main():
-    fig, axes = plt.subplots(1, 2, figsize=(13, 7.5))
+    fig, axes = plt.subplots(1, 3, figsize=(19, 7.5))
     out = {}
-    for ax, fn, title in zip(axes, (option_east, option_south),
-                             ('Option 1: faces east (recommended)', 'Option 2: faces south')):
+    for ax, fn, title in zip(axes, (option_offset, option_east, option_south),
+                             ('Option 3: 23 in. off the walls, operator in the room',
+                              'Option 1: against the walls, faces east',
+                              'Option 2: against the walls, faces south')):
         base_plan(ax)
         out[fn.__name__] = fn(ax)
-        ax.set_xlim(-45, 90); ax.set_ylim(150, 285)
+        ax.set_xlim(-45, 95); ax.set_ylim(150, 285)
         for t in ax.texts:              # zoomed in: keep labels inside the panel
             t.set_clip_on(True)
-        ax.set_title(f'Tormach PCNC 440 in the NW pop-out: {title}', fontsize=9)
+        ax.set_title(f'PCNC 440 — {title}', fontsize=9)
     for ext in ('png', 'pdf'):
         fig.savefig(HERE / f'tormach-440-popout.{ext}', dpi=150, bbox_inches='tight')
     for k, v in out.items():

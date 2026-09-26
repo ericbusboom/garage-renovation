@@ -45,7 +45,15 @@ Tormach's space-planning drawing is D35684, "PCNC 440 w Stand and Enclosure":
 
 The machine and its 36 in. front zone fit entirely inside the NW pop-out, which has about 69 × 78 in. clear.
 
-**Option 1 (recommended): back on the W3–W4 wall, facing east.**
+**Option 3 (owner's direction): 23 in. off the north and west walls, facing east.**
+
+- **Machine position:** x −8.5 to 27.5, y 196.5 to 242.5.
+- **Service access:** a 23 in. walk-in strip behind the machine (along the west wall) and another along the ATC side (the north wall).
+- **Operator:** stands east of the machine, in the main room rather than in the pop-out, with 36 in. clear running to x 63.5.
+- **Console:** at the operator's right hand (north), on an arm or stand at the machine's northeast corner.
+- **South side:** 9 in. to the W3 infill wall. It needs no access, since the right side has no cabinet door.
+
+**Option 1: back on the W3–W4 wall, facing east.**
 
 - **Machine position:** x −31.5 to 4.5, y 219.5 to 265.5.
 - **Front zone:** runs east to x 40.5, which is the N1 line.
@@ -63,7 +71,7 @@ In both options the X-brace in the W4–N1 wall stays as it is. The only wall at
 
 ## Files
 
-- `draw_440.py` regenerates `tormach-440-popout.png` and `.pdf`: the two 440 orientations.
+- `draw_440.py` regenerates `tormach-440-popout.png` and `.pdf`: the three 440 layouts.
 - `draw_placement.py` regenerates `tormach-popout.png` and `.pdf`: the plan, plus the W4–N1 wall elevation.
 
   ```sh
