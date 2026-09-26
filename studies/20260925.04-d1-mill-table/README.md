@@ -23,3 +23,7 @@ The table carries no deck load of its own, because D1's 300 lb includes it. The 
 ```sh
 archive/.venv/bin/python studies/20260925.04-d1-mill-table/draw_d1_iso.py
 ```
+
+## Superseded later on 2026-09-25
+
+D1 has moved to the ground floor: back to the west wall, facing east, north of the lathe. It is now in `GROUND_ITEMS` (`_ground_items` in `cabinets.py`), and the loft no longer holds it. `draw_d1_iso.py` reads the loft rows, so it describes the loft position above and fails if you run it now. See `studies/20260925.03-ground-floor-outline/ground-floor-layout.png` for the current position.

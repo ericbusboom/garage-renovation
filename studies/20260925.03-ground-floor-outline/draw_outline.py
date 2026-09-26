@@ -49,7 +49,8 @@ def dim(ax, a, b, at, horiz, text, off=0):
         ax.text(at - 1.5 + off, (a + b) / 2, text, ha='right', va='center', fontsize=6.5, rotation=90)
 
 
-def main():
+def main(solid=False):
+    """solid=False: the outline with equipment ghosted; True: the equipment layout."""
     frame, _, _ = MODEL.build()
     W, L, T = EX.W, EX.L, EX.THICK
     wx, ny = POSTS['W4'][0], POSTS['W4'][1]          # new west and north lines
@@ -106,7 +107,7 @@ def main():
     # Removed walls.
     box(ax, 0, T['west'], POSTS['W3'][1], L, 'none', ec=RED, ls=':', lw=1, z=5)
     box(ax, T['west'], W - T['east'], L - T['north'], L, 'none', ec=RED, ls=':', lw=1, z=5)
-    ax.text(125, L - 11, 'old north wall (removed; had a 165 in. door)', fontsize=6.5,
+    ax.text(95 if solid else 125, L - 11, 'old north wall (removed; had a 165 in. door)', fontsize=6.5,
             color=RED, ha='center')
     ax.text(9, 200, 'old west wall\nremoved', fontsize=6, color=RED, ha='left', va='center')
 
@@ -141,31 +142,61 @@ def main():
 
     # Ghosted current equipment.
     tm = CB._tormach_bounds(frame)
-    ghosts = [(tm['machine'][:4], 'Tormach 440\n(placed)'), (tm['operator'], 'operator')]
-    ghosts += [((c['x0'], c['x1'], c['y0'], c['y1']), c['n']) for c in CB.FIRST_FLOOR_CABINETS]
-    ghosts.append((CB._laundry_bounds(frame)[:4], 'laundry'))
+    ghosts = [(tm['machine'][:4], 'Tormach 440\n(placed)', '#5f8f7e'),
+              (tm['operator'], 'operator', '#bfe3d4')]
+    ghosts += [((c['x0'], c['x1'], c['y0'], c['y1']), c['n'], '#d8c7a6')
+               for c in CB.FIRST_FLOOR_CABINETS]
+    ghosts.append((CB._laundry_bounds(frame)[:4], 'laundry', '#c6d6df'))
     for n, b in CB._bench_bounds(frame).items():
-        ghosts.append((b, f'{n} bench'))
-    for u in CB._west_wall_units(frame).values():
-        ghosts.append(((u['x0'], u['x1'], u['y0'], u['y1']), u['n'].lower()))
-    ghosts.append((CB._lathe_bounds(frame)[:4], 'lathe'))
+        ghosts.append((b, f'{n} bench', '#d5bd8d'))
+    lathe = CB._lathe_bounds(frame)
+    ghosts.append((lathe[:4], f'lathe\n{lathe[1] - lathe[0]:g} × {lathe[3] - lathe[2]:g}',
+                   '#9fb0bb'))
+    for u in CB._ground_items(frame):
+        w, d, h = u['x1'] - u['x0'], u['y1'] - u['y0'], u['z1'] - u['z0']
+        label = '' if u['part_of'] else f"{u['n'].lower()}\n{w:g} × {d:g} × {h:g}"
+        ghosts.append(((u['x0'], u['x1'], u['y0'], u['y1']), label, u['color']))
     for r in CB.shed_item_rows(frame):
-        ghosts.append(((r['x0'], r['x1'], r['y0'], r['y1']), r['n']))
-    for (x0, x1, y0, y1), label in ghosts:
-        box(ax, x0, x1, y0, y1, GHOST, ec=GHOST, ls='--', lw=.8, z=4, alpha=.14)
-        box(ax, x0, x1, y0, y1, 'none', ec=GHOST, ls='--', lw=.8, z=4)
-        ax.text((x0 + x1) / 2, (y0 + y1) / 2, label, fontsize=5.5, color=GHOST,
-                ha='center', va='center', zorder=4)
+        ghosts.append(((r['x0'], r['x1'], r['y0'], r['y1']), r['n'], '#ccd3d8'))
+    for (x0, x1, y0, y1), label, color in ghosts:
+        if solid:
+            part = not label
+            box(ax, x0, x1, y0, y1, color, ec=INK, lw=.8, ls=':' if part else '-',
+                z=6 if part else 4, alpha=.35 if part else .8)
+            ax.text((x0 + x1) / 2, (y0 + y1) / 2, label, fontsize=6, color=INK,
+                    ha='center', va='center', zorder=7, weight='bold', linespacing=1.1)
+        else:
+            box(ax, x0, x1, y0, y1, GHOST, ec=GHOST, ls='--', lw=.8, z=4, alpha=.14)
+            box(ax, x0, x1, y0, y1, 'none', ec=GHOST, ls='--', lw=.8, z=4)
+            ax.text((x0 + x1) / 2, (y0 + y1) / 2, label, fontsize=5.5, color=GHOST,
+                    ha='center', va='center', zorder=4)
+    if solid:
+        g = {u['n']: u for u in CB._ground_items(frame)}
+        mid = g['WOOD']['x1']
+        ax.plot([mid, mid], [-4, g['WOOD']['y1'] + 6], color=RED, lw=.7, ls='-.', zorder=8)
+        ax.text(mid, -12, 'door\ncentre', color=RED, fontsize=6, ha='center', va='top')
+        jamb = g['SAW']['x0']
+        ax.plot([jamb, jamb], [-4, g['SAW']['y0']], color=RED, lw=.7, ls='-.', zorder=8)
+        ax.text(jamb + 1, 40, 'east jamb', color=RED, fontsize=6, rotation=90, va='center')
+        dim(ax, T['south'], g['WOOD']['y0'], mid - 30, False,
+            f"{g['WOOD']['y0'] - T['south']:g} in.")
+        tt = g['D1-T']
+        ax.text(tt['x1'] + 1, tt['y1'] - 3, 'D1 table\n50 in. sweep\nat 36–40 in.',
+                fontsize=5.5, va='top', zorder=8)
 
     # Clear dimensions of the enclosed floor.
     xi0, xi1 = T['west'], W - T['east']
-    dim(ax, xi0, xi1, 120, True, f'{xi1 - xi0:.0f} in. clear ({(xi1 - xi0) / 12:.1f} ft) — old walls')
+    if not solid:
+        dim(ax, xi0, xi1, 120, True,
+            f'{xi1 - xi0:.0f} in. clear ({(xi1 - xi0) / 12:.1f} ft) — old walls')
     dim(ax, wx + t, ex - t, 283, True,
         f'{ex - wx - T_NEW:.0f} in. ({(ex - wx - T_NEW) / 12:.1f} ft) along the new north wall')
-    dim(ax, T['south'], ny - t, 185, False,
-        f'{ny - t - T['south']:.0f} in. ({(ny - t - T['south']) / 12:.1f} ft) clear, N–S', off=0)
+    if not solid:
+        dim(ax, T['south'], ny - t, 185, False,
+            f'{ny - t - T['south']:.0f} in. ({(ny - t - T['south']) / 12:.1f} ft) clear, N–S')
     dim(ax, POSTS['W3'][1] + t, ny - t, -44, False, f'{ny - POSTS["W3"][1] - T_NEW:.0f} in.')
-    dim(ax, wx + t, 0, 194, True, f'{-wx - t:.0f}')
+    if not solid:
+        dim(ax, wx + t, 0, 194, True, f'{-wx - t:.0f}')
     dim(ax, L, ny - t, 232, False, f'{ny - t - L:.0f}')
 
     ax.set_xlim(-58, 268); ax.set_ylim(-80, 298)
@@ -178,13 +209,19 @@ def main():
     ax.set_xlabel('east (in.) — 1 ft grid', fontsize=8); ax.set_ylabel('north (in.)', fontsize=8)
     ax.annotate('N', xy=(258, 292), xytext=(258, 272), ha='center', fontsize=10, weight='bold',
                 arrowprops=dict(arrowstyle='-|>', lw=1.2, color=INK))
-    ax.set_title('Ground floor — renovated outline (plan from above)\n'
-                 'grey = kept existing walls · blue-grey = new walls · red dotted = removed · '
-                 'dashed green = current equipment', fontsize=10)
+    name = 'ground-floor-layout' if solid else 'ground-floor-outline'
+    ax.set_title(('Ground floor — equipment layout (plan from above)\n'
+                  'labels: E–W × N–S × height, in. · dotted = D1 table sweep'
+                  if solid else
+                  'Ground floor — renovated outline (plan from above)\n'
+                  'grey = kept existing walls · blue-grey = new walls · red dotted = removed · '
+                  'dashed green = current equipment'), fontsize=10)
     for ext in ('png', 'pdf'):
-        fig.savefig(HERE / f'ground-floor-outline.{ext}', dpi=150, bbox_inches='tight')
-    print(HERE / 'ground-floor-outline.png')
+        fig.savefig(HERE / f'{name}.{ext}', dpi=150, bbox_inches='tight')
+    plt.close(fig)
+    print(HERE / f'{name}.png')
 
 
 if __name__ == '__main__':
-    main()
+    main(solid=False)
+    main(solid=True)

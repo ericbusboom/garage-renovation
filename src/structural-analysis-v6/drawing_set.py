@@ -175,7 +175,7 @@ def ground_layout(ax, frame, compact=False):
     lx0,lx1,ly0,ly1,_,_ = CB._laundry_bounds(frame)
     rect(ax, (lx0,lx1,ly0,ly1), "#c6d6df", "LAUNDRY\n58 × 30")
     for n,b in CB._bench_bounds(frame).items(): rect(ax, b, "#d5bd8d", f"{n.upper()} BENCH", fontsize=5)
-    for u in CB._west_wall_units(frame).values(): rect(ax, (u["x0"],u["x1"],u["y0"],u["y1"]), "#d9a07a", u["n"], fontsize=5)
+    for u in CB._ground_items(frame): rect(ax, (u["x0"],u["x1"],u["y0"],u["y1"]), u["color"], "" if u["part_of"] else u["n"], fontsize=5, alpha=.5 if u["part_of"] else .88)
     x0,x1,y0,y1,_,_ = CB._lathe_bounds(frame)
     rect(ax, (x0,x1,y0,y1), "#b9a17b", "LATHE", fontsize=6)
     tm = CB._tormach_bounds(frame)
@@ -276,7 +276,7 @@ def plan_sheet(pdf, frame, loft):
         ])
     else:
         fig.text(nx,.88,"GROUND-FLOOR ELEMENTS",fontsize=11,weight="bold")
-        lines=["GF-C1–C3  east built-ins","LAUNDRY  58 × 30 × 66 in","SOUTH BENCH  30 in deep","CHEST  Craftsman 26 × 18 × 58 in","HUSKY  rolling cabinet 46 × 25 × 36 in","LATHE  24 × 57 in"]
+        lines=["GF-C1–C3  east built-ins","LAUNDRY  58 × 30 × 66 in","SOUTH BENCH  30 in deep","CHEST  Craftsman 26 × 18 × 58 in","HUSKY  rolling cabinet 46 × 25 × 36 in","D1  RF-30 mill/drill + 50 in. table","WOOD / METAL  tables 60 × 36, 48 × 36","SAW  saw/router 32 × 77 × 38 in","SIDE  table 26 × 32 in","LATHE  24 × 57 in"]
         lines += [f"{r['n']:<5} {r['what']}" for r in CB.shed_item_rows(frame)]
         fig.text(nx,.84,"\n".join(lines),fontsize=6.6,va="top",linespacing=1.45,wrap=True)
         note_box(fig,nx,.11,.19,.19,"Coordination notes",[
@@ -340,17 +340,21 @@ def mechanical(pdf,frame):
     fig=new_sheet("Concept Dust Collection and Compressed Air","M1.01")
     ax=fig.add_axes([.05,.095,.68,.82]);plan_base(ax,frame,"LOFT / SHOP SERVICES — CONCEPT ROUTING");loft_layout(ax,frame)
     rows={r['n']:r for r in CB.report(frame)}; dc=item_center(rows['DC']); comp=item_center(rows['C1'])
-    dust_targets=[(item_center(rows[n]),n) for n in ('M1','M2','CNC','D1')]
+    dust_targets=[(item_center(rows[n]),n) for n in ('M1','M2','CNC')]
     for target,label in dust_targets:
         route(ax,[dc,(145,90),(target[0],90),target],GREEN,label,lw=2.2)
         ax.scatter(*target,s=30,c=GREEN,zorder=10)
     lathe=CB._lathe_bounds(frame); lt=((lathe[0]+lathe[1])/2,(lathe[2]+lathe[3])/2)
     route(ax,[dc,(145,110),(75,110),(75,lt[1]),lt],GREEN,"DROP TO LATHE",ls="--")
+    g={u["n"]:u for u in CB._ground_items(frame)}
+    for n,label in (("D1","DROP TO D1"),("SAW","DROP TO SAW")):
+        u=g[n]; c=((u["x0"]+u["x1"])/2,(u["y0"]+u["y1"])/2)
+        route(ax,[dc,(145,110),(c[0] if n=="SAW" else 75,110),(c[0] if n=="SAW" else 75,c[1]),c],GREEN,label,ls="--")
     air_targets=[((35,36),"SOUTH BENCH"),((33,85),"HUSKY"),((160,70),"LOFT WORK")]
     for target,label in air_targets: route(ax,[comp,(175,95),(target[0],95),target],BLUE,label,ls="--",lw=1.5)
     ax.scatter(*dc,s=90,c=GREEN,zorder=10);ax.scatter(*comp,s=75,c=BLUE,zorder=10)
     note_box(fig,.765,.55,.19,.33,"Dust collection concept",[
-        "DC is the loft collector. Green lines show a conceptual main with branches to M1, M2, CNC and D1 plus a drop to the ground-floor lathe.",
+        "DC is the loft collector. Green lines show a conceptual main with branches to M1, M2 and CNC plus drops to the ground-floor lathe, D1 and saw.",
         "Provide a blast gate at every branch and a cleanout at low points.",
         "Final duct diameters, fan static pressure, filtration, grounding/bonding and fire protection require design from actual machine data.",
     ],color=GREEN)
