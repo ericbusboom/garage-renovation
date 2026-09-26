@@ -40,3 +40,12 @@ frame, and BWI/B-1A/B-2 at 0.6-0.84), so the hoist gets whatever is left.
   clamp; the table assumes the trolley stays between clamps.
 
 Service deflection is small: about 0.11 in. per 1,000 lb at B-1A midspan.
+
+## Owner's case: 700 lb maximum machine
+
+Owner, 2026-09-25: the heaviest lift will be 700 lb. Add about 100 lb for the hoist,
+trolley, rigging and a share of the runway, and the worst clamp sees about 800 lb.
+That is under the worst-case limit (1,030 lb at B-1A midspan with the loft at 100 psf)
+and under the flange's elastic limit (about 1,700 lb). A 1/2-ton (1,000 lb) hoist
+and trolley fit the lowest structural limit, so the hoist can't overload the
+structure.
