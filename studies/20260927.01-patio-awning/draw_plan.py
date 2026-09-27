@@ -32,6 +32,7 @@ TRAILER_Y0 = PATIO_N + 32
 # Tie points on the fence-side (west) face of the pillar. Page up is south,
 # so T1 (south corner) is the pillar's page-top corner, T2 (north) its
 # page-bottom corner.
+TIE_Z = 101  # tie-point height on the pillar, in
 TIES = {"T1": (PILLAR[1], PILLAR[3]), "T2": (PILLAR[1], PILLAR[2])}
 # P4 end is its south face (page-up face); other ends at post centres.
 CABLES = [("T2", "P4", (174, 212)), ("T1", "P3", None),
@@ -54,6 +55,16 @@ def trailer_clearance(p, q, n=4000):
     """Least plan clearance (in) from straight cable p-q to the trailer."""
     return min(trailer_sdf(p[0] + i / n * (q[0] - p[0]), p[1] + i / n * (q[1] - p[1]))
                for i in range(n + 1))
+
+
+def heights_over_trailer(p, q, za, zb, n=4000):
+    """(min, max) cable height (in) where the cable is over the trailer plan, or None.
+
+    Cable taken as straight between its end heights (no sag).
+    """
+    zs = [za + i / n * (zb - za) for i in range(n + 1)
+          if trailer_sdf(p[0] + i / n * (q[0] - p[0]), p[1] + i / n * (q[1] - p[1])) < 0]
+    return (min(zs), max(zs)) if zs else None
 
 
 S = 3.0             # px per inch in the output
@@ -125,18 +136,28 @@ a(f'<text transform="translate({tx-12},{ty}) rotate(-90)" font-size="12" fill="#
 
 # cables
 CLASH = {}
-LABEL_T = {("T2", "P4"): 0.72, ("T1", "P3"): 0.62, ("T2", "P1"): 0.55, ("T2", "P2"): 0.55}
+OVER = {}
+LABEL_T = {("T2", "P4"): 0.2, ("T1", "P3"): 0.62, ("T2", "P1"): 0.55, ("T2", "P2"): 0.55}
 for t, pname, end in CABLES:
     p, q = TIES[t], end or POSTS[pname][:2]
     clr = trailer_clearance(p, q)
     CLASH[(t, pname)] = clr
     (xa, ya), (xb, yb) = px(*p), px(*q)
-    col = "#c0392b" if clr < 0 else "#1f5fa8"
-    a(f'<line x1="{xa}" y1="{ya}" x2="{xb}" y2="{yb}" stroke="{col}" stroke-width="2.2"/>')
+    col = "#1f5fa8"
     L = ((q[0]-p[0])**2 + (q[1]-p[1])**2) ** 0.5
     note = f"{t}–{pname}  {ftin(L)}"
-    if clr < 12:
-        note += f"  ({clr:.0f}″ off trailer)" if clr >= 0 else f"  (hits trailer {-clr:.0f}″)"
+    over = heights_over_trailer(p, q, TIE_Z, POSTS[pname][4])
+    OVER[(t, pname)] = over
+    if over:
+        col = "#b86e00"
+        # callout where the cable crosses the trailer's front corner
+        k = max(range(401), key=lambda i: -trailer_sdf(p[0] + i / 400 * (q[0] - p[0]),
+                                                       p[1] + i / 400 * (q[1] - p[1])))
+        cx_, cy_ = px(p[0] + k / 400 * (q[0] - p[0]), p[1] + k / 400 * (q[1] - p[1]))
+        a(f'<text x="{cx_-150}" y="{cy_+34}" font-size="12" fill="{col}">crosses trailer\'s rounded '
+          f'corner</text><text x="{cx_-150}" y="{cy_+49}" font-size="12" fill="{col}">at '
+          f'{ftin(over[0])}–{ftin(over[1])} high (straight, no sag)</text>')
+    a(f'<line x1="{xa}" y1="{ya}" x2="{xb}" y2="{yb}" stroke="{col}" stroke-width="2.2"/>')
     # label along the cable, on the far side from the pillar
     tt = LABEL_T[(t, pname)]
     lx, ly = xa + tt * (xb - xa), ya + tt * (yb - ya)
@@ -150,7 +171,8 @@ for t, (x, y) in TIES.items():
     cx, cy = px(x, y)
     a(f'<circle cx="{cx}" cy="{cy}" r="5" fill="#1f5fa8" stroke="white" stroke-width="1.5"/>')
     a(f'<text x="{cx+8}" y="{cy+(-8 if t == "T1" else 18)}" font-size="15" '
-      f'font-weight="bold" fill="#1f5fa8">{t}</text>')
+      f'font-weight="bold" fill="#1f5fa8">{t} <tspan font-size="12" font-weight="normal">'
+      f'@ {ftin(TIE_Z)}</tspan></text>')
 
 # posts
 for name, (x, y, w, d, h) in POSTS.items():
@@ -222,4 +244,4 @@ a('</svg>')
 OUT.write_text("\n".join(out))
 print(OUT)
 for k, v in CLASH.items():
-    print(*k, f"trailer clearance {v:.1f} in")
+    print(*k, f"plan clearance {v:.1f} in; height over trailer {OVER[k]}")
