@@ -137,7 +137,7 @@ def dim(p, q, label, off, horiz):
           f'font-size="15">{label}</text></g>')
 
 
-dim((0, PATIO_N), (174, PATIO_N), "14′-6″", 30, True)
+dim((0, PATIO_N), (174, PATIO_N), "14′-6″", 14, True)
 dim((13, PATIO_N - 20), (174, PATIO_N - 20), "13′-5″", 0, True)
 dim((0, 0), (174, 0), "14′-6″", -24, True)
 dim((0, 0), (0, PATIO_N), "12′-6″", -24, False)
