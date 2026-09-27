@@ -10,8 +10,8 @@ electrical pillar are on the east side.
 # P2-P3 and P3-P4 are 8 ft face to face (set for 8 ft stringers), so
 # centres are 8 ft + one 8 in post depth = 104 in apart.
 POSTS = {
-    "P1": (0, 0, 8, 6, 72),      # NE (page bottom-left)
-    "P2": (174, 0, 6, 8, 72),    # NW (page bottom-right)
+    "P1": (0, 0, 8, 6, 82),      # NE (page bottom-left)
+    "P2": (174, 0, 6, 8, 82),    # NW (page bottom-right)
     "P3": (174, 104, 6, 8, 82),  # on the west fence
     "P4": (174, 208, 6, 8, 82),  # SW, on the fence past the pillar line
 }

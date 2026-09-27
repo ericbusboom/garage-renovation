@@ -248,8 +248,9 @@ def fig_membrane():
               "e.g. 20 lb/ft prestress on T1–P4 (R ≈ "
               f"{res['T1-P4']['radius_in'] / 12:.0f} ft) ≈ {20 * res['T1-P4']['radius_in'] / 12:.0f} lb.",
               f"Fabric slope: min {slope.min():.1f}°, median {np.median(slope):.1f}°.",
-              "No interior low point; water runs to P1/P2,",
-              "but the fabric is nearly flat by P2: ponding risk.",
+              "No interior low point; water runs to the lowest posts,",
+              f"but {np.mean(slope < 3) * 100:.0f} % of the fabric is under 3° "
+              "(near P2): ponding risk.",
               "T2–T1 clamped straight to the pillar face."]
     fig.text(0.58, 0.05, "\n".join(lines), fontsize=9, family="monospace", va="bottom")
     out = HERE / "awning-2-membrane.png"
