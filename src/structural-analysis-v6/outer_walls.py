@@ -32,7 +32,8 @@ POST_HALF = 2.5              # HSS5X5 posts: inside face is 2.5 in. off the line
 WALL = '#d3d6d9'             # light grey panels
 INNER = '#d9c7a6'            # interior partitions, warmer so they read against the shell
 DOOR = '#8fa9c2'             # door leaves, blue-grey so they read as doors
-GLASS = '#a9c8da'            # clerestory glazing
+GLASS = '#f2f6f8'            # glazing: near-clear, so the inside shows
+GLASS_OPACITY = 0.1
 BEAM = '#f4f4f1'             # frame colour in this view
 SOLAR = '#141618'            # black solar roof
 ROOF = '#4a4f55'             # dark grey metal roof
@@ -370,7 +371,7 @@ def wall_traces(frame: framemod.Frame) -> tuple[list, list, list[dict]]:
                                   f'<b>{s["code"]}</b> · existing '
                                   f'{"door" if is_door else "window"}<br>'
                                   f'{o0:g} → {o1:g} · z {z0:g} → {z1:g}',
-                                  opacity=1.0 if is_door else 0.6))
+                                  opacity=1.0 if is_door else GLASS_OPACITY))
             continue
         verts, faces = [], []
         is_inner = s['code'][0] == 'I'
@@ -380,14 +381,14 @@ def wall_traces(frame: framemod.Frame) -> tuple[list, list, list[dict]]:
             verts += v
         (inner if is_inner else out).append(
             _trace(verts, faces, INNER if is_inner else KIND_COLOR[s['kind']],
-                   s['code'], _hover(s), opacity=0.55 if s['kind'] == 'glass' else 1.0))
+                   s['code'], _hover(s), opacity=GLASS_OPACITY if s['kind'] == 'glass' else 1.0))
         for n, (a0, a1, z0, z1) in enumerate(s['windows'], 1):
             t0, t1 = s['t']
             v, f = _panel(s['axis'], t0 + 0.5, t1 - 0.5, _rect(a0, a1, z0, z1))
             out.append(_trace(v, f, GLASS, f'{s["code"]} window {n}',
                               f'<b>{s["code"]}</b> · window {n}<br>{a1 - a0:g} × '
                               f'{z1 - z0:g} in. · sill z {z0:g}<br>looks into the '
-                              'stairwell, onto the BWI partition', opacity=0.6))
+                              'stairwell, onto the BWI partition', opacity=GLASS_OPACITY))
     return out, inner, rows
 
 
