@@ -55,6 +55,19 @@ visible-mesh*.json
 archive/wiki-publish/
 render/20260908.03-garage-site/wiki-publish/
 
+# Site photographs, final renders, their textures, and the controlled report's
+# figures are not regenerable (or are cited by the report), so they are tracked.
+# Study figures stay ignored; their scripts rebuild them.
+!render/**/*.png
+!render/**/*.jpg
+!render/**/*.jpeg
+!data/images/*.jpg
+!report/**/*.png
+render/**/*-preview*.png
+render/**/vtk-test.png
+render/**/02-detail-check.png
+render/**/walkmap.png
+
 # The public site is intentional deployable output.
 !public/**/*.png
 !public/**/*.jpg
