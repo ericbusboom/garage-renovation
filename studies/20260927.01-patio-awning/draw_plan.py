@@ -3,69 +3,18 @@
 Plan frame, inches, as the sketch is drawn: x = page right, y = page up.
 Origin at P1 centre. Eric views it from the house, so page UP IS SOUTH and
 page right is west: the P2-P3-P4 fence is the west property line, P1 and
-the pillar are on the east side. Dimensions are rounded from the OmniGraffle sketch, which was
-drawn at 6 px/in; Eric says the odd fractions there are not real.
+the pillar are on the east side. Geometry lives in patio_site.py.
+Dimensions are rounded from the OmniGraffle sketch, which was drawn at 6 px/in; Eric says the odd fractions there are not real.
 """
 
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).parent))
+
+from patio_site import *  # noqa: E402,F401,F403  (geometry shared with awning.py)
 
 OUT = Path(__file__).with_name("patio-plan.svg")
-
-# name: (x, y, width_EW, depth_NS, height)  -- centres, inches
-# P2-P3 and P3-P4 are 8 ft face to face (set for 8 ft stringers), so
-# centres are 8 ft + one 8 in post depth = 104 in apart.
-POSTS = {
-    "P1": (0, 0, 8, 6, 72),      # NE (page bottom-left)
-    "P2": (174, 0, 6, 8, 72),    # NW (page bottom-right)
-    "P3": (174, 104, 6, 8, 82),  # on the west fence
-    "P4": (174, 208, 6, 8, 82),  # SW, on the fence past the pillar line
-}
-PATIO_N = 150                     # north line of the sketch rectangle
-PILLAR = (0, 13, PATIO_N - 48, PATIO_N)  # x0, x1, y0, y1 (4 ft long)
-# Airstream, inside the fence (east of it): 18 in off the fence line, front
-# 2'-8" beyond the patio edge (page up), 8 ft wide, 2 ft corner fillets.
-# Length not given; drawn running off the top (south) of the sheet.
-TRAILER_W, TRAILER_R = 96, 24
-TRAILER_X0 = 174 - 18 - TRAILER_W
-TRAILER_Y0 = PATIO_N + 32
-
-# Tie points on the fence-side (west) face of the pillar. Page up is south,
-# so T1 (south corner) is the pillar's page-top corner, T2 (north) its
-# page-bottom corner.
-TIE_Z = 101  # tie-point height on the pillar, in
-TIES = {"T1": (PILLAR[1], PILLAR[3]), "T2": (PILLAR[1], PILLAR[2])}
-# P4 end is its south face (page-up face); other ends at post centres.
-CABLES = [("T2", "P4", (174, 212)), ("T1", "P3", None),
-          ("T2", "P1", None), ("T2", "P2", None)]
-
-
-def trailer_sdf(x, y):
-    """Signed plan distance (in) from (x, y) to the Airstream outline; < 0 inside.
-
-    Rounded-box distance with the body running far off the sheet.
-    """
-    hw, hh, r = TRAILER_W / 2, 1000.0, TRAILER_R
-    qx = abs(x - (TRAILER_X0 + hw)) - (hw - r)
-    qy = abs(y - (TRAILER_Y0 + hh)) - (hh - r)
-    outside = (max(qx, 0) ** 2 + max(qy, 0) ** 2) ** 0.5
-    return outside + min(max(qx, qy), 0) - r
-
-
-def trailer_clearance(p, q, n=4000):
-    """Least plan clearance (in) from straight cable p-q to the trailer."""
-    return min(trailer_sdf(p[0] + i / n * (q[0] - p[0]), p[1] + i / n * (q[1] - p[1]))
-               for i in range(n + 1))
-
-
-def heights_over_trailer(p, q, za, zb, n=4000):
-    """(min, max) cable height (in) where the cable is over the trailer plan, or None.
-
-    Cable taken as straight between its end heights (no sag).
-    """
-    zs = [za + i / n * (zb - za) for i in range(n + 1)
-          if trailer_sdf(p[0] + i / n * (q[0] - p[0]), p[1] + i / n * (q[1] - p[1])) < 0]
-    return (min(zs), max(zs)) if zs else None
-
 
 S = 3.0             # px per inch in the output
 M = 110             # margin px
@@ -167,7 +116,7 @@ for t, pname, end in CABLES:
         ang += 180
     a(f'<text transform="translate({lx},{ly}) rotate({ang:.1f})" y="-6" text-anchor="middle" '
       f'font-size="13" fill="{col}" stroke="white" stroke-width="3" paint-order="stroke">{note}</text>')
-for t, (x, y) in TIES.items():
+for t, (x, y) in ((k, TIES[k]) for k in ("T1", "T2")):
     cx, cy = px(x, y)
     a(f'<circle cx="{cx}" cy="{cy}" r="5" fill="#1f5fa8" stroke="white" stroke-width="1.5"/>')
     a(f'<text x="{cx+8}" y="{cy+(-8 if t == "T1" else 18)}" font-size="15" '
