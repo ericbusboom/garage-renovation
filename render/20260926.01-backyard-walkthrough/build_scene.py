@@ -133,6 +133,41 @@ def material(color, opacity, vertex=False):
     mats[key] = m
     return m
 
+# The building's grey wall panels (and the existing walls drawn in that grey)
+# take the house's own stucco material, so they are the same grey as the house.
+# The texture is mapped at the house's texel density: UVs are world metres
+# projected on each face's dominant axis, scaled to match.
+WALL_GREY = '#d3d6d9'
+stucco = bpy.data.materials['PHOTO / house_stucco']
+uv_area = world_area = 0.0
+for o in bpy.data.collections['house'].objects:
+    if o.type != 'MESH' or stucco.name not in [m.name for m in o.data.materials if m]:
+        continue
+    uvl = o.data.uv_layers.active
+    sc = o.matrix_world.to_scale()
+    for p in o.data.polygons:
+        if o.data.materials[p.material_index] != stucco or uvl is None:
+            continue
+        uv = [uvl.data[k].uv for k in p.loop_indices]
+        a2 = 0.0
+        for k in range(1, len(uv) - 1):
+            a2 += abs((uv[k].x - uv[0].x) * (uv[k + 1].y - uv[0].y)
+                      - (uv[k + 1].x - uv[0].x) * (uv[k].y - uv[0].y)) / 2
+        uv_area += a2
+        world_area += p.area * abs(sc.x * sc.y * sc.z) ** (2 / 3)
+UV_PER_M = math.sqrt(uv_area / world_area) if world_area else 1.0
+report['stucco_uv_per_m'] = UV_PER_M
+
+def planar_uvs(me):
+    uvl = me.uv_layers.new(name='UVMap')
+    for p in me.polygons:
+        n = p.normal
+        ax = max(range(3), key=lambda i: abs(n[i]))
+        a, b = [(1, 2), (0, 2), (0, 1)][ax]
+        for k in p.loop_indices:
+            co = me.vertices[me.loops[k].vertex_index].co
+            uvl.data[k].uv = (co[a] * UV_PER_M, co[b] * UV_PER_M)
+
 cols = {}
 for e in mesh['objects']:
     g = 'BUILDING / ' + e['group']
@@ -150,7 +185,11 @@ for e in mesh['objects']:
         attr = me.color_attributes.new('Col', 'BYTE_COLOR', 'POINT')
         for k, c in enumerate(e['vertexcolor']):
             attr.data[k].color = rgb(c) + (1,)
-    me.materials.append(material(e['color'], e['opacity'], vertex))
+    if e['group'] == 'outer' and e['color'] == WALL_GREY:
+        planar_uvs(me)
+        me.materials.append(stucco)
+    else:
+        me.materials.append(material(e['color'], e['opacity'], vertex))
     ob = bpy.data.objects.new('BUILDING / ' + e['name'], me)
     cols[g].objects.link(ob)
     report['added'] += 1

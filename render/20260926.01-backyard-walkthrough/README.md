@@ -2,8 +2,8 @@
 
 The current building from [`viz/latest/lean-to-frame-3d.html`](../../viz/latest/lean-to-frame-3d.html),
 as that viewer draws it with **outer walls, roofs and inner walls on**, set into
-the reviewed existing backyard (`20260908.02-backyard-existing`). White frame, light-grey
-walls, blue-grey doors, near-clear glazing, black solar slope, dark-grey hipped
+the reviewed existing backyard (`20260908.02-backyard-existing`). White frame, grey
+walls in the house's own stucco (same material, mapped at the house's texture scale), blue-grey doors, near-clear glazing, black solar slope, dark-grey hipped
 cap with white soffit and fascia, the BWI stair partition with its mural, and the
 cabinet-layout furniture inside. Same origin (the existing garage's outside
 south-west corner), x east, y north; the building is converted from inches to
