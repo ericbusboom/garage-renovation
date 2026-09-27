@@ -22,6 +22,9 @@ there only so the two door leaves have something to close against.
 from __future__ import annotations
 
 import plotly.graph_objects as go
+from PIL import Image
+
+from project_paths import DATA_DIR
 
 import cabinets as CB
 import existing as EX
@@ -389,7 +392,71 @@ def wall_traces(frame: framemod.Frame) -> tuple[list, list, list[dict]]:
                               f'<b>{s["code"]}</b> · window {n}<br>{a1 - a0:g} × '
                               f'{z1 - z0:g} in. · sill z {z0:g}<br>looks into the '
                               'stairwell, onto the BWI partition', opacity=GLASS_OPACITY))
+    inner.append(mural_trace(frame))
     return out, inner, rows
+
+
+MURAL = DATA_DIR / 'images' / 'rivera-north-main-scene.jpg'
+MURAL_STEP = 0.75            # inches per colour sample on the wall
+
+
+def mural_trace(frame: framemod.Frame):
+    """Rivera's Detroit Industry scene on the stair face of IU1.
+
+    Plotly meshes take no textures, so the picture is a fine grid of vertices,
+    each coloured from the image. The picture is cover-fitted to the wall
+    below the clerestory sill, north on the viewer's left from the stairwell,
+    and grid cells above the sloping top of the wall are dropped.
+    """
+    iu1 = next(r for r in sections(frame) if r['code'] == 'IU1')
+    pts = iu1['pts']
+    y0, y1 = min(p[0] for p in pts), max(p[0] for p in pts)
+    z0, z1 = min(p[1] for p in pts), max(p[1] for p in pts)
+    x = iu1['t'][0] - 0.05                      # just proud of the stair face
+    img = Image.open(MURAL).convert('RGB')
+    W, H = img.size
+    scale = max((y1 - y0) / W, (z1 - z0) / H)   # cover the wall, crop the excess
+    cw, ch = (y1 - y0) / scale, (z1 - z0) / scale
+    left, top = (W - cw) / 2.0, (H - ch) / 2.0
+    ny = int((y1 - y0) / MURAL_STEP) + 1
+    nz = int((z1 - z0) / MURAL_STEP) + 1
+    ys = [y0 + (y1 - y0) * i / (ny - 1) for i in range(ny)]
+    zs = [z0 + (z1 - z0) * j / (nz - 1) for j in range(nz)]
+    # The wall's top line, for clipping: highest z at each y.
+    def top_at(y):
+        best = z0
+        for (a0, b0), (a1, b1) in zip(pts, pts[1:] + pts[:1]):
+            if min(a0, a1) - 1e-9 <= y <= max(a0, a1) + 1e-9 and a1 != a0:
+                best = max(best, b0 + (b1 - b0) * (y - a0) / (a1 - a0))
+        return best
+    px = img.load()
+    vx, vy, vz, vc = [], [], [], []
+    index = {}
+    for i, y in enumerate(ys):
+        for j, z in enumerate(zs):
+            index[i, j] = len(vx)
+            vx.append(x); vy.append(round(y, 2)); vz.append(round(z, 2))
+            u = left + (y1 - y) / scale          # north (high y) at image left
+            v = top + (z1 - z) / scale
+            r, g, b = px[min(W - 1, max(0, int(u))), min(H - 1, max(0, int(v)))]
+            vc.append(f'#{r:02x}{g:02x}{b:02x}')
+    I, J, K = [], [], []
+    for i in range(ny - 1):
+        lim = min(top_at(ys[i]), top_at(ys[i + 1]))
+        for j in range(nz - 1):
+            if zs[j + 1] > lim + 1e-6:
+                break
+            a, b = index[i, j], index[i + 1, j]
+            c, d = index[i + 1, j + 1], index[i, j + 1]
+            I += [a, a]; J += [b, c]; K += [c, d]
+    return go.Mesh3d(
+        x=vx, y=vy, z=vz, i=I, j=J, k=K, vertexcolor=vc, flatshading=False,
+        lighting=dict(ambient=0.95, diffuse=0.1, specular=0.0, roughness=1.0),
+        name='IU1 mural', showlegend=False, visible=False,
+        hovertemplate=('<b>IU1 mural</b> · Diego Rivera, <i>Detroit Industry</i> '
+                       '(1932–33)<br>north wall, “Production and Manufacture of '
+                       'Engine and Transmission” (detail)<br>photo © Mary Ann '
+                       'Sullivan, personal/educational use<extra></extra>'))
 
 
 def roof_traces(frame: framemod.Frame) -> list:
