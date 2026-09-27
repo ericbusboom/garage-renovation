@@ -13,9 +13,11 @@ south faces and south to north on the east and west faces. NL2 is the second
 section on the lower north face. Doors are numbered in the same sequence and
 say so in their hover.
 
-Roofs: the solar slope is black; the hipped cap over the flat top, the
-lean-to and the flat roof over the shed are dark grey; the cap's soffit and
-fascia are white. The garage-door jamb post ``NJ`` is drawn here too. It is not
+Roofs: the solar slope is black; the hipped cap over the flat top and the
+lean-to are dark grey; the cap's soffit and fascia are white. The corner over
+the shed, east of the solar slope and south of the lean-to, is a glass
+skylight: two panes either side of a hip beam ``SK1`` from the S3 head down to
+the E-S2 corner. The garage-door jamb post ``NJ`` is drawn here too. It is not
 in the frame model and carries nothing: pinned top and bottom, removable, and
 there only so the two door leaves have something to close against.
 """
@@ -29,6 +31,7 @@ from project_paths import DATA_DIR
 import cabinets as CB
 import existing as EX
 import frame as framemod
+import sections as S
 
 WALL_T = 2.0                 # panel thickness, outward from the steel's inside face
 POST_HALF = 2.5              # HSS5X5 posts: inside face is 2.5 in. off the line
@@ -47,6 +50,10 @@ SOFFIT = 4.0                 # soffit width beyond the outside of the steel
 FASCIA = 4.0                 # fascia depth
 FASCIA_T = 1.0
 ROOF_T = 1.5
+
+SKY_T = 1.0                  # skylight glazing unit
+SKY_OPACITY = 0.18           # a touch more than the wall glazing, so it reads as a roof
+SK1 = 'HSS3X3X1/8'           # skylight hip beam, conceptual, like E.slope
 
 POST_DECOR = 3.0             # WP1, HSS3X3 like W.top
 JAMB = dict(name='NJ', b=2.0, d=5.0, section='HSS5X2X1/8 (conceptual)')
@@ -523,20 +530,70 @@ def roof_traces(frame: framemod.Frame) -> list:
                     (0.0, 0.0, 1.2))
     out.append(_trace(v, f, ROOF, 'lean-to roof',
                       '<b>Lean-to roof</b><br>metal sheet on the LT rafters'))
-    # Over the shed, east of the solar slope, nothing is framed. A flat sheet at
-    # beam top closes it so the view reads as a building; it is an assumption.
-    sy0 = g['south'] - POST_HALF
-    zs = _top(frame, 'BE')
-    v, f = CB._box(g['east_upper'] - POST_HALF + WALL_T, lx, sy0, ly0 + 3.0, zs, zs + 1.2)
-    out.append(_trace(v, f, ROOF, 'shed roof',
-                      '<b>Shed roof, east of the solar slope</b><br>flat sheet at BE top'
-                      '<br><i>assumed; no roof framing is modelled here</i>'))
+    # Over the shed, east of the solar slope: the skylight, two glass panes
+    # either side of the hip beam SK1.
+    for name, poly, text in _skylight_panes(g):
+        v, f = CB._slab(poly, (0.0, 0.0, SKY_T))
+        out.append(_trace(v, f, GLASS, name,
+                          f'<b>{name}</b> · skylight over the shed<br>{text}'
+                          '<br>glazing on the hip beam SK1, E.slope, B-SO, BE and SU8',
+                          opacity=SKY_OPACITY))
     return out
 
 
+def _skylight_corners(g):
+    """Apex, south-west, south-east and north-east corners of the skylight.
+
+    The apex is where the lean-to meets the solar slope, over the S3 head; the
+    south-east corner is over E-S2. The west pane carries the solar plane on
+    east to BE, so the hip from apex to south-east corner splits the two panes.
+    """
+    s = g['slope']
+    xw, xe = g['east_upper'] + POST_HALF, g['lean_lx']
+    ys, yn = g['south'] - POST_HALF, 0.0
+    return ((xw, yn, s(yn)), (xw, ys, s(ys)), (xe, ys, s(ys)),
+            (xe, yn, g['lean'](xe)))
+
+
+def _skylight_panes(g):
+    p, a, c, b = _skylight_corners(g)
+    run = lambda u, v: ((u[0] - v[0]) ** 2 + (u[1] - v[1]) ** 2) ** 0.5
+    return [
+        ('SK-W', [p, a, c], f'south-facing pane, the solar plane carried east · '
+                            f'{c[0] - a[0]:.1f} × {p[1] - a[1]:.1f} in. on plan'),
+        ('SK-E', [p, c, b], f'east-facing pane, falls {p[2] - b[2]:.1f} in. over '
+                            f'{run(b, p):.1f} in. like the lean-to'),
+    ]
+
+
+def skylight_beam_trace(frame: framemod.Frame):
+    """SK1: the hip beam under the skylight, apex (S3 head) to the E-S2 corner."""
+    import solid_view as SV
+    g = geometry(frame)
+    p, _, c, _ = _skylight_corners(g)
+    sec = S.square(3.0, 0.125)
+    _, _, ez = SV._axes(p, c)
+    drop = [-e * sec.d / 2.0 for e in ez]     # top of steel on the glass underside
+    a = [p[k] + drop[k] for k in range(3)]
+    b = [c[k] + drop[k] for k in range(3)]
+    v, f = SV._member_mesh(a, b, sec)
+    length = sum((b[k] - a[k]) ** 2 for k in range(3)) ** 0.5
+    return go.Mesh3d(
+        x=[q[0] for q in v], y=[q[1] for q in v], z=[q[2] for q in v],
+        i=[q[0] for q in f], j=[q[1] for q in f], k=[q[2] for q in f],
+        color='#87919d', flatshading=True, opacity=1.0, name='SK1',
+        lighting=dict(ambient=0.62, diffuse=0.85, specular=0.12, roughness=0.9),
+        lightposition=dict(x=-8000, y=-12000, z=16000), showlegend=False,
+        hovertemplate=(f'<b>SK1</b> · skylight hip beam<br>{SK1} (conceptual) · '
+                       f'{length:.0f} in. long<br>apex over S3 ({p[0]:g}, {p[1]:g}, '
+                       f'{p[2]:.1f}) → SE corner over E-S2 ({c[0]:g}, {c[1]:g}, '
+                       f'{c[2]:.1f})<br>carries SK-W and SK-E along the hip'
+                       '<br><b>not in the analysis</b><extra></extra>'))
+
+
 def frame_extras(frame: framemod.Frame) -> list:
-    """Non-structural posts drawn with the frame: NJ and WP1."""
-    return [jamb_trace(frame), decor_post_trace(frame)]
+    """Members drawn with the frame but not in the model: NJ, WP1 and SK1."""
+    return [jamb_trace(frame), decor_post_trace(frame), skylight_beam_trace(frame)]
 
 
 def decor_post_trace(frame: framemod.Frame):
@@ -600,8 +657,13 @@ def html(frame: framemod.Frame, rows: list[dict]) -> str:
   <p><b>Roofs</b> go on with it (and have their own box): the solar slope is
   black; a hipped cap with a {HIP_RISE:g} in. rise sits over the flat top, with a
   {SOFFIT:g} in. white soffit and {FASCIA:g} in. white fascia all round, ridge at
-  z = {g['roof_base'] + FASCIA + HIP_RISE:g}; the lean-to and the unframed strip
-  over the shed are dark grey.</p>
+  z = {g['roof_base'] + FASCIA + HIP_RISE:g}; the lean-to is dark grey. The corner
+  over the shed, east of the solar slope and south of the lean-to, is a
+  <b>skylight</b>: a hip beam <b>SK1</b> (conceptual HSS3×3, not in the analysis)
+  runs from the apex where the lean-to meets the solar slope, over S3, down to
+  the south-east corner over E-S2, and a glass pane sits on each side of it.
+  SK-W carries the solar plane on east to BE; SK-E falls east like the
+  lean-to. SU8, the lean-to's south end, now stands under the glass.</p>
   <p><b>NJ</b>, the garage-door jamb post at x = {g['jamb_x']:g} midway between N1
   and N2, is conceptual HSS5×2: 5 in. deep through the wall, 2 in. wide. It is
   pinned top and bottom, removable, and not in the analysis; NL2 and NL3 are the
@@ -617,7 +679,7 @@ def html(frame: framemod.Frame, rows: list[dict]) -> str:
   crosses BWI there, from T1 to T2.</p>
   <table><tr><th>Code</th><th>Face</th><th>Where</th><th>What</th></tr>{body}</table>
   <p><small>Conceptual envelope for appearance only: panel system, attachment,
-  weatherproofing, the flat roof over the shed and the cap's framing are not
+  weatherproofing, the skylight's glazing and seats and the cap's framing are not
   designed, and no wall is credited as bracing.</small></p>
 </div>
 """
