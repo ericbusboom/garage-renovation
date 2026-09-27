@@ -43,6 +43,15 @@ for name in ('garage', 'garage_roof'):
         report['removed'].append(o.name)
         bpy.data.objects.remove(o, do_unlink=True)
 
+# Owner, 2026-09-27: the shelter's brown timber header and back screen go; the
+# clip below bent them to wrong lines and angles. The green roof and the grey
+# pillar that holds it up stay.
+for name in ('Shelter timber front header', 'Shelter back screen'):
+    o = bpy.data.objects.get(name)
+    if o:
+        report['removed'].append(o.name)
+        bpy.data.objects.remove(o, do_unlink=True)
+
 # ------------------------------------------------ what the new footprint displaces
 mesh = json.loads((R / 'building-mesh.json').read_text())
 xs = [v[0] * IN for o in mesh['objects'] if o['group'] in ('frame', 'outer')
