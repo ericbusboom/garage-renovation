@@ -16,9 +16,10 @@ metres and not moved.
   textures capped at 1024 px). Git-ignored like every `.glb`; rebuild it with the
   command below.
 - `backyard-walkthrough.blend` — editable scene, textures packed.
-- `walkmap.json`, `walkmap.png` — where you can walk.
+- `walkmap.json` — where you can walk; `walkmap.png` draws it (git-ignored, from `draw_walkmap.py`).
 - `building-mesh.json` — the building meshes, written by
-  `src/structural-analysis-v6/lean_to_report.py` each time the frame viewer is regenerated.
+  `src/structural-analysis-v6/lean_to_report.py` each time the frame viewer is regenerated
+  (git-ignored, like every `*-mesh.json`).
 - `validation.json` — base objects removed and clipped, objects added, hashes.
 
 ## Walkthrough
