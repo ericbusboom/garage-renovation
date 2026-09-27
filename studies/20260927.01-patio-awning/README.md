@@ -7,4 +7,4 @@ Awning (tarp) over the work patio beside the outbuilding (storage + parked trail
 - Script frame: inches, x = page right, y = page up, origin at P1 centre.
 - Posts (railroad ties): P1 and P2 6'-0" tall; P3 and P4 6'-10" (as first described — to be confirmed against the corrected orientation).
 - P2–P3 and P3–P4 are 8'-0" clear between faces (set for 8 ft stringers), so centres are 8'-8" apart. P4 is 4'-10" past the pillar line (derived, assumes 8" post depth).
-- Airstream: inside the fence, 18" off it, front 3'-6" south of the pillar end, 8 ft wide, 2 ft corner radii; length not given.
+- Airstream: inside the fence, 18" off it, front 2'-8" (32") beyond the patio edge at the pillar end, 8 ft wide, 2 ft corner radii; length not given.

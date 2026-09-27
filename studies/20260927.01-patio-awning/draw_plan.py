@@ -23,11 +23,11 @@ POSTS = {
 PATIO_N = 150                     # north line of the sketch rectangle
 PILLAR = (0, 13, PATIO_N - 48, PATIO_N)  # x0, x1, y0, y1 (4 ft long)
 # Airstream, inside the fence (east of it): 18 in off the fence line, front
-# 3'-6" south (page up) of the pillar's end, 8 ft wide, 2 ft corner fillets.
+# 2'-8" beyond the patio edge (page up), 8 ft wide, 2 ft corner fillets.
 # Length not given; drawn running off the top (south) of the sheet.
 TRAILER_W, TRAILER_R = 96, 24
 TRAILER_X0 = 174 - 18 - TRAILER_W
-TRAILER_Y0 = PATIO_N + 42
+TRAILER_Y0 = PATIO_N + 32
 
 S = 3.0             # px per inch in the output
 M = 110             # margin px
@@ -150,7 +150,7 @@ dim((TRAILER_X0 + TRAILER_W, TRAILER_Y0 + 60), (174, TRAILER_Y0 + 60), "", 0, Tr
 lx, ly = px(174, TRAILER_Y0 + 60)
 a(f'<text x="{lx+8}" y="{ly+5}" font-size="15">1′-6″</text>')
 dim((TRAILER_X0, TRAILER_Y0 + 10), (TRAILER_X0 + TRAILER_W, TRAILER_Y0 + 10), "8′-0″", 0, True)
-dim((TRAILER_X0, PATIO_N), (TRAILER_X0, TRAILER_Y0), "3′-6″", -14, False)
+dim((TRAILER_X0, PATIO_N), (TRAILER_X0, TRAILER_Y0), "2′-8″", -14, False)
 a('<line x1="%s" y1="%s" x2="%s" y2="%s" stroke="#777" stroke-width="0.8" stroke-dasharray="4 3"/>'
   % (*px(TRAILER_X0 - 14, PATIO_N), *px(TRAILER_X0, PATIO_N)))
 
