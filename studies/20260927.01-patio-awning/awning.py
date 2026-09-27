@@ -202,7 +202,7 @@ def membrane():
     return Y, T, E, is_cable, nb, res, slope
 
 
-def fig_membrane():
+def fig_membrane(suffix=""):
     Y, T, E, is_cable, nb, res, slope = membrane()
     fig = plt.figure(figsize=(13, 8.2))
     ax = fig.add_axes([0.03, 0.06, 0.52, 0.84])
@@ -253,7 +253,7 @@ def fig_membrane():
               "(near P2): ponding risk.",
               "T2–T1 clamped straight to the pillar face."]
     fig.text(0.58, 0.05, "\n".join(lines), fontsize=9, family="monospace", va="bottom")
-    out = HERE / "awning-2-membrane.png"
+    out = HERE / f"awning-2-membrane{suffix}.png"
     fig.savefig(out, dpi=130)
     plt.close(fig)
     return {"edges": res, "trailer_plan_gap_in": round(float(d[k]), 1),
