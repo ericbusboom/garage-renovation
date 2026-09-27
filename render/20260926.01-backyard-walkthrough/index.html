@@ -24,8 +24,8 @@
 </style>
 <script type="importmap">
 { "imports": {
-    "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
-    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/" } }
+    "three": "./vendor/three.module.js",
+    "three/addons/": "./vendor/jsm/" } }
 </script>
 </head>
 <body>
@@ -38,7 +38,27 @@
 <canvas id="mini"></canvas>
 <div id="minicap">Walk map · light = walkable (under 18 in.) · click to jump there</div>
 <div id="loading">Loading the backyard (about 30 MB)…</div>
+<script>
+  // Module scripts and fetch do not work from file://, and a failed module
+  // import leaves no trace on the page; say so rather than sit on "Loading".
+  function loadFailed(msg) {
+    var el = document.getElementById('loading');
+    if (el) el.innerHTML = '<div style="max-width:560px;text-align:center;color:#8a2b1d">' + msg + '</div>';
+  }
+  if (location.protocol === 'file:')
+    loadFailed('This page has to be opened through the local web server, not as a file:<br>' +
+               '<b>http://localhost:8765/render/20260926.01-backyard-walkthrough/index.html</b>');
+  window.addEventListener('error', function (e) { loadFailed('Could not start: ' + (e.message || e)); });
+  window.addEventListener('unhandledrejection', function (e) {
+    loadFailed('Could not load the scene: ' + (e.reason && e.reason.message || e.reason));
+  });
+  setTimeout(function () {
+    if (!window.sceneStarted)
+      loadFailed('The 3-D library did not start. Reload the page; if it persists, check the browser console.');
+  }, 20000);
+</script>
 <script type="module">
+window.sceneStarted = true;
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -51,15 +71,16 @@ const toThree = (x, y, z) => new THREE.Vector3(x, z, -y);
 const view = document.getElementById('view');
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
-renderer.outputColorSpace = THREE.SRGBColorSpace;
+// three r147: sRGB output and legacy light units (intensities ~1/pi of physical).
+renderer.outputEncoding = THREE.sRGBEncoding;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 1.0;
 view.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color('#cfdbe4');
-scene.add(new THREE.HemisphereLight(0xffffff, 0x7d8578, 1.4));
-const sun = new THREE.DirectionalLight(0xfff4e2, 2.2);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x7d8578, 0.75));
+const sun = new THREE.DirectionalLight(0xfff4e2, 0.9);
 sun.position.copy(toThree(-30, -40, 45));
 scene.add(sun);
 
@@ -274,8 +295,12 @@ mini.addEventListener('click', e => {
 });
 
 // ---------------------------------------------------------------------- load
+const loadingEl = document.getElementById('loading');
 const [gltf, walkmap] = await Promise.all([
-  new GLTFLoader().loadAsync('backyard-walkthrough.glb'),
+  new GLTFLoader().loadAsync('backyard-walkthrough.glb', p => {
+    if (p.total && loadingEl) loadingEl.textContent =
+      `Loading the backyard… ${Math.round(100 * p.loaded / p.total)} % of ${(p.total / 1e6).toFixed(0)} MB`;
+  }),
   fetch('walkmap.json').then(r => r.json()),
 ]);
 map = walkmap;

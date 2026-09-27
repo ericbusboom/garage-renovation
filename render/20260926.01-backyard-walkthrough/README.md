@@ -11,7 +11,8 @@ metres and not moved.
 
 - **Open:** `index.html`, served over http (the results server:
   http://localhost:8765/render/20260926.01-backyard-walkthrough/index.html).
-  It loads three.js 0.169 from cdn.jsdelivr.net, so it needs a network connection.
+  three.js r147 (MIT, `vendor/LICENSE-three`) is vendored in `vendor/`, so it works offline;
+  opened as a `file://` page it cannot load and says so.
 - `backyard-walkthrough.glb` — browser copy (quarter of the procedural leaves,
   textures capped at 1024 px). Git-ignored like every `.glb`; rebuild it with the
   command below.
