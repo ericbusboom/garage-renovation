@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Backyard Walkthrough</title>
+<style>
+  :root { --ink: #22262b; --muted: #5c6672; --bar: #f6f7f8; --line: #d6d9dd; }
+  html, body { margin: 0; height: 100%; background: #dfe4e8; color: var(--ink);
+               font: 13px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  #bar { position: fixed; top: 0; left: 0; right: 0; z-index: 2; display: flex; flex-wrap: wrap;
+         align-items: center; gap: 6px 22px; padding: 8px 14px; background: var(--bar);
+         border-bottom: 1px solid var(--line); }
+  #bar h1 { font-size: 15px; margin: 0 8px 0 0; }
+  #bar label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; user-select: none; }
+  #status { color: var(--muted); font-size: 12px; flex: 1 1 320px; }
+  #view { position: fixed; inset: 0; }
+  #mini { position: fixed; right: 14px; bottom: 14px; z-index: 2; border: 1px solid #9aa3ab;
+          background: #2b2f33; cursor: crosshair; box-shadow: 0 2px 10px rgba(0,0,0,.25); }
+  #minicap { position: fixed; right: 14px; z-index: 2; font-size: 11px; color: var(--muted);
+             background: rgba(246,247,248,.9); padding: 2px 6px; border-radius: 3px; }
+  #loading { position: fixed; inset: 0; display: grid; place-items: center; z-index: 3;
+             font-size: 15px; color: var(--muted); pointer-events: none; }
+</style>
+<script type="importmap">
+{ "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/" } }
+</script>
+</head>
+<body>
+<div id="bar">
+  <h1>Backyard walkthrough</h1>
+  <label><input type="checkbox" id="walk"> Walkthrough mode</label>
+  <span id="status">Drag to orbit, scroll to zoom. Tick Walkthrough mode to walk the yard.</span>
+</div>
+<div id="view"></div>
+<canvas id="mini"></canvas>
+<div id="minicap">Walk map · light = walkable (under 18 in.) · click to jump there</div>
+<div id="loading">Loading the backyard (about 30 MB)…</div>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+// Site coordinates are metres, x east, y north, z up (the garage's outside
+// south-west corner is the origin). The GLB is y-up, so three = (x, z, -y).
+const IN = 0.0254;
+const toThree = (x, y, z) => new THREE.Vector3(x, z, -y);
+
+const view = document.getElementById('view');
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.0;
+view.appendChild(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color('#cfdbe4');
+scene.add(new THREE.HemisphereLight(0xffffff, 0x7d8578, 1.4));
+const sun = new THREE.DirectionalLight(0xfff4e2, 2.2);
+sun.position.copy(toThree(-30, -40, 45));
+scene.add(sun);
+
+const camera = new THREE.PerspectiveCamera(50, 1, 0.05, 400);
+camera.position.copy(toThree(-7, -17, 13));
+const orbit = new OrbitControls(camera, renderer.domElement);
+orbit.target.copy(toThree(2.5, 2.5, 2.5));
+orbit.maxPolarAngle = Math.PI * 0.495;
+orbit.update();
+
+function resize() {
+  const w = innerWidth, h = innerHeight;
+  renderer.setSize(w, h);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+}
+addEventListener('resize', resize);
+resize();
+
+// ------------------------------------------------------------------ walk map
+let map = null;
+const RADIUS = 0.22;            // body radius, metres
+function cellAt(x, y) {
+  const i = Math.floor((x - map.x0) / map.cell), j = Math.floor((y - map.y0) / map.cell);
+  if (i < 0 || j < 0 || i >= map.nx || j >= map.ny) return null;
+  return [i, j];
+}
+function walkable(x, y) {
+  const c = cellAt(x, y);
+  return !!c && map.rows[c[1]][c[0]] === '.';
+}
+function clear(x, y) {
+  // Every cell under the body's disc, so a 2 in. wall can't fall between samples.
+  const c = cellAt(x, y);
+  if (!c) return false;
+  const r = Math.ceil(RADIUS / map.cell) + 1;
+  for (let dj = -r; dj <= r; dj++)
+    for (let di = -r; di <= r; di++) {
+      const i = c[0] + di, j = c[1] + dj;
+      const cx = map.x0 + (i + 0.5) * map.cell, cy = map.y0 + (j + 0.5) * map.cell;
+      // nearest point of that cell to the centre
+      const qx = Math.max(cx - map.cell / 2, Math.min(x, cx + map.cell / 2));
+      const qy = Math.max(cy - map.cell / 2, Math.min(y, cy + map.cell / 2));
+      if ((qx - x) ** 2 + (qy - y) ** 2 > RADIUS * RADIUS) continue;
+      if (i < 0 || j < 0 || i >= map.nx || j >= map.ny || map.rows[j][i] !== '.') return false;
+    }
+  return true;
+}
+function clearPath(x0, y0, x1, y1) {
+  const n = Math.max(1, Math.ceil(Math.hypot(x1 - x0, y1 - y0) / (map.cell / 2)));
+  for (let k = 1; k <= n; k++)
+    if (!clear(x0 + (x1 - x0) * k / n, y0 + (y1 - y0) * k / n)) return false;
+  return true;
+}
+function floorAt(x, y) {
+  const c = cellAt(x, y);
+  return c ? map.floor[c[1]][c[0]] : 0;
+}
+function nearestClear(x, y) {
+  for (let r = 0; r < 60; r++)
+    for (let k = 0; k < Math.max(1, r * 8); k++) {
+      const a = 2 * Math.PI * k / Math.max(1, r * 8);
+      const px = x + r * map.cell * Math.cos(a), py = y + r * map.cell * Math.sin(a);
+      if (clear(px, py)) return [px, py];
+    }
+  return [x, y];
+}
+
+// --------------------------------------------------------------- walkthrough
+// Same keys as the frame viewer's walkthrough: up/down (or W/S) move 6 in.,
+// 18 in. with shift; left/right (or A/D) turn 5 degrees, 15 with shift; drag
+// looks up and down; the wheel changes the field of view.
+const walk = { on: false, x: 0, y: 0, yaw: 0, pitch: 0, fov: 75, lastSide: 1, z: 0 };
+const saved = {};
+const status = document.getElementById('status');
+const box = document.getElementById('walk');
+
+function place() {
+  walk.z += (floorAt(walk.x, walk.y) - walk.z) * 0.5;
+  const eye = toThree(walk.x, walk.y, walk.z + 72 * IN);
+  camera.position.copy(eye);
+  const f = Math.cos(walk.pitch);
+  camera.lookAt(eye.clone().add(toThree(Math.sin(walk.yaw) * f, Math.cos(walk.yaw) * f,
+                                        Math.sin(walk.pitch))));
+  camera.fov = walk.fov;
+  camera.updateProjectionMatrix();
+  const deg = ((walk.yaw * 180 / Math.PI) % 360 + 360) % 360;
+  status.textContent = `Walkthrough · x ${walk.x.toFixed(1)} m, y ${walk.y.toFixed(1)} m · facing ${Math.round(deg)}° ` +
+    `· 6 ft eye · FOV ${Math.round(walk.fov)}° · ↑↓ move · ←→ turn · shift for bigger steps · drag to look up/down · wheel changes FOV`;
+}
+
+function step(dist) {
+  // Straight ahead if clear; otherwise veer, a little at a time up to 90
+  // degrees either way, sliding along whatever is in the way. The side that
+  // worked last is tried first so a long wall is followed rather than dithered at.
+  const dir = dist < 0 ? walk.yaw + Math.PI : walk.yaw;
+  const d = Math.abs(dist);
+  for (const a of [0, 15, 30, 45, 60, 75, 90]) {
+    for (const side of a ? [walk.lastSide, -walk.lastSide] : [1]) {
+      const t = dir + side * a * Math.PI / 180;
+      const len = d * Math.max(0.35, Math.cos(a * Math.PI / 180));
+      const nx = walk.x + Math.sin(t) * len, ny = walk.y + Math.cos(t) * len;
+      if (clearPath(walk.x, walk.y, nx, ny)) {
+        walk.x = nx; walk.y = ny;
+        if (a) walk.lastSide = side;
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+function setWalk(on) {
+  walk.on = on;
+  box.checked = on;
+  orbit.enabled = !on;
+  if (on) {
+    saved.pos = camera.position.clone(); saved.fov = camera.fov;
+    if (!walk.started) {
+      [walk.x, walk.y] = nearestClear(-3.2, -9.5);   // on the patio, facing the garage
+      walk.yaw = Math.atan2(2.5 - walk.x, 2.5 - walk.y);
+      walk.z = floorAt(walk.x, walk.y);
+      walk.started = true;
+    }
+    place();
+  } else {
+    camera.position.copy(saved.pos); camera.fov = saved.fov;
+    camera.updateProjectionMatrix();
+    orbit.update();
+    status.textContent = 'Drag to orbit, scroll to zoom. Tick Walkthrough mode to walk the yard.';
+  }
+}
+box.addEventListener('change', () => setWalk(box.checked));
+
+addEventListener('keydown', e => {
+  if (!walk.on) return;
+  const tag = e.target && e.target.tagName;
+  if (tag === 'INPUT' && e.target.type !== 'checkbox') return;
+  const big = e.shiftKey;
+  const turn = (big ? 15 : 5) * Math.PI / 180;
+  if (e.key === 'ArrowUp' || e.key === 'w' || e.key === 'W') step((big ? 18 : 6) * IN);
+  else if (e.key === 'ArrowDown' || e.key === 's' || e.key === 'S') step(-(big ? 18 : 6) * IN);
+  else if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') walk.yaw += turn;
+  else if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') walk.yaw -= turn;
+  else return;
+  e.preventDefault();
+  place();
+});
+let drag = null;
+renderer.domElement.addEventListener('pointerdown', e => {
+  if (!walk.on) return;
+  drag = e.clientY; renderer.domElement.setPointerCapture(e.pointerId);
+});
+renderer.domElement.addEventListener('pointermove', e => {
+  if (!walk.on || drag === null) return;
+  walk.pitch = Math.max(-1.3, Math.min(1.3, walk.pitch + (drag - e.clientY) * 0.005));
+  drag = e.clientY; place();
+});
+renderer.domElement.addEventListener('pointerup', () => { drag = null; });
+renderer.domElement.addEventListener('wheel', e => {
+  if (!walk.on) return;
+  walk.fov = Math.max(30, Math.min(110, walk.fov + Math.sign(e.deltaY) * 3));
+  e.preventDefault(); place();
+}, { passive: false });
+
+// ------------------------------------------------------------------- minimap
+const mini = document.getElementById('mini');
+const cap = document.getElementById('minicap');
+const base = document.createElement('canvas');
+let S = 1;
+function drawBase() {
+  S = Math.max(1, Math.floor(Math.min(260 / map.nx, (innerHeight * 0.5) / map.ny) * 2) / 2);
+  mini.width = base.width = Math.round(map.nx * S);
+  mini.height = base.height = Math.round(map.ny * S);
+  cap.style.bottom = (14 + mini.height + 4) + 'px';
+  const g = base.getContext('2d');
+  g.fillStyle = '#2b2f33'; g.fillRect(0, 0, base.width, base.height);
+  g.fillStyle = '#e9e4d6';
+  for (let j = 0; j < map.ny; j++) {
+    const row = map.rows[j], y = (map.ny - 1 - j) * S;
+    for (let i = 0; i < map.nx; i++) if (row[i] === '.') g.fillRect(i * S, y, S + 0.5, S + 0.5);
+  }
+  const [fx0, fx1, fy0, fy1] = map.footprint;
+  g.strokeStyle = '#d05a2a'; g.lineWidth = 1.5;
+  g.strokeRect(mx(fx0), my(fy1), mx(fx1) - mx(fx0), my(fy0) - my(fy1));
+}
+const mx = x => (x - map.x0) / map.cell * S;
+const my = y => (map.ny - (y - map.y0) / map.cell) * S;
+function drawMini() {
+  const g = mini.getContext('2d');
+  g.drawImage(base, 0, 0);
+  let x, y, yaw;
+  if (walk.on) { x = walk.x; y = walk.y; yaw = walk.yaw; }
+  else {
+    x = camera.position.x; y = -camera.position.z;
+    const t = orbit.target; yaw = Math.atan2(t.x - x, -t.z - y);
+  }
+  const px = mx(x), py = my(y);
+  g.save(); g.translate(px, py); g.rotate(yaw);
+  g.fillStyle = '#1f7ae0'; g.strokeStyle = '#fff'; g.lineWidth = 1.5;
+  g.beginPath(); g.moveTo(0, -9); g.lineTo(6, 6); g.lineTo(0, 3); g.lineTo(-6, 6); g.closePath();
+  g.fill(); g.stroke(); g.restore();
+}
+mini.addEventListener('click', e => {
+  const r = mini.getBoundingClientRect();
+  const x = map.x0 + (e.clientX - r.left) / S * map.cell;
+  const y = map.y0 + (map.ny - (e.clientY - r.top) / S) * map.cell;
+  if (!walk.on) setWalk(true);
+  [walk.x, walk.y] = nearestClear(x, y);
+  walk.z = floorAt(walk.x, walk.y);
+  place();
+});
+
+// ---------------------------------------------------------------------- load
+const [gltf, walkmap] = await Promise.all([
+  new GLTFLoader().loadAsync('backyard-walkthrough.glb'),
+  fetch('walkmap.json').then(r => r.json()),
+]);
+map = walkmap;
+gltf.scene.traverse(o => {
+  if (!o.isMesh) return;
+  for (const m of [].concat(o.material)) {
+    if (m.transparent) { m.depthWrite = false; m.side = THREE.DoubleSide; }
+  }
+});
+scene.add(gltf.scene);
+drawBase();
+document.getElementById('loading').remove();
+addEventListener('resize', () => { drawBase(); });
+renderer.setAnimationLoop(() => {
+  if (walk.on) place();
+  renderer.render(scene, camera);
+  drawMini();
+});
+</script>
+</body>
+</html>

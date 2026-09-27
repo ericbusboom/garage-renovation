@@ -802,6 +802,38 @@ def _controls_html(n_traces: int, n_frame: int, wall_i, roof_i,
 """
 
 
+def _export_meshes(path, traces, n_frame, extra_range, walls_range, inner_range,
+                   roofs_range) -> None:
+    """Every mesh of the outer-walls look, grouped, for the Blender backyard.
+
+    Inches, frame coordinates (x east, y north, z up). The frame is exported
+    white, as the viewer draws it with the outer walls on; the existing-garage
+    ghost, the existing roof and the connection dots are left out.
+    """
+    groups = [('frame', (0, n_frame)), ('layout', extra_range), ('outer', walls_range),
+              ('inner', inner_range), ('roofs', roofs_range)]
+    out = []
+    for group, rng in groups:
+        if not rng:
+            continue
+        for t in traces[rng[0]:rng[1]]:
+            if t.type != 'mesh3d' or t.x is None or t.i is None:
+                continue
+            color = BEAM_WHITE if group == 'frame' else t.color
+            out.append(dict(
+                name=t.name, group=group,
+                color=color if isinstance(color, str) else None,
+                opacity=1.0 if t.opacity is None else float(t.opacity),
+                vertexcolor=list(t.vertexcolor) if t.vertexcolor is not None else None,
+                facecolor=list(t.facecolor) if t.facecolor is not None else None,
+                vertices=[[round(float(a), 3), round(float(b), 3), round(float(c), 3)]
+                          for a, b, c in zip(t.x, t.y, t.z)],
+                triangles=[[int(a), int(b), int(c)] for a, b, c in zip(t.i, t.j, t.k)]))
+    Path(path).write_text(json.dumps(dict(units='inches', origin='existing garage '
+                                          'outside south-west corner',
+                                          objects=out)))
+
+
 def write(frame: framemod.Frame, result, categories: dict, down: dict,
           removal: list, summary: dict, path: Path,
           show_existing: bool = True, before_demo: set | None = None,
@@ -809,7 +841,7 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
           cabinets: bool = True, report_html: str | None = None,
           proposed_seats: list | None = None,
           connections: list | None = None,
-          outer_walls: bool = False) -> None:
+          outer_walls: bool = False, mesh_export: Path | None = None) -> None:
     verdicts = {r.member: r for r in removal}
     proposals = down.get('sections', {}) if down.get('verified') else {}
     removed = set(summary['removal'].get('cumulative', {}).get('removed', []))
@@ -1057,6 +1089,10 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
                     args2=None)
                for key, title, _ in viewer.MODES + [CONNECTION_MODE]
                if key in SOLID_MODES]
+
+    if mesh_export:
+        _export_meshes(mesh_export, traces, n_frame, extra_range, walls_range,
+                       inner_range, roofs_range)
 
     fig = go.Figure(traces)
     fig.update_layout(
