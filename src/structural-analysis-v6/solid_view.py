@@ -924,13 +924,14 @@ def write(frame: framemod.Frame, result, categories: dict, down: dict,
         for key in colors:colors[key].append('#87919d')
         stage_visible.append(True)
 
-    # The garage-door jamb post: drawn with the frame, but not in the model.
+    # Non-structural posts (door jamb, decorative): with the frame, not in the model.
     if outer_walls:
         import outer_walls as OW
-        traces.append(OW.jamb_trace(frame))
-        for key in colors:
-            colors[key].append('#87919d')
-        stage_visible.append(False)
+        for t in OW.frame_extras(frame):
+            traces.append(t)
+            for key in colors:
+                colors[key].append('#87919d')
+            stage_visible.append(False)
 
     n_frame = len(traces)                      # frame meshes + the support markers
     wall_i = roof_i = None

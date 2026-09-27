@@ -44,6 +44,7 @@ FASCIA = 4.0                 # fascia depth
 FASCIA_T = 1.0
 ROOF_T = 1.5
 
+POST_DECOR = 3.0             # WP1, HSS3X3 like W.top
 JAMB = dict(name='NJ', b=2.0, d=5.0, section='HSS5X2X1/8 (conceptual)')
 
 LOFT_Z = 112.5               # loft beam centreline: the storey split
@@ -218,9 +219,14 @@ def sections(frame: framemod.Frame) -> list[dict]:
     add('WU2', 'W1 → W2, under the solar slope · whole bay glazed, stairwell window',
         'glass', 'x', (wi - WALL_T + 0.5, wi - 0.5),
         _under(w1y, g['clerestory'], CB.floor_top(frame), slope))
-    add('WU3', 'W2 → W3 · stairwell window', 'wall', 'x', _outside(wi, -1),
-        _rect(g['clerestory'], w3y, LOFT_Z, top),
-        windows=[_window(*_centred((g['clerestory'] + STAIR_N) / 2.0))])
+    # The W2-W3 bay is split by the decorative post WP1 on the B-1A line: south
+    # of it, the width of the stairwell, glazed floor to ceiling; north of it,
+    # wall. The north half is WU3B so that WU4 keeps its number.
+    add('WU3', 'W2 → WP1 (B-1A line) · stairwell window, floor to ceiling', 'glass',
+        'x', (wi - WALL_T + 0.5, wi - 0.5),
+        _rect(g['clerestory'], STAIR_N - POST_DECOR / 2, CB.floor_top(frame), top))
+    add('WU3B', 'WP1 (B-1A line) → W3', 'wall', 'x', _outside(wi, -1),
+        _rect(STAIR_N, w3y, LOFT_Z, top))
     add('WU4', 'W3 → W4, behind W.rear.brace', 'wall', 'x', _outside(wi, -1),
         _rect(w3y, north, LOFT_Z, top))
 
@@ -460,6 +466,31 @@ def roof_traces(frame: framemod.Frame) -> list:
     return out
 
 
+def frame_extras(frame: framemod.Frame) -> list:
+    """Non-structural posts drawn with the frame: NJ and WP1."""
+    return [jamb_trace(frame), decor_post_trace(frame)]
+
+
+def decor_post_trace(frame: framemod.Frame):
+    """WP1: decorative post on the west line at B-1A, from BW up to W.top."""
+    g = geometry(frame)
+    x, y, h = g['west'], STAIR_N, POST_DECOR / 2
+    z0 = _top(frame, 'BW')
+    z1 = CB._ends(frame, 'W.top')[0][2] - frame.section_of['W.top'].d / 2.0
+    v, f = CB._box(x - h, x + h, y - h, y + h, z0, z1)
+    return go.Mesh3d(
+        x=[p[0] for p in v], y=[p[1] for p in v], z=[p[2] for p in v],
+        i=[q[0] for q in f], j=[q[1] for q in f], k=[q[2] for q in f],
+        color='#87919d', flatshading=True, opacity=1.0, name='WP1',
+        lighting=dict(ambient=0.62, diffuse=0.85, specular=0.12, roughness=0.9),
+        lightposition=dict(x=-8000, y=-12000, z=16000), showlegend=False,
+        hovertemplate=(f'<b>WP1</b> · decorative post on the B-1A line<br>HSS3X3 '
+                       f'(conceptual) · x = {x:g}, y = {y:g}<br>BW top z {z0:g} → '
+                       f'W.top underside z {z1:g}<br>splits W2–W3: window WU3 south, '
+                       'wall WU3B north<br><b>not structural</b> — not in the '
+                       'analysis<extra></extra>'))
+
+
 def jamb_trace(frame: framemod.Frame):
     """The non-structural garage-door jamb post midway between N1 and N2."""
     g = geometry(frame)
@@ -506,10 +537,13 @@ def html(frame: framemod.Frame, rows: list[dict]) -> str:
   <p><b>NJ</b>, the garage-door jamb post at x = {g['jamb_x']:g} midway between N1
   and N2, is conceptual HSS5×2: 5 in. deep through the wall, 2 in. wide. It is
   pinned top and bottom, removable, and not in the analysis; NL2 and NL3 are the
-  two door leaves either side of it.</p>
+  two door leaves either side of it. <b>WP1</b> is a decorative HSS3×3 post on the
+  west line at B-1A, BW to W.top, likewise not in the analysis. It splits the
+  W2–W3 bay: WU3, south of it, is glazed floor to ceiling across the width of
+  the stairwell; WU3B, north of it, is wall.</p>
   <p><b>IU1</b> is an interior partition standing on BWI along the stair opening,
   from B-S to the stair head at B-1A. It is the guard on that edge, and it gives
-  the WU2 (glazed over the whole bay) and the WU3 window a wall to look at instead of the
+  the stairwell glazing in WU2 and WU3 a wall to look at instead of the
   storage. It rises to the rafter soffit under the solar slope and stops level
   with the clerestory sill north of it. It stops at B-1A because the walkway
   crosses BWI there, from T1 to T2.</p>
