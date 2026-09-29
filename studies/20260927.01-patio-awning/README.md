@@ -34,3 +34,7 @@ Drainage by steepest descent on the mesh. Ponding: 0.1" rain film as load, re-so
 
 Figures and JSON above are regenerated at 7'-0". With only 17" of fall from the pillar ties (8'-5") the fabric is flatter (11 % under 3°, median slope 5.7°), and now even a firm 20 lb/ft sheet pockets under rain, near (145, 42): about 2'-5" in from the fence and 3'-6" in from the P1–P2 edge. Dropping P2 to 6'-6" (6" below the rest) stops ponding at both tensions; 6'-8" or 6'-10" only fixes the firm case. The comparison panel uses P2 at 6'-4".
 - `setback-research.md`: San Diego code research on how close the awning can be to the property line (2026-09-29).
+
+## Tarp on parallel cables from the roof edge (`tarp_cables.py` → `tarp-cables.png`, `tarp_cables.json`)
+
+2026-09-29. Roof edge over the pillar: x = 24 (11" past the pillar's west face), y = 64 to 160 (10" past its south end, 8 ft long). R1 south end, R2 middle, R3 north end. Cables run due west from R1–R3 to clips N1–N3 on a fence cable P4–P3–P2. For parallel cables the clips sit at the R points' y. The fence cable then acts as a string with point loads: the bow off the fence is d = M/H, so the tension along the fence, H, sets how far the clips pull in. For a 6" bow, H ≈ 4–5 × the R-cable tension. R2 is only 8" from P3's line, so tying R2 straight to P3 (option B) is 3° off parallel and saves a clip. R height is assumed at 8'-5" (not yet given); it moves node heights, not the plan answer.
