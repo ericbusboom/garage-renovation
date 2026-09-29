@@ -120,7 +120,8 @@ CORNERS = ["T1", "P4", "P3", "P2", "P1", "T2"]
 CLAMPED = ("T2", "T1")                          # straight along the pillar face
 
 
-def membrane():
+def membrane(full=False):
+    """Form-find the fabric. full=True also returns (fixed mask, force densities)."""
     pts, fixed, edge_of = [], [], []            # boundary nodes first
     ring = CORNERS + [CORNERS[0]]
     for a, b in zip(ring[:-1], ring[1:]):
@@ -199,6 +200,8 @@ def membrane():
     nrm = np.cross(P[:, 1] - P[:, 0], P[:, 2] - P[:, 0])
     nrm /= np.linalg.norm(nrm, axis=1)[:, None]
     slope = np.degrees(np.arccos(np.abs(nrm[:, 2])))
+    if full:
+        return Y, T, E, is_cable, nb, res, slope, fixed, q
     return Y, T, E, is_cable, nb, res, slope
 
 

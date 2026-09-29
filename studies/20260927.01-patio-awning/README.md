@@ -21,3 +21,11 @@ Run: `archive/.venv/bin/python studies/20260927.01-patio-awning/awning.py` (a fe
 ## Which post to drop for drainage (`sweep_post.py` → `sweep_p4.json`, `awning-2-membrane-p4-70.png`)
 
 With all posts at 6'-10" the flat zone is by P2. P3 can't come down (electrical connection beside it). Lowering P4 makes the flat zone bigger (fabric under 3°: 8 % at 6'-10" → 17 % with P4 at 5'-10"). Raising P3 barely helps (6 % at 8'-10"). Dropping P2 fixes it (0.1 % with P2 at 6'-2"), if the cabinets allow. The Airstream skim is not a constraint: Eric can move the trailer back.
+
+## Where it pools (`ponding.py` → `awning-4-ponding.png`, `ponding.json`)
+
+Drainage by steepest descent on the mesh. Ponding: 0.1" rain film as load, re-solve at fixed force density, fill dips to spill level, add the water, repeat. Linear force density, so a "runaway" means the pocket keeps deepening, not a literal depth.
+
+- All posts 6'-10": the unloaded fabric has no dip, but under rain a slack sheet (8 lb/ft) pockets about 3'-8" in from the fence and 4'-10" in from the P1–P2 edge, in the flat zone near P2, and the pocket keeps deepening. A firm sheet (20 lb/ft) holds only a trace (0.1").
+- P2 at 6'-2": no pond at either tension; the low point is the P2 corner.
+- About 40 % of the roof sheds off the fence edge P2–P3, 37–40 % off the north edge P1–P2, and 16–19 % off P3–P4. Nothing meaningful comes off the pillar side.
