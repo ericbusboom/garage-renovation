@@ -5,7 +5,7 @@ Awning (tarp) over the work patio beside the outbuilding (storage + parked trail
 - `draw_plan.py` → `patio-plan.svg` / `.png`: Eric's sketch `data/images/patio.svg` redrawn with rounded dimensions and numbered posts.
 - Orientation: drawn as Eric sees it from the house — **page up is south**, page right is west. The P2–P3–P4 fence is the west property line; P1 and the electrical pillar are on the east side.
 - Script frame: inches, x = page right, y = page up, origin at P1 centre.
-- Posts (railroad ties): all four tops at 6'-10" (P1 and P2 raised from 6'-0" on 2026-09-27 to clear cabinets; may go higher).
+- Posts (railroad ties): all four tops at 7'-0" (2026-09-29). History: P1/P2 6'-0" and P3/P4 6'-10" as found; all to 6'-10" to clear cabinets; all to 7'-0".
 - P2–P3 and P3–P4 are 8'-0" clear between faces (set for 8 ft stringers), so centres are 8'-8" apart. P4 is 4'-10" past the pillar line (derived, assumes 8" post depth).
 - Airstream: inside the fence, 18" off it, front 2'-8" (32") beyond the patio edge at the pillar end, 8 ft wide, 2 ft corner radii; length not given.
 - Tie points at 101" (8'-5") high on the fence-side face of the pillar: T1 at its south (page-top) corner, T2 at its north corner. Cables T2–P4 (to P4's south face), T1–P3, T2–P1, T2–P2. `draw_plan.py` prints each cable's plan clearance to the Airstream; T2–P4 crosses the trailer's front corner in plan (~5"), but at 7'-0"–7'-3" high (straight line, no sag) it passes over the rounded roof corner; Eric confirms on site that it just clears from the 101" tie.
@@ -29,3 +29,7 @@ Drainage by steepest descent on the mesh. Ponding: 0.1" rain film as load, re-so
 - All posts 6'-10": the unloaded fabric has no dip, but under rain a slack sheet (8 lb/ft) pockets about 3'-8" in from the fence and 4'-10" in from the P1–P2 edge, in the flat zone near P2, and the pocket keeps deepening. A firm sheet (20 lb/ft) holds only a trace (0.1").
 - P2 at 6'-2": no pond at either tension; the low point is the P2 corner.
 - About 40 % of the roof sheds off the fence edge P2–P3, 37–40 % off the north edge P1–P2, and 16–19 % off P3–P4. Nothing meaningful comes off the pillar side.
+
+### Update 2026-09-29: all posts raised to 7'-0"
+
+Figures and JSON above are regenerated at 7'-0". With only 17" of fall from the pillar ties (8'-5") the fabric is flatter (11 % under 3°, median slope 5.7°), and now even a firm 20 lb/ft sheet pockets under rain, near (145, 42): about 2'-5" in from the fence and 3'-6" in from the P1–P2 edge. Dropping P2 to 6'-6" (6" below the rest) stops ponding at both tensions; 6'-8" or 6'-10" only fixes the firm case. The comparison panel uses P2 at 6'-4".

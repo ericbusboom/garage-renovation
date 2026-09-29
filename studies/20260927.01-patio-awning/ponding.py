@@ -1,6 +1,6 @@
 """Where does water go, and where will it pool, on the fabric awning?
 
-For the form-found fabric of awning.py (all posts 6'-10", ties 8'-5"):
+For the form-found fabric of awning.py (post heights from patio_site.py, ties 8'-5"):
 
 1. Drainage on the unloaded shape: every mesh node sends its tributary
    plan area to its lowest neighbour (steepest descent on the mesh graph).
@@ -18,7 +18,7 @@ Force density in the fabric is set from an assumed prestress: on this mesh
 q (lb/in per link) is roughly the fabric tension in lb/in. Results are for
 20 lb/ft (a firm tarp) and 8 lb/ft (a slack one).
 
-Two cases: all posts 6'-10", and P2 dropped to 6'-2" to give a drain corner.
+Two cases: all posts level, and P2 dropped 8 in to give a drain corner.
 
 Run from the repository root:
     archive/.venv/bin/python studies/20260927.01-patio-awning/ponding.py
@@ -239,8 +239,10 @@ def draw(ax, c, show):
 
 
 def main():
-    cases = [case("All four posts 6′-10″", {}),
-             case("P2 dropped to 6′-2″", {"P2": 74})]
+    h = patio_site.POSTS["P1"][4]
+    drop = h - 8                                  # P2 as the drain corner
+    cases = [case(f"All four posts {ftin(h)}", {}),
+             case(f"P2 dropped to {ftin(drop)}", {"P2": drop})]
     fig, axs = plt.subplots(1, 2, figsize=(15.5, 9.2))
     summary = []
     for ax, c in zip(axs, cases):

@@ -10,10 +10,10 @@ electrical pillar are on the east side.
 # P2-P3 and P3-P4 are 8 ft face to face (set for 8 ft stringers), so
 # centres are 8 ft + one 8 in post depth = 104 in apart.
 POSTS = {
-    "P1": (0, 0, 8, 6, 82),      # NE (page bottom-left)
-    "P2": (174, 0, 6, 8, 82),    # NW (page bottom-right)
-    "P3": (174, 104, 6, 8, 82),  # on the west fence
-    "P4": (174, 208, 6, 8, 82),  # SW, on the fence past the pillar line
+    "P1": (0, 0, 8, 6, 84),      # NE (page bottom-left)
+    "P2": (174, 0, 6, 8, 84),    # NW (page bottom-right)
+    "P3": (174, 104, 6, 8, 84),  # on the west fence
+    "P4": (174, 208, 6, 8, 84),  # SW, on the fence past the pillar line
 }
 PATIO_N = 150                     # north line of the sketch rectangle
 PILLAR = (0, 13, PATIO_N - 48, PATIO_N)  # x0, x1, y0, y1 (4 ft long)
