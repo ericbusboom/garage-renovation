@@ -33,3 +33,4 @@ Drainage by steepest descent on the mesh. Ponding: 0.1" rain film as load, re-so
 ### Update 2026-09-29: all posts raised to 7'-0"
 
 Figures and JSON above are regenerated at 7'-0". With only 17" of fall from the pillar ties (8'-5") the fabric is flatter (11 % under 3°, median slope 5.7°), and now even a firm 20 lb/ft sheet pockets under rain, near (145, 42): about 2'-5" in from the fence and 3'-6" in from the P1–P2 edge. Dropping P2 to 6'-6" (6" below the rest) stops ponding at both tensions; 6'-8" or 6'-10" only fixes the firm case. The comparison panel uses P2 at 6'-4".
+- `setback-research.md`: San Diego code research on how close the awning can be to the property line (2026-09-29).
