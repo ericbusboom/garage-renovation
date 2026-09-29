@@ -44,3 +44,37 @@ So a fabric roof on the P2–P3–P4 fence posts does not fit any by-right rule.
 2. Can it attach to the garage (in the east setback under (a)(12)) and be treated as part of that accessory structure?
 3. Where is the rear lot line relative to P1–P2, and does alley credit set the rear yard at 5 ft?
 4. Is a Class A covering required for fabric, or will a flame-resistant listed fabric do?
+
+## Fabric-specific search (2026-09-29, second pass)
+
+Question: does a fabric awning or shade sail fall under different rules than a built patio cover?
+
+**Short answer: no fabric exemption was found. The fabric gets no closer to the line, and it adds two material requirements: a Class A roof rating and flame-resistant fabric.**
+
+### San Diego Municipal Code
+
+- Every division of SDMC Chapters 11–14 was downloaded and searched for fabric, canvas, shade sail, shade cloth, membrane, tent and canopy. The only hits are campground tents (§141.06xx) and the adoption of CBC Appendix Q tents for emergency housing. The Land Development Code has **no rule for shade sails or fabric structures**, so the City classifies one under its existing terms.
+- "Structure" includes any "post … or shelter" composed of parts joined together (§113.0103). A sail on posts is a structure. "Awning" requires support entirely from a building wall, so a post-supported sail is not an awning under the SDMC.
+- §149.0107 adopts **CRC Appendix BF, Patio Covers**. BF102.1 defines a patio cover as "a structure with open or glazed walls that is used for recreational, outdoor living purposes associated with a dwelling unit." It sets no roof material, so a fabric roof fits the definition. BF101.2 says patio covers may not be used as "carports, garages, storage rooms or habitable rooms." A work patio sheltering storage cabinets could be classed instead as an accessory structure under the main CRC; the yard rules apply either way.
+
+### Building and fire codes on fabric
+
+- **CBC §3102 membrane structures** (tensile membrane, membrane-covered cable, etc.) erected **180 days or longer**: designed to ASCE 55. The membrane must be noncombustible or flame resistant per CCR Title 19 Div 1 Ch 8, i.e. State Fire Marshal-listed fabric. A sail tensioned between posts and a mast by cables is a tensile membrane structure. The CRC has no membrane chapter, so a plan checker would likely apply this through engineered design.
+- **CFC §3101.1 Exception 4:** "Tensioned membrane roof materials supported by rigid frames or installed on a mast and cable system" that conform to a building-code type of construction are not tents. They are regulated as buildings/structures, not by the fire code's tent chapter.
+- **CBC §3105 awnings and canopies:** fabric coverings must pass NFPA 701 or equivalent. Exception: the fire-propagation and flame-spread tests do not apply to awnings on detached one- and two-family dwellings. The sentence requiring fabrics to be flame resistant per Title 19 is not excepted.
+- **Roof rating:** San Diego amendment **CRC R902.1.4: "All newly constructed roofs shall be covered with a fire-retardant roof covering that is at least Class 'A'."** IB 206 repeats this for patio covers ("Roofing materials must be a Class A-listed roof covering assembly"). Base CRC R902.1 also requires a rated covering where the roof edge is less than 3 ft from a lot line. Class A is by ASTM E108 / UL 790. PTFE-coated fiberglass architectural membrane is sold as Class A; most shade-sail fabrics (HDPE knit, many PVC-coated polyesters) carry flame-resistance (NFPA 701 / SFM) listings, not a roof class. Check the maker's E108 listing before choosing fabric.
+
+### Temporary use
+
+- Under the CFC, fabric up **less than 180 days in 12 months** is a temporary tent/membrane structure. Open-sided tents up to 700 sf need no fire permit, but they need 12 ft of clearance to structures, and §3103.7.2 keeps tents 20 ft from lot lines. Attached to the garage pillar and posted on the fence, it fails both, so the temporary route gives no relief near the line. Permanent posts remain structures for zoning in any case.
+
+### Effect on the distance answer
+
+Unchanged. Zoning does not care what the roof is made of: the 5 ft patio-structure rule (§131.0461(a)(8)) and the CRC projection limits (nothing under 2 ft, protected under 5 ft) apply to a fabric roof as to a solid one. Fabric adds material requirements: a Class A-rated covering (unless DSD accepts that permeable shade cloth is not a "roof") and SFM-listed flame-resistant fabric.
+
+### Added questions for DSD
+
+5. Is a permeable shade-cloth sail a "roof" subject to R902.1.4 Class A, or a shade screen that is not?
+6. Would they review a cable-tensioned sail under CRC Appendix BF (patio cover) or as a CBC §3102 tensile membrane structure (ASCE 55, SFM-listed fabric)?
+
+Sources: SDMC Ch 11–14 (docs.sandiego.gov/municode); CRC 2025 Appendix BF (up.codes); CBC 2025 Ch 31 §3102, §3105 (up.codes); CFC 2025 Ch 31 §3101.1, §3103 (up.codes); San Diego CRC amendments R902.1.4 (up.codes San Diego Residential Code); IB 206.
