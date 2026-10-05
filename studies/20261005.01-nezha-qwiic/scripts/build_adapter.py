@@ -83,7 +83,7 @@ rect(hole,-2.5,-2.5,2.5,2.5,p.F_CrtYd,.05)
 IO.FootprintSave(str(LIB),hole)
 
 board=p.BOARD()
-board.GetDesignSettings().SetBoardThickness(p.FromMM(1.6))
+board.GetDesignSettings().SetBoardThickness(p.FromMM(1.4))
 board.GetDesignSettings().SetAuxOrigin(v(50,50))
 tb=board.GetTitleBlock();tb.SetTitle('Nezha 3.3 V / 4P4C to Qwiic');tb.SetRevision('A');tb.SetDate('2026-10-05')
 nets={}
