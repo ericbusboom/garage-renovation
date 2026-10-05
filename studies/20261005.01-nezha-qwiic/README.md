@@ -10,7 +10,7 @@ A 44 × 24 mm passive adapter with a 4P4C receptacle, a four-position 0.1-inch m
 - [Schematic PDF](exports/schematic.pdf) and [board drawing PDF](exports/board.pdf), viewed from the component side
 - [Scalable board preview](exports/board-review.svg)
 - [Fabrication ZIP](exports/nezha-qwiic-revA-fabrication.zip) and [Carvera milling-input ZIP](exports/nezha-qwiic-revA-milling-inputs.zip)
-- [One-board Carvera G-code](cam/nezha-qwiic-revA-one-board-carvera.nc), [setup instructions](cam/READ-ME-FIRST.txt), [stock layout PDF](cam/setup-preview.pdf), and [complete CAM package](exports/nezha-qwiic-revA-carvera-one-board.zip)
+- [One-board Carvera G-code](cam/nezha-qwiic-revA-one-board-carvera-cut145.nc), [setup instructions](cam/READ-ME-FIRST.txt), [stock layout PDF](cam/setup-preview.pdf), and [complete CAM package](exports/nezha-qwiic-revA-carvera-one-board.zip)
 - [Parts list](parts.csv), [wiring table](wiring.csv), and [validation results](checks/validation.json)
 
 The ZIP packages and raster previews are generated files excluded from Git; their unpacked source files are retained. A working copy and the installed EDA tools are on Buzzkill at `/home/ros/projects/nezha-qwiic`.
@@ -69,7 +69,7 @@ The user supplied 100 × 150 × 1.4 mm stock and requested **one board first**. 
 
 The NC uses a different origin from the raw Gerbers: G54 XY zero is the **lower-left of the stock**, with 150 mm along X and 100 mm along Y. The board's lower-left is (15, 15) mm. This is a translation of (+15, +39) mm from the Gerbers, without mirroring. The NC already includes this placement; do not add another 15 mm controller offset.
 
-Slot 2 holds the standard 30° V-bit with a 0.2 mm tip; slot 3 holds the 0.8 mm corn bit. Both run at 12,000 RPM and 300 mm/min; isolation is 0.08 mm deep. Through-cuts reach 1.55 mm in passes no deeper than 0.25 mm. Four tabs have 2.5 mm minimum neck width and retain 0.5 mm of material. Hole and outline paths are cut after the traces. These are conservative choices relative to [Makera's PCB cutting table](https://wiki.makera.com/en/speeds-and-feeds).
+Slot 2 holds the standard 30° V-bit with a 0.2 mm tip; slot 3 holds the 0.8 mm corn bit. Both run at 12,000 RPM and 300 mm/min; isolation is 0.08 mm deep. Through-cuts reach 1.45 mm in passes no deeper than 0.25 mm. Four tabs have 2.5 mm minimum neck width and retain 0.5 mm of material. Hole and outline paths are cut after the traces. The `cut145` update reduces the extra depth to 0.05 mm below the 1.4 mm PCB. The user has a sacrificial backer and about 1 mm of double-sided tape; tape thickness is not added to the cutting depth. Auto-leveling follows the copper surface but does not measure board thickness or tape compression. These are conservative choices relative to [Makera's PCB cutting table](https://wiki.makera.com/en/speeds-and-feeds).
 
 The independent [NC validation](cam/validation.json) reconstructs the final tool sweeps, confirms that all CAD signal nets remain connected and separated, checks that the holes have no uncut cores, measures the four retaining tabs, and checks command syntax, depth, stock bounds, clearance moves, and tool changes. Its motion estimate excludes probing, ATC, acceleration, and controller processing delays. Actual bit geometry, copper thickness, probing accuracy, clamping, and machine behavior still require operator verification. More copies can be panelized after this single-board test.
 

@@ -18,7 +18,7 @@ from matplotlib.collections import LineCollection
 root = Path(__file__).resolve().parents[1]
 cam = root / 'cam'
 job = json.loads((cam / 'job.json').read_text())
-nc = cam / 'nezha-qwiic-revA-one-board-carvera.nc'
+nc = cam / job['program_file']
 pos = {'X': None, 'Y': None, 'Z': None}
 tool, operation, spindle, feed = None, None, False, None
 tool_changes, segments = [], []
@@ -56,7 +56,7 @@ for line_no, raw in enumerate(nc.read_text().splitlines(), 1):
     new = {k:data.get(k,pos[k]) for k in pos}
     if all(v is not None for v in new.values()):
         assert 0 <= new['X'] <= 150 and 0 <= new['Y'] <= 100
-        assert -1.55001 <= new['Z'] <= 10.00001
+        assert -job['cutting']['depth_mm']-.00001 <= new['Z'] <= 10.00001
     if all(v is not None for v in (*pos.values(), *new.values())) and pos != new:
         a, b = tuple(pos.values()), tuple(new.values())
         if command == 'G0':
@@ -162,10 +162,15 @@ assert len(set(assignment.values()))==len(assignment),'Signals shorted after nom
 for net,index in assignment.items():
     assert islands[index].area < nets[net].area*1.15+.1,(net,'connected to background copper')
 
+actual_depths={op:min(min(a[2],b[2]) for operation,tool,command,a,b,_ in segments if operation==op) for op in [1,2,3]}
+assert abs(actual_depths[1]+job['isolation']['depth_mm'])<1e-5
+for op in [2,3]:
+    assert abs(actual_depths[op]+job['cutting']['depth_mm'])<1e-5
+assert abs(job['cutting']['depth_mm']-job['stock_mm'][2]-.05)<1e-9
 cutting=[s for s in segments if min(s[3][2],s[4][2])<0]
 bounds=[min(min(s[3][i],s[4][i]) for s in cutting) for i in range(3)]+[max(max(s[3][i],s[4][i]) for s in cutting) for i in range(3)]
 report={'status':'PASS','program_sha256':hashlib.sha256(nc.read_bytes()).hexdigest(),'cam_version':'pcb2gcode 3.0.4 a5604c4',
-        'tool_changes':tool_changes,'stock_mm':job['stock_mm'],'board_lower_left_mm':[15,15],
+        'operation_min_z_mm':actual_depths,'through_cut_allowance_mm':.05,'tool_changes':tool_changes,'stock_mm':job['stock_mm'],'board_lower_left_mm':[15,15],
         'motion_bounds_xyz_minmax_mm':[round(v,5) for v in bounds],
         'tab_widths_mm':tabs,'tab_remaining_thickness_mm':.5,'holes_mm':[[19,36,3],[55,18,3]],
         'isolated_cad_nets':sorted(assignment),'motion_estimate_minutes_excluding_probe_and_atc':round(time_minutes,1),
@@ -202,7 +207,7 @@ ax.set_xlim(-4,154);ax.set_ylim(-4,104);ax.set_title('150 x 100 x 1.4 mm stock -
 detail.set_xlim(12,62);detail.set_ylim(12,42);detail.set_title('Final G-code paths and tab locations')
 fig.suptitle('Nezha / Qwiic - single-board Carvera job',fontsize=16)
 fig.text(.5,.04,'T2 teal: trace isolation   |   T3 orange: 3 mm holes   |   T3 purple: outline   |   Yellow: retaining tabs',ha='center',fontsize=9)
-fig.text(.5,.01,'Z0 = copper top. Maximum cut Z = -1.55 mm. Probe/level before cutting. Drawing is a review, not a print template.',ha='center',fontsize=8)
+fig.text(.5,.01,f"Z0 = copper top. Maximum cut Z = -{job['cutting']['depth_mm']:.2f} mm. Probe/level before cutting. Drawing is a review, not a print template.",ha='center',fontsize=8)
 fig.tight_layout(rect=[0,.07,1,.94])
 for ext in ['svg','pdf','png']:
     fig.savefig(cam/f'setup-preview.{ext}',dpi=150)

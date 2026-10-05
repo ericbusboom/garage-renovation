@@ -7,7 +7,8 @@ from zipfile import ZipFile, ZIP_DEFLATED
 
 root=Path(__file__).resolve().parents[1]
 cam=root/'cam'
-nc=cam/'nezha-qwiic-revA-one-board-carvera.nc'
+job=json.loads((cam/'job.json').read_text())
+nc=cam/job['program_file']
 report=json.loads((cam/'validation.json').read_text())
 assert report['status']=='PASS'
 assert report['program_sha256']==hashlib.sha256(nc.read_bytes()).hexdigest()

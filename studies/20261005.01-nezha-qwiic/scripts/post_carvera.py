@@ -83,12 +83,13 @@ def pocket_holes():
         previous_z = 0
         for z in levels:
             # The 0.35 mm center radius is smaller than the tool radius, so
-            # the helical lap removes the center; outer laps finish the pocket.
-            for radius in [.35, .70, 1.10]:
+            # the helical lap removes the center. A second, level lap clears
+            # the entire floor before the outer laps finish the pocket.
+            for lap, radius in enumerate([.35, .35, .70, 1.10]):
                 emit(f'G1 X{x + radius:.5f} Y{y:.5f}')
                 for i in range(1, 121):
                     angle = -2 * math.pi * i / 120
-                    zi = previous_z + (z - previous_z) * i / 120 if radius == .35 else z
+                    zi = previous_z + (z - previous_z) * i / 120 if lap == 0 else z
                     emit(f'G1 X{x + radius * math.cos(angle):.5f} '
                          f'Y{y + radius * math.sin(angle):.5f} Z{zi:.5f}')
             emit(f'G1 X{x + .35:.5f} Y{y:.5f}')
@@ -102,7 +103,8 @@ comment('Board lower-left X15 Y15; finished size 44 x 24 mm')
 comment('T2 = 30 DEG V-BIT, 0.2 mm TIP; T3 = 0.8 mm CORN BIT')
 comment('Set Auto Z Probe and Auto Leveling in Carvera Controller BEFORE RUN')
 comment('6 x 4 probe grid, 2 mm lift; preserve active height compensation')
-comment('Tape PCB to sacrificial backer; cut-through reaches Z-1.55')
+comment(f"CUT145 UPDATE: final Z-{job['cutting']['depth_mm']:.2f}; 0.05 mm below PCB")
+comment('Tape thickness is NOT added to cutting depth; Z0 is top copper')
 comment('Clamp outside the cutting and dust-shoe travel envelope')
 emit('G21')
 emit('G90')
@@ -122,6 +124,6 @@ emit('M5')
 emit('G4 P3')
 emit('M9')
 emit('M30')
-target = CAM / 'nezha-qwiic-revA-one-board-carvera.nc'
+target = CAM / job['program_file']
 target.write_text('\n'.join(output) + '\n')
 print(f'{target.name}: {len(output)} lines')
