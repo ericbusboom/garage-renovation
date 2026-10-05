@@ -1,68 +1,81 @@
-# Nezha 4P4C to Qwiic adapter
+# Nezha 4P4C to Qwiic adapter — revision A
 
-Status: requirements and tooling prepared on 2026-10-05. Physical 4P4C contact assignment and source voltage remain unverified. This directory contains no fabrication-ready PCB or machine program.
+A 44 × 24 mm passive adapter with a 4P4C receptacle, a four-position 0.1-inch male header in the middle, and a top-entry Qwiic receptacle. All components are surface mounted; all routing is on the front copper. Two 3.00 mm non-plated holes accept heat-staked enclosure posts. Designed 2026-10-05.
 
-## Requested construction
+**Status:** prototype CAD and manufacturing exports complete. KiCad reports zero electrical-rule violations, board-rule violations, unconnected items, and schematic/layout mismatches. The saved CAD and exported schematic netlist also match the independent pin table. No physical prototype or machine toolpath has been tested. This study is separate from the garage project's controlled structural drawings.
 
-- Small passive adapter: female 4P4C handset jack, four-position header physically in the middle, and a Qwiic receptacle at the opposite end.
-- One copper side and surface-mount components, intended for Makera Carvera milling and outsourced fabrication.
-- Two nominal 3.0 mm non-plated holes for plastic heat-staked rivets. Hole positions and clearance for the melted heads will be set with the enclosure layout.
-- Start with one board; arrange multiple copies into a milling panel after the prototype and stock dimensions are checked.
-- Proposed middle header: vertical male, 2.54 mm pitch; awaiting user preference. Proposed header order is GND, 3V3, SDA, SCL.
+## Files
 
-The header is an electrical tap: each of its pins shares one net with both other connectors. No removable shunts are needed to maintain continuity.
+- [Editable KiCad project](design/nezha-qwiic.kicad_pro), [schematic](design/nezha-qwiic.kicad_sch), and [PCB](design/nezha-qwiic.kicad_pcb)
+- [Schematic PDF](exports/schematic.pdf) and [board drawing PDF](exports/board.pdf), viewed from the component side
+- [Scalable board preview](exports/board-review.svg)
+- [Fabrication ZIP](exports/nezha-qwiic-revA-fabrication.zip) and [Carvera milling-input ZIP](exports/nezha-qwiic-revA-milling-inputs.zip)
+- [Parts list](parts.csv), [wiring table](wiring.csv), and [validation results](checks/validation.json)
 
-## Signal mapping
+The ZIP packages and raster previews are generated files excluded from Git; their unpacked source files are retained. A working copy and the installed EDA tools are on Buzzkill at `/home/ros/projects/nezha-qwiic`.
 
-| Net | Nezha cable color, from user notes | Middle header, proposed | Qwiic contact | Qwiic wire |
-| --- | --- | --- | --- | --- |
-| GND | Black | 1 | 1 | Black |
-| 3V3 | Red, voltage to confirm | 2 | 2 | Red |
-| SDA | Yellow / signal 1 | 3 | 3 | Blue |
-| SCL | Green / signal 2 | 4 | 4 | Yellow |
+## Wiring and assembly
 
-Qwiic is a 1 mm JST-SH interface with 3.3 V power and logic. SparkFun documents its [pinout, colors, and connector part number](https://www.sparkfun.com/qwiic). The Nezha color associations above are user-supplied observations, not verified manufacturer contact numbers. `wiring.csv` deliberately leaves the jack contact column empty.
+| Signal | Nezha cable color | J1 contact | J2 male header | J3 Qwiic contact | Qwiic wire |
+| --- | --- | --- | --- | --- | --- |
+| GND | Black | 1 | 1 | 1 | Black |
+| 3.3 V | Red | 2 | 2 | 2 | Red |
+| SDA | Yellow | 4 | 3 | 3 | Blue |
+| SCL | Green | 3 | 4 | 4 | Yellow |
 
-The reported latch-side order was yellow–green–red–black; its reversal is black–red–green–yellow. The separately reported bottom view was black–red–yellow–green. Before assigning a footprint, resolve that discrepancy and map the actual cable into the chosen jack's numbered solder terminals. Check both cable ends; do not assume a handset cable is wired straight through.
+The user confirmed 3.3 V sensor power and clarified the plug colors: latch-side left-to-right yellow–green–red–black; contact-side black–red–green–yellow. The drawing convention is plug nose away and cable toward the viewer. The selected Kycon jack's front view has the latch below the contacts, with contact 1 at the left and contact 4 at the right. Its PCB top-view solder-pad order is reversed, as shown in the manufacturer drawing.
 
-ELECFREAKS' [Nezha V2/Pro page](https://wiki.elecfreaks.com/en/microbit/expansion-board/nezha-v2/) specifies 3.3 V sensor power, but its title and SKU table disagree. Its [older Inventor's Kit V2 page](https://wiki.elecfreaks.com/en/microbit/building-blocks/nezha-inventors-kit-v2/product-description/) specifies 3.4 V sensor power. Identify the board and measure red-to-black voltage before deciding the passive connection is suitable for the intended Qwiic device. A 5 V source would require power regulation and assessment of I2C level shifting.
+J2 has one straight row of four male pins at 2.54 mm pitch. Its SMT solder tails alternate sides; this is not a two-row header. With J1 on the left in the board preview, J2 runs from GND at the top through 3V3 and SDA to SCL at the bottom. The header is a tap into the four lines and needs no removable shunts.
 
-## Candidate components
+**Fit R1, an insulated-body 1206 zero-ohm resistor.** It carries SCL over the SDA trace to make the crossing possible with one copper layer. Do not replace it with a solder blob or a bare conductor touching the board. The board adds no pull-ups, regulator, or level conversion.
 
-| Ref | Candidate | Selection status |
+Before first power, plug in the actual unpowered cable and check continuity from each cable color to the labeled J2 pin, including the wiring of both cable ends. Check for shorts between adjacent signals and between 3V3 and GND. This confirms the physical plug orientation and assembly against the CAD assumptions.
+
+## Selected parts and footprint sources
+
+| Ref | Part | Notes and source |
 | --- | --- | --- |
-| J1 | [Amphenol 73306-111LF](https://www.amphenol-cs.com/product/73306111lf.html) | Manufacturer lists a 4P4C, right-angle, surface-mount receptacle. Candidate only; drawing, mating orientation, pad numbering, and footprint need verification. |
-| J2 | [Samtec TSM-104-01-L-SV](https://www.samtec.com/products/tsm-104-01-l-sv) | Four-pin 2.54 mm vertical SMT male header, pending preference and land-pattern check. |
-| J3 | [JST SM04B-SRSS-TB(LF)(SN)](https://www.jst-mfg.com/product/pdf/eng/eSH.pdf) | Standard right-angle Qwiic receptacle; KiCad footprint is installed. |
-| H1, H2 | 3.0 mm NPTH | Actual 3.0 mm holes, not a generic M3 clearance-hole footprint. |
+| J1 | Kycon GMX-SMT4-N-44 | Right-angle, latch-down 4P4C SMT jack; `-TR` changes packaging. Custom footprint from [Kycon drawing](https://www.kycon.com/Pub_Eng_Draw/GMX-SMT4-N-44.pdf), revision A8. |
+| J2 | Samtec TSM-104-01-L-SV | Four-position vertical male SMT header, no alignment-pin or locking-clip options. Custom footprint from [Samtec recommended land pattern](https://suddendocs.samtec.com/prints/tsm-1xx-xx-xx-sv-xx-xxx-xx-footprint.pdf), revision D. |
+| J3 | JST BM04B-SRSS-TB(LF)(SN) | Top-entry, 1 mm SH connector. Use **BM04B**, not the horizontal SM04B version. [JST SH drawing](https://www.jst-mfg.com/product/pdf/eng/eSH.pdf). |
+| R1 | 1206 zero-ohm resistor | Insulated ceramic body required for the trace crossing. |
+| H1, H2 | Board features | 3.00 mm NPTH; no purchased metal fastener required. |
 
-The installed JST footprint uses 0.6 mm-wide signal pads on 1.0 mm centers, leaving 0.4 mm gaps. Choose the isolation tool and cutting depth to fit with margin, then check a test coupon. Keep generous trace widths and spacing elsewhere. Avoid vias for the milled version; if the confirmed pin order forces an impractical crossing, revise placement or provide an explicitly documented SMT zero-ohm bridge. Do not add pull-ups automatically; check those already present on the bus.
+The JST and resistor footprints derive from KiCad library version 9.0.7, under the [KiCad library license](https://www.kicad.org/libraries/license/); the installed package's [attribution and license text](design/KICAD-LIBRARY-COPYRIGHT.txt) are retained. The JST mechanical mounting pads have been given blank pad numbers; their geometry is retained. Custom symbols and footprints are included with the project. Qwiic's power, signal order, and cable colors follow [SparkFun's Qwiic specification](https://www.sparkfun.com/qwiic).
 
-## Buzzkill tooling
+## Mechanical dimensions
 
-Passwordless SSH and `sudo -n` verified as `ros@buzzkill.local`; hostname is `buzzkill`. Host runs Ubuntu 26.04 LTS. Installed from its configured Ubuntu repositories:
+- Finished board: 44.00 × 24.00 mm rectangle, nominal thickness 1.60 mm.
+- Hole diameter: 3.00 mm, non-plated. Centers are (4.00, 3.00) and (40.00, 21.00) mm, measured from the upper-left board corner with X right and Y down in the component-side drawing.
+- A nominal 5 mm diameter head area is kept clear around each hole; match the enclosure's post length and melted head to the actual board thickness.
+- J1 opening faces left; the body is approximately 11.5 mm high. J2's pin row is at X = 29.50 mm, with Y = 8.19, 10.73, 13.27, 15.81 mm. J3 is top entry; allow clearance for its cable above the board.
 
-| Tool | Installed version | Purpose |
-| --- | --- | --- |
-| KiCad | 9.0.8 | Schematic capture, PCB layout, rule checks, Gerber and drill exports |
-| KiCad symbols, footprints, 3D packages | 9.0.7 | Component libraries |
-| ngspice | 45.2 | Optional circuit simulation |
-| gerbv | 2.10.0 package | Independent Gerber viewing |
-| Xvfb | Ubuntu package | Headless viewer checks |
+The rendered PDF is a review drawing. Use CAD or Gerber geometry for machining and check print scaling before using a paper template.
 
-KiCad's Python PCB interface also imports successfully. A passive connector adapter primarily needs connectivity, footprint, and clearance checks rather than SPICE analysis.
+## Outsourced fabrication
 
-The installed StickHub example was used solely to verify schematic PDF, Gerber, and separate plated/non-plated Excellon drill exports. A standalone simulator check returned 3.3 V as expected. These are tool checks, not validation of the proposed adapter.
+The fabrication ZIP includes front and blank back copper, masks, top silkscreen, paste, outline, non-plated drill file, and order notes. A conventional two-layer order works, with all routing on the front and no back copper. Suggested prototype specification: FR-4, 1.6 mm, 1 oz copper, two 3.00 mm NPTH, top solder mask and silkscreen. A fabricator can alternatively quote a single-copper-layer board from the same geometry. No fabrication order has been placed.
 
-The gerbv package reports unsupported X2 attributes on KiCad's default exports. A second export using `--no-x2 --no-netlist --disable-aperture-macros` rendered successfully with no viewer diagnostics. Package audit completed without errors. Temporary verification outputs are on Buzzkill at `/tmp/nezha-eda-check.CF89eQ`; they are disposable example files, not adapter fabrication files.
+## Carvera milling
 
-## Manufacturing workflow
+The milling ZIP contains front copper and board outline as RS-274X Gerbers, the NPTH Excellon file, and CAM notes. The milling Gerbers omit X2 and netlist attributes and aperture macros, and rendered successfully in gerbv with no diagnostics.
 
-Keep one editable KiCad design as the source. Run electrical and board design-rule checks after completing the schematic and routing, then compare the exported nets and footprint pad numbers to the measured cable mapping.
+Use copper-up stock. All files share the upper-left board origin: exported X = 0…44 mm and Y = 0…−24 mm. Do not mirror this component-side artwork or independently reposition the drill and outline files. The outline is the finished perimeter, not a cutter-center path.
 
-- **Outsourced boards:** export Gerber layers, board outline, separate non-plated drills, and an assembly drawing/BOM. Specify nominal board thickness and copper weight after component and stock review. A fabricator may supply a standard two-layer board with all routing on the front; do not assume a single-sided order from the artwork alone.
-- **Carvera:** export front copper and outline as RS-274X Gerbers without X2/netlist attributes or aperture macros if required by the CAM importer, plus millimeter Excellon drills using the same origin. Review orientation, isolation, drills, and perimeter toolpaths in CAM. Put tabs/bridges and panel spacing in the panel/CAM design after stock size, cutter, and fixturing are known.
+Tracks are 0.40 mm wide; the design-rule minimum copper clearance is 0.30 mm. The Qwiic pads have 0.40 mm gaps. Choose an isolation tool with effective cutting width comfortably below the smallest gap; a 0.20 mm effective width leaves margin. Actual cutter shape, runout, cutting depth, and stock flatness determine what the machine can achieve. Review the toolpath and cut a coupon before the first board.
 
-[Makera CAM](https://www.makera.com/pages/makera-cam) imports Gerbers, but its official download page lists Windows and macOS, not Linux. Use it on the machine-control workstation with exports from Buzzkill. No machine-specific G-code has been generated and no machine motion has been commanded.
+[Makera CAM](https://www.makera.com/pages/makera-cam) accepts Gerbers and provides Windows and macOS downloads; run it on the machine-control workstation. Stock size, copper thickness, tool inventory, and fixturing are still needed to choose cutting parameters and panel spacing. No machine-specific G-code is included. Panelization is the next manufacturing step after prototype fit and continuity are confirmed.
 
-Next needed inputs: cable orientation/contact mapping, exact Nezha model and voltage, and middle-header preference. Stock dimensions and cutting-tool details can wait until panelization.
+## Buzzkill tools and regeneration
+
+Passwordless SSH and sudo were verified at `ros@buzzkill.local` (Ubuntu 26.04 LTS). Installed from the host's Ubuntu repositories: KiCad 9.0.8; symbols, footprints, and 3D libraries 9.0.7; ngspice 45.2; gerbv 2.10.0; Xvfb; and librsvg rendering tools. A passive adapter needs connectivity and clearance checks; no circuit simulation is needed for this design.
+
+From `/home/ros/projects/nezha-qwiic`:
+
+```sh
+python3 scripts/build_adapter.py > checks/geometry.json
+bash scripts/export_adapter.sh
+python3 scripts/package_adapter.py
+```
+
+The build script overwrites the generated schematic, PCB, project settings, and local libraries. After manual CAD edits, run only export and packaging to preserve those edits. Export runs KiCad ERC and DRC with schematic parity, then independently checks pad nets, the schematic netlist, the header pitch, front-only tracks, and the actual exported drill locations. Packaging records checksums in `exports/SHA256SUMS.txt`.
