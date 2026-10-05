@@ -4,6 +4,8 @@ A 44 × 24 mm passive adapter with a 4P4C receptacle, a four-position 0.1-inch m
 
 **Status:** prototype CAD and manufacturing exports complete. KiCad reports zero electrical-rule violations, board-rule violations, unconnected items, and schematic/layout mismatches. The saved CAD and exported schematic netlist also match the independent pin table. The one-board Carvera NC passes offline motion, copper-isolation, hole, and tab checks. No physical prototype or on-machine cutting trial has been tested. This study is separate from the garage project's controlled structural drawings.
 
+**Procurement hold, 2026-10-05:** sourcing found no verified small-quantity stock of the revision A Kycon J1 jack. Confirm that exact jack is obtainable before milling or ordering revision A. Amphenol 73306-111LF is stocked individually, but is a replacement candidate requiring its own verified footprint, contact mapping, and regenerated manufacturing files. It is not approved as a drop-in substitution. The current CAD and CAM still use the Kycon jack.
+
 ## Files
 
 - [Editable KiCad project](design/nezha-qwiic.kicad_pro), [schematic](design/nezha-qwiic.kicad_sch), and [PCB](design/nezha-qwiic.kicad_pcb)
@@ -11,7 +13,7 @@ A 44 × 24 mm passive adapter with a 4P4C receptacle, a four-position 0.1-inch m
 - [Scalable board preview](exports/board-review.svg)
 - [Fabrication ZIP](exports/nezha-qwiic-revA-fabrication.zip) and [Carvera milling-input ZIP](exports/nezha-qwiic-revA-milling-inputs.zip)
 - [One-board Carvera G-code](cam/nezha-qwiic-revA-one-board-carvera-cut145.nc), [setup instructions](cam/READ-ME-FIRST.txt), [stock layout PDF](cam/setup-preview.pdf), and [complete CAM package](exports/nezha-qwiic-revA-carvera-one-board.zip)
-- [Parts list](parts.csv), [wiring table](wiring.csv), and [validation results](checks/validation.json)
+- [Parts list](parts.csv), [supplier and price review](suppliers.csv), [wiring table](wiring.csv), and [validation results](checks/validation.json)
 
 The ZIP packages and raster previews are generated files excluded from Git; their unpacked source files are retained. A working copy and the installed EDA tools are on Buzzkill at `/home/ros/projects/nezha-qwiic`.
 
@@ -39,10 +41,26 @@ Before first power, plug in the actual unpowered cable and check continuity from
 | J1 | Kycon GMX-SMT4-N-44 | Right-angle, latch-down 4P4C SMT jack; `-TR` changes packaging. Custom footprint from [Kycon drawing](https://www.kycon.com/Pub_Eng_Draw/GMX-SMT4-N-44.pdf), revision A8. |
 | J2 | Samtec TSM-104-01-L-SV | Four-position vertical male SMT header, no alignment-pin or locking-clip options. Custom footprint from [Samtec recommended land pattern](https://suddendocs.samtec.com/prints/tsm-1xx-xx-xx-sv-xx-xxx-xx-footprint.pdf), revision D. |
 | J3 | JST BM04B-SRSS-TB(LF)(SN) | Top-entry, 1 mm SH connector. Use **BM04B**, not the horizontal SM04B version. [JST SH drawing](https://www.jst-mfg.com/product/pdf/eng/eSH.pdf). |
-| R1 | 1206 zero-ohm resistor | Insulated ceramic body required for the trace crossing. |
+| R1 | YAGEO RC1206JR-070RL | 1206 zero-ohm resistor; insulated ceramic body required for the trace crossing. |
 | H1, H2 | Board features | 3.00 mm NPTH; no purchased metal fastener required. |
 
 The JST and resistor footprints derive from KiCad library version 9.0.7, under the [KiCad library license](https://www.kicad.org/libraries/license/); the installed package's [attribution and license text](design/KICAD-LIBRARY-COPYRIGHT.txt) are retained. The JST mechanical mounting pads have been given blank pad numbers; their geometry is retained. Custom symbols and footprints are included with the project. Qwiic's power, signal order, and cable colors follow [SparkFun's Qwiic specification](https://www.sparkfun.com/qwiic).
+
+## Small-quantity suppliers
+
+Checked 2026-10-05. Prices are listed USD component prices, before shipping, tax, and any tariffs; availability can change. No purchase has been made. Amazon searches did not produce listings with verified matching manufacturer part numbers and footprints.
+
+| Ref | Exact part and supplier | Listed price | Compatibility / availability |
+| --- | --- | --- | --- |
+| J1, current design | [Kycon GMX-SMT4-N-44 at LCSC](https://www.lcsc.com/product-detail/C7281899.html) | No buy-now recommendation | Out of stock. Other distributor listings found were factory-order quantities. |
+| J2 | [Samtec TSM-104-01-L-SV at DigiKey](https://www.digikey.com/en/products/detail/samtec-inc/TSM-104-01-L-SV/6679016), SAM10279-ND | $0.64 each | In stock; minimum 1; matches revision A. Four male pins at 2.54 mm pitch, SMT solder tails. |
+| J3 | [JST BM04B-SRSS-TB at DigiKey](https://www.digikey.com/en/products/detail/jst-sales-america-inc/BM04B-SRSS-TB/926696), 455-BM04B-SRSS-TBCT-ND | $0.53 each | In stock; minimum 1; matches revision A. Choose cut tape and the vertical BM04B version. |
+| R1 | [YAGEO RC1206JR-070RL at DigiKey](https://www.digikey.com/en/products/detail/yageo/RC1206JR-070RL/729184), 311-0.0ERCT-ND | $0.10 for 1; $0.30 for 10 | In stock; required fourth component, one per board. Choose cut tape. |
+| J1, replacement candidate only | [Amphenol 73306-111LF at Mouser](https://www.mouser.com/en/ProductDetail/Amphenol-FCI/73306-111LF?qs=yJYkLTYh576cZAwwAWqqNg%3D%3D), 649-73306-111LF | $2.43 each | 845 listed in stock; minimum 1; choose cut tape. True 4P4C SMT with latch up. Requires footprint and wiring verification plus a board/CAM revision before use. |
+
+The proposed Amphenol replacement also has a [DigiKey listing](https://www.digikey.com/en/products/detail/amphenol-cs-fci/73306-111LF/1525840), 609-4469-1-ND, showing $2.30 each and 2 in stock in the retrieved page. Mouser's retrieved product page was newer and showed substantially more stock. The Amphenol drawing links and Newark's drawing mirror could not be retrieved during this review, so no replacement footprint has been asserted or generated. The [manufacturer product page](https://www.amphenol-cs.com/product/73306111lf.html) confirms 4P4C and surface mounting.
+
+Do not substitute a generic RJ11 6P4C jack, a through-hole header, or a horizontal JST SM04B connector in the existing layout. The two 3 mm mounting holes are board features and add no purchased components.
 
 ## Mechanical dimensions
 
