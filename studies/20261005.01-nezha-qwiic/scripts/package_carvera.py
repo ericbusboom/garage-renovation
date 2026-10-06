@@ -17,7 +17,7 @@ names=[nc.name,'READ-ME-FIRST.txt','tools.csv','job.json','validation.json',
 (cam/'SHA256SUMS.txt').write_text(''.join(
     f'{hashlib.sha256((cam/n).read_bytes()).hexdigest()}  {n}\n' for n in names))
 names.append('SHA256SUMS.txt')
-target=root/'exports/nezha-qwiic-revA-carvera-one-board.zip'
+target=root/'exports/nezha-qwiic-revB-carvera-one-board.zip'
 with ZipFile(target,'w',ZIP_DEFLATED) as z:
     for name in names:
         z.write(cam/name,name)

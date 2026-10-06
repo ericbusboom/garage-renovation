@@ -19,6 +19,28 @@ assert actual==expected,(actual,expected)
 sch=ET.parse(root/'checks/netlist.xml')
 sch_nets={(n.attrib['ref'],n.attrib['pin']):net.attrib['name'] for net in sch.findall('.//nets/net') for n in net.findall('node')}
 assert sch_nets==expected,sch_nets
+# Check the saved replacement footprint against the dimensioned 73306 drawing,
+# sheet 3 B, released document M (retained in references/).
+assert fp['J1'].GetValue()=='73306-111LF'
+assert fp['J1'].GetFPID().GetLibItemName()=='Amphenol_73306-111LF'
+j1pads={a.GetNumber():a for a in fp['J1'].Pads() if a.GetNumber()}
+for n,y in [('1',14.405),('2',13.135),('3',11.865),('4',10.595)]:
+ a=j1pads[n]
+ assert abs(p.ToMM(a.GetPosition().x)-65.4)<1e-6
+ assert abs(p.ToMM(a.GetPosition().y)-(50+y))<1e-6
+ assert abs(p.ToMM(a.GetSize().x)-.76)<1e-6
+ assert abs(p.ToMM(a.GetSize().y)-3.4)<1e-6
+mounts=[a for a in fp['J1'].Pads() if not a.GetNumber()]
+assert len(mounts)==2
+assert sorted(round(p.ToMM(a.GetPosition().y)-50,3) for a in mounts)==[7.3,17.7]
+for a in mounts:
+ assert abs(p.ToMM(a.GetPosition().x)-56.65)<1e-6
+ assert abs(p.ToMM(a.GetSize().x)-2.35)<1e-6
+ assert abs(p.ToMM(a.GetSize().y)-5.5)<1e-6
+# Pin 1 remains GND; J2 and J3 turn 180 degrees relative to revision A.
+for ref in ['J2','J3']:
+ pads={a.GetNumber():a for a in fp[ref].Pads() if a.GetNumber()}
+ assert pads['1'].GetPosition().y > pads['4'].GetPosition().y
 assert all(not isinstance(t,p.PCB_VIA) and t.GetLayer()==p.F_Cu for t in b.GetTracks())
 assert all(p.ToMM(t.GetWidth())>=.35 for t in b.GetTracks())
 assert fp['J1'].GetPosition().x < fp['J2'].GetPosition().x < fp['J3'].GetPosition().x
@@ -46,6 +68,6 @@ drc=json.loads((root/'checks/drc.json').read_text())
 assert not any(drc[k] for k in ['violations','unconnected_items','schematic_parity'])
 erc=json.loads((root/'checks/erc.json').read_text())
 assert not any(s['violations'] for s in erc['sheets'])
-result={'status':'PASS','board_mm':[44,24],'copper':'F.Cu only','vias':0,'holes_diameter_mm':3.0,'holes_xy_mm':holes,'header_pitch_mm':2.54,'erc_violations':0,'drc_violations':0,'unconnected_items':0,'schematic_parity_issues':0,'checks':['saved CAD versus independent pin table','exported schematic netlist versus independent pin table','SMT-only components','no vias or bottom tracks','header between connectors','3 mm NPTH drill tools and locations','RS-274X Gerber compatibility','ERC and DRC including schematic parity'],'limitation':'No physical prototype, cable continuity measurement, or on-machine cutting trial has been performed.'}
+result={'status':'PASS','revision':'B','jack':'Amphenol 73306-111LF','board_mm':[44,24],'copper':'F.Cu only','vias':0,'holes_diameter_mm':3.0,'holes_xy_mm':holes,'header_pitch_mm':2.54,'erc_violations':0,'drc_violations':0,'unconnected_items':0,'schematic_parity_issues':0,'checks':['Amphenol 73306 land dimensions and project contact mapping','J2 and J3 GND positions in revision B','saved CAD versus independent pin table','exported schematic netlist versus independent pin table','SMT-only components','no vias or bottom tracks','header between connectors','3 mm NPTH drill tools and locations','RS-274X Gerber compatibility','ERC and DRC including schematic parity'],'limitation':'No physical prototype, cable continuity measurement, or on-machine cutting trial has been performed.'}
 (root/'checks/validation.json').write_text(json.dumps(result,indent=2)+'\n')
 print(json.dumps(result,indent=2))

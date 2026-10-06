@@ -10,6 +10,8 @@ OUT = ROOT / 'design'
 LIB = OUT / 'Adapter.pretty'
 OUT.mkdir(exist_ok=True)
 LIB.mkdir(exist_ok=True)
+# Remove the superseded generated footprint from the active project library.
+(LIB/'Kycon_GMX-SMT4-N-44.kicad_mod').unlink(missing_ok=True)
 NAME = 'nezha-qwiic'
 IO = p.PCB_IO_KICAD_SEXPR()
 NS = uuid.UUID('24850d9f-d02c-4720-860e-a2e4a20a8d15')
@@ -47,15 +49,22 @@ def footprint(name, description):
     fp.Reference().SetPosition(v(0,-2));fp.Value().SetVisible(False)
     return fp
 
-jack=footprint('Kycon_GMX-SMT4-N-44','Kycon drawing GMX-SMT4-N-44 rev A8, 2015-06-15; front at y=0; recommended PCB top view')
-for n in range(1,5):pad(jack,n,(2.5-n)*1.27,19.35,.76,3.18)
-for x in [-6.075,6.075]:pad(jack,'',x,7.88,5.15,2.8)
-rect(jack,-5.6,0,5.6,18.1,p.F_Fab,.1)
-line(jack,(-5.8,0),(5.8,0),p.F_SilkS)
-line(jack,(-5.8,0),(-5.8,5.8),p.F_SilkS)
-line(jack,(5.8,0),(5.8,5.8),p.F_SilkS)
-courtyard=[(-6.1,-.5),(6.1,-.5),(6.1,5.98),(9.15,5.98),(9.15,9.78),(6.1,9.78),(6.1,18.6),(2.785,18.6),(2.785,21.44),(-2.785,21.44),(-2.785,18.6),(-6.1,18.6),(-6.1,9.78),(-9.15,9.78),(-9.15,5.98),(-6.1,5.98),(-6.1,-.5)]
-for a,b in zip(courtyard,courtyard[1:]):line(jack,a,b,p.F_CrtYd,.05)
+# FCI / Amphenol drawing 73306, released revision M, sheet 3 revision B.
+# Local front is y=0, body extends toward +y. Drawing sheet 3 shows the
+# opposite orientation (mouth right, tails left); dimensions are transformed.
+# The drawing does not label contacts. Project numbering is explicitly
+# 4-3-2-1 left-to-right looking into the latch-UP mouth, so pad 1 is GND
+# for the user's stated latch-side plug colors YELLOW GREEN RED BLACK.
+jack=footprint('Amphenol_73306-111LF','Amphenol/FCI 73306 rev M; sheet 3 B land pattern; front y=0; latch up; project front-view numbering 4 3 2 1')
+for n in range(1,5):pad(jack,n,(n-2.5)*1.27,14.4,.76,3.4)
+for x in [-5.2,5.2]:pad(jack,'',x,5.65,2.35,5.5)
+rect(jack,-5.59,0,5.59,12.7,p.F_Fab,.1)
+# Silk leaves clearance around the two hold-down lands.
+line(jack,(-5.79,0),(5.79,0),p.F_SilkS)
+for x in [-5.79,5.79]:
+    line(jack,(x,0),(x,2.6),p.F_SilkS)
+    line(jack,(x,8.7),(x,12.9),p.F_SilkS)
+rect(jack,-6.875,-.5,6.875,16.6,p.F_CrtYd,.05)
 IO.FootprintSave(str(LIB),jack)
 
 header=footprint('Samtec_TSM-104-01-L-SV','Samtec TSM single-row vertical recommended land pattern rev D; no alignment/locking option')
@@ -85,16 +94,16 @@ IO.FootprintSave(str(LIB),hole)
 board=p.BOARD()
 board.GetDesignSettings().SetBoardThickness(p.FromMM(1.4))
 board.GetDesignSettings().SetAuxOrigin(v(50,50))
-tb=board.GetTitleBlock();tb.SetTitle('Nezha 3.3 V / 4P4C to Qwiic');tb.SetRevision('A');tb.SetDate('2026-10-05')
+tb=board.GetTitleBlock();tb.SetTitle('Nezha 3.3 V / 4P4C to Qwiic');tb.SetRevision('B');tb.SetDate('2026-10-05')
 nets={}
 for name in ['GND','+3V3','SDA','SCL','SCL_JACK']:
     net=p.NETINFO_ITEM(board,'/'+name);board.Add(net);nets[name]=net
 
 specs={
- 'J1':('Kycon_GMX-SMT4-N-44','GMX-SMT4-N-44',1,12,90,{'1':'GND','2':'+3V3','3':'SCL_JACK','4':'SDA'}),
- 'J2':('Samtec_TSM-104-01-L-SV','TSM-104-01-L-SV',29.5,12,90,{'1':'GND','2':'+3V3','3':'SDA','4':'SCL'}),
- 'J3':('JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical','BM04B-SRSS-TB',38.5,12,270,{'1':'GND','2':'+3V3','3':'SDA','4':'SCL'}),
- 'R1':('R_1206_3216Metric','0',24,14.2,90,{'1':'SCL','2':'SCL_JACK'}),
+ 'J1':('Amphenol_73306-111LF','73306-111LF',1,12.5,90,{'1':'GND','2':'+3V3','3':'SCL_JACK','4':'SDA'}),
+ 'J2':('Samtec_TSM-104-01-L-SV','TSM-104-01-L-SV',29.5,12,270,{'1':'GND','2':'+3V3','3':'SDA','4':'SCL'}),
+ 'J3':('JST_SH_BM04B-SRSS-TB_1x04-1MP_P1.00mm_Vertical','BM04B-SRSS-TB',38.5,12,90,{'1':'GND','2':'+3V3','3':'SDA','4':'SCL'}),
+ 'R1':('R_1206_3216Metric','0',24,9.8,270,{'1':'SCL','2':'SCL_JACK'}),
  'H1':('HeatStake_3mm','3mm NPTH',4,3,0,{}),
  'H2':('HeatStake_3mm','3mm NPTH',40,21,0,{})}
 fps={};points={}
@@ -115,22 +124,23 @@ def track(net, points, width=.4):
         if a==b:continue
         t=p.PCB_TRACK(board);t.SetStart(v(a[0]+50,a[1]+50));t.SetEnd(v(b[0]+50,b[1]+50));t.SetLayer(p.F_Cu);t.SetWidth(p.FromMM(width));t.SetNet(nets[net]);board.Add(t)
 P=lambda ref,n:points[(ref,str(n))]
-track('GND',[P('J1',1),(22.5,10.095),(24.405,8.19),P('J2',1),(32.8,8.19),(35.11,10.5),P('J3',1)])
-track('+3V3',[P('J1',2),(23,11.365),(23.635,10.73),P('J2',2),(33,10.73),(33.77,11.5),P('J3',2)])
+track('GND',[P('J1',1),(22.5,13.905),(24.405,15.81),P('J2',1),(32.8,15.81),(35.11,13.5),P('J3',1)])
+track('+3V3',[P('J1',2),(23,12.635),(23.635,13.27),P('J2',2),(33,13.27),(33.77,12.5),P('J3',2)])
 track('SCL_JACK',[P('J1',3),P('R1',2)])
-track('SDA',[P('J1',4),(22.5,13.905),(22.795,14.2),(26.3,14.2),(27.23,13.27),P('J2',3),(33,13.27),(33.77,12.5),P('J3',3)])
-track('SCL',[P('R1',1),(26,15.6625),(26.1475,15.81),P('J2',4),(33.3,15.81),(35.61,13.5),P('J3',4)])
+track('SDA',[P('J1',4),(22.5,10.095),(22.795,9.8),(26.3,9.8),(27.23,10.73),P('J2',3),(33,10.73),(33.77,11.5),P('J3',3)])
+track('SCL',[P('R1',1),(26,8.3375),(26.1475,8.19),P('J2',4),(33.3,8.19),(35.61,10.5),P('J3',4)])
 rect(board,50,50,94,74,p.Edge_Cuts,.05)
 
 def text(s,x,y,size=1,layer=p.F_SilkS):
     t=p.PCB_TEXT(board);t.SetText(s);t.SetPosition(v(50+x,50+y));t.SetTextSize(v(size,size));t.SetTextThickness(p.FromMM(size*.15));t.SetLayer(layer);board.Add(t)
 text('NEZHA > QWIIC',26.5,2.2,1.25)
-text('3V3 ONLY   REV A',25.5,21.5,1)
+text('3V3 ONLY   REV B',25.5,21.5,1)
 text('J1 4P4C',10,2,1)
 text('J2',29.5,5.3,.85)
 text('J3',38.5,7,.85)
-text('R1 0R',23.3,18.1,.8)
-for s,y in [('GND',8.19),('3V3',10.73),('SDA',13.27),('SCL',15.81)]:text(s,34.5,y-.8,.8)
+text('R1 0R',23.3,6,.8)
+text('1',17.9,15.5,.8)
+for s,y in [('SCL',8.19),('SDA',10.73),('3V3',13.27),('GND',15.81)]:text(s,34.5,y-.8,.8)
 board.BuildConnectivity()
 p.SaveBoard(str(OUT/(NAME+'.kicad_pcb')),board)
 
@@ -160,7 +170,7 @@ library='(kicad_symbol_lib (version 20241209) (generator "kicad_symbol_editor")\
 (OUT/'fp-lib-table').write_text('(fp_lib_table (version 7) (lib (name "Adapter") (type "KiCad") (uri "${KIPRJMOD}/Adapter.pretty") (options "") (descr "Verified adapter footprints")))\n')
 embedded=''.join(s.replace('(symbol "'+n+'"','(symbol "Adapter:'+n+'"',1) for s,n in [(conn,'Conn4'),(res,'R'),(mount,'MountingHole')])
 sch=[f'''(kicad_sch (version 20250114) (generator "eeschema") (uuid {uid('sheet')}) (paper "A4")
- (title_block (title "Nezha 3.3 V / 4P4C to Qwiic") (date "2026-10-05") (rev "A") (comment 1 "Passive adapter. R1 is the single-sided crossover link."))
+ (title_block (title "Nezha 3.3 V / 4P4C to Qwiic") (date "2026-10-05") (rev "B") (comment 1 "Passive adapter. R1 is the single-sided crossover link."))
  (lib_symbols {embedded})''']
 def note(s,x,y,size=1.27):sch.append(f'(text {q(s)} (at {x} {y} 0) (effects (font (size {size} {size})) (justify left)) (uuid {uid(s+str(x)+str(y))}))')
 def instance(ref,symbol,x,y):
@@ -182,9 +192,10 @@ instance('R1','R',101.6,114.3)
 wire((96.52,114.3),(83.82,114.3),'R1left');label('SCL',83.82,114.3,'R1l')
 wire((106.68,114.3),(127,114.3),'R1right');label('SCL_JACK',127,114.3,'R1r')
 instance('H1','MountingHole',170,115);instance('H2','MountingHole',205,115)
-note('J1 FRONT VIEW: latch below contacts; 1..4 left to right.\n1 BLACK/GND; 2 RED/3V3; 3 GREEN/SCL; 4 YELLOW/SDA.',35,40)
+note('J1 FRONT VIEW: latch UP; project contacts 4 3 2 1 left to right.\n1 BLACK/GND; 2 RED/3V3; 3 GREEN/SCL; 4 YELLOW/SDA.',35,40)
 note('J2: 0.1 inch / 2.54 mm MALE\nJ3: JST-SH 1 mm TOP ENTRY (Qwiic)',140,40)
 note('R1 = 0 ohm, 1206. Fit this link for SCL continuity.\nSDA passes under its insulated body on the front copper.',35,137)
+note('J1: Amphenol 73306-111LF. Body height 14 mm.\nJ2 pin 1 / GND is at the BOTTOM in the board drawing.',35,151)
 note('2 x 3.00 mm NON-PLATED holes.\nAll copper routing on F.Cu; no vias.\n3.3 V confirmed by user; no regulator or level conversion.',160,137)
 note('Cable convention: plug nose away, cable toward viewer.\nLatch-side view YELLOW GREEN RED BLACK.\nContact-side view BLACK RED GREEN YELLOW.\nBefore powering the first assembled board, continuity-check\nactual cable colors against J2 labels, including both cable ends.',35,163)
 sch.append(')');(OUT/(NAME+'.kicad_sch')).write_text('\n'.join(sch)+'\n')
@@ -200,4 +211,4 @@ project={
 (rule "Milling track width" (constraint track_width (min 0.35mm)))
 (rule "Board edge clearance" (constraint edge_clearance (min 0.5mm)))
 ''')
-print(json.dumps({'board_mm':[44,24],'holes_mm':[[4,3,3],[40,21,3]],'pads':{ref:{str(n):P(ref,n) for n in range(1,5)} for ref in ['J1','J2','J3']}},indent=2))
+print(json.dumps({'revision':'B','jack':'Amphenol 73306-111LF','board_mm':[44,24],'holes_mm':[[4,3,3],[40,21,3]],'pads':{ref:{str(n):P(ref,n) for n in range(1,5)} for ref in ['J1','J2','J3']}},indent=2))

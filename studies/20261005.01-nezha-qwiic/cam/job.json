@@ -1,5 +1,5 @@
 {
-  "revision": "A",
+  "revision": "B",
   "machine": "Original Makera Carvera, six-slot automatic tool changer",
   "stock_mm": [
     150,
@@ -60,11 +60,12 @@
     "https://wiki.makera.com/Air/Manual/Air-LED-Light",
     "https://github.com/pcb2gcode/pcb2gcode/releases/tag/v3.0.4"
   ],
-  "program_file": "nezha-qwiic-revA-one-board-carvera-cut145.nc",
+  "program_file": "nezha-qwiic-revB-one-board-carvera-cut145.nc",
   "workholding": {
     "tape_thickness_mm_approx": 1.0,
     "backer": "User-supplied sacrificial backer",
     "through_cut_allowance_mm": 0.05,
     "note": "Tape thickness is not added to cut depth; Z0 is the top copper surface."
-  }
+  },
+  "jack": "Amphenol 73306-111LF"
 }

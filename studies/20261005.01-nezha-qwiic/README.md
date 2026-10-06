@@ -1,18 +1,18 @@
-# Nezha 4P4C to Qwiic adapter — revision A
+# Nezha 4P4C to Qwiic adapter — revision B
 
 A 44 × 24 mm passive adapter with a 4P4C receptacle, a four-position 0.1-inch male header in the middle, and a top-entry Qwiic receptacle. All components are surface mounted; all routing is on the front copper. Two 3.00 mm non-plated holes accept heat-staked enclosure posts. Designed 2026-10-05.
 
 **Status:** prototype CAD and manufacturing exports complete. KiCad reports zero electrical-rule violations, board-rule violations, unconnected items, and schematic/layout mismatches. The saved CAD and exported schematic netlist also match the independent pin table. The one-board Carvera NC passes offline motion, copper-isolation, hole, and tab checks. No physical prototype or on-machine cutting trial has been tested. This study is separate from the garage project's controlled structural drawings.
 
-**Procurement hold, 2026-10-05:** sourcing found no verified small-quantity stock of the revision A Kycon J1 jack. Confirm that exact jack is obtainable before milling or ordering revision A. Amphenol 73306-111LF is stocked individually, but is a replacement candidate requiring its own verified footprint, contact mapping, and regenerated manufacturing files. It is not approved as a drop-in substitution. The current CAD and CAM still use the Kycon jack.
+**Revision B:** J1 is now the stocked Amphenol 73306-111LF latch-up jack. Its footprint comes from the retrieved manufacturer drawing. J2 and J3 are turned 180 degrees to retain a single copper layer and one crossover resistor. With J1 on the left in the component-side drawing, J2 runs top-to-bottom **SCL, SDA, 3V3, GND**; pin 1 / GND is at the bottom. The 44 × 24 mm outline, mounting-hole centers, stock placement, tools, tabs, and 1.45 mm through-cut depth remain the same. Use the revision B files; revision A files fit the old Kycon jack.
 
 ## Files
 
 - [Editable KiCad project](design/nezha-qwiic.kicad_pro), [schematic](design/nezha-qwiic.kicad_sch), and [PCB](design/nezha-qwiic.kicad_pcb)
 - [Schematic PDF](exports/schematic.pdf) and [board drawing PDF](exports/board.pdf), viewed from the component side
 - [Scalable board preview](exports/board-review.svg)
-- [Fabrication ZIP](exports/nezha-qwiic-revA-fabrication.zip) and [Carvera milling-input ZIP](exports/nezha-qwiic-revA-milling-inputs.zip)
-- [One-board Carvera G-code](cam/nezha-qwiic-revA-one-board-carvera-cut145.nc), [setup instructions](cam/READ-ME-FIRST.txt), [stock layout PDF](cam/setup-preview.pdf), and [complete CAM package](exports/nezha-qwiic-revA-carvera-one-board.zip)
+- [Fabrication ZIP](exports/nezha-qwiic-revB-fabrication.zip) and [Carvera milling-input ZIP](exports/nezha-qwiic-revB-milling-inputs.zip)
+- [One-board Carvera G-code](cam/nezha-qwiic-revB-one-board-carvera-cut145.nc), [setup instructions](cam/READ-ME-FIRST.txt), [stock layout PDF](cam/setup-preview.pdf), and [complete CAM package](exports/nezha-qwiic-revB-carvera-one-board.zip)
 - [Parts list](parts.csv), [supplier and price review](suppliers.csv), [wiring table](wiring.csv), and [validation results](checks/validation.json)
 
 The ZIP packages and raster previews are generated files excluded from Git; their unpacked source files are retained. A working copy and the installed EDA tools are on Buzzkill at `/home/ros/projects/nezha-qwiic`.
@@ -26,9 +26,9 @@ The ZIP packages and raster previews are generated files excluded from Git; thei
 | SDA | Yellow | 4 | 3 | 3 | Blue |
 | SCL | Green | 3 | 4 | 4 | Yellow |
 
-The user confirmed 3.3 V sensor power and clarified the plug colors: latch-side left-to-right yellow–green–red–black; contact-side black–red–green–yellow. The drawing convention is plug nose away and cable toward the viewer. The selected Kycon jack's front view has the latch below the contacts, with contact 1 at the left and contact 4 at the right. Its PCB top-view solder-pad order is reversed, as shown in the manufacturer drawing.
+The user confirmed 3.3 V sensor power and clarified the plug colors: latch-side left-to-right yellow–green–red–black; contact-side black–red–green–yellow. The drawing convention is plug nose away and cable toward the viewer. The Amphenol jack has its latch above the contacts. The manufacturer drawing does not assign contact numbers: this project's J1 numbering is explicitly 4–3–2–1 left-to-right when looking into that latch-up mouth, corresponding to yellow/SDA, green/SCL, red/3V3, and black/GND. On the actual board, J1's solder pads run top-to-bottom SDA, SCL, 3V3, GND. This physical mapping is recorded in the schematic and drawing-source record.
 
-J2 has one straight row of four male pins at 2.54 mm pitch. Its SMT solder tails alternate sides; this is not a two-row header. With J1 on the left in the board preview, J2 runs from GND at the top through 3V3 and SDA to SCL at the bottom. The header is a tap into the four lines and needs no removable shunts.
+J2 has one straight row of four male pins at 2.54 mm pitch. Its SMT solder tails alternate sides; this is not a two-row header. With J1 on the left in the board preview, J2 runs from SCL at the top through SDA and 3V3 to GND at the bottom. Pin numbers and their nets remain 1=GND, 2=3V3, 3=SDA, 4=SCL; the physical orientation changes from revision A. The header is a tap into the four lines and needs no removable shunts.
 
 **Fit R1, an insulated-body 1206 zero-ohm resistor.** It carries SCL over the SDA trace to make the crossing possible with one copper layer. Do not replace it with a solder blob or a bare conductor touching the board. The board adds no pull-ups, regulator, or level conversion.
 
@@ -38,7 +38,7 @@ Before first power, plug in the actual unpowered cable and check continuity from
 
 | Ref | Part | Notes and source |
 | --- | --- | --- |
-| J1 | Kycon GMX-SMT4-N-44 | Right-angle, latch-down 4P4C SMT jack; `-TR` changes packaging. Custom footprint from [Kycon drawing](https://www.kycon.com/Pub_Eng_Draw/GMX-SMT4-N-44.pdf), revision A8. |
+| J1 | Amphenol 73306-111LF | Right-angle, latch-up 4P4C SMT jack. Custom footprint from [manufacturer drawing 73306](references/Amphenol-73306-revM.pdf), released revision M, sheet 3 revision B; [source and interpretation](references/footprint-source.json). Body height 14.0 mm. |
 | J2 | Samtec TSM-104-01-L-SV | Four-position vertical male SMT header, no alignment-pin or locking-clip options. Custom footprint from [Samtec recommended land pattern](https://suddendocs.samtec.com/prints/tsm-1xx-xx-xx-sv-xx-xxx-xx-footprint.pdf), revision D. |
 | J3 | JST BM04B-SRSS-TB(LF)(SN) | Top-entry, 1 mm SH connector. Use **BM04B**, not the horizontal SM04B version. [JST SH drawing](https://www.jst-mfg.com/product/pdf/eng/eSH.pdf). |
 | R1 | YAGEO RC1206JR-070RL | 1206 zero-ohm resistor; insulated ceramic body required for the trace crossing. |
@@ -48,26 +48,25 @@ The JST and resistor footprints derive from KiCad library version 9.0.7, under t
 
 ## Small-quantity suppliers
 
-Checked 2026-10-05. Prices are listed USD component prices, before shipping, tax, and any tariffs; availability can change. No purchase has been made. Amazon searches did not produce listings with verified matching manufacturer part numbers and footprints.
+Checked 2026-10-05. Prices are listed USD component prices, before shipping, tax, and any tariffs; availability can change. Each board needs one of each of the following four components. No purchase has been made. Amazon searches did not produce listings with verified matching manufacturer part numbers and footprints.
 
-| Ref | Exact part and supplier | Listed price | Compatibility / availability |
+| Ref | Exact part and supplier | Listed price | Ordering notes |
 | --- | --- | --- | --- |
-| J1, current design | [Kycon GMX-SMT4-N-44 at LCSC](https://www.lcsc.com/product-detail/C7281899.html) | No buy-now recommendation | Out of stock. Other distributor listings found were factory-order quantities. |
-| J2 | [Samtec TSM-104-01-L-SV at DigiKey](https://www.digikey.com/en/products/detail/samtec-inc/TSM-104-01-L-SV/6679016), SAM10279-ND | $0.64 each | In stock; minimum 1; matches revision A. Four male pins at 2.54 mm pitch, SMT solder tails. |
-| J3 | [JST BM04B-SRSS-TB at DigiKey](https://www.digikey.com/en/products/detail/jst-sales-america-inc/BM04B-SRSS-TB/926696), 455-BM04B-SRSS-TBCT-ND | $0.53 each | In stock; minimum 1; matches revision A. Choose cut tape and the vertical BM04B version. |
-| R1 | [YAGEO RC1206JR-070RL at DigiKey](https://www.digikey.com/en/products/detail/yageo/RC1206JR-070RL/729184), 311-0.0ERCT-ND | $0.10 for 1; $0.30 for 10 | In stock; required fourth component, one per board. Choose cut tape. |
-| J1, replacement candidate only | [Amphenol 73306-111LF at Mouser](https://www.mouser.com/en/ProductDetail/Amphenol-FCI/73306-111LF?qs=yJYkLTYh576cZAwwAWqqNg%3D%3D), 649-73306-111LF | $2.43 each | 845 listed in stock; minimum 1; choose cut tape. True 4P4C SMT with latch up. Requires footprint and wiring verification plus a board/CAM revision before use. |
+| J1 | [Amphenol 73306-111LF at Mouser](https://www.mouser.com/en/ProductDetail/Amphenol-FCI/73306-111LF?qs=yJYkLTYh576cZAwwAWqqNg%3D%3D), 649-73306-111LF | $2.43 each | 845 listed in stock; minimum 1; choose cut tape. Matches revision B. |
+| J2 | [Samtec TSM-104-01-L-SV at DigiKey](https://www.digikey.com/en/products/detail/samtec-inc/TSM-104-01-L-SV/6679016), SAM10279-ND | $0.64 each | In stock; minimum 1. Four male pins at 2.54 mm pitch, SMT solder tails. |
+| J3 | [JST BM04B-SRSS-TB at DigiKey](https://www.digikey.com/en/products/detail/jst-sales-america-inc/BM04B-SRSS-TB/926696), 455-BM04B-SRSS-TBCT-ND | $0.53 each | In stock; minimum 1. Choose cut tape and the vertical BM04B version. |
+| R1 | [YAGEO RC1206JR-070RL at DigiKey](https://www.digikey.com/en/products/detail/yageo/RC1206JR-070RL/729184), 311-0.0ERCT-ND | $0.10 for 1; $0.30 for 10 | In stock; required insulated-body crossover. Choose cut tape. |
 
-The proposed Amphenol replacement also has a [DigiKey listing](https://www.digikey.com/en/products/detail/amphenol-cs-fci/73306-111LF/1525840), 609-4469-1-ND, showing $2.30 each and 2 in stock in the retrieved page. Mouser's retrieved product page was newer and showed substantially more stock. The Amphenol drawing links and Newark's drawing mirror could not be retrieved during this review, so no replacement footprint has been asserted or generated. The [manufacturer product page](https://www.amphenol-cs.com/product/73306111lf.html) confirms 4P4C and surface mounting.
+J1 also has a [DigiKey listing](https://www.digikey.com/en/products/detail/amphenol-cs-fci/73306-111LF/1525840), 609-4469-1-ND, showing $2.30 each and 2 in stock in the retrieved page. Mouser's retrieved page was newer and showed substantially more stock. All listed active parts match revision B. The original Kycon jack is not an alternative for this layout.
 
-Do not substitute a generic RJ11 6P4C jack, a through-hole header, or a horizontal JST SM04B connector in the existing layout. The two 3 mm mounting holes are board features and add no purchased components.
+Do not substitute a generic RJ11 6P4C jack, a through-hole header, or a horizontal JST SM04B connector in this layout. The two 3 mm mounting holes are board features and add no purchased components.
 
 ## Mechanical dimensions
 
 - Finished board: 44.00 × 24.00 mm rectangle, thickness 1.40 mm for the user's stock.
 - Hole diameter: 3.00 mm, non-plated. Centers are (4.00, 3.00) and (40.00, 21.00) mm, measured from the upper-left board corner with X right and Y down in the component-side drawing.
 - A nominal 5 mm diameter head area is kept clear around each hole; match the enclosure's post length and melted head to the actual board thickness.
-- J1 opening faces left; the body is approximately 11.5 mm high. J2's pin row is at X = 29.50 mm, with Y = 8.19, 10.73, 13.27, 15.81 mm. J3 is top entry; allow clearance for its cable above the board.
+- J1 opening faces left, 1.0 mm inside the board edge; body width 11.18 mm, depth 12.7 mm, and height 14.0 ± 0.1 mm. Its centerline is Y = 12.50 mm. Allow enclosure clearance for the latch on top. J2's pin row is at X = 29.50 mm, with pins 1–4 at Y = 15.81, 13.27, 10.73, 8.19 mm respectively. J3 is top entry; allow clearance for its cable above the board.
 
 The rendered PDF is a review drawing. Use CAD or Gerber geometry for machining and check print scaling before using a paper template.
 

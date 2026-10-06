@@ -96,7 +96,8 @@ def pocket_holes():
             previous_z = z
         emit('G0 Z5.00000')
 
-comment('NEZHA-QWIIC REV A - ONE BOARD - ORIGINAL CARVERA ATC')
+comment('NEZHA-QWIIC REV B - ONE BOARD - ORIGINAL CARVERA ATC')
+comment('J1 = AMPHENOL 73306-111LF; LATCH UP; HEADER GND AT BOTTOM')
 comment('BARE COPPER PCB STOCK: X150 Y100 THICKNESS1.40 mm')
 comment('G54 XY0 = STOCK LOWER-LEFT; Z0 = COPPER TOP')
 comment('Board lower-left X15 Y15; finished size 44 x 24 mm')

@@ -169,7 +169,7 @@ for op in [2,3]:
 assert abs(job['cutting']['depth_mm']-job['stock_mm'][2]-.05)<1e-9
 cutting=[s for s in segments if min(s[3][2],s[4][2])<0]
 bounds=[min(min(s[3][i],s[4][i]) for s in cutting) for i in range(3)]+[max(max(s[3][i],s[4][i]) for s in cutting) for i in range(3)]
-report={'status':'PASS','program_sha256':hashlib.sha256(nc.read_bytes()).hexdigest(),'cam_version':'pcb2gcode 3.0.4 a5604c4',
+report={'status':'PASS','revision':job['revision'],'jack':job['jack'],'program_sha256':hashlib.sha256(nc.read_bytes()).hexdigest(),'cam_version':'pcb2gcode 3.0.4 a5604c4',
         'operation_min_z_mm':actual_depths,'through_cut_allowance_mm':.05,'tool_changes':tool_changes,'stock_mm':job['stock_mm'],'board_lower_left_mm':[15,15],
         'motion_bounds_xyz_minmax_mm':[round(v,5) for v in bounds],
         'tab_widths_mm':tabs,'tab_remaining_thickness_mm':.5,'holes_mm':[[19,36,3],[55,18,3]],
@@ -205,7 +205,7 @@ ax.annotate('One 44 x 24 mm board',(37,40),(35,62),arrowprops={'arrowstyle':'->'
 ax.text(90,50,'Unused stock',ha='center',color='#777')
 ax.set_xlim(-4,154);ax.set_ylim(-4,104);ax.set_title('150 x 100 x 1.4 mm stock - copper side up')
 detail.set_xlim(12,62);detail.set_ylim(12,42);detail.set_title('Final G-code paths and tab locations')
-fig.suptitle('Nezha / Qwiic - single-board Carvera job',fontsize=16)
+fig.suptitle('Nezha / Qwiic - REV B Amphenol - single-board Carvera job',fontsize=16)
 fig.text(.5,.04,'T2 teal: trace isolation   |   T3 orange: 3 mm holes   |   T3 purple: outline   |   Yellow: retaining tabs',ha='center',fontsize=9)
 fig.text(.5,.01,f"Z0 = copper top. Maximum cut Z = -{job['cutting']['depth_mm']:.2f} mm. Probe/level before cutting. Drawing is a review, not a print template.",ha='center',fontsize=8)
 fig.tight_layout(rect=[0,.07,1,.94])

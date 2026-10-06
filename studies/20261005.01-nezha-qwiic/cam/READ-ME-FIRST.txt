@@ -1,6 +1,8 @@
-NEZHA / QWIIC - REV A - ONE BOARD - ORIGINAL CARVERA ATC
+NEZHA / QWIIC - REV B - ONE BOARD - ORIGINAL CARVERA ATC
 
-PROGRAM: nezha-qwiic-revA-one-board-carvera-cut145.nc
+PROGRAM: nezha-qwiic-revB-one-board-carvera-cut145.nc
+J1 is AMPHENOL 73306-111LF. This revision replaces the Kycon jack layout.
+J2 pin 1 / GND is now at the bottom in the component-side board drawing.
 Use the original Carvera with its six-slot automatic tool changer.
 This program does not apply to the Air's manual tool changes.
 
@@ -57,7 +59,7 @@ With about 1 mm of tape, the cutter should remain within the tape if the board
 and tape stay flat and supported. Auto-leveling follows the top surface; it
 does not measure PCB thickness, its underside, or tape compression.
 The earlier 2 mm recommendation described backer thickness, not extra cut depth.
-Use this CUT145 program instead of the previous 1.55 mm-deep program.
+Use this REV B program for the Amphenol jack. REV A programs fit the old jack.
 Four tabs remain: one centered on each edge, minimum neck width 2.5 mm,
 remaining thickness 0.5 mm. Roots are wider because the cutter ends are rounded.
 General clearance is Z5; end-of-job retraction is Z10. Automatic vacuum mode
